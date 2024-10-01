@@ -1,0 +1,2 @@
+# Documentation
+SLOTH Documentation
