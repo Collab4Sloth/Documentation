@@ -1,2 +1,3 @@
 # Documentation
-SLOTH Documentation
+
+SLOTH Documentation.
