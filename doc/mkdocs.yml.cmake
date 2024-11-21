@@ -5,6 +5,7 @@ copyright: Copyright &copy; 2024 C. Introïni, R. Prat [(CEA.IRESNE.DEC)
 generate: true
 markdown_extensions:  
   - toc:
+      toc_depth: 6
       permalink: true
   - attr_list
   - pymdownx.emoji:
@@ -30,26 +31,25 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
   - footnotes
-extra_javascript:
-  - javascripts/mathjax.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - markdown_katex:
+      no_inline_svg: True
+      insert_fonts_css: False
 
-
-# extra_javascript:
-#   - javascripts/katex.js
-#   - https://unpkg.com/katex@0/dist/katex.min.js
-#   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
-
-# extra_css:
-#   - https://unpkg.com/katex@0/dist/katex.min.css
 
 edit_uri: edit/main/docs/
 plugins:
-  # - offline
   - search
   - bibtex:
       bib_file: "docs/References/biblio.bib"
+
+extra_css:
+  - stylesheets/extra.css
+  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css
+
+extra_javascript:
+  - javascripts/katex.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.17.11/dist/contrib/auto-render.min.js
 
 theme: 
 # name: readthedocs
@@ -63,16 +63,15 @@ theme:
     view: material/eye
 
   features:
-    - content.code.copy
-    - content.code.select
     - navigation.indexes 
     - navigation.tabs
     - navigation.top
     - navigation.instant
-    - navigation.instant.progress
+    # - navigation.instant.progress
     - navigation.tracking
-
-    
+    - content.tabs.link
+    - content.code.copy
+    - content.code.select
   palette:
     primary: black
     accent: 'red'

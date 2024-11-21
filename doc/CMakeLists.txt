@@ -55,5 +55,8 @@ add_custom_command(
 add_custom_target(${TargetName} DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/mkdocs.txt ${targetName})
 add_dependencies(doc ${TargetName})
 
-
-# install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/site DESTINATION doc_${PROJECT_NAME})
+#######################
+## INSTALLATION
+#######################
+include(GNUInstallDirs)
+install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/site/ DESTINATION ${PROJECT_NAME}  )
