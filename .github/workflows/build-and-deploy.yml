@@ -27,7 +27,7 @@ jobs:
         run: pip install -r requirements.txt
       - name: Build documentation
         run: |
-            cmake -S doc -B build
+            cmake -S doc -B build -D CMAKE_INSTALL_PREFIX=$${{github.workspace}}
             cmake --build build --target doc -- VERBOSE=1
             cmake --install build -v
  
