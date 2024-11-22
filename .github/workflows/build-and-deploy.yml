@@ -13,6 +13,7 @@ permissions:
 jobs:
   build_mkdocs:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.head.repo.full_name == github.repository
  
     steps:
       - name: Checkout code
@@ -29,7 +30,7 @@ jobs:
         run: |
             cmake -S doc -B build 
             cmake --build build --target doc -- VERBOSE=1
-      - name: Deployment
+      - name: Deployment 
         run:  |
             cd build
             mkdocs gh-deploy --force
