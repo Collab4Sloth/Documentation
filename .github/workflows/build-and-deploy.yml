@@ -32,7 +32,7 @@ jobs:
             cmake --install build -v
       - name: Deployment
         run:  |
-            cd $${{github.workspace}}/sloth_doc
+            cd $${{github.workspace}}/build
             mkdocs gh-deploy --force
  
   # deploy_mkdocs:
