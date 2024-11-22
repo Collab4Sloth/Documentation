@@ -30,19 +30,23 @@ jobs:
             cmake -S doc -B build -D CMAKE_INSTALL_PREFIX=$${{github.workspace}}
             cmake --build build --target doc -- VERBOSE=1
             cmake --install build -v
+      - name: Deployment
+        run:  |
+            cd $${{github.workspace}}/sloth_doc
+            mkdocs gh-deploy --force
  
-  deploy_mkdocs:
-    needs: build_mkdocs
-    environment:
-      name: github-pages
-    runs-on: ubuntu-latest
-    steps:
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: 'sloth_doc' 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+  # deploy_mkdocs:
+  #   needs: build_mkdocs
+  #   environment:
+  #     name: github-pages
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Setup Pages
+  #       uses: actions/configure-pages@v5
+  #     - name: Upload artifact
+  #       uses: actions/upload-pages-artifact@v3
+  #       with:
+  #         path: '$${{github.workspace}}/sloth_doc' 
+  #     - name: Deploy to GitHub Pages
+  #       id: deployment
+  #       uses: actions/deploy-pages@v4
