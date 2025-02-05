@@ -89,15 +89,29 @@ nav:
       - Started/Installation/linux.md
       - Started/Installation/mac.md
       - Started/Installation/cluster.md
+    - Code quality: Started/Quality/quality.md
     - Examples:
       - Started/Examples/index.md
       @EXAMPLE_LIST@
-    - Code quality: Started/Quality/quality.md
-    - Building a SLOTH application: 
+    - HowTo: 
       - Started/HowTo/index.md
+      - Started/HowTo/simple.md
+      - Advanced features:
+        - Started/HowTo/Tutorials/index.md
+        - Started/HowTo/Tutorials/tuto1.md
 
   - User Manual: 
     - Documentation/User/index.md
+    - Documentation/User/BoundaryConditions/index.md
+    - Documentation/User/Convergence/index.md
+    - Documentation/User/Integrators/index.md
+    - Documentation/User/Meshing/index.md
+    - Documentation/User/Operators/index.md
+    - Documentation/User/Problems/index.md
+    - Documentation/User/PostProcessing/index.md
+    - Documentation/User/Problems/index.md
+    - Documentation/User/Time/index.md
+    - Documentation/User/Variables/index.md
   - Modelling Description: 
     - Documentation/Physical/index.md
   - Code Documentation: 
