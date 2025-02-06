@@ -90,15 +90,15 @@ nav:
       - Started/Installation/mac.md
       - Started/Installation/cluster.md
     - Code quality: Started/Quality/quality.md
-    - Examples:
-      - Started/Examples/index.md
-      @EXAMPLE_LIST@
     - HowTo: 
       - Started/HowTo/index.md
       - Started/HowTo/simple.md
       - Advanced features:
         - Started/HowTo/Tutorials/index.md
         - Started/HowTo/Tutorials/tuto1.md
+    - Examples:
+      - Started/Examples/index.md
+      @EXAMPLE_LIST@
 
   - User Manual: 
     - Documentation/User/index.md
