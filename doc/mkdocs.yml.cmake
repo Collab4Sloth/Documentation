@@ -43,7 +43,7 @@ plugins:
       bib_file: "docs/References/biblio.bib"
 
 extra_css:
-  - stylesheets/extra.css
+  - styles/extra.css
   - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css
 
 extra_javascript:
@@ -92,8 +92,9 @@ nav:
     - Code quality: Started/Quality/quality.md
     - HowTo: 
       - Started/HowTo/index.md
-      - Started/HowTo/simple.md
-      - Advanced features:
+      - Basic features:
+        - Started/HowTo/Simple/index.md
+      - Tutorials:
         - Started/HowTo/Tutorials/index.md
         - Started/HowTo/Tutorials/tuto1.md
     - Examples:
@@ -102,16 +103,16 @@ nav:
 
   - User Manual: 
     - Documentation/User/index.md
+    - Documentation/User/Meshing/index.md
     - Documentation/User/BoundaryConditions/index.md
+    - Documentation/User/Variables/index.md
     - Documentation/User/Convergence/index.md
     - Documentation/User/Integrators/index.md
-    - Documentation/User/Meshing/index.md
     - Documentation/User/Operators/index.md
     - Documentation/User/Problems/index.md
     - Documentation/User/PostProcessing/index.md
     - Documentation/User/Problems/index.md
     - Documentation/User/Time/index.md
-    - Documentation/User/Variables/index.md
   - Modelling Description: 
     - Documentation/Physical/index.md
   - Code Documentation: 

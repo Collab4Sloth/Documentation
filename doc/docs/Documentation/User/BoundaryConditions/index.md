@@ -1,3 +1,5 @@
-# Boundary Conditions
+# Boundary Conditions (coming soon)
 
-*Coming soon*
+This page described how to define and use boundary conditions in `SLOTH`.
+
+
