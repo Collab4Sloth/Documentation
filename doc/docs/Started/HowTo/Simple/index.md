@@ -316,7 +316,7 @@ The user is referred to the user manual for more advanced use of `Coupling` obje
     Here, the coupling, labelled "Allen-Cahn", contain only one problem defined by the C++ object `ac_problem`. -->
 
 This implies many C++ objects designed specifically for `SLOTH`. 
-The main one is the `Problem` object defined as a collection of:
+The main one is the `Problem` object defined as a collection of C++ objects of interest for `SLOTH`:
 
 - a `Variables` object,
 - an `Operator` object, 
@@ -367,32 +367,35 @@ It is recommended to read the [page dedicated to `Variables` in the user manual]
     This example defines a single primary variable, named "phi" with two levels of storage. 
     The initial condition and the analytical solution are of the hyperbolic tangent type.
     
-=== "Operators & Integrators"
+Another class of major C++ objects for `SLOTH` is `Operator`. 
+These objects allow the solution of the algebraic system resulting from the discretization of the (non-linear) equations. 
+For each of them, the users can find a stationary and a transient version. 
+This is detailed in the [`Operator` page of the user manual](../../../Documentation/User/Operators/index.md).  
+Although the input arguments provided to the `Operator` object are of interest, the focus is rather on the definition of the C++ object itself, which requires the input of the variational formulation of the equations. 
+This specificity is implemented on the basis of `NonLinearFormIntegrators` objects, also detailed in the user manual in the [`Integrators`](../../../Documentation/User/Integrators/index.md) page. 
+The definition of the integrators obviously depends on the targeted problem. 
+In the present example, the variational formulation is defined by using the `AllenCahnNLFormIntegrator` object. 
+This is the most general form of integrator for Allen-Cahn problems.
 
-    `SLOTH` Operators are the C++ objects used to define the algorithm for solving problems involving the variational formulation of the (non linear) equations.
+!!! example "Extract of the input data file with Operators and Integrators"
 
-    !!! example "Extract of the input data file with Operators and Integrators"
+    ```c++ hl_lines="2 15"
+        //--- Integrator : alias definition for the sake of clarity
+        using NLFI = AllenCahnNLFormIntegrator<VARS, ThermodynamicsPotentialDiscretization::Implicit, ThermodynamicsPotentials::W, Mobility::Constant>;
 
-        ```c++ hl_lines="2 3 16-17"
-            //--- Integrator
-            using NLFI = AllenCahnNLFormIntegrator<VARS, ThermodynamicsPotentialDiscretization::Implicit,
-                                                    ThermodynamicsPotentials::W, Mobility::Constant>;
+        //--- Operator definition
+        //  Interface thickness
+        const auto& epsilon(5.e-4);
+        // Interfacial energy
+        const auto& sigma(6.e-2);
+        // Two-phase mobility
+        const auto& mob(1.e-5);
+        const auto& lambda = 3. * sigma * epsilon / 2.;
+        const auto& omega = 12. * sigma / epsilon;
+        auto params = Parameters(Parameter("epsilon", epsilon), Parameter("sigma", sigma), Parameter("lambda", lambda), Parameter("omega", omega));
 
-            //--- Operator
-            //  Interface thickness
-            const auto& epsilon(5.e-4);
-            // Interfacial energy
-            const auto& sigma(6.e-2);
-            // Two-phase mobility
-            const auto& mob(1.e-5);
-            const auto& lambda = 3. * sigma * epsilon / 2.;
-            const auto& omega = 12. * sigma / epsilon;
-            auto params = Parameters(Parameter("epsilon", epsilon), Parameter("sigma", sigma),
-                                    Parameter("lambda", lambda), Parameter("omega", omega));
-
-            using OPE = AllenCahnOperator<FECollection, DIM, NLFI>;
-            OPE oper(&spatial, params, TimeScheme::EulerImplicit);
-        ```
+        AllenCahnOperator<FECollection, DIM, NLFI> oper(&spatial, params, TimeScheme::EulerImplicit);
+    ```
 
 === "Post-Processing"
 
