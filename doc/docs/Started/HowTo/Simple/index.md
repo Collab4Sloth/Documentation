@@ -306,14 +306,6 @@ Different type of boundary conditions can be mixed as detailed in the [Boundary 
 ### __Multiphysics coupling scheme__ {#coupling}
 
 This part is the core of the input data file with the definition of the targeted physical problems (*eg.* equations, variational formulations, variables, coefficients) gathered inside a `Coupling` object. 
-<!-- 
-The user is referred to the user manual for more advanced use of `Coupling` object. In this page, without loss of generality, only one coupling composed by only one problem is considered.
-    
-!!! example "Extract of the input data file with a coupling"
-    ```c++ 
-    auto coupling = Coupling("Allen-Cahn", ac_problem);
-    ```
-    Here, the coupling, labelled "Allen-Cahn", contain only one problem defined by the C++ object `ac_problem`. -->
 
 This implies many C++ objects designed specifically for `SLOTH`. 
 The main one is the `Problem` object defined as a collection of C++ objects of interest for `SLOTH`:
@@ -397,168 +389,271 @@ This is the most general form of integrator for Allen-Cahn problems.
         AllenCahnOperator<FECollection, DIM, NLFI> oper(&spatial, params, TimeScheme::EulerImplicit);
     ```
 
-=== "Post-Processing"
-
-    !!! example "Input data file with PostProcessing"
-
-        ```c++ hl_lines="29-33"
-            //---------------------------------------
-            // Multiphysics coupling scheme
-            //---------------------------------------
-            //--- Variables
-            const auto& center_x = 0.;
-            const auto& a_x = 1.;
-            const auto& thickness = 5.e-5;
-            const auto& radius = 5.e-4;
-
-            auto initial_condition = AnalyticalFunctions<DIM>(
-                AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, 2.*epsilon, radius);
-            auto analytical_solution = AnalyticalFunctions<DIM>(
-                AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, epsilon, radius);
-            auto vars = VARS(VAR(&spatial, bcs, "phi", 2, initial_condition, analytical_solution));
-
-            //--- Integrator
-            using NLFI = AllenCahnNLFormIntegrator<VARS, ThermodynamicsPotentialDiscretization::Implicit,
-                                                    ThermodynamicsPotentials::W, Mobility::Constant>;
-
-            //--- Operator
-            //  Interface thickness
-            const auto& epsilon(5.e-4);
-            // Interfacial energy
-            const auto& sigma(6.e-2);
-            // Two-phase mobility
-            const auto& mob(1.e-5);
-            const auto& lambda = 3. * sigma * epsilon / 2.;
-            const auto& omega = 12. * sigma / epsilon;
-            auto params = Parameters(Parameter("epsilon", epsilon), Parameter("sigma", sigma),
-                                    Parameter("lambda", lambda), Parameter("omega", omega));
-
-            using OPE = AllenCahnOperator<FECollection, DIM, NLFI>;
-            OPE oper(&spatial, params, TimeScheme::EulerImplicit);
-
-            //--- Post-Processing 
-            const std::string& main_folder_path = "Saves";
-            const auto& level_of_detail = 1;
-            const auto& frequency = 1;
-            std::string calculation_path = "Problem1";
-            auto p_pst1 =
-                Parameters(Parameter("main_folder_path", main_folder_path),
-                            Parameter("calculation_path", calculation_path), Parameter("frequency", frequency),
-                            Parameter("level_of_detail", level_of_detail));
-            auto pst = PST(&spatial, p_pst1);
+The results of SLOTH simulations can be exported to VTK format and can be read with [Paraview](https://www.paraview.org). This is possible by using the C++ object `PSTCollection` or, more specifically for tests, by using the alias `PST`. 
+This C++ object requires the knowledge of the Finite Element mesh and a numbers of parameters to define, at least, the directories in which the results are stored and the frequency of storage. 
+All these parameters are detailed in the page [PostProcessing](../../../Documentation/User/PostProcessing/index.md). 
+By default, all primary variables associated with a `SLOTH` `Problem` are saved.
 
 
-            //--- Problem 
-            using PB = Problem<OPE, VARS, PST>;
-            PB problem1(oper, vars, pst, convergence);
+!!! example "Extract of the input data file with PostProcessing"
 
-            //--- Coupling 
-            auto cc = Coupling("coupling 1 ", problem1, problem2, problem3);
+    ```c++ hl_lines="7"
+        //--- Post-Processing 
+        const std::string& main_folder_path = "Saves";
+        std::string calculation_path = "AllenCahn";
+        const auto& frequency = 1;
+        auto pst_parameters = Parameters(Parameter("main_folder_path", main_folder_path), Parameter("calculation_path", calculation_path), Parameter("frequency", frequency));
+        auto pst = PST(&spatial, pst_parameters);
+    ```
+    In this example, the results will be saved in the `Saves/AllenCahn` directory (see `Parameter("main_folder_path", main_folder_path)` and  `Parameter("calculation_path", calculation_path)`), at each time-step (see `Parameter("frequency", frequency)`).
 
-        ```
+The last object needed to define a `SLOTH` `Problem`is the physical convergence criterion. 
+It corresponds to the C++ object `PhysicalConvergence`. Relative and absolute criteria are available.
+It is worth mentioning that this object is disable. It will be enabled when fixed point algorithm and automatic time-step splitting are integrated.
 
+!!! example "Input data file with PhysicalConvergence"
 
-=== "Physical Convergence"
+    ```c++ hl_lines="3"
+        //--- Physical Convergence
+        const double crit_cvg = 1.e-12;
+        PhysicalConvergence convergence(ConvergenceType::ABSOLUTE_MAX, crit_cvg);
+    ```
 
-    !!! example "Input data file with PhysicalConvergence"
-
-        ```c++ hl_lines="29-33"
-            //---------------------------------------
-            // Multiphysics coupling scheme
-            //---------------------------------------
-            //--- Variables
-            const auto& center_x = 0.;
-            const auto& a_x = 1.;
-            const auto& thickness = 5.e-5;
-            const auto& radius = 5.e-4;
-
-            auto initial_condition = AnalyticalFunctions<DIM>(
-                AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, 2.*epsilon, radius);
-            auto analytical_solution = AnalyticalFunctions<DIM>(
-                AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, epsilon, radius);
-            auto vars = VARS(VAR(&spatial, bcs, "phi", 2, initial_condition, analytical_solution));
-
-            //--- Integrator
-            using NLFI = AllenCahnNLFormIntegrator<VARS, ThermodynamicsPotentialDiscretization::Implicit,
-                                                    ThermodynamicsPotentials::W, Mobility::Constant>;
-
-            //--- Operator
-            //  Interface thickness
-            const auto& epsilon(5.e-4);
-            // Interfacial energy
-            const auto& sigma(6.e-2);
-            // Two-phase mobility
-            const auto& mob(1.e-5);
-            const auto& lambda = 3. * sigma * epsilon / 2.;
-            const auto& omega = 12. * sigma / epsilon;
-            auto params = Parameters(Parameter("epsilon", epsilon), Parameter("sigma", sigma),
-                                    Parameter("lambda", lambda), Parameter("omega", omega));
-
-            using OPE = AllenCahnOperator<FECollection, DIM, NLFI>;
-            OPE oper(&spatial, params, TimeScheme::EulerImplicit);
-
-            //--- Post-Processing 
-            const std::string& main_folder_path = "Saves";
-            const auto& level_of_detail = 1;
-            const auto& frequency = 1;
-            std::string calculation_path = "Problem1";
-            auto p_pst1 =
-                Parameters(Parameter("main_folder_path", main_folder_path),
-                            Parameter("calculation_path", calculation_path), Parameter("frequency", frequency),
-                            Parameter("level_of_detail", level_of_detail));
-            auto pst = PST(&spatial, p_pst1);
-
-
-            //--- Problem 
-            using PB = Problem<OPE, VARS, PST>;
-            PB problem1(oper, vars, pst, convergence);
-
-            //--- Coupling 
-            auto cc = Coupling("coupling 1 ", problem1, problem2, problem3);
-
-        ```
+At this stage,  the `SLOTH` `Problem` can be defined and, as previously explained, collected in a `Coupling` object. 
+This is illustrated in the following example (see `Problem<OPE, VARS, PST> ac_problem` and  `Coupling("Main coupling", ac_problem)`). 
 
 
 
-## Time discretization {#time}
+!!! example "Input data file with Variables, Operators and Integrators, Post-Processing and Physical Convergence"
 
-
-=== "Snippet" 
-    eee
-
-    ```cpp
+    ```c++ hl_lines="82 86"
     //---------------------------------------
-    // 1/ Headers...
+    // Headers
     //---------------------------------------
+    #include "kernel/sloth.hpp"
+    #include "mfem.hpp"  // NOLINT [no include the directory when naming mfem include file]
+    #include "tests/tests.hpp"
 
     int main(int argc, char* argv[]) {
+        //---------------------------------------
+        // Initialize MPI and HYPRE
+        //---------------------------------------
+        mfem::Mpi::Init(argc, argv);
+        mfem::Hypre::Init();
+        //---------------------------------------
+        // Common aliases
+        //---------------------------------------
+        constexpr int DIM = Test<1>::dim;
+        using FECollection = Test<1>::FECollection;
+        using VARS = Test<1>::VARS;
+        using VAR = Test<1>::VAR;
+        using PSTCollection = Test<1>::PSTCollection;
+        using PST = Test<1>::PST;
+        using SPA = Test<1>::SPA;
+        using BCS = Test<1>::BCS;
+        //---------------------------------------
+        // Meshing & Boundary Conditions
+        //---------------------------------------
+        auto refinement_level = 0;
+        auto fe_order = 1;
+        auto length = 1.e-3;
+        auto nb_fe = 30;
+        SPA spatial("InlineLineWithSegments", fe_order, refinement_level, std::make_tuple(nb_fe, length));
+        auto boundaries = {Boundary("left", 0, "Neumann", 0.), Boundary("right", 1, "Neumann", 0.)};
+        auto bcs = BCS(&spatial, boundaries);
 
         //---------------------------------------
-        // 1/ Aliases / Parallelism
-        //---------------------------------------
+        // Multiphysics coupling scheme
+        //---------------------------------------     
+        //--- Variables
+        const auto& center_x = 0.;
+        const auto& a_x = 1.;
+        const auto& thickness = 5.e-5;
+        const auto& radius = 5.e-4;
+
+        std::string variable_name = "phi";
+        int level_of_storage= 2;
+
+        auto initial_condition = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, 2.*epsilon, radius);
+        auto analytical_solution = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, epsilon, radius);
+        auto vars = VARS(VAR(&spatial, bcs, variable_name, level_of_storage, initial_condition, analytical_solution));
+
+        //--- Integrator : alias definition for the sake of clarity
+        using NLFI = AllenCahnNLFormIntegrator<VARS, ThermodynamicsPotentialDiscretization::Implicit, ThermodynamicsPotentials::W, Mobility::Constant>;
+
+        //--- Operator definition
+        //  Interface thickness
+        const auto& epsilon(5.e-4);
+        // Interfacial energy
+        const auto& sigma(6.e-2);
+        // Two-phase mobility
+        const auto& mob(1.e-5);
+        const auto& lambda = 3. * sigma * epsilon / 2.;
+        const auto& omega = 12. * sigma / epsilon;
+        auto params = Parameters(Parameter("epsilon", epsilon), Parameter("sigma", sigma), Parameter("lambda", lambda), Parameter("omega", omega));
+
+        AllenCahnOperator<FECollection, DIM, NLFI> oper(&spatial, params, TimeScheme::EulerImplicit);
+
+        //--- Post-Processing 
+        const std::string& main_folder_path = "Saves";
+        std::string calculation_path = "AllenCahn";
+        const auto& frequency = 1;
+        auto pst_parameters = Parameters(Parameter("main_folder_path", main_folder_path), Parameter("calculation_path", calculation_path), Parameter("frequency", frequency));
+        auto pst = PST(&spatial, pst_parameters);
+
+        //--- Physical Convergence
+        const double crit_cvg = 1.e-12;
+        PhysicalConvergence convergence(ConvergenceType::ABSOLUTE_MAX, crit_cvg);
+
+        //-----------------------
+        // Problem
+        //-----------------------
+        Problem<OPE, VARS, PST> ac_problem(oper, vars, pst, convergence);
+        //-----------------------
+        // Coupling
+        //-----------------------
+        auto main_coupling = Coupling("Main coupling", ac_problem);
 
         //---------------------------------------
-        // 2/ Geometry and Spatial discretization
+        // Finalize MPI
         //---------------------------------------
-
-
-        //---------------------------------------
-        // 3/ Multiphysics coupling scheme
-        //---------------------------------------
-
-
-        //---------------------------------------
-        // 4/ Time discretization
-        //---------------------------------------
-
+        mfem::Mpi::Finalize();
     }
     ```
+    In this example, a coupling, labelled `Main coupling`, is defined with only one `SLOTH` `Problem` associated with the solution of Allen-Cahn equation.
 
-=== "Complete file" 
-    
-    aaaa
-    ```c++
-    /
+Users are referred to the [Problems and Coupling page of the user manual](../../../Documentation/User/Problems/index.md) for more details about the available `SLOTH` `Problem` and how to use them.
+
+### __Time discretization__ {#time}
+
+Time discretization is the last main part of an input data file. 
+It corresponds to the C++ object `TimeDiscretization` defined as a number of parameters and the `Coupling` objects specially designed for the current `SLOTH` simulation.
+Among these parameters, there are the initial time, the final time and the uniform value of the time-step. 
+The method `solve`must be explicitly called to run the calculation.
+This is detailed in the [`Time` page of the user manual](../../../Documentation/User/Variables/index.md).
+
+!!! example "Extract of the input data file with TimeDiscretization"
+
+    ```c++ hl_lines="8 10"
+        //---------------------------------------
+        // Time discretization
+        //--------------------------------------- 
+        const auto& t_initial = 0.0;
+        const auto& t_final = 50.0;
+        const auto& dt = 0.01;
+        auto time_parameters = Parameters(Parameter("initial_time", t_initial), Parameter("final_time", t_final), Parameter("time_step", dt));
+        auto time = TimeDiscretization(time_parameters, cc);
+
+        time.solve();
     ```
+    In this example, the simulation is performed during $`50`$ s with a time-step equal to $`0.01`$ s.
 
-   
+## Comprehensive input data file
+
+!!! example "Input data file with Variables, Operators and Integrators, Post-Processing, Physical Convergence and Time Discretization"
+
+    ```c++ 
+    //---------------------------------------
+    // Headers
+    //---------------------------------------
+    #include "kernel/sloth.hpp"
+    #include "mfem.hpp"  // NOLINT [no include the directory when naming mfem include file]
+    #include "tests/tests.hpp"
+
+    int main(int argc, char* argv[]) {
+        //---------------------------------------
+        // Initialize MPI and HYPRE
+        //---------------------------------------
+        mfem::Mpi::Init(argc, argv);
+        mfem::Hypre::Init();
+        //---------------------------------------
+        // Common aliases
+        //---------------------------------------
+        constexpr int DIM = Test<1>::dim;
+        using FECollection = Test<1>::FECollection;
+        using VARS = Test<1>::VARS;
+        using VAR = Test<1>::VAR;
+        using PSTCollection = Test<1>::PSTCollection;
+        using PST = Test<1>::PST;
+        using SPA = Test<1>::SPA;
+        using BCS = Test<1>::BCS;
+        //---------------------------------------
+        // Meshing & Boundary Conditions
+        //---------------------------------------
+        auto refinement_level = 0;
+        auto fe_order = 1;
+        auto length = 1.e-3;
+        auto nb_fe = 30;
+        SPA spatial("InlineLineWithSegments", fe_order, refinement_level, std::make_tuple(nb_fe, length));
+        auto boundaries = {Boundary("left", 0, "Neumann", 0.), Boundary("right", 1, "Neumann", 0.)};
+        auto bcs = BCS(&spatial, boundaries);
+
+        //---------------------------------------
+        // Multiphysics coupling scheme
+        //---------------------------------------     
+        //--- Variables
+        const auto& center_x = 0.;
+        const auto& a_x = 1.;
+        const auto& thickness = 5.e-5;
+        const auto& radius = 5.e-4;
+
+        std::string variable_name = "phi";
+        int level_of_storage= 2;
+
+        auto initial_condition = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, 2.*epsilon, radius);
+        auto analytical_solution = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, epsilon, radius);
+        auto vars = VARS(VAR(&spatial, bcs, variable_name, level_of_storage, initial_condition, analytical_solution));
+
+        //--- Integrator : alias definition for the sake of clarity
+        using NLFI = AllenCahnNLFormIntegrator<VARS, ThermodynamicsPotentialDiscretization::Implicit, ThermodynamicsPotentials::W, Mobility::Constant>;
+
+        //--- Operator definition
+        //  Interface thickness
+        const auto& epsilon(5.e-4);
+        // Interfacial energy
+        const auto& sigma(6.e-2);
+        // Two-phase mobility
+        const auto& mob(1.e-5);
+        const auto& lambda = 3. * sigma * epsilon / 2.;
+        const auto& omega = 12. * sigma / epsilon;
+        auto params = Parameters(Parameter("epsilon", epsilon), Parameter("sigma", sigma), Parameter("lambda", lambda), Parameter("omega", omega));
+
+        AllenCahnOperator<FECollection, DIM, NLFI> oper(&spatial, params, TimeScheme::EulerImplicit);
+
+        //--- Post-Processing 
+        const std::string& main_folder_path = "Saves";
+        std::string calculation_path = "AllenCahn";
+        const auto& frequency = 1;
+        auto pst_parameters = Parameters(Parameter("main_folder_path", main_folder_path), Parameter("calculation_path", calculation_path), Parameter("frequency", frequency));
+        auto pst = PST(&spatial, pst_parameters);
+
+        //--- Physical Convergence
+        const double crit_cvg = 1.e-12;
+        PhysicalConvergence convergence(ConvergenceType::ABSOLUTE_MAX, crit_cvg);
+
+        //-----------------------
+        // Problem
+        //-----------------------
+        Problem<OPE, VARS, PST> ac_problem(oper, vars, pst, convergence);
+        //-----------------------
+        // Coupling
+        //-----------------------
+        auto main_coupling = Coupling("Main coupling", ac_problem);
+
+        //---------------------------------------
+        // Time discretization
+        //--------------------------------------- 
+        const auto& t_initial = 0.0;
+        const auto& t_final = 50.0;
+        const auto& dt = 0.01;
+        auto time_parameters = Parameters(Parameter("initial_time", t_initial), Parameter("final_time", t_final), Parameter("time_step", dt));
+        auto time = TimeDiscretization(time_parameters, cc);
+
+        time.solve();
+
+        //---------------------------------------
+        // Finalize MPI
+        //---------------------------------------
+        mfem::Mpi::Finalize();
+    }
+    ```

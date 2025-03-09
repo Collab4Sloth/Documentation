@@ -28,7 +28,7 @@
     display: inline-block;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 1000px;
+    max-width: 800px;
 }
 
 /* Change font size inside code blocks */
