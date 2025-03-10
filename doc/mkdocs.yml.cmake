@@ -87,6 +87,7 @@ nav:
     - Installation guide:
       - Started/Installation/index.md
       - Started/Installation/linux.md
+      - Started/Installation/sources.md
       - Started/Installation/mac.md
       - Started/Installation/cluster.md
     - Examples:

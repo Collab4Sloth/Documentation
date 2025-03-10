@@ -2,7 +2,7 @@
 icon: simple/linux
 ---
 
-# On Linux
+# On Linux with Spack
 
 A straightforward way to install MFEM is to use [spack](https://spack.readthedocs.io/en/latest/getting_started.html).
 
@@ -35,7 +35,7 @@ Once MFEM is installed, priori to compile SLOTH, MFEM must be loaded and several
 
 !!! tip "On the use of the  `envSloth.sh` configuration file"
     These definitions are written into the configuration file `envSloth.sh` located in the root directory of the SLOTH repository. 
-    The use of this file is recommended to load the MFEM environment before [compilling SLOTH](compile.md)
+    The use of this file is recommended to load the MFEM environment before compilling SLOTH.
 
 - Load the SLOTH configuration file:
 ```bash
@@ -50,8 +50,9 @@ where [OPTIONS] are:
     --debug to build with Debug compiler options 
         
     --coverage to build with Coverage compiler options 
+
+    --external to built SLOTH with an external package
         
-    --clean to remove previous build if it exists 
 ```
 
 By default, SLOTH is built with release compiler options.
