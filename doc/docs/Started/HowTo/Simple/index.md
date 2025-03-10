@@ -58,13 +58,13 @@ On this page, the users can find the most important parts of a `SLOTH` input dat
         - Double-Well potential: implicit scheme
 
 
-## __Structure of an input data file__
+## __Structure of a minimal test case__
 
 `SLOTH` provides C++ packages that allows to build multiphysics simulations. 
 
-What the `SLOTH` team calls "input data files" is actually a `main.cpp` file mainly composed of four parts:
+Each `SLOTH` test is actually defined as a `main.cpp` file, which consists of four main parts:
 
-!!! Example "Global structure of an input data file"
+!!! Example "Global structure of a minimal test case"
 
     ``` cpp 
     //---------------------------------------
@@ -91,7 +91,7 @@ What the `SLOTH` team calls "input data files" is actually a `main.cpp` file mai
 
 ### __Headers, Aliases & Parallelism__  {#common}
 
-Headers, aliases and parallelism features are the most general information that can be find in all input data files. 
+Headers, aliases and parallelism features are the most general information that can be find in all test files. 
 
 There are 3 main headers. 
 
@@ -99,7 +99,7 @@ There are 3 main headers.
 - `mfem.hpp` groups all `mfem` dependencies
 - `tests/tests.hpp` groups all dependencies useful only for tests
 
-!!! example "Input data file with headers"
+!!! example "Test file with headers"
 
     ```c++ hl_lines="4-6"
     //---------------------------------------
@@ -120,7 +120,7 @@ It should be noted that users may define additional aliases. However, those spec
 
 Each alias employ a template structure for space dimension dependence (see `DIM=Test<1>::dim` in the example).
 
-!!! example "Input data file with headers and common aliases"
+!!! example "Test file with headers and common aliases"
 
     ```c++ hl_lines="12-19"
     //---------------------------------------
@@ -144,7 +144,7 @@ Each alias employ a template structure for space dimension dependence (see `DIM=
         using BCS = Test<1>::BCS;    
     }
     ```
-These aliases both refer to MFEM or `SLOTH` types used many times in the input data file:
+These aliases both refer to MFEM or `SLOTH` types used many times in the test file:
 
 | **Alias**       | **Type**                 | **Description**                                            |
 |-----------------|--------------------------|------------------------------------------------------------|
@@ -159,9 +159,9 @@ These aliases both refer to MFEM or `SLOTH` types used many times in the input d
 SLOTH's ambition is to be able to perform massively parallel computations 
 while logically retaining the ability to perform sequential computations.
 
-Only three lines of code must be defined in each input data file for the MPI and HYPRE libraries.
+Only three lines of code must be defined in each test file for the MPI and HYPRE libraries.
 
-!!! example "Input data file with headers, common aliases and parallelism features"
+!!! example "Test file with headers, common aliases and parallelism features"
 
     ```c++ hl_lines="12 13 30"
     //---------------------------------------
@@ -206,7 +206,7 @@ in `MFEM`. The order of the Finite Elements and the level of mesh refinement mus
 
 Definition of a Finite Element for `SLOTH` is made with a C++ object of type `SpatialDiscretization` or, more specifically for tests, by using the alias `SPA`.
 
-!!! example "Extract of the input data file with the definition of the mesh"
+!!! example "Extract of the test file with the definition of the mesh"
 
     ```c++
     auto refinement_level = 0;
@@ -236,7 +236,7 @@ A `Boundary` object is defined by
  - a type (C++ type `std::string') among "Dirichlet", "Neumann", "Periodic",
  - a value (C++ type `double`), equal to zero by default.
 
-!!! example "Extract of the input data file with the mesh and its associated Neumann boundary conditions"
+!!! example "Extract of the test file with the mesh and its associated Neumann boundary conditions"
 
     ```c++ hl_lines="10-11"
         //---------------------------------------
@@ -256,10 +256,10 @@ A `Boundary` object is defined by
 Different type of boundary conditions can be mixed as detailed in the [Boundary Conditions section of the user manual](../../../Documentation/User/BoundaryConditions/index.md). 
 
 !!! warning "On the consistency of the indices of the boundaries"
-    `MFEM v4.7` provides new features for referring to boundary attribute numbers. Such an improvement is not yet implemented in `SLOTH`. Consequently, users must take care to the consistency of the indices used in the input data file with the indices defined when building the mesh with `GMSH`.
+    `MFEM v4.7` provides new features for referring to boundary attribute numbers. Such an improvement is not yet implemented in `SLOTH`. Consequently, users must take care to the consistency of the indices used in the test file with the indices defined when building the mesh with `GMSH`.
 
 
-!!! example "Input data file with the mesh and the boundary conditions"
+!!! example "Test file with the mesh and the boundary conditions"
 
     ```c++ hl_lines="28-34"
     //---------------------------------------
@@ -305,7 +305,7 @@ Different type of boundary conditions can be mixed as detailed in the [Boundary 
 
 ### __Multiphysics coupling scheme__ {#coupling}
 
-This part is the core of the input data file with the definition of the targeted physical problems (*eg.* equations, variational formulations, variables, coefficients) gathered inside a `Coupling` object. 
+This part is the core of the test file with the definition of the targeted physical problems (*eg.* equations, variational formulations, variables, coefficients) gathered inside a `Coupling` object. 
 
 This implies many C++ objects designed specifically for `SLOTH`. 
 The main one is the `Problem` object defined as a collection of C++ objects of interest for `SLOTH`:
@@ -336,7 +336,7 @@ It is recommended to read the [page dedicated to `Variables` in the user manual]
 
 `AnalyticalFunctions` enable to use pre-defined mathematical functions currently used in the studies conducted with `SLOTH`. A comprehensive overview of the analytical functions available in `SLOTH` is provided in [a dedicated page of the user manual](../../../Documentation/User/AnalyticalVariables/index.md). If the mathematical expression is not yet available, the users can define it with a C++ object of type `std::function`.
 
-!!! example "Extract of the input data file with Variables"
+!!! example "Extract of the test file with Variables"
 
     ```c++ hl_lines="15"
 
@@ -369,7 +369,7 @@ The definition of the integrators obviously depends on the targeted problem.
 In the present example, the variational formulation is defined by using the `AllenCahnNLFormIntegrator` object. 
 This is the most general form of integrator for Allen-Cahn problems.
 
-!!! example "Extract of the input data file with Operators and Integrators"
+!!! example "Extract of the test file with Operators and Integrators"
 
     ```c++ hl_lines="2 15"
         //--- Integrator : alias definition for the sake of clarity
@@ -399,7 +399,7 @@ All these parameters are detailed in the page [PostProcessing](../../../Document
 By default, all primary variables associated with a `SLOTH` `Problem` are saved.
 
 
-!!! example "Extract of the input data file with PostProcessing"
+!!! example "Extract of the test file with PostProcessing"
 
     ```c++ hl_lines="7"
         //--- Post-Processing 
@@ -415,7 +415,7 @@ The last object needed to define a `SLOTH` `Problem` is the physical convergence
 It corresponds to the C++ object `PhysicalConvergence`. Relative and absolute criteria are available.
 It is worth mentioning that this object is disabled. It will be enabled when fixed point algorithm and automatic time-step splitting are integrated.
 
-!!! example "Input data file with PhysicalConvergence"
+!!! example "Test file with PhysicalConvergence"
 
     ```c++ hl_lines="3"
         //--- Physical Convergence
@@ -428,7 +428,7 @@ This is illustrated in the following example (see `Problem<OPE, VARS, PST> ac_pr
 
 
 
-!!! example "Input data file with Variables, Operators and Integrators, Post-Processing and Physical Convergence"
+!!! example "Test file with Variables, Operators and Integrators, Post-Processing and Physical Convergence"
 
     ```c++ hl_lines="82 86"
     //---------------------------------------
@@ -530,13 +530,13 @@ Users are referred to the [Problems and Coupling page of the user manual](../../
 
 ### __Time discretization__ {#time}
 
-Time discretization is the last main part of an input data file. 
+Time discretization is the last main part of a test file. 
 It corresponds to the C++ object `TimeDiscretization` defined as a number of parameters and the `Coupling` objects specially designed for the current `SLOTH` simulation.
 Among these parameters, there are the initial time, the final time and the uniform value of the time-step. 
 The method `solve` must be explicitly called to run the calculation.
 This is detailed in the [`Time` page of the user manual](../../../Documentation/User/Time/index.md).
 
-!!! example "Extract of the input data file with TimeDiscretization"
+!!! example "Extract of the test file with TimeDiscretization"
 
     ```c++ hl_lines="8 10"
         //---------------------------------------
@@ -552,9 +552,9 @@ This is detailed in the [`Time` page of the user manual](../../../Documentation/
     ```
     In this example, the simulation is performed during $`50`$ s with a time-step equal to $`0.01`$ s.
 
-## Comprehensive input data file
+## Comprehensive test file
 
-!!! example "Input data file with Variables, Operators and Integrators, Post-Processing, Physical Convergence and Time Discretization"
+!!! example "Test file with Variables, Operators and Integrators, Post-Processing, Physical Convergence and Time Discretization"
 
     ```c++ 
     //---------------------------------------
