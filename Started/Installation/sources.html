@@ -1547,14 +1547,13 @@ For example, to install <code>MFPR</code> on Ubuntu Jammy, the following command
 </span></code></pre></div></p>
 </div>
 <h2 id="building-mfem-with-dependencies"><strong>Building MFEM with dependencies</strong><a class="headerlink" href="#building-mfem-with-dependencies" title="Permanent link">&para;</a></h2>
-<p>Here, its is assumed that all dependencies are well built following previous directives.
-At this stage <code>MFEM</code> can be installed by running the following commands:</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">cd</span><span class="w"> </span>mfem
+<p>Here, we assume that all dependencies are well built according to the previous directives. 
+At this stage, <code>MFEM</code> can be installed by running the following commands:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">cd</span><span class="w"> </span>mfem
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>make<span class="w"> </span>-j<span class="w"> </span>N<span class="w"> </span>parallel<span class="w"> </span><span class="nv">MFEM_USE_SUITESPARSE</span><span class="o">=</span>YES<span class="w"> </span>--prefix<span class="o">=</span>INSTALLDIR
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>make<span class="w"> </span>install
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nb">cd</span><span class="w"> </span>..
 </span></code></pre></div>
-where <code>N</code> is a user defined number of CPUs.</p>
 <h2 id="sloth-compilation"><strong>SLOTH compilation</strong><a class="headerlink" href="#sloth-compilation" title="Permanent link">&para;</a></h2>
 <p>Once <code>MFEM</code> is installed, priori to compile <code>SLOTH</code>, several environment variables must be defined:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="w">    </span><span class="nb">export</span><span class="w"> </span><span class="nv">MFEM_DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$MFEM4SLOTH</span><span class="s2">/mfem/INSTALLDIR/&quot;</span>
@@ -1564,7 +1563,7 @@ where <code>N</code> is a user defined number of CPUs.</p>
 </span></code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">On the use of the  <code>envSloth.sh</code> configuration file</p>
-<p>These definitions are written into the configuration file <code>envSloth.sh</code> located in the root directory of the SLOTH repository. 
+<p>These definitions are written into the configuration file <code>envSloth.sh</code> located in the root directory of the <code>SLOTH</code> repository. 
 The use of this file is recommended to load the <code>MFEM</code> environment before compilling <code>SLOTH</code>.</p>
 </div>
 <ul>
@@ -1583,7 +1582,7 @@ where <code>$MFEM4SLOTH</code> is a variable associated with the path towards th
 </span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">    </span>--external<span class="w"> </span>to<span class="w"> </span>built<span class="w"> </span>SLOTH<span class="w"> </span>with<span class="w"> </span>an<span class="w"> </span>external<span class="w"> </span>package
 </span></code></pre></div></li>
 </ul>
-<p>By default, SLOTH is built with release compiler options.</p>
+<p>By default, <code>SLOTH</code> is built with release compiler options.</p>
 <ul>
 <li>Finally, compile 
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>make<span class="w"> </span>-j<span class="w"> </span>N<span class="w"> </span>
