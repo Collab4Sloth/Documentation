@@ -106,8 +106,8 @@ where `N` is a user defined number of CPUs.
     ```
 
 ## __Building MFEM with dependencies__
-Here, its is assumed that all dependencies are well built following previous directives.
-At this stage `MFEM` can be installed by running the following commands:
+Here, we assume that all dependencies are well built according to the previous directives. 
+At this stage, `MFEM` can be installed by running the following commands:
 
 ```bash
 cd mfem
@@ -115,7 +115,6 @@ make -j N parallel MFEM_USE_SUITESPARSE=YES --prefix=INSTALLDIR
 make install
 cd ..
 ``` 
-where `N` is a user defined number of CPUs.
 
 ## __SLOTH compilation__
 Once `MFEM` is installed, priori to compile `SLOTH`, several environment variables must be defined:
@@ -128,7 +127,7 @@ Once `MFEM` is installed, priori to compile `SLOTH`, several environment variabl
 ```
 
 !!! tip "On the use of the  `envSloth.sh` configuration file"
-    These definitions are written into the configuration file `envSloth.sh` located in the root directory of the SLOTH repository. 
+    These definitions are written into the configuration file `envSloth.sh` located in the root directory of the `SLOTH` repository. 
     The use of this file is recommended to load the `MFEM` environment before compilling `SLOTH`.
 
 - Load the `SLOTH` configuration file:
@@ -149,7 +148,7 @@ where `$MFEM4SLOTH` is a variable associated with the path towards the `MFEM` in
         
 ```
 
-By default, SLOTH is built with release compiler options.
+By default, `SLOTH` is built with release compiler options.
 
 
 - Finally, compile 
