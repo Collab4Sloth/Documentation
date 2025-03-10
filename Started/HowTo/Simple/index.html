@@ -1611,13 +1611,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#structure-of-an-input-data-file" class="md-nav__link">
+  <a href="#structure-of-a-minimal-test-case" class="md-nav__link">
     <span class="md-ellipsis">
-      Structure of an input data file
+      Structure of a minimal test case
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Structure of an input data file">
+    <nav class="md-nav" aria-label="Structure of a minimal test case">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1662,9 +1662,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#comprehensive-input-data-file" class="md-nav__link">
+  <a href="#comprehensive-test-file" class="md-nav__link">
     <span class="md-ellipsis">
-      Comprehensive input data file
+      Comprehensive test file
     </span>
   </a>
   
@@ -1771,11 +1771,11 @@ W(\phi)=\phi^2(1-\phi)^2
 </div>
 </div>
 </div>
-<h2 id="structure-of-an-input-data-file"><strong>Structure of an input data file</strong><a class="headerlink" href="#structure-of-an-input-data-file" title="Permanent link">&para;</a></h2>
+<h2 id="structure-of-a-minimal-test-case"><strong>Structure of a minimal test case</strong><a class="headerlink" href="#structure-of-a-minimal-test-case" title="Permanent link">&para;</a></h2>
 <p><code>SLOTH</code> provides C++ packages that allows to build multiphysics simulations. </p>
-<p>What the <code>SLOTH</code> team calls "input data files" is actually a <code>main.cpp</code> file mainly composed of four parts:</p>
+<p>Each <code>SLOTH</code> test is actually defined as a <code>main.cpp</code> file, which consists of four main parts:</p>
 <div class="admonition example">
-<p class="admonition-title">Global structure of an input data file</p>
+<p class="admonition-title">Global structure of a minimal test case</p>
 <div class="language-cpp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">//---------------------------------------</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">// 1/ Headers...</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">//---------------------------------------</span>
@@ -1799,7 +1799,7 @@ W(\phi)=\phi^2(1-\phi)^2
 </span></code></pre></div>
 </div>
 <h3 id="common"><strong>Headers, Aliases &amp; Parallelism</strong><a class="headerlink" href="#common" title="Permanent link">&para;</a></h3>
-<p>Headers, aliases and parallelism features are the most general information that can be find in all input data files. </p>
+<p>Headers, aliases and parallelism features are the most general information that can be find in all test files. </p>
 <p>There are 3 main headers. </p>
 <ul>
 <li><code>kernel/sloth.hpp</code> groups all <code>SLOTH</code> dependencies</li>
@@ -1807,7 +1807,7 @@ W(\phi)=\phi^2(1-\phi)^2
 <li><code>tests/tests.hpp</code> groups all dependencies useful only for tests</li>
 </ul>
 <div class="admonition example">
-<p class="admonition-title">Input data file with headers</p>
+<p class="admonition-title">Test file with headers</p>
 <div class="language-c++ highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">//---------------------------------------</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">// Headers</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">//---------------------------------------</span>
@@ -1824,7 +1824,7 @@ W(\phi)=\phi^2(1-\phi)^2
 It should be noted that users may define additional aliases. However, those specified in this page pertain to all tests. </p>
 <p>Each alias employ a template structure for space dimension dependence (see <code>DIM=Test&lt;1&gt;::dim</code> in the example).</p>
 <div class="admonition example">
-<p class="admonition-title">Input data file with headers and common aliases</p>
+<p class="admonition-title">Test file with headers and common aliases</p>
 <div class="language-c++ highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">//---------------------------------------</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1">// Headers</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1">//---------------------------------------</span>
@@ -1847,7 +1847,7 @@ It should be noted that users may define additional aliases. However, those spec
 </span></span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="p">}</span>
 </span></code></pre></div>
 </div>
-<p>These aliases both refer to MFEM or <code>SLOTH</code> types used many times in the input data file:</p>
+<p>These aliases both refer to MFEM or <code>SLOTH</code> types used many times in the test file:</p>
 <table>
 <thead>
 <tr>
@@ -1896,9 +1896,9 @@ It should be noted that users may define additional aliases. However, those spec
 </table>
 <p>SLOTH's ambition is to be able to perform massively parallel computations 
 while logically retaining the ability to perform sequential computations.</p>
-<p>Only three lines of code must be defined in each input data file for the MPI and HYPRE libraries.</p>
+<p>Only three lines of code must be defined in each test file for the MPI and HYPRE libraries.</p>
 <div class="admonition example">
-<p class="admonition-title">Input data file with headers, common aliases and parallelism features</p>
+<p class="admonition-title">Test file with headers, common aliases and parallelism features</p>
 <div class="language-c++ highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">//---------------------------------------</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1">// Headers</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1">//---------------------------------------</span>
@@ -1938,7 +1938,7 @@ while logically retaining the ability to perform sequential computations.</p>
 in <code>MFEM</code>. The order of the Finite Elements and the level of mesh refinement must be also defined. </p>
 <p>Definition of a Finite Element for <code>SLOTH</code> is made with a C++ object of type <code>SpatialDiscretization</code> or, more specifically for tests, by using the alias <code>SPA</code>.</p>
 <div class="admonition example">
-<p class="admonition-title">Extract of the input data file with the definition of the mesh</p>
+<p class="admonition-title">Extract of the test file with the definition of the mesh</p>
 <p><div class="language-c++ highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">auto</span><span class="w"> </span><span class="n">refinement_level</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">auto</span><span class="w"> </span><span class="n">fe_order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">auto</span><span class="w"> </span><span class="n">length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span><span class="n">e</span><span class="mi">-3</span><span class="p">;</span>
@@ -1961,7 +1961,7 @@ The number of <code>Boundary</code> objects inside the <code>BCS</code> object m
 <li>a value (C++ type <code>double</code>), equal to zero by default.</li>
 </ul>
 <div class="admonition example">
-<p class="admonition-title">Extract of the input data file with the mesh and its associated Neumann boundary conditions</p>
+<p class="admonition-title">Extract of the test file with the mesh and its associated Neumann boundary conditions</p>
 <p><div class="language-c++ highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="w">    </span><span class="c1">//---------------------------------------</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="c1">// Meshing &amp; Boundary Conditions</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="c1">//---------------------------------------</span>
@@ -1979,10 +1979,10 @@ This example consider Neumann boundary conditions both on the left and on the ri
 <p>Different type of boundary conditions can be mixed as detailed in the <a href="../../../Documentation/User/BoundaryConditions/index.html">Boundary Conditions section of the user manual</a>. </p>
 <div class="admonition warning">
 <p class="admonition-title">On the consistency of the indices of the boundaries</p>
-<p><code>MFEM v4.7</code> provides new features for referring to boundary attribute numbers. Such an improvement is not yet implemented in <code>SLOTH</code>. Consequently, users must take care to the consistency of the indices used in the input data file with the indices defined when building the mesh with <code>GMSH</code>.</p>
+<p><code>MFEM v4.7</code> provides new features for referring to boundary attribute numbers. Such an improvement is not yet implemented in <code>SLOTH</code>. Consequently, users must take care to the consistency of the indices used in the test file with the indices defined when building the mesh with <code>GMSH</code>.</p>
 </div>
 <div class="admonition example">
-<p class="admonition-title">Input data file with the mesh and the boundary conditions</p>
+<p class="admonition-title">Test file with the mesh and the boundary conditions</p>
 <div class="language-c++ highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">//---------------------------------------</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1">// Headers</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1">//---------------------------------------</span>
@@ -2025,7 +2025,7 @@ This example consider Neumann boundary conditions both on the left and on the ri
 </span></code></pre></div>
 </div>
 <h3 id="coupling"><strong>Multiphysics coupling scheme</strong><a class="headerlink" href="#coupling" title="Permanent link">&para;</a></h3>
-<p>This part is the core of the input data file with the definition of the targeted physical problems (<em>eg.</em> equations, variational formulations, variables, coefficients) gathered inside a <code>Coupling</code> object. </p>
+<p>This part is the core of the test file with the definition of the targeted physical problems (<em>eg.</em> equations, variational formulations, variables, coefficients) gathered inside a <code>Coupling</code> object. </p>
 <p>This implies many C++ objects designed specifically for <code>SLOTH</code>. 
 The main one is the <code>Problem</code> object defined as a collection of C++ objects of interest for <code>SLOTH</code>:</p>
 <ul>
@@ -2053,7 +2053,7 @@ The main one is the <code>Problem</code> object defined as a collection of C++ o
 <p>It is recommended to read the <a href="../../../Documentation/User/Variables/index.html">page dedicated to <code>Variables</code> in the user manual</a> for more details about the use and the different definitions of this <code>SLOTH</code> object.</p>
 <p><code>AnalyticalFunctions</code> enable to use pre-defined mathematical functions currently used in the studies conducted with <code>SLOTH</code>. A comprehensive overview of the analytical functions available in <code>SLOTH</code> is provided in <a href="../../../Documentation/User/AnalyticalVariables/index.html">a dedicated page of the user manual</a>. If the mathematical expression is not yet available, the users can define it with a C++ object of type <code>std::function</code>.</p>
 <div class="admonition example">
-<p class="admonition-title">Extract of the input data file with Variables</p>
+<p class="admonition-title">Extract of the test file with Variables</p>
 <p><div class="language-c++ highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="w">    </span><span class="c1">//---------------------------------------</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="c1">// Multiphysics coupling scheme</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="c1">//---------------------------------------     </span>
@@ -2083,7 +2083,7 @@ The definition of the integrators obviously depends on the targeted problem.
 In the present example, the variational formulation is defined by using the <code>AllenCahnNLFormIntegrator</code> object. 
 This is the most general form of integrator for Allen-Cahn problems.</p>
 <div class="admonition example">
-<p class="admonition-title">Extract of the input data file with Operators and Integrators</p>
+<p class="admonition-title">Extract of the test file with Operators and Integrators</p>
 <div class="language-c++ highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="w">    </span><span class="c1">//--- Integrator : alias definition for the sake of clarity</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="hll"><span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">NLFI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AllenCahnNLFormIntegrator</span><span class="o">&lt;</span><span class="n">VARS</span><span class="p">,</span><span class="w"> </span><span class="n">ThermodynamicsPotentialDiscretization</span><span class="o">::</span><span class="n">Implicit</span><span class="p">,</span><span class="w"> </span><span class="n">ThermodynamicsPotentials</span><span class="o">::</span><span class="n">W</span><span class="p">,</span><span class="w"> </span><span class="n">Mobility</span><span class="o">::</span><span class="n">Constant</span><span class="o">&gt;</span><span class="p">;</span>
 </span></span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
@@ -2111,7 +2111,7 @@ This C++ object requires the knowledge of the mesh and a number of parameters to
 All these parameters are detailed in the page <a href="../../../Documentation/User/PostProcessing/index.html">PostProcessing</a>. 
 By default, all primary variables associated with a <code>SLOTH</code> <code>Problem</code> are saved.</p>
 <div class="admonition example">
-<p class="admonition-title">Extract of the input data file with PostProcessing</p>
+<p class="admonition-title">Extract of the test file with PostProcessing</p>
 <p><div class="language-c++ highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">    </span><span class="c1">//--- Post-Processing </span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">main_folder_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Saves&quot;</span><span class="p">;</span>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">calculation_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;AllenCahn&quot;</span><span class="p">;</span>
@@ -2125,7 +2125,7 @@ In this example, the results will be saved in the <code>Saves/AllenCahn</code> d
 It corresponds to the C++ object <code>PhysicalConvergence</code>. Relative and absolute criteria are available.
 It is worth mentioning that this object is disabled. It will be enabled when fixed point algorithm and automatic time-step splitting are integrated.</p>
 <div class="admonition example">
-<p class="admonition-title">Input data file with PhysicalConvergence</p>
+<p class="admonition-title">Test file with PhysicalConvergence</p>
 <div class="language-c++ highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="w">    </span><span class="c1">//--- Physical Convergence</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">crit_cvg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span><span class="n">e</span><span class="mi">-12</span><span class="p">;</span>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="hll"><span class="w">    </span><span class="n">PhysicalConvergence</span><span class="w"> </span><span class="nf">convergence</span><span class="p">(</span><span class="n">ConvergenceType</span><span class="o">::</span><span class="n">ABSOLUTE_MAX</span><span class="p">,</span><span class="w"> </span><span class="n">crit_cvg</span><span class="p">);</span>
@@ -2134,7 +2134,7 @@ It is worth mentioning that this object is disabled. It will be enabled when fix
 <p>At this stage,  the <code>SLOTH</code> <code>Problem</code> can be defined and, as previously explained, collected in a <code>Coupling</code> object. 
 This is illustrated in the following example (see <code>Problem&lt;OPE, VARS, PST&gt; ac_problem</code> and  <code>Coupling("Main coupling", ac_problem)</code>). </p>
 <div class="admonition example">
-<p class="admonition-title">Input data file with Variables, Operators and Integrators, Post-Processing and Physical Convergence</p>
+<p class="admonition-title">Test file with Variables, Operators and Integrators, Post-Processing and Physical Convergence</p>
 <p><div class="language-c++ highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1">//---------------------------------------</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="c1">// Headers</span>
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c1">//---------------------------------------</span>
@@ -2232,13 +2232,13 @@ In this example, a coupling, labelled <code>Main coupling</code>, is defined wit
 </div>
 <p>Users are referred to the <a href="../../../Documentation/User/Problems/index.html">Problems and Coupling page of the user manual</a> for more details about the available <code>SLOTH</code> <code>Problem</code> and how to use them.</p>
 <h3 id="time"><strong>Time discretization</strong><a class="headerlink" href="#time" title="Permanent link">&para;</a></h3>
-<p>Time discretization is the last main part of an input data file. 
+<p>Time discretization is the last main part of a test file. 
 It corresponds to the C++ object <code>TimeDiscretization</code> defined as a number of parameters and the <code>Coupling</code> objects specially designed for the current <code>SLOTH</code> simulation.
 Among these parameters, there are the initial time, the final time and the uniform value of the time-step. 
 The method <code>solve</code> must be explicitly called to run the calculation.
 This is detailed in the <a href="../../../Documentation/User/Time/index.html"><code>Time</code> page of the user manual</a>.</p>
 <div class="admonition example">
-<p class="admonition-title">Extract of the input data file with TimeDiscretization</p>
+<p class="admonition-title">Extract of the test file with TimeDiscretization</p>
 <p><div class="language-c++ highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="w">    </span><span class="c1">//---------------------------------------</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="c1">// Time discretization</span>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="c1">//--------------------------------------- </span>
@@ -2252,9 +2252,9 @@ This is detailed in the <a href="../../../Documentation/User/Time/index.html"><c
 </span></span></code></pre></div>
 In this example, the simulation is performed during <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>50</mn></mrow><annotation encoding="application/x-tex">50</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">50</span></span></span></span> s with a time-step equal to <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.01</mn></mrow><annotation encoding="application/x-tex">0.01</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0.01</span></span></span></span> s.</p>
 </div>
-<h2 id="comprehensive-input-data-file">Comprehensive input data file<a class="headerlink" href="#comprehensive-input-data-file" title="Permanent link">&para;</a></h2>
+<h2 id="comprehensive-test-file">Comprehensive test file<a class="headerlink" href="#comprehensive-test-file" title="Permanent link">&para;</a></h2>
 <div class="admonition example">
-<p class="admonition-title">Input data file with Variables, Operators and Integrators, Post-Processing, Physical Convergence and Time Discretization</p>
+<p class="admonition-title">Test file with Variables, Operators and Integrators, Post-Processing, Physical Convergence and Time Discretization</p>
 <div class="language-c++ highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1">//---------------------------------------</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="c1">// Headers</span>
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="c1">//---------------------------------------</span>
