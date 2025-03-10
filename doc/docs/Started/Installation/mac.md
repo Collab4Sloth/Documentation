@@ -1,7 +1,7 @@
 ---
 icon: simple/apple
 ---
-# On MacOS
+# On MacOS with Homebrew
 
 Following the [MFEM website](https://mfem.org), the simplest way to install MFEM on MacOS consists in using the package manager Homebrew (see [https://brew.sh](https://brew.sh) for more details):
 
@@ -54,7 +54,7 @@ export METIS_DIR=$(echo `brew --prefix metis`)
 
 !!! tip "On the use of the  `envSloth.sh` configuration file"
     These definitions are written into the configuration file `envSloth.sh` located in the root directory of the SLOTH repository. 
-    The use of this file is recommended to load the MFEM environment before [compilling SLOTH](compile.md)
+    The use of this file is recommended to load the MFEM environment before compilling SLOTH.
 
 - Load the SLOTH configuration file:
 ```bash
@@ -70,7 +70,7 @@ where [OPTIONS] are:
         
     --coverage to build with Coverage compiler options 
         
-    --clean to remove previous build if it exists 
+    --external to built SLOTH with an external package
 ```
 
 By default, SLOTH is built with release compiler options.
