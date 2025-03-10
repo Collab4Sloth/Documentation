@@ -20,7 +20,7 @@ On this page, the users can find the most important parts of a `SLOTH` input dat
         W(\phi)=\phi^2(1-\phi)^2
         ```
 
-        The goal is to recover the 1D hyperbolic tangent solution
+        The objective is to recover the 1D hyperbolic tangent solution
 
         ```math
         \phi(r,t=t_{end}) = \frac{1}{2}+\frac{1}{2}\tanh\bigg[2\times \frac{(r - (R/2))}{ \epsilon}\bigg]
@@ -199,14 +199,14 @@ Only three lines of code must be defined in each input data file for the MPI and
 
 ### __Spatial discretization__ {#spatial}
 
-This part is dedicated the Finite Element mesh (see **Meshing**) and the associated boundary conditions (see **BoundaryConditions**). 
+This part is dedicated the mesh (see **Meshing**) and the associated boundary conditions (see **BoundaryConditions**). 
 
-Regarding the Finite Element mesh, `SLOTH` enables to read meshes built with `GMSH` or to build a Cartesian mesh directly 
+Regarding the mesh, `SLOTH` enables to read meshes built with `GMSH` or to build a Cartesian mesh directly 
 in `MFEM`. The order of the Finite Elements and the level of mesh refinement must be also defined. 
 
 Definition of a Finite Element for `SLOTH` is made with a C++ object of type `SpatialDiscretization` or, more specifically for tests, by using the alias `SPA`.
 
-!!! example "Extract of the input data file with the definition of the Finite Element mesh"
+!!! example "Extract of the input data file with the definition of the mesh"
 
     ```c++
     auto refinement_level = 0;
@@ -236,7 +236,7 @@ A `Boundary` object is defined by
  - a type (C++ type `std::string') among "Dirichlet", "Neumann", "Periodic",
  - a value (C++ type `double`), equal to zero by default.
 
-!!! example "Extract of the input data file with the Finite Element mesh and its associated Neumann boundary conditions"
+!!! example "Extract of the input data file with the mesh and its associated Neumann boundary conditions"
 
     ```c++ hl_lines="10-11"
         //---------------------------------------
@@ -259,7 +259,7 @@ Different type of boundary conditions can be mixed as detailed in the [Boundary 
     `MFEM v4.7` provides new features for referring to boundary attribute numbers. Such an improvement is not yet implemented in `SLOTH`. Consequently, users must take care to the consistency of the indices used in the input data file with the indices defined when building the mesh with `GMSH`.
 
 
-!!! example "Input data file with the Finite Element mesh and the boundary conditions"
+!!! example "Input data file with the mesh and the boundary conditions"
 
     ```c++ hl_lines="28-34"
     //---------------------------------------
@@ -393,8 +393,8 @@ This is the most general form of integrator for Allen-Cahn problems.
     `Parameters` is a C++ object designed for `SLOTH` and defined as a collection of `Parameter` objects. The latter is also a C++ object specially developed for `SLOTH`. 
     It enables the definition of a variable which can be of different C++ types. It is based on the `std::variant` type. Users are referred to the [`Parameters` page in the user manual](../../../Documentation/User/Parameters/index.md) for more details about the definition and the use of these objects.
 
-The results of SLOTH simulations can be exported to VTK format and can be read with [Paraview](https://www.paraview.org). This is possible by using the C++ object `PSTCollection` or, more specifically for tests, by using the alias `PST`. 
-This C++ object requires the knowledge of the Finite Element mesh and a numbers of parameters to define, at least, the directories in which the results are stored and the frequency of storage. 
+The results of `SLOTH` simulations can be exported to VTK format and can be read with [Paraview](https://www.paraview.org). This is possible by using the C++ object `PSTCollection` or, more specifically for tests, by using the alias `PST`. 
+This C++ object requires the knowledge of the mesh and a number of parameters to define, at least, the directories in which the results are stored and the frequency of storage. 
 All these parameters are detailed in the page [PostProcessing](../../../Documentation/User/PostProcessing/index.md). 
 By default, all primary variables associated with a `SLOTH` `Problem` are saved.
 
@@ -411,9 +411,9 @@ By default, all primary variables associated with a `SLOTH` `Problem` are saved.
     ```
     In this example, the results will be saved in the `Saves/AllenCahn` directory (see `Parameter("main_folder_path", main_folder_path)` and  `Parameter("calculation_path", calculation_path)`), at each time-step (see `Parameter("frequency", frequency)`).
 
-The last object needed to define a `SLOTH` `Problem`is the physical convergence criterion. 
+The last object needed to define a `SLOTH` `Problem` is the physical convergence criterion. 
 It corresponds to the C++ object `PhysicalConvergence`. Relative and absolute criteria are available.
-It is worth mentioning that this object is disable. It will be enabled when fixed point algorithm and automatic time-step splitting are integrated.
+It is worth mentioning that this object is disabled. It will be enabled when fixed point algorithm and automatic time-step splitting are integrated.
 
 !!! example "Input data file with PhysicalConvergence"
 
@@ -533,7 +533,7 @@ Users are referred to the [Problems and Coupling page of the user manual](../../
 Time discretization is the last main part of an input data file. 
 It corresponds to the C++ object `TimeDiscretization` defined as a number of parameters and the `Coupling` objects specially designed for the current `SLOTH` simulation.
 Among these parameters, there are the initial time, the final time and the uniform value of the time-step. 
-The method `solve`must be explicitly called to run the calculation.
+The method `solve` must be explicitly called to run the calculation.
 This is detailed in the [`Time` page of the user manual](../../../Documentation/User/Time/index.md).
 
 !!! example "Extract of the input data file with TimeDiscretization"
