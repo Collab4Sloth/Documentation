@@ -25,10 +25,10 @@
 
 .md-typeset .admonition {
     font-size: 12pt !important; /* Ajuste la taille du texte */
-    display: inline-block;
+    /* display: inline-block; */
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 800px;
+    max-width: 1000px;
 }
 
 /* Change font size inside code blocks */

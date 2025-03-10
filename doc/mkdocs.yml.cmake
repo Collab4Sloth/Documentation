@@ -106,6 +106,7 @@ nav:
     - Documentation/User/Meshing/index.md
     - Documentation/User/BoundaryConditions/index.md
     - Documentation/User/Variables/index.md
+    - Documentation/User/Parameters/index.md
     - Documentation/User/Integrators/index.md
     - Documentation/User/Operators/index.md
     - Documentation/User/Convergence/index.md

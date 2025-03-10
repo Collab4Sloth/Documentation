@@ -389,6 +389,10 @@ This is the most general form of integrator for Allen-Cahn problems.
         AllenCahnOperator<FECollection, DIM, NLFI> oper(&spatial, params, TimeScheme::EulerImplicit);
     ```
 
+!!! warning "Use of `Parameters` and `Parameter` objects"
+    `Parameters` is a C++ object designed for `SLOTH` and defined as a collection of `Parameter` objects. The latter is also a C++ object specially developed for `SLOTH`. 
+    It enables the definition of a variable which can be of different C++ types. It is based on the `std::variant` type. Users are referred to the [`Parameters` page in the user manual](../../../Documentation/User/Parameters/index.md) for more details about the definition and the use of these objects.
+
 The results of SLOTH simulations can be exported to VTK format and can be read with [Paraview](https://www.paraview.org). This is possible by using the C++ object `PSTCollection` or, more specifically for tests, by using the alias `PST`. 
 This C++ object requires the knowledge of the Finite Element mesh and a numbers of parameters to define, at least, the directories in which the results are stored and the frequency of storage. 
 All these parameters are detailed in the page [PostProcessing](../../../Documentation/User/PostProcessing/index.md). 
@@ -530,7 +534,7 @@ Time discretization is the last main part of an input data file.
 It corresponds to the C++ object `TimeDiscretization` defined as a number of parameters and the `Coupling` objects specially designed for the current `SLOTH` simulation.
 Among these parameters, there are the initial time, the final time and the uniform value of the time-step. 
 The method `solve`must be explicitly called to run the calculation.
-This is detailed in the [`Time` page of the user manual](../../../Documentation/User/Variables/index.md).
+This is detailed in the [`Time` page of the user manual](../../../Documentation/User/Time/index.md).
 
 !!! example "Extract of the input data file with TimeDiscretization"
 

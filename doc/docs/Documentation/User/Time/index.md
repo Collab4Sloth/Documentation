@@ -1,3 +1,4 @@
-# Time discretization
+# Time discretization (*Coming soon*)
 
-*Coming soon*
+This page is dedicated to the `TimeDiscretization` object.
+ 
