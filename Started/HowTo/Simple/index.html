@@ -2034,7 +2034,7 @@ The main one is the <code>Problem</code> object defined as a collection of C++ o
 <li>a <code>PostProcessing</code> object,</li>
 <li>a <code>PhysicalConvergence</code> object. </li>
 </ul>
-<p>Regarding the <code>Variables</code>, <code>SLOTH</code> differentiates between so-called primary variables, which are solved directly by the problem (<em>eg.</em> the order parameter for the Allen-Cahn equation, the order parameter and the chemical potential for the Cahn-Hilliard equation), and secondary variables, which are derived from another problem to ensure multiphysics coupling (<em>eg.</em> the order parameter in the heat transfer equation, the temperature in the Allen-Cahn equation). </p>
+<p>Regarding the <code>Variables</code>, <code>SLOTH</code> differentiates between primary variables, that are solved directly by the problem (<em>eg.</em> the order parameter for the Allen-Cahn equation, the order parameter and the chemical potential for the Cahn-Hilliard equation), and secondary variables, which are derived from another problem to ensure multiphysics coupling (<em>eg.</em> the order parameter in the heat transfer equation, the temperature in the Allen-Cahn equation). </p>
 <p>Despite their different purposes, the definition of primary and auxiliary variables are consistent and made with a C++ object of type <code>Variables</code> (see the alias <code>VARS</code>). 
 <code>Variables</code> is simply a collection of <code>Variable</code> object (see the alias <code>VAR</code>) defined by:</p>
 <ul>
