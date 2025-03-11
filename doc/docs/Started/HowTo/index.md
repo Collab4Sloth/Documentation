@@ -2,11 +2,9 @@
 icon: fontawesome/solid/screwdriver-wrench
 --- -->
 
+# HowTo
 
-# **Coming soon**
-<!-- A phase-field application is roughly a C++ main program composed of the following four parts:
+This page comprises two sections:
 
- 1. [__Spatial discretization__](__spatial.html)
- 2. [__Physical modeling__](__physical.html)
- 3. [__Post-processing directives__](__post_processing.html)
- 4. [__Time integration__](__time.html) -->
+- The [first section](Simple/index.md) provides a description of the basic features of a SLOTH test as implemented in a very simple simulation;
+- The second section offers [tutorials](Tutorials/index.md) that provide comprehensive explanations of the more advanced features and how to use them to run more complex simulations.
