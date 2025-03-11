@@ -118,7 +118,7 @@ There are 3 main headers.
 Aliases facilitate the use of complex C++ types by providing a more concise alternative. 
 It should be noted that users may define additional aliases. However, those specified in this page pertain to all tests. 
 
-Each alias employ a template structure for space dimension dependence (see `DIM=Test<1>::dim` in the example).
+Each alias employ a template structure for space dimension dependence (see `DIM` in the example).
 
 !!! example "Test file with headers and common aliases"
 
@@ -134,27 +134,27 @@ Each alias employ a template structure for space dimension dependence (see `DIM=
         //---------------------------------------
         // Common aliases
         //---------------------------------------
-        constexpr int DIM = Test<1>::dim;
-        using FECollection = Test<1>::FECollection;
-        using PSTCollection = Test<1>::PSTCollection;
-        using VARS = Test<1>::VARS;
-        using VAR = Test<1>::VAR;
-        using PST = Test<1>::PST;
-        using SPA = Test<1>::SPA;
-        using BCS = Test<1>::BCS;    
+        const int DIM=1;
+        using FECollection = Test<DIM>::FECollection;
+        using PSTCollection = Test<DIM>::PSTCollection;
+        using VARS = Test<DIM>::VARS;
+        using VAR = Test<DIM>::VAR;
+        using PST = Test<DIM>::PST;
+        using SPA = Test<DIM>::SPA;
+        using BCS = Test<DIM>::BCS;    
     }
     ```
 These aliases both refer to MFEM or `SLOTH` types used many times in the test file:
 
-| **Alias**       | **Type**                 | **Description**                                            |
-|-----------------|--------------------------|------------------------------------------------------------|
-| `FECollection`  | `Test<1>::FECollection`  | Finite Element Space. $`\cal{H}^1`$ by default (MFEM type) |
-| `PSTCollection` | `Test<1>::PSTCollection` | Type of post-processing. Paraview by default (MFEM type)   |
-| `VARS`          | `Test<1>::VARS`          | Collection of Variable objects (SLOTH type)                |
-| `VAR`           | `Test<1>::VAR`           | Variable object  (SLOTH type)                              |
-| `PST`           | `Test<1>::PST`           | PostProcessing (SLOTH type)                                |
-| `SPA`           | `Test<1>::SPA`           | Spatial Discretization (SLOTH type)                        |
-| `BCS`           | `Test<1>::BCS`           | Boundary Conditions (SLOTH type)                           |
+| **Alias**       | **Type**                   | **Description**                                            |
+|-----------------|----------------------------|------------------------------------------------------------|
+| `FECollection`  | `Test<DIM>::FECollection`  | Finite Element Space. $`\cal{H}^1`$ by default (MFEM type) |
+| `PSTCollection` | `Test<DIM>::PSTCollection` | Type of post-processing. Paraview by default (MFEM type)   |
+| `VARS`          | `Test<DIM>::VARS`          | Collection of Variable objects (SLOTH type)                |
+| `VAR`           | `Test<DIM>::VAR`           | Variable object  (SLOTH type)                              |
+| `PST`           | `Test<DIM>::PST`           | PostProcessing (SLOTH type)                                |
+| `SPA`           | `Test<DIM>::SPA`           | Spatial Discretization (SLOTH type)                        |
+| `BCS`           | `Test<DIM>::BCS`           | Boundary Conditions (SLOTH type)                           |
 
 SLOTH's ambition is to be able to perform massively parallel computations 
 while logically retaining the ability to perform sequential computations.
@@ -180,14 +180,14 @@ Only three lines of code must be defined in each test file for the MPI and HYPRE
         //---------------------------------------
         // Common aliases
         //---------------------------------------
-        constexpr int DIM = Test<1>::dim;
-        using FECollection = Test<1>::FECollection;
-        using VARS = Test<1>::VARS;
-        using VAR = Test<1>::VAR;
-        using PSTCollection = Test<1>::PSTCollection;
-        using PST = Test<1>::PST;
-        using SPA = Test<1>::SPA;
-        using BCS = Test<1>::BCS;
+        const int DIM=1;
+        using FECollection = Test<DIM>::FECollection;
+        using VARS = Test<DIM>::VARS;
+        using VAR = Test<DIM>::VAR;
+        using PSTCollection = Test<DIM>::PSTCollection;
+        using PST = Test<DIM>::PST;
+        using SPA = Test<DIM>::SPA;
+        using BCS = Test<DIM>::BCS;
 
     
         //---------------------------------------
@@ -278,14 +278,14 @@ Different type of boundary conditions can be mixed as detailed in the [Boundary 
         //---------------------------------------
         // Common aliases
         //---------------------------------------
-        constexpr int DIM = Test<1>::dim;
-        using FECollection = Test<1>::FECollection;
-        using VARS = Test<1>::VARS;
-        using VAR = Test<1>::VAR;
-        using PSTCollection = Test<1>::PSTCollection;
-        using PST = Test<1>::PST;
-        using SPA = Test<1>::SPA;
-        using BCS = Test<1>::BCS;
+        const int DIM=1;
+        using FECollection = Test<DIM>::FECollection;
+        using VARS = Test<DIM>::VARS;
+        using VAR = Test<DIM>::VAR;
+        using PSTCollection = Test<DIM>::PSTCollection;
+        using PST = Test<DIM>::PST;
+        using SPA = Test<DIM>::SPA;
+        using BCS = Test<DIM>::BCS;
         //---------------------------------------
         // Meshing & Boundary Conditions
         //---------------------------------------
@@ -447,14 +447,14 @@ This is illustrated in the following example (see `Problem<OPE, VARS, PST> ac_pr
         //---------------------------------------
         // Common aliases
         //---------------------------------------
-        constexpr int DIM = Test<1>::dim;
-        using FECollection = Test<1>::FECollection;
-        using VARS = Test<1>::VARS;
-        using VAR = Test<1>::VAR;
-        using PSTCollection = Test<1>::PSTCollection;
-        using PST = Test<1>::PST;
-        using SPA = Test<1>::SPA;
-        using BCS = Test<1>::BCS;
+        const int DIM=1;
+        using FECollection = Test<DIM>::FECollection;
+        using VARS = Test<DIM>::VARS;
+        using VAR = Test<DIM>::VAR;
+        using PSTCollection = Test<DIM>::PSTCollection;
+        using PST = Test<DIM>::PST;
+        using SPA = Test<DIM>::SPA;
+        using BCS = Test<DIM>::BCS;
         //---------------------------------------
         // Meshing & Boundary Conditions
         //---------------------------------------
@@ -573,14 +573,14 @@ This is detailed in the [`Time` page of the user manual](../../../Documentation/
         //---------------------------------------
         // Common aliases
         //---------------------------------------
-        constexpr int DIM = Test<1>::dim;
-        using FECollection = Test<1>::FECollection;
-        using VARS = Test<1>::VARS;
-        using VAR = Test<1>::VAR;
-        using PSTCollection = Test<1>::PSTCollection;
-        using PST = Test<1>::PST;
-        using SPA = Test<1>::SPA;
-        using BCS = Test<1>::BCS;
+        const int DIM = 1
+        using FECollection = Test<DIM>::FECollection;
+        using VARS = Test<DIM>::VARS;
+        using VAR = Test<DIM>::VAR;
+        using PSTCollection = Test<DIM>::PSTCollection;
+        using PST = Test<DIM>::PST;
+        using SPA = Test<DIM>::SPA;
+        using BCS = Test<DIM>::BCS;
         //---------------------------------------
         // Meshing & Boundary Conditions
         //---------------------------------------
