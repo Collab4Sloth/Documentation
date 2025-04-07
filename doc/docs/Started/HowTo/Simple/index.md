@@ -512,7 +512,7 @@ This is illustrated in the following example (see `Problem<OPE, VARS, PST> ac_pr
         //-----------------------
         // Problem
         //-----------------------
-        Problem<OPE, VARS, PST> ac_problem(oper, vars, pst, convergence);
+        Problem<AllenCahnOperator<FECollection, DIM, NLFI>, VARS, PST> ac_problem(oper, vars, pst, convergence);
         //-----------------------
         // Coupling
         //-----------------------
@@ -546,7 +546,7 @@ This is detailed in the [`Time` page of the user manual](../../../Documentation/
         const auto& t_final = 50.0;
         const auto& dt = 0.01;
         auto time_parameters = Parameters(Parameter("initial_time", t_initial), Parameter("final_time", t_final), Parameter("time_step", dt));
-        auto time = TimeDiscretization(time_parameters, cc);
+        auto time = TimeDiscretization(time_parameters, main_coupling);
 
         time.solve();
     ```
@@ -638,7 +638,7 @@ This is detailed in the [`Time` page of the user manual](../../../Documentation/
         //-----------------------
         // Problem
         //-----------------------
-        Problem<OPE, VARS, PST> ac_problem(oper, vars, pst, convergence);
+        Problem<AllenCahnOperator<FECollection, DIM, NLFI>, VARS, PST> ac_problem(oper, vars, pst, convergence);
         //-----------------------
         // Coupling
         //-----------------------
@@ -651,7 +651,7 @@ This is detailed in the [`Time` page of the user manual](../../../Documentation/
         const auto& t_final = 50.0;
         const auto& dt = 0.01;
         auto time_parameters = Parameters(Parameter("initial_time", t_initial), Parameter("final_time", t_final), Parameter("time_step", dt));
-        auto time = TimeDiscretization(time_parameters, cc);
+        auto time = TimeDiscretization(time_parameters, main_coupling);
 
         time.solve();
 
