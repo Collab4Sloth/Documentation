@@ -14,7 +14,7 @@ Assuming `spack` well installed into the `$SPACK` directory, the following comma
 ```bash
 $SPACK/share/spack/setup-env.sh
 
-spack install mfem+mpi+suite-sparse+sundials+superlu-dist
+spack install mfem+mpi+suite-sparse+sundials+superlu-dist+miniapps
 ```
 !!! note "Installing a given version of MFEM"
     The user is free to install different version of MFEM. 

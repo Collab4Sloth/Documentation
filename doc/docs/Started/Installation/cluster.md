@@ -81,7 +81,7 @@ This script is designed to be run on a local machine with internet access. It se
 
 5. **Create a Specific Spack Mirror for Dependencies:**
    ```bash
-   spack mirror create -d mirror-mfem -D gcc@11.2.0 mfem+mpi+debug+openmp+petsc+strumpack+suite-sparse+sundials+superlu-dist%gcc@11.2.0
+   spack mirror create -d mirror-mfem -D gcc@11.2.0 mfem+mpi+debug+openmp+petsc+strumpack+suite-sparse+sundials+superlu-dist+miniapps%gcc@11.2.0
    ```
    - Creates a mirror named `mirror-mfem` for all specified dependencies (`mfem`, `petsc`, etc.), ensuring that Spack can access these packages without internet access on the supercomputer.
    - You can add extra packages here.
@@ -165,7 +165,7 @@ This script is run on the supercomputer. It unpacks the archive, sets up the Spa
 
 6. **Install Dependencies and Build SLOTH:**
    ```bash
-   spack install gcc@11.2.0 mfem+mpi+debug+openmp+petsc+strumpack+suite-sparse+sundials+superlu-dist%gcc@11.2.0
+   spack install gcc@11.2.0 mfem+mpi+debug+openmp+petsc+strumpack+suite-sparse+sundials+superlu-dist+miniapps%gcc@11.2.0
    cd $WORK_DIR/sloth
    mkdir build && cd build
    spack load mfem
