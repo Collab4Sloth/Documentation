@@ -204,7 +204,7 @@ This part is dedicated the mesh (see **Meshing**) and the associated boundary co
 Regarding the mesh, `SLOTH` enables to read meshes built with `GMSH` or to build a Cartesian mesh directly 
 in `MFEM`. The order of the Finite Elements and the level of mesh refinement must be also defined. 
 
-Definition of a Finite Element for `SLOTH` is made with a C++ object of type `SpatialDiscretization` or, more specifically for tests, by using the alias `SPA`.
+Definition of a Finite Element mesh for `SLOTH` is made with a C++ object of type `SpatialDiscretization` or, more specifically for tests, by using the alias `SPA`.
 
 !!! example "Extract of the test file with the definition of the mesh"
 
