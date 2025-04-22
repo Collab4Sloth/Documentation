@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -1302,7 +1302,7 @@
   
   
   <span class="md-ellipsis">
-    Parameters (Coming soon)
+    Parameters
     
   </span>
   
@@ -1955,7 +1955,7 @@
 </li>
 <li>
 <p><strong>Create a Specific Spack Mirror for Dependencies:</strong>
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>spack<span class="w"> </span>mirror<span class="w"> </span>create<span class="w"> </span>-d<span class="w"> </span>mirror-mfem<span class="w"> </span>-D<span class="w"> </span>gcc@11.2.0<span class="w"> </span>mfem+mpi+debug+openmp+petsc+strumpack+suite-sparse+sundials+superlu-dist%gcc@11.2.0
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>spack<span class="w"> </span>mirror<span class="w"> </span>create<span class="w"> </span>-d<span class="w"> </span>mirror-mfem<span class="w"> </span>-D<span class="w"> </span>gcc@11.2.0<span class="w"> </span>mfem+mpi+debug+openmp+petsc+strumpack+suite-sparse+sundials+superlu-dist+miniapps%gcc@11.2.0
 </span></code></pre></div></p>
 </li>
 <li>Creates a mirror named <code>mirror-mfem</code> for all specified dependencies (<code>mfem</code>, <code>petsc</code>, etc.), ensuring that Spack can access these packages without internet access on the supercomputer.</li>
@@ -2047,7 +2047,7 @@
 </li>
 <li>
 <p><strong>Install Dependencies and Build SLOTH:</strong>
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>spack<span class="w"> </span>install<span class="w"> </span>gcc@11.2.0<span class="w"> </span>mfem+mpi+debug+openmp+petsc+strumpack+suite-sparse+sundials+superlu-dist%gcc@11.2.0
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>spack<span class="w"> </span>install<span class="w"> </span>gcc@11.2.0<span class="w"> </span>mfem+mpi+debug+openmp+petsc+strumpack+suite-sparse+sundials+superlu-dist+miniapps%gcc@11.2.0
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$WORK_DIR</span>/sloth
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>mkdir<span class="w"> </span>build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>build
 </span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>spack<span class="w"> </span>load<span class="w"> </span>mfem

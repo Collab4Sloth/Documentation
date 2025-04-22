@@ -16,15 +16,15 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
     
     
       
-        <title>Parameters (Coming soon) - SLOTH</title>
+        <title>Parameters - SLOTH</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#parameters-coming-soon" class="md-skip">
+        <a href="#parameters" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Parameters (Coming soon)
+              Parameters
             
           </span>
         </div>
@@ -1183,17 +1183,91 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Parameters
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="index.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Parameters (Coming soon)
+    Parameters
     
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#param" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#params" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addition-of-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Addition of parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-a-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Removing a parameter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1665,6 +1739,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#param" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#params" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addition-of-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Addition of parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#removing-a-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Removing a parameter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1682,8 +1806,161 @@
   
 
 
-<h1 id="parameters-coming-soon">Parameters (<em>Coming soon</em>)<a class="headerlink" href="#parameters-coming-soon" title="Permanent link">&para;</a></h1>
-<p>This page focuses on the <code>Parameters</code> and <code>Parameter</code> objects specially designed for <code>SLOTH</code>.</p>
+<h1 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h1>
+<p>This page focuses on the <a href="#param"><code>Parameter</code></a> and <a href="@params"><code>Parameter</code></a> objects specially designed for <code>SLOTH</code>.</p>
+<p><code>SLOTH</code> provides a variety of parameter types, enabling flexible and dynamic configuration of simulation inputs.
+These parameters can then be passed as arguments to <code>SLOTH</code> problems (see <a href="../Problems/index.html">Problems</a> for more details).</p>
+<h2 id="param"><strong>Parameter</strong><a class="headerlink" href="#param" title="Permanent link">&para;</a></h2>
+<p>Each parameter is managed by the C++ class <code>Parameter</code>. 
+A Parameter is defined by its name (type <code>std::string</code>), its value, and optionally a description (type <code>std::string</code>). </p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Parameter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">description</span><span class="p">)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">Parameter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">)</span>
+</span></code></pre></div>
+<p>The type of the <code>Parameter</code>is deduced from the value. 
+The basic types <code>double</code>, <code>int</code>, <code>std::string</code> and <code>bool</code> can be used </p>
+<div class="admonition example">
+<p class="admonition-title">Example of definitions of Parameter with basic types</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">double</label><label for="__tabbed_1_2">int</label><label for="__tabbed_1_3">std::string</label><label for="__tabbed_1_4">bool</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;p1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Scalar Parameter of type double&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;p1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Scalar Parameter of type int&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;p1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Scalar Parameter of type std::string&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;p1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Scalar Parameter of type bool&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>but also custom-defined containers:</p>
+<div class="admonition example">
+<p class="admonition-title">Example of definitions of Parameter with custom-defined  types</p>
+<p>Custom-defined types can be defined either by their standard definition or by using a C++ alias.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:5"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">MapStringDouble</label><label for="__tabbed_2_2">Map2String2Double</label><label for="__tabbed_2_3">vString</label><label for="__tabbed_2_4">vTupleStringInt</label><label for="__tabbed_2_5">vTupleStringString</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><code>MapStringDouble</code>is a C++ alias for <code>std::map&lt;std::string,double&gt;</code>.</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">MapStringDouble</span><span class="w"> </span><span class="n">param_value</span><span class="p">;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">param_value</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="s">&quot;value&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;p1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">param_value</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Scalar Parameter of type MapStringDouble&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><code>Map2String2Double</code>is a C++ alias for <code>std::map&lt;std::tuple&lt;std::string, std::string&gt;, std::tuple&lt;double, double&gt;&gt;</code>.</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">Map2String2Double</span><span class="w"> </span><span class="n">param_value</span><span class="p">;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">param_value</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_tuple</span><span class="p">(</span><span class="s">&quot;value_1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;value_2&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_tuple</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.</span><span class="p">));</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;p1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">param_value</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Scalar Parameter of type Map2String2Double&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><code>vString</code>is a C++ alias for <code>std::vector&lt;std::string&gt;</code>.</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">vString</span><span class="w"> </span><span class="n">param_value</span><span class="p">;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">param_value</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="s">&quot;value_1&quot;</span><span class="p">);</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">param_value</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="s">&quot;value_2&quot;</span><span class="p">);</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;p1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">param_value</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Scalar Parameter of type vString&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><code>vString</code>is a C++ alias for <code>std::vector&lt;std::tuple&lt;std::string,int&gt;&gt;</code>.</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">vTupleStringInt</span><span class="w"> </span><span class="n">param_value</span><span class="p">;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">param_value</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_tuple</span><span class="p">(</span><span class="s">&quot;value_1&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">));</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">param_value</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_tuple</span><span class="p">(</span><span class="s">&quot;value_2&quot;</span><span class="p">,</span><span class="mi">2</span><span class="p">));</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;p1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">param_value</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Scalar Parameter of type vTupleStringInt&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><code>vTupleStringString</code>is a C++ alias for <code>std::vector&lt;std::tuple&lt;std::string,std::string&gt;&gt;</code>.</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">vTupleStringString</span><span class="w"> </span><span class="n">param_value</span><span class="p">;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">param_value</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_tuple</span><span class="p">(</span><span class="s">&quot;key_1&quot;</span><span class="p">,</span><span class="s">&quot;value_1&quot;</span><span class="p">));</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">param_value</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_tuple</span><span class="p">(</span><span class="s">&quot;key_2&quot;</span><span class="p">,</span><span class="s">&quot;value_2&quot;</span><span class="p">));</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;p1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">param_value</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Scalar Parameter of type vTupleStringString&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>This list of parameter types can be easly extended.</p>
+<div class="admonition note">
+<p class="admonition-title">Access to <code>Parameter</code> informations</p>
+<p>As for deep inside the code, C++ public methods allow you to get the name, description and value of a `parameter'. </p>
+<p>Please see the Doxygen for more details.</p>
+</div>
+<h2 id="params"><strong>Parameters</strong><a class="headerlink" href="#params" title="Permanent link">&para;</a></h2>
+<p>The C++ class <code>Parameters</code> allows to define a collection of <code>Parameter</code> objects of different types. </p>
+<div class="admonition example">
+<p class="admonition-title">Example of definitions of Parameters</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">auto</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;p1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Scalar Parameter of type double&quot;</span><span class="p">)</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">auto</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;p2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Scalar Parameter of type bool&quot;</span><span class="p">)</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">vTupleStringString</span><span class="w"> </span><span class="n">param_value</span><span class="p">;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">param_value</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_tuple</span><span class="p">(</span><span class="s">&quot;key_1&quot;</span><span class="p">,</span><span class="s">&quot;value_1&quot;</span><span class="p">));</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="n">param_value</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_tuple</span><span class="p">(</span><span class="s">&quot;key_2&quot;</span><span class="p">,</span><span class="s">&quot;value_2&quot;</span><span class="p">));</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="k">auto</span><span class="w"> </span><span class="n">p3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;p3&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">param_value</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Scalar Parameter of type vTupleStringString&quot;</span><span class="p">)</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="k">auto</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parameters</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="n">p2</span><span class="p">,</span><span class="w"> </span><span class="n">p3</span><span class="p">);</span>
+</span></code></pre></div>
+<p>In this example, <code>params</code> gathers three <code>Parameter</code> of type <code>double</code>, <code>bool</code> and <code>vTupleStringString</code>.</p>
+</div>
+<p><code>Parameters</code> class allows to add or substract <code>Parameter</code>.</p>
+<h3 id="addition-of-parameters"><strong>Addition of parameters</strong><a class="headerlink" href="#addition-of-parameters" title="Permanent link">&para;</a></h3>
+<p>Two `Parameters' objects can be merged.</p>
+<div class="admonition example">
+<p class="admonition-title">Example of merge of two Parameters</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">auto</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;p1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Scalar Parameter of type double&quot;</span><span class="p">)</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">auto</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;p2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Scalar Parameter of type bool&quot;</span><span class="p">)</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="n">vTupleStringString</span><span class="w"> </span><span class="n">param_value</span><span class="p">;</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="n">param_value</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_tuple</span><span class="p">(</span><span class="s">&quot;key_1&quot;</span><span class="p">,</span><span class="s">&quot;value_1&quot;</span><span class="p">));</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="n">param_value</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_tuple</span><span class="p">(</span><span class="s">&quot;key_2&quot;</span><span class="p">,</span><span class="s">&quot;value_2&quot;</span><span class="p">));</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="k">auto</span><span class="w"> </span><span class="n">p3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;p3&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">param_value</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Scalar Parameter of type vTupleStringString&quot;</span><span class="p">)</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="hll"><span class="k">auto</span><span class="w"> </span><span class="n">merge_parameter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parameters</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Parameters</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span><span class="w"> </span><span class="n">p3</span><span class="p">);</span>
+</span></span></code></pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Priority when merging</p>
+<p>When merging two <code>Parameters' objects, any</code>Parameter' contained in the second <code>Parameter' will overwrite any</code>Parameter' contained in the first `Parameter' if they have the same name.</p>
+</div>
+<p>A <code>Parameters' can be also be merged with a</code>Parameter' object. </p>
+<div class="admonition example">
+<p class="admonition-title">Example of merge of a Parameters with a Parameter</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">auto</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;p1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Scalar Parameter of type double&quot;</span><span class="p">)</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">auto</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;p2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Scalar Parameter of type bool&quot;</span><span class="p">)</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">vTupleStringString</span><span class="w"> </span><span class="n">param_value</span><span class="p">;</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="n">param_value</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_tuple</span><span class="p">(</span><span class="s">&quot;key_1&quot;</span><span class="p">,</span><span class="s">&quot;value_1&quot;</span><span class="p">));</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="n">param_value</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_tuple</span><span class="p">(</span><span class="s">&quot;key_2&quot;</span><span class="p">,</span><span class="s">&quot;value_2&quot;</span><span class="p">));</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="k">auto</span><span class="w"> </span><span class="n">p3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;p3&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">param_value</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Scalar Parameter of type vTupleStringString&quot;</span><span class="p">)</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="hll"><span class="k">auto</span><span class="w"> </span><span class="n">merge_parameter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parameters</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span><span class="w"> </span><span class="n">p3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="p">;</span>
+</span></span></code></pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Priority when merging</p>
+<p>If the <code>Parameter' object already contains a</code>Parameter' with the same name as the `Parameter' to be merged, the latter will overwrite the existing one.</p>
+</div>
+<h3 id="removing-a-parameter"><strong>Removing a parameter</strong><a class="headerlink" href="#removing-a-parameter" title="Permanent link">&para;</a></h3>
+<p>A <code>Parameter' can be removed from a</code>Parameters' object by name.</p>
+<div class="admonition example">
+<p class="admonition-title">Example of <code>Parameter</code> removal</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">auto</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;p1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Scalar Parameter of type double&quot;</span><span class="p">)</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">auto</span><span class="w"> </span><span class="n">p2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;p2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Scalar Parameter of type bool&quot;</span><span class="p">)</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="n">vTupleStringString</span><span class="w"> </span><span class="n">param_value</span><span class="p">;</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="n">param_value</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_tuple</span><span class="p">(</span><span class="s">&quot;key_1&quot;</span><span class="p">,</span><span class="s">&quot;value_1&quot;</span><span class="p">));</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="n">param_value</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_tuple</span><span class="p">(</span><span class="s">&quot;key_2&quot;</span><span class="p">,</span><span class="s">&quot;value_2&quot;</span><span class="p">));</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="k">auto</span><span class="w"> </span><span class="n">p3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;p3&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">param_value</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Scalar Parameter of type vTupleStringString&quot;</span><span class="p">)</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="k">auto</span><span class="w"> </span><span class="n">merge_parameter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parameters</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span><span class="w"> </span><span class="n">p2</span><span class="p">,</span><span class="w"> </span><span class="n">p3</span><span class="p">);</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="hll"><span class="k">auto</span><span class="w"> </span><span class="n">reduced_parameter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">merge_parameter</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">p1</span><span class="p">;</span>
+</span></span></code></pre></div>
+</div>
 
 
 
