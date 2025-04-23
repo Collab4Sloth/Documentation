@@ -2,7 +2,7 @@
 
 This page described how to define and manage variables in `SLOTH`.
 
-Definition of variabled for `SLOTH` is made with a C++ object of type `Variables` that is simply a set of C++ object of type [`Variable`](#variable).
+Definition of variables for `SLOTH` is made with a C++ object of type `Variables` that is simply a set of C++ object of type [`Variable`](#variable).
 
 As for the object `SpatialDiscretization` (see [Meshing](../Meshing/index.md)), `Variable` is a template class instantiated with two template parameters: first, the kind of finite element, and second, the spatial dimension.
 
