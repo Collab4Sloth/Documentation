@@ -152,38 +152,42 @@ In these examples, one considers a cubic domain with a side length of 1 mm. The 
 
 
 
-## GMSH Split Meshes
+## __GMSH Split Meshes__
 
-To read directly partitioned meshes, we first use a tool available in the MFEM miniapps called `mesh-explorer`.
+To read directly partitioned meshes, the MFEM miniapps called `mesh-explorer` must be used.
 
-### Use the Mesh Explorer
+### __Use the Mesh Explorer__
 
-Please refere to the documentation here: https://mfem.org/meshing-miniapps/#mesh-explorer
+Please refer to the documentation at [https://mfem.org/meshing-miniapps/#mesh-explorer](https://mfem.org/meshing-miniapps/#mesh-explorer).
 
-This a simple example of how to partition the Camembert2d mesh into 4 files:
+Below is a simple example of how to partition the `Camembert2D` mesh into four files:
 
 ```bash
-`spack location -i mfem`/share/mfem/miniapps/meshing/mesh-explorer --mesh camembert2D.msh
+    spack location -i mfem`/share/mfem/miniapps/meshing/mesh-explorer --mesh camembert2D.msh
 
-PRESS p // partitioning
-PRESS 1 // metis
-PRESS 4 // number of mpi processes
-PRESS T // Save par
-PRESS "camembert2D." // mesh name
-PRESS 6 // digit
-PRESS q // exit
+    PRESS p // partitioning
+    PRESS 1 // metis
+    PRESS 4 // number of mpi processes
+    PRESS T // Save par
+    PRESS "camembert2D." // mesh name
+    PRESS 6 // digit
+    PRESS q // exit
 ```
 
-You should get 4 files named: `camembert2D.000000`, `camembert2D.000000`, `camembert2D.000000`, and camembert2D.000003`.
+This must generate 4 files named: `camembert2D.000000`, `camembert2D.000000`, `camembert2D.000000`, and camembert2D.000003`.
 
-### How to Read the Partitionned Files ?
+### __How to Read the Partitionned Files ?__
 
-You simply need to specify the pattern of the file name, ending explicitly with `.`.
+To read partitionned files, the pattern of the file name, ending explicitly with `.`, must be specified.
 
-Example:
+!!! example "Defining a 2D mesh using `GMSH` Split Meshes"
 
-```
-SPA spatial("GMSH", 1, refinement_level, "camembert2D.", false);
-```
+    ```c++
+        const int order_fe = 1;                                // finite element order
+        const int refinement_level = 0;                        // number of levels of uniform refinement
+        const std::string& pattern = "camembert2D.";           // pattern of the file name
+        SPA spatial("GMSH", order_fe, refinement_level, pattern, false);
+    ```
 
-It is important to note that the number of processes must be equal to the number of files, otherwise reading will fail.
+!!! warning "Number of processes"
+    The number of processes must be equal to the number of files, otherwise reading will fail.
