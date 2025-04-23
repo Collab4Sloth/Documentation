@@ -20,7 +20,7 @@
     
     
       
-        <title>Variables (Coming soon) - SLOTH</title>
+        <title>Variables - SLOTH</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#variables-coming-soon" class="md-skip">
+        <a href="#variables_1" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Variables (Coming soon)
+              Variables
             
           </span>
         </div>
@@ -1160,17 +1160,100 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Variables
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="index.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Variables (Coming soon)
+    Variables
     
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variable description
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variable description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#var_mandatory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mandatory parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#var_option" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1212,7 +1295,7 @@
   
   
   <span class="md-ellipsis">
-    Integrators
+    Integrators (coming soon)
     
   </span>
   
@@ -1665,6 +1748,65 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variable description
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variable description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#var_mandatory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mandatory parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#var_option" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1682,8 +1824,183 @@
   
 
 
-<h1 id="variables-coming-soon">Variables (Coming soon)<a class="headerlink" href="#variables-coming-soon" title="Permanent link">&para;</a></h1>
+<h1 id="variables_1">Variables<a class="headerlink" href="#variables_1" title="Permanent link">&para;</a></h1>
 <p>This page described how to define and manage variables in <code>SLOTH</code>.</p>
+<p>Definition of variabled for <code>SLOTH</code> is made with a C++ object of type <code>Variables</code> that is simply a set of C++ object of type <a href="#variable"><code>Variable</code></a>.</p>
+<p>As for the object <code>SpatialDiscretization</code> (see <a href="../Meshing/index.html">Meshing</a>), <code>Variable</code> is a template class instantiated with two template parameters: first, the kind of finite element, and second, the spatial dimension.</p>
+<p>The kind of finite element refers to a C++ class that inherits from the <code>mfem::FiniteElementCollection</code>. This class manages all collections of finite elements provided by <code>MFEM</code>.
+Currently, the most commonly used finite element collection in <code>SLOTH</code> is <code>mfem::H1_FECollection</code>, which corresponds to arbitrary order H1-conforming continuous finite elements.</p>
+<p>The dimension is simply an integer that can be 1, 2, or 3.</p>
+<div class="admonition example">
+<p class="admonition-title">Alias declaration for <code>Variable</code> class template</p>
+<p><div class="language-c++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">using</span><span class="w"> </span><span class="n">VAR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Variable</span><span class="o">&lt;</span><span class="n">mfem</span><span class="o">::</span><span class="n">H1_FECollection</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="p">;</span>
+</span></code></pre></div>
+This example show how to define a convenient alias for the <code>Variable</code> class template instantiated with <code>mfem::H1_FECollection</code> in dimension 3.<br />
+This alias is often used in tests in order to simplify the code.</p>
+</div>
+<h2 id="variable"><strong>Variable description</strong><a class="headerlink" href="#variable" title="Permanent link">&para;</a></h2>
+<p><code>SLOTH</code> differentiates between <em>primary</em> variables, that are solved directly by the problem (<em>eg.</em> the order parameter for the Allen-Cahn equation, the order parameter and the chemical potential for the Cahn-Hilliard equation), and <em>secondary</em> (or <em>auxiliary</em>) variables, which are derived from another problem to ensure multiphysics coupling (<em>eg.</em> the order parameter in the heat transfer equation, the temperature in the Allen-Cahn equation). 
+Both kind of variables are defined in the same way.</p>
+<h3 id="var_mandatory"><strong>Mandatory parameters</strong><a class="headerlink" href="#var_mandatory" title="Permanent link">&para;</a></h3>
+<p>The <code>Variable</code> object must be defined by:</p>
+<ul>
+<li>the spatial discretisation (see <a href="../Meshing/index.html">Meshing</a>), </li>
+<li>a set of boundary conditions(see <a href="../BoundaryConditions/index.html">BoundaryConditions</a>), </li>
+<li>a name (C++ type <code>std::string</code>), </li>
+<li>a storage depth level (C++ type <code>int</code>), </li>
+<li>an initial condition.</li>
+</ul>
+<p>The initial condition can be defined by a constant, a C++ object of type <code>std::function</code> or a <code>SLOTH</code> object of type <code>AnalyticalFunctions</code>. 
+The latter enables to use pre-defined mathematical functions currently used in the studies conducted with <code>SLOTH</code> (see <a href="../AnalyticalVariables/index.html">a dedicated page of the user manual</a>. If the mathematical expression is not yet available, the users can define it with a C++ object of type <code>std::function</code>.</p>
+<div class="admonition example">
+<p class="admonition-title">Example of <code>Variable</code>objects with mandatory parameters</p>
+<p>The following examples assume that the spatial discretisation and the boundary conditions are defined. 
+In the code snippets, the first is referred to as a <code>spatial</code> object, while the second is referred to as a <code>bcs</code> object. Without loss of generality, the alias <code>VAR</code> is also used.</p>
+<p>These examples show how to initialize a variable with <code>double</code>, <code>AnalyticalFunctions</code> and <code>std::function</code> types.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1"><code>double</code></label><label for="__tabbed_1_2"><code>std::function</code></label><label for="__tabbed_1_3"><code>AnalyticalFunctions</code></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>In this example, the variable is named <code>phi</code>. Its initial value is zero.</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">level_of_storage</span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">variable_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;phi&quot;</span><span class="p">;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kt">double</span><span class="w"> </span><span class="n">initial_condition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.</span><span class="p">;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">auto</span><span class="w"> </span><span class="n">var_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">VAR</span><span class="p">(</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="n">bcs</span><span class="p">,</span><span class="w"> </span><span class="n">variable_name</span><span class="p">,</span><span class="w"> </span><span class="n">level_of_storage</span><span class="p">,</span><span class="w"> </span><span class="n">initial_condition</span><span class="p">);</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>In this example, the variable is named <code>T</code>. It is defined by a parabolic profile.</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">level_of_storage</span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">variable_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;T&quot;</span><span class="p">;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">auto</span><span class="w"> </span><span class="n">initial_condition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">mfem</span><span class="o">::</span><span class="n">Vector</span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="p">[](</span><span class="k">const</span><span class="w"> </span><span class="n">mfem</span><span class="o">::</span><span class="n">Vector</span><span class="o">&amp;</span><span class="w"> </span><span class="n">vcoord</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">time</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">800.</span><span class="p">;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4.</span><span class="n">e</span><span class="mi">-3</span><span class="p">;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">puissance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">20.</span><span class="n">e4</span><span class="p">;</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">conductivity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.</span><span class="p">;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">r2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">radius</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">rr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">transform_reduce</span><span class="p">(</span><span class="n">vcoord</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">vcoord</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">min</span><span class="p">(</span><span class="n">vcoord</span><span class="p">.</span><span class="n">Size</span><span class="p">(),</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">plus</span><span class="o">&lt;&gt;</span><span class="p">(),</span><span class="w"> </span><span class="p">[](</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"> </span><span class="p">});</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">func</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Text</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">puissance</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">r2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">rr</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mf">4.</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">M_PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2.</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r2</span><span class="p">);</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">func</span><span class="p">;</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="p">});</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="k">auto</span><span class="w"> </span><span class="n">var_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">VAR</span><span class="p">(</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="n">bcs</span><span class="p">,</span><span class="w"> </span><span class="n">variable_name</span><span class="p">,</span><span class="w"> </span><span class="n">level_of_storage</span><span class="p">,</span><span class="w"> </span><span class="n">initial_condition</span><span class="p">);</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>In this example, the variable is named <code>phi</code>. It is defined by a 2D hyperbolic tangent profile.</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">level_of_storage</span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">variable_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;phi&quot;</span><span class="p">;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">center_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.</span><span class="p">;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">a_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span><span class="p">;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">thickness</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.</span><span class="n">e</span><span class="mi">-5</span><span class="p">;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.</span><span class="n">e</span><span class="mi">-4</span><span class="p">;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">auto</span><span class="w"> </span><span class="n">initial_condition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AnalyticalFunctions</span><span class="o">&lt;</span><span class="mi">2</span><span class="o">&gt;</span><span class="p">(</span><span class="n">AnalyticalFunctionsType</span><span class="o">::</span><span class="n">HyperbolicTangent</span><span class="p">,</span><span class="w"> </span><span class="n">center_x</span><span class="p">,</span><span class="w"> </span><span class="n">a_x</span><span class="p">,</span><span class="w"> </span><span class="n">thickness</span><span class="p">,</span><span class="w"> </span><span class="n">radius</span><span class="p">)</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="k">auto</span><span class="w"> </span><span class="n">var_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">VAR</span><span class="p">(</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="n">bcs</span><span class="p">,</span><span class="w"> </span><span class="n">variable_name</span><span class="p">,</span><span class="w"> </span><span class="n">level_of_storage</span><span class="p">,</span><span class="w"> </span><span class="n">initial_condition</span><span class="p">);</span>
+</span></code></pre></div>
+<p><code>SLOTH</code> provides several pre-implemented analytical functions, including the Heaviside function, sinusoidal profiles, hyperbolic tangent, and parabolic profiles. Each of these functions requires a set of parameters detailed in <a href="../AnalyticalVariables/index.html">a dedicated page of the user manual</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<h3 id="var_option"><strong>Optional parameters</strong><a class="headerlink" href="#var_option" title="Permanent link">&para;</a></h3>
+<p>In addition to the <a href="#var_mandatory">mandatory paramters</a>, definition of <code>Variable</code> can be enhanced by an analytical solution with the same type as the initial condition. </p>
+<div class="admonition warning">
+<p class="admonition-title">Definition of variables with an analytical solution</p>
+<p>The presence of an analytical solution automatically enables the calculation of the  <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>L</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">L^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathnormal">L</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> error over the domain. </p>
+</div>
+<p>The initial condition can also be asscoiated with a set of attributes names that correspond to <code>PhysicalNames</code> defined in the <code>GMSH</code> file mesh. 
+In this case, the list of attributes (<em>ie</em> the <code>PhysicalNames</code> defined in the <code>GMSH</code> file mesh) must be defined in a C++ container of type <code>std::set&lt;std::string&gt;</code>, just after the initial condition.</p>
+<div class="admonition example">
+<p class="admonition-title">Example of initialization based on <code>PhysicalNames</code> of a <code>GMSH</code> file mesh</p>
+<p>Please find the following extract of a <code>GMSH</code> file mesh used to build an inclusion inside a fragment of material:
+<div style="display: flex; align-items: flex-start;">
+    <div style="flex: 1; margin-right: 20px;">
+        <figure markdown="span">
+            <img alt="Mesh of a fragment of material with an inclusion" src="img/mesh_with_inclusion.png" width="350" />
+            <figcaption>Mesh of a fragment of material with an inclusion</figcaption>
+        </figure>
+    </div>
+    <div style="flex: 2;">
+        <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$MeshFormat
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>2.2 0 8
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>$EndMeshFormat
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>$PhysicalNames
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>5
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>1 1 &quot;bottom&quot;
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>1 2 &quot;top&quot;
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>1 3 &quot;external&quot;
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>2 22 &quot;pellet&quot;
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>2 23 &quot;cluster&quot;
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>$EndPhysicalNames
+</span></code></pre></div>
+    </div>
+</div></p>
+<p>In the following example, the variable named <code>phi</code> is equal to one within the inclusion associated with the attribute 'cluster' and zero elsewhere.</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">level_of_storage</span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">variable_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;phi&quot;</span><span class="p">;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kt">double</span><span class="w"> </span><span class="n">initial_condition</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span><span class="p">;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">std</span><span class="o">::</span><span class="n">set</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list_of_physical_names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;cluster&quot;</span><span class="p">};</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">auto</span><span class="w"> </span><span class="n">var_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">VAR</span><span class="p">(</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="n">bcs</span><span class="p">,</span><span class="w"> </span><span class="n">variable_name</span><span class="p">,</span><span class="w"> </span><span class="n">level_of_storage</span><span class="p">,</span><span class="w"> </span><span class="n">initial_condition</span><span class="p">,</span><span class="w"> </span><span class="n">list_of_physical_names</span><span class="p">);</span>
+</span></code></pre></div>
+<p><div style="display: flex; align-items: flex-start;">
+    <div style="flex: 1; margin-right: 20px;">
+        <figure markdown="span">
+            <img alt="Variable initialization within a fragment of material including an inclusion" src="img/initialization_with_inclusion.png" width="450" />
+            <figcaption>Variable initialization within a fragment of material including an inclusion</figcaption>
+        </figure>
+    </div>
+</div></p>
+</div>
+<h2 id="additional-information"><strong>Additional information</strong><a class="headerlink" href="#additional-information" title="Permanent link">&para;</a></h2>
+<p>Processing certain physical problems requires additional information to distinguish variables.
+This information is provided in the form of a list of strings associated with the variables using the public C++ method <code>set_additional_information</code>.</p>
+<div class="admonition example">
+<p class="admonition-title">Example of variables definition with additional information</p>
+<p>The following example refers to <code>Calphad</code> problems (see <a href="../Problems/index.html">Problems</a> for more details). 
+The first variable, named <code>Ma</code>, corresponds to a mobility coefficient whereas the second one is associated with a chemical potential named <code>mu_a</code>. </p>
+<p>For a <code>Calphad</code> problem, managing the variables requires knowing the type of each variable. By convention, the last additional information corresponds to a pre-defined symbol (e.g., 'mu' for chemical potentials and 'mob' for mobilities). </p>
+<p>The definition of chemical potentials requires the name of the chemical element, whereas for mobilities, both the name of the phase and the name of the chemical element must be specified.</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">level_of_storage</span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">variable_name_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Ma&quot;</span><span class="p">;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">initial_condition_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span><span class="n">e</span><span class="mi">-15</span><span class="p">;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">var_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">VAR</span><span class="p">(</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="n">bcs</span><span class="p">,</span><span class="w"> </span><span class="n">variable_name_1</span><span class="p">,</span><span class="w"> </span><span class="n">level_of_storage</span><span class="p">,</span><span class="w"> </span><span class="n">initial_condition_1</span><span class="p">);</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="n">var_1</span><span class="p">.</span><span class="n">set_additional_information</span><span class="p">(</span><span class="s">&quot;SOLUTION&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mob&quot;</span><span class="p">);</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">variable_name_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mu_a&quot;</span><span class="p">;</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">initial_condition_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span><span class="n">e5</span><span class="p">;</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">var_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">VAR</span><span class="p">(</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="n">bcs</span><span class="p">,</span><span class="w"> </span><span class="n">variable_name_2</span><span class="p">,</span><span class="w"> </span><span class="n">level_of_storage</span><span class="p">,</span><span class="w"> </span><span class="n">initial_condition_2</span><span class="p">);</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="n">var_2</span><span class="p">.</span><span class="n">set_additional_information</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mu&quot;</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Conventions used to associate additional information with variables for each kind of <code>SLOTH</code> problem are detailed in Section <a href="../Problems/index.html">Problems</a>of the user manual.</p>
+</div>
+<!-- ## **Use of auxiliary variables**
+
+For `SLOTH`, auxiliary variables ensure multiphysics coupling. As   -->
+
+<h2 id="variables"><strong>Variables</strong><a class="headerlink" href="#variables" title="Permanent link">&para;</a></h2>
+<p>The C++ class <code>Variables</code> allows to define a collection of <a href="#variable"><code>Variable</code> objects</a>. 
+As for the object <code>Variable</code>, <code>Variables</code> is a template class instantiated with two template parameters: first, the kind of finite element, and second, the spatial dimension.</p>
+<p>Each <code>SLOTH</code> problem (see <a href="../Problems/index.html">Problems</a> for more details) requires a <code>Variables</code> object as input argumet.</p>
+<div class="admonition example">
+<p class="admonition-title">Example of <code>Variables</code> definition</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">variable_name_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mu_a&quot;</span><span class="p">;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">initial_condition_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.</span><span class="n">e5</span><span class="p">;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">var_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">VAR</span><span class="p">(</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="n">bcs</span><span class="p">,</span><span class="w"> </span><span class="n">variable_name_1</span><span class="p">,</span><span class="w"> </span><span class="n">level_of_storage</span><span class="p">,</span><span class="w"> </span><span class="n">initial_condition_1</span><span class="p">);</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="n">var_1</span><span class="p">.</span><span class="n">set_additional_information</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mu&quot;</span><span class="p">);</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">variable_name_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;mu_a&quot;</span><span class="p">;</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">initial_condition_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.</span><span class="n">e5</span><span class="p">;</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">var_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">VAR</span><span class="p">(</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="n">bcs</span><span class="p">,</span><span class="w"> </span><span class="n">variable_name_2</span><span class="p">,</span><span class="w"> </span><span class="n">level_of_storage</span><span class="p">,</span><span class="w"> </span><span class="n">initial_condition_2</span><span class="p">);</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">    </span><span class="n">var_2</span><span class="p">.</span><span class="n">set_additional_information</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mu&quot;</span><span class="p">);</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">mu_var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">VARS</span><span class="p">(</span><span class="n">var_1</span><span class="p">,</span><span class="w"> </span><span class="n">var_2</span><span class="p">);</span>
+</span></code></pre></div>
+<p>This example shows the definition of two variables that correspond to chemical potentials. These variables are gathered within a <code>Variables</code> object that can be used as primary variables for a <code>Calphad</code> problem and as auxiliary variables for <code>ThermalDiffusion</code> problems.</p>
+</div>
 
 
 
