@@ -1,3 +1,1 @@
-# Integrators 
-
-*Coming soon*
+# Integrators (coming soon)
