@@ -20,7 +20,7 @@
     
     
       
-        <title>Boundary Conditions (coming soon) - SLOTH</title>
+        <title>Boundary Conditions - SLOTH</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#boundary-conditions-coming-soon" class="md-skip">
+        <a href="#boundary-conditions" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Boundary Conditions (coming soon)
+              Boundary Conditions
             
           </span>
         </div>
@@ -1142,7 +1142,7 @@
   
   
   <span class="md-ellipsis">
-    Boundary Conditions (coming soon)
+    Boundary Conditions
     
   </span>
   
@@ -1682,8 +1682,62 @@
   
 
 
-<h1 id="boundary-conditions-coming-soon">Boundary Conditions (coming soon)<a class="headerlink" href="#boundary-conditions-coming-soon" title="Permanent link">&para;</a></h1>
-<p>This page describes the use of boundary conditions in <code>SLOTH</code>.</p>
+<h1 id="boundary-conditions">Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Permanent link">&para;</a></h1>
+<p>This page described the definition and the use of boundary conditions in <code>SLOTH</code>.</p>
+<p>Definition of boundary conditions for <code>SLOTH</code> is made with a C++ object of type <code>BoundaryConditions</code>. As for the object <code>SpatialDiscretization</code> (see <a href="../Meshing/index.html">Meshing</a>), <code>BoundaryConditions</code> is a template class instantiated with two template parameters: first, the kind of finite element, and second, the spatial dimension. </p>
+<p>Currently, the most commonly used finite element collection in <code>SLOTH</code> is <code>mfem::H1_FECollection</code>, which corresponds to arbitrary order H1-conforming continuous finite elements.</p>
+<p>The dimension is simply an integer that can be 1, 2, or 3.</p>
+<div class="admonition example">
+<p class="admonition-title">Alias declaration for <code>BoundaryConditions</code> class template</p>
+<p><div class="language-c++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">using</span><span class="w"> </span><span class="n">BCS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BoundaryConditions</span><span class="o">&lt;</span><span class="n">mfem</span><span class="o">::</span><span class="n">H1_FECollection</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="p">;</span>
+</span></code></pre></div>
+This example show how to define a convenient alias for the <code>BoundaryConditions</code> class template instantiated with <code>mfem::H1_FECollection</code> in dimension 3. This alias is often used in tests in order to simplify the code.</p>
+</div>
+<p><code>BoundaryConditions</code> is roughly defined as a set of C++ object of type <code>Boundary</code>. 
+Each geometrical boundary must be associated with a C++ object of type <code>Boundary</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Number of boundaries</p>
+<p>The number of <code>Boundary</code> objects inside the <code>Boundaries</code> object must be equal to the total number of geometrical boundary. </p>
+</div>
+<p>A <code>Boundary</code> object is defined by</p>
+<ul>
+<li>a name (C++ type `std::string'),</li>
+<li>an index (C++ type <code>int</code>),</li>
+<li>a type (C++ type `std::string') among "Dirichlet", "Neumann", "Periodic",</li>
+<li>a value (C++ type <code>double</code>), equal to zero by default.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Consistency of the indices of the boundaries</p>
+<p><code>MFEM v4.7</code> provides new features for referring to boundary attribute numbers. Such an improvement is not yet implemented in <code>SLOTH</code>. Consequently, users must take care to the consistency of the indices used in the test file with the indices defined when building the mesh with <code>GMSH</code>.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Defining boundary conditions</p>
+<p>The following examples assume that the spatial discretisation is defined. 
+In the code snippets, it is referred to as a <code>spatial</code> object.</p>
+<p>These examples show how to define <code>Dirichlet</code>, <code>Neumann</code> and <code>periodic</code> boundary conditions in a square.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Neumann</label><label for="__tabbed_1_2">Dirichlet</label><label for="__tabbed_1_3">Periodic</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">list_boundaries_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">Boundary</span><span class="p">(</span><span class="s">&quot;left&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Neumann&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.</span><span class="p">),</span><span class="w"> </span><span class="n">Boundary</span><span class="p">(</span><span class="s">&quot;bottom&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Neumann&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.</span><span class="p">),</span><span class="w"> </span><span class="n">Boundary</span><span class="p">(</span><span class="s">&quot;right&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Neumann&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.</span><span class="p">),</span><span class="w"> </span><span class="n">Boundary</span><span class="p">(</span><span class="s">&quot;top&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Neumann&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.</span><span class="p">)};</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">bcs_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BCS</span><span class="p">(</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="n">list_boundaries_1</span><span class="p">);</span>
+</span></code></pre></div>
+<p>Non homogeneous Neumann boundary conditions can be defined; however, since they are not part of the <code>SLOTH</code> problems studied so far, their implementation has not yet been developed.          </p>
+</div>
+<div class="tabbed-block">
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">list_boundaries_2</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="p">{</span><span class="n">Boundary</span><span class="p">(</span><span class="s">&quot;left&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Dirichlet&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.</span><span class="p">),</span><span class="w"> </span><span class="n">Boundary</span><span class="p">(</span><span class="s">&quot;bottom&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Neumann&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.</span><span class="p">),</span><span class="w"> </span><span class="n">Boundary</span><span class="p">(</span><span class="s">&quot;right&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Dirichlet&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">1.</span><span class="p">),</span><span class="w"> </span><span class="n">Boundary</span><span class="p">(</span><span class="s">&quot;top&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Neumann&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">0.</span><span class="p">)};</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">bcs_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BCS</span><span class="p">(</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="n">list_boundaries_2</span><span class="p">);</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">list_boundaries_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">Boundary</span><span class="p">(</span><span class="s">&quot;left&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Periodic&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">Boundary</span><span class="p">(</span><span class="s">&quot;bottom&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Periodic&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">Boundary</span><span class="p">(</span><span class="s">&quot;right&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Periodic&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">Boundary</span><span class="p">(</span><span class="s">&quot;top&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Periodic&quot;</span><span class="p">)};</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">bcs_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BCS</span><span class="p">(</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="n">list_boundaries_3</span><span class="p">);</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>Once defined, boundary conditions are associated with variables (see <a href="../Variables/index.html">Variables</a>). 
+The user can define as many boundary conditions as there are variables.</p>
 
 
 
