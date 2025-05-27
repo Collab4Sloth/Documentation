@@ -53,7 +53,7 @@ This script is designed to be run on a local machine with internet access. It se
    ```bash
    echo "Getting Spack ..."
    if [ ! -d "spack" ]; then
-       git clone https://github.com/spack/spack.git
+       git clone --depth=2 --branch=v0.23.0 https://github.com/spack/spack.git
    fi
    export SPACK_ROOT=$PWD/spack
    rm -r ~/.spack
@@ -126,6 +126,7 @@ This script is run on the supercomputer. It unpacks the archive, sets up the Spa
    source $WORK_DIR/spack/share/spack/setup-env.sh
    spack bootstrap reset -y
    spack bootstrap add --scope=site --trust local-binaries $PWD/my_bootstrap/metadata/binaries/
+   spack bootstrap add --scope=site --trust local-sources $PWD/my_bootstrap/metadata/sources/
    spack bootstrap disable --scope=site github-actions-v0.5
    spack bootstrap disable --scope=site github-actions-v0.4
    spack bootstrap disable --scope=site spack-install
