@@ -111,8 +111,8 @@ At this stage, `MFEM` can be installed by running the following commands:
 
 ```bash
 cd mfem
-make -j N parallel MFEM_USE_SUITESPARSE=YES --prefix=INSTALLDIR
-make install
+make -j N parallel MFEM_USE_SUITESPARSE=YES 
+make install PREFIX=INSTALLDIR
 cd ..
 ``` 
 
