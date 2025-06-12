@@ -39,7 +39,7 @@ Once MFEM is installed, priori to compile SLOTH, MFEM must be loaded and several
 
 - Load the SLOTH configuration file:
 ```bash
-source ../envSloth.sh [OPTIONS] 
+bash ../envSloth.sh [OPTIONS] 
 ```
 where [OPTIONS] are:
 ```bash

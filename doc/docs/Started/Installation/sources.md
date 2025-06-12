@@ -132,7 +132,7 @@ Once `MFEM` is installed, priori to compile `SLOTH`, several environment variabl
 
 - Load the `SLOTH` configuration file:
 ```bash
-source ../envSloth.sh [OPTIONS] --mfem=$MFEM4SLOTH
+bash ../envSloth.sh [OPTIONS] --mfem=$MFEM4SLOTH
 ```
 where `$MFEM4SLOTH` is a variable associated with the path towards the `MFEM` installation (_ie_ `$HOME/MFEM4SLOTH` in the current description) and [OPTIONS] are:
 ```bash
