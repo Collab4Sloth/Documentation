@@ -24,7 +24,7 @@ This will result in an uncompressed folder named `libtorch` that can be linked t
 To link `SLOTH` with `libTorch`, the user must load the `SLOTH` configuration file with the `--libtorch` option:
 
 ```bash
-source ../envSloth.sh --libtorch=$LIBTORCH_PATH
+bash ../envSloth.sh --libtorch=$LIBTORCH_PATH
 ```
 
 where `LIBTORCH_PATH` is an environment variable containing the path toward the `libtorch` folder previously uncompressed.
