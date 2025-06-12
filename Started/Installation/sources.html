@@ -541,6 +541,8 @@
       
         
       
+        
+      
     
     
     
@@ -829,6 +831,31 @@
   
   <span class="md-ellipsis">
     Cluster
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cluster_source.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v2H8v2h8v-2h-2v-2h7a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2M3 4h18v12H3M15 5l-3.5 3.5L15 12l1.4-1.4-2.1-2.1 2.1-2.1M9 8 7.6 9.4l2.1 2.1-2.1 2.1L9 15l3.5-3.5"/></svg>
+  
+  <span class="md-ellipsis">
+    Cluster from source files
     
   </span>
   
@@ -2025,8 +2052,8 @@ For example, to install <code>MFPR</code> on Ubuntu Jammy, the following command
 <p>Here, we assume that all dependencies are well built according to the previous directives. 
 At this stage, <code>MFEM</code> can be installed by running the following commands:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">cd</span><span class="w"> </span>mfem
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>make<span class="w"> </span>-j<span class="w"> </span>N<span class="w"> </span>parallel<span class="w"> </span><span class="nv">MFEM_USE_SUITESPARSE</span><span class="o">=</span>YES<span class="w"> </span>--prefix<span class="o">=</span>INSTALLDIR
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>make<span class="w"> </span>install
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>make<span class="w"> </span>-j<span class="w"> </span>N<span class="w"> </span>parallel<span class="w"> </span><span class="nv">MFEM_USE_SUITESPARSE</span><span class="o">=</span>YES<span class="w"> </span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>make<span class="w"> </span>install<span class="w"> </span><span class="nv">PREFIX</span><span class="o">=</span>INSTALLDIR
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nb">cd</span><span class="w"> </span>..
 </span></code></pre></div>
 <h2 id="sloth-compilation"><strong>SLOTH compilation</strong><a class="headerlink" href="#sloth-compilation" title="Permanent link">&para;</a></h2>
@@ -2043,7 +2070,7 @@ The use of this file is recommended to load the <code>MFEM</code> environment be
 </div>
 <ul>
 <li>Load the <code>SLOTH</code> configuration file:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">source</span><span class="w"> </span>../envSloth.sh<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>--mfem<span class="o">=</span><span class="nv">$MFEM4SLOTH</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>bash<span class="w"> </span>../envSloth.sh<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>--mfem<span class="o">=</span><span class="nv">$MFEM4SLOTH</span>
 </span></code></pre></div>
 where <code>$MFEM4SLOTH</code> is a variable associated with the path towards the <code>MFEM</code> installation (<em>ie</em> <code>$HOME/MFEM4SLOTH</code> in the current description) and [OPTIONS] are:
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="w">    </span>--release<span class="w"> </span>to<span class="w"> </span>build<span class="w"> </span>SLOTH<span class="w"> </span>with<span class="w"> </span>Release<span class="w"> </span>compiler<span class="w"> </span>options<span class="w"> </span>
