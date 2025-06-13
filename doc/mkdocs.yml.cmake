@@ -90,6 +90,7 @@ nav:
       - Started/Installation/sources.md
       - Started/Installation/mac.md
       - Started/Installation/cluster.md
+      - Started/Installation/cluster_source.md
       - Started/Installation/libtorch.md
     - Code quality: Started/Quality/quality.md
     - HowTo: 

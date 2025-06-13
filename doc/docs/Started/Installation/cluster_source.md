@@ -1,18 +1,16 @@
 ---
-icon: simple/linuxcontainers
+icon: material/remote-desktop
+
 ---
 
-# On Linux from source files
+# Cluster from source files
 
-The following installation procedure describes how to install `SLOTH` from source files. 
+The following installation procedure describes how to install `SLOTH` from source files on a supercomputer. Here, the description is based on an installation done on CCRT Topaze.
 
-It is assumed that the user has a Unix environment with a recent GCC compiler (C++20 compatible) and MPI libraries. Obviously, Git is also needed to clone source files.
-
-The following procedure is mainly based on the installation procedure of a [parallel MPI version of `MFEM`](https://mfem.org/building/). 
-Only the installation of SuiteSparse will be added.
+This procedure is mainly based on the installation procedure [from source files on local computer](sources.md). 
 
 
-## __Getting source files__
+## __Getting source files on local computer__
 
 The first step consists in cloning `MFEM`, `METIS`, `HYPRE` and `SuiteSparse`.
 
@@ -59,8 +57,38 @@ SuiteSparse's source files are obtained by running the following command:
 git clone https://github.com/DrTimothyAldenDavis/SuiteSparse.git
 ```
 
-## __Building dependencies__
-The second step consists in building `METIS`, `HYPRE` and `SuiteSparse`.
+## __Copy of source files on the supercomputer__
+Copy of the `MFEM4SLOTH` folder on the supercomputer by running the following command:
+
+```bash
+rsync --info=progress2 -e ssh -avz MFEM4SLOTH <login>@<remote_host>:$DEST_DIR
+```
+
+## __Building dependencies on the supercomputer__
+The second step consists in building `METIS`, `HYPRE` and `SuiteSparse` on the supercomputer. 
+From now, all command are run on the supercomputer. 
+
+### Load required modules
+Before building dependencies, it is necessary to load some modules. Please keep in mind that versions depend on the targeted environment. 
+
+`gnu`, `mpi`, `cmake` are required to build MFEM with `METIS`, `HYPRE` and `SuiteSparse`. 
+For `SuiteSparse`, `blas` and `mpfr` are also needed.
+
+```bash 
+module load gnu/11.1.0
+module load mpi/openmpi/4.1.4
+module load cmake/3.29.6
+module load blas/openblas/0.3.26
+module load mpfr/4.2.0
+```
+
+!!! remark "Find available modules"
+    The list of available modules can be obtained using the following command:
+    ```bash
+    module avail [optional_string]
+    ```
+    where an optional string can be specified to refine the search for modules. 
+    This string can be a partial name. 
 
 ### METIS
 To build `METIS`, the following command must be run:
@@ -68,9 +96,14 @@ To build `METIS`, the following command must be run:
 ```bash
 cd metis-4.0.3
 make OPTFLAGS=-Wno-error=implicit-function-declaration
+mkdir include
+cp Lib/*.h include/
 cd ..
 ln -s metis-4.0.3 metis-4.0
 ```
+
+The fourth instruction differs from the installation procedure [from source files on local computer](sources.md). 
+
 ### HYPRE 
 
 To build `HYPRE`, the following command must be run:
@@ -91,19 +124,14 @@ To build `SuiteSparse`, the following commands must be run:
 cd SuiteSparse/
 make -j N
 make install DESTDIR=$PWD/INSTALLDIR
-mv INSTALLDIR/usr/local/lib/* lib/
+mv INSTALLDIR/usr/local/lib64/* lib/
 mv INSTALLDIR/usr/local/include/suitesparse/* include/
 mv INSTALLDIR/usr/local/bin/* bin/
 cd ..
 ```
 where `N` is a user defined number of CPUs.
 
-!!! warning "Possible errors"
-    Depending the Unix configuration of the user, it is possible to have errors because some dependencies are not found as, for example, [`MFPR`](https://www.mpfr.org/mpfr-current/mpfr.html). In that case, these missing dependencies must be installed. 
-    For example, to install `MFPR` on Ubuntu Jammy, the following command can be run:
-    ```bash
-    sudo apt-get install libmpfr-dev
-    ```
+The fourth instruction differs from the installation procedure [from source files on local computer](sources.md). 
 
 ## __Building MFEM with dependencies__
 Here, we assume that all dependencies are well built according to the previous directives. 
