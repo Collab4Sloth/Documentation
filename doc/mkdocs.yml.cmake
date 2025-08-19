@@ -102,19 +102,51 @@ nav:
         - Started/HowTo/Tutorials/tuto1.md
     - Examples:
       - Started/Examples/index.md
+      - Thermal Diffusion:
+        - Started/Examples/ThermalDiffusion/index.md
+      - Mass Diffusion:
+        - Started/Examples/MassDiffusion/index.md
+      - Allen-Cahn:
+        - Started/Examples/AllenCahn/index.md
+      - Cahn-Hilliard: 
+        - Started/Examples/CahnHilliard/index.md
+        - Example 1:
+          - Started/Examples/CahnHilliard/example1/index.md
+        - Example 2:
+          - Started/Examples/CahnHilliard/example2/index.md
+        - Example 3:
+          - Started/Examples/CahnHilliard/example3/index.md
+        - Example 4:
+          - Started/Examples/CahnHilliard/example4/index.md
+        - Example 5:
+          - Started/Examples/CahnHilliard/example5/index.md
+      - CALPHAD:
+        - Started/Examples/Calphad/index.md
       @EXAMPLE_LIST@
 
   - User Manual: 
     - Documentation/User/index.md
-    - Documentation/User/Meshing/index.md
-    - Documentation/User/BoundaryConditions/index.md
+    - Spatial discretization:
+      - Documentation/User/SpatialDiscretization/index.md
+      - Documentation/User/SpatialDiscretization/Meshing/index.md
+      - Documentation/User/SpatialDiscretization/BoundaryConditions/index.md
     - Documentation/User/Variables/index.md
     - Documentation/User/Parameters/index.md
-    - Documentation/User/Integrators/index.md
-    - Documentation/User/Operators/index.md
-    - Documentation/User/Convergence/index.md
+    - Multiphysics Coupling Scheme:
+      - Documentation/User/MultiPhysicsCouplingScheme/index.md
+      - Documentation/User/MultiPhysicsCouplingScheme/Couplings/index.md
+      - Problems:
+        - Documentation/User/MultiPhysicsCouplingScheme/Problems/index.md
+        - Partial Differential Equations:
+          - Documentation/User/MultiPhysicsCouplingScheme/Problems/PDEs/index.md
+          - Operators:
+            - Documentation/User/MultiPhysicsCouplingScheme/Problems/PDEs/Operators/index.md
+          - Integrators:
+            - Documentation/User/MultiPhysicsCouplingScheme/Problems/PDEs/Integrators/index.md
+        - Documentation/User/MultiPhysicsCouplingScheme/Problems/0D/index.md
+        - Documentation/User/MultiPhysicsCouplingScheme/Problems/Remainder/index.md
+      - Documentation/User/Convergence/index.md
     - Documentation/User/PostProcessing/index.md
-    - Documentation/User/Problems/index.md
     - Documentation/User/Time/index.md
   - Modelling Description: 
     - Documentation/Physical/index.md
