@@ -174,7 +174,7 @@ Below is a simple example of how to partition the `Camembert2D` mesh into four f
     PRESS q // exit
 ```
 
-This must generate 4 files named: `camembert2D.000000`, `camembert2D.000000`, `camembert2D.000000`, and camembert2D.000003`.
+This must generate 4 files named: `camembert2D.000000`, `camembert2D.000000`, `camembert2D.000000`, and `camembert2D.000003`.
 
 ### __How to Read the Partitionned Files ?__
 
