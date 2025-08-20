@@ -1,6 +1,6 @@
 # Time discretization
 
-Cette page décrit l'objet C++ `TimeDiscretization` qui permet a `SLOTH`de gérer la boucle en temps de toutes les simulations multiphysiques.
+This page describes the C++ object `TimeDiscretization`, which enables `SLOTH` to manage the time loop of all multiphysics simulations.
 
 <figure markdown="span">
   ![Time-step](../../../img/time_step.png){  width=300px}
