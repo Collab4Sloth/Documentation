@@ -28,8 +28,8 @@ Both kind of variables are defined in the same way.
 
 The `Variable` object must be defined by:
 
-- the spatial discretisation (see [Meshing](../Meshing/index.md)), 
-- a set of boundary conditions(see [BoundaryConditions](../BoundaryConditions/index.md)), 
+- the spatial discretisation (see [Meshing](../SpatialDiscretization/Meshing/index.md)), 
+- a set of boundary conditions(see [BoundaryConditions](../SpatialDiscretization/BoundaryConditions/index.md)), 
 - a name (C++ type `std::string`), 
 - a storage depth level (C++ type `int`), 
 - an initial condition.

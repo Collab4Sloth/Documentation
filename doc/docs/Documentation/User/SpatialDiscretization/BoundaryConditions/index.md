@@ -56,5 +56,5 @@ A `Boundary` object is defined by
             auto bcs_3 = BCS(&spatial, list_boundaries_3);
         ```
 
-Once defined, boundary conditions are associated with variables (see [Variables](../Variables/index.md)). 
+Once defined, boundary conditions are associated with variables (see [Variables](../../Variables/index.md)). 
 The user can define as many boundary conditions as there are variables.
