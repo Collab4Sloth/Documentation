@@ -22,7 +22,7 @@ The development team primarily uses [`ParaView`](https://www.paraview.org) to vi
 
 !!! example "Alias declaration for `PostProcessing` class template"
     ```c++
-    using PST = PostProcessing<mfem::H1_FECollection,, mfem::ParaviewDataCollection, 2>;
+    using PST = PostProcessing<mfem::H1_FECollection, mfem::ParaviewDataCollection, 2>;
     ```
     This example show how to define a convenient alias for the `PostProcessing` class template instantiated with `mfem::H1_FECollection` and `mfem::ParaviewDataCollection` in dimension 2. 
 

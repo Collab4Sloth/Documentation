@@ -1,5 +1,13 @@
 
-# **Example 1**
+# **Example 1: coalescence of two bubbles**
+
+### __Files__ 
+
+- Comprehensive test file: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test1/main.cpp)
+- Reference results for comparison: [time_specialized.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test1/ref/time_specialized.csv)
+
+
+### __Statement of the problem__ 
 
 This test corresponds to a 2D simulation of coalescence of two kissing bubbles. 
 
@@ -101,9 +109,3 @@ The figure 2 shows the coalescence of the two bubbles, with a final simulation t
     <figcaption>Figure 2 : coalescence two kissing bubbles
     </figcaption>
 </figure>
-
-### __Files__ 
-
-- Comprehensive test file: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test1/main.cpp)
-- Reference results for comparison: [time_specialized.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test1/ref/time_specialized.csv)
-

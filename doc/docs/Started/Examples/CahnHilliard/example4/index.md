@@ -1,5 +1,13 @@
 
-# **Example 4**
+# **Example 4: steady-state solution of the Cahn–Hilliard equations**
+
+### __Files__ 
+
+- Comprehensive test file: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test4/main.cpp)
+- Reference results for comparison: [convergence_output_ref.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test4/ref/convergence_output_ref.csv)
+
+
+### __Statement of the problem__ 
 
 This test consists of finding the steady-state solution of the Cahn–Hilliard equations. A transient simulation is performed to reach this steady-state, and a convergence analysis is carried out to ensure the consistency of the results.
 
@@ -106,10 +114,3 @@ Figures 1 shows the results of convergence analysis with $`\mathcal{Q}_1`$ and $
     <figcaption>Figure 1: convergence analysis with $`\mathcal{Q}_1`$ and $`\mathcal{Q}_2`$ finite elements
     </figcaption>
 </figure>
-
-
-### __Files__ 
-
-- Comprehensive test file: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test4/main.cpp)
-- Reference results for comparison: [convergence_output_ref.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test4/ref/convergence_output_ref.csv)
-

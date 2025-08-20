@@ -1,5 +1,12 @@
 
-# **Example 5**
+# **Example 5: MMS benchmark**
+
+### __Files__ 
+
+- Comprehensive test file: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test5/main.cpp)
+- Reference results for comparison: [convergence_output_ref.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test5/ref/convergence_output_ref.csv)
+
+### __Statement of the problem__ 
 
 This test is taken from Zhang & al.[@zhang2013quantitative]. 
 It consists of spatial convergence analysis based on a manufactured solution benchmark.
@@ -102,10 +109,4 @@ Figures 1 shows the results of convergence analysis with $`\mathcal{Q}_1`$ and $
     <figcaption>Figure 1: convergence analysis with $`\mathcal{Q}_1`$ and $`\mathcal{Q}_2`$ finite elements
     </figcaption>
 </figure>
-
-
-### __Files__ 
-
-- Comprehensive test file: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test5/main.cpp)
-- Reference results for comparison: [convergence_output_ref.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test5/ref/convergence_output_ref.csv)
 

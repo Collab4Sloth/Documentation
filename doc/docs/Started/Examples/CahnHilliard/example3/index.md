@@ -1,5 +1,15 @@
 
-# **Example 3**
+# **Example 3: spinodal decomposition**
+
+
+### __Files__ 
+
+- Comprehensive test file: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test2/main.cpp)
+- Reference results for comparison: [time_specialized.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test2/ref/time_specialized.csv)
+
+
+
+### __Statement of the problem__ 
 
 This test corresponds to the 2D simulation of spinodal decomposition proposed on [PFhub](https://pages.nist.gov/pfhub/benchmarks/benchmark1.ipynb/)
 
@@ -102,9 +112,3 @@ Figure 3 shows the time evolution of the normalized free-energy density, with sn
     <figcaption>Figure 3 : time evolution of the normalized density of free energy
     </figcaption>
 </figure>
-
-### __Files__ 
-
-- Comprehensive test file: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test2/main.cpp)
-- Reference results for comparison: [time_specialized.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test2/ref/time_specialized.csv)
-

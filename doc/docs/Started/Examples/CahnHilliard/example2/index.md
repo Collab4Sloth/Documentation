@@ -1,6 +1,14 @@
 
-# **Example 2**
+# **Example 2: from a square to a bubble**
 
+
+### __Files__ 
+
+- Comprehensive test file: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test3/main.cpp)
+- Reference results for comparison: [time_specialized.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test3/ref/time_specialized.csv)
+
+
+### __Statement of the problem__ 
 This test corresponds to a 2D simulation of a square evolving to a bubble. 
 
 The domain $`\Omega`$ is a square $`[0,2\pi]\times[0,2\pi]`$
@@ -101,9 +109,4 @@ The figure 2 shows the evolution of a square to a bubble, with a final simulatio
     <figcaption>Figure 2 : evolution of a square to a bubble
     </figcaption>
 </figure>
-
-### __Files__ 
-
-- Comprehensive test file: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test3/main.cpp)
-- Reference results for comparison: [time_specialized.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test3/ref/time_specialized.csv)
 
