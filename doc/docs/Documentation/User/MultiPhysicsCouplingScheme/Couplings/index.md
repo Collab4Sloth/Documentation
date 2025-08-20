@@ -2,19 +2,11 @@
 
 This page described how to define and manage couplings in `SLOTH`.
 
-Couplings are the top-level objects during time-step of `SLOTH` multiphysics simulations.
-
-<figure markdown="span">
-  ![Time-step](../../../../img/time_step.png){width=300px}
-  <figcaption>Figure 1 : Schematic description of one time-step for SLOTH simulations
-</figcaption>
-</figure>
-
 Couplings for `SLOTH` are made with a C++ object of type `Coupling`. 
 They must be defined by:
 
 - a name (C++ type std::string),
-- a set of problem defined by C++ object of type `Problem` (see [the dedicated page of the user manual](../Problems/index.md))
+- a set of problems defined by C++ object of type `Problem` (see [the dedicated page of the user manual](../Problems/index.md))
 
 
 !!! example "Defining and using couplings"
@@ -24,13 +16,12 @@ They must be defined by:
     ```
     This example show how to define two `Coupling` objects, here named "MyCoupling1" and "MyCoupling2". Each coupling is instantiated with three fictitious problems.
 
-    These couplings may be then used to instantiated a `TimeDiscretization` object to build a multiphysics coupling scheme. 
+    These couplings may be then used to instantiated a [TimeDiscretization](../Time/index.md) object to build a multiphysics coupling scheme. 
 
     ```c++
     auto time = TimeDiscretization(time_parameters, coupling_example_1, coupling_example_2);
     ```
 
-    The use of `TimeDiscretization` is detailed in the [dedicated page of the user manual](../../Time/index.md).
 
 
 

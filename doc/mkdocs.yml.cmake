@@ -134,6 +134,7 @@ nav:
     - Documentation/User/Parameters/index.md
     - Multiphysics Coupling Scheme:
       - Documentation/User/MultiPhysicsCouplingScheme/index.md
+      - Documentation/User/MultiPhysicsCouplingScheme/Time/index.md
       - Documentation/User/MultiPhysicsCouplingScheme/Couplings/index.md
       - Problems:
         - Documentation/User/MultiPhysicsCouplingScheme/Problems/index.md
@@ -145,9 +146,8 @@ nav:
             - Documentation/User/MultiPhysicsCouplingScheme/Problems/PDEs/Integrators/index.md
         - Documentation/User/MultiPhysicsCouplingScheme/Problems/0D/index.md
         - Documentation/User/MultiPhysicsCouplingScheme/Problems/Remainder/index.md
-      - Documentation/User/Convergence/index.md
+      - Documentation/User/MultiPhysicsCouplingScheme/Convergence/index.md
     - Documentation/User/PostProcessing/index.md
-    - Documentation/User/Time/index.md
   - Modelling Description: 
     - Documentation/Physical/index.md
   - Code Documentation: 

@@ -1,4 +1,4 @@
-# Problems (*Coming soon*)
+# Problems
 
 `SLOTH` provides three main types of `Problems`: 
 

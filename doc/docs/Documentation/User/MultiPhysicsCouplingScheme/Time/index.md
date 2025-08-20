@@ -2,16 +2,10 @@
 
 This page describes the C++ object `TimeDiscretization`, which enables `SLOTH` to manage the time loop of all multiphysics simulations.
 
-<figure markdown="span">
-  ![Time-step](../../../img/time_step.png){  width=300px}
-  <figcaption>Figure 1 : Schematic description of one time-step for SLOTH simulations
-</figcaption>
-</figure>
-
 `TimeDiscretization` object is simply defined by:
 
 - a list of parameters
-- a list of [`Coupling`](../MultiPhysicsCouplingScheme/Couplings/index.md)
+- a list of [`Coupling`](../Couplings/index.md)
 
 
 The parameters allowed with `TimeDiscretization` are summarized in table 1.
@@ -30,7 +24,7 @@ The parameters allowed with `TimeDiscretization` are summarized in table 1.
 
 
 !!! example "Example of `TimeDiscretization` with parameters"
-    The following example assume a multiphysics simulation based on two couplings, each composed of three problems. 
+    The following example assume a multiphysics simulation based on two [couplings](../Couplings/index.md), each composed of three [problems](../Problems/index.md). 
     
     The time loop starts at $`0`$ s, ends at $`1`$ s with a time-step of $`0.1`$ s.
 
