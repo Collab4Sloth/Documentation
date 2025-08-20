@@ -22,12 +22,13 @@ This page focuses on the kernel of `SLOTH`, providing all the essential informat
 - [Multiphysics coupling scheme](MultiphysicsCouplingScheme/index.md), including the `SLOTH`objects [TimeDiscretization](MultiphysicsCouplingScheme/Time/index.md), [Coupling](MultiphysicsCouplingScheme/Couplings/index.md), [Problems](MultiphysicsCouplingScheme/Problems/index.md) and [Convergence](MultiphysicsCouplingScheme/Convergence/index.md)
 - [Post-Processing](PostProcessing/index.md)
 
+!!! tip "On the use of tutorials"
+    Development team recommend visiting the [tutorials page](../../Started/HowTo/Tutorials/index.md) to discover tips and tricks for specific `SLOTH` features
 
+!!! note "`MFEM` documentation"
+    For further details regarding dependencies, advanced numerical methods, and massively parallel features, users are referred to the [MFEM website](https://mfem.org).
 
-
-
- For further details regarding dependencies, advanced numerical methods, and massively parallel features, users are referred to the [MFEM website](https://mfem.org).
-
-In addition, users are referred to the [`Getting started`](../../Started/index.md) page for more details about the installation and compilation of `SLOTH`. 
+!!! note "Installation guide"
+    In addition, users are referred to the [`Getting started`](../../Started/index.md) page for more details about the installation and compilation of `SLOTH`. 
 
 

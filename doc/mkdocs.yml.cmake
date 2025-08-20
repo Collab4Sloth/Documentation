@@ -102,7 +102,6 @@ nav:
         - Started/HowTo/Simple/index.md
       - Tutorials:
         - Started/HowTo/Tutorials/index.md
-        - Started/HowTo/Tutorials/tuto1.md
     - Examples:
       - Started/Examples/index.md
       - Thermal Diffusion:
@@ -125,7 +124,6 @@ nav:
           - Started/Examples/CahnHilliard/example5/index.md
       - CALPHAD:
         - Started/Examples/Calphad/index.md
-      @EXAMPLE_LIST@
 
   - User Manual: 
     - Documentation/User/index.md
