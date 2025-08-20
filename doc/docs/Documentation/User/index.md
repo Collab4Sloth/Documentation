@@ -2,4 +2,32 @@
 icon: material/book-open-variant 
 ---
 
-# **Coming soon**
+# User manual
+
+Figure 1 show a schematic overview of the `SLOTH` features.
+
+<figure markdown="span">
+  ![sloth-features](../../img/sloth-diagram.png){  width=500px}
+  <figcaption>Figure 1 : schematic overview of the `SLOTH` features
+</figcaption>
+</figure>
+
+`SLOTH` is developed on top of `MFEM` [@mfem].
+It is implemented in C++ and the source code is managed with CMake. 
+
+This page focuses on the kernel of `SLOTH`, providing all the essential information users need to construct or modify a `SLOTH` data file. This includes:
+
+- [Variables](Variables/index.md) and [Parameters](Parameters/index.md)
+- [Spatial discretisation](SpatialDiscretization/index.md), including the `SLOTH` objects [Meshing](SpatialDiscretization/Meshing/index.md) and [BoundaryConditions](SpatialDiscretization/BoundaryConditions/index.md)
+- [Multiphysics coupling scheme](MultiphysicsCouplingScheme/index.md), including the `SLOTH`objects [TimeDiscretization](MultiphysicsCouplingScheme/Time/index.md), [Coupling](MultiphysicsCouplingScheme/Couplings/index.md), [Problems](MultiphysicsCouplingScheme/Problems/index.md) and [Convergence](MultiphysicsCouplingScheme/Convergence/index.md)
+- [Post-Processing](PostProcessing/index.md)
+
+
+
+
+
+ For further details regarding dependencies, advanced numerical methods, and massively parallel features, users are referred to the [MFEM website](https://mfem.org).
+
+In addition, users are referred to the [`Getting started`](../../Started/index.md) page for more details about the installation and compilation of `SLOTH`. 
+
+
