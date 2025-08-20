@@ -126,12 +126,12 @@ nav:
 
   - User Manual: 
     - Documentation/User/index.md
+    - Documentation/User/Parameters/index.md
+    - Documentation/User/Variables/index.md
     - Spatial discretization:
       - Documentation/User/SpatialDiscretization/index.md
       - Documentation/User/SpatialDiscretization/Meshing/index.md
       - Documentation/User/SpatialDiscretization/BoundaryConditions/index.md
-    - Documentation/User/Variables/index.md
-    - Documentation/User/Parameters/index.md
     - Multiphysics Coupling Scheme:
       - Documentation/User/MultiPhysicsCouplingScheme/index.md
       - Documentation/User/MultiPhysicsCouplingScheme/Time/index.md
