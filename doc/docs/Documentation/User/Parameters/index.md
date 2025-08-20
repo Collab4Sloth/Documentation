@@ -71,6 +71,25 @@ but also custom-defined containers:
         param_value.emplace_back("value_2");
         Parameter("p1", param_value, "Scalar Parameter of type vString")
         ```
+    === "vInt"
+        `vInt`is a C++ alias for `std::vector<int>`.
+
+        ```c++
+        vInt param_value;
+        param_value.emplace_back(0);
+        param_value.emplace_back(1);
+        Parameter("p1", param_value, "Scalar Parameter of type vInt")
+        ```
+        
+    === "vDouble"
+        `vDouble`is a C++ alias for `std::vector<double>`.
+
+        ```c++
+        vDouble param_value;
+        param_value.emplace_back(0.0);
+        param_value.emplace_back(0.1);
+        Parameter("p1", param_value, "Scalar Parameter of type vDouble")
+        ```
 
     === "vTupleStringInt"
         `vString`is a C++ alias for `std::vector<std::tuple<std::string,int>>`.
@@ -90,6 +109,16 @@ but also custom-defined containers:
         param_value.emplace_back(std::make_tuple("key_1","value_1"));
         param_value.emplace_back(std::make_tuple("key_2","value_2"));
         Parameter("p1", param_value, "Scalar Parameter of type vTupleStringString")
+        ```
+
+    === "vTuple2StringDouble"
+        `vTuple2StringDouble`is a C++ alias for `std::vector<std::tuple<std::string,std::string, double>>`.
+
+        ```c++
+        vTuple2StringDouble param_value;
+        param_value.emplace_back(std::make_tuple("key_1","value_1",0.0));
+        param_value.emplace_back(std::make_tuple("key_2","value_2",1.0));
+        Parameter("p1", param_value, "Scalar Parameter of type vTuple2StringDouble")
         ```
  
 
