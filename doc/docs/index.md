@@ -15,7 +15,8 @@ icon: material/shield-home
 <div style="display: flex; justify-content: space-between;">
 
   <img src="img/logo-pleiades.png" alt="PLEIADES" style="width: 30%;">
-  <img src="img/sloth_blanc.jpg" alt="SLOTH" style="width: 30%;">
+  <!-- <img src="img/sloth_blanc.jpg" alt="SLOTH" style="width: 30%;"> -->
+  <img src="img/logo-simu.gif" alt="SLOTH" style="width: 30%;">
   <img src="img/mfem.png" alt="MFEM" style="width: 30%;">
 
 </div>
