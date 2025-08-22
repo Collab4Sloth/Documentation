@@ -95,7 +95,6 @@ nav:
       - Started/Installation/cluster.md
       - Started/Installation/cluster_source.md
       - Started/Installation/libtorch.md
-    - Code quality: Started/Quality/quality.md
     - HowTo: 
       - Started/HowTo/index.md
       - Basic features:
@@ -124,7 +123,7 @@ nav:
           - Started/Examples/CahnHilliard/example5/index.md
       - CALPHAD:
         - Started/Examples/Calphad/index.md
-
+    - Code quality: Started/Quality/quality.md
   - User Manual: 
     - Documentation/User/index.md
     - Documentation/User/Parameters/index.md
