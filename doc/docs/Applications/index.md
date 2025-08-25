@@ -2,4 +2,6 @@
 icon: material/test-tube
 ---
 
-# **Coming soon**
+# Applications
+
+This page will provide an overview of applications performed with `SLOTH`.
