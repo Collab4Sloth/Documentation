@@ -7,8 +7,8 @@
 - [Other types, referred to as "the remainder"](Remainder/index.md) 
 
 <figure markdown="span">
-  ![Time-step](../../../../img/time_step_2.png){  width=600px}
-  <figcaption>Figure 1 : Schematic description of one time-step for SLOTH simulations
+  ![Time-step](../../../../img/Problems.pdf){  width=800px}
+  <figcaption>Figure 1 : Schematic description of one time-step for `SLOTH` simulations with the three main types of `Problems`.
 </figcaption>
 </figure>
 
