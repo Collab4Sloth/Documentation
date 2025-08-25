@@ -2,11 +2,11 @@
 
 For `SLOTH`, the time loop of all multiphysics simulations is managed by the C++ object [`TimeDiscretization`](Time/index.md).
 
-Figure 1 schematically represents a time-step of a `SLOTH` multiphysics simulation.
+Figure 1 schematically represents a time-step of a `SLOTH` multiphysics simulations.
 
 <figure markdown="span">
-  ![Time-step](../../../img/time_step.png){  width=300px}
-  <figcaption>Figure 1 : Schematic description of one time-step for SLOTH simulations
+  ![Time-step](../../../img/TimeDiscretization.pdf){  width=800px}
+  <figcaption>Figure 1 : Schematic description of one time-step for `SLOTH` simulations
 </figcaption>
 </figure>
 
