@@ -99,12 +99,6 @@ nav:
         - Started/HowTo/Tutorials/index.md
     - Examples:
       - Started/Examples/index.md
-      - Thermal Diffusion:
-        - Started/Examples/ThermalDiffusion/index.md
-      - Mass Diffusion:
-        - Started/Examples/MassDiffusion/index.md
-      - Allen-Cahn:
-        - Started/Examples/AllenCahn/index.md
       - Cahn-Hilliard: 
         - Started/Examples/CahnHilliard/index.md
         - Example 1:
@@ -117,6 +111,12 @@ nav:
           - Started/Examples/CahnHilliard/example4/index.md
         - Example 5:
           - Started/Examples/CahnHilliard/example5/index.md
+      - Allen-Cahn:
+        - Started/Examples/AllenCahn/index.md
+      - Mass Diffusion:
+        - Started/Examples/MassDiffusion/index.md
+      - Thermal Diffusion:
+        - Started/Examples/ThermalDiffusion/index.md
       - CALPHAD:
         - Started/Examples/Calphad/index.md
     - Code quality: Started/Quality/quality.md
