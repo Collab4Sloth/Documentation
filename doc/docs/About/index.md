@@ -43,12 +43,22 @@ Consequently, the CEA is developing **SLOTH**, a **multiphase-field multicompone
 <div class="grid cards" markdown>
 
 
--   __Modelling & Development Team__
+-   __Development Team__
   
     ---    
-    - [Clément Introïni](https://www.researchgate.net/profile/Clement-Introini) (Phase-Field, Computer Science, Material Science)
-    - [Raphaël Prat]() (Computer Science, HPC)
+    - [Clément Introïni](https://www.researchgate.net/profile/Clement-Introini)
+    - [Raphaël Prat](https://www.researchgate.net/profile/Raphael-Prat)
 
+
+-   __Living Deep Neural Network__
+  
+    ---    
+    - [Romain Le Tellier]()
+    - [Tommaso Barani](https://www.researchgate.net/profile/Tommaso-Barani)
+    - [Mathis Plapp](https://www.researchgate.net/profile/Mathis-Plapp)
+    - [Isabelle Ramière](https://www.researchgate.net/profile/Isabelle-Ramiere)
+    - [Luca Messina]()
+    - [Jérôme Sercombe](https://www.researchgate.net/profile/J-Sercombe)
 
 
 -   __Students Team__
@@ -56,6 +66,8 @@ Consequently, the CEA is developing **SLOTH**, a **multiphase-field multicompone
     ---
     - [Alessandro Scapini (PhD 2024-2027)]()
     - [Clément Plumecocq (PhD 2023-2026)]()
+    - [Victor Navarre (Master 2025)]()
+    - [Jules Czuckermand (Master 2025)]()     
     - [Mouad Bakhkakh (Master 2024)]()
     - [Etienne Delobre (Master 2023)]()
   
