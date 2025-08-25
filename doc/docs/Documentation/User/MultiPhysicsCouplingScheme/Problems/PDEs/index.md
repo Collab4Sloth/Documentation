@@ -1,4 +1,4 @@
-# Partial Differential Equations (*Coming soon*)
+# Partial Differential Equations
 
 Partial Differential Equations (PDEs) are the most important kind of problem for `SLOTH`.
 
@@ -15,8 +15,8 @@ F(U(x,t))&=G(U(x,t))
 where $`U(x,t)`$ is the vector of unknowns expressed as a function of the time $`t`$ and the position $`x`$. In this equation, $`F`$ and $`G`$ are two nonlinear forms associated with the time derivative operator and the differential operators, respectively. For steady problem, $`F=0`$.
 
 <figure markdown="span">
-  ![Time-step](../../../../../img/time_step_2.png){  width=600px}
-  <figcaption>Figure 1 : Schematic description of one time-step for SLOTH simulations
+  ![Time-step](../../../../../img/ProblemsDetailed.pdf){  width=800px}
+  <figcaption>Figure 1 : Schematic description of one time-step for `SLOTH` simulations with a focus on PDEs.
 </figcaption>
 </figure>
 
