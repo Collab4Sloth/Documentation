@@ -12,11 +12,7 @@ markdown_extensions:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - md_in_html
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
   - admonition
@@ -140,10 +136,6 @@ nav:
         - Documentation/User/MultiPhysicsCouplingScheme/Problems/index.md
         - Partial Differential Equations:
           - Documentation/User/MultiPhysicsCouplingScheme/Problems/PDEs/index.md
-          - Operators:
-            - Documentation/User/MultiPhysicsCouplingScheme/Problems/PDEs/Operators/index.md
-          - Integrators:
-            - Documentation/User/MultiPhysicsCouplingScheme/Problems/PDEs/Integrators/index.md
         - Documentation/User/MultiPhysicsCouplingScheme/Problems/0D/index.md
         - Documentation/User/MultiPhysicsCouplingScheme/Problems/Remainder/index.md
       - Documentation/User/MultiPhysicsCouplingScheme/Convergence/index.md
