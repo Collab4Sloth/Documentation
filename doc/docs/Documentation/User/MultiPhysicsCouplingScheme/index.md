@@ -12,7 +12,7 @@ Figure 1 schematically represents a time-step of a `SLOTH` multiphysics simulati
 
 It consists of two nested loops.
 
-The first loop corresponds to solving a set of [Couplings](couplings/index.md) using a partitioned algorithm.
+The first loop corresponds to solving a set of [Couplings](Couplings/index.md) using a partitioned algorithm.
 
 For each coupling, there is an inner loop over a set of [Problems](Problems/index.md), each solved either with a partitioned or a monolithic algorithm. 
 

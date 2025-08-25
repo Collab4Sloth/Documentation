@@ -149,9 +149,6 @@ In these examples, one considers a cubic domain with a side length of 1 mm. The 
 
         A part of the cubic domain is transformed to a periodic domain by specifying a translation in the targeted direction. 
 
-
-
-
 ## __GMSH Split Meshes__
 
 To read directly partitioned meshes, the MFEM miniapps called `mesh-explorer` must be used.

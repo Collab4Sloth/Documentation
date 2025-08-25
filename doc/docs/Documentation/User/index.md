@@ -19,7 +19,7 @@ This page focuses on the kernel of `SLOTH`, providing all the essential informat
 
 - [Variables](Variables/index.md) and [Parameters](Parameters/index.md)
 - [Spatial discretisation](SpatialDiscretization/index.md), including the `SLOTH` objects [Meshing](SpatialDiscretization/Meshing/index.md) and [BoundaryConditions](SpatialDiscretization/BoundaryConditions/index.md)
-- [Multiphysics coupling scheme](MultiphysicsCouplingScheme/index.md), including the `SLOTH`objects [TimeDiscretization](MultiphysicsCouplingScheme/Time/index.md), [Coupling](MultiphysicsCouplingScheme/Couplings/index.md), [Problems](MultiphysicsCouplingScheme/Problems/index.md) and [Convergence](MultiphysicsCouplingScheme/Convergence/index.md)
+- [Multiphysics coupling scheme](MultiPhysicsCouplingScheme/index.md), including the `SLOTH`objects [TimeDiscretization](MultiPhysicsCouplingScheme/Time/index.md), [Coupling](MultiPhysicsCouplingScheme/Couplings/index.md), [Problems](MultiPhysicsCouplingScheme/Problems/index.md) and [Convergence](MultiPhysicsCouplingScheme/Convergence/index.md)
 - [Post-Processing](PostProcessing/index.md)
 
 !!! tip "On the use of tutorials"

@@ -101,8 +101,32 @@ The `SLOTH` development team remains available to provide first-level support to
 !!! remark "Coupling between SLOTH and OpenCalphad"
     The CEA has developed under a proprietary license a software interface to the OpenCalphad thermodynamic solver[@sundman14][@sundman15].  
     The source code is not available to unauthorized users. 
-
+ 
 ### __Analytical thermodynamic model__ {#analytical}
+
+In many multiphysics simulations involving thermodynamic equilibrium calculations, the thermodynamic description relies on analytical formulas.
+
+This capability is illustrated in `SLOTH` with the C++ object `AnalyticalIdealSolution<mfem::Vector>`, which computes the Gibbs free energy and the chemical potential for a `SOLUTION` phase of an ideal-solution type.
+
+```math
+\begin{align}
+g(x,T)&= R T (x ln(x) + (1.0 - x) ln(1.0 - x))
+\end{align}
+```
+
+where $`R`$ is the  molar gas constant, $`T`$ the temperature and $`x`$ the molar fraction.
+
+!!! warning "On the use of the `AnalyticalIdealSolution` object"    
+    The `AnalyticalIdealSolution<mfem::Vector>` object is mainly intended for code analyses involving `Calphad_Problem` and as an example to guide users in building and using a `CALPHAD` model. 
+
+!!! example "Definition of a `Calphad_Problem` based on `AnalyticalIdealSolution<mfem::Vector>`"
+    In this example, a fictitious `Calphad_Problem` based on `AnalyticalIdealSolution<mfem::Vector>` is defined with `Parameters` (see `calphad_parameters`), outputs (primary `Variables`) and inputs (auxiliary `Variables`, here T, P, composition)
+    
+    ```c++
+    Calphad_Problem<AnalyticalIdealSolution<mfem::Vector>, VARS, PST>  my_calphad_problem = CalphadProblem(calphad_parameters, outputs, calphad_pst, T, P, composition);
+    
+    ```
+
 
 ### __Metamodels__ {#ia}
 
@@ -119,7 +143,7 @@ Users can either employ a dedicated neural network for each thermodynamic quanti
 
     
 
-The parameters associated with `CalphadInformedNeuralNetwork<mfem::Vector>` are detailed in the table 1.
+The parameters associated with `CalphadInformedNeuralNetwork<mfem::Vector>` are detailed in the table 3.
 
 | Parameter Name                           | Type                 | Default Value | Description                                                              |
 | ---------------------------------------- | -------------------- | ------------- | ------------------------------------------------------------------------ |
@@ -137,13 +161,13 @@ The parameters associated with `CalphadInformedNeuralNetwork<mfem::Vector>` are 
 | `"InputCompositionFactor"`               | `double`             | `1.0`          |  By default, initial composition is expressed in terms of molar fractions of  elements. This parameter should be used when the metamodels are built with moles.                                                                        |
 | `"GivenPhase"`                           | `std::string`        | `""`          |     When working for a single phase, its name is given by this paramter.
 | `"element_removed_from_nn_inputs"`       | `std::string`        |               |     By default, initial composition is expressed in terms of molar fraction of elements. This parameter should be used to define the element deduced from other thanks to the relation $`\sum_{i} x_i=1`$ |
-*__Table 2__ - Parameters associated with `CalphadInformedNeuralNetwork`*
+*__Table 3__ - Parameters associated with `CalphadInformedNeuralNetwork`*
 
 
 !!! warning "Inputs of metamodels"
     The inputs of the metamodels are assumed to be the temperature, the pressure (if used during the construction of the metamodels), and the composition.
 
-!!! example "Definition of `Parameters`for `CalphadInformedNeuralNetwork<mfem::Vector>`"
+!!! example "Definition of a `Calphad_Problem` based on `CalphadInformedNeuralNetwork<mfem::Vector>`"
 
     This example assume that metamodels are used to approximate chemical potentials and mobilities for the U-Pu-O ternary system in a liquid-solid mixture.
 
