@@ -163,7 +163,7 @@ This information is provided in the form of a list of strings associated with th
 
 !!! example "Example of variables definition with additional information"
 
-    The following example refers to `Calphad` problems (see [Problems](../Problems/index.md) for more details). 
+    The following example refers to `Calphad` problems (see [Problems](../MultiPhysicsCouplingScheme/Problems/index.md) for more details). 
     The first variable, named `Ma`, corresponds to a mobility coefficient whereas the second one is associated with a chemical potential named `mu_a`. 
     
     For a `Calphad` problem, managing the variables requires knowing the type of each variable. By convention, the last additional information corresponds to a pre-defined symbol (e.g., 'mu' for chemical potentials and 'mob' for mobilities). 

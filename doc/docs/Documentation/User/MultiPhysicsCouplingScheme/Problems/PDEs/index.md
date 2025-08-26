@@ -86,8 +86,8 @@ They inherit from the `MFEM` `BlockNonlinearFormIntegrator` class.
     
     The `OPERATOR` operator must be defined by:
 
-    - a vector of spatial discretisation objects (see [Meshing](../SpatialDiscretization/Meshing/index.md)), 
-    - a set of parameters (see [Parameters](../Parameters/index.md)),
+    - a vector of spatial discretisation objects (see [Meshing](../../../SpatialDiscretization/Meshing/index.md)), 
+    - a set of parameters (see [Parameters](../../../Parameters/index.md)),
     - a ODE solver for time stepping.
   
     !!! warning "On the size of the vector of spatial discretisation objects"

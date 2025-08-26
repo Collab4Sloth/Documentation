@@ -67,7 +67,7 @@ Here again, defining a mesh involves creating an object of type `SPA` with the f
 4. A C++ object of type `std::tuple` to provide the number of elements and maximum length in each direction.
 5. A C++ object of type `std::vector<mfem::Vector>` to provide translations to apply in each direction, if the final mesh is periodic.
 
-The following examples specify the use of these parameters in [1D](mfem1D), [2D](mfem2D) and [3D](mfem3D).
+The following examples specify the use of these parameters in [1D](#mfem1D), [2D](#mfem2D) and [3D](#mfem3D).
 
 ### __1D mesh__ {#mfem1D}
 
