@@ -77,7 +77,7 @@ Neumann boundary conditions are prescribed on boundary of the domain:
 
 ### __Numerical scheme__
 
-- Time integration: Euler Implicit over the interval $`t\in[0,1]`$ with a time-step $\delta t=10^{-3}$. The calculation stops when convergence criteria are reached.
+- Time integration: Euler Implicit over the interval $`t\in[0,1]`$ with a time-step $`\delta t=10^{-3}`$. The calculation stops when convergence criteria are reached.
 
 ```math
 

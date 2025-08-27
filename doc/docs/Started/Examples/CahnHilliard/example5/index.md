@@ -93,7 +93,7 @@ Dirichlet boundary conditions are prescribed on the right and left of the domain
 
 ### __Numerical scheme__
 
-- Time integration: Euler Implicit over the interval $`t\in[0,1]`$ with a time-step $\delta t=1$. 
+- Time integration: Euler Implicit over the interval $`t\in[0,1]`$ with a time-step $`\delta t=1`$. 
 - Spatial discretization for convergence analysis: uniform grid with $`N={160, 80, 40, 20}`$ nodes in each spatial direction, with $`\mathcal{Q}_1`$ and $`\mathcal{Q}_2`$ finite elements
 - Newton solver: relative tolerance $`10^{-8}`$, absolute tolerance $`10^{-12}`$
 - Iterative solver: HYPRE_GMRES 
