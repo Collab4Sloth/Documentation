@@ -2568,7 +2568,7 @@
 <p>The <code>PhysicalConvergence</code> objects are defined by:</p>
 <ul>
 <li>a type of criterion: the maximum of the absolute (<code>ConvergenceType::ABSOLUTE_MAX</code>) and/or relative (<code>ConvergenceType::RELATIVE_MAX</code>) error between two successive time-steps</li>
-<li>a value (type <code>double</code>)</li>
+<li>a threshold (type <code>double</code>)</li>
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Definition of a problem with two unknowns and a <code>Convergence</code> object</p>
@@ -2585,8 +2585,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">On the use of <code>Convergence</code> objects</p>
-<p>From now, the <code>Convergence</code> objecs are only used to find steady solution from a transient calculation. 
-However, it could easily evolve in the future to tackle fixed-point problems or simulations with adaptive time steps.</p>
+<p>From now, the <code>Convergence</code> objecs are only used to find steady solution from a transient calculation. </p>
 </div>
 
 

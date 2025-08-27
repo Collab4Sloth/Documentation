@@ -2565,15 +2565,15 @@
 <p>Couplings for <code>SLOTH</code> are made with a C++ object of type <code>Coupling</code>. 
 They must be defined by:</p>
 <ul>
-<li>a name (C++ type std::string),</li>
-<li>a set of problems defined by C++ object of type <code>Problem</code> (see <a href="../Problems/index.html">the dedicated page of the user manual</a>)</li>
+<li>a coupling name (C++ type std::string),</li>
+<li>a set of problems defined by C++ objects of type <code>Problem</code> (see <a href="../Problems/index.html">the dedicated page of the user manual</a>)</li>
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Defining and using couplings</p>
 <p><div class="language-c++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">auto</span><span class="w"> </span><span class="n">coupling_example_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Coupling</span><span class="p">(</span><span class="s">&quot;MyCoupling1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Problem1_1</span><span class="p">,</span><span class="w"> </span><span class="n">Problem1_2</span><span class="p">,</span><span class="w"> </span><span class="n">Problem1_3</span><span class="p">);</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">auto</span><span class="w"> </span><span class="n">coupling_example_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Coupling</span><span class="p">(</span><span class="s">&quot;MyCoupling2&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Problem2_1</span><span class="p">,</span><span class="w"> </span><span class="n">Problem2_2</span><span class="p">,</span><span class="w"> </span><span class="n">Problem2_3</span><span class="p">);</span>
 </span></code></pre></div>
-This example show how to define two <code>Coupling</code> objects, here named "MyCoupling1" and "MyCoupling2". Each coupling is instantiated with three fictitious problems.</p>
+This example shows how to define two <code>Coupling</code> objects, here named "MyCoupling1" and "MyCoupling2". Each coupling is instantiated with three fictitious problems.</p>
 <p>These couplings may be then used to instantiated a <a href="../Time/index.html">TimeDiscretization</a> object to build a multiphysics coupling scheme. </p>
 <div class="language-c++ highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">auto</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TimeDiscretization</span><span class="p">(</span><span class="n">time_parameters</span><span class="p">,</span><span class="w"> </span><span class="n">coupling_example_1</span><span class="p">,</span><span class="w"> </span><span class="n">coupling_example_2</span><span class="p">);</span>
 </span></code></pre></div>

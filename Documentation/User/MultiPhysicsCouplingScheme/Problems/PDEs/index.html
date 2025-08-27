@@ -2582,7 +2582,7 @@ F(U(x,t))&amp;=G(U(x,t))
 <div class="language-c++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">using</span><span class="w"> </span><span class="n">PDE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Problem</span><span class="o">&lt;</span><span class="n">OPERATOR</span><span class="p">,</span><span class="w"> </span><span class="n">VARS</span><span class="p">,</span><span class="w"> </span><span class="n">PST</span><span class="o">&gt;</span><span class="p">;</span>
 </span></code></pre></div>
 </div>
-<p>The <code>OPERATOR</code> object in <code>Problem</code> refers to a C++ object that inherits from base classes responsible for solving the nonlinear system (1). 
+<p>The <code>OPERATOR</code> object in <code>Problem</code> refers to an object that inherits from base classes responsible for solving the nonlinear system (1). 
 These classes are illustrated in the figure 2: <code>OperatorBase</code> is a base class with two child classes -- <code>TransientOperatorBase</code>, which inherits from the <code>TimeDependentOperator</code> class of <code>MFEM</code>, and <code>SteadyOperatorBase</code>, which inherits from the <code>Operator</code> class of <code>MFEM</code>. </p>
 <figure>
   <img alt="Operators" src="../../../../../img/SlothOperators.pdf" width="600px" />
@@ -2590,7 +2590,7 @@ These classes are illustrated in the figure 2: <code>OperatorBase</code> is a ba
 <figcaption>Figure 2 : Three main classes managing the resolution of the non linear system.
 </figcaption>
 </figure>
-<p>In adition to these three classes, there are two classes uses to compute the residual and the Jacobian associated with the Newton-Raphson algorithm -- see <code>ReducedOperator</code> and <code>SteadyReducedOperator</code> classes on the figure 2.</p>
+<p>In addition to these three classes, there are two classes used to compute the residual and the Jacobian associated with the Newton-Raphson algorithm -- see <code>ReducedOperator</code> and <code>SteadyReducedOperator</code> classes in the figure 2.</p>
 <p>Based on these classes, specific operators have been implemented to solve:</p>
 <ul>
 <li>phase-field problems (see <code>PhaseFieldOperator</code> in the figure 3),</li>
@@ -2604,7 +2604,7 @@ These classes are illustrated in the figure 2: <code>OperatorBase</code> is a ba
 <figcaption>Figure 3 : Specific `Operators` implemented in `SLOTH`.
 </figcaption>
 </figure>
-<p>As illustrated in the figure 3, the specific operators are associated with <code>NonLinearFormIntegrators</code> which are the <code>SLOTH</code> C++ objects used to compute the residual and the Jacobian contributions.
+<p>As illustrated in the figure 3, the specific operators are associated with <code>NonLinearFormIntegrators</code> which are used to compute the residual and the Jacobian contributions.
 They inherit from the <code>MFEM</code> <code>BlockNonlinearFormIntegrator</code> class. </p>
 <div class="admonition note">
 <p class="admonition-title">On the inheritance from <code>BlockNonlinearFormIntegrator</code> instead of <code>NonlinearFormIntegrator</code></p>
