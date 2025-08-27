@@ -106,7 +106,7 @@ The `SLOTH` development team remains available to provide first-level support to
 
 In many multiphysics simulations involving thermodynamic equilibrium calculations, the thermodynamic description relies on analytical formulas.
 
-This capability is illustrated in `SLOTH` with the C++ object `AnalyticalIdealSolution<mfem::Vector>`, which computes the Gibbs free energy and the chemical potential for a `SOLUTION` phase of an ideal-solution type.
+This capability is illustrated in `SLOTH` with the object `AnalyticalIdealSolution<mfem::Vector>`, which computes the Gibbs free energy and the chemical potential for an ideal-solution phase.
 
 ```math
 \begin{align}
