@@ -34,7 +34,7 @@ Definition of PDEs for `SLOTH` is made with a C++ object of type `Problem`, whic
     ```
 
 
-The `OPERATOR` object in `Problem` refers to a C++ object that inherits from base classes responsible for solving the nonlinear system (1). 
+The `OPERATOR` object in `Problem` refers to an object that inherits from base classes responsible for solving the nonlinear system (1). 
 These classes are illustrated in the figure 2: `OperatorBase` is a base class with two child classes -- `TransientOperatorBase`, which inherits from the `TimeDependentOperator` class of `MFEM`, and `SteadyOperatorBase`, which inherits from the `Operator` class of `MFEM`. 
 <figure markdown="span">
   ![Operators](../../../../../img/SlothOperators.pdf){  width=600px}
@@ -42,7 +42,7 @@ These classes are illustrated in the figure 2: `OperatorBase` is a base class wi
 </figcaption>
 </figure>
 
-In adition to these three classes, there are two classes uses to compute the residual and the Jacobian associated with the Newton-Raphson algorithm -- see `ReducedOperator` and `SteadyReducedOperator` classes on the figure 2.
+In addition to these three classes, there are two classes used to compute the residual and the Jacobian associated with the Newton-Raphson algorithm -- see `ReducedOperator` and `SteadyReducedOperator` classes in the figure 2.
 
 Based on these classes, specific operators have been implemented to solve:
 
@@ -58,7 +58,7 @@ Transient and steady versions of these specific operators are available.
 </figcaption>
 </figure>
 
-As illustrated in the figure 3, the specific operators are associated with `NonLinearFormIntegrators` which are the `SLOTH` C++ objects used to compute the residual and the Jacobian contributions.
+As illustrated in the figure 3, the specific operators are associated with `NonLinearFormIntegrators` which are used to compute the residual and the Jacobian contributions.
 They inherit from the `MFEM` `BlockNonlinearFormIntegrator` class. 
 
 !!! note "On the inheritance from `BlockNonlinearFormIntegrator` instead of `NonlinearFormIntegrator`"

@@ -21,9 +21,9 @@ Definition of CALPHAD problems for `SLOTH` is made with a C++ object of type `Ca
 - a post-processing (`SLOTH` type `PostProcessing`),
 - auxiliary variables  (`SLOTH` type `Variables').
 
-The parameters will be defined later on this page. Here, focus is made on the variables. It is important to keep in mind that the inputs of the `Calphad_Problem` are the auxialiary variables whereas the outputs correspond the primary variables (see the [dedicated page of the manual](../../../Variables/index.md) for more details about `Variable` objects).
+The parameters will be defined later on this page. Here, the focus is made on the variables. It is important to keep in mind that the inputs of the `Calphad_Problem` are the auxialiary variables whereas the outputs correspond the primary variables (see the [dedicated page of the manual](../../../Variables/index.md) for more details about `Variable` objects).
 
-The inputs are the initial condition expressed in terms of temperature, pressure and composition. When performing multiphysics simulation involving heat transfer, mass diffusion and CALPHAD calculations, it is often preferable to use separate auxiliary variables rather than a single and unified collection of variables within one `Variables` object.
+The inputs are the initial conditions expressed in terms of temperature, pressure and composition. When performing multiphysics simulations involving heat transfer, mass diffusion and CALPHAD calculations, it is often preferable to use separate auxiliary variables rather than a single and unified collection of variables within one `Variables` object.
 
 !!! example "Definition of a fictitious  `Calphad_Problem`"
     ```c++
@@ -132,7 +132,7 @@ where $`R`$ is the  molar gas constant, $`T`$ the temperature and $`x`$ the mola
 
 SLOTH can also be linked to the [libtorch library](https://pytorch.org) to use serialized `PyTorch` models for approximating the behavior of a GEM. 
 
-`CalphadInformedNeuralNetwork<mfem::Vector>` is a C++ object developed to compute mobilities, chemical potentials, 
+`CalphadInformedNeuralNetwork<mfem::Vector>` is an object developed to compute mobilities, chemical potentials, 
 Gibbs free energy, and enthalpy for unary to n-ary systems either in a single phase or in a two phase mixture. 
 This list of predicted thermodynamic quantities could be extended. 
 

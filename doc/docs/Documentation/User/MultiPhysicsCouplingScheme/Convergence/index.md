@@ -11,7 +11,7 @@ The number and order of `PhysicalConvergence` objects defining a `Convergence` o
 The `PhysicalConvergence` objects are defined by:
 
 - a type of criterion: the maximum of the absolute (`ConvergenceType::ABSOLUTE_MAX`) and/or relative (`ConvergenceType::RELATIVE_MAX`) error between two successive time-steps
-- a value (type `double`)
+- a threshold (type `double`)
 
 
 !!! example "Definition of a problem with two unknowns and a `Convergence` object"
@@ -34,4 +34,3 @@ The `PhysicalConvergence` objects are defined by:
 
 !!! note "On the use of `Convergence` objects"
     From now, the `Convergence` objecs are only used to find steady solution from a transient calculation. 
-    However, it could easily evolve in the future to tackle fixed-point problems or simulations with adaptive time steps.
