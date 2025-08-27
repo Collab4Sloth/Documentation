@@ -57,7 +57,7 @@ Consequently, the CEA is developing **SLOTH**, a **multiphase-field multicompone
     - [Tommaso Barani](https://www.researchgate.net/profile/Tommaso-Barani)
     - [Mathis Plapp](https://www.researchgate.net/profile/Mathis-Plapp)
     - [Isabelle Ramière](https://www.researchgate.net/profile/Isabelle-Ramiere)
-    - [Luca Messina]()
+    - [Luca Messina](https://scholar.google.com/citations?hl=fr&user=_q0x3tsAAAAJ&view_op=list_works&sortby=pubdate)
     - [Jérôme Sercombe](https://www.researchgate.net/profile/J-Sercombe)
 
 

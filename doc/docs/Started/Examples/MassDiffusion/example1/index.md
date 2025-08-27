@@ -14,7 +14,7 @@
 
 ### __Statement of the problem__ 
 
-This example code is based on the example 16 on MFEM's website. It solves a diffusion equation in a 2D star $`\Omega`$ (GMSH mesh coming from MFEM examples).
+This example code is based on the ["Example 16: Time Dependent Heat Conduction",  on MFEM's website](https://mfem.org/examples/). It solves a diffusion equation in a 2D star $`\Omega`$ (GMSH mesh coming from MFEM examples).
 
 ```math
 

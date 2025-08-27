@@ -16,5 +16,5 @@ The first loop corresponds to solving a set of [Couplings](Couplings/index.md) u
 
 For each coupling, there is an inner loop over a set of [Problems](Problems/index.md), each solved either with a partitioned or a monolithic algorithm. 
 
-Depending on the simulation, users can also activated [Convergence](Convergence/index.md) criteria.
+Depending on the simulation, users can also activate [Convergence](Convergence/index.md) criteria.
 

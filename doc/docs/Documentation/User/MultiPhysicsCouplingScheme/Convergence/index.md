@@ -1,8 +1,8 @@
 # Convergence
 
-Definition of convergence criteria for `SLOTH` is made with a C++ object of type `Convergence` that is simply a collection of C++ object of type `PhysicalConvergence`.
+Definition of convergence criteria for `SLOTH` is made with a C++ object of type `Convergence` which is a collection of C++ objects of type `PhysicalConvergence`.
 
-Currently, `Convergence` object enables to find the steady solution from a transient calculation. 
+Currently, the `Convergence` object enables to find the steady solution from a transient calculation. 
 
 For this purpose, it must be added to the list of parameters when defining the [problem](../Problems/index.md).
 
@@ -10,7 +10,7 @@ The number and order of `PhysicalConvergence` objects defining a `Convergence` o
 
 The `PhysicalConvergence` objects are defined by:
 
-- a kind of criterion: the maximum of the absolute (`ConvergenceType::ABSOLUTE_MAX`) and/or relative (`ConvergenceType::RELATIVE_MAX`) error between two successive time-steps
+- a type of criterion: the maximum of the absolute (`ConvergenceType::ABSOLUTE_MAX`) and/or relative (`ConvergenceType::RELATIVE_MAX`) error between two successive time-steps
 - a value (type `double`)
 
 

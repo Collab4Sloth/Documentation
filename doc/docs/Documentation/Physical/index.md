@@ -102,7 +102,7 @@ The governing equations associated with the evolution of a physical system can b
 
     where $`\phi`$ is the phase indicator, $`\mu`$ the generalized chemical potential, $`F'`$ the derivative against $`\phi`$ of a potential $`F`$.  -->
 
-Based on these two historical models, a wide range of phase-field models has been developed. `SLOTH` provides the basic features needed to solve both Cahn–Hilliard-type and Allen–Cahn-type models.
+Based on these two historical models, a wide range of phase-field models has been developed. `SLOTH` provides the features needed to solve both Cahn–Hilliard-type and Allen–Cahn-type models.
 In addition, since it is dedicated to studying fuel behavior across different scales, from nominal operating conditions to severe accident scenarios, `SLOTH` also offers a suite of features for performing multiphysics simulations, including phase-field, thermal diffusion, multicomponent diffusion[@introini2025modeling], and CALPHAD thermodynamic calculations.
 
 !!! equation_red "Multicomponent diffusion"

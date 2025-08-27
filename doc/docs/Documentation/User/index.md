@@ -4,7 +4,7 @@ icon: material/book-open-variant
 
 # User manual
 
-Figure 1 show a schematic overview of the `SLOTH` features.
+Figure 1 shows a schematic overview of the `SLOTH` features.
 
 <figure markdown="span">
   ![sloth-features](../../img/sloth-diagram.png){  width=500px}
@@ -13,7 +13,7 @@ Figure 1 show a schematic overview of the `SLOTH` features.
 </figure>
 
 `SLOTH` is developed on top of `MFEM` [@mfem].
-It is implemented in C++ and the source code is managed with CMake. 
+It is implemented in C++ and the software build process is managed with CMake. 
 
 This page focuses on the kernel of `SLOTH`, providing all the essential information users need to construct or modify a `SLOTH` data file. This includes:
 

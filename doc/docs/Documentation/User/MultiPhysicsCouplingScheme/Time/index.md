@@ -4,7 +4,7 @@ This page describes the C++ object `TimeDiscretization`, which enables `SLOTH` t
 
 `TimeDiscretization` object is simply defined by:
 
-- a list of parameters
+- a list of parameters (`SLOTH` object [`Parameters`](../../Parameters/index.md))
 - a list of [`Coupling`](../Couplings/index.md)
 
 
