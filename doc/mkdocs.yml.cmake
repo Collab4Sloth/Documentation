@@ -24,7 +24,6 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets:
       base_path: $relative
-  - pymdownx.superfences
   - def_list
   - pymdownx.tasklist:
       custom_checkbox: true
@@ -92,30 +91,55 @@ nav:
       - Started/Installation/cluster.md
       - Started/Installation/cluster_source.md
       - Started/Installation/libtorch.md
-    - Code quality: Started/Quality/quality.md
     - HowTo: 
       - Started/HowTo/index.md
       - Basic features:
         - Started/HowTo/Simple/index.md
       - Tutorials:
         - Started/HowTo/Tutorials/index.md
-        - Started/HowTo/Tutorials/tuto1.md
     - Examples:
       - Started/Examples/index.md
-      @EXAMPLE_LIST@
-
+      - Cahn-Hilliard: 
+        - Started/Examples/CahnHilliard/index.md
+        - Example 1:
+          - Started/Examples/CahnHilliard/example1/index.md
+        - Example 2:
+          - Started/Examples/CahnHilliard/example2/index.md
+        - Example 3:
+          - Started/Examples/CahnHilliard/example3/index.md
+        - Example 4:
+          - Started/Examples/CahnHilliard/example4/index.md
+        - Example 5:
+          - Started/Examples/CahnHilliard/example5/index.md
+      - Allen-Cahn:
+        - Started/Examples/AllenCahn/index.md
+      - Mass Diffusion:
+        - Started/Examples/MassDiffusion/index.md
+      - Thermal Diffusion:
+        - Started/Examples/ThermalDiffusion/index.md
+      - CALPHAD:
+        - Started/Examples/Calphad/index.md
+    - Code quality: Started/Quality/quality.md
   - User Manual: 
     - Documentation/User/index.md
-    - Documentation/User/Meshing/index.md
-    - Documentation/User/BoundaryConditions/index.md
-    - Documentation/User/Variables/index.md
     - Documentation/User/Parameters/index.md
-    - Documentation/User/Integrators/index.md
-    - Documentation/User/Operators/index.md
-    - Documentation/User/Convergence/index.md
+    - Documentation/User/Variables/index.md
+    - Spatial discretization:
+      - Documentation/User/SpatialDiscretization/index.md
+      - Documentation/User/SpatialDiscretization/Meshing/index.md
+      - Documentation/User/SpatialDiscretization/BoundaryConditions/index.md
+    - Multiphysics Coupling Scheme:
+      - Documentation/User/MultiPhysicsCouplingScheme/index.md
+      - Documentation/User/MultiPhysicsCouplingScheme/Time/index.md
+      - Documentation/User/MultiPhysicsCouplingScheme/Couplings/index.md
+      - Problems:
+        - Documentation/User/MultiPhysicsCouplingScheme/Problems/index.md
+        - Partial Differential Equations:
+          - Documentation/User/MultiPhysicsCouplingScheme/Problems/PDEs/index.md
+        - Documentation/User/MultiPhysicsCouplingScheme/Problems/0D/index.md
+        - Documentation/User/MultiPhysicsCouplingScheme/Problems/Remainder/index.md
+      - Documentation/User/MultiPhysicsCouplingScheme/Convergence/index.md
     - Documentation/User/PostProcessing/index.md
-    - Documentation/User/Problems/index.md
-    - Documentation/User/Time/index.md
   - Modelling Description: 
     - Documentation/Physical/index.md
   - Code Documentation: 

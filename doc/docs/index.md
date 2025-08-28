@@ -15,7 +15,8 @@ icon: material/shield-home
 <div style="display: flex; justify-content: space-between;">
 
   <img src="img/logo-pleiades.png" alt="PLEIADES" style="width: 30%;">
-  <img src="img/sloth_blanc.jpg" alt="SLOTH" style="width: 30%;">
+  <!-- <img src="img/sloth_blanc.jpg" alt="SLOTH" style="width: 30%;"> -->
+  <img src="img/logo-simu.gif" alt="SLOTH" style="width: 30%;">
   <img src="img/mfem.png" alt="MFEM" style="width: 30%;">
 
 </div>
@@ -27,7 +28,7 @@ icon: material/shield-home
     ---
 
      - Phase-field modelling
-     - Finite Element, AMR
+     - Finite Element
      - Unsteady, nonlinear, coupled problems
      - Massively parallel MPI implementation 
      - Calphad-informed phase-field
@@ -36,7 +37,8 @@ icon: material/shield-home
 
     ---
 
-     - SLOTH at [NuMat Conference](https://www.elsevier.com/events/conferences/all/the-nuclear-materials-conference) [10/24]
+     - [NuFuel workshop](https://www.eera-jpnm.com/events/Nufuel2025) [9/25]
+     - [NuMat Conference](https://www.elsevier.com/events/conferences/all/the-nuclear-materials-conference) [10/24]
 
 
 
@@ -44,7 +46,14 @@ icon: material/shield-home
 
     ---
 
-    (_Coming  soon_)
+    First release is in preparation. 
+
+    Pre-release versions:
+
+    - [v1.0.0-alpha.3](https://github.com/Collab4Sloth/SLOTH/releases/tag/v1.0.0-alpha.3)
+    - [v1.0.0-alpha.2](https://github.com/Collab4Sloth/SLOTH/releases/tag/v1.0.0-alpha.3)
+    - [v1.0.0-alpha.1](https://github.com/Collab4Sloth/SLOTH/releases/tag/v1.0.0-alpha.3)
+    - [v1.0.0-alpha](https://github.com/Collab4Sloth/SLOTH/releases/tag/v1.0.0-alpha.3)
 
 -   __Contact__
 

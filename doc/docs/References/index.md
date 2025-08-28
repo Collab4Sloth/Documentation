@@ -2,7 +2,11 @@
 icon: material/school-outline
 ---
 
-# **Coming soon**
+# References
+
+A reference paper for `SLOTH` is in preparation. 
+
+
 
 
 

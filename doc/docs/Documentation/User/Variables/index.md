@@ -28,14 +28,14 @@ Both kind of variables are defined in the same way.
 
 The `Variable` object must be defined by:
 
-- the spatial discretisation (see [Meshing](../Meshing/index.md)), 
-- a set of boundary conditions(see [BoundaryConditions](../BoundaryConditions/index.md)), 
+- the spatial discretisation (see [Meshing](../SpatialDiscretization/Meshing/index.md)), 
+- a set of boundary conditions(see [BoundaryConditions](../SpatialDiscretization/BoundaryConditions/index.md)), 
 - a name (C++ type `std::string`), 
 - a storage depth level (C++ type `int`), 
 - an initial condition.
 
 The initial condition can be defined by a constant, a C++ object of type `std::function` or a `SLOTH` object of type `AnalyticalFunctions`. 
-The latter enables to use pre-defined mathematical functions currently used in the studies conducted with `SLOTH` (see [a dedicated page of the user manual](../AnalyticalVariables/index.md). If the mathematical expression is not yet available, the users can define it with a C++ object of type `std::function`.
+The latter enables to use pre-defined mathematical functions currently used in the studies conducted with `SLOTH`. If the mathematical expression is not yet available, the users can define it with a C++ object of type `std::function`.
 
 
 !!! example "Example of `Variable`objects with mandatory parameters"
@@ -100,7 +100,7 @@ The latter enables to use pre-defined mathematical functions currently used in t
 
 ### __Optional parameters__ {#var_option}
 
-In addition to the [mandatory paramters](#var_mandatory), definition of `Variable` can be enhanced by an analytical solution with the same type as the initial condition. 
+In addition to the [mandatory parameters](#var_mandatory), definition of `Variable` can be enhanced by an analytical solution with the same type as the initial condition. 
 
 !!! warning "Definition of variables with an analytical solution"
     The presence of an analytical solution automatically enables the calculation of the  $`L^2`$ error over the domain. 
@@ -163,7 +163,7 @@ This information is provided in the form of a list of strings associated with th
 
 !!! example "Example of variables definition with additional information"
 
-    The following example refers to `Calphad` problems (see [Problems](../Problems/index.md) for more details). 
+    The following example refers to `Calphad` problems (see [Problems](../MultiPhysicsCouplingScheme/Problems/index.md) for more details). 
     The first variable, named `Ma`, corresponds to a mobility coefficient whereas the second one is associated with a chemical potential named `mu_a`. 
     
     For a `Calphad` problem, managing the variables requires knowing the type of each variable. By convention, the last additional information corresponds to a pre-defined symbol (e.g., 'mu' for chemical potentials and 'mob' for mobilities). 
@@ -195,7 +195,7 @@ For `SLOTH`, auxiliary variables ensure multiphysics coupling. As   -->
 The C++ class `Variables` allows to define a collection of [`Variable` objects](#variable). 
 As for the object `Variable`, `Variables` is a template class instantiated with two template parameters: first, the kind of finite element, and second, the spatial dimension.
 
-Each `SLOTH` problem (see [Problems](../Problems/index.md) for more details) requires a `Variables` object as input argumet.
+Each `SLOTH` problem (see [Problems](../MultiPhysicsCouplingScheme/Problems/index.md) for more details) requires a `Variables` object as input argumet.
 
 
 !!! example "Example of `Variables` definition"
@@ -214,4 +214,4 @@ Each `SLOTH` problem (see [Problems](../Problems/index.md) for more details) req
         auto mu_var = VARS(var_1, var_2);
     ```
 
-    This example shows the definition of two variables that correspond to chemical potentials. These variables are gathered within a `Variables` object that can be used as primary variables for a `Calphad` problem and as auxiliary variables for `ThermalDiffusion` problems.
+    This example shows the definition of two variables that correspond to chemical potentials. These variables are gathered within a `Variables` object that can be used as primary variables for a `CALPHAD` problem and as auxiliary variables for `ThermalDiffusion` problems.

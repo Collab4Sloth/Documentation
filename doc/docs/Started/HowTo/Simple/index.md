@@ -219,7 +219,7 @@ Definition of a Finite Element mesh for `SLOTH` is made with a C++ object of typ
     The length of the domain is $`1`$ mm (`length = 1.e-3`), divided into $`30`$ first order (`fe_order = 1`) elements (`nb_fe = 30`).
 
 
-All the functions used to create meshes are detailed in the [Meshing section of the user manual](../../../Documentation/User/Meshing/index.md). 
+All the functions used to create meshes are detailed in the [Meshing section of the user manual](../../../Documentation/User/SpatialDiscretization/Meshing/index.md). 
 
 
 Regarding the boundary conditions, `SLOTH` enables to prescribe **Dirichlet**, **Neumann** and **Periodic** boundary conditions. 
@@ -253,7 +253,7 @@ A `Boundary` object is defined by
     ```
     This example consider Neumann boundary conditions both on the left and on the right of the domain.
 
-Different type of boundary conditions can be mixed as detailed in the [Boundary Conditions section of the user manual](../../../Documentation/User/BoundaryConditions/index.md). 
+Different type of boundary conditions can be mixed as detailed in the [Boundary Conditions section of the user manual](../../../Documentation/User/SpatialDiscretization/BoundaryConditions/index.md). 
 
 !!! warning "On the consistency of the indices of the boundaries"
     `MFEM v4.7` provides new features for referring to boundary attribute numbers. Such an improvement is not yet implemented in `SLOTH`. Consequently, users must take care to the consistency of the indices used in the test file with the indices defined when building the mesh with `GMSH`.
@@ -305,15 +305,14 @@ Different type of boundary conditions can be mixed as detailed in the [Boundary 
 
 ### __Multiphysics coupling scheme__ {#coupling}
 
-This part is the core of the test file with the definition of the targeted physical problems (*eg.* equations, variational formulations, variables, coefficients) gathered inside a `Coupling` object. 
+This part is the core of the test file with the definition of the targeted physical problems (*eg.* equations, variational formulations, variables, coefficients) gathered inside a [`Coupling`](../../../Documentation/User/MultiPhysicsCouplingScheme/Couplings/index.md) object. 
 
 This implies many C++ objects designed specifically for `SLOTH`. 
 The main one is the `Problem` object defined as a collection of C++ objects of interest for `SLOTH`:
 
 - a `Variables` object,
 - an `Operator` object, 
-- a `PostProcessing` object,
-- a `PhysicalConvergence` object. 
+- a `PostProcessing` object.
 
 Regarding the `Variables`, `SLOTH` differentiates between primary variables, that are solved directly by the problem (*eg.* the order parameter for the Allen-Cahn equation, the order parameter and the chemical potential for the Cahn-Hilliard equation), and secondary variables, which are derived from another problem to ensure multiphysics coupling (*eg.* the order parameter in the heat transfer equation, the temperature in the Allen-Cahn equation). 
 
@@ -334,7 +333,9 @@ Whether it's an initial condition or an analytical solution, the users can defin
 
 It is recommended to read the [page dedicated to `Variables` in the user manual](../../../Documentation/User/Variables/index.md) for more details about the use and the different definitions of this `SLOTH` object.
 
-`AnalyticalFunctions` enable to use pre-defined mathematical functions currently used in the studies conducted with `SLOTH`. A comprehensive overview of the analytical functions available in `SLOTH` is provided in [a dedicated page of the user manual](../../../Documentation/User/AnalyticalVariables/index.md). If the mathematical expression is not yet available, the users can define it with a C++ object of type `std::function`.
+`AnalyticalFunctions` enable to use pre-defined mathematical functions currently used in the studies conducted with `SLOTH`. 
+<!-- A comprehensive overview of the analytical functions available in `SLOTH` is provided in [a dedicated page of the user manual](../../../Documentation/User/AnalyticalVariables/index.md).  -->
+If the mathematical expression is not yet available, the users can define it with a C++ object of type `std::function`.
 
 !!! example "Extract of the test file with Variables"
 
@@ -362,16 +363,16 @@ It is recommended to read the [page dedicated to `Variables` in the user manual]
 Another class of major C++ objects for `SLOTH` is `Operator`. 
 These objects allow the solution of the algebraic system resulting from the discretization of the (non-linear) equations. 
 For each of them, the users can find a stationary and a transient version. 
-This is detailed in the [`Operator` page of the user manual](../../../Documentation/User/Operators/index.md).  
+This is detailed in the [`Partial Differential Equations` page of the user manual](../../../Documentation/User/MultiPhysicsCouplingScheme/Problems/PDEs/index.md).  
 Although the input arguments provided to the `Operator` object are of interest, the focus is rather on the definition of the C++ object itself, which requires the input of the variational formulation of the equations. 
-This specificity is implemented on the basis of `NonLinearFormIntegrators` objects, also detailed in the user manual in the [`Integrators`](../../../Documentation/User/Integrators/index.md) page. 
+This specificity is implemented on the basis of `NonLinearFormIntegrators` objects, also detailed in the user manual in the [`Partial Differential Equations`](../../../Documentation/User/MultiPhysicsCouplingScheme/Problems/PDEs/index.md) page. 
 The definition of the integrators obviously depends on the targeted problem. 
 In the present example, the variational formulation is defined by using the `AllenCahnNLFormIntegrator` object. 
 This is the most general form of integrator for Allen-Cahn problems.
 
 !!! example "Extract of the test file with Operators and Integrators"
 
-    ```c++ hl_lines="2 15"
+    ```c++ hl_lines="2 16"
         //--- Integrator : alias definition for the sake of clarity
         using NLFI = AllenCahnNLFormIntegrator<VARS, ThermodynamicsPotentialDiscretization::Implicit, ThermodynamicsPotentials::W, Mobility::Constant>;
 
@@ -386,7 +387,8 @@ This is the most general form of integrator for Allen-Cahn problems.
         const auto& omega = 12. * sigma / epsilon;
         auto params = Parameters(Parameter("epsilon", epsilon), Parameter("sigma", sigma), Parameter("lambda", lambda), Parameter("omega", omega));
 
-        AllenCahnOperator<FECollection, DIM, NLFI> oper(&spatial, params, TimeScheme::EulerImplicit);
+        std::vector<SPA*> spatials{&spatial};
+        AllenCahnOperator<FECollection, DIM, NLFI> oper(spatials, params, TimeScheme::EulerImplicit);
     ```
 
 !!! warning "Use of `Parameters` and `Parameter` objects"
@@ -411,7 +413,7 @@ By default, all primary variables associated with a `SLOTH` `Problem` are saved.
     ```
     In this example, the results will be saved in the `Saves/AllenCahn` directory (see `Parameter("main_folder_path", main_folder_path)` and  `Parameter("calculation_path", calculation_path)`), at each time-step (see `Parameter("frequency", frequency)`).
 
-The last object needed to define a `SLOTH` `Problem` is the physical convergence criterion. 
+<!-- The last object needed to define a `SLOTH` `Problem` is the physical convergence criterion. 
 It corresponds to the C++ object `PhysicalConvergence`. Relative and absolute criteria are available.
 It is worth mentioning that this object is disabled. It will be enabled when fixed point algorithm and automatic time-step splitting are integrated.
 
@@ -421,16 +423,16 @@ It is worth mentioning that this object is disabled. It will be enabled when fix
         //--- Physical Convergence
         const double crit_cvg = 1.e-12;
         PhysicalConvergence convergence(ConvergenceType::ABSOLUTE_MAX, crit_cvg);
-    ```
+    ``` -->
 
 At this stage,  the `SLOTH` `Problem` can be defined and, as previously explained, collected in a `Coupling` object. 
 This is illustrated in the following example (see `Problem<OPE, VARS, PST> ac_problem` and  `Coupling("Main coupling", ac_problem)`). 
 
 
 
-!!! example "Test file with Variables, Operators and Integrators, Post-Processing and Physical Convergence"
+!!! example "Test file with Variables, Operators and Integrators and Post-Processing"
 
-    ```c++ hl_lines="82 86"
+    ```c++ hl_lines="79 83"
     //---------------------------------------
     // Headers
     //---------------------------------------
@@ -496,6 +498,7 @@ This is illustrated in the following example (see `Problem<OPE, VARS, PST> ac_pr
         const auto& omega = 12. * sigma / epsilon;
         auto params = Parameters(Parameter("epsilon", epsilon), Parameter("sigma", sigma), Parameter("lambda", lambda), Parameter("omega", omega));
 
+        std::vector<SPA*> spatials{&spatial};
         AllenCahnOperator<FECollection, DIM, NLFI> oper(&spatial, params, TimeScheme::EulerImplicit);
 
         //--- Post-Processing 
@@ -505,14 +508,10 @@ This is illustrated in the following example (see `Problem<OPE, VARS, PST> ac_pr
         auto pst_parameters = Parameters(Parameter("main_folder_path", main_folder_path), Parameter("calculation_path", calculation_path), Parameter("frequency", frequency));
         auto pst = PST(&spatial, pst_parameters);
 
-        //--- Physical Convergence
-        const double crit_cvg = 1.e-12;
-        PhysicalConvergence convergence(ConvergenceType::ABSOLUTE_MAX, crit_cvg);
-
         //-----------------------
         // Problem
         //-----------------------
-        Problem<AllenCahnOperator<FECollection, DIM, NLFI>, VARS, PST> ac_problem(oper, vars, pst, convergence);
+        Problem<AllenCahnOperator<FECollection, DIM, NLFI>, VARS, PST> ac_problem(oper, vars, pst);
         //-----------------------
         // Coupling
         //-----------------------
@@ -526,15 +525,15 @@ This is illustrated in the following example (see `Problem<OPE, VARS, PST> ac_pr
     ```
     In this example, a coupling, labelled `Main coupling`, is defined with only one `SLOTH` `Problem` associated with the solution of Allen-Cahn equation.
 
-Users are referred to the [Problems and Coupling page of the user manual](../../../Documentation/User/Problems/index.md) for more details about the available `SLOTH` `Problem` and how to use them.
+Users are referred to the [MultiPhysicsCouplingScheme](../../../Documentation/User/MultiPhysicsCouplingScheme/index.md) page of the user manual for more details about the available `SLOTH` problems and how to use them.
 
 ### __Time discretization__ {#time}
 
 Time discretization is the last main part of a test file. 
-It corresponds to the C++ object `TimeDiscretization` defined as a number of parameters and the `Coupling` objects specially designed for the current `SLOTH` simulation.
+It corresponds to the C++ object [`TimeDiscretization`](../../../Documentation/User/MultiPhysicsCouplingScheme/Time/index.md) defined as a number of parameters and the [`Coupling`](../../../Documentation/User/MultiPhysicsCouplingScheme/Couplings/index.md) objects specially designed for the current `SLOTH` simulation.
 Among these parameters, there are the initial time, the final time and the uniform value of the time-step. 
 The method `solve` must be explicitly called to run the calculation.
-This is detailed in the [`Time` page of the user manual](../../../Documentation/User/Time/index.md).
+This is detailed in the [`Time` page of the user manual](../../../Documentation/User/MultiPhysicsCouplingScheme/Time/index.md).
 
 !!! example "Extract of the test file with TimeDiscretization"
 
@@ -622,7 +621,8 @@ This is detailed in the [`Time` page of the user manual](../../../Documentation/
         const auto& omega = 12. * sigma / epsilon;
         auto params = Parameters(Parameter("epsilon", epsilon), Parameter("sigma", sigma), Parameter("lambda", lambda), Parameter("omega", omega));
 
-        AllenCahnOperator<FECollection, DIM, NLFI> oper(&spatial, params, TimeScheme::EulerImplicit);
+        std::vector<SPA*> spatials{&spatial};
+        AllenCahnOperator<FECollection, DIM, NLFI> oper(spatials, params, TimeScheme::EulerImplicit);
 
         //--- Post-Processing 
         const std::string& main_folder_path = "Saves";
@@ -631,14 +631,10 @@ This is detailed in the [`Time` page of the user manual](../../../Documentation/
         auto pst_parameters = Parameters(Parameter("main_folder_path", main_folder_path), Parameter("calculation_path", calculation_path), Parameter("frequency", frequency));
         auto pst = PST(&spatial, pst_parameters);
 
-        //--- Physical Convergence
-        const double crit_cvg = 1.e-12;
-        PhysicalConvergence convergence(ConvergenceType::ABSOLUTE_MAX, crit_cvg);
-
         //-----------------------
         // Problem
         //-----------------------
-        Problem<AllenCahnOperator<FECollection, DIM, NLFI>, VARS, PST> ac_problem(oper, vars, pst, convergence);
+        Problem<AllenCahnOperator<FECollection, DIM, NLFI>, VARS, PST> ac_problem(oper, vars, pst);
         //-----------------------
         // Coupling
         //-----------------------
