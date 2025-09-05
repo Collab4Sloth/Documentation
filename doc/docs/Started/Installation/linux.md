@@ -12,7 +12,7 @@ A straightforward way to install MFEM is to use [spack](https://spack.readthedoc
 Assuming `spack` well installed into the `$SPACK` directory, the following command enables to install MFEM with right additional packages:
 
 ```bash
-$SPACK/share/spack/setup-env.sh
+source $SPACK/share/spack/setup-env.sh
 
 spack install mfem+mpi+suite-sparse+sundials+superlu-dist+miniapps
 ```
