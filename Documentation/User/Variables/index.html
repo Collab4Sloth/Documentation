@@ -2703,7 +2703,7 @@
 <h1 id="variables_1">Variables<a class="headerlink" href="#variables_1" title="Permanent link">&para;</a></h1>
 <p>This page described how to define and manage variables in <code>SLOTH</code>.</p>
 <p>Definition of variables for <code>SLOTH</code> is made with a C++ object of type <code>Variables</code> that is simply a set of C++ object of type <a href="#variable"><code>Variable</code></a>.</p>
-<p>As for the object <code>SpatialDiscretization</code> (see <a href="../Meshing/index.md">Meshing</a>), <code>Variable</code> is a template class instantiated with two template parameters: first, the kind of finite element, and second, the spatial dimension.</p>
+<p>As for the object <code>SpatialDiscretization</code> (see <a href="../SpatialDiscretization/Meshing/index.html">Meshing</a>), <code>Variable</code> is a template class instantiated with two template parameters: first, the kind of finite element, and second, the spatial dimension.</p>
 <p>The kind of finite element refers to a C++ class that inherits from the <code>mfem::FiniteElementCollection</code>. This class manages all collections of finite elements provided by <code>MFEM</code>.
 Currently, the most commonly used finite element collection in <code>SLOTH</code> is <code>mfem::H1_FECollection</code>, which corresponds to arbitrary order H1-conforming continuous finite elements.</p>
 <p>The dimension is simply an integer that can be 1, 2, or 3.</p>
@@ -2851,7 +2851,7 @@ The first variable, named <code>Ma</code>, corresponds to a mobility coefficient
 </span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">var_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">VAR</span><span class="p">(</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="n">bcs</span><span class="p">,</span><span class="w"> </span><span class="n">variable_name_2</span><span class="p">,</span><span class="w"> </span><span class="n">level_of_storage</span><span class="p">,</span><span class="w"> </span><span class="n">initial_condition_2</span><span class="p">);</span>
 </span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="n">var_2</span><span class="p">.</span><span class="n">set_additional_information</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mu&quot;</span><span class="p">);</span>
 </span></code></pre></div>
-<p>Conventions used to associate additional information with variables for each kind of <code>SLOTH</code> problem are detailed in Section <a href="../Problems/index.md">Problems</a>of the user manual.</p>
+<p>Conventions used to associate additional information with variables for each kind of <code>SLOTH</code> problem are detailed in Section <a href="../MultiPhysicsCouplingScheme/Problems/index.html">Problems</a>of the user manual.</p>
 </div>
 <!-- ## **Use of auxiliary variables**
 
