@@ -4,7 +4,7 @@ This page described how to define and manage variables in `SLOTH`.
 
 Definition of variables for `SLOTH` is made with a C++ object of type `Variables` that is simply a set of C++ object of type [`Variable`](#variable).
 
-As for the object `SpatialDiscretization` (see [Meshing](../Meshing/index.md)), `Variable` is a template class instantiated with two template parameters: first, the kind of finite element, and second, the spatial dimension.
+As for the object `SpatialDiscretization` (see [Meshing](../SpatialDiscretization/Meshing/index.md)), `Variable` is a template class instantiated with two template parameters: first, the kind of finite element, and second, the spatial dimension.
 
 
 The kind of finite element refers to a C++ class that inherits from the `mfem::FiniteElementCollection`. This class manages all collections of finite elements provided by `MFEM`.
@@ -183,7 +183,7 @@ This information is provided in the form of a list of strings associated with th
         var_2.set_additional_information("A", "mu");
     ```
 
-    Conventions used to associate additional information with variables for each kind of `SLOTH` problem are detailed in Section [Problems](../Problems/index.md)of the user manual.
+    Conventions used to associate additional information with variables for each kind of `SLOTH` problem are detailed in Section [Problems](../MultiPhysicsCouplingScheme/Problems/index.md)of the user manual.
 
 <!-- ## **Use of auxiliary variables**
 
