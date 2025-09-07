@@ -15,7 +15,7 @@ F(U(x,t))&=G(U(x,t))
 where $`U(x,t)`$ is the vector of unknowns expressed as a function of the time $`t`$ and the position $`x`$. In this equation, $`F`$ and $`G`$ are two nonlinear forms associated with the time derivative operator and the differential operators, respectively. For steady problem, $`F=0`$.
 
 <figure markdown="span">
-  ![Time-step](../../../../../img/ProblemsDetailed.pdf){  width=800px}
+  ![Time-step](../../../../../img/ProblemsDetailed.png){  width=800px}
   <figcaption>Figure 1 : Schematic description of one time-step for `SLOTH` simulations with a focus on PDEs.
 </figcaption>
 </figure>
@@ -37,7 +37,7 @@ Definition of PDEs for `SLOTH` is made with a C++ object of type `Problem`, whic
 The `OPERATOR` object in `Problem` refers to an object that inherits from base classes responsible for solving the nonlinear system (1). 
 These classes are illustrated in the figure 2: `OperatorBase` is a base class with two child classes -- `TransientOperatorBase`, which inherits from the `TimeDependentOperator` class of `MFEM`, and `SteadyOperatorBase`, which inherits from the `Operator` class of `MFEM`. 
 <figure markdown="span">
-  ![Operators](../../../../../img/SlothOperators.pdf){  width=600px}
+  ![Operators](../../../../../img/SlothOperators.png){  width=600px}
   <figcaption>Figure 2 : Three main classes managing the resolution of the non linear system.
 </figcaption>
 </figure>
@@ -53,7 +53,7 @@ Based on these classes, specific operators have been implemented to solve:
 Transient and steady versions of these specific operators are available.
 
 <figure markdown="span">
-  ![Operators](../../../../../img/SpecificSlothOperators.pdf){  width=600px}
+  ![Operators](../../../../../img/SpecificSlothOperators.png){  width=600px}
   <figcaption>Figure 3 : Specific `Operators` implemented in `SLOTH`.
 </figcaption>
 </figure>
