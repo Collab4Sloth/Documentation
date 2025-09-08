@@ -142,6 +142,10 @@ where `$MFEM4SLOTH` is a variable associated with the path towards the `MFEM` in
         
     --debug to build SLOTH with Debug compiler options 
         
+    --minsizerel to build with MinSizeRel compiler options 
+        
+    --relwithdebinfo to build with RelWithDebInfo compiler options 
+        
     --coverage to build SLOTH with Coverage compiler options 
 
     --external to built SLOTH with an external package
