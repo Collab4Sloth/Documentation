@@ -17,23 +17,23 @@ Consequently, the CEA is developing **SLOTH**, a **multiphase-field multicompone
 
   <div style="text-align: center;">
     <img src="img/fig1.png" alt="Figure 1" style="width: 600px;">
-    <p><em>Incipient melting in a pellet fragment under an ad-hoc temperature dependent enthalpy of melting</em></p>
+    <p><em>[Incipient melting in a pellet fragment under an ad-hoc temperature dependent enthalpy of melting](https://github.com/Collab4Sloth/Gallery)</em></p>
   </div>
 
 </div>
 
- 
+
 
 <div style="display: flex; justify-content: space-around; align-items: center;">
 
   <div style="text-align: center;">
     <img src="img/fig2.png" alt="Figure 2" style="width: 300px;">
-    <p><em>Polycristalline microstructure with 30 grains</em></p>
+    <p><em>[Polycristalline microstructure with 30 grains](https://github.com/Collab4Sloth/Gallery)</em></p>
   </div>
 
   <div style="text-align: center;">
     <img src="img/fig3.png" alt="Figure 3" style="width: 300px;">
-    <p><em>Spinodal decomposition</em></p>
+    <p><em>[Spinodal decomposition](https://github.com/Collab4Sloth/Gallery)</em></p>
   </div>
 
 </div>
