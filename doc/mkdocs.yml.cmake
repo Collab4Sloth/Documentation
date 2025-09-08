@@ -73,7 +73,7 @@ theme:
     - content.code.select
   palette:
     primary: black
-    accent: 'red'
+    accent: black
 ########################################
 ########################################
 docs_dir: '@DOCS_DIR@'

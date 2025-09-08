@@ -45,15 +45,8 @@ icon: material/shield-home
 -   __Latest Release__
 
     ---
-
-    First release is in preparation. 
-
-    Pre-release versions:
-
-    - [v1.0.0-alpha.3](https://github.com/Collab4Sloth/SLOTH/releases/tag/v1.0.0-alpha.3)
-    - [v1.0.0-alpha.2](https://github.com/Collab4Sloth/SLOTH/releases/tag/v1.0.0-alpha.3)
-    - [v1.0.0-alpha.1](https://github.com/Collab4Sloth/SLOTH/releases/tag/v1.0.0-alpha.3)
-    - [v1.0.0-alpha](https://github.com/Collab4Sloth/SLOTH/releases/tag/v1.0.0-alpha.3)
+    :octicons-tag-24: [__V1.0.0__](https://github.com/Collab4Sloth/SLOTH/releases/tag/v1.0.0)
+    
 
 -   __Contact__
 
