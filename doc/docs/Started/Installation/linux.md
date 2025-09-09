@@ -50,6 +50,10 @@ where [OPTIONS] are:
     --debug to build with Debug compiler options 
         
     --coverage to build with Coverage compiler options 
+        
+    --minsizerel to build with MinSizeRel compiler options 
+        
+    --relwithdebinfo to build with RelWithDebInfo compiler options 
 
     --external to built SLOTH with an external package
         
