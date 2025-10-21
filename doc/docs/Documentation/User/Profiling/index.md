@@ -1,9 +1,10 @@
 # Profiling tools
 
+This page describes how to define and use profiling tools in `SLOTH`.
 
 ## MATools and Timetable
 
-``SLOTH`` provides a simple tool for profiling your application, consisting mainly in generating a time table of timed sections respecting the call stack (tree). The master or root timer of the call stack is initialized during the general initialization of ``SLOTH``:
+`SLOTH` provides a simple tool for profiling your application, consisting mainly in generating a time table of timed sections respecting the call stack (tree). The master or root timer of the call stack is initialized during the general initialization of `SLOTH`:
 
 
 ```c++
@@ -92,13 +93,13 @@ You can instrument each of your functions using section timers. It's important t
 To time a function, place this instruction at the start of your function, the timer will stop at the end of the scope (the second time point is hidden in the timer destructor).
 
 ```c++
-  Catch_Time_Section("NameOfYourFunction");
+Catch_Time_Section("NameOfYourFunction");
 ```
 
 To add a second timer to the same scope, you can use:
 
 ```c++
-  Catch_Nested_Time_Section("NameOfYourNestedSection");
+Catch_Nested_Time_Section("NameOfYourNestedSection");
 ```
 
 To capture a specific section:
