@@ -52,7 +52,7 @@ The latter enables to use pre-defined mathematical functions currently used in t
         ```c++
         int level_of_storage= 2;
         std::string variable_name = "phi";
-        GlossaryQuantities variable_type = Glossary::Phi;
+        GlossaryQuantity variable_type = Glossary::Phi;
         double initial_condition = 0.;
         auto var_1 = VAR(&spatial, bcs, variable_name, variable_type, level_of_storage, initial_condition);
         ```
@@ -64,7 +64,7 @@ The latter enables to use pre-defined mathematical functions currently used in t
         ```c++
         int level_of_storage= 2;
         std::string variable_name = "T";
-        GlossaryQuantities variable_type = Glossary::T;
+        GlossaryQuantity variable_type = Glossary::T;
 
         auto initial_condition = std::function<double(const mfem::Vector&, double)>(
             [](const mfem::Vector& vcoord, double time) {
@@ -89,7 +89,7 @@ The latter enables to use pre-defined mathematical functions currently used in t
         ```c++
         int level_of_storage= 2;
         std::string variable_name = "phi";
-        GlossaryQuantities variable_type = Glossary::Phi;
+        GlossaryQuantity variable_type = Glossary::Phi;
         const double center_x = 0.;
         const double a_x = 1.;
         const double thickness = 5.e-5;
@@ -145,7 +145,7 @@ In this case, the list of attributes (*ie* the `PhysicalNames` defined in the `G
     ```c++
     int level_of_storage= 2;
     std::string variable_name = "phi";
-    GlossaryQuantities variable_type = Glossary::Phi;
+    GlossaryQuantity variable_type = Glossary::Phi;
     double initial_condition = 1.;
     std::set<std::string> list_of_physical_names = {"cluster"};
     auto var_1 = VAR(&spatial, bcs, variable_name, variable_type, level_of_storage, initial_condition, list_of_physical_names);
@@ -178,7 +178,7 @@ This information is provided in the form of a list of strings associated with th
     ```c++
         int level_of_storage= 2;
         std::string variable_name_1 = "Ma";
-        GlossaryQuantities variable_type = Glossary::Mob;
+        GlossaryQuantity variable_type = Glossary::Mob;
         double initial_condition_1 = 1.e-15;
         auto var_1 = VAR(&spatial, bcs, variable_name_1, variable_type, level_of_storage, initial_condition_1);
         var_1.set_additional_information("SOLUTION", "A", "mob");
@@ -208,7 +208,7 @@ Each `SLOTH` problem (see [Problems](../MultiPhysicsCouplingScheme/Problems/inde
 
     ```c++
         std::string variable_name_1 = "mu_a";
-        GlossaryQuantities variable_type = Glossary::Mu;
+        GlossaryQuantity variable_type = Glossary::Mu;
         double initial_condition_1 = 1.e5;
         auto var_1 = VAR(&spatial, bcs, variable_name_1, variable_type, level_of_storage, initial_condition_1);
         var_1.set_additional_information("A", "mu");
