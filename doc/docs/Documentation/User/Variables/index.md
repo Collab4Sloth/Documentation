@@ -29,8 +29,9 @@ Both kind of variables are defined in the same way.
 The `Variable` object must be defined by:
 
 - the spatial discretisation (see [Meshing](../SpatialDiscretization/Meshing/index.md)), 
-- a set of boundary conditions(see [BoundaryConditions](../SpatialDiscretization/BoundaryConditions/index.md)), 
+- a set of boundary conditions (see [BoundaryConditions](../SpatialDiscretization/BoundaryConditions/index.md)), 
 - a name (C++ type `std::string`), 
+- a type (`SLOTH` type [`GlossaryQuantity`](../Glossary/index.md)),
 - a storage depth level (C++ type `int`), 
 - an initial condition.
 
@@ -51,8 +52,9 @@ The latter enables to use pre-defined mathematical functions currently used in t
         ```c++
         int level_of_storage= 2;
         std::string variable_name = "phi";
+        GlossaryQuantities variable_type = Glossary::Phi;
         double initial_condition = 0.;
-        auto var_1 = VAR(&spatial, bcs, variable_name, level_of_storage, initial_condition);
+        auto var_1 = VAR(&spatial, bcs, variable_name, variable_type, level_of_storage, initial_condition);
         ```
 
     === "`std::function`"
@@ -62,6 +64,7 @@ The latter enables to use pre-defined mathematical functions currently used in t
         ```c++
         int level_of_storage= 2;
         std::string variable_name = "T";
+        GlossaryQuantities variable_type = Glossary::T;
 
         auto initial_condition = std::function<double(const mfem::Vector&, double)>(
             [](const mfem::Vector& vcoord, double time) {
@@ -76,7 +79,7 @@ The latter enables to use pre-defined mathematical functions currently used in t
 
                 return func;
             });
-        auto var_1 = VAR(&spatial, bcs, variable_name, level_of_storage, initial_condition);
+        auto var_1 = VAR(&spatial, bcs, variable_name, variable_type, level_of_storage, initial_condition);
         ```
 
     === "`AnalyticalFunctions`"
@@ -86,6 +89,7 @@ The latter enables to use pre-defined mathematical functions currently used in t
         ```c++
         int level_of_storage= 2;
         std::string variable_name = "phi";
+        GlossaryQuantities variable_type = Glossary::Phi;
         const double center_x = 0.;
         const double a_x = 1.;
         const double thickness = 5.e-5;
@@ -93,7 +97,7 @@ The latter enables to use pre-defined mathematical functions currently used in t
 
         auto initial_condition = AnalyticalFunctions<2>(AnalyticalFunctionsType::HyperbolicTangent, center_x, a_x, thickness, radius)
 
-        auto var_1 = VAR(&spatial, bcs, variable_name, level_of_storage, initial_condition);
+        auto var_1 = VAR(&spatial, bcs, variable_name, variable_type, level_of_storage, initial_condition);
         ```
 
         `SLOTH` provides several pre-implemented analytical functions, including the Heaviside function, sinusoidal profiles, hyperbolic tangent, and parabolic profiles. Each of these functions requires a set of parameters detailed in [a dedicated page of the user manual](../AnalyticalVariables/index.md).
@@ -141,9 +145,10 @@ In this case, the list of attributes (*ie* the `PhysicalNames` defined in the `G
     ```c++
     int level_of_storage= 2;
     std::string variable_name = "phi";
+    GlossaryQuantities variable_type = Glossary::Phi;
     double initial_condition = 1.;
     std::set<std::string> list_of_physical_names = {"cluster"};
-    auto var_1 = VAR(&spatial, bcs, variable_name, level_of_storage, initial_condition, list_of_physical_names);
+    auto var_1 = VAR(&spatial, bcs, variable_name, variable_type, level_of_storage, initial_condition, list_of_physical_names);
     ```
 
     <div style="display: flex; align-items: flex-start;">
@@ -173,13 +178,14 @@ This information is provided in the form of a list of strings associated with th
     ```c++
         int level_of_storage= 2;
         std::string variable_name_1 = "Ma";
+        GlossaryQuantities variable_type = Glossary::Mob;
         double initial_condition_1 = 1.e-15;
-        auto var_1 = VAR(&spatial, bcs, variable_name_1, level_of_storage, initial_condition_1);
+        auto var_1 = VAR(&spatial, bcs, variable_name_1, variable_type, level_of_storage, initial_condition_1);
         var_1.set_additional_information("SOLUTION", "A", "mob");
 
         std::string variable_name_2 = "mu_a";
         double initial_condition_2 = 1.e5;
-        auto var_2 = VAR(&spatial, bcs, variable_name_2, level_of_storage, initial_condition_2);
+        auto var_2 = VAR(&spatial, bcs, variable_name_2, variable_type, level_of_storage, initial_condition_2);
         var_2.set_additional_information("A", "mu");
     ```
 
@@ -202,13 +208,14 @@ Each `SLOTH` problem (see [Problems](../MultiPhysicsCouplingScheme/Problems/inde
 
     ```c++
         std::string variable_name_1 = "mu_a";
+        GlossaryQuantities variable_type = Glossary::Mu;
         double initial_condition_1 = 1.e5;
-        auto var_1 = VAR(&spatial, bcs, variable_name_1, level_of_storage, initial_condition_1);
+        auto var_1 = VAR(&spatial, bcs, variable_name_1, variable_type, level_of_storage, initial_condition_1);
         var_1.set_additional_information("A", "mu");
 
         std::string variable_name_2 = "mu_a";
         double initial_condition_2 = 2.e5;
-        auto var_2 = VAR(&spatial, bcs, variable_name_2, level_of_storage, initial_condition_2);
+        auto var_2 = VAR(&spatial, bcs, variable_name_2, variable_type, level_of_storage, initial_condition_2);
         var_2.set_additional_information("A", "mu");
 
         auto mu_var = VARS(var_1, var_2);
