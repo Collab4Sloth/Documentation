@@ -122,6 +122,7 @@ nav:
     - Code quality: Started/Quality/quality.md
   - User Manual: 
     - Documentation/User/index.md
+    - Documentation/User/Glossary/index.md
     - Documentation/User/Parameters/index.md
     - Documentation/User/Variables/index.md
     - Spatial discretization:
