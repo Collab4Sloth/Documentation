@@ -82,3 +82,12 @@ Here, these quantities are grouped by physical problems.
     | H        | ThermodynamicPotential | J                                 | Enthalpy                             |
     | DGm      | ThermodynamicPotential | J                                 | Driving force in J                   |
     
+
+=== "System quantities"
+
+    The following quantities are dedicated to miscalleneous problems.
+
+    | Quantity | Type   | Unit | Description                                          |
+    |----------|--------|------|------------------------------------------------------|
+    | MPI      | System | -    | MPI variable to visualize the MPI rank over the mesh |
+    | Coord    | System | -    | Spatial coordinate variable                          |
