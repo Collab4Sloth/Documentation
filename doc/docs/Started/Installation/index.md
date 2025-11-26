@@ -10,6 +10,8 @@ The basic procedure is then provided for the [Linux platforms using spack](linux
 
 For certain applications, `SLOTH` utilizes C++ APIs contained within the library [`libTorch`](https://pytorch.org/cppdocs/installing.html) to load `PyTorch` models. The basic procedure also includes [instructions for installing `libTorch`.](libtorch.md)
 
+`SLOTH` provides two interfaces based on [ExprTk](https://www.partow.net/programming/exprtk/) and [Sympy](https://docs.sympy.org/latest/index.html) to manage physical properties. The basic procedure also includes [instructions for installing `SLOTH` with these dependencies.](exprtk_sympy.md)
+
 
 
 

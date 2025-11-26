@@ -1,9 +1,8 @@
 # Coefficients 
 
-This page described how to define and manage coefficients in `SLOTH`.
+This page described how to define and manage coefficients, usefull objects to define physical properties in `SLOTH`. 
 
 Definition of coefficients for `SLOTH` is made with a C++ object of type `Coefficients` that is simply a set of C++ object of type [`Coefficient`](#coefficient).
-
 
 ## __Coefficient description__ {#coefficient}
 
@@ -16,6 +15,9 @@ The `FunctionCoefficient` object is not really managed by the user since `SLOTH`
 
 - the C++ Mathematical Expression Toolkit Library [ExprTk](https://www.partow.net/programming/exprtk/),
 - the Python library for symbolic mathematics [Sympy](https://docs.sympy.org/latest/index.html).
+
+The instructions for installing these dependencies are provided in a [dedicated page of the user manual](../../../Started/Installation/exprtk_sympy.md).
+
 
 ### __Sympy interface__ {#coef_sympy}
 
