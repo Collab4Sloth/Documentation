@@ -201,7 +201,7 @@ For `SLOTH`, auxiliary variables ensure multiphysics coupling. As   -->
 The C++ class `Variables` allows to define a collection of [`Variable` objects](#variable). 
 As for the object `Variable`, `Variables` is a template class instantiated with two template parameters: first, the kind of finite element, and second, the spatial dimension.
 
-Each `SLOTH` problem (see [Problems](../MultiPhysicsCouplingScheme/Problems/index.md) for more details) requires a `Variables` object as input argumet.
+Each `SLOTH` problem (see [Problems](../MultiPhysicsCouplingScheme/Problems/index.md) for more details) requires a `Variables` object as input argument.
 
 
 !!! example "Example of `Variables` definition"

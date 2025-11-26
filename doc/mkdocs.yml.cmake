@@ -125,6 +125,7 @@ nav:
     - Documentation/User/Glossary/index.md
     - Documentation/User/Parameters/index.md
     - Documentation/User/Variables/index.md
+    - Documentation/User/Coefficients/index.md
     - Spatial discretization:
       - Documentation/User/SpatialDiscretization/index.md
       - Documentation/User/SpatialDiscretization/Meshing/index.md
