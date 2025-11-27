@@ -323,6 +323,7 @@ Despite their different purposes, the definition of primary and auxiliary variab
 - a set of boundary conditions (*ie* the `BCS` object), 
 - a name (C++ type `std::string`), 
 - a storage depth level (C++ type `int`), 
+- a type (`SLOTH` type [`GlossaryQuantity`](../../../Documentation/User/Glossary/index.md)),
 - an initial condition,
 - an analytical solution (optional). 
 
@@ -351,11 +352,12 @@ If the mathematical expression is not yet available, the users can define it wit
         const auto& radius = 5.e-4;
 
         std::string variable_name = "phi";
+        GlossaryQuantities variable_type = Glossary::Phi;
         int level_of_storage= 2;
 
         auto initial_condition = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, 2.*epsilon, radius);
         auto analytical_solution = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, epsilon, radius);
-        auto vars = VARS(VAR(&spatial, bcs, variable_name, level_of_storage, initial_condition, analytical_solution));
+        auto vars = VARS(VAR(&spatial, bcs, variable_name, variable_type, level_of_storage, initial_condition, analytical_solution));
     ```
     This example defines a single primary variable, named "phi" with two levels of storage. 
     The initial condition and the analytical solution are of the hyperbolic tangent type.
@@ -478,11 +480,12 @@ This is illustrated in the following example (see `Problem<OPE, VARS, PST> ac_pr
         const auto& radius = 5.e-4;
 
         std::string variable_name = "phi";
+        GlossaryQuantities variable_type = Glossary::Phi;
         int level_of_storage= 2;
 
         auto initial_condition = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, 2.*epsilon, radius);
         auto analytical_solution = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, epsilon, radius);
-        auto vars = VARS(VAR(&spatial, bcs, variable_name, level_of_storage, initial_condition, analytical_solution));
+        auto vars = VARS(VAR(&spatial, bcs, variable_name, variable_type, level_of_storage, initial_condition, analytical_solution));
 
         //--- Integrator : alias definition for the sake of clarity
         using NLFI = AllenCahnNLFormIntegrator<VARS, ThermodynamicsPotentialDiscretization::Implicit, ThermodynamicsPotentials::W, Mobility::Constant>;
@@ -601,11 +604,12 @@ This is detailed in the [`Time` page of the user manual](../../../Documentation/
         const auto& radius = 5.e-4;
 
         std::string variable_name = "phi";
+        GlossaryQuantities variable_type = Glossary::Phi;
         int level_of_storage= 2;
 
         auto initial_condition = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, 2.*epsilon, radius);
         auto analytical_solution = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, epsilon, radius);
-        auto vars = VARS(VAR(&spatial, bcs, variable_name, level_of_storage, initial_condition, analytical_solution));
+        auto vars = VARS(VAR(&spatial, bcs, variable_name, variable_type, level_of_storage, initial_condition, analytical_solution));
 
         //--- Integrator : alias definition for the sake of clarity
         using NLFI = AllenCahnNLFormIntegrator<VARS, ThermodynamicsPotentialDiscretization::Implicit, ThermodynamicsPotentials::W, Mobility::Constant>;

@@ -1,6 +1,6 @@
 # Parameters 
 
-This page focuses on the [`Parameter`](#param) and [`Parameter`](@params) objects specially designed for `SLOTH`.
+This page focuses on the [`Parameter`](#param) and [`Parameters`](#params) objects specially designed for `SLOTH`.
 
 `SLOTH` provides a variety of parameter types, enabling flexible and dynamic configuration of simulation inputs.
 These parameters can then be passed as arguments to `SLOTH` problems (see [Problems](../MultiPhysicsCouplingScheme/Problems/index.md) for more details).

@@ -91,6 +91,7 @@ nav:
       - Started/Installation/cluster.md
       - Started/Installation/cluster_source.md
       - Started/Installation/libtorch.md
+      - Started/Installation/exprtk_sympy.md
     - HowTo: 
       - Started/HowTo/index.md
       - Basic features:
@@ -122,8 +123,10 @@ nav:
     - Code quality: Started/Quality/quality.md
   - User Manual: 
     - Documentation/User/index.md
+    - Documentation/User/Glossary/index.md
     - Documentation/User/Parameters/index.md
     - Documentation/User/Variables/index.md
+    - Documentation/User/Coefficients/index.md
     - Spatial discretization:
       - Documentation/User/SpatialDiscretization/index.md
       - Documentation/User/SpatialDiscretization/Meshing/index.md
