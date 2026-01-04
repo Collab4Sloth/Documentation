@@ -26,13 +26,14 @@ Here, these quantities are grouped by physical problems.
 
 
     | Quantity              | Type                | Unit                          | Description                 |
-    |-----------------------|---------------------|-------------------------------|-----------------------------|
+    | --------------------- | ------------------- | ----------------------------- | --------------------------- |
     | PhaseField            | PhaseField          | -                             | PhaseField variable         |
     | Mobility              | Mobility            | m$`^3`$.J$`^{-1}`$.s$`^{-1}`$ | Mobility coefficient        |
     | ChemicalPotential     | ChemicalPotential   | J.mol$`^{-1}`$                | Chemical potential variable |
     | SurfaceTension        | SurfaceTension      | J.m$`^{-2}`$                  | Surface tension             |
     | Capillary             | Capillary           | J.m$`^{-1}`$                  | Capillary coefficient       |
-    | FreeEnergy            | PhaseFieldPotential | -                             | Free energy function        |
+    | FreeEnergy            | FreeEnergy          | -                             | Free energy function        |
+    | GradEnergy            | GradientEnergy      | -                             | Gradient energy function    |
     | InterpolationFunction | PhaseFieldPotential | -                             | Interpolation function      |
     | Nucleus               | PhaseField          | -                             | Nucleus seed                |
 
@@ -43,7 +44,7 @@ Here, these quantities are grouped by physical problems.
     The following quantities are dedicated to heat transfer equation. 
 
     | Quantity      | Type          | Unit                               | Description            |
-    |---------------|---------------|------------------------------------|------------------------|
+    | ------------- | ------------- | ---------------------------------- | ---------------------- |
     | Temperature   | Temperature   | K                                  | Temperature            |
     | Conductivity  | Conductivity  | J.s$`^{-1}`$.m$`^{-1}`$.K$`^{-1}`$ | Thermal conductivity   |
     | Concentration | Concentration | mol.m$`^{-3}`$                     | Concentration variable |
@@ -56,7 +57,7 @@ Here, these quantities are grouped by physical problems.
     The following quantities are dedicated to mass diffusion equations.
 
     | Quantity               | Type              | Unit                              | Description                          |
-    |------------------------|-------------------|-----------------------------------|--------------------------------------|
+    | ---------------------- | ----------------- | --------------------------------- | ------------------------------------ |
     | MoleFraction           | MolarFraction     | -                                 | Molar fraction variable              |
     | Concentration          | Concentration     | mol.m$`^{-3}`$                    | Concentration variable               |
     | Diffusivity            | Diffusivity       | m$`^{2}`$.s$`^{-1}`$              | Mass diffusion coefficient           |
@@ -68,7 +69,7 @@ Here, these quantities are grouped by physical problems.
     The following quantities are dedicated to CALPHAD problems.
 
     | Quantity          | Type                   | Unit                              | Description                          |
-    |-------------------|------------------------|-----------------------------------|--------------------------------------|
+    | ----------------- | ---------------------- | --------------------------------- | ------------------------------------ |
     | Temperature       | Temperature            | K                                 | Temperature                          |
     | Pressure          | Pressure               | Pa                                | Pressure                             |
     | MoleNumber        | Mole                   | Mole                              | Mole number                          |
@@ -87,7 +88,8 @@ Here, these quantities are grouped by physical problems.
 
     The following quantities are dedicated to miscalleneous problems.
 
-    | Quantity   | Type   | Unit | Description                                          |
-    |------------|--------|------|------------------------------------------------------|
-    | MPI        | System | -    | MPI variable to visualize the MPI rank over the mesh |
-    | Coordinate | System | -    | Spatial coordinate variable                          |
+    | Quantity   | Type   | Unit | Description                                                           |
+    | ---------- | ------ | ---- | --------------------------------------------------------------------- |
+    | MPI        | System | -    | MPI variable to visualize the MPI rank over the mesh                  |
+    | Coordinate | System | -    | Spatial coordinate variable                                           |
+    | Default.   | System | -    | Default quantity (used to define default coefficients in integrators) |
