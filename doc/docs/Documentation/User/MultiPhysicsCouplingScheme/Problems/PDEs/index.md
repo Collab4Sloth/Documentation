@@ -1,5 +1,7 @@
 # Partial Differential Equations
 
+## __How SLOTH solves Partial Differential Equations?__ {#PDE-intro}
+
 Partial Differential Equations (PDEs) are the most important kind of problem for `SLOTH`.
 
 As illustrated in the figure 1, PDEs for `SLOTH` can be expressed in the following form:
@@ -35,8 +37,12 @@ Definition of PDEs for `SLOTH` is made with a C++ object of type `Problem`, whic
 
 
 The `OPERATOR` object in `Problem` refers to an object that inherits from base classes responsible for solving the nonlinear system (1). 
-These classes are illustrated in the figure 2: `OperatorBase` is a base class with two child classes -- `TransientOperatorBase`, which inherits from the `TimeDependentOperator` class of `MFEM`, and `SteadyOperatorBase`, which inherits from the `Operator` class of `MFEM`. 
-In addition to these three classes, there are two classes used to compute the residual and the Jacobian associated with the Newton-Raphson algorithm -- see `ReducedOperator` and `SteadyReducedOperator` classes in the figure 2.
+These classes are illustrated in the figure 2: `OperatorBase` is a base class with two derived classes:
+
+- `TransientOperatorBase`, which inherits from the `TimeDependentOperator` class of `MFEM` and is dedicated to unsteady PDEs,
+- `SteadyOperatorBase`, which inherits from the `Operator` class of `MFEM` and is dedicated to steady PDEs. 
+
+In addition to these classes, there are two classes used to compute the residual and the Jacobian associated with the Newton-Raphson algorithm -- see `ReducedOperator` and `SteadyReducedOperator` classes in the figure 2.
 
 <figure markdown="span">
   ![Operators](../../../../../img/SlothOperators.png){  width=800px}
@@ -52,7 +58,9 @@ As illustrated in the figure 3, these operators are associated with `NonLinearFo
 </figcaption>
 </figure>
 
-## Integrators
+## __How to define Partial Differential Equations?__ {#PDE-details}
+
+### __Integrators__ {#integrators}
 
 All `SLOTH` integrators inherit from the `MFEM` `BlockNonlinearFormIntegrator` class. 
 In the figure 3, the integrators are gathered in two grouped:
@@ -123,9 +131,46 @@ In the figure 3, the integrators are gathered in two grouped:
         where $`k`$ is a **mandantory** `SLOTH` coefficient of type `GlossaryType::Conductivity`.
 
     === "MassFlux"
-        ff
+        This integrator concerns the following mathematical expression:
+        
+        ```math
+
+        \begin{align}
+        \sum_{i}\nabla \cdot \left(M_i \nabla \zeta_i\right)
+        \end{align}
+
+        ```
+        where $`M_i`$ are mobility-type coefficients and $\zeta_i$ diffusion potentials. The latter can be defined as a function of chemical potentials $`\mu_i`$ or diffusion potentials $`\mu_i-\mu_n`$, which can themselves be scaled by temperature:
+
+        ```math
+
+        \begin{array}{l}
+        \zeta_i\leadsto\mu_i
+        \\
+        \zeta_i\leadsto\displaystyle\frac{\mu_i}{T}
+        \\
+        \zeta_i\leadsto {\mu_i-\mu_n}
+        \\
+        \zeta_i\leadsto\displaystyle\frac{\mu_i-\mu_n}{T}
+        \end{array}
+
+        ```
+
+        Three parameters are available with this integrator. They are listed in the table 1.
+
+          | Parameter Name                      | Type   | Default Value | Description                                                             |
+          | ----------------------------------- | ------ | ------------- | ----------------------------------------------------------------------- |
+          | `ScaleVariablesByTemperature`       | `bool` | false         | indicates wheter potentials are scaled by temperature            |
+          | `ScaleCoefficientsByTemperature`    | `bool` | false         | indicates wheter mobility coefficients are scaled by temperature |
+          | `EnableDiffusionChemicalPotentials` | `bool` | false         | indicates wheter diffusion potentials are considered             |
+          
+          : Table 1 - parameters allowed with `MassFlux`
+
+          For simulations based on this integrator, temperature, potentials and mobility coefficients must be defined as an auxiliary variable of problem.
+
+
     === "AllenCahn"
-        This integrator concerns the following mathemical expression:
+        This integrator concerns the following vectorial expression:
         
         ```math
 
@@ -136,7 +181,7 @@ In the figure 3, the integrators are gathered in two grouped:
         ```
         where $`M_i`$, $`\lambda_i`$, and $`F_i`$ are  **mandantory** `SLOTH` coefficients of type `GlossaryType::Mobility`, `GlossaryType::Capillary` and `GlossaryType::FreeEnergy`, respectively.
     === "SplitAllenCahn"
-        This integrator concerns the following mathemical expression:
+        This integrator concerns the following vectorial expression:
         
         ```math
 
@@ -152,8 +197,9 @@ In the figure 3, the integrators are gathered in two grouped:
         where $`M`$, $`\lambda`$, and $`F`$ are  **mandantory** `SLOTH` coefficients of type `GlossaryType::Mobility`, `GlossaryType::Capillary` and `GlossaryType::FreeEnergy`, respectively. 
 
         This integrator must be associated with the `SplitTimeDerivative` integrator.
+        
     === "CahnHilliard"
-        This integrator concerns the following mathemical expression:
+        This integrator concerns the following vectorial expression:
         
         ```math
 
@@ -218,8 +264,8 @@ In the figure 3, the integrators are gathered in two grouped:
 
         Two mandatory parameters are requested by this integrator. They are listed in the table 1.
 
-          | Parameter Name    | Type          | Default Value | Description                      |
-          | ----------------- | ------------- | ------------- | -------------------------------- |
+          | Parameter Name        | Type     | Default Value | Description         |
+          | --------------------- | -------- | ------------- | ------------------- |
           | `melting_temperature` | `double` |               | melting temperature |
           | `melting_enthalpy`    | `double` |               | melting enthalpy    |
           
@@ -260,7 +306,7 @@ In the figure 3, the integrators are gathered in two grouped:
 !!! note "On the inheritance from `BlockNonlinearFormIntegrator` instead of `NonlinearFormIntegrator`"
     For `SLOTH` integrators, inheriting from `BlockNonlinearFormIntegrator` maximizes the generality of the implementation, as it allows solving both single-unknown problems and problems with several unknowns. 
  
-## Operators
+### __Operators__ {#operators}
 
 === "TransientOperator"
 
@@ -308,7 +354,24 @@ In the figure 3, the integrators are gathered in two grouped:
         std::vector<SPA*> spatials{&spatial, &spatial};
         OPERATOR phasefield_ope(spatials, {"CahnHilliard"}, TimeScheme::EulerImplicit, "SplitTimeDerivative");
         ```
-    
+
+    !!! example "Definition of a transient operator with a combination of integrators"
+        The integrators for the differential operators can be combined. 
+
+        ```c++                                
+        using OPERATOR = TransientOperator<mfem::H1_FECollection, 3>; 
+        std::vector<SPA*> spatials{&spatial};
+        OPERATOR phasefield_ope(spatials, {"AllenCahn", "MeltingConstant"}, TimeScheme::EulerImplicit, "TimeDerivative");
+        ```
+        In the following example, the operator enables to solve the following equation:
+        
+        ```math
+
+        \begin{align}
+        \dfrac{\partial \varphi}{\partial t} = M\left(\nabla \cdot \left[\lambda \nabla \varphi\right] - \displaystyle\frac{\partial F}{\partial \varphi}\right)+ M \alpha p'(\varphi) 
+        \end{align}
+        ```
+        where $`\alpha`$ is a constant enthalpy of melting.
 
 === "SteadyOperator"
 
@@ -345,142 +408,97 @@ In the figure 3, the integrators are gathered in two grouped:
         ```
     
 
-## Problems
+### __Problems__ {#problems}
+As already mentioned, `Problem` for `SLOTH` is a template class instantiated with three template parameters: first, an `OPERATOR` object, second, a [Variables](../../../Variables/index.md) object, and third, a [PostProcessing](../../../PostProcessing/index.md) object.
+
+!!! example "Alias declaration for `Problem` class template"
+    ```c++
+    using PDE = Problem<OPERATOR, VARS, PST>;
+    ```
+
+The `PDE` problem must be defined by:
+
+  - an [Operator](#operators) [required], 
+  - primary [Variables](../../../Variables/index.md) [required],
+  - a vector of [Coefficients](../../../Coefficients/index.md) [required],
+  - a set of parameters (see [Parameters](../../../Parameters/index.md)) [optional],
+  - an [PostProcessing](../../../PostProcessing/index.md) object [required], 
+  - a set of [auxiliary Variables](../../../Variables/index.md) [optional].
 
 
-  The `SLOTH` integrators depend on the problem. Here, those currently used in `SLOTH` are described. 
+!!! warning "On the size of the vector of `Coefficients` objects"
+    **The size of the vector of `Coefficients` objects must be equal to the number of variables**.
 
-  === "Cahn-Hilliard problems"
-
-      The Cahn-Hilliard problems solved in `SLOTH` can be expressed in the following form:
-
-      ```math
-
-      \begin{align}
-      \frac{\partial \phi}{\partial t}&= \nabla \cdot \left[M(\phi) \nabla \mu\right] \text{ in }\Omega 
-      \\[6pt]    
-      \mu &= \omega F'(\phi) - \nabla \cdot \left[\lambda \nabla \phi\right] \text{ in }\Omega 
-      \end{align}
-
-      ```
-
-      where $`\phi`$ is the phase indicator, $`\mu`$ the generalized chemical potential and $`F'`$ the derivative against $`\phi`$ of a potential $`F`$.
-
-      The integrators are:
-
-      - `SplitTimeDerivative` for time derivative operator,
-      - `CahnHilliard` for differential opertors.
-
-      
-      !!! tip "Declaration of the potential and mobility coefficient"
-          The declaration of the three last template parameters will be simplified in a future version of `SLOTH`. 
-          Waiting this evolution, `SLOTH` development team recommends:
-
-          - `ThermodynamicsPotentialDiscretization::Implicit` for the temporal scheme for the potential $`F`$
-          - `ThermodynamicsPotentials::F` for 
-              
-            ```math
-
-            \begin{align*} 
-            F(\phi)&=\frac{\phi^4}{4} - \frac{\phi^2}{2}
-            \end{align*}
-
-            ```
-
-          -  `ThermodynamicsPotentials::W` for 
-              
-            ```math
-
-            \begin{align*} 
-            F(\phi)&=\phi^2 (1- \phi)^2
-            \end{align*}
-
-            ```
-
-          -  `ThermodynamicsPotentials::WW` for 
-              
-            ```math
-
-            \begin{align*} 
-            F(\phi)&=(\phi-0.3)^2 (0.7 - \phi)^2
-            \end{align*}
-
-            ```
-
-          - `Mobility::Constant` for a constant mobility $`M(\phi)=M`$
-          - `Mobility::Degenerated` for a degenerated mobility defined by:
-              
-            ```math
-
-            \begin{align*} 
-            M(\phi)&=M \phi^n (1-\phi)^n, \quad n\geq0
-            \end{align*}
-
-            ```
-      
-      The only parameter available for `CahnHilliardNLFormIntegrator` is given in the table 2.
-      
-      | Parameter Name               | Type   | Default Value | Description                                                                                                                                                  |
-      | ---------------------------- | ------ | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-      | `ScaleMobilityByTemperature` | `bool` | `false`       | flag to indicate if the mobility coefficient is divided by the temperature. In this case, temperature must be defined as auxiliary variables of the problem. |
-      
-      : Table 2 - parameters allowed with `CahnHilliardNLFormIntegrator`
+!!! warning "On the order of the vector of `Coefficients` objects"
+    **The order of coefficent in the vector of `Coefficients` objects corresponds the order unknowns in the `Variables` object**.
 
 
-      !!! example "Definition of a Cahn-Hilliard problem"
-          This example shows how to define a Cahn-Hilliard problem with two unknowns (`phi` and `mu`).
+  
+!!! example "Definition of a Cahn-Hilliard problem"
 
-          ```c++
-          
-          using PST = PostProcessing<mfem::H1_FECollection, mfem::ParaviewDataCollection, 2>;
-          using VARS = Variables<mfem::H1_FECollection, 3>
-          using LHS_NLFI = TimeCHNLFormIntegrator<VARS>;
-          using NLFI = CahnHilliardNLFormIntegrator<VARS, 
-                                                    ThermodynamicsPotentialDiscretization::Implicit,
-                                                    ThermodynamicsPotentials::F, 
-                                                    Mobility::Constant>;
-                                          
-          using OPERATOR = PhaseFieldOperator<mfem::H1_FECollection, 3, NLFI, LHS_NLFI>;          
-          using PB = Problem<OPERATOR,VARS,PST>;
+    ```c++                                
+    using OPERATOR = SteadyOperator<mfem::H1_FECollection, 3>; 
+    std::vector<SPA*> spatials{&spatial, &spatial};
 
-          const double mob(1.e-1);
-          const double lambda(1.e-4);
-          const double omega(1.);
-          auto phasefield_params = Parameters(Parameter("lambda", lambda), Parameter("omega", omega));         
-          auto phasefield_vars = Variables(phi, mu); 
-          auto phasefield_pst = PST(&spatial, pst_parameters);
+    // Variables: phi, mu
+    auto phi = VAR(&spatial, bcs_phi, "phi", Glossary::PhaseField, 2, phi_initial_condition);
+    auto mu = VAR(&spatial, bcs_mu, "mu", Glossary::ChemicalPotential, 2, mu_initial_condition);
+    auto vars = VARS(phi, mu);
+    
+    // Operator
+    OPE phasefield_ope(spatials, {"CahnHilliard"}, TimeScheme::EulerImplicit, "SplitTimeDerivative");
 
-          std::vector<SPA*> spatials{&spatial, &spatial};
-          OPERATOR phasefield_ope(spatials, params, TimeScheme::EulerImplicit);
-          phasefield_ope.overload_mobility(Parameters(Parameter("mob", mob)));
+    // Coefficients
+    //  Interface thickness
+    const double epsilon(0.02);
+    // Two-phase mobility
+    const double mob(1.);
+    // Gradient coefficient
+    const double lambda = (epsilon * epsilon);
+    Coefficient grad_energy(Glossary::GradEnergy, Scheme::Implicit, GradientEnergy(lambda));
+    Coefficient double_well(Glossary::FreeEnergy, Scheme::Implicit, W(omega));
+    Coefficient capillary(Glossary::Capillary, lambda);
+    Coefficient mobility(Glossary::Mobility, mob);
 
-          PB phasefield_pb(phasefield_ope, phasefield_vars, phasefield_pst);
+    Coefficients coef_phase_field(double_well, capillary, mobility, grad_energy);
 
-          ```
-          !!! warning "On the value of the mobility coefficient"
-              In addition to the example dedicted to the definition of the `PhaseFieldOperator`, it is important to note that the mobility coefficient is overloaded because by default, the mobility is set to $`1`$. 
+    // Problem (pst is PostProcessing object not detailed here)
+    PDE phase_filed_pb(phasefield_ope, vars, {coef_phase_field, coef_phase_field}, pst);
+
+    ```
+
+    This example assume an two-phase problem solved by Cahn-Hilliard equations with two unknowns (`phi` and `mu`). 
+
+    ```math
+
+    \begin{pmatrix}
+    0 
+    \\
+    \dfrac{\partial \varphi}{\partial t} 
+    \end{pmatrix}
+
+    =
+
+    \begin{pmatrix}
+    \mu - \nabla \cdot \left(\lambda \nabla \varphi\right)
+    + \dfrac{\partial F}{\partial \varphi}
+    \\[1ex]
+    \nabla \cdot \left(M \nabla \mu\right)
+    \end{pmatrix}
+
+    ```
+
+    The `OPERATOR` object, denoted by `phasefield_ope`, is well declared with a vector of two [spatial discretization](../../../SpatialDiscretization/index.md) objects, the `CahnHilliard`  integrator for the right-hand-side of PDEs and the `SplitTimeDerivative` for the left-hand-side. 
+
+    For this example, the Backward Euler method is considered (see `TimeScheme::EulerImplicit`).
+
+    For this problem, a vector of two [Coefficients](../../../Coefficients/index.md) is considered for `phi` and `mu`, respectively. Here, the same `Coefficients` are used for both variables accordingly with the `CahnHilliard` integrator. 
+    As expected by this integrator, coefficients of type `Glossary::FreeEnergy`, `Glossary::Capillary` and `Glossary::Mobility` are defined. The coefficient of type `Glossary::GradEnergy` is only used to compute the gradient terms in the output of the density of energy. 
+
+    This example has no parameters or auxiliary variables.
 
 
-      !!! tip "Declaration of the interpolation function"
-          The declaration of the interpolation function will be simplified in a future version of `SLOTH`. 
-          Waiting this evolution, `SLOTH` development team recommends:
 
-          - `ThermodynamicsPotentials::H` for 
-              
-            ```math
 
-            \begin{align*} 
-            P(\phi)&=\phi^3  (6 \phi^2 - 15 \phi + 10)
-            \end{align*}
 
-            ```
 
-          - `ThermodynamicsPotentials::X` for 
-              
-            ```math
-
-            \begin{align*} 
-            P(\phi)&=\phi
-            \end{align*}
-
-            ```
