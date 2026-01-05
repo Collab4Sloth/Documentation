@@ -47,7 +47,7 @@ On this page, the users can find the most important parts of a `SLOTH` input dat
         | mobility coefficient               | $`M_\phi`$   | $`10^{-5}`$                    |
         | energy gradient coefficient        | $`\lambda`$  | $`\frac{3}{2}\sigma\epsilon`$  |
         | surface tension                    | $`\sigma`$   | $`0.06`$                       |
-        | interface thickness                | $`\epsilon`$ | $`5\times10^{-4}`$             |
+        | interface \epsilon                | $`\epsilon`$ | $`5\times10^{-4}`$             |
         | depth of the double-well potential | $`\omega`$   | $`12\frac{\sigma}/{\epsilon}`$ |
 
 
@@ -343,6 +343,7 @@ If the mathematical expression is not yet available, the users can define it wit
         //--- Variables
         const auto& center_x = 0.;
         const auto& a_x = 1.;
+        const auto& epsilon = 5.e-4;
         const auto& thickness = 5.e-5;
         const auto& radius = 5.e-4;
 
@@ -350,8 +351,8 @@ If the mathematical expression is not yet available, the users can define it wit
         GlossaryQuantities variable_type = Glossary::Phi;
         int level_of_storage= 2;
 
-        auto initial_condition = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, 2.*epsilon, radius);
-        auto analytical_solution = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, epsilon, radius);
+        auto initial_condition = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, 2.*thickness, radius);
+        auto analytical_solution = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, thickness, radius);
         auto vars = VARS(VAR(&spatial, bcs, variable_name, variable_type, level_of_storage, initial_condition, analytical_solution));
     ```
     This example defines a single primary variable, named "phi" with two levels of storage. 
@@ -453,6 +454,7 @@ This is illustrated in the following example (see `Problem<OPE, VARS, PST> ac_pr
         //--- Variables
         const auto& center_x = 0.;
         const auto& a_x = 1.;
+        const auto& epsilon = 5.e-4;
         const auto& thickness = 5.e-5;
         const auto& radius = 5.e-4;
 
@@ -460,8 +462,8 @@ This is illustrated in the following example (see `Problem<OPE, VARS, PST> ac_pr
         GlossaryQuantities variable_type = Glossary::Phi;
         int level_of_storage= 2;
 
-        auto initial_condition = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, 2.*epsilon, radius);
-        auto analytical_solution = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, epsilon, radius);
+        auto initial_condition = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, 2.*thickness, radius);
+        auto analytical_solution = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, thickness, radius);
         auto vars = VARS(VAR(&spatial, bcs, variable_name, variable_type, level_of_storage, initial_condition, analytical_solution));
 
         //--- Integrator : alias definition for the sake of clarity
@@ -475,8 +477,6 @@ This is illustrated in the following example (see `Problem<OPE, VARS, PST> ac_pr
         TransientOperator<FECollection, DIM> oper(spatials, {"AllenCahn", "MeltingConstant"}, params, TimeScheme::EulerImplicit, "TimeDerivative");
 
         //--- Coefficients
-        //  Interface thickness
-        double epsilon = 4 * L / NN;
         // Interfacial energy
         const auto& sigma(6.e-2);
         // Two-phase mobility
@@ -589,6 +589,7 @@ This is detailed in the [`Time` page of the user manual](../../../Documentation/
         //--- Variables
         const auto& center_x = 0.;
         const auto& a_x = 1.;
+        const auto& epsilon = 5.e-4;
         const auto& thickness = 5.e-5;
         const auto& radius = 5.e-4;
 
@@ -596,8 +597,8 @@ This is detailed in the [`Time` page of the user manual](../../../Documentation/
         GlossaryQuantities variable_type = Glossary::Phi;
         int level_of_storage= 2;
 
-        auto initial_condition = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, 2.*epsilon, radius);
-        auto analytical_solution = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, epsilon, radius);
+        auto initial_condition = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, 2.*thickness, radius);
+        auto analytical_solution = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, thickness, radius);
         auto vars = VARS(VAR(&spatial, bcs, variable_name, variable_type, level_of_storage, initial_condition, analytical_solution));
 
         //--- Integrator : alias definition for the sake of clarity
@@ -611,8 +612,6 @@ This is detailed in the [`Time` page of the user manual](../../../Documentation/
         TransientOperator<FECollection, DIM> oper(spatials, {"AllenCahn", "MeltingConstant"}, params, TimeScheme::EulerImplicit, "TimeDerivative");
 
         //--- Coefficients
-        //  Interface thickness
-        double epsilon = 4 * L / NN;
         // Interfacial energy
         const auto& sigma(6.e-2);
         // Two-phase mobility
