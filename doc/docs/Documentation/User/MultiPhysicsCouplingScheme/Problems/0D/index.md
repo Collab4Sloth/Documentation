@@ -54,31 +54,31 @@ All `Calphad_problems` share a set of optional output variables. For each variab
     - The last additional information is always the _symbol_ associated with the variable. 
 
 !!! example "Defining fictitious CALPHAD variables"
-    The following example consider a binary system U-O in a LIQUID-SOLID mixture. 
+    The following example consider a binary system A-B in a LIQUID-SOLID mixture. 
     Five `Variable` objects are defined and collected within a `Variables` object. 
     
     ```c++
-    // Oxygen chemical potential
-    auto muo = VAR(&spatial, bcs, "muO", level_of_storage, 0.);
-    muo.set_additional_information("O", "mu");
+    // chemical potential for A
+    auto mua = VAR(&spatial, bcs, "muA", level_of_storage, 0.);
+    mua.set_additional_information("A", "mu");
 
-    // Oxygen mobility in the phase SOLID
-    auto mobO = VAR(&spatial, bcs, "Mo", level_of_storage, 0.);
-    mobO.set_additional_information("SOLID", "O", "mob");
+    // mobility in the phase SOLID for A 
+    auto mobA = VAR(&spatial, bcs, "Ma", level_of_storage, 0.);
+    mobA.set_additional_information("SOLID", "A", "mob");
 
     // Molar fraction of the phase LIQUID
     auto xph_l = VAR(&spatial, bcs, "xph_l", level_of_storage, 0.);
     xph_l.set_additional_information("LIQUID", "xph");
 
-    // Site fraction of the cation U+3
-    auto yu = VAR(&spatial, bcs, "yu+3", level_of_storage, 0.);
-    yu.set_additional_information("U+3", "0", "SOLID", "y");
+    // Site fraction of the cation B+2
+    auto yb = VAR(&spatial, bcs, "yb+2", level_of_storage, 0.);
+    yb.set_additional_information("B+2", "0", "SOLID", "y");
 
     // Gibbs energy
     auto gl = VAR(&spatial, bcs, "g_l", level_of_storage, 0.);
     gl.set_additional_information("LIQUID", "g");
 
-    auto calphad_outputs = VARS(muo, mobO, xph_l, yu, gl);
+    auto calphad_outputs = VARS(mua, mobA, xph_l, yb, gl);
 
     ```    
 
@@ -154,7 +154,7 @@ The parameters associated with `CalphadInformedNeuralNetwork<mfem::Vector>` are 
 | `"EnergiesNeuralNetwork"`                | [`vTupleStringString`](../../../Parameters/index.md) |               | Name of the serialized `PyTorch` model for Gibbs energy and enthalpy     |
 | `"EnergiesNeuralNetworkIndex"`           | [`vTupleStringInt`**](../../../Parameters/index.md)    |               | Index of the first energy in the metamodel outputs, by phase             |
 | `"InputEnergiesOrder"`                   | [`vString`](../../../Parameters/index.md)            |               |  Order of the energy potentials in the metamodel outputs (_e.g._ `{"G","H"}`)                                                                        |
-| `"InputCompositionOrder"`                | [`vString`](../../../Parameters/index.md)            |               |  Order of the elements in the metamodel inputs (_e.g._ `{"O","PU", "U"}`)                                                                        |
+| `"InputCompositionOrder"`                | [`vString`](../../../Parameters/index.md)            |               |  Order of the elements in the metamodel inputs (_e.g._ `{"A","B", "C"}`)                                                                        |
 | `"ModelBuiltWithPressure"`               | `bool`               |  `True`             | Flag to indicate if the pressure is an input of the metamodel                                                                          |
 | `"OwnMobilityModel"`                     | `bool`               |  `True`             |  Flag to indicate if a different metamodel is used for mobilities                                                                                                                                   |
 | `"OwnEnergyModel"`                       | `bool`               |  `True`             |     Flag to indicate if a different metamodel is used for energies                                                                     |
@@ -169,7 +169,7 @@ The parameters associated with `CalphadInformedNeuralNetwork<mfem::Vector>` are 
 
 !!! example "Definition of a `Calphad_Problem` based on `CalphadInformedNeuralNetwork<mfem::Vector>`"
 
-    This example assume that metamodels are used to approximate chemical potentials and mobilities for the U-Pu-O ternary system in a liquid-solid mixture.
+    This example assume that metamodels are used to approximate chemical potentials and mobilities for the A-B-C ternary system in a liquid-solid mixture.
 
     The serialized `PyTorch`models are named `solid_model.pt` and `liquid_model.pt` for the solid and liquid, respectively.
 
@@ -199,12 +199,12 @@ The parameters associated with `CalphadInformedNeuralNetwork<mfem::Vector>` are 
     auto index_neural_network_model_mob =
         Parameter("MobilitiesNeuralNetworkIndex", MobilitiesNeuralNetworkIndex);
 
-    std::vector<std::string> composition_order{"O", "PU", "U"};
+    std::vector<std::string> composition_order{"A", "B", "C"};
     auto input_composition_order = Parameter("InputCompositionOrder", composition_order);
 
     auto own_mobility_model = Parameter("OwnMobilityModel", false);
 
-    auto element_removed_from_nn_inputs = Parameter("element_removed_from_nn_inputs", "PU");
+    auto element_removed_from_nn_inputs = Parameter("element_removed_from_nn_inputs", "B");
 
     ```
 
