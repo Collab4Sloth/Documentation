@@ -72,6 +72,7 @@ The parameters allowed with `PostProcessing` for exporting specialized values in
 | `"enable_save_specialized_at_iter"` | `bool` |false|By default, specialized values are written at end of the simulation. This flag enables to write the values at each time-step.|
  | `"iso_val_to_compute"` | `MapStringDouble` ||Map of isovalue for each variable. The key must match with the name of a `Variable`.|
  | `"integral_to_compute"` | `MapString2Double` ||Map of lower and upper bounds used to compute the average value of each variable. The key must match with the name of a `Variable`.|
+ | `"enable_compute_energies"` | `bool` |true|Indicates if energies are calculated. |
 
 : Table 2 - parameters allowed with `PostProcessing` to save specialized values in the `time_specialized.csv` file.
 
@@ -84,6 +85,13 @@ Instead, the parameter `"iso_val_to_compute"` generates separate `CSV` files, on
 
 !!! warning "On the lower and upper bounds used with `"integral_to_compute"` "
     Lower and upper bounds are used to limit the calculation of the integral to specific values of the variables. For example, it can be usefull to compute the volume of a bubble that corresponds to a phase indicator lower than $`0.5`$. 
+
+
+!!! warning "On the calculation of energies for phase-field problems"
+    By default, energies are calculated. For phase-field problems, if `"enable_compute_energies"` is set to `true`, a `SLOTH` coefficient of type `Glossary::GradEnergy` **must** be defined in the vector of coefficients passed to the `SLOTH` problem. Otherwise, an exception is raised.
+
+    See the dedicated page of the user manual for more details about the definition of `SLOTH` [coefficients](../Coefficients/index.md).
+
 
 !!! example "Example of `PostProcessing` with parameters"
     The following example assume the existence of a `Variable` named `"phi"` for Cahn-Hilliard equations. 

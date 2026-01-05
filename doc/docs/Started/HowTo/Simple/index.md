@@ -47,7 +47,7 @@ On this page, the users can find the most important parts of a `SLOTH` input dat
         | mobility coefficient               | $`M_\phi`$   | $`10^{-5}`$                    |
         | energy gradient coefficient        | $`\lambda`$  | $`\frac{3}{2}\sigma\epsilon`$  |
         | surface tension                    | $`\sigma`$   | $`0.06`$                       |
-        | interface thickness                | $`\epsilon`$ | $`5\times10^{-4}`$             |
+        | interface \epsilon                | $`\epsilon`$ | $`5\times10^{-4}`$             |
         | depth of the double-well potential | $`\omega`$   | $`12\frac{\sigma}/{\epsilon}`$ |
 
 
@@ -136,7 +136,6 @@ Each alias employ a template structure for space dimension dependence (see `DIM`
         //---------------------------------------
         const int DIM=1;
         using FECollection = Test<DIM>::FECollection;
-        using PSTCollection = Test<DIM>::PSTCollection;
         using VARS = Test<DIM>::VARS;
         using VAR = Test<DIM>::VAR;
         using PST = Test<DIM>::PST;
@@ -149,7 +148,6 @@ These aliases both refer to MFEM or `SLOTH` types used many times in the test fi
 | **Alias**       | **Type**                   | **Description**                                            |
 |-----------------|----------------------------|------------------------------------------------------------|
 | `FECollection`  | `Test<DIM>::FECollection`  | Finite Element Space. $`\cal{H}^1`$ by default (MFEM type) |
-| `PSTCollection` | `Test<DIM>::PSTCollection` | Type of post-processing. Paraview by default (MFEM type)   |
 | `VARS`          | `Test<DIM>::VARS`          | Collection of Variable objects (SLOTH type)                |
 | `VAR`           | `Test<DIM>::VAR`           | Variable object  (SLOTH type)                              |
 | `PST`           | `Test<DIM>::PST`           | PostProcessing (SLOTH type)                                |
@@ -184,7 +182,6 @@ Only three lines of code must be defined in each test file for the MPI and HYPRE
         using FECollection = Test<DIM>::FECollection;
         using VARS = Test<DIM>::VARS;
         using VAR = Test<DIM>::VAR;
-        using PSTCollection = Test<DIM>::PSTCollection;
         using PST = Test<DIM>::PST;
         using SPA = Test<DIM>::SPA;
         using BCS = Test<DIM>::BCS;
@@ -220,7 +217,6 @@ Definition of a Finite Element mesh for `SLOTH` is made with a C++ object of typ
 
 
 All the functions used to create meshes are detailed in the [Meshing section of the user manual](../../../Documentation/User/SpatialDiscretization/Meshing/index.md). 
-
 
 Regarding the boundary conditions, `SLOTH` enables to prescribe **Dirichlet**, **Neumann** and **Periodic** boundary conditions. 
 
@@ -282,7 +278,6 @@ Different type of boundary conditions can be mixed as detailed in the [Boundary 
         using FECollection = Test<DIM>::FECollection;
         using VARS = Test<DIM>::VARS;
         using VAR = Test<DIM>::VAR;
-        using PSTCollection = Test<DIM>::PSTCollection;
         using PST = Test<DIM>::PST;
         using SPA = Test<DIM>::SPA;
         using BCS = Test<DIM>::BCS;
@@ -348,6 +343,7 @@ If the mathematical expression is not yet available, the users can define it wit
         //--- Variables
         const auto& center_x = 0.;
         const auto& a_x = 1.;
+        const auto& epsilon = 5.e-4;
         const auto& thickness = 5.e-5;
         const auto& radius = 5.e-4;
 
@@ -355,43 +351,40 @@ If the mathematical expression is not yet available, the users can define it wit
         GlossaryQuantities variable_type = Glossary::Phi;
         int level_of_storage= 2;
 
-        auto initial_condition = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, 2.*epsilon, radius);
-        auto analytical_solution = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, epsilon, radius);
+        auto initial_condition = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, 2.*thickness, radius);
+        auto analytical_solution = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, thickness, radius);
         auto vars = VARS(VAR(&spatial, bcs, variable_name, variable_type, level_of_storage, initial_condition, analytical_solution));
     ```
     This example defines a single primary variable, named "phi" with two levels of storage. 
     The initial condition and the analytical solution are of the hyperbolic tangent type.
     
-Another class of major C++ objects for `SLOTH` is `Operator`. 
-These objects allow the solution of the algebraic system resulting from the discretization of the (non-linear) equations. 
-For each of them, the users can find a stationary and a transient version. 
-This is detailed in the [`Partial Differential Equations` page of the user manual](../../../Documentation/User/MultiPhysicsCouplingScheme/Problems/PDEs/index.md).  
-Although the input arguments provided to the `Operator` object are of interest, the focus is rather on the definition of the C++ object itself, which requires the input of the variational formulation of the equations. 
-This specificity is implemented on the basis of `NonLinearFormIntegrators` objects, also detailed in the user manual in the [`Partial Differential Equations`](../../../Documentation/User/MultiPhysicsCouplingScheme/Problems/PDEs/index.md) page. 
-The definition of the integrators obviously depends on the targeted problem. 
-In the present example, the variational formulation is defined by using the `AllenCahnNLFormIntegrator` object. 
-This is the most general form of integrator for Allen-Cahn problems.
+Other major C++ objects for `SLOTH` is `SteadyOperator` and `TransientOperator`, which enables to solve the steady and unsteady algebraic system resulting from the discretization of the (non-linear) equations. This is detailed in the [`Partial Differential Equations` page of the user manual](../../../Documentation/User/MultiPhysicsCouplingScheme/Problems/PDEs/index.md).  
 
-!!! example "Extract of the test file with Operators and Integrators"
+Although the input arguments provided to these objects are of interest, the focus is rather on the definition of the C++ object itself, which requires the input of the variational formulation of the equations. 
+This specificity is implemented using objects of `BlockNonLinearFormIntegrators`, also detailed in the user manual in the [`Partial Differential Equations`](../../../Documentation/User/MultiPhysicsCouplingScheme/Problems/PDEs/index.md) page. 
+The definition of the integrators obviously depends on the targeted problem (see the dedicated page of the user manual for more details about [`Integrators`](../../../Documentation/User/MultiPhysicsCouplingScheme/Problems/PDEs/index.md)). 
 
-    ```c++ hl_lines="2 16"
-        //--- Integrator : alias definition for the sake of clarity
-        using NLFI = AllenCahnNLFormIntegrator<VARS, ThermodynamicsPotentialDiscretization::Implicit, ThermodynamicsPotentials::W, Mobility::Constant>;
+In the present example, the variational formulation is defined by combining the `TimeDerivative`, `AllenCahn` and `MeltingConstant` integrators in order to solve the following equation:
+        
+```math
 
-        //--- Operator definition
-        //  Interface thickness
-        const auto& epsilon(5.e-4);
-        // Interfacial energy
-        const auto& sigma(6.e-2);
-        // Two-phase mobility
-        const auto& mob(1.e-5);
-        const auto& lambda = 3. * sigma * epsilon / 2.;
-        const auto& omega = 12. * sigma / epsilon;
-        auto params = Parameters(Parameter("epsilon", epsilon), Parameter("sigma", sigma), Parameter("lambda", lambda), Parameter("omega", omega));
+\begin{align}
+\dfrac{\partial \varphi}{\partial t} = M\left(\nabla \cdot \left[\lambda \nabla \varphi\right] - \displaystyle\frac{\partial F}{\partial \varphi}\right)+ M \alpha p'(\varphi) 
+\end{align}
+```
+where $`\alpha`$ is a constant enthalpy of melting.
+
+!!! example "Extract of the test file with a TransientOperator"
+
+    ```c++ hl_lines="6"
+        std::vector<SPA*> spatials{&spatial};
+        const auto& alpha(7.e3);
+        auto params = Parameters(Parameter("melting_factor", alpha));
 
         std::vector<SPA*> spatials{&spatial};
-        AllenCahnOperator<FECollection, DIM, NLFI> oper(spatials, params, TimeScheme::EulerImplicit);
+        TransientOperator<FECollection, DIM> oper(spatials, {"AllenCahn", "MeltingConstant"}, params, TimeScheme::EulerImplicit, "TimeDerivative");
     ```
+    
 
 !!! warning "Use of `Parameters` and `Parameter` objects"
     `Parameters` is a C++ object designed for `SLOTH` and defined as a collection of `Parameter` objects. The latter is also a C++ object specially developed for `SLOTH`. 
@@ -415,26 +408,12 @@ By default, all primary variables associated with a `SLOTH` `Problem` are saved.
     ```
     In this example, the results will be saved in the `Saves/AllenCahn` directory (see `Parameter("main_folder_path", main_folder_path)` and  `Parameter("calculation_path", calculation_path)`), at each time-step (see `Parameter("frequency", frequency)`).
 
-<!-- The last object needed to define a `SLOTH` `Problem` is the physical convergence criterion. 
-It corresponds to the C++ object `PhysicalConvergence`. Relative and absolute criteria are available.
-It is worth mentioning that this object is disabled. It will be enabled when fixed point algorithm and automatic time-step splitting are integrated.
-
-!!! example "Test file with PhysicalConvergence"
-
-    ```c++ hl_lines="3"
-        //--- Physical Convergence
-        const double crit_cvg = 1.e-12;
-        PhysicalConvergence convergence(ConvergenceType::ABSOLUTE_MAX, crit_cvg);
-    ``` -->
-
 At this stage,  the `SLOTH` `Problem` can be defined and, as previously explained, collected in a `Coupling` object. 
 This is illustrated in the following example (see `Problem<OPE, VARS, PST> ac_problem` and  `Coupling("Main coupling", ac_problem)`). 
 
-
-
 !!! example "Test file with Variables, Operators and Integrators and Post-Processing"
 
-    ```c++ hl_lines="79 83"
+    ```c++ hl_lines="62-76 88"
     //---------------------------------------
     // Headers
     //---------------------------------------
@@ -455,7 +434,6 @@ This is illustrated in the following example (see `Problem<OPE, VARS, PST> ac_pr
         using FECollection = Test<DIM>::FECollection;
         using VARS = Test<DIM>::VARS;
         using VAR = Test<DIM>::VAR;
-        using PSTCollection = Test<DIM>::PSTCollection;
         using PST = Test<DIM>::PST;
         using SPA = Test<DIM>::SPA;
         using BCS = Test<DIM>::BCS;
@@ -476,6 +454,7 @@ This is illustrated in the following example (see `Problem<OPE, VARS, PST> ac_pr
         //--- Variables
         const auto& center_x = 0.;
         const auto& a_x = 1.;
+        const auto& epsilon = 5.e-4;
         const auto& thickness = 5.e-5;
         const auto& radius = 5.e-4;
 
@@ -483,26 +462,33 @@ This is illustrated in the following example (see `Problem<OPE, VARS, PST> ac_pr
         GlossaryQuantities variable_type = Glossary::Phi;
         int level_of_storage= 2;
 
-        auto initial_condition = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, 2.*epsilon, radius);
-        auto analytical_solution = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, epsilon, radius);
+        auto initial_condition = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, 2.*thickness, radius);
+        auto analytical_solution = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, thickness, radius);
         auto vars = VARS(VAR(&spatial, bcs, variable_name, variable_type, level_of_storage, initial_condition, analytical_solution));
 
         //--- Integrator : alias definition for the sake of clarity
         using NLFI = AllenCahnNLFormIntegrator<VARS, ThermodynamicsPotentialDiscretization::Implicit, ThermodynamicsPotentials::W, Mobility::Constant>;
 
         //--- Operator definition
-        //  Interface thickness
-        const auto& epsilon(5.e-4);
+        std::vector<SPA*> spatials{&spatial};
+        const auto& alpha(7.e3);
+        auto params = Parameters(Parameter("melting_factor", alpha));
+
+        TransientOperator<FECollection, DIM> oper(spatials, {"AllenCahn", "MeltingConstant"}, params, TimeScheme::EulerImplicit, "TimeDerivative");
+
+        //--- Coefficients
         // Interfacial energy
         const auto& sigma(6.e-2);
         // Two-phase mobility
         const auto& mob(1.e-5);
         const auto& lambda = 3. * sigma * epsilon / 2.;
         const auto& omega = 12. * sigma / epsilon;
-        auto params = Parameters(Parameter("epsilon", epsilon), Parameter("sigma", sigma), Parameter("lambda", lambda), Parameter("omega", omega));
-
-        std::vector<SPA*> spatials{&spatial};
-        AllenCahnOperator<FECollection, DIM, NLFI> oper(&spatial, params, TimeScheme::EulerImplicit);
+        Coefficient grad_energy(Glossary::GradEnergy, Scheme::Implicit, GradientEnergy(lambda));
+        Coefficient double_well_imp(Glossary::FreeEnergy, Scheme::Implicit, W(omega));
+        Coefficient interpolation(Glossary::InterpolationFunction, Scheme::Implicit, H());
+        Coefficient capillary(Glossary::Capillary, lambda);
+        Coefficient mobility(Glossary::Mobility, mob);
+        Coefficients coef_ac(double_well_imp, capillary, mobility, interpolation, grad_energy);
 
         //--- Post-Processing 
         const std::string& main_folder_path = "Saves";
@@ -514,7 +500,8 @@ This is illustrated in the following example (see `Problem<OPE, VARS, PST> ac_pr
         //-----------------------
         // Problem
         //-----------------------
-        Problem<AllenCahnOperator<FECollection, DIM, NLFI>, VARS, PST> ac_problem(oper, vars, pst);
+        Problem<TransientOperator<FECollection, DIM>, VARS, PST> ac_problem(oper, vars, {coef_ac}, pst);
+
         //-----------------------
         // Coupling
         //-----------------------
@@ -527,6 +514,9 @@ This is illustrated in the following example (see `Problem<OPE, VARS, PST> ac_pr
     }
     ```
     In this example, a coupling, labelled `Main coupling`, is defined with only one `SLOTH` `Problem` associated with the solution of Allen-Cahn equation.
+
+    Each `SLOTH` problem used to solve PDEs must be defined with a vector of `SLOTH` `Coefficients` objects. 
+    These objects are described in [`Coefficients` page of the user manual](../../../Documentation/User/Coefficients/index.md). They are used to define the main parameters of the equations and the energy of the system, which are then employed by the `SLOTH`integrators.
 
 Users are referred to the [MultiPhysicsCouplingScheme](../../../Documentation/User/MultiPhysicsCouplingScheme/index.md) page of the user manual for more details about the available `SLOTH` problems and how to use them.
 
@@ -575,11 +565,10 @@ This is detailed in the [`Time` page of the user manual](../../../Documentation/
         //---------------------------------------
         // Common aliases
         //---------------------------------------
-        const int DIM = 1
+        const int DIM=1;
         using FECollection = Test<DIM>::FECollection;
         using VARS = Test<DIM>::VARS;
         using VAR = Test<DIM>::VAR;
-        using PSTCollection = Test<DIM>::PSTCollection;
         using PST = Test<DIM>::PST;
         using SPA = Test<DIM>::SPA;
         using BCS = Test<DIM>::BCS;
@@ -600,6 +589,7 @@ This is detailed in the [`Time` page of the user manual](../../../Documentation/
         //--- Variables
         const auto& center_x = 0.;
         const auto& a_x = 1.;
+        const auto& epsilon = 5.e-4;
         const auto& thickness = 5.e-5;
         const auto& radius = 5.e-4;
 
@@ -607,26 +597,33 @@ This is detailed in the [`Time` page of the user manual](../../../Documentation/
         GlossaryQuantities variable_type = Glossary::Phi;
         int level_of_storage= 2;
 
-        auto initial_condition = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, 2.*epsilon, radius);
-        auto analytical_solution = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, epsilon, radius);
+        auto initial_condition = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, 2.*thickness, radius);
+        auto analytical_solution = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, thickness, radius);
         auto vars = VARS(VAR(&spatial, bcs, variable_name, variable_type, level_of_storage, initial_condition, analytical_solution));
 
         //--- Integrator : alias definition for the sake of clarity
         using NLFI = AllenCahnNLFormIntegrator<VARS, ThermodynamicsPotentialDiscretization::Implicit, ThermodynamicsPotentials::W, Mobility::Constant>;
 
         //--- Operator definition
-        //  Interface thickness
-        const auto& epsilon(5.e-4);
+        std::vector<SPA*> spatials{&spatial};
+        const auto& alpha(7.e3);
+        auto params = Parameters(Parameter("melting_factor", alpha));
+
+        TransientOperator<FECollection, DIM> oper(spatials, {"AllenCahn", "MeltingConstant"}, params, TimeScheme::EulerImplicit, "TimeDerivative");
+
+        //--- Coefficients
         // Interfacial energy
         const auto& sigma(6.e-2);
         // Two-phase mobility
         const auto& mob(1.e-5);
         const auto& lambda = 3. * sigma * epsilon / 2.;
         const auto& omega = 12. * sigma / epsilon;
-        auto params = Parameters(Parameter("epsilon", epsilon), Parameter("sigma", sigma), Parameter("lambda", lambda), Parameter("omega", omega));
-
-        std::vector<SPA*> spatials{&spatial};
-        AllenCahnOperator<FECollection, DIM, NLFI> oper(spatials, params, TimeScheme::EulerImplicit);
+        Coefficient grad_energy(Glossary::GradEnergy, Scheme::Implicit, GradientEnergy(lambda));
+        Coefficient double_well_imp(Glossary::FreeEnergy, Scheme::Implicit, W(omega));
+        Coefficient interpolation(Glossary::InterpolationFunction, Scheme::Implicit, H());
+        Coefficient capillary(Glossary::Capillary, lambda);
+        Coefficient mobility(Glossary::Mobility, mob);
+        Coefficients coef_ac(double_well_imp, capillary, mobility, interpolation, grad_energy);
 
         //--- Post-Processing 
         const std::string& main_folder_path = "Saves";
@@ -638,7 +635,8 @@ This is detailed in the [`Time` page of the user manual](../../../Documentation/
         //-----------------------
         // Problem
         //-----------------------
-        Problem<AllenCahnOperator<FECollection, DIM, NLFI>, VARS, PST> ac_problem(oper, vars, pst);
+        Problem<TransientOperator<FECollection, DIM>, VARS, PST> ac_problem(oper, vars, {coef_ac}, pst);
+
         //-----------------------
         // Coupling
         //-----------------------
