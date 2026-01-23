@@ -104,7 +104,7 @@ In the figure 3, the integrators are gathered in two grouped:
         where $`\rho`$ and $`C_p`$ are two `SLOTH` coefficients of type `GlossaryType::Concentration` and `GlossaryType::HeatCapacity`, respectively. 
         By default, coefficients are set to one. 
 
-- Differential Operators  (see $`G`$ in the equation (1)): `Fick`, `Fourier`, `MassFlux`, `AllenCahn`, `SplitAllenCahn`, `CahnHilliard`, `MeltingCalphad`, `MeltingConstant`, `MeltingTemperature`. **They can be combined as for example, `AllenCahn` and  `MeltingTemperature`**.
+- Differential Operators  (see $`G`$ in the equation (1)): `Fick`, `Fourier`, `MassFlux`, `AllenCahn`, `SplitAllenCahn`, `CahnHilliard`, `MeltingCalphad`, `MeltingConstant`, `MeltingTemperature`, `LatentHeat`. **They can be combined as for example, `AllenCahn` and  `MeltingTemperature`**.
   
     === "Fick"
         This integrator concerns the following mathemical expression:
@@ -302,6 +302,20 @@ In the figure 3, the integrators are gathered in two grouped:
           : Table 1 - parameters requested by `MeltingCalphad`
 
           For simulations based on this integrator, CALPHAD outputs -driving forces and nucleus- must be defined as auxiliary variables of the phase-field problem.
+
+    === "LatentHeat"
+        This integrator concerns the following mathemical expression:
+        
+        ```math
+
+        \begin{align}
+        \dfrac{1}{M}\left[ \dfrac{\partial \varphi}{\partial t} \right]^2 \\
+        \end{align}
+
+        ```
+        where $`M`$ is a **mandantory** `SLOTH` coefficient of type `GlossaryType::Mobility`. 
+
+        This integrator can be only associated with the `Fourier` integrator to solve heat transfer equation for two-phase problems. 
 
 !!! note "On the inheritance from `BlockNonlinearFormIntegrator` instead of `NonlinearFormIntegrator`"
     For `SLOTH` integrators, inheriting from `BlockNonlinearFormIntegrator` maximizes the generality of the implementation, as it allows solving both single-unknown problems and problems with several unknowns. 
