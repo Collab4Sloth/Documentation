@@ -297,6 +297,59 @@ The script `GenerateCoefficient.py` allows users to define classes of type `Func
         
     In addition, the ratio of a coefficient can be also defined by considering the inverse of a `FunctionCoefficient` in a JSON file. 
 
+#### Defining a conditional coefficient {#condcoef}
+
+The script `GenerateCoefficient.py` allows users to handle range conditions in the JSON file.
+
+
+!!! example "Example of coefficient defined with range conditions"
+
+    ```json
+    [
+    {
+        "expressions": [
+        {
+            "expression":"Sum( -(x[i]*x[i])/2.0  + (x[i]*x[i]*x[i]*x[i])/4.0 , (i, 1, 3))",
+            "lower": 0.0,
+            "upper": 0.75
+        },
+        {
+            "expression":"Sum( -(x[i]*x[i])/4.0  + (x[i]*x[i]*x[i]*x[i])/4.0 , (i, 1, 3))",
+            "default": true
+        }
+        ],
+        "range_variable": "x1",
+        "variables":"x(1..3)",
+        "class_name":"ConditionalCoefficient",
+        "outputfile":"ConditionalCoefficient"
+    }
+    ]
+    ```
+
+    In this example, the following mathematical function is defined:
+
+    ```math
+    \begin{align*}
+    \displaystyle\sum_{i=1}^{3} \left( \frac{1}{4} x_i^4 - \frac{1}{2} x_i^2 \right) \quad \text{if}\quad   0\lt x_1 \lt 0.75
+    \\
+    \displaystyle\sum_{i=1}^{3} \left( \frac{1}{4} x_i^4 - \frac{1}{4} x_i^2 \right) \quad \text{otherwise}
+    \end{align*}
+    ```
+
+**Rules for conditional coefficients:**
+
+- At least one expression with a range
+- The range is defined by lower and upper bounds:  
+    - `lower` means $`\le`$, 
+    - `lower_strict` means $`\lt`$, 
+    - `upper` means $`\ge`$, 
+    - `upper_strict`means $`\gt`$ 
+- One default expression without range (see `default`)
+- The 'lower' or 'lower_strict' bounds must be defined, not the two attributes
+- The 'upper' or 'upper_strict' bounds must be defined not the two attributess
+- Only one range variable (see `range_variable`)
+- A range can't overlap another range
+
 
 ### __ExprTk interface__ {#coef_exprtk}
 
