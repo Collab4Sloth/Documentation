@@ -149,6 +149,8 @@ where `$MFEM4SLOTH` is a variable associated with the path towards the `MFEM` in
     --coverage to build SLOTH with Coverage compiler options 
 
     --external to built SLOTH with an external package
+
+    --static to build a static library for Sloth
         
 ```
 
@@ -159,5 +161,30 @@ By default, `SLOTH` is built with release compiler options.
 ```bash
 make -j N 
 ```
-with N the number of jobs.
+with N the number of jobs. This command creates the `SLOTH` library. By default, a shared libray is built. 
+The `--static` option enables building a static library instead. 
+The user must ensure that the library type used for `MFEM` is compatible. Certain combinations of static and shared libraries may require specific compiler options, such as `-fPIC`.
 
+The `make` command is equivalent as the following command
+
+```bash
+make sloth -j N 
+```
+
+!!! warning "Compilation of tests"
+    The commands `make`or equivalently `make sloth` do not compile the tests. To compile tests, run
+    ```bash
+    make tests -j N 
+    ```
+
+The target `sloth_tests` first compile `SLOTH` and then, builds all the tests.
+
+## __SLOTH installation__
+
+Once `SLOTH` is compiled, run   
+
+```bash
+    make install
+```
+
+to install the `SLOTH` library, headers, and scripts into the `SlothInstallation` directory. 
