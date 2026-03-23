@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -3057,6 +3057,8 @@ where [OPTIONS] are:
 </span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span>--relwithdebinfo<span class="w"> </span>to<span class="w"> </span>build<span class="w"> </span>with<span class="w"> </span>RelWithDebInfo<span class="w"> </span>compiler<span class="w"> </span>options<span class="w"> </span>
 </span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
 </span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span>--external<span class="w"> </span>to<span class="w"> </span>built<span class="w"> </span>SLOTH<span class="w"> </span>with<span class="w"> </span>an<span class="w"> </span>external<span class="w"> </span>package
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span>--static<span class="w"> </span>to<span class="w"> </span>build<span class="w"> </span>a<span class="w"> </span>static<span class="w"> </span>library<span class="w"> </span><span class="k">for</span><span class="w"> </span>Sloth
 </span></code></pre></div></li>
 </ul>
 <p>By default, SLOTH is built with release compiler options.</p>
@@ -3064,8 +3066,24 @@ where [OPTIONS] are:
 <li>Finally, compile 
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>make<span class="w"> </span>-j<span class="w"> </span>N<span class="w"> </span>
 </span></code></pre></div>
-with N the number of jobs.</li>
+with N the number of jobs. This command creates the <code>SLOTH</code> library. By default, a shared libray is built. 
+The <code>--static</code> option enables building a static library instead. 
+The user must ensure that the library type used for <code>MFEM</code> is compatible. Certain combinations of static and shared libraries may require specific compiler options, such as <code>-fPIC</code>.</li>
 </ul>
+<p>The <code>make</code> command is equivalent as the following command</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>make<span class="w"> </span>sloth<span class="w"> </span>-j<span class="w"> </span>N<span class="w"> </span>
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Compilation of tests</p>
+<p>The commands <code>make</code>or equivalently <code>make sloth</code> do not compile the tests. To compile tests, run
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>make<span class="w"> </span>tests<span class="w"> </span>-j<span class="w"> </span>N<span class="w"> </span>
+</span></code></pre></div></p>
+</div>
+<p>The target <code>sloth_tests</code> first compile <code>SLOTH</code> and then, builds all the tests.</p>
+<p>Once <code>SLOTH</code> is compiled, run   </p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="w">    </span>make<span class="w"> </span>install
+</span></code></pre></div>
+<p>to install the <code>SLOTH</code> library, headers, and scripts into the <code>SlothInstallation</code> directory. </p>
 
 
 
