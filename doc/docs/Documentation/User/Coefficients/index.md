@@ -112,6 +112,7 @@ The available keys are:
         "outputfile":"OtherFunction"
         }
     ]
+    ```
 
 
 Once the `FunctionCoefficient`-type classes are generated, they can be used to define a `Coefficient`. 
