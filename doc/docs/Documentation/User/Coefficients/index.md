@@ -92,10 +92,26 @@ The available keys are:
 
     | syntax in the JSON file | C++ syntax after coefficient generation       |
     | ----------------------- | --------------------------------------------- |
-    | H                       | `Physcial::H`(Planck constant)                |
-    | NA                      | `Physcial::NA`(Avogadro constant  mol$`^-1`$) |
-    | K                       | `Physcial::K`(Boltzman constant in J/K)       |
-    | R                       | `Physcial::R`(molar gas constant in J/mol/K)  |
+    | H                       | `Physical::H`(Planck constant)                |
+    | NA                      | `Physical::NA`(Avogadro constant  mol$`^-1`$) |
+    | K                       | `Physical::K`(Boltzman constant in J/K)       |
+    | R                       | `Physical::R`(molar gas constant in J/mol/K)  |
+    | T                       | current time                                          |
+
+    The constant `T` enables the definition of time-dependent coefficients. For ease of use, time is treated as a constant in these expressions. However, time can also be controlled within `SLOTH` problems and is automatically updated for PDE-like problems. 
+    
+    The following example shows how to define a time-dependent coefficient.
+    
+    ```json
+    [
+        {
+        "expression":"a*x*x*t",
+        "variables":"x",
+	    "constants":"(a:2.0),(t:T)",
+        "class_name":"FunctionC",
+        "outputfile":"OtherFunction"
+        }
+    ]
 
 
 Once the `FunctionCoefficient`-type classes are generated, they can be used to define a `Coefficient`. 
