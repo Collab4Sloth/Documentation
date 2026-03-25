@@ -3488,63 +3488,68 @@ At this stage, <code>MFEM</code> can be installed by running the following comma
 </span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="nb">cd</span><span class="w"> </span>..
 </span></code></pre></div>
 <h2 id="sloth-compilation"><strong>SLOTH compilation</strong><a class="headerlink" href="#sloth-compilation" title="Permanent link">&para;</a></h2>
-<p>Once <code>MFEM</code> is installed, priori to compile <code>SLOTH</code>, several environment variables must be defined:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="w">    </span><span class="nb">export</span><span class="w"> </span><span class="nv">MFEM_DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$MFEM4SLOTH</span><span class="s2">/mfem/INSTALLDIR/&quot;</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="nb">export</span><span class="w"> </span><span class="nv">HYPRE_DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$MFEM4SLOTH</span><span class="s2">/hypre/src/hypre/&quot;</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="nb">export</span><span class="w"> </span><span class="nv">METIS_DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$MFEM4SLOTH</span><span class="s2">/metis-4.0/&quot;</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="nb">export</span><span class="w"> </span><span class="nv">SuiteSparse_DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$MFEM4SLOTH</span><span class="s2">/SuiteSparse/&quot;</span>
-</span></code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">On the use of the  <code>envSloth.sh</code> configuration file</p>
-<p>These definitions are written into the configuration file <code>envSloth.sh</code> located in the root directory of the <code>SLOTH</code> repository. 
-The use of this file is recommended to load the <code>MFEM</code> environment before compilling <code>SLOTH</code>.</p>
+<p>Once MFEM is installed, SLOTH can be built using the <code>envSloth.sh</code> shell script. 
+This script loads MFEM, defines several environment variables, and compiles SLOTH.</p>
+<div class="admonition note">
+<p class="admonition-title">Build SLOTH using the <code>envSloth.sh</code> shell script</p>
+<p>The <code>envSloth.sh</code> shell script cannot be run directly from the root of the SLOTH repository.
+Users must create a separate build directory to compile SLOTH.</p>
 </div>
-<ul>
-<li>Load the <code>SLOTH</code> configuration file:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>bash<span class="w"> </span>../envSloth.sh<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>--mfem<span class="o">=</span><span class="nv">$MFEM4SLOTH</span>
+<div class="admonition warning">
+<p class="admonition-title">Installing Sympy</p>
+<p>Please ensure that <a href="https://docs.sympy.org/latest/index.html">Sympy</a> is installed.
+Sympy is a mandatory prerequisite to build SLOTH as it is used to handle physical properties.</p>
+</div>
+<p>Once, MFEM and Sympy are installed, please run the following command to build SLOTH:</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>mkdir<span class="w"> </span>build<span class="w"> </span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">cd</span><span class="w"> </span>build
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>bash<span class="w"> </span>../envSloth.sh<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w">  </span>--mfem<span class="o">=</span><span class="nv">$MFEM4SLOTH</span>
 </span></code></pre></div>
 where <code>$MFEM4SLOTH</code> is a variable associated with the path towards the <code>MFEM</code> installation (<em>ie</em> <code>$HOME/MFEM4SLOTH</code> in the current description) and [OPTIONS] are:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="w">    </span>--release<span class="w"> </span>to<span class="w"> </span>build<span class="w"> </span>SLOTH<span class="w"> </span>with<span class="w"> </span>Release<span class="w"> </span>compiler<span class="w"> </span>options<span class="w"> </span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span>--optim<span class="w"> </span>to<span class="w"> </span>build<span class="w"> </span>SLOTH<span class="w"> </span>with<span class="w"> </span>Optim<span class="w"> </span>compiler<span class="w"> </span>options<span class="w"> </span>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span>--debug<span class="w"> </span>to<span class="w"> </span>build<span class="w"> </span>SLOTH<span class="w"> </span>with<span class="w"> </span>Debug<span class="w"> </span>compiler<span class="w"> </span>options<span class="w"> </span>
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
-</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">    </span>--coverage<span class="w"> </span>to<span class="w"> </span>build<span class="w"> </span>SLOTH<span class="w"> </span>with<span class="w"> </span>Coverage<span class="w"> </span>compiler<span class="w"> </span>options<span class="w"> </span>
-</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
-</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">    </span>--minsizerel<span class="w"> </span>to<span class="w"> </span>build<span class="w"> </span>with<span class="w"> </span>MinSizeRel<span class="w"> </span>compiler<span class="w"> </span>options<span class="w"> </span>
-</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>
-</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">    </span>--relwithdebinfo<span class="w"> </span>to<span class="w"> </span>build<span class="w"> </span>with<span class="w"> </span>RelWithDebInfo<span class="w"> </span>compiler<span class="w"> </span>options<span class="w"> </span>
-</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
-</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="w">    </span>--external<span class="w"> </span>to<span class="w"> </span>built<span class="w"> </span>SLOTH<span class="w"> </span>with<span class="w"> </span>an<span class="w"> </span>external<span class="w"> </span>package
-</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>
-</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="w">    </span>--static<span class="w"> </span>to<span class="w"> </span>build<span class="w"> </span>a<span class="w"> </span>static<span class="w"> </span>library<span class="w"> </span><span class="k">for</span><span class="w"> </span>Sloth
-</span></code></pre></div></li>
-</ul>
-<p>By default, <code>SLOTH</code> is built with release compiler options.</p>
-<ul>
-<li>Finally, compile 
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>make<span class="w"> </span>-j<span class="w"> </span>N<span class="w"> </span>
-</span></code></pre></div></li>
-</ul>
-<p>with N the number of jobs. This command creates the <code>SLOTH</code> library. By default, a shared libray is built. 
-The <code>--static</code> option enables building a static library instead. 
-The user must ensure that the library type used for <code>MFEM</code> is compatible. Certain combinations of static and shared libraries may require specific compiler options, such as <code>-fPIC</code>.</p>
-<p>The <code>make</code> command is equivalent as the following command</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>make<span class="w"> </span>sloth<span class="w"> </span>-j<span class="w"> </span>N<span class="w"> </span>
-</span></code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">Compilation of tests</p>
-<p>The commands <code>make</code>or equivalently <code>make sloth</code> do not compile the tests. To compile tests, run
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>make<span class="w"> </span>tests<span class="w"> </span>-j<span class="w"> </span>N<span class="w"> </span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="w">    </span>--release<span class="w">        </span>Build<span class="w"> </span>with<span class="w"> </span>Release<span class="w"> </span>compiler<span class="w"> </span>options
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span>--optim<span class="w">          </span>Build<span class="w"> </span>with<span class="w"> </span>Optim<span class="w"> </span>compiler<span class="w"> </span>options
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span>--debug<span class="w">          </span>Build<span class="w"> </span>with<span class="w"> </span>Debug<span class="w"> </span>compiler<span class="w"> </span>options
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">    </span>--coverage<span class="w">       </span>Build<span class="w"> </span>with<span class="w"> </span>Coverage<span class="w"> </span>compiler<span class="w"> </span>options
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">    </span>--minsizerel<span class="w">     </span>Build<span class="w"> </span>with<span class="w"> </span>MinSizeRel<span class="w"> </span>compiler<span class="w"> </span>options
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">    </span>--relwithdebinfo<span class="w"> </span>Build<span class="w"> </span>with<span class="w"> </span>RelWithDebInfo<span class="w"> </span>compiler<span class="w"> </span>options
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">    </span>--external<span class="w">       </span>Build<span class="w"> </span>SLOTH<span class="w"> </span>with<span class="w"> </span>an<span class="w"> </span>external<span class="w"> </span>package
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">    </span>--shared<span class="w">         </span>Build<span class="w"> </span>a<span class="w"> </span>shared<span class="w"> </span>library<span class="w"> </span><span class="k">for</span><span class="w"> </span>Sloth
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">    </span>--install<span class="w">        </span>Specify<span class="w"> </span>the<span class="w"> </span>installation<span class="w"> </span>path<span class="w"> </span><span class="k">for</span><span class="w"> </span>Sloth<span class="w"> </span>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="w">                     </span><span class="o">(</span>default:<span class="w"> </span>a<span class="w"> </span><span class="s2">&quot;SlothInstallation&quot;</span><span class="w"> </span>directory<span class="w"> </span>at<span class="w"> </span>the<span class="w"> </span>same<span class="w"> </span>level<span class="w"> </span>as<span class="w"> </span>the<span class="w"> </span>repository<span class="o">)</span>
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="w">    </span>--np<span class="w">             </span>Specify<span class="w"> </span>the<span class="w"> </span>number<span class="w"> </span>of<span class="w"> </span>CPUs<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span><span class="k">for</span><span class="w"> </span>compilation<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="m">4</span><span class="o">)</span>
 </span></code></pre></div></p>
+<p>By default, this command builds a static library of SLOTH with release compiler options.</p>
+<div class="admonition tip">
+<p class="admonition-title">Building a shared library of SLOTH</p>
+<p>The <code>--shared</code> option enables building a shared library of SLOTH.
+However, the user must ensure that the library type used for <code>MFEM</code> is compatible. Certain combinations of static and shared libraries may require specific compiler options, such as <code>-fPIC</code>. </p>
 </div>
-<p>The target <code>sloth_tests</code> first compile <code>SLOTH</code> and then, builds all the tests.</p>
-<h2 id="sloth-installation"><strong>SLOTH installation</strong><a class="headerlink" href="#sloth-installation" title="Permanent link">&para;</a></h2>
-<p>Once <code>SLOTH</code> is compiled, run   </p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="w">    </span>make<span class="w"> </span>install
+<p>The <code>make</code> command within the <code>envSloth.sh</code> script does not compile the tests. To compile tests after SLOTH has been built, run the following command:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>make<span class="w"> </span>tests<span class="w"> </span>-j<span class="w"> </span>N<span class="w"> </span>
 </span></code></pre></div>
-<p>to install the <code>SLOTH</code> library, headers, and scripts into the <code>SlothInstallation</code> directory. </p>
+<p>where <code>N</code> is a number of CPUs to use for building the tests in parallel. </p>
+<p>Once the tests are compiled, users can verify the build by running all tests with <code>ctest</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>ctest<span class="w"> </span>-j<span class="w"> </span>N<span class="w"> </span>
+</span></code></pre></div>
+<h2 id="sloth-installation"><strong>SLOTH installation</strong><a class="headerlink" href="#sloth-installation" title="Permanent link">&para;</a></h2>
+<p>Users can install the SLOTH library, headers, and scripts into the <code>SlothInstallation</code> directory by running:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>make<span class="w"> </span>install
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Installing SLOTH in user-defined repository</p>
+<p>By default, SLOTH is installed in a <code>SlothInstallation</code> directory at the same level as the repository. </p>
+<p>Users can be specify another directory with the <code>--install</code> option of the <code>envSloth.sh</code> script.</p>
+</div>
 
 
 

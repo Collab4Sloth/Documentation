@@ -3000,13 +3000,28 @@
 
 
 <h1 id="installation-guide">Installation guide<a class="headerlink" href="#installation-guide" title="Permanent link">&para;</a></h1>
-<p><code>SLOTH</code> is written in <code>C++17</code>/<code>C++20</code>. It can be built under Linux and MacOS using <code>CMake</code>. 
-The main prerequisite is the <code>MFEM</code> Finite Element library developed in C++ by LLNL<sup id="fnref:mfem"><a class="footnote-ref" href="#fn:mfem">1</a></sup>.</p>
+<p><code>SLOTH</code> is written in <code>C++17</code>/<code>C++20</code>. It can be built under Linux and MacOS using <code>CMake</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Two mandatory prerequisites for building SLOTH</p>
+<ul>
+<li>SLOTH is built on top of the <code>MFEM</code> Finite Element library developed in C++ by LLNL<sup id="fnref:mfem"><a class="footnote-ref" href="#fn:mfem">1</a></sup>.</li>
+<li>SLOTH uses Sympy to handle physical properties.</li>
+</ul>
+<p>Please ensure that both MFEM and Sympy are properly installed before building SLOTH.</p>
+</div>
+<p><strong>MFEM</strong></p>
 <p><code>MFEM</code> can be installed in several ways but the use of <code>spack</code> on <a href="linux.html">Linux</a> and <code>Homebrew</code>on <a href="mac.html">MacOS</a> is recommended for sake of simplicity.</p>
 <p>Installing <code>SLOTH</code> therefore consists of first installing <code>MFEM</code> and compiling <code>SLOTH</code>. 
 The basic procedure is then provided for the <a href="linux.html">Linux platforms using spack</a>, the <a href="sources.html">Linux platforms from source files</a> and the <a href="mac.html">MacOs platforms</a>, but also for <a href="cluster.html">supercomputers</a> where <code>SLOTH</code> is intended to be used.</p>
-<p>For certain applications, <code>SLOTH</code> utilizes C++ APIs contained within the library <a href="https://pytorch.org/cppdocs/installing.html"><code>libTorch</code></a> to load <code>PyTorch</code> models. The basic procedure also includes <a href="libtorch.html">instructions for installing <code>libTorch</code>.</a></p>
-<p><code>SLOTH</code> provides two interfaces based on <a href="https://www.partow.net/programming/exprtk/">ExprTk</a> and <a href="https://docs.sympy.org/latest/index.html">Sympy</a> to manage physical properties. The basic procedure also includes <a href="exprtk_sympy.html">instructions for installing <code>SLOTH</code> with these dependencies.</a>. <code>ExprTk</code> is optional, while <code>Sympy</code> is mandatory.</p>
+<p><strong>Sympy</strong></p>
+<p><code>SLOTH</code> provides an advanced interface based on <a href="https://docs.sympy.org/latest/index.html">Sympy</a> to manage physical properties. The basic procedure also includes <a href="exprtk_sympy.html">instructions for installing <code>SLOTH</code> with this dependency</a>. </p>
+<div class="admonition note">
+<p class="admonition-title">Optional dependencies for building SLOTH</p>
+<ul>
+<li><code>SLOTH</code> utilizes C++ APIs contained within the library <a href="https://pytorch.org/cppdocs/installing.html"><code>libTorch</code></a> to load <code>PyTorch</code> models. The basic procedure also includes <a href="libtorch.html">instructions for installing <code>libTorch</code></a>.</li>
+<li>While <code>SLOTH</code> primarily uses Sympy to handle physical properties, it also provides an interface based on <a href="https://www.partow.net/programming/exprtk/">ExprTk</a> (<a href="exprtk_sympy.html">see instructions for installing <code>SLOTH</code> with ExprTk</a>).</li>
+</ul>
+</div>
 <div class="footnote">
 <hr />
 <ol>

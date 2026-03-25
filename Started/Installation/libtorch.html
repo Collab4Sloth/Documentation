@@ -3111,10 +3111,31 @@ The procedure focuses on the CPU-only <code>libTorch</code></p>
 </span></code></pre></div>
 <p>This will result in an uncompressed folder named <code>libtorch</code> that can be linked to <code>SLOTH</code> during the configuration of the project.</p>
 <h2 id="linking-sloth-and-libtorch"><strong>Linking SLOTH and libTorch</strong><a class="headerlink" href="#linking-sloth-and-libtorch" title="Permanent link">&para;</a></h2>
-<p>To link <code>SLOTH</code> with <code>libTorch</code>, the user must load the <code>SLOTH</code> configuration file with the <code>--libtorch</code> option:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>bash<span class="w"> </span>../envSloth.sh<span class="w"> </span>--libtorch<span class="o">=</span><span class="nv">$LIBTORCH_PATH</span>
+<p>To link <code>SLOTH</code> with <code>libTorch</code>, the user must run the <code>envSloth.sh</code>  script file with the <code>--libtorch</code> option:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>bash<span class="w"> </span>../envSloth.sh<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>--libtorch<span class="o">=</span><span class="nv">$LIBTORCH_PATH</span>
 </span></code></pre></div>
-<p>where <code>LIBTORCH_PATH</code> is an environment variable containing the path toward the <code>libtorch</code> folder previously uncompressed.</p>
+<p>where <code>LIBTORCH_PATH</code> is an environment variable containing the path toward the <code>libtorch</code> folder previously uncompressed and [OPTIONS] are:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">    </span>--release<span class="w">        </span>Build<span class="w"> </span>with<span class="w"> </span>Release<span class="w"> </span>compiler<span class="w"> </span>options
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span>--optim<span class="w">          </span>Build<span class="w"> </span>with<span class="w"> </span>Optim<span class="w"> </span>compiler<span class="w"> </span>options
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span>--debug<span class="w">          </span>Build<span class="w"> </span>with<span class="w"> </span>Debug<span class="w"> </span>compiler<span class="w"> </span>options
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span>--coverage<span class="w">       </span>Build<span class="w"> </span>with<span class="w"> </span>Coverage<span class="w"> </span>compiler<span class="w"> </span>options
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span>--minsizerel<span class="w">     </span>Build<span class="w"> </span>with<span class="w"> </span>MinSizeRel<span class="w"> </span>compiler<span class="w"> </span>options
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span>--relwithdebinfo<span class="w"> </span>Build<span class="w"> </span>with<span class="w"> </span>RelWithDebInfo<span class="w"> </span>compiler<span class="w"> </span>options
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span>--external<span class="w">       </span>Build<span class="w"> </span>SLOTH<span class="w"> </span>with<span class="w"> </span>an<span class="w"> </span>external<span class="w"> </span>package
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span>--shared<span class="w">         </span>Build<span class="w"> </span>a<span class="w"> </span>shared<span class="w"> </span>library<span class="w"> </span><span class="k">for</span><span class="w"> </span>Sloth
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span>--install<span class="w">        </span>Specify<span class="w"> </span>the<span class="w"> </span>installation<span class="w"> </span>path<span class="w"> </span><span class="k">for</span><span class="w"> </span>Sloth<span class="w"> </span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">                     </span><span class="o">(</span>default:<span class="w"> </span>a<span class="w"> </span><span class="s2">&quot;SlothInstallation&quot;</span><span class="w"> </span>directory<span class="w"> </span>at<span class="w"> </span>the<span class="w"> </span>same<span class="w"> </span>level<span class="w"> </span>as<span class="w"> </span>the<span class="w"> </span>repository<span class="o">)</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span>--np<span class="w">             </span>Specify<span class="w"> </span>the<span class="w"> </span>number<span class="w"> </span>of<span class="w"> </span>CPUs<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span><span class="k">for</span><span class="w"> </span>compilation<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="m">4</span><span class="o">)</span>
+</span></code></pre></div></p>
 
 
 
