@@ -4,7 +4,11 @@ icon: simple/sympy
 
 # Sympy and ExprTk
 
-`SLOTH` provides interfaces with the C++ Mathematical Expression Toolkit Library [ExprTk](https://www.partow.net/programming/exprtk/) and the Python library for symbolic mathematics [Sympy](https://docs.sympy.org/latest/index.html) to manage physical properties with [`Coefficient`](../../Documentation/User/Coefficients/index.md). 
+`SLOTH` provides interfaces with the C++ Mathematical Expression Toolkit Library [ExprTk](https://www.partow.net/programming/exprtk/) and the Python library for symbolic mathematics [Sympy](https://docs.sympy.org/latest/index.html) to handle physical properties with [`Coefficient`](../../Documentation/User/Coefficients/index.md). 
+
+!!! warning "Installing Sympy"
+    Sympy is a mandatory prerequisite to build SLOTH. 
+    Please ensure that [Sympy](https://docs.sympy.org/latest/index.html) is well installed.
 
 This page presents the instructions for installing these dependencies.
 
@@ -26,13 +30,35 @@ Other approaches exist as, for example, the use of [`conda`](https://anaconda.or
 
 ### __Linking SLOTH and ExprTk__
 
-To link `SLOTH` with `ExprTk`, the user must load the `SLOTH` configuration file with the `--exprtk` option:
+To link `SLOTH` with `ExprTk`, the user must run the `envSloth.sh`  script file with the `--exprtk` option:
 
 ```bash
-bash ../envSloth.sh --exprtk=$EXPRTK_PATH
+bash ../envSloth.sh [OPTIONS] --exprtk=$EXPRTK_PATH
 ```
 
-where `EXPRTK_PATH` is an environment variable setting the path toward the `exprtk` folder containing the file `exprtk.hpp`. 
+where `EXPRTK_PATH` is an environment variable setting the path toward the `exprtk` folder containing the file `exprtk.hpp` and [OPTIONS] are:
+```bash
+    --release        Build with Release compiler options
+
+    --optim          Build with Optim compiler options
+        
+    --debug          Build with Debug compiler options
+        
+    --coverage       Build with Coverage compiler options
+        
+    --minsizerel     Build with MinSizeRel compiler options
+        
+    --relwithdebinfo Build with RelWithDebInfo compiler options
+
+    --external       Build SLOTH with an external package
+
+    --shared         Build a shared library for Sloth
+
+    --install        Specify the installation path for Sloth 
+                     (default: a "SlothInstallation" directory at the same level as the repository)
+
+    --np             Specify the number of CPUs to use for compilation (default: 4)
+``` 
 
 With `spack`, this environment variable can be defined as:
 

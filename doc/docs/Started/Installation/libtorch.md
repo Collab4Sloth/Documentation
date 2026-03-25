@@ -21,10 +21,32 @@ This will result in an uncompressed folder named `libtorch` that can be linked t
 
 ## __Linking SLOTH and libTorch__
 
-To link `SLOTH` with `libTorch`, the user must load the `SLOTH` configuration file with the `--libtorch` option:
+To link `SLOTH` with `libTorch`, the user must run the `envSloth.sh`  script file with the `--libtorch` option:
 
 ```bash
-bash ../envSloth.sh --libtorch=$LIBTORCH_PATH
+bash ../envSloth.sh [OPTIONS] --libtorch=$LIBTORCH_PATH
 ```
 
-where `LIBTORCH_PATH` is an environment variable containing the path toward the `libtorch` folder previously uncompressed.
+where `LIBTORCH_PATH` is an environment variable containing the path toward the `libtorch` folder previously uncompressed and [OPTIONS] are:
+```bash
+    --release        Build with Release compiler options
+
+    --optim          Build with Optim compiler options
+        
+    --debug          Build with Debug compiler options
+        
+    --coverage       Build with Coverage compiler options
+        
+    --minsizerel     Build with MinSizeRel compiler options
+        
+    --relwithdebinfo Build with RelWithDebInfo compiler options
+
+    --external       Build SLOTH with an external package
+
+    --shared         Build a shared library for Sloth
+
+    --install        Specify the installation path for Sloth 
+                     (default: a "SlothInstallation" directory at the same level as the repository)
+
+    --np             Specify the number of CPUs to use for compilation (default: 4)
+```
