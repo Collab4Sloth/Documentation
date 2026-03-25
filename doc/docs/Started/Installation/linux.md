@@ -20,76 +20,84 @@ spack install mfem+mpi+suite-sparse+sundials+superlu-dist+miniapps
     The user is free to install different version of MFEM. 
     By default, the last released is considered. otherwise, "@version" must be added at the end of the `spack` command.
 
+Once MFEM is installed, SLOTH can be built using the `envSloth.sh` shell script. 
+This script loads MFEM, defines several environment variables, and compiles SLOTH.
 
-Once MFEM is installed, priori to compile SLOTH, MFEM must be loaded and several environment variables must be defined:
+!!! note "Build SLOTH using the `envSloth.sh` shell script"
+    The `envSloth.sh` shell script cannot be run directly from the root of the SLOTH repository.
+    Users must create a separate build directory to compile SLOTH.
+
+!!! warning "Installing Sympy"
+    Please ensure that [Sympy](https://docs.sympy.org/latest/index.html) is installed.
+    Sympy is a mandatory prerequisite to build SLOTH as it is used to handle physical properties.
+
+Once, MFEM and Sympy are installed, please run the following command to build SLOTH:
 
 ```bash
-   spack load mfem
+mkdir build 
+cd build
 
-   export HYPRE_DIR=$(spack location -i hypre)
-    
-   export MPI_DIR=$(spack location -i mpi)
-   
-   export METIS_DIR=$(spack location -i metis)
-```
-
-!!! tip "On the use of the  `envSloth.sh` configuration file"
-    These definitions are written into the configuration file `envSloth.sh` located in the root directory of the SLOTH repository. 
-    The use of this file is recommended to load the MFEM environment before compilling SLOTH.
-
-- Load the SLOTH configuration file:
-```bash
 bash ../envSloth.sh [OPTIONS] 
 ```
 where [OPTIONS] are:
 ```bash
-    --release to build with Release compiler options 
+    --release        Build with Release compiler options
 
-    --optim to build with Optim compiler options 
+    --optim          Build with Optim compiler options
         
-    --debug to build with Debug compiler options 
+    --debug          Build with Debug compiler options
         
-    --coverage to build with Coverage compiler options 
+    --coverage       Build with Coverage compiler options
         
-    --minsizerel to build with MinSizeRel compiler options 
+    --minsizerel     Build with MinSizeRel compiler options
         
-    --relwithdebinfo to build with RelWithDebInfo compiler options 
+    --relwithdebinfo Build with RelWithDebInfo compiler options
 
-    --external to built SLOTH with an external package
+    --external       Build SLOTH with an external package
 
-    --static to build a static library for Sloth
-        
+    --shared         Build a shared library for Sloth
+
+    --install        Specify the installation path for Sloth 
+                     (default: a "SlothInstallation" directory at the same level as the repository)
+
+    --np             Specify the number of CPUs to use for compilation (default: 4)
 ```
 
-By default, SLOTH is built with release compiler options.
+By default, this command builds a static library of SLOTH with release compiler options.
 
 
-- Finally, compile 
+!!! tip "Building a shared library of SLOTH"
+    The `--shared` option enables building a shared library of SLOTH.
+    However, the user must ensure that the library type used for `MFEM` is compatible. Certain combinations of static and shared libraries may require specific compiler options, such as `-fPIC`. 
+
+    `spack` builds static library of MFEM unless the users enable shared ones (see `+shared` in the `spack` command):
+    ```shell
+    spack install mfem+shared+mpi+suite-sparse+sundials+superlu-dist+miniapps
+    ```
+    
+The `make` command within the `envSloth.sh` script does not compile the tests. To compile tests after SLOTH has been built, run the following command:
+
 ```bash
-make -j N 
+make tests -j N 
 ```
-with N the number of jobs. This command creates the `SLOTH` library. By default, a shared libray is built. 
-The `--static` option enables building a static library instead. 
-The user must ensure that the library type used for `MFEM` is compatible. Certain combinations of static and shared libraries may require specific compiler options, such as `-fPIC`.
+
+where `N` is a number of CPUs to use for building the tests in parallel. 
+
+Once the tests are compiled, users can verify the build by running all tests with `ctest`:
+
+```bash
+ctest -j N 
+```
+
+Finally, users can install the SLOTH library, headers, and scripts into the `SlothInstallation` directory by running:
+
+```bash
+make install
+```
 
 The `make` command is equivalent as the following command
 
-```bash
-make sloth -j N 
-```
+!!! note "Installing SLOTH in user-defined repository"
+    By default, SLOTH is installed in a `SlothInstallation` directory at the same level as the repository. 
 
-!!! warning "Compilation of tests"
-    The commands `make`or equivalently `make sloth` do not compile the tests. To compile tests, run
-    ```bash
-    make tests -j N 
-    ```
-
-The target `sloth_tests` first compile `SLOTH` and then, builds all the tests.
-
-Once `SLOTH` is compiled, run   
-
-```bash
-    make install
-```
-
-to install the `SLOTH` library, headers, and scripts into the `SlothInstallation` directory. 
+    Users can be specify another directory with the `--install` option of the `envSloth.sh` script.
