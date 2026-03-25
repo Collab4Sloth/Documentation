@@ -95,7 +95,6 @@ Finally, users can install the SLOTH library, headers, and scripts into the `Slo
 make install
 ```
 
-The `make` command is equivalent as the following command
 
 !!! note "Installing SLOTH in user-defined repository"
     By default, SLOTH is installed in a `SlothInstallation` directory at the same level as the repository. 
