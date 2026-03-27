@@ -72,17 +72,23 @@ A `Boundary` object is defined by
         Robin boundary conditions prescribes the following expression on a boundary:
 
         ```math
-        {\bf{n}} \cdot \nabla u = a \times u + b
+        {\bf{n}} \cdot \nabla u + a \times u =  b
         ```
 
         where $`a`$ and $`b`$ are two `Coefficient` objects of type `Glossary::Robin_a` and `Glossary::Robin_b`, respectively. 
         These two coefficients must also be associated with a set of `Boundary` objects.
         
-        The following example illustres how to define radiation boundary conditions with suitable coefficients on the bottom boundary (`1`) and on the top boundary (`3`).
+        The following example illustrates how to define radiation boundary conditions by prescribing:
+
+        ```math
+        {\bf{n}} \cdot k\nabla T + a(T) \times T =  b
+        ```
+        
+        with suitable coefficients on the bottom boundary (`1`) and on the top boundary (`3`).
 
         ```c++
         Coefficient robin_a(Glossary::Robin_a, Scheme::Implicit, RobinCoefficient());
-        Coefficient robin_b(Glossary::Robin_b, h * T_inf + epsilon * sigma * std::pow(T_inf, 4));
+        Coefficient robin_b(Glossary::Robin_b, epsilon * sigma * std::pow(T_inf, 4));
         robin_a.set_bdr_index_coef(std::vector<int>{1,3});
         robin_b.set_bdr_index_coef(std::vector<int>{1,3});
         ```  
@@ -92,9 +98,9 @@ A `Boundary` object is defined by
         ```json
         [
             {
-            "expression":"h + epsilon * sigma * T*T*T",
+            "expression":"epsilon * sigma * T*T*T",
             "variables":"T",
-            "constants":"(h:50.0),(epsilon:0.7),(sigma:5.669e-8)",
+            "constants":"(epsilon:0.7),(sigma:5.669e-8)",
             "class_name":"RobinCoefficient",
             "outputfile":"RobinCoefficient"
             }

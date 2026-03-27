@@ -31,7 +31,7 @@ markdown_extensions:
       generic: true
   - footnotes
   - markdown_katex:
-      no_inline_svg: True
+      no_inline_svg: False
       insert_fonts_css: False
 
 
