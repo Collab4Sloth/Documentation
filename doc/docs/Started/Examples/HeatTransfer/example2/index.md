@@ -1,104 +1,96 @@
-# 1D Transient temperature distribution in a semi-infinite solid with surface convection
+
+# **Example 2: semi-infinite solid with surface convection**
+
+### __Files__ 
+
+- Comprehensive test file: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/HeatTransfer/1D/test2/main.cpp)
+- Reference results for comparison: [time_specialized.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/HeatTransfer/1D/test2/ref/time_specialized.csv)
 
 
-## Statement of the problem
-This example code is based on the analytical solution for a semi-infinite domain (from [1]).
+### __Statement of the problem__ 
 
+This test corresponds to a 1D simulation of the evolution of temperature in a semi-infinite solid due to surface convection. 
 
- 
-### __Governing equation__
-Let us consider the following set of governing equations:
+The domain $`\Omega`$ is a segment $`[0,10^{-3}]`$
 
-$$
-\rho C_p \frac{\partial T}{\partial t}=[\nabla \cdot{} k\nabla T]\text{ in }\Omega 
-$$
+```math
 
+\begin{align} 
+\rho C_p \frac{\partial T}{\partial t}=[\nabla \cdot{} k\nabla T] \text{ in }\Omega 
+\end{align}
 
+```
 
 ### __Boundary conditions__
-Robin boundary conditions are prescribed on $\Gamma_{left}$:
+Robin boundary conditions are prescribed on $`\Gamma_{left}`$ and Dirichlet boundary conditions are prescribed on $`\Gamma_{right}`$:
 
-$$
-{\bf{n}} \cdot{} k \nabla T + h T =  hT_{\infty} \text{ on }\Gamma_{left}
-$$
+```math
 
-Dirichlet boundary conditions are prescribed on $\Gamma_{right}$:
+\begin{align} 
+{\bf{n}} \cdot{} k \nabla T + h T &=  hT_{\infty} \text{ on }\Gamma_{left}
 
-$$
-T(x=L,t) = T_i
-$$
+\\[6pt]
 
-### __Initial conditions__
+T(x=L,t) &= T_i
+\end{align}
 
-The temperature is assumed to be constant at $t=0$:
+```
 
-$$
-T(x,t=0) = T_i 
-$$
 
-### __Analytical solution__
+### __Initial condition__
 
-The analytical solution can be written as:
+The temperature is assumed to be constant at $`t=0`$:
 
-$$
-T(x,t) = T_i + (T_{\infty} - T_i) \left[ \text{erfc}\left(\frac{x}{L_c}\right) - \exp\left(\frac{hx}{k} + \frac{1}{4} \left(\frac{hL_c}{k}\right)^2 \right) \text{erfc}\left( \frac{x}{L_c} + 
-\frac{1}{2} \frac{hL_c}{k} \right)\right]
-$$
+```math
 
-with $L_c = \sqrt{4\alpha t}$, $\alpha=\frac{k}{\rho C_p}$.
+\begin{align} 
+  T(x,t=0) = T_i 
+\end{align}
 
-### __Parameters__
+```
+
+### **Parameters used for the test**
+    
 For this test, the following parameters are considered:
 
-| Parameter                          | Symbol        | Value                       |
-| ---------------------------------- | ------------- | --------------------------- |
-| Density                            | $\rho$        | $10^4$                      |
-| Heat capacity                      | $C_p$         | $10^4$                      |
-| Thermal conductivity               | $k$           | $1$                         |
-| Convection coefficient             | $h$           | $1$                         |
-| Fluid temperature                  | $T_{\infty}$  | $1$                         |
-| Initial temperature                | $T_i$         | $0$                         |
-| Surface heat flux                  | $q_0''$       | $1$                         |
-| Domain size                        | $L$           | $10^{-3}$                   |
+| Parameter                          | Symbol          | Value                         |
+| ---------------------------------- | --------------- | ----------------------------- |
+| Density                            | $`\rho`$        | $`10^4`$                      |
+| Heat capacity                      | $`C_p`$         | $`10^4`$                      |
+| Thermal conductivity               | $`k`$           | $`1`$                         |
+| Convection coefficient             | $`h`$           | $`1`$                         |
+| Fluid temperature                  | $`T_{\infty}`$  | $`1`$                         |
+| Initial temperature                | $`T_i`$         | $`0`$                         |
+
+
 
 
 ### __Numerical scheme__
 
-- Time marching: Euler Implicit scheme, $t\in[0,5]$, $\Delta t=0.1$
-- Spatial discretization: built from MFEM + FE order 1 
+- Time integration: Euler Implicit over the interval $`t\in[0,5]`$ with a time-step $`\delta t=0.1`$
+- Spatial discretization: uniform grid with $`N=30`$ nodes
+- Newton solver: absolute tolerance $`10^{-10}`$
 
 
-## Running
+### __Results__ 
 
-### __Using the binary__
-```shell
-./HeatTransfer1Dtest2
+The simulated temperature is compared to the analytical solution ([1]), which can be written as:
+
+```math
+
+\begin{align} 
+T(x,t) = T_i + (T_{\infty} - T_i) \left[ \text{erfc}\left(\frac{x}{L_c}\right) - \exp\left(\frac{hx}{k} + \frac{1}{4} \left(\frac{hL_c}{k}\right)^2 \right) \text{erfc}\left( \frac{x}{L_c} + 
+\frac{1}{2} \frac{hL_c}{k} \right)\right] 
+\end{align}
+
 ```
 
-### __Using ctest__
+with $`L_c = \sqrt{ 4 \alpha t } \text{, } \alpha=\frac{ k }{ \rho C_p }`$.
 
-```shell
-ctest -R HeatTransfer1Dtest2
-```
-
-### __In case of code coverage analysis__
-
-```shell
-make HeatTransfer1Dtest2_coverage
-```
-
-## Post-processing
-
-TO BE DONE 
-
-## Files & Dependencies
-
-Source file : `main.cpp`
+The results show good agreement with the analytical solution.
 
 ## References
 
 [1] F. Incropera and D. DeWitt, “Fundamentals of Heat and Mass Transfer,” 6th Edition, J. Wiley & Sons, New York, 2007. 
 
-## Intellectual Property
 
-See [About page](../../../../../about.html) 
