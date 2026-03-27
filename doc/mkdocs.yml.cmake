@@ -116,8 +116,14 @@ nav:
         - Started/Examples/AllenCahn/index.md
       - Mass Diffusion:
         - Started/Examples/MassDiffusion/index.md
-      - Thermal Diffusion:
-        - Started/Examples/ThermalDiffusion/index.md
+      - Heat Transfer:
+        - Started/Examples/HeatTransfer/index.md
+        - Example 1:
+          - Started/Examples/HeatTransfer/example1/index.md
+        - Example 2:
+          - Started/Examples/HeatTransfer/example2/index.md
+        - Example 3:
+          - Started/Examples/HeatTransfer/example3/index.md
       - CALPHAD:
         - Started/Examples/Calphad/index.md
     - Code quality: Started/Quality/quality.md

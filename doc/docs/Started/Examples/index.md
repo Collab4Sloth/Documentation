@@ -8,7 +8,7 @@ These tests are naturally grouped into the following categories:
 - [Cahn-Hilliard](CahnHilliard/index.md) 
 - [Allen-Cahn](AllenCahn/index.md)
 - [Mass Diffusion](MassDiffusion/index.md)
-- [Thermal Diffusion](ThermalDiffusion/index.md)
+- [Heat Transfer](HeatTransfer/index.md)
 - [CALPHAD](Calphad/index.md)
 
 
