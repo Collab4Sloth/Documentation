@@ -68,7 +68,7 @@ In the figure 3, the integrators are gathered in two grouped:
 - Time Derivative Integrators (see $`F`$ in the equation (1)): `TimeDerivative`, `SplitTimeDerivative`, `HeatTimeDerivative`. **They are only used for transient problems**. 
   
     === "TimeDerivative"
-        This integrator concerns the following mathemical expression:
+        This integrator concerns the following mathematical expression:
         
         ```math
 
@@ -77,6 +77,16 @@ In the figure 3, the integrators are gathered in two grouped:
         \end{align}
 
         ```
+
+        For explicit time-discretization, two `SLOTH` coefficients of type `GlossaryType::ExplicitTime_A` and `GlossaryType::ExplicitTime_B` can be defined, respectively. 
+        By default, these coefficients are set to one. 
+
+        ```C++
+        Coefficient explicit_time_A(Glossary::ExplicitTime_A, 1.0);
+        Coefficient explicit_time_B(Glossary::ExplicitTime_B, 1.0);
+        ```
+
+
     === "SplitTimeDerivative"
         This integrator concerns the following vectorial expression:
         
@@ -92,7 +102,7 @@ In the figure 3, the integrators are gathered in two grouped:
         This integrator must be associated with the `SplitAllenCahn` and `CahnHilliard` integrators.
 
     === "HeatTimeDerivative"
-        This integrator concerns the following mathemical expression:
+        This integrator concerns the following mathematical expression:
         
         ```math
 
@@ -107,7 +117,7 @@ In the figure 3, the integrators are gathered in two grouped:
 - Differential Operators  (see $`G`$ in the equation (1)): `Fick`, `Fourier`, `MassFlux`, `AllenCahn`, `SplitAllenCahn`, `CahnHilliard`, `MeltingCalphad`, `MeltingConstant`, `MeltingTemperature`, `LatentHeat`. **They can be combined as for example, `AllenCahn` and  `MeltingTemperature`**.
   
     === "Fick"
-        This integrator concerns the following mathemical expression:
+        This integrator concerns the following mathematical expression:
         
         ```math
 
@@ -119,7 +129,7 @@ In the figure 3, the integrators are gathered in two grouped:
         where $`D`$ is a **mandantory** `SLOTH` coefficient of type `GlossaryType::Diffusivity`.
 
     === "Fourier"
-        This integrator concerns the following mathemical expression:
+        This integrator concerns the following mathematical expression:
         
         ```math
 
@@ -217,7 +227,7 @@ In the figure 3, the integrators are gathered in two grouped:
         This integrator must be associated with the `SplitTimeDerivative` integrator.
 
     === "MeltingConstant"
-        This integrator concerns the following mathemical expression:
+        This integrator concerns the following mathematical expression:
         
         ```math
 
@@ -236,7 +246,7 @@ In the figure 3, the integrators are gathered in two grouped:
 
         
     === "MeltingTemperature"
-        This integrator concerns the following mathemical expression:
+        This integrator concerns the following mathematical expression:
         
         ```math
 
@@ -274,7 +284,7 @@ In the figure 3, the integrators are gathered in two grouped:
           For simulations based on this integrator, temperature must be defined as an auxiliary variable of the phase-field problem.
 
     === "MeltingCalphad"
-        This integrator concerns the following mathemical expression:
+        This integrator concerns the following mathematical expression:
         
         ```math
 
@@ -304,7 +314,7 @@ In the figure 3, the integrators are gathered in two grouped:
           For simulations based on this integrator, CALPHAD outputs -driving forces and nucleus- must be defined as auxiliary variables of the phase-field problem.
 
     === "LatentHeat"
-        This integrator concerns the following mathemical expression:
+        This integrator concerns the following mathematical expression:
         
         ```math
 
