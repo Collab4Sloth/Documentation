@@ -32,6 +32,7 @@ The `Sympy` interface corresponds to a Python script (see the `script/GenerateCo
     The Sympy interface automatically generates the C++ code not only for the function but also its first and second-order derivatives.
 
 #### Defining a simple coefficient {#simplecoef}
+
 This file is composed of a list of JSON objects defined by four pairs (key, value). All values are of type string.
 The available keys are:
 
@@ -195,7 +196,7 @@ Multiple summations can be defined by extending the expression field accordingly
     ```json
     [
         {
-        "expression":"Sum( -(x[i]*x[i])/2.0  + (x[i]*x[i]*x[i]*x[i])/4.0 , (i, 1, 30)) +  Sum( (x[i]*x[i])*(x[j]*x[j]),(i, 1, 30),(j, 1, 30)) - Sum( (x[i]*x[i]),(i, 1, 30))",
+        "expression":"Sum( -(x[i]*x[i])/2.0  + (x[i]*x[i]*x[i]*x[i])/4.0 , (i, 1, 30)) +  Sum( (x[i]*x[i])*(x[j]*x[j]),(i, 1, 30),(j, 1, 30)) - Sum( (x[i]*x[i]*x[i]*x[i]),(i, 1, 30))",
         "variables":"x(1..30)",
         "class_name":"Gw",
         "outputfile":"GrainsCoefficients"
@@ -367,6 +368,45 @@ The script `GenerateCoefficient.py` allows users to handle range conditions in t
 - Only one range variable (see `range_variable`)
 - A range can't overlap another range
 
+
+#### Defining a semi-implicit coefficient {#semiimplicit}
+
+The script `GenerateCoefficient.py` allows users to define semi-implicit coefficients by using the attrivute `explicit_variables` in the JSON file.
+
+
+!!! example "Example of semi-implicit coefficient"
+
+
+    ```json
+    [
+        {
+        "expression":"Sum( -(x[i]*x[i])/2.0  + (x[i]*x[i]*x[i]*x[i])/4.0 , (i, 1, 30)) +  Sum( (x[i]*x[i])*(xn[j]*xn[j]),(i, 1, 30),(j, 1, 30)) - Sum( (x[i]*x[i]*xn[i]*xn[i]),(i, 1, 30))",
+        "variables":"x(1..30)",
+        "explicit_variables":"xn(1..30)",
+        "class_name":"Gw",
+        "outputfile":"GrainsCoefficients"
+        }
+    ]
+    ```
+
+    In this example, the following mathematical function is defined:
+
+    ```math
+
+    \begin{align*}
+    \sum_{i=1}^{30} \left( \frac{1}{4} x_i^4 - \frac{3}{2} x_i^2 \right)+\sum_{i=1}^{30} \sum_{j=1,i\neq i}^{30} x_i^2 (x^n_j)^2
+    \end{align*}
+    
+    ```
+
+    where $`x^n`$ variables are taken at the previous time-step.
+
+!!! warning "On the use of a semi-implicit coefficient"
+    Users must ensure they explicitly specify `Scheme::Implicit` when using a semi-implicit coefficient.
+
+    ```c++
+    Coefficient energy_semi_imp(Glossary::FreeEnergy, Scheme::SemiImplicit, Gw());
+    ```
 
 ### __ExprTk interface__ {#coef_exprtk}
 
