@@ -1,0 +1,5 @@
+<map id="FourierNLFormIntegrator&lt; VARS &gt;" name="FourierNLFormIntegrator&lt; VARS &gt;">
+<area shape="rect" id="node1" title="Nonlinear form integrator for the right&#45;hand side of the heat transfer equation (Fourier&#39;s law)." alt="" coords="11,184,209,225"/>
+<area shape="rect" id="node2" href="$classDiffusionNLFormIntegrator.html" title="Nonlinear form integrator for diffusion&#45;type problems." alt="" coords="5,95,215,136"/>
+<area shape="rect" id="node3" href="$classSlothNLFormIntegrator.html" title="Class prodiving common methods to all NLFormIntegrators." alt="" coords="19,5,201,47"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="CalphadUtils.hpp" name="CalphadUtils.hpp">
+<area shape="rect" id="node1" title="Class of methods usefull for to compute equilibrium state object." alt="" coords="433,5,575,32"/>
+<area shape="rect" id="node2" href="$AnalyticalIdealSolution_8hpp.html" title="Analytical thermodynamic description for an ideal solution." alt="" coords="5,155,216,181"/>
+<area shape="rect" id="node4" href="$CalphadBase_8hpp.html" title="Base class for Calphad objets." alt="" coords="307,80,450,107"/>
+<area shape="rect" id="node5" href="$CalphadInformedNeuralNetwork_8hpp.html" title="Calphad&#45;informed neuronal network used to predict Calphad contributions." alt="" coords="490,155,769,181"/>
+<area shape="rect" id="node8" href="$KKS_8hpp.html" title="All needed for Calphad calculation including KKS model." alt="" coords="616,229,699,256"/>
+<area shape="rect" id="node3" href="$sloth_8hpp.html" title="List of SLOTH header files." alt="" coords="269,304,355,331"/>
+<area shape="rect" id="node6" href="$Calphad__problem_8hpp.html" title="Class used to defined a Calphad_Problem objet." alt="" coords="291,155,466,181"/>
+<area shape="rect" id="node7" href="$ListProblems_8hpp.html" title=" " alt="" coords="299,229,442,256"/>
+</map>

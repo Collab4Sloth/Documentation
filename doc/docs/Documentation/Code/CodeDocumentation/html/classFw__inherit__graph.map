@@ -1,0 +1,4 @@
+<map id="Fw" name="Fw">
+<area shape="rect" id="node1" title="Coefficient based on expression: 0.25 * (x * x &#45; 1.0) * (x * x &#45; 1.0)" alt="" coords="61,80,104,107"/>
+<area shape="rect" id="node2" href="$classFunctionCoefficient.html" title="Base class defining analytical expression, first and second derivatives of a Coefficient." alt="" coords="5,5,160,32"/>
+</map>

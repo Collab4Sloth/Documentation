@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['r_645',['R',['../namespacePhysical.html#a615fa63587df2d47ad1448e931f3e181',1,'Physical']]],
+  ['reduced_5foper_646',['reduced_oper',['../classTransientOperator.html#af79d84567328f52a665ffbf62c1faf07',1,'TransientOperator']]],
+  ['reducedoperator_2ecpp_647',['ReducedOperator.cpp',['../ReducedOperator_8cpp.html',1,'']]],
+  ['reducedoperator_2ehpp_648',['ReducedOperator.hpp',['../ReducedOperator_8hpp.html',1,'']]],
+  ['rel_5ftol_649',['rel_tol',['../namespaceGMRESDefaultConstant.html#a7a484be6a25398298264056458dfb74c',1,'GMRESDefaultConstant::rel_tol()'],['../namespaceMINRESDefaultConstant.html#ada4fa1ef3e4003696fcce0a21b6fba2e',1,'MINRESDefaultConstant::rel_tol()'],['../namespaceCGDefaultConstant.html#aca322e471ab6d5a923adb65c7cb701a2',1,'CGDefaultConstant::rel_tol()'],['../namespaceBICGSTABDefaultConstant.html#a80d068b9c4d0d249e92f2f0bac5d2631',1,'BICGSTABDefaultConstant::rel_tol()'],['../namespaceNewtonDefaultConstant.html#a120c87f4ed67c7d6cfcdb2588d2713ea',1,'NewtonDefaultConstant::rel_tol()']]],
+  ['relative_5fmax_650',['RELATIVE_MAX',['../structConvergenceType.html#aa13c6cb18fa906fb291a48956ec6d831a9ced7dea52cab0fa3fe1fd7440bb29ef',1,'ConvergenceType']]],
+  ['reorder_5ftype_651',['reorder_type',['../namespaceHYPRE__ILU__DefaultConstant.html#a73bd89209ca355f6ada091de1d170a8f',1,'HYPRE_ILU_DefaultConstant']]],
+  ['requires_652',['requires',['../ExprTkSloth_8hpp.html#a7ed0b66ba39ae70d966230d97913f43f',1,'requires((sizeof...(Args) &gt; 0) &amp;&amp;(std::convertible_to&lt; Args, std::string_view &gt; &amp;&amp;...)) ExprTkCoefficient:&#160;ExprTkSloth.hpp'],['../Coefficients_8hpp.html#ad4bb1e2bbf5a3815eafa54c50b17be77',1,'requires((sizeof...(Args) &gt; 0)) Coefficients:&#160;Coefficients.hpp'],['../classParameters.html#a71438eb57205ad3a238897557def5848',1,'Parameters::requires()'],['../classExprTkCoefficient.html#aa793b1f031af9d3cc91bf35cad25a468',1,'ExprTkCoefficient::requires()'],['../classCoefficients.html#ad7572d8a99769b3cacb222d94afe2171',1,'Coefficients::requires()']]],
+  ['residual_5fthreshold_653',['residual_threshold',['../namespaceCalphadDefaultConstant.html#a464e5ede0e69f9b3b8dcc32c85a8826f',1,'CalphadDefaultConstant']]],
+  ['rhs_654',['RHS',['../classOperatorBase.html#a6fe5c3dda18a79b22e39b32300555a41',1,'OperatorBase']]],
+  ['rhs_5fintegrators_5f_655',['rhs_integrators_',['../classOperatorBase.html#a4db66d54873c6aeffb83677acdf8473f',1,'OperatorBase']]],
+  ['rhs_5fsolver_5f_656',['rhs_solver_',['../classOperatorBase.html#ad47902d896f6e1122a2ea3ead37b7f6e',1,'OperatorBase']]],
+  ['robin_657',['Robin',['../structIntegrators.html#a2b9da6dcbb0d390cf08308d150f795f3aabf512654d6d814443164d84aa080040',1,'Integrators::Robin()'],['../structBoundaryConditionType.html#a3571a0166b96db9c4322ec66fb76c254a6675a405a6c1467cd5353702d8b633c4',1,'BoundaryConditionType::Robin()']]],
+  ['robin_5fa_658',['robin_a',['../classRobinNLFormIntegrator.html#a8be5ca87fdc18ddbe1668347508e8bb2',1,'RobinNLFormIntegrator']]],
+  ['robin_5fa_659',['Robin_a',['../namespaceGlossary.html#aed1311d93909d4d42d03225dbd23e694',1,'Glossary']]],
+  ['robin_5fb_660',['Robin_b',['../namespaceGlossary.html#a1e2fd8cf098bdd644a2453bf5102219d',1,'Glossary']]],
+  ['robin_5fb_661',['robin_b',['../classRobinNLFormIntegrator.html#a33b83103553f9be53999b8b40f2d4bb2',1,'RobinNLFormIntegrator']]],
+  ['robina_662',['RobinA',['../Glossary_8hpp.html#a1204ef61577dbf022e130de662bc755aa992c3f83c85ffc94d54c3970b8435b4b',1,'Glossary.hpp']]],
+  ['robinb_663',['RobinB',['../Glossary_8hpp.html#a1204ef61577dbf022e130de662bc755aad0cfc8659ed24f26bd82302bd83f9d62',1,'Glossary.hpp']]],
+  ['robinnlformintegrator_664',['RobinNLFormIntegrator',['../classRobinNLFormIntegrator.html#af71e2343e54b9904be72fc777bd65751',1,'RobinNLFormIntegrator::RobinNLFormIntegrator()'],['../classRobinNLFormIntegrator.html',1,'RobinNLFormIntegrator&lt; VARS &gt;']]],
+  ['robinnlformintegrator_2ehpp_665',['RobinNLFormIntegrator.hpp',['../RobinNLFormIntegrator_8hpp.html',1,'']]],
+  ['robinnlformintegrator_2etpp_666',['RobinNLFormIntegrator.tpp',['../RobinNLFormIntegrator_8tpp.html',1,'']]],
+  ['rungekutta4_667',['RungeKutta4',['../structTimeScheme.html#a29f8ffca06683f47a693e679d0d1a0e6a214017fa03be87dba0606f0386bccbab',1,'TimeScheme']]]
+];

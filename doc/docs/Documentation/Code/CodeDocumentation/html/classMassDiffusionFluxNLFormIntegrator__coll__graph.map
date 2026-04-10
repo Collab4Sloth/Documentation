@@ -1,0 +1,7 @@
+<map id="MassDiffusionFluxNLFormIntegrator&lt; VARS &gt;" name="MassDiffusionFluxNLFormIntegrator&lt; VARS &gt;">
+<area shape="rect" id="node1" title="Class dedicated to the VF of diffusion flux (gradient of chemical potential) used in mass balance equ..." alt="" coords="42,289,317,331"/>
+<area shape="rect" id="node2" href="$classDiffusionFluxNLFormIntegrator.html" title="Class dedicated to the VF of an inter&#45;diffusion equation." alt="" coords="60,199,299,240"/>
+<area shape="rect" id="node3" href="$classSlothNLFormIntegrator.html" title="Class prodiving common methods to all NLFormIntegrators." alt="" coords="5,95,188,136"/>
+<area shape="rect" id="node4" href="$classParameters.html" title=" " alt="" coords="47,5,146,32"/>
+<area shape="rect" id="node5" href="$classCoefficients.html" title="Class used to manage a collection of Coefficient." alt="" coords="213,102,314,129"/>
+</map>

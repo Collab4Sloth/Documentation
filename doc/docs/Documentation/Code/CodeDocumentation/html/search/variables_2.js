@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['capillary_1642',['Capillary',['../namespaceGlossary.html#a236c044cd8faf9be72e67f8ac93839a4',1,'Glossary']]],
+  ['chemical_5fpotentials_5f_1643',['chemical_potentials_',['../classCalphadBase.html#ac9730b9db7f6e5605b4b89ab3eea3557',1,'CalphadBase']]],
+  ['chemical_5fpotentials_5fby_5fphase_5f_1644',['chemical_potentials_by_phase_',['../classKKS.html#a8b6667159057ffd41de6728dec266d9b',1,'KKS']]],
+  ['chemical_5fpotentials_5fleft_5ft_5f_1645',['chemical_potentials_left_T_',['../classKKS.html#accdee95478f933d229d633c50331f2ec',1,'KKS']]],
+  ['chemical_5fpotentials_5fleft_5fx_5f_1646',['chemical_potentials_left_x_',['../classKKS.html#a770c30ecc2148b0d695f6f692f3ad1fd',1,'KKS']]],
+  ['chemical_5fpotentials_5fright_5ft_5f_1647',['chemical_potentials_right_T_',['../classKKS.html#ab3994832a055bb70db18e1742792c8eb',1,'KKS']]],
+  ['chemical_5fpotentials_5fright_5fx_5f_1648',['chemical_potentials_right_x_',['../classKKS.html#ab96b9fb1ab55e7d05fec8bdad44216fa',1,'KKS']]],
+  ['chemicalpotential_1649',['ChemicalPotential',['../namespaceGlossary.html#a110bb2bfe7e6f07f538f28cee0b53df0',1,'Glossary']]],
+  ['coefficient_5fa_1650',['coefficient_A',['../classTimeNLFormIntegrator.html#ae618fcca33f3e82e403d8e7376944e6b',1,'TimeNLFormIntegrator::coefficient_A()'],['../classTimeCHNLFormIntegrator.html#abaec31e5a38d7dc2ec109b32aa1d95c6',1,'TimeCHNLFormIntegrator::coefficient_A()']]],
+  ['coefficient_5fb_1651',['coefficient_B',['../classTimeNLFormIntegrator.html#a744be1f8241e72ac7b367e8315909636',1,'TimeNLFormIntegrator']]],
+  ['coefficients_5f_1652',['coefficients_',['../classSlothNLFormIntegrator.html#acfe04714eaa948c0eb0a9eb009d6c516',1,'SlothNLFormIntegrator::coefficients_()'],['../classOperatorBase.html#a7824b011ddc98bcab78945b73cbbfbef',1,'OperatorBase::coefficients_()'],['../classProblemBase.html#a6a4d0e345cd6961951c185afe4d7ce34',1,'ProblemBase::coefficients_()']]],
+  ['coeffvar_1653',['CoeffVar',['../Coefficients_8hpp.html#a9c3b9d70f391d7432428a4127d74ce9c',1,'Coefficients.hpp']]],
+  ['compute_5fheat_5fcapacity_1654',['compute_heat_capacity',['../namespaceCalphadDefaultConstant.html#a2ea1c74a35fc2b1bae65a592844b1cd1',1,'CalphadDefaultConstant']]],
+  ['concentration_1655',['Concentration',['../namespaceGlossary.html#aa72be79600f0b9177cc8b0448173e131',1,'Glossary']]],
+  ['conductivity_1656',['Conductivity',['../namespaceGlossary.html#a5b93b6ae0346a969e2b58a276af3e294',1,'Glossary']]],
+  ['constant_5fmass_5fmatrix_5f_1657',['constant_mass_matrix_',['../classTransientOperator.html#ac0c6819e542d22d28332c0b14e6ba740',1,'TransientOperator']]],
+  ['convergence_5f_1658',['convergence_',['../classProblemBase.html#a2acb8d1fc7da0f7d9ffa6b7411d4f16c',1,'ProblemBase']]],
+  ['coordinate_1659',['Coordinate',['../namespaceGlossary.html#aa934a0c94340ef3d0806a0817e505c81',1,'Glossary']]],
+  ['cp_1660',['Cp',['../namespaceGlossary.html#afbbecf3fefeaf8fed382252678e0b115',1,'Glossary']]],
+  ['cpm_1661',['Cpm',['../namespaceGlossary.html#a51be1a3476b6bb4121d599aff17bab17',1,'Glossary']]],
+  ['cu_5f_1662',['CU_',['../classKKS.html#adccd0e012978dcb35bf7ab31c1f11b95',1,'KKS::CU_()'],['../classCalphadBase.html#a26f00f02756827aa4c9930f974e015bd',1,'CalphadBase::CU_()']]],
+  ['current_5fdt_5f_1663',['current_dt_',['../classOperatorBase.html#a29fc0b682c95483f9f7953d9b754b401',1,'OperatorBase']]],
+  ['current_5ftime_5f_1664',['current_time_',['../classOperatorBase.html#aac2db03c9df9d84bce33fcca5fd5c952',1,'OperatorBase']]]
+];

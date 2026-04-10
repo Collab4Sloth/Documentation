@@ -1,0 +1,7 @@
+<map id="SteadyReducedOperator.hpp" name="SteadyReducedOperator.hpp">
+<area shape="rect" id="node1" title="Steady version of the linear system resulting from the NonLinear algorithm." alt="" coords="82,5,302,32"/>
+<area shape="rect" id="node2" href="$SteadyOperator_8hpp.html" title="Steady Operator." alt="" coords="5,80,165,107"/>
+<area shape="rect" id="node5" href="$SteadyReducedOperator_8cpp.html" title="Steady version of the linear system resulting from the NonLinear algorithm." alt="" coords="189,80,408,107"/>
+<area shape="rect" id="node3" href="$ListOperators_8hpp.html" title=" " alt="" coords="12,155,159,181"/>
+<area shape="rect" id="node4" href="$sloth_8hpp.html" title="List of SLOTH header files." alt="" coords="42,229,129,256"/>
+</map>

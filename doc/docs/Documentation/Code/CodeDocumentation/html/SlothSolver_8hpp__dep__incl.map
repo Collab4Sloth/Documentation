@@ -1,0 +1,13 @@
+<map id="SlothSolver.hpp" name="SlothSolver.hpp">
+<area shape="rect" id="node1" title="Class to define a SlothSolver objet." alt="" coords="309,5,439,32"/>
+<area shape="rect" id="node2" href="$LSolver_8hpp.html" title="Class used to manage Linear Solver objet." alt="" coords="145,80,249,107"/>
+<area shape="rect" id="node8" href="$LSolver_8cpp.html" title="Class used to manage Linear Solver objet." alt="" coords="5,155,108,181"/>
+<area shape="rect" id="node9" href="$NLSolver_8hpp.html" title="Class used to manage a NonLinear Solver( Newton type)" alt="" coords="316,80,432,107"/>
+<area shape="rect" id="node10" href="$NLSolver_8cpp.html" title="Class used to manage a NonLinear Solver( Newton type)" alt="" coords="455,155,570,181"/>
+<area shape="rect" id="node11" href="$SlothSolver_8cpp.html" title="Class to define a SlothSolver objet." alt="" coords="507,80,635,107"/>
+<area shape="rect" id="node3" href="$OperatorBase_8hpp.html" title="Base class for building Steady and TimeDependent PhaseFieldOperators." alt="" coords="234,155,381,181"/>
+<area shape="rect" id="node4" href="$SteadyOperator_8hpp.html" title="Steady Operator." alt="" coords="259,229,419,256"/>
+<area shape="rect" id="node7" href="$TransientOperator_8hpp.html" title="Transient Operator." alt="" coords="57,229,235,256"/>
+<area shape="rect" id="node5" href="$ListOperators_8hpp.html" title=" " alt="" coords="169,304,315,331"/>
+<area shape="rect" id="node6" href="$sloth_8hpp.html" title="List of SLOTH header files." alt="" coords="199,379,285,405"/>
+</map>

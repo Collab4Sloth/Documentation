@@ -1,0 +1,6 @@
+<map id="DiffusionNLFormIntegrator&lt; VARS &gt;" name="DiffusionNLFormIntegrator&lt; VARS &gt;">
+<area shape="rect" id="node1" title="Nonlinear form integrator for diffusion&#45;type problems." alt="" coords="94,95,303,136"/>
+<area shape="rect" id="node3" href="$classFickNLFormIntegrator.html" title="Nonlinear form integrator for the right&#45;hand side of the mass diffusion equation (Fick&#39;s law)." alt="" coords="5,184,181,225"/>
+<area shape="rect" id="node4" href="$classFourierNLFormIntegrator.html" title="Nonlinear form integrator for the right&#45;hand side of the heat transfer equation (Fourier&#39;s law)." alt="" coords="206,184,405,225"/>
+<area shape="rect" id="node2" href="$classSlothNLFormIntegrator.html" title="Class prodiving common methods to all NLFormIntegrators." alt="" coords="107,5,290,47"/>
+</map>
