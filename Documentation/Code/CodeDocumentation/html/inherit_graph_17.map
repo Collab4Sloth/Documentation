@@ -1,3 +1,12 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classConductivityFunctions.html" title=" " alt="" coords="5,5,180,47"/>
+<area shape="rect" id="node1" href="$classFunctionCoefficient.html" title="Base class defining analytical expression, first and second derivatives of a Coefficient." alt="" coords="5,208,160,235"/>
+<area shape="rect" id="node2" href="$classConstantCoefficient.html" title="Constant&#45;valued coefficient implementation." alt="" coords="208,5,363,32"/>
+<area shape="rect" id="node3" href="$classExprTkCoefficient.html" title="Base class definining a coefficient from an analytical formula." alt="" coords="213,56,357,83"/>
+<area shape="rect" id="node4" href="$classFw.html" title="Coefficient based on expression: 0.25 * (x * x &#45; 1.0) * (x * x &#45; 1.0)" alt="" coords="264,107,307,133"/>
+<area shape="rect" id="node5" href="$classGradientEnergy.html" title="Coefficient based on expression: 0.5*dot(x,x)" alt="" coords="219,157,351,184"/>
+<area shape="rect" id="node6" href="$classH.html" title="Coefficient based on expression: x * x * x * (6.0 * x * x &#45; 15.0 * x + 10.0)" alt="" coords="266,208,305,235"/>
+<area shape="rect" id="node7" href="$classLog.html" title="Coefficient based on expression: x * log(x) + (1.0 &#45; x)*log(1.0 &#45; x)" alt="" coords="261,259,309,285"/>
+<area shape="rect" id="node8" href="$classProductCoefficient.html" title="Define a product of FunctionCoefficient objects as a FunctionCoefficient." alt="" coords="212,309,359,336"/>
+<area shape="rect" id="node9" href="$classSumCoefficient.html" title="Define a summation of FunctionCoefficient objects as a FunctionCoefficient." alt="" coords="223,360,348,387"/>
+<area shape="rect" id="node10" href="$classW.html" title="Coefficient based on expression: x*x*(1.0&#45;x) * (1.0&#45;x)" alt="" coords="266,411,305,437"/>
 </map>

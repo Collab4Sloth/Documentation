@@ -25,9 +25,9 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v2.0.0</span>
    </div>
-   <div id="projectbrief">PhaseField solver</div>
+   <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
  </tr>
  </tbody>
@@ -92,13 +92,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab4d6728cad7df38c6fb791706002563f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPhaseFieldReducedOperator.html#ab4d6728cad7df38c6fb791706002563f">SetParameters</a> (double dt, const mfem::Vector *unk)</td></tr>
 <tr class="memdesc:ab4d6728cad7df38c6fb791706002563f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set current dt, unk values - needed to compute action and Jacobian.  <a href="classPhaseFieldReducedOperator.html#ab4d6728cad7df38c6fb791706002563f">More...</a><br /></td></tr>
 <tr class="separator:ab4d6728cad7df38c6fb791706002563f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65d97029b66e888f7195b903b33daadb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPhaseFieldReducedOperator.html#a65d97029b66e888f7195b903b33daadb">~PhaseFieldReducedOperator</a> ()</td></tr>
-<tr class="memdesc:a65d97029b66e888f7195b903b33daadb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the Phase Field Reduced Operator:: Phase Field Reduced Operator object.  <a href="classPhaseFieldReducedOperator.html#a65d97029b66e888f7195b903b33daadb">More...</a><br /></td></tr>
-<tr class="separator:a65d97029b66e888f7195b903b33daadb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a481440bc4b5d70ac738ea05c1a4a05a8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPhaseFieldReducedOperator.html#a481440bc4b5d70ac738ea05c1a4a05a8">~PhaseFieldReducedOperator</a> ()=default</td></tr>
+<tr class="separator:a481440bc4b5d70ac738ea05c1a4a05a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="ReducedOperator_8hpp_source.html#l00033">33</a> of file <a class="el" href="ReducedOperator_8hpp_source.html">ReducedOperator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ReducedOperator_8hpp_source.html#l00035">35</a> of file <a class="el" href="ReducedOperator_8hpp_source.html">ReducedOperator.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a417503738ef8ffd9ce19b369942db842"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a417503738ef8ffd9ce19b369942db842">&#9670;&nbsp;</a></span>PhaseFieldReducedOperator()</h2>
@@ -135,21 +134,25 @@ Public Member Functions</h2></td></tr>
 <p>Construct a new Phase Field Reduced Operator:: Phase Field Reduced Operator object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">M</td><td></td></tr>
-    <tr><td class="paramname">N</td><td></td></tr>
+    <tr><td class="paramname">LHS</td><td></td></tr>
+    <tr><td class="paramname">RHS</td><td></td></tr>
+    <tr><td class="paramname">ess_tdof</td><td></td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="ReducedOperator_8hpp_source.html#l00071">71</a> of file <a class="el" href="ReducedOperator_8hpp_source.html">ReducedOperator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ReducedOperator_8cpp_source.html#l00041">41</a> of file <a class="el" href="ReducedOperator_8cpp_source.html">ReducedOperator.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a65d97029b66e888f7195b903b33daadb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65d97029b66e888f7195b903b33daadb">&#9670;&nbsp;</a></span>~PhaseFieldReducedOperator()</h2>
+<a id="a481440bc4b5d70ac738ea05c1a4a05a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a481440bc4b5d70ac738ea05c1a4a05a8">&#9670;&nbsp;</a></span>~PhaseFieldReducedOperator()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">PhaseFieldReducedOperator::~PhaseFieldReducedOperator </td>
@@ -158,11 +161,12 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p>Destroy the Phase Field Reduced Operator:: Phase Field Reduced Operator object. </p>
-
-<p class="definition">Definition at line <a class="el" href="ReducedOperator_8hpp_source.html#l00182">182</a> of file <a class="el" href="ReducedOperator_8hpp_source.html">ReducedOperator.hpp</a>.</p>
 
 </div>
 </div>
@@ -193,7 +197,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>mfem::Operator&amp; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ReducedOperator_8hpp_source.html#l00124">124</a> of file <a class="el" href="ReducedOperator_8hpp_source.html">ReducedOperator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ReducedOperator_8cpp_source.html#l00096">96</a> of file <a class="el" href="ReducedOperator_8cpp_source.html">ReducedOperator.cpp</a>.</p>
 
 </div>
 </div>
@@ -232,7 +236,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="ReducedOperator_8hpp_source.html#l00101">101</a> of file <a class="el" href="ReducedOperator_8hpp_source.html">ReducedOperator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ReducedOperator_8cpp_source.html#l00075">75</a> of file <a class="el" href="ReducedOperator_8cpp_source.html">ReducedOperator.cpp</a>.</p>
 
 </div>
 </div>
@@ -271,17 +275,18 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="ReducedOperator_8hpp_source.html#l00090">90</a> of file <a class="el" href="ReducedOperator_8hpp_source.html">ReducedOperator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ReducedOperator_8cpp_source.html#l00064">64</a> of file <a class="el" href="ReducedOperator_8cpp_source.html">ReducedOperator.cpp</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="ReducedOperator_8hpp_source.html">ReducedOperator.hpp</a></li>
+<li><a class="el" href="ReducedOperator_8cpp_source.html">ReducedOperator.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 15:39:06 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

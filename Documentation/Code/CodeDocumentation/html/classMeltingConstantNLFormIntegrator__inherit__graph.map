@@ -1,0 +1,5 @@
+<map id="MeltingConstantNLFormIntegrator&lt; VARS &gt;" name="MeltingConstantNLFormIntegrator&lt; VARS &gt;">
+<area shape="rect" id="node1" title="Class dedicated to the VF of an ad&#45;hoc constant melting contribution found in Allen&#45;Cahn&#45;type equatio..." alt="" coords="5,184,268,225"/>
+<area shape="rect" id="node2" href="$classMeltingBaseNLFormIntegrator.html" title="Base class for melting integrators." alt="" coords="19,95,254,136"/>
+<area shape="rect" id="node3" href="$classSlothNLFormIntegrator.html" title="Class prodiving common methods to all NLFormIntegrators." alt="" coords="45,5,228,47"/>
+</map>

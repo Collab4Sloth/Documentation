@@ -1,4 +1,5 @@
 <map id="TimeNLFormIntegrator&lt; VARS &gt;" name="TimeNLFormIntegrator&lt; VARS &gt;">
-<area shape="rect" id="node1" title="Class dedicated to the FV of the Allen Cahn equation." alt="" coords="5,95,188,136"/>
-<area shape="rect" id="node2" href="$classSlothNLFormIntegrator.html" title="Class prodiving common methods to all NLFormIntegrators." alt="" coords="5,5,188,47"/>
+<area shape="rect" id="node1" title="Class dedicated to the VF of the time&#45;derivative (eg. LHS of Allen&#45;Cahn equation)" alt="" coords="21,95,204,136"/>
+<area shape="rect" id="node3" href="$classHeatTimeNLFormIntegrator.html" title="Class dedicated to the VF of the time&#45;derivativefor heat transfer equation." alt="" coords="5,184,220,225"/>
+<area shape="rect" id="node2" href="$classSlothNLFormIntegrator.html" title="Class prodiving common methods to all NLFormIntegrators." alt="" coords="21,5,204,47"/>
 </map>

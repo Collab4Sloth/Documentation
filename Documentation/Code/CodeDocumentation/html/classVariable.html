@@ -25,9 +25,9 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v2.0.0</span>
    </div>
-   <div id="projectbrief">PhaseField solver</div>
+   <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
  </tr>
  </tbody>
@@ -78,101 +78,70 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1d0e48f5f0740981cf13e0c6e3233d5a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a1d0e48f5f0740981cf13e0c6e3233d5a">get_additional_variable_info</a> () const</td></tr>
-<tr class="memdesc:a1d0e48f5f0740981cf13e0c6e3233d5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the additionnal information associated to variable.  <a href="classVariable.html#a1d0e48f5f0740981cf13e0c6e3233d5a">More...</a><br /></td></tr>
-<tr class="separator:a1d0e48f5f0740981cf13e0c6e3233d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc06b9dfda611f1ad3b1c6d6b4386050"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; std::function&lt; double(const mfem::Vector &amp;, double)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#acc06b9dfda611f1ad3b1c6d6b4386050">get_analytical_solution</a> ()</td></tr>
-<tr class="memdesc:acc06b9dfda611f1ad3b1c6d6b4386050"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the function associated to the analytical solution  <a href="classVariable.html#acc06b9dfda611f1ad3b1c6d6b4386050">More...</a><br /></td></tr>
-<tr class="separator:acc06b9dfda611f1ad3b1c6d6b4386050"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab85faebdc51081412859462f7e44a1e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#ab85faebdc51081412859462f7e44a1e2">get_boundary_conditions</a> ()</td></tr>
-<tr class="memdesc:ab85faebdc51081412859462f7e44a1e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the boundary condition object associated to the variable  <a href="classVariable.html#ab85faebdc51081412859462f7e44a1e2">More...</a><br /></td></tr>
-<tr class="separator:ab85faebdc51081412859462f7e44a1e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67f2892b22c97c3f49bcfb9505acea96"><td class="memItemLeft" align="right" valign="top">mfem::ParFiniteElementSpace *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a67f2892b22c97c3f49bcfb9505acea96">get_fespace</a> ()</td></tr>
-<tr class="memdesc:a67f2892b22c97c3f49bcfb9505acea96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the pointer towards the FiniteElementSpace.  <a href="classVariable.html#a67f2892b22c97c3f49bcfb9505acea96">More...</a><br /></td></tr>
-<tr class="separator:a67f2892b22c97c3f49bcfb9505acea96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a577cbfe6c524d7c0a0e3b900a49926ed"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a577cbfe6c524d7c0a0e3b900a49926ed">get_additional_variable_info</a> () const</td></tr>
+<tr class="separator:a577cbfe6c524d7c0a0e3b900a49926ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06159891d7d1c2b7a2c261e04bec98e6"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; std::function&lt; double(const mfem::Vector &amp;, double)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a06159891d7d1c2b7a2c261e04bec98e6">get_analytical_solution</a> ()</td></tr>
+<tr class="separator:a06159891d7d1c2b7a2c261e04bec98e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1e4f733dd84c0024de2ff634ccf65a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#ac1e4f733dd84c0024de2ff634ccf65a2">get_boundary_conditions</a> ()</td></tr>
+<tr class="separator:ac1e4f733dd84c0024de2ff634ccf65a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eaf56a0c81528b5cee8fc9bd056bc29"><td class="memItemLeft" align="right" valign="top">mfem::ParFiniteElementSpace *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a6eaf56a0c81528b5cee8fc9bd056bc29">get_fespace</a> ()</td></tr>
+<tr class="separator:a6eaf56a0c81528b5cee8fc9bd056bc29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adebba210854c266035bd625e933dd7b9"><td class="memItemLeft" align="right" valign="top">mfem::ParGridFunction&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#adebba210854c266035bd625e933dd7b9">get_gf</a> () const</td></tr>
-<tr class="memdesc:adebba210854c266035bd625e933dd7b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the gridfunction associated to the unknown  <a href="classVariable.html#adebba210854c266035bd625e933dd7b9">More...</a><br /></td></tr>
 <tr class="separator:adebba210854c266035bd625e933dd7b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9866319db568e291b77b228fbc93acef"><td class="memItemLeft" align="right" valign="top">mfem::ParGridFunction&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a9866319db568e291b77b228fbc93acef">get_igf</a> () const</td></tr>
 <tr class="separator:a9866319db568e291b77b228fbc93acef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a939b5f0fc5678a88ccc6daaba30a2b58"><td class="memItemLeft" align="right" valign="top">mfem::Vector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a939b5f0fc5678a88ccc6daaba30a2b58">get_last</a> () const</td></tr>
-<tr class="memdesc:a939b5f0fc5678a88ccc6daaba30a2b58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the last term of the saved variables.  <a href="classVariable.html#a939b5f0fc5678a88ccc6daaba30a2b58">More...</a><br /></td></tr>
 <tr class="separator:a939b5f0fc5678a88ccc6daaba30a2b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a158c0e8b0ffdf09df3befc17618a270e"><td class="memItemLeft" align="right" valign="top">std::map&lt; int, mfem::Vector &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a158c0e8b0ffdf09df3befc17618a270e">get_map_unknown</a> ()</td></tr>
-<tr class="memdesc:a158c0e8b0ffdf09df3befc17618a270e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a map of unknows.  <a href="classVariable.html#a158c0e8b0ffdf09df3befc17618a270e">More...</a><br /></td></tr>
-<tr class="separator:a158c0e8b0ffdf09df3befc17618a270e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49e34090b8d80a6a2568522f170c8ff6"><td class="memItemLeft" align="right" valign="top">std::map&lt; int, mfem::Vector &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a49e34090b8d80a6a2568522f170c8ff6">get_map_unknown</a> ()</td></tr>
+<tr class="separator:a49e34090b8d80a6a2568522f170c8ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeda733f80a2263216eb82e4fc5d4cdc4"><td class="memItemLeft" align="right" valign="top">mfem::Vector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#aeda733f80a2263216eb82e4fc5d4cdc4">get_second_to_last</a> () const</td></tr>
-<tr class="memdesc:aeda733f80a2263216eb82e4fc5d4cdc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the second-to-last term of the saved variables.  <a href="classVariable.html#aeda733f80a2263216eb82e4fc5d4cdc4">More...</a><br /></td></tr>
 <tr class="separator:aeda733f80a2263216eb82e4fc5d4cdc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a788c69a70c6476a43720a16124c4a1ad"><td class="memItemLeft" align="right" valign="top">mfem::Vector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a788c69a70c6476a43720a16124c4a1ad">get_unknown</a> () const</td></tr>
-<tr class="memdesc:a788c69a70c6476a43720a16124c4a1ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the unkown vector  <a href="classVariable.html#a788c69a70c6476a43720a16124c4a1ad">More...</a><br /></td></tr>
 <tr class="separator:a788c69a70c6476a43720a16124c4a1ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32906242d5d4354c2b1b6cfd852d7c2c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a32906242d5d4354c2b1b6cfd852d7c2c">getVariableName</a> () const</td></tr>
-<tr class="memdesc:a32906242d5d4354c2b1b6cfd852d7c2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the <a class="el" href="classVariable.html">Variable</a>.  <a href="classVariable.html#a32906242d5d4354c2b1b6cfd852d7c2c">More...</a><br /></td></tr>
 <tr class="separator:a32906242d5d4354c2b1b6cfd852d7c2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57ea93a2f246b4480bd43c0847d70a49"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
 <tr class="memitem:a57ea93a2f246b4480bd43c0847d70a49"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classVariable.html#a57ea93a2f246b4480bd43c0847d70a49">set_additional_information</a> (Args &amp;&amp;... add_var_info)</td></tr>
-<tr class="memdesc:a57ea93a2f246b4480bd43c0847d70a49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Associate additional information to the variable.  <a href="classVariable.html#a57ea93a2f246b4480bd43c0847d70a49">More...</a><br /></td></tr>
 <tr class="separator:a57ea93a2f246b4480bd43c0847d70a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6188390bf40a0aaedc2eb2da86e997bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a6188390bf40a0aaedc2eb2da86e997bc">update</a> (const mfem::Vector &amp;unk)</td></tr>
-<tr class="memdesc:a6188390bf40a0aaedc2eb2da86e997bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">update the GridFunction on the basis of its associated unknown vector  <a href="classVariable.html#a6188390bf40a0aaedc2eb2da86e997bc">More...</a><br /></td></tr>
 <tr class="separator:a6188390bf40a0aaedc2eb2da86e997bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6ccb444b073d7b81927a0b17b8b4763"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#ae6ccb444b073d7b81927a0b17b8b4763">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, const int &amp;depth, const <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt; &amp;initial_condition_name)</td></tr>
-<tr class="memdesc:ae6ccb444b073d7b81927a0b17b8b4763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classVariable.html">Variable</a>:: <a class="el" href="classVariable.html">Variable</a> object.  <a href="classVariable.html#ae6ccb444b073d7b81927a0b17b8b4763">More...</a><br /></td></tr>
-<tr class="separator:ae6ccb444b073d7b81927a0b17b8b4763"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9d28c181f783b9728caa91642c8a6bb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#af9d28c181f783b9728caa91642c8a6bb">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, const int &amp;depth, const <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt; &amp;initial_condition_name, const <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt; &amp;analytical_solution_name)</td></tr>
-<tr class="memdesc:af9d28c181f783b9728caa91642c8a6bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classVariable.html">Variable</a>:: <a class="el" href="classVariable.html">Variable</a> object.  <a href="classVariable.html#af9d28c181f783b9728caa91642c8a6bb">More...</a><br /></td></tr>
-<tr class="separator:af9d28c181f783b9728caa91642c8a6bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2621a632669da149ac890b6f92642ba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#ad2621a632669da149ac890b6f92642ba">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, const int &amp;depth, const <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt; &amp;initial_condition_name, const mfem::FunctionCoefficient &amp;analytical_solution_function)</td></tr>
-<tr class="memdesc:ad2621a632669da149ac890b6f92642ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classVariable.html">Variable</a>:: <a class="el" href="classVariable.html">Variable</a> object.  <a href="classVariable.html#ad2621a632669da149ac890b6f92642ba">More...</a><br /></td></tr>
-<tr class="separator:ad2621a632669da149ac890b6f92642ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a263e219d314d16f98b028aec9878fbe4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a263e219d314d16f98b028aec9878fbe4">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, const int &amp;depth, const <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt; &amp;initial_condition_name, const std::set&lt; std::string &gt; &amp;attribute_names)</td></tr>
-<tr class="memdesc:a263e219d314d16f98b028aec9878fbe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classVariable.html">Variable</a>:: <a class="el" href="classVariable.html">Variable</a> object.  <a href="classVariable.html#a263e219d314d16f98b028aec9878fbe4">More...</a><br /></td></tr>
-<tr class="separator:a263e219d314d16f98b028aec9878fbe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2599b3ea49c100910b1b39b47a58a30"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#aa2599b3ea49c100910b1b39b47a58a30">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, const int &amp;depth, const <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt; &amp;initial_condition_name, const std::set&lt; std::string &gt; &amp;attribute_names, const <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt; &amp;analytical_solution_name)</td></tr>
-<tr class="memdesc:aa2599b3ea49c100910b1b39b47a58a30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classVariable.html">Variable</a>:: <a class="el" href="classVariable.html">Variable</a> object.  <a href="classVariable.html#aa2599b3ea49c100910b1b39b47a58a30">More...</a><br /></td></tr>
-<tr class="separator:aa2599b3ea49c100910b1b39b47a58a30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a651b2183538471c6874a0868f9795d8c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a651b2183538471c6874a0868f9795d8c">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, const int &amp;depth, const <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt; &amp;initial_condition_name, const std::set&lt; std::string &gt; &amp;attribute_names, const mfem::FunctionCoefficient &amp;analytical_solution_function)</td></tr>
-<tr class="memdesc:a651b2183538471c6874a0868f9795d8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classVariable.html">Variable</a>:: <a class="el" href="classVariable.html">Variable</a> object.  <a href="classVariable.html#a651b2183538471c6874a0868f9795d8c">More...</a><br /></td></tr>
-<tr class="separator:a651b2183538471c6874a0868f9795d8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fab94c866c3472004e7fa1106a08055"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a3fab94c866c3472004e7fa1106a08055">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, const int &amp;depth, const double &amp;initial_condition_value)</td></tr>
-<tr class="memdesc:a3fab94c866c3472004e7fa1106a08055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Variable&lt;T&gt;:: <a class="el" href="classVariable.html">Variable</a> object.  <a href="classVariable.html#a3fab94c866c3472004e7fa1106a08055">More...</a><br /></td></tr>
-<tr class="separator:a3fab94c866c3472004e7fa1106a08055"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8386f9d1512f0709eee7db7892af90f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a8386f9d1512f0709eee7db7892af90f4">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, const int &amp;depth, const double &amp;initial_condition_value, const <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt; &amp;analytical_solution_name)</td></tr>
-<tr class="memdesc:a8386f9d1512f0709eee7db7892af90f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Variable&lt;T&gt;:: <a class="el" href="classVariable.html">Variable</a> object.  <a href="classVariable.html#a8386f9d1512f0709eee7db7892af90f4">More...</a><br /></td></tr>
-<tr class="separator:a8386f9d1512f0709eee7db7892af90f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0693193a94194f8b8e3229511da8ec08"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a0693193a94194f8b8e3229511da8ec08">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, const int &amp;depth, const double &amp;initial_condition_value, const mfem::FunctionCoefficient &amp;analytical_solution_function)</td></tr>
-<tr class="memdesc:a0693193a94194f8b8e3229511da8ec08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Variable&lt;T&gt;:: <a class="el" href="classVariable.html">Variable</a> object.  <a href="classVariable.html#a0693193a94194f8b8e3229511da8ec08">More...</a><br /></td></tr>
-<tr class="separator:a0693193a94194f8b8e3229511da8ec08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad807590d81c416c0472f726277b17bf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#aad807590d81c416c0472f726277b17bf">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, const int &amp;depth, const double &amp;initial_condition_value, const std::set&lt; std::string &gt; &amp;attribute_names)</td></tr>
-<tr class="memdesc:aad807590d81c416c0472f726277b17bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Variable&lt;T&gt;:: <a class="el" href="classVariable.html">Variable</a> object.  <a href="classVariable.html#aad807590d81c416c0472f726277b17bf">More...</a><br /></td></tr>
-<tr class="separator:aad807590d81c416c0472f726277b17bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e3581a300eeed45439892682309306e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a6e3581a300eeed45439892682309306e">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, const int &amp;depth, const double &amp;initial_condition_value, const std::set&lt; std::string &gt; &amp;attribute_names, const <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt; &amp;analytical_solution_name)</td></tr>
-<tr class="memdesc:a6e3581a300eeed45439892682309306e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Variable&lt;T&gt;:: <a class="el" href="classVariable.html">Variable</a> object.  <a href="classVariable.html#a6e3581a300eeed45439892682309306e">More...</a><br /></td></tr>
-<tr class="separator:a6e3581a300eeed45439892682309306e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0592a8e4e93a8e9e36cb26bc43c0e53a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a0592a8e4e93a8e9e36cb26bc43c0e53a">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, const int &amp;depth, const double &amp;initial_condition_value, const std::set&lt; std::string &gt; &amp;attribute_names, const mfem::FunctionCoefficient &amp;analytical_solution_function)</td></tr>
-<tr class="memdesc:a0592a8e4e93a8e9e36cb26bc43c0e53a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Variable&lt;T&gt;:: <a class="el" href="classVariable.html">Variable</a> object.  <a href="classVariable.html#a0592a8e4e93a8e9e36cb26bc43c0e53a">More...</a><br /></td></tr>
-<tr class="separator:a0592a8e4e93a8e9e36cb26bc43c0e53a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada19704f322b7aad638953ac8a6550e2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#ada19704f322b7aad638953ac8a6550e2">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, const int &amp;depth, const mfem::FunctionCoefficient &amp;initial_condition_function)</td></tr>
-<tr class="memdesc:ada19704f322b7aad638953ac8a6550e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Variable&lt;T&gt;:: <a class="el" href="classVariable.html">Variable</a> object.  <a href="classVariable.html#ada19704f322b7aad638953ac8a6550e2">More...</a><br /></td></tr>
-<tr class="separator:ada19704f322b7aad638953ac8a6550e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9a5d11231f0e3a171d3c1953887b616"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#ab9a5d11231f0e3a171d3c1953887b616">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, const int &amp;depth, const mfem::FunctionCoefficient &amp;initial_condition_function, const <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt; &amp;analytical_solution_name)</td></tr>
-<tr class="memdesc:ab9a5d11231f0e3a171d3c1953887b616"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Variable&lt;T&gt;:: <a class="el" href="classVariable.html">Variable</a> object.  <a href="classVariable.html#ab9a5d11231f0e3a171d3c1953887b616">More...</a><br /></td></tr>
-<tr class="separator:ab9a5d11231f0e3a171d3c1953887b616"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2dfd97edf9eba4626e77b82a4863835"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#aa2dfd97edf9eba4626e77b82a4863835">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, const int &amp;depth, const mfem::FunctionCoefficient &amp;initial_condition_function, const mfem::FunctionCoefficient &amp;analytical_solution_function)</td></tr>
-<tr class="memdesc:aa2dfd97edf9eba4626e77b82a4863835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Variable&lt;T&gt;:: <a class="el" href="classVariable.html">Variable</a> object.  <a href="classVariable.html#aa2dfd97edf9eba4626e77b82a4863835">More...</a><br /></td></tr>
-<tr class="separator:aa2dfd97edf9eba4626e77b82a4863835"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5995efa1eb28bb43f2cbb22b7a20fa74"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a5995efa1eb28bb43f2cbb22b7a20fa74">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, const int &amp;depth, const mfem::FunctionCoefficient &amp;initial_condition_function, const std::set&lt; std::string &gt; &amp;attribute_names)</td></tr>
-<tr class="memdesc:a5995efa1eb28bb43f2cbb22b7a20fa74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Variable&lt;T&gt;:: <a class="el" href="classVariable.html">Variable</a> object.  <a href="classVariable.html#a5995efa1eb28bb43f2cbb22b7a20fa74">More...</a><br /></td></tr>
-<tr class="separator:a5995efa1eb28bb43f2cbb22b7a20fa74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a946f79a666dc950a3e09c4bfacb7ef75"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a946f79a666dc950a3e09c4bfacb7ef75">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, const int &amp;depth, const mfem::FunctionCoefficient &amp;initial_condition_function, const std::set&lt; std::string &gt; &amp;attribute_names, const <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt; &amp;analytical_solution_name)</td></tr>
-<tr class="memdesc:a946f79a666dc950a3e09c4bfacb7ef75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Variable&lt;T&gt;:: <a class="el" href="classVariable.html">Variable</a> object.  <a href="classVariable.html#a946f79a666dc950a3e09c4bfacb7ef75">More...</a><br /></td></tr>
-<tr class="separator:a946f79a666dc950a3e09c4bfacb7ef75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a055a94612755d1b7ca24f1e8d3b68136"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a055a94612755d1b7ca24f1e8d3b68136">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, const int &amp;depth, const mfem::FunctionCoefficient &amp;initial_condition_function, const std::set&lt; std::string &gt; &amp;attribute_names, const mfem::FunctionCoefficient &amp;analytical_solution_function)</td></tr>
-<tr class="memdesc:a055a94612755d1b7ca24f1e8d3b68136"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Variable&lt;T&gt;:: <a class="el" href="classVariable.html">Variable</a> object.  <a href="classVariable.html#a055a94612755d1b7ca24f1e8d3b68136">More...</a><br /></td></tr>
-<tr class="separator:a055a94612755d1b7ca24f1e8d3b68136"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65ff6a21307c5adde352b6778e0c37bd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a65ff6a21307c5adde352b6778e0c37bd">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a> type, const int &amp;depth, const <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt; &amp;initial_condition_name)</td></tr>
+<tr class="separator:a65ff6a21307c5adde352b6778e0c37bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a496dff956f07d85049e5b7a4675f994f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a496dff956f07d85049e5b7a4675f994f">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a> type, const int &amp;depth, const <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt; &amp;initial_condition_name, const <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt; &amp;analytical_solution_name)</td></tr>
+<tr class="separator:a496dff956f07d85049e5b7a4675f994f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9b61ba5056101888eb5fa4ad599bdf5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#ab9b61ba5056101888eb5fa4ad599bdf5">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a> type, const int &amp;depth, const <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt; &amp;initial_condition_name, const mfem::FunctionCoefficient &amp;analytical_solution_function)</td></tr>
+<tr class="separator:ab9b61ba5056101888eb5fa4ad599bdf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c1085c39164c337a1a705f4b52bda2e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a3c1085c39164c337a1a705f4b52bda2e">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a> type, const int &amp;depth, const <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt; &amp;initial_condition_name, const std::set&lt; std::string &gt; &amp;attribute_names)</td></tr>
+<tr class="separator:a3c1085c39164c337a1a705f4b52bda2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ae648d6b746bb0e52f55a0e8c43fe6c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a3ae648d6b746bb0e52f55a0e8c43fe6c">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a> type, const int &amp;depth, const <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt; &amp;initial_condition_name, const std::set&lt; std::string &gt; &amp;attribute_names, const <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt; &amp;analytical_solution_name)</td></tr>
+<tr class="separator:a3ae648d6b746bb0e52f55a0e8c43fe6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab698d637ec6a36ef76e6dd37f048dc78"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#ab698d637ec6a36ef76e6dd37f048dc78">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a> type, const int &amp;depth, const <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt; &amp;initial_condition_name, const std::set&lt; std::string &gt; &amp;attribute_names, const mfem::FunctionCoefficient &amp;analytical_solution_function)</td></tr>
+<tr class="separator:ab698d637ec6a36ef76e6dd37f048dc78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fe67f6bdd9a6c899c0ff34351e0a736"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a3fe67f6bdd9a6c899c0ff34351e0a736">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a> type, const int &amp;depth, const double &amp;initial_condition_value)</td></tr>
+<tr class="separator:a3fe67f6bdd9a6c899c0ff34351e0a736"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0c1a65b8215a7da843f36bfbd291fc9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#af0c1a65b8215a7da843f36bfbd291fc9">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a> type, const int &amp;depth, const double &amp;initial_condition_value, const <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt; &amp;analytical_solution_name)</td></tr>
+<tr class="separator:af0c1a65b8215a7da843f36bfbd291fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad75f42911ef407801b525802ac713463"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#ad75f42911ef407801b525802ac713463">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a> type, const int &amp;depth, const double &amp;initial_condition_value, const mfem::FunctionCoefficient &amp;analytical_solution_function)</td></tr>
+<tr class="separator:ad75f42911ef407801b525802ac713463"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bff1bd7518d5cccd5161e1d049414cc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a6bff1bd7518d5cccd5161e1d049414cc">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a> type, const int &amp;depth, const double &amp;initial_condition_value, const std::set&lt; std::string &gt; &amp;attribute_names)</td></tr>
+<tr class="separator:a6bff1bd7518d5cccd5161e1d049414cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3c58093bd87cd9c2ebc78cb21e04751"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#ab3c58093bd87cd9c2ebc78cb21e04751">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a> type, const int &amp;depth, const double &amp;initial_condition_value, const std::set&lt; std::string &gt; &amp;attribute_names, const <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt; &amp;analytical_solution_name)</td></tr>
+<tr class="separator:ab3c58093bd87cd9c2ebc78cb21e04751"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4fba92c0907ea9c42f29464007b6543"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#ac4fba92c0907ea9c42f29464007b6543">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a> type, const int &amp;depth, const double &amp;initial_condition_value, const std::set&lt; std::string &gt; &amp;attribute_names, const mfem::FunctionCoefficient &amp;analytical_solution_function)</td></tr>
+<tr class="separator:ac4fba92c0907ea9c42f29464007b6543"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4835389736d7be25eef5655b6a32cc6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#af4835389736d7be25eef5655b6a32cc6">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a> type, const int &amp;depth, const mfem::FunctionCoefficient &amp;initial_condition_function)</td></tr>
+<tr class="separator:af4835389736d7be25eef5655b6a32cc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abea1a8dc15b2b7b6a5070139b2e79fc5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#abea1a8dc15b2b7b6a5070139b2e79fc5">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a> type, const int &amp;depth, const mfem::FunctionCoefficient &amp;initial_condition_function, const <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt; &amp;analytical_solution_name)</td></tr>
+<tr class="separator:abea1a8dc15b2b7b6a5070139b2e79fc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69f300893841689561dce17b7488b555"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a69f300893841689561dce17b7488b555">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a> type, const int &amp;depth, const mfem::FunctionCoefficient &amp;initial_condition_function, const mfem::FunctionCoefficient &amp;analytical_solution_function)</td></tr>
+<tr class="separator:a69f300893841689561dce17b7488b555"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf8126517f10c8644f9b40b584a95424"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#adf8126517f10c8644f9b40b584a95424">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a> type, const int &amp;depth, const mfem::FunctionCoefficient &amp;initial_condition_function, const std::set&lt; std::string &gt; &amp;attribute_names)</td></tr>
+<tr class="separator:adf8126517f10c8644f9b40b584a95424"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa966ac7e202197c3e7cac1a1488e7989"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#aa966ac7e202197c3e7cac1a1488e7989">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a> type, const int &amp;depth, const mfem::FunctionCoefficient &amp;initial_condition_function, const std::set&lt; std::string &gt; &amp;attribute_names, const <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt; &amp;analytical_solution_name)</td></tr>
+<tr class="separator:aa966ac7e202197c3e7cac1a1488e7989"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa33a13c0ac53394a53ae134d53bb008d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#aa33a13c0ac53394a53ae134d53bb008d">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a> type, const int &amp;depth, const mfem::FunctionCoefficient &amp;initial_condition_function, const std::set&lt; std::string &gt; &amp;attribute_names, const mfem::FunctionCoefficient &amp;analytical_solution_function)</td></tr>
+<tr class="separator:aa33a13c0ac53394a53ae134d53bb008d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a9bfaa6d8079310ce7781794caff32b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a5a9bfaa6d8079310ce7781794caff32b">~Variable</a> ()</td></tr>
-<tr class="memdesc:a5a9bfaa6d8079310ce7781794caff32b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classVariable.html">Variable</a>:: <a class="el" href="classVariable.html">Variable</a> object.  <a href="classVariable.html#a5a9bfaa6d8079310ce7781794caff32b">More...</a><br /></td></tr>
 <tr class="separator:a5a9bfaa6d8079310ce7781794caff32b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -182,8 +151,8 @@ class Variable&lt; T, DIM &gt;</h3>
 
 <p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00045">45</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae6ccb444b073d7b81927a0b17b8b4763"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6ccb444b073d7b81927a0b17b8b4763">&#9670;&nbsp;</a></span>Variable() <span class="overload">[1/18]</span></h2>
+<a id="a65ff6a21307c5adde352b6778e0c37bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65ff6a21307c5adde352b6778e0c37bd">&#9670;&nbsp;</a></span>Variable() <span class="overload">[1/18]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -207,6 +176,12 @@ template&lt;class T , int DIM&gt; </div>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>variable_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -228,32 +203,10 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classVariable.html">Variable</a>:: <a class="el" href="classVariable.html">Variable</a> object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fespace</td><td></td></tr>
-    <tr><td class="paramname">variable_name</td><td></td></tr>
-    <tr><td class="paramname">depth</td><td></td></tr>
-    <tr><td class="paramname">initial_condition_name</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00211">211</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00945">SpatialDiscretization&lt; T, DIM &gt;::get_dimension()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00912">SpatialDiscretization&lt; T, DIM &gt;::get_finite_element_space()</a>.</p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classVariable_ae6ccb444b073d7b81927a0b17b8b4763_cgraph.svg" width="402" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
-<a id="af9d28c181f783b9728caa91642c8a6bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9d28c181f783b9728caa91642c8a6bb">&#9670;&nbsp;</a></span>Variable() <span class="overload">[2/18]</span></h2>
+<a id="a496dff956f07d85049e5b7a4675f994f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a496dff956f07d85049e5b7a4675f994f">&#9670;&nbsp;</a></span>Variable() <span class="overload">[2/18]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -277,6 +230,12 @@ template&lt;class T , int DIM&gt; </div>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>variable_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -304,33 +263,10 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classVariable.html">Variable</a>:: <a class="el" href="classVariable.html">Variable</a> object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fespace</td><td></td></tr>
-    <tr><td class="paramname">variable_name</td><td></td></tr>
-    <tr><td class="paramname">depth</td><td></td></tr>
-    <tr><td class="paramname">initial_condition_name</td><td></td></tr>
-    <tr><td class="paramname">analytical_solution_name</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00238">238</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00945">SpatialDiscretization&lt; T, DIM &gt;::get_dimension()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00912">SpatialDiscretization&lt; T, DIM &gt;::get_finite_element_space()</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classVariable_af9d28c181f783b9728caa91642c8a6bb_cgraph.svg" width="402" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
-<a id="ad2621a632669da149ac890b6f92642ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2621a632669da149ac890b6f92642ba">&#9670;&nbsp;</a></span>Variable() <span class="overload">[3/18]</span></h2>
+<a id="ab9b61ba5056101888eb5fa4ad599bdf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9b61ba5056101888eb5fa4ad599bdf5">&#9670;&nbsp;</a></span>Variable() <span class="overload">[3/18]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -354,6 +290,12 @@ template&lt;class T , int DIM&gt; </div>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>variable_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -381,33 +323,10 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classVariable.html">Variable</a>:: <a class="el" href="classVariable.html">Variable</a> object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fespace</td><td></td></tr>
-    <tr><td class="paramname">variable_name</td><td></td></tr>
-    <tr><td class="paramname">depth</td><td></td></tr>
-    <tr><td class="paramname">initial_condition_name</td><td></td></tr>
-    <tr><td class="paramname">analytical_solution_function</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00269">269</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00945">SpatialDiscretization&lt; T, DIM &gt;::get_dimension()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00912">SpatialDiscretization&lt; T, DIM &gt;::get_finite_element_space()</a>.</p>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classVariable_ad2621a632669da149ac890b6f92642ba_cgraph.svg" width="402" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
-<a id="ada19704f322b7aad638953ac8a6550e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada19704f322b7aad638953ac8a6550e2">&#9670;&nbsp;</a></span>Variable() <span class="overload">[4/18]</span></h2>
+<a id="af4835389736d7be25eef5655b6a32cc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4835389736d7be25eef5655b6a32cc6">&#9670;&nbsp;</a></span>Variable() <span class="overload">[4/18]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -431,6 +350,12 @@ template&lt;class T , int DIM&gt; </div>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>variable_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -452,32 +377,10 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new Variable&lt;T&gt;:: <a class="el" href="classVariable.html">Variable</a> object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fespace</td><td></td></tr>
-    <tr><td class="paramname">variable_name</td><td></td></tr>
-    <tr><td class="paramname">depth</td><td></td></tr>
-    <tr><td class="paramname">initial_condition_function</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00297">297</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00912">SpatialDiscretization&lt; T, DIM &gt;::get_finite_element_space()</a>.</p>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classVariable_ada19704f322b7aad638953ac8a6550e2_cgraph.svg" width="402" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
-<a id="ab9a5d11231f0e3a171d3c1953887b616"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9a5d11231f0e3a171d3c1953887b616">&#9670;&nbsp;</a></span>Variable() <span class="overload">[5/18]</span></h2>
+<a id="abea1a8dc15b2b7b6a5070139b2e79fc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abea1a8dc15b2b7b6a5070139b2e79fc5">&#9670;&nbsp;</a></span>Variable() <span class="overload">[5/18]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -501,6 +404,12 @@ template&lt;class T , int DIM&gt; </div>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>variable_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -528,33 +437,10 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new Variable&lt;T&gt;:: <a class="el" href="classVariable.html">Variable</a> object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fespace</td><td></td></tr>
-    <tr><td class="paramname">variable_name</td><td></td></tr>
-    <tr><td class="paramname">depth</td><td></td></tr>
-    <tr><td class="paramname">initial_condition_function</td><td></td></tr>
-    <tr><td class="paramname">analytical_solution_name</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00322">322</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00945">SpatialDiscretization&lt; T, DIM &gt;::get_dimension()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00912">SpatialDiscretization&lt; T, DIM &gt;::get_finite_element_space()</a>.</p>
-<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classVariable_ab9a5d11231f0e3a171d3c1953887b616_cgraph.svg" width="402" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
-<a id="aa2dfd97edf9eba4626e77b82a4863835"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2dfd97edf9eba4626e77b82a4863835">&#9670;&nbsp;</a></span>Variable() <span class="overload">[6/18]</span></h2>
+<a id="a69f300893841689561dce17b7488b555"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69f300893841689561dce17b7488b555">&#9670;&nbsp;</a></span>Variable() <span class="overload">[6/18]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -578,6 +464,12 @@ template&lt;class T , int DIM&gt; </div>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>variable_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -605,33 +497,10 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new Variable&lt;T&gt;:: <a class="el" href="classVariable.html">Variable</a> object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fespace</td><td></td></tr>
-    <tr><td class="paramname">variable_name</td><td></td></tr>
-    <tr><td class="paramname">depth</td><td></td></tr>
-    <tr><td class="paramname">initial_condition_function</td><td></td></tr>
-    <tr><td class="paramname">analytical_solution_function</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00352">352</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00912">SpatialDiscretization&lt; T, DIM &gt;::get_finite_element_space()</a>.</p>
-<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classVariable_aa2dfd97edf9eba4626e77b82a4863835_cgraph.svg" width="402" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
-<a id="a3fab94c866c3472004e7fa1106a08055"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3fab94c866c3472004e7fa1106a08055">&#9670;&nbsp;</a></span>Variable() <span class="overload">[7/18]</span></h2>
+<a id="a3fe67f6bdd9a6c899c0ff34351e0a736"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fe67f6bdd9a6c899c0ff34351e0a736">&#9670;&nbsp;</a></span>Variable() <span class="overload">[7/18]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -655,6 +524,12 @@ template&lt;class T , int DIM&gt; </div>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>variable_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -676,32 +551,10 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new Variable&lt;T&gt;:: <a class="el" href="classVariable.html">Variable</a> object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fespace</td><td></td></tr>
-    <tr><td class="paramname">variable_name</td><td></td></tr>
-    <tr><td class="paramname">depth</td><td></td></tr>
-    <tr><td class="paramname">initial_condition_value</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00378">378</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00912">SpatialDiscretization&lt; T, DIM &gt;::get_finite_element_space()</a>.</p>
-<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classVariable_a3fab94c866c3472004e7fa1106a08055_cgraph.svg" width="402" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
-<a id="a8386f9d1512f0709eee7db7892af90f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8386f9d1512f0709eee7db7892af90f4">&#9670;&nbsp;</a></span>Variable() <span class="overload">[8/18]</span></h2>
+<a id="af0c1a65b8215a7da843f36bfbd291fc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0c1a65b8215a7da843f36bfbd291fc9">&#9670;&nbsp;</a></span>Variable() <span class="overload">[8/18]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -725,6 +578,12 @@ template&lt;class T , int DIM&gt; </div>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>variable_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -752,33 +611,10 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new Variable&lt;T&gt;:: <a class="el" href="classVariable.html">Variable</a> object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fespace</td><td></td></tr>
-    <tr><td class="paramname">variable_name</td><td></td></tr>
-    <tr><td class="paramname">depth</td><td></td></tr>
-    <tr><td class="paramname">initial_condition_value</td><td></td></tr>
-    <tr><td class="paramname">analytical_solution_name</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00401">401</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00945">SpatialDiscretization&lt; T, DIM &gt;::get_dimension()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00912">SpatialDiscretization&lt; T, DIM &gt;::get_finite_element_space()</a>.</p>
-<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classVariable_a8386f9d1512f0709eee7db7892af90f4_cgraph.svg" width="402" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
-<a id="a0693193a94194f8b8e3229511da8ec08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0693193a94194f8b8e3229511da8ec08">&#9670;&nbsp;</a></span>Variable() <span class="overload">[9/18]</span></h2>
+<a id="ad75f42911ef407801b525802ac713463"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad75f42911ef407801b525802ac713463">&#9670;&nbsp;</a></span>Variable() <span class="overload">[9/18]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -802,6 +638,12 @@ template&lt;class T , int DIM&gt; </div>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>variable_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -829,33 +671,10 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new Variable&lt;T&gt;:: <a class="el" href="classVariable.html">Variable</a> object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fespace</td><td></td></tr>
-    <tr><td class="paramname">variable_name</td><td></td></tr>
-    <tr><td class="paramname">depth</td><td></td></tr>
-    <tr><td class="paramname">initial_condition_value</td><td></td></tr>
-    <tr><td class="paramname">analytical_solution_function</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00430">430</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00912">SpatialDiscretization&lt; T, DIM &gt;::get_finite_element_space()</a>.</p>
-<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classVariable_a0693193a94194f8b8e3229511da8ec08_cgraph.svg" width="402" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
-<a id="a263e219d314d16f98b028aec9878fbe4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a263e219d314d16f98b028aec9878fbe4">&#9670;&nbsp;</a></span>Variable() <span class="overload">[10/18]</span></h2>
+<a id="a3c1085c39164c337a1a705f4b52bda2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c1085c39164c337a1a705f4b52bda2e">&#9670;&nbsp;</a></span>Variable() <span class="overload">[10/18]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -879,6 +698,12 @@ template&lt;class T , int DIM&gt; </div>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>variable_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -906,32 +731,10 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classVariable.html">Variable</a>:: <a class="el" href="classVariable.html">Variable</a> object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fespace</td><td></td></tr>
-    <tr><td class="paramname">variable_name</td><td></td></tr>
-    <tr><td class="paramname">depth</td><td></td></tr>
-    <tr><td class="paramname">initial_condition_name</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00458">458</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00945">SpatialDiscretization&lt; T, DIM &gt;::get_dimension()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00912">SpatialDiscretization&lt; T, DIM &gt;::get_finite_element_space()</a>.</p>
-<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classVariable_a263e219d314d16f98b028aec9878fbe4_cgraph.svg" width="402" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
-<a id="aa2599b3ea49c100910b1b39b47a58a30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2599b3ea49c100910b1b39b47a58a30">&#9670;&nbsp;</a></span>Variable() <span class="overload">[11/18]</span></h2>
+<a id="a3ae648d6b746bb0e52f55a0e8c43fe6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ae648d6b746bb0e52f55a0e8c43fe6c">&#9670;&nbsp;</a></span>Variable() <span class="overload">[11/18]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -955,6 +758,12 @@ template&lt;class T , int DIM&gt; </div>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>variable_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -988,33 +797,10 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classVariable.html">Variable</a>:: <a class="el" href="classVariable.html">Variable</a> object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fespace</td><td></td></tr>
-    <tr><td class="paramname">variable_name</td><td></td></tr>
-    <tr><td class="paramname">depth</td><td></td></tr>
-    <tr><td class="paramname">initial_condition_name</td><td></td></tr>
-    <tr><td class="paramname">analytical_solution_name</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00486">486</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00945">SpatialDiscretization&lt; T, DIM &gt;::get_dimension()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00912">SpatialDiscretization&lt; T, DIM &gt;::get_finite_element_space()</a>.</p>
-<div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classVariable_aa2599b3ea49c100910b1b39b47a58a30_cgraph.svg" width="402" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
-<a id="a651b2183538471c6874a0868f9795d8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a651b2183538471c6874a0868f9795d8c">&#9670;&nbsp;</a></span>Variable() <span class="overload">[12/18]</span></h2>
+<a id="ab698d637ec6a36ef76e6dd37f048dc78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab698d637ec6a36ef76e6dd37f048dc78">&#9670;&nbsp;</a></span>Variable() <span class="overload">[12/18]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1038,6 +824,12 @@ template&lt;class T , int DIM&gt; </div>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>variable_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1071,33 +863,10 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classVariable.html">Variable</a>:: <a class="el" href="classVariable.html">Variable</a> object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fespace</td><td></td></tr>
-    <tr><td class="paramname">variable_name</td><td></td></tr>
-    <tr><td class="paramname">depth</td><td></td></tr>
-    <tr><td class="paramname">initial_condition_name</td><td></td></tr>
-    <tr><td class="paramname">analytical_solution_function</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00521">521</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00945">SpatialDiscretization&lt; T, DIM &gt;::get_dimension()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00912">SpatialDiscretization&lt; T, DIM &gt;::get_finite_element_space()</a>.</p>
-<div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classVariable_a651b2183538471c6874a0868f9795d8c_cgraph.svg" width="402" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
-<a id="a5995efa1eb28bb43f2cbb22b7a20fa74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5995efa1eb28bb43f2cbb22b7a20fa74">&#9670;&nbsp;</a></span>Variable() <span class="overload">[13/18]</span></h2>
+<a id="adf8126517f10c8644f9b40b584a95424"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf8126517f10c8644f9b40b584a95424">&#9670;&nbsp;</a></span>Variable() <span class="overload">[13/18]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1121,6 +890,12 @@ template&lt;class T , int DIM&gt; </div>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>variable_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1148,32 +923,10 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new Variable&lt;T&gt;:: <a class="el" href="classVariable.html">Variable</a> object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fespace</td><td></td></tr>
-    <tr><td class="paramname">variable_name</td><td></td></tr>
-    <tr><td class="paramname">depth</td><td></td></tr>
-    <tr><td class="paramname">initial_condition_function</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00552">552</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00912">SpatialDiscretization&lt; T, DIM &gt;::get_finite_element_space()</a>.</p>
-<div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-12-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classVariable_a5995efa1eb28bb43f2cbb22b7a20fa74_cgraph.svg" width="402" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
-<a id="a946f79a666dc950a3e09c4bfacb7ef75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a946f79a666dc950a3e09c4bfacb7ef75">&#9670;&nbsp;</a></span>Variable() <span class="overload">[14/18]</span></h2>
+<a id="aa966ac7e202197c3e7cac1a1488e7989"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa966ac7e202197c3e7cac1a1488e7989">&#9670;&nbsp;</a></span>Variable() <span class="overload">[14/18]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1197,6 +950,12 @@ template&lt;class T , int DIM&gt; </div>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>variable_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1230,33 +989,10 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new Variable&lt;T&gt;:: <a class="el" href="classVariable.html">Variable</a> object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fespace</td><td></td></tr>
-    <tr><td class="paramname">variable_name</td><td></td></tr>
-    <tr><td class="paramname">depth</td><td></td></tr>
-    <tr><td class="paramname">initial_condition_function</td><td></td></tr>
-    <tr><td class="paramname">analytical_solution_name</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00579">579</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00945">SpatialDiscretization&lt; T, DIM &gt;::get_dimension()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00912">SpatialDiscretization&lt; T, DIM &gt;::get_finite_element_space()</a>.</p>
-<div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-13-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classVariable_a946f79a666dc950a3e09c4bfacb7ef75_cgraph.svg" width="402" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
-<a id="a055a94612755d1b7ca24f1e8d3b68136"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a055a94612755d1b7ca24f1e8d3b68136">&#9670;&nbsp;</a></span>Variable() <span class="overload">[15/18]</span></h2>
+<a id="aa33a13c0ac53394a53ae134d53bb008d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa33a13c0ac53394a53ae134d53bb008d">&#9670;&nbsp;</a></span>Variable() <span class="overload">[15/18]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1280,6 +1016,12 @@ template&lt;class T , int DIM&gt; </div>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>variable_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1313,33 +1055,10 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new Variable&lt;T&gt;:: <a class="el" href="classVariable.html">Variable</a> object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fespace</td><td></td></tr>
-    <tr><td class="paramname">variable_name</td><td></td></tr>
-    <tr><td class="paramname">depth</td><td></td></tr>
-    <tr><td class="paramname">initial_condition_function</td><td></td></tr>
-    <tr><td class="paramname">analytical_solution_function</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00612">612</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00912">SpatialDiscretization&lt; T, DIM &gt;::get_finite_element_space()</a>.</p>
-<div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-14-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classVariable_a055a94612755d1b7ca24f1e8d3b68136_cgraph.svg" width="402" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
-<a id="aad807590d81c416c0472f726277b17bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad807590d81c416c0472f726277b17bf">&#9670;&nbsp;</a></span>Variable() <span class="overload">[16/18]</span></h2>
+<a id="a6bff1bd7518d5cccd5161e1d049414cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bff1bd7518d5cccd5161e1d049414cc">&#9670;&nbsp;</a></span>Variable() <span class="overload">[16/18]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1363,6 +1082,12 @@ template&lt;class T , int DIM&gt; </div>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>variable_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1390,32 +1115,10 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new Variable&lt;T&gt;:: <a class="el" href="classVariable.html">Variable</a> object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fespace</td><td></td></tr>
-    <tr><td class="paramname">variable_name</td><td></td></tr>
-    <tr><td class="paramname">depth</td><td></td></tr>
-    <tr><td class="paramname">initial_condition_value</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00641">641</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00912">SpatialDiscretization&lt; T, DIM &gt;::get_finite_element_space()</a>.</p>
-<div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-15-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-15-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classVariable_aad807590d81c416c0472f726277b17bf_cgraph.svg" width="402" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
-<a id="a6e3581a300eeed45439892682309306e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e3581a300eeed45439892682309306e">&#9670;&nbsp;</a></span>Variable() <span class="overload">[17/18]</span></h2>
+<a id="ab3c58093bd87cd9c2ebc78cb21e04751"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3c58093bd87cd9c2ebc78cb21e04751">&#9670;&nbsp;</a></span>Variable() <span class="overload">[17/18]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1439,6 +1142,12 @@ template&lt;class T , int DIM&gt; </div>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>variable_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1472,33 +1181,10 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new Variable&lt;T&gt;:: <a class="el" href="classVariable.html">Variable</a> object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fespace</td><td></td></tr>
-    <tr><td class="paramname">variable_name</td><td></td></tr>
-    <tr><td class="paramname">depth</td><td></td></tr>
-    <tr><td class="paramname">initial_condition_value</td><td></td></tr>
-    <tr><td class="paramname">analytical_solution_name</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00667">667</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00945">SpatialDiscretization&lt; T, DIM &gt;::get_dimension()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00912">SpatialDiscretization&lt; T, DIM &gt;::get_finite_element_space()</a>.</p>
-<div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-16-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-16-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classVariable_a6e3581a300eeed45439892682309306e_cgraph.svg" width="402" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
-<a id="a0592a8e4e93a8e9e36cb26bc43c0e53a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0592a8e4e93a8e9e36cb26bc43c0e53a">&#9670;&nbsp;</a></span>Variable() <span class="overload">[18/18]</span></h2>
+<a id="ac4fba92c0907ea9c42f29464007b6543"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4fba92c0907ea9c42f29464007b6543">&#9670;&nbsp;</a></span>Variable() <span class="overload">[18/18]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1522,6 +1208,12 @@ template&lt;class T , int DIM&gt; </div>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>variable_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1554,29 +1246,6 @@ template&lt;class T , int DIM&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Construct a new Variable&lt;T&gt;:: <a class="el" href="classVariable.html">Variable</a> object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fespace</td><td></td></tr>
-    <tr><td class="paramname">variable_name</td><td></td></tr>
-    <tr><td class="paramname">depth</td><td></td></tr>
-    <tr><td class="paramname">initial_condition_value</td><td></td></tr>
-    <tr><td class="paramname">analytical_solution_function</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00698">698</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00912">SpatialDiscretization&lt; T, DIM &gt;::get_finite_element_space()</a>.</p>
-<div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-17-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-17-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classVariable_a0592a8e4e93a8e9e36cb26bc43c0e53a_cgraph.svg" width="402" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -1589,20 +1258,19 @@ template&lt;class T , int DIM&gt; </div>
 template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt;::~<a class="el" href="classVariable.html">Variable</a></td>
+          <td class="memname"><a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt;::~<a class="el" href="classVariable.html">Variable</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Destroy the <a class="el" href="classVariable.html">Variable</a>:: <a class="el" href="classVariable.html">Variable</a> object. </p>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l01044">1044</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a1d0e48f5f0740981cf13e0c6e3233d5a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d0e48f5f0740981cf13e0c6e3233d5a">&#9670;&nbsp;</a></span>get_additional_variable_info()</h2>
+<a id="a577cbfe6c524d7c0a0e3b900a49926ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a577cbfe6c524d7c0a0e3b900a49926ed">&#9670;&nbsp;</a></span>get_additional_variable_info()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1610,27 +1278,18 @@ template&lt;class T , int DIM&gt; </div>
 template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; std::string &gt; <a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt;::get_additional_variable_info</td>
+          <td class="memname">std::vector&lt;std::string&gt; <a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt;::get_additional_variable_info </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Return the additionnal information associated to variable. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::string&gt; </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00918">918</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
-
 </div>
 </div>
-<a id="acc06b9dfda611f1ad3b1c6d6b4386050"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc06b9dfda611f1ad3b1c6d6b4386050">&#9670;&nbsp;</a></span>get_analytical_solution()</h2>
+<a id="a06159891d7d1c2b7a2c261e04bec98e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06159891d7d1c2b7a2c261e04bec98e6">&#9670;&nbsp;</a></span>get_analytical_solution()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1638,27 +1297,18 @@ template&lt;class T , int DIM&gt; </div>
 template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; std::function&lt; double(const mfem::Vector &amp;, double)&gt; &gt; <a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt;::get_analytical_solution</td>
+          <td class="memname">std::shared_ptr&lt;std::function&lt;double(const mfem::Vector&amp;, double)&gt; &gt; <a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt;::get_analytical_solution </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>return the function associated to the analytical solution </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::function&lt;double(const mfem::Vector&amp;, double)&gt; </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00953">953</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
-
 </div>
 </div>
-<a id="ab85faebdc51081412859462f7e44a1e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab85faebdc51081412859462f7e44a1e2">&#9670;&nbsp;</a></span>get_boundary_conditions()</h2>
+<a id="ac1e4f733dd84c0024de2ff634ccf65a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1e4f733dd84c0024de2ff634ccf65a2">&#9670;&nbsp;</a></span>get_boundary_conditions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1666,27 +1316,18 @@ template&lt;class T , int DIM&gt; </div>
 template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; * <a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt;::get_boundary_conditions</td>
+          <td class="memname"><a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt;T, DIM&gt;* <a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt;::get_boundary_conditions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>return the boundary condition object associated to the variable </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>BoundaryConditions&lt;T, DIM&gt; </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00965">965</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
-
 </div>
 </div>
-<a id="a67f2892b22c97c3f49bcfb9505acea96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67f2892b22c97c3f49bcfb9505acea96">&#9670;&nbsp;</a></span>get_fespace()</h2>
+<a id="a6eaf56a0c81528b5cee8fc9bd056bc29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6eaf56a0c81528b5cee8fc9bd056bc29">&#9670;&nbsp;</a></span>get_fespace()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1694,14 +1335,13 @@ template&lt;class T , int DIM&gt; </div>
 template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">mfem::ParFiniteElementSpace * <a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt;::get_fespace</td>
+          <td class="memname">mfem::ParFiniteElementSpace* <a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt;::get_fespace </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Return the pointer towards the FiniteElementSpace. </p>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l01014">1014</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
 
 </div>
 </div>
@@ -1714,15 +1354,13 @@ template&lt;class T , int DIM&gt; </div>
 template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">mfem::ParGridFunction <a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt;::get_gf</td>
+          <td class="memname">mfem::ParGridFunction <a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt;::get_gf </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>return the gridfunction associated to the unknown </p>
-<dl class="section return"><dt>Returns</dt><dd>mfem::ParGridFunction </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00940">940</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
 
 </div>
 </div>
@@ -1754,27 +1392,18 @@ template&lt;class T , int DIM&gt; </div>
 template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">mfem::Vector <a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt;::get_last</td>
+          <td class="memname">mfem::Vector <a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt;::get_last </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Return the last term of the saved variables. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>mfem::Vector </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00864">864</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
-
 </div>
 </div>
-<a id="a158c0e8b0ffdf09df3befc17618a270e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a158c0e8b0ffdf09df3befc17618a270e">&#9670;&nbsp;</a></span>get_map_unknown()</h2>
+<a id="a49e34090b8d80a6a2568522f170c8ff6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49e34090b8d80a6a2568522f170c8ff6">&#9670;&nbsp;</a></span>get_map_unknown()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1782,22 +1411,13 @@ template&lt;class T , int DIM&gt; </div>
 template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt; int, mfem::Vector &gt; <a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt;::get_map_unknown</td>
+          <td class="memname">std::map&lt;int, mfem::Vector&gt; <a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt;::get_map_unknown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Return a map of unknows. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::map&lt;int, mfem::Vector&gt; </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00930">930</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
 
 </div>
 </div>
@@ -1810,22 +1430,13 @@ template&lt;class T , int DIM&gt; </div>
 template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">mfem::Vector <a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt;::get_second_to_last</td>
+          <td class="memname">mfem::Vector <a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt;::get_second_to_last </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Return the second-to-last term of the saved variables. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>mfem::Vector </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00852">852</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
 
 </div>
 </div>
@@ -1838,15 +1449,13 @@ template&lt;class T , int DIM&gt; </div>
 template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">mfem::Vector <a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt;::get_unknown</td>
+          <td class="memname">mfem::Vector <a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt;::get_unknown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>return the unkown vector </p>
-<dl class="section return"><dt>Returns</dt><dd>mfem::Vector </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00906">906</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
 
 </div>
 </div>
@@ -1859,15 +1468,13 @@ template&lt;class T , int DIM&gt; </div>
 template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::string <a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt;::getVariableName</td>
+          <td class="memname">std::string <a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt;::getVariableName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Get the name of the <a class="el" href="classVariable.html">Variable</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>std::string name of the variable </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00975">975</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
 
 </div>
 </div>
@@ -1891,24 +1498,6 @@ template&lt;class... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Associate additional information to the variable. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-    <tr><td class="paramname">Args</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">add_var_info</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00726">726</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
-
 </div>
 </div>
 <a id="a6188390bf40a0aaedc2eb2da86e997bc"></a>
@@ -1929,10 +1518,6 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>update the GridFunction on the basis of its associated unknown vector </p>
-
-<p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00873">873</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
-
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
@@ -1941,7 +1526,7 @@ template&lt;class T , int DIM&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 15:39:07 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

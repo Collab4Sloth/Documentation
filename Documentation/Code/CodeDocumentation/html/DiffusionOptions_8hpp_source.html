@@ -25,9 +25,9 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v2.0.0</span>
    </div>
-   <div id="projectbrief">PhaseField solver</div>
+   <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
  </tr>
  </tbody>
@@ -66,7 +66,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li><li class="navelem"><a class="el" href="dir_38b1b3d1f25295a5f9f47bc1a8a0b9db.html">Options</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li><li class="navelem"><a class="el" href="dir_009f605b833ac4622acd6c3c0c26c0f0.html">include</a></li><li class="navelem"><a class="el" href="dir_891ea87c6e6d1f8e94fb23e54b4dc7cd.html">Options</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -75,25 +75,24 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="DiffusionOptions_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Utils_8hpp.html">Utils/Utils.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="DiffusionOptions_8hpp.html#a477325880e3a2bc5b3a6ddf118caae40">   34</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="DiffusionOptions_8hpp.html#a477325880e3a2bc5b3a6ddf118caae40">DiffusionCoefficients</a> { <a class="code" href="DiffusionOptions_8hpp.html#a477325880e3a2bc5b3a6ddf118caae40a32a843da6ea40ab3b17a3421ccdf671b">Linear</a> };</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="DiffusionOptions_8hpp.html#adbe388f8b9be17d1bf8085aa7d3e550a">   35</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="DiffusionOptions_8hpp.html#adbe388f8b9be17d1bf8085aa7d3e550a">CoefficientDiscretization</a> {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="DiffusionOptions_8hpp.html#adbe388f8b9be17d1bf8085aa7d3e550aa07e01d7a96d9fd76cf08aa5916f7c788">Implicit</a>,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="DiffusionOptions_8hpp.html#adbe388f8b9be17d1bf8085aa7d3e550aa9d71760e2dd451db2df354d0fd29cd7f">Explicit</a>,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
-<div class="ttc" id="aDiffusionOptions_8hpp_html_a477325880e3a2bc5b3a6ddf118caae40"><div class="ttname"><a href="DiffusionOptions_8hpp.html#a477325880e3a2bc5b3a6ddf118caae40">DiffusionCoefficients</a></div><div class="ttdeci">DiffusionCoefficients</div><div class="ttdef"><b>Definition:</b> <a href="DiffusionOptions_8hpp_source.html#l00034">DiffusionOptions.hpp:34</a></div></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Utils_8hpp.html">Utils/Utils.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="DiffusionOptions_8hpp.html#a477325880e3a2bc5b3a6ddf118caae40">   33</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="DiffusionOptions_8hpp.html#a477325880e3a2bc5b3a6ddf118caae40">DiffusionCoefficients</a> { <a class="code" href="DiffusionOptions_8hpp.html#a477325880e3a2bc5b3a6ddf118caae40a32a843da6ea40ab3b17a3421ccdf671b">Linear</a> };</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="DiffusionOptions_8hpp.html#adbe388f8b9be17d1bf8085aa7d3e550a">   34</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="DiffusionOptions_8hpp.html#adbe388f8b9be17d1bf8085aa7d3e550a">CoefficientDiscretization</a> {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="DiffusionOptions_8hpp.html#adbe388f8b9be17d1bf8085aa7d3e550aa07e01d7a96d9fd76cf08aa5916f7c788">Implicit</a>,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="DiffusionOptions_8hpp.html#adbe388f8b9be17d1bf8085aa7d3e550aa9d71760e2dd451db2df354d0fd29cd7f">Explicit</a>,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
+<div class="ttc" id="aDiffusionOptions_8hpp_html_a477325880e3a2bc5b3a6ddf118caae40"><div class="ttname"><a href="DiffusionOptions_8hpp.html#a477325880e3a2bc5b3a6ddf118caae40">DiffusionCoefficients</a></div><div class="ttdeci">DiffusionCoefficients</div><div class="ttdef"><b>Definition:</b> <a href="DiffusionOptions_8hpp_source.html#l00033">DiffusionOptions.hpp:33</a></div></div>
 <div class="ttc" id="aDiffusionOptions_8hpp_html_a477325880e3a2bc5b3a6ddf118caae40a32a843da6ea40ab3b17a3421ccdf671b"><div class="ttname"><a href="DiffusionOptions_8hpp.html#a477325880e3a2bc5b3a6ddf118caae40a32a843da6ea40ab3b17a3421ccdf671b">DiffusionCoefficients::Linear</a></div><div class="ttdeci">@ Linear</div></div>
-<div class="ttc" id="aDiffusionOptions_8hpp_html_adbe388f8b9be17d1bf8085aa7d3e550a"><div class="ttname"><a href="DiffusionOptions_8hpp.html#adbe388f8b9be17d1bf8085aa7d3e550a">CoefficientDiscretization</a></div><div class="ttdeci">CoefficientDiscretization</div><div class="ttdef"><b>Definition:</b> <a href="DiffusionOptions_8hpp_source.html#l00035">DiffusionOptions.hpp:35</a></div></div>
+<div class="ttc" id="aDiffusionOptions_8hpp_html_adbe388f8b9be17d1bf8085aa7d3e550a"><div class="ttname"><a href="DiffusionOptions_8hpp.html#adbe388f8b9be17d1bf8085aa7d3e550a">CoefficientDiscretization</a></div><div class="ttdeci">CoefficientDiscretization</div><div class="ttdef"><b>Definition:</b> <a href="DiffusionOptions_8hpp_source.html#l00034">DiffusionOptions.hpp:34</a></div></div>
 <div class="ttc" id="aDiffusionOptions_8hpp_html_adbe388f8b9be17d1bf8085aa7d3e550aa07e01d7a96d9fd76cf08aa5916f7c788"><div class="ttname"><a href="DiffusionOptions_8hpp.html#adbe388f8b9be17d1bf8085aa7d3e550aa07e01d7a96d9fd76cf08aa5916f7c788">CoefficientDiscretization::Implicit</a></div><div class="ttdeci">@ Implicit</div></div>
 <div class="ttc" id="aDiffusionOptions_8hpp_html_adbe388f8b9be17d1bf8085aa7d3e550aa9d71760e2dd451db2df354d0fd29cd7f"><div class="ttname"><a href="DiffusionOptions_8hpp.html#adbe388f8b9be17d1bf8085aa7d3e550aa9d71760e2dd451db2df354d0fd29cd7f">CoefficientDiscretization::Explicit</a></div><div class="ttdeci">@ Explicit</div></div>
 <div class="ttc" id="aUtils_8hpp_html"><div class="ttname"><a href="Utils_8hpp.html">Utils.hpp</a></div><div class="ttdoc">List of all Utils files.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 15:39:06 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Apr 10 2026 10:16:45 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

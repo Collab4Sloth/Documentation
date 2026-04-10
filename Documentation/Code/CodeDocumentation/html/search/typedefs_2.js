@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['map2string2double_1614',['Map2String2Double',['../UtilsForData_8hpp.html#a8673083c2a4568dbfc8ddbe71d757d87',1,'UtilsForData.hpp']]],
-  ['mapstring2double_1615',['MapString2Double',['../UtilsForData_8hpp.html#a5318b2d36ee24e34981e46b1f02cd5df',1,'UtilsForData.hpp']]],
-  ['mapstringdouble_1616',['MapStringDouble',['../UtilsForData_8hpp.html#af2f78a108ca5a665a6ab4b29702420f0',1,'UtilsForData.hpp']]],
-  ['mpair_1617',['mpair',['../structPhaseFieldPrivate_1_1mmap.html#a5a9aa4e6b8de13a27f91323e3b0ad80d',1,'PhaseFieldPrivate::mmap']]]
+  ['fecollection_1826',['FECollection',['../structTest.html#ab18740f78f935200ebabe5e85778908a',1,'Test::FECollection()'],['../structTest_3_011_01_4.html#a0fe178f11c837fcbd1d36580e00189b6',1,'Test&lt; 1 &gt;::FECollection()'],['../structTest_3_012_01_4.html#a392b86ee5fdc3051f9c23d7631d28881',1,'Test&lt; 2 &gt;::FECollection()'],['../structTest_3_013_01_4.html#a3dd666322e7704178574de2d9ed703f7',1,'Test&lt; 3 &gt;::FECollection()']]],
+  ['ftype_1827',['FType',['../UtilsForData_8hpp.html#abf094ccb6e00e39f8418a42c9b9c3381',1,'UtilsForData.hpp']]],
+  ['functype_1828',['FuncType',['../UtilsForData_8hpp.html#a73a8edbfe49890ce9489663c298373c9',1,'UtilsForData.hpp']]]
 ];

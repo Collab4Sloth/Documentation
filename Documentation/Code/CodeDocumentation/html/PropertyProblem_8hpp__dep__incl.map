@@ -1,4 +1,5 @@
 <map id="PropertyProblem.hpp" name="PropertyProblem.hpp">
 <area shape="rect" id="node1" title="Class used to compute primary variables as a function of auxialiary variables." alt="" coords="5,5,175,32"/>
-<area shape="rect" id="node2" href="$sloth_8hpp.html" title="List of all header files contained in the kernel directory." alt="" coords="47,80,133,107"/>
+<area shape="rect" id="node2" href="$ListProblems_8hpp.html" title=" " alt="" coords="19,80,161,107"/>
+<area shape="rect" id="node3" href="$sloth_8hpp.html" title="List of SLOTH header files." alt="" coords="47,155,133,181"/>
 </map>

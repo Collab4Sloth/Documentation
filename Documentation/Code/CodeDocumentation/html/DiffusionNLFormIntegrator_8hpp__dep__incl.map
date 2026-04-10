@@ -1,4 +1,6 @@
 <map id="DiffusionNLFormIntegrator.hpp" name="DiffusionNLFormIntegrator.hpp">
-<area shape="rect" id="node1" title="FV for the mass diffusion equation." alt="" coords="5,5,244,32"/>
-<area shape="rect" id="node2" href="$sloth_8hpp.html" title="List of all header files contained in the kernel directory." alt="" coords="81,80,168,107"/>
+<area shape="rect" id="node1" title="Nonlinear form integrator for diffusion&#45;type problems." alt="" coords="109,5,348,32"/>
+<area shape="rect" id="node2" href="$FickNLFormIntegrator_8hpp.html" title="FV for the mass diffusion equation." alt="" coords="5,80,212,107"/>
+<area shape="rect" id="node4" href="$FourierNLFormIntegrator_8hpp.html" title="FV for the heat transfer equation." alt="" coords="236,80,464,107"/>
+<area shape="rect" id="node3" href="$ListIntegrators_8hpp.html" title="List of header files contained in the Integrators directory." alt="" coords="151,155,306,181"/>
 </map>

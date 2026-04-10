@@ -25,9 +25,9 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v2.0.0</span>
    </div>
-   <div id="projectbrief">PhaseField solver</div>
+   <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
  </tr>
  </tbody>
@@ -66,7 +66,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li><li class="navelem"><a class="el" href="dir_38b1b3d1f25295a5f9f47bc1a8a0b9db.html">Options</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li><li class="navelem"><a class="el" href="dir_009f605b833ac4622acd6c3c0c26c0f0.html">include</a></li><li class="navelem"><a class="el" href="dir_891ea87c6e6d1f8e94fb23e54b4dc7cd.html">Options</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -75,10 +75,12 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="Options_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="AnalyticalFunctionOptions_8hpp.html">Options/AnalyticalFunctionOptions.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="CalphadOptions_8hpp.html">Options/CalphadOptions.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="DiffusionOptions_8hpp.html">Options/DiffusionOptions.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="AnalyticalFunctionOptions_8hpp.html">Options/AnalyticalFunctionOptions.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="CalphadOptions_8hpp.html">Options/CalphadOptions.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="DiffusionOptions_8hpp.html">Options/DiffusionOptions.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="IntegratorsOptions_8hpp.html">Options/IntegratorsOptions.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="PhaseFieldOptions_8hpp.html">Options/PhaseFieldOptions.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="PhysicalConvergenceOptions_8hpp.html">Options/PhysicalConvergenceOptions.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="PhysicalPropertiesOptions_8hpp.html">Options/PhysicalPropertiesOptions.hpp</a>&quot;</span></div>
@@ -87,11 +89,10 @@ $(function() {
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="SpatialOptions_8hpp.html">Options/SpatialOptions.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TimeOptions_8hpp.html">Options/TimeOptions.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Utils_8hpp.html">Utils/Utils.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="ttc" id="aAnalyticalFunctionOptions_8hpp_html"><div class="ttname"><a href="AnalyticalFunctionOptions_8hpp.html">AnalyticalFunctionOptions.hpp</a></div><div class="ttdoc">Options for Analytical functions.</div></div>
 <div class="ttc" id="aCalphadOptions_8hpp_html"><div class="ttname"><a href="CalphadOptions_8hpp.html">CalphadOptions.hpp</a></div><div class="ttdoc">Options for Calphad problems.</div></div>
 <div class="ttc" id="aDiffusionOptions_8hpp_html"><div class="ttname"><a href="DiffusionOptions_8hpp.html">DiffusionOptions.hpp</a></div><div class="ttdoc">Option for Mass Diffusion problems.</div></div>
+<div class="ttc" id="aIntegratorsOptions_8hpp_html"><div class="ttname"><a href="IntegratorsOptions_8hpp.html">IntegratorsOptions.hpp</a></div><div class="ttdoc">Options for Integrators.</div></div>
 <div class="ttc" id="aPhaseFieldOptions_8hpp_html"><div class="ttname"><a href="PhaseFieldOptions_8hpp.html">PhaseFieldOptions.hpp</a></div><div class="ttdoc">Options for PhaseField problems.</div></div>
 <div class="ttc" id="aPhysicalConvergenceOptions_8hpp_html"><div class="ttname"><a href="PhysicalConvergenceOptions_8hpp.html">PhysicalConvergenceOptions.hpp</a></div><div class="ttdoc">Options for PhysicalConvergence objects.</div></div>
 <div class="ttc" id="aPhysicalPropertiesOptions_8hpp_html"><div class="ttname"><a href="PhysicalPropertiesOptions_8hpp.html">PhysicalPropertiesOptions.hpp</a></div><div class="ttdoc">Options for physical properties.</div></div>
@@ -103,7 +104,7 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 15:39:06 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Apr 10 2026 10:16:45 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

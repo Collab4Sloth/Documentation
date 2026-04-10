@@ -25,9 +25,9 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v2.0.0</span>
    </div>
-   <div id="projectbrief">PhaseField solver</div>
+   <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
  </tr>
  </tbody>
@@ -72,7 +72,7 @@ $(function() {
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classSlothNLFormIntegrator-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SlothNLFormIntegrator&lt; VARS &gt; Class Template Reference</div>  </div>
+<div class="title">SlothNLFormIntegrator&lt; VARS &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -97,31 +97,56 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4cf9c5d3b2e9ba9a56831b1f48f1cef4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a4cf9c5d3b2e9ba9a56831b1f48f1cef4">SlothNLFormIntegrator</a> (const <a class="el" href="classParameters.html">Parameters</a> &amp;params, std::vector&lt; VARS * &gt; auxvars)</td></tr>
-<tr class="memdesc:a4cf9c5d3b2e9ba9a56831b1f48f1cef4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classSlothNLFormIntegrator.html#a4cf9c5d3b2e9ba9a56831b1f48f1cef4" title="Construct a new SlothNLFormIntegrator::SlothNLFormIntegrator object.">SlothNLFormIntegrator::SlothNLFormIntegrator</a> object.  <a href="classSlothNLFormIntegrator.html#a4cf9c5d3b2e9ba9a56831b1f48f1cef4">More...</a><br /></td></tr>
-<tr class="separator:a4cf9c5d3b2e9ba9a56831b1f48f1cef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba029afbaf3ab62a80e46e309d188f75"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#aba029afbaf3ab62a80e46e309d188f75">~SlothNLFormIntegrator</a> ()</td></tr>
-<tr class="memdesc:aba029afbaf3ab62a80e46e309d188f75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classSlothNLFormIntegrator.html#a4cf9c5d3b2e9ba9a56831b1f48f1cef4" title="Construct a new SlothNLFormIntegrator::SlothNLFormIntegrator object.">SlothNLFormIntegrator::SlothNLFormIntegrator</a> object.  <a href="classSlothNLFormIntegrator.html#aba029afbaf3ab62a80e46e309d188f75">More...</a><br /></td></tr>
-<tr class="separator:aba029afbaf3ab62a80e46e309d188f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2d86746433da87c39a821ebb0e4e3d9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#ad2d86746433da87c39a821ebb0e4e3d9">init</a> ()=0</td></tr>
+<tr class="separator:ad2d86746433da87c39a821ebb0e4e3d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d9c59b3a5536390605bef1a658213d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a6d9c59b3a5536390605bef1a658213d2">SlothNLFormIntegrator</a> (const std::vector&lt; mfem::ParGridFunction &gt; u_old, const std::vector&lt; mfem::ParGridFunction &gt; aux_old, const <a class="el" href="classParameters.html">Parameters</a> &amp;params, std::vector&lt; VARS * &gt; auxvars, const std::vector&lt; <a class="el" href="classCoefficients.html">Coefficients</a> &gt; &amp;coefficients)</td></tr>
+<tr class="separator:a6d9c59b3a5536390605bef1a658213d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3eca7154052050a8652e4f65da256039"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a3eca7154052050a8652e4f65da256039">~SlothNLFormIntegrator</a> ()=default</td></tr>
+<tr class="separator:a3eca7154052050a8652e4f65da256039"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a31d58b855462a8fb4e93f191b426b07c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; mfem::ParGridFunction &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a31d58b855462a8fb4e93f191b426b07c">get_aux_gf</a> ()</td></tr>
-<tr class="memdesc:a31d58b855462a8fb4e93f191b426b07c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a vector of GridFunction associated with auxiliary variables.  <a href="classSlothNLFormIntegrator.html#a31d58b855462a8fb4e93f191b426b07c">More...</a><br /></td></tr>
-<tr class="separator:a31d58b855462a8fb4e93f191b426b07c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33910e73d9230438602936dade46e458"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; std::string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a33910e73d9230438602936dade46e458">get_aux_infos</a> ()</td></tr>
-<tr class="memdesc:a33910e73d9230438602936dade46e458"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a vector of the additional information (vector of string) associated with auxiliary variables.  <a href="classSlothNLFormIntegrator.html#a33910e73d9230438602936dade46e458">More...</a><br /></td></tr>
-<tr class="separator:a33910e73d9230438602936dade46e458"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfe86f09f35b0f9b279ed0ea0e66a205"><td class="memItemLeft" align="right" valign="top">std::vector&lt; mfem::Vector &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#abfe86f09f35b0f9b279ed0ea0e66a205">get_aux_old_gf</a> ()</td></tr>
-<tr class="memdesc:abfe86f09f35b0f9b279ed0ea0e66a205"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a vector of GridFunction associated with auxiliary variables at the previous time-step.  <a href="classSlothNLFormIntegrator.html#abfe86f09f35b0f9b279ed0ea0e66a205">More...</a><br /></td></tr>
-<tr class="separator:abfe86f09f35b0f9b279ed0ea0e66a205"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e61d615ff5c4371333d8cc4afb96e1d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a6e61d615ff5c4371333d8cc4afb96e1d">AssembleElementGrad</a> (const mfem::Array&lt; const mfem::FiniteElement * &gt; &amp;el, mfem::ElementTransformation &amp;Tr, const mfem::Array&lt; const mfem::Vector * &gt; &amp;elfun, const mfem::Array2D&lt; mfem::DenseMatrix * &gt; &amp;elmat)=0</td></tr>
+<tr class="separator:a6e61d615ff5c4371333d8cc4afb96e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc81cb91fb56722f9ca6b986b55c0680"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#abc81cb91fb56722f9ca6b986b55c0680">AssembleElementVector</a> (const mfem::Array&lt; const mfem::FiniteElement * &gt; &amp;el, mfem::ElementTransformation &amp;Tr, const mfem::Array&lt; const mfem::Vector * &gt; &amp;elfun, const mfem::Array&lt; mfem::Vector * &gt; &amp;elvect)=0</td></tr>
+<tr class="separator:abc81cb91fb56722f9ca6b986b55c0680"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91695d51c2a9e35b25a82128f9d68894"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a91695d51c2a9e35b25a82128f9d68894">check_coefficient_types</a> (std::list&lt; <a class="el" href="Glossary_8hpp.html#a1204ef61577dbf022e130de662bc755a">GlossaryType</a> &gt; expected_type)</td></tr>
+<tr class="separator:a91695d51c2a9e35b25a82128f9d68894"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1b9ee1ec6bcc316d0e6188625537120"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#ae1b9ee1ec6bcc316d0e6188625537120">compute_coefficient</a> (<a class="el" href="classCoefficient.html">Coefficient</a> coef, const std::span&lt; const double &gt; &amp;values, const std::span&lt; const double &gt; &amp;aux_values)</td></tr>
+<tr class="separator:ae1b9ee1ec6bcc316d0e6188625537120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6adf3d85add425bdc2484058e830ff99"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a6adf3d85add425bdc2484058e830ff99">compute_gradient_coefficient</a> (<a class="el" href="classCoefficient.html">Coefficient</a> coef, const int blk, const std::span&lt; const double &gt; &amp;values, const std::span&lt; const double &gt; &amp;aux_values)</td></tr>
+<tr class="separator:a6adf3d85add425bdc2484058e830ff99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a223e286bfa63f83a5a0d12ebe73b872c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a223e286bfa63f83a5a0d12ebe73b872c">compute_hessian_coefficient</a> (<a class="el" href="classCoefficient.html">Coefficient</a> coef, const int iblk, const int jblk, const std::span&lt; const double &gt; &amp;values, const std::span&lt; const double &gt; &amp;aux_values)</td></tr>
+<tr class="separator:a223e286bfa63f83a5a0d12ebe73b872c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6a7fae0e0cc9b09ef54f4b6673c1439"><td class="memItemLeft" align="right" valign="top">std::vector&lt; mfem::ParGridFunction &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#ae6a7fae0e0cc9b09ef54f4b6673c1439">get_aux_gf</a> ()</td></tr>
+<tr class="separator:ae6a7fae0e0cc9b09ef54f4b6673c1439"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b1405fedb8b06f25a4f99ff8fd43a8f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; std::string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a6b1405fedb8b06f25a4f99ff8fd43a8f">get_aux_infos</a> ()</td></tr>
+<tr class="separator:a6b1405fedb8b06f25a4f99ff8fd43a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd6cc4c7a0a02435c1c157bfeb655a8f"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classCoefficient.html">Coefficient</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#abd6cc4c7a0a02435c1c157bfeb655a8f">get_coefficient</a> (const int blk, <a class="el" href="Glossary_8hpp.html#a1204ef61577dbf022e130de662bc755a">GlossaryType</a> type, unsigned int id, std::optional&lt; int &gt; bdr_id=std::nullopt)</td></tr>
+<tr class="separator:abd6cc4c7a0a02435c1c157bfeb655a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9074a960dd8e8af4175d2c1e0dfdbafd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a9074a960dd8e8af4175d2c1e0dfdbafd">get_coefficients</a> ()=0</td></tr>
+<tr class="separator:a9074a960dd8e8af4175d2c1e0dfdbafd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr class="memitem:a12cff5a7745edf7611bbcbbd3e4ccf44"><td class="memItemLeft" align="right" valign="top">std::vector&lt; mfem::ParGridFunction &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a12cff5a7745edf7611bbcbbd3e4ccf44">aux_gf_</a></td></tr>
+<tr class="separator:a12cff5a7745edf7611bbcbbd3e4ccf44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a828c57f4004006c8bbb2cd979378e0a6"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; std::string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a828c57f4004006c8bbb2cd979378e0a6">aux_infos_</a></td></tr>
+<tr class="separator:a828c57f4004006c8bbb2cd979378e0a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaf6b8e1a193e3afb9718f7af373efa5"><td class="memItemLeft" align="right" valign="top">std::vector&lt; mfem::ParGridFunction &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#adaf6b8e1a193e3afb9718f7af373efa5">aux_old_gf_</a></td></tr>
+<tr class="separator:adaf6b8e1a193e3afb9718f7af373efa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c77ea694c8462fb42362e0e5fa1bdca"><td class="memItemLeft" align="right" valign="top">std::vector&lt; VARS * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a2c77ea694c8462fb42362e0e5fa1bdca">auxvariables_</a></td></tr>
 <tr class="separator:a2c77ea694c8462fb42362e0e5fa1bdca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a066a0e84e74fb7b242f6e480066f69cd"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classParameters.html">Parameters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a066a0e84e74fb7b242f6e480066f69cd">params_</a></td></tr>
-<tr class="separator:a066a0e84e74fb7b242f6e480066f69cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfe04714eaa948c0eb0a9eb009d6c516"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classCoefficients.html">Coefficients</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#acfe04714eaa948c0eb0a9eb009d6c516">coefficients_</a></td></tr>
+<tr class="separator:acfe04714eaa948c0eb0a9eb009d6c516"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8723abe42a5e62f51f0ac7a9fa66742"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#af8723abe42a5e62f51f0ac7a9fa66742">integrator_name_</a> = &quot;&quot;</td></tr>
+<tr class="separator:af8723abe42a5e62f51f0ac7a9fa66742"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09c34b31eddb940c0ba3b7a0ca3e24e5"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a09c34b31eddb940c0ba3b7a0ca3e24e5">nb_blk_</a></td></tr>
+<tr class="separator:a09c34b31eddb940c0ba3b7a0ca3e24e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a763b47aba2c679bd8be07a5dc8c49859"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classParameters.html">Parameters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a763b47aba2c679bd8be07a5dc8c49859">params_</a></td></tr>
+<tr class="separator:a763b47aba2c679bd8be07a5dc8c49859"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd5a49c6bb8ac06c4172c37d6702b39d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; mfem::ParGridFunction &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#abd5a49c6bb8ac06c4172c37d6702b39d">u_old_</a></td></tr>
+<tr class="separator:abd5a49c6bb8ac06c4172c37d6702b39d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class VARS&gt;<br />
@@ -129,10 +154,10 @@ class SlothNLFormIntegrator&lt; VARS &gt;</h3>
 
 <p>Class prodiving common methods to all NLFormIntegrators. </p>
 
-<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00046">46</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00051">51</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a4cf9c5d3b2e9ba9a56831b1f48f1cef4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4cf9c5d3b2e9ba9a56831b1f48f1cef4">&#9670;&nbsp;</a></span>SlothNLFormIntegrator()</h2>
+<a id="a6d9c59b3a5536390605bef1a658213d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d9c59b3a5536390605bef1a658213d2">&#9670;&nbsp;</a></span>SlothNLFormIntegrator()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -142,6 +167,18 @@ template&lt;class VARS &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::<a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a> </td>
           <td>(</td>
+          <td class="paramtype">const std::vector&lt; mfem::ParGridFunction &gt;&#160;</td>
+          <td class="paramname"><em>u_old</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; mfem::ParGridFunction &gt;&#160;</td>
+          <td class="paramname"><em>aux_old</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const <a class="el" href="classParameters.html">Parameters</a> &amp;&#160;</td>
           <td class="paramname"><em>params</em>, </td>
         </tr>
@@ -149,7 +186,13 @@ template&lt;class VARS &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::vector&lt; VARS * &gt;&#160;</td>
-          <td class="paramname"><em>auxvars</em>&#160;</td>
+          <td class="paramname"><em>auxvars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classCoefficients.html">Coefficients</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>coefficients</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -159,54 +202,38 @@ template&lt;class VARS &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classSlothNLFormIntegrator.html#a4cf9c5d3b2e9ba9a56831b1f48f1cef4" title="Construct a new SlothNLFormIntegrator::SlothNLFormIntegrator object.">SlothNLFormIntegrator::SlothNLFormIntegrator</a> object. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">VARS</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">params</td><td></td></tr>
-    <tr><td class="paramname">auxvars</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00078">78</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
-
 </div>
 </div>
-<a id="aba029afbaf3ab62a80e46e309d188f75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba029afbaf3ab62a80e46e309d188f75">&#9670;&nbsp;</a></span>~SlothNLFormIntegrator()</h2>
+<a id="a3eca7154052050a8652e4f65da256039"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3eca7154052050a8652e4f65da256039">&#9670;&nbsp;</a></span>~SlothNLFormIntegrator()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::~<a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a></td>
+          <td class="memname">virtual <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::~<a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p>Destroy the <a class="el" href="classSlothNLFormIntegrator.html#a4cf9c5d3b2e9ba9a56831b1f48f1cef4" title="Construct a new SlothNLFormIntegrator::SlothNLFormIntegrator object.">SlothNLFormIntegrator::SlothNLFormIntegrator</a> object. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">VARS</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00154">154</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a31d58b855462a8fb4e93f191b426b07c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31d58b855462a8fb4e93f191b426b07c">&#9670;&nbsp;</a></span>get_aux_gf()</h2>
+<a id="a6e61d615ff5c4371333d8cc4afb96e1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e61d615ff5c4371333d8cc4afb96e1d">&#9670;&nbsp;</a></span>AssembleElementGrad()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -217,41 +244,48 @@ template&lt;class VARS &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; mfem::ParGridFunction &gt; <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::get_aux_gf</td>
+          <td class="memname">virtual void <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::AssembleElementGrad </td>
+          <td>(</td>
+          <td class="paramtype">const mfem::Array&lt; const mfem::FiniteElement * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>el</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mfem::ElementTransformation &amp;&#160;</td>
+          <td class="paramname"><em>Tr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mfem::Array&lt; const mfem::Vector * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>elfun</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mfem::Array2D&lt; mfem::DenseMatrix * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>elmat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Return a vector of GridFunction associated with auxiliary variables. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>Order of the vector is implicitly the same as the order of auxiliary variables</dd></dl>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">VARS</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;mfem::ParGridFunction&gt; </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00117">117</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="DiffusionNLFormIntegrator_8hpp_source.html#l00152">DiffusionNLFormIntegrator&lt; VARS, SCHEME, DIFFU_NAME &gt;::DiffusionNLFormIntegrator()</a>, and <a class="el" href="HeatNLFormIntegrator_8hpp_source.html#l00150">HeatNLFormIntegrator&lt; VARS, SCHEME, COND_NAME &gt;::HeatNLFormIntegrator()</a>.</p>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classSlothNLFormIntegrator_a31d58b855462a8fb4e93f191b426b07c_icgraph.svg" width="459" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<p>Implemented in <a class="el" href="classTimeNLFormIntegrator.html#a66da28ec80d506cfd00cee2b93f5778c">TimeNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classTimeCHNLFormIntegrator.html#a086e09611e6c9d08ea0192bb156f134b">TimeCHNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classRobinNLFormIntegrator.html#a453640c32db165367a8646a9ba417025">RobinNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classMeltingBaseNLFormIntegrator.html#a48d3db4533465bff96de77a747c3fa3e">MeltingBaseNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classLatentHeatNLFormIntegrator.html#af44e125015cf156cba86bc10dc6e1afd">LatentHeatNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classCahnHilliardNLFormIntegrator.html#a6fbd33145250fad4f027be41a7705338">CahnHilliardNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classBlockAllenCahnNLFormIntegrator.html#abe87b3966b73dad6226cf934bf8b1350">BlockAllenCahnNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classAllenCahnNLFormIntegrator.html#abf8463d23097850b6172f16a204bc6b0">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classAllenCahnGrainNLFormIntegrator.html#a64a5f5d92b7a2db365c23ea104ad2b78">AllenCahnGrainNLFormIntegrator&lt; VARS, SCHEME, ENERGY, MOBI &gt;</a>, <a class="el" href="classDiffusionNLFormIntegrator.html#ae7d60046c3a9e917e04aca5aa36db921">DiffusionNLFormIntegrator&lt; VARS &gt;</a>, and <a class="el" href="classDiffusionFluxNLFormIntegrator.html#a3d17603ee113763a68076bd5f41ecc99">DiffusionFluxNLFormIntegrator&lt; VARS &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a33910e73d9230438602936dade46e458"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33910e73d9230438602936dade46e458">&#9670;&nbsp;</a></span>get_aux_infos()</h2>
+<a id="abc81cb91fb56722f9ca6b986b55c0680"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc81cb91fb56722f9ca6b986b55c0680">&#9670;&nbsp;</a></span>AssembleElementVector()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -262,43 +296,48 @@ template&lt;class VARS &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; std::vector&lt; std::string &gt; &gt; <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::get_aux_infos</td>
+          <td class="memname">virtual void <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::AssembleElementVector </td>
+          <td>(</td>
+          <td class="paramtype">const mfem::Array&lt; const mfem::FiniteElement * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>el</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mfem::ElementTransformation &amp;&#160;</td>
+          <td class="paramname"><em>Tr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mfem::Array&lt; const mfem::Vector * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>elfun</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mfem::Array&lt; mfem::Vector * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>elvect</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Return a vector of the additional information (vector of string) associated with auxiliary variables. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>Order of the vector is implicitly the same as the order of auxiliary variables </dd>
-<dd>
-The last element of the vector is the name of the variable</dd></dl>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">VARS</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::vector&lt;std::string&gt;&gt; </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00144">144</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="DiffusionNLFormIntegrator_8hpp_source.html#l00152">DiffusionNLFormIntegrator&lt; VARS, SCHEME, DIFFU_NAME &gt;::DiffusionNLFormIntegrator()</a>, and <a class="el" href="HeatNLFormIntegrator_8hpp_source.html#l00150">HeatNLFormIntegrator&lt; VARS, SCHEME, COND_NAME &gt;::HeatNLFormIntegrator()</a>.</p>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classSlothNLFormIntegrator_a33910e73d9230438602936dade46e458_icgraph.svg" width="459" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<p>Implemented in <a class="el" href="classDiffusionNLFormIntegrator.html#a6db8a77e42ae73b0c24ea6b97c4b701b">DiffusionNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classDiffusionFluxNLFormIntegrator.html#add41308abf2f920f6d3fa6a11ddefae6">DiffusionFluxNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classTimeNLFormIntegrator.html#a0291671b310ab18e948e0fee8de8ec25">TimeNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classTimeCHNLFormIntegrator.html#abf68e9118f68f2cc1e74ecb5cd774150">TimeCHNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classRobinNLFormIntegrator.html#a860c82e8797f439118fb003026b43ca0">RobinNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classMeltingBaseNLFormIntegrator.html#a15361822fe21889dba30b304cf29b801">MeltingBaseNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classLatentHeatNLFormIntegrator.html#adc2c8cb1abdf1ba4b897f729b0d169dc">LatentHeatNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classCahnHilliardNLFormIntegrator.html#a66011858f6d07fbd76182b3df929e0fa">CahnHilliardNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classBlockAllenCahnNLFormIntegrator.html#a8ed62c868323f728994b0cd6c7369119">BlockAllenCahnNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classAllenCahnNLFormIntegrator.html#ace2daaf8ea82b18786cdfa6d8194ad43">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>, and <a class="el" href="classAllenCahnGrainNLFormIntegrator.html#a608a831017fc9ef1b79d494f2bd80972">AllenCahnGrainNLFormIntegrator&lt; VARS, SCHEME, ENERGY, MOBI &gt;</a>.</p>
 
 </div>
 </div>
-<a id="abfe86f09f35b0f9b279ed0ea0e66a205"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfe86f09f35b0f9b279ed0ea0e66a205">&#9670;&nbsp;</a></span>get_aux_old_gf()</h2>
+<a id="a91695d51c2a9e35b25a82128f9d68894"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91695d51c2a9e35b25a82128f9d68894">&#9670;&nbsp;</a></span>check_coefficient_types()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -309,7 +348,11 @@ template&lt;class VARS &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; mfem::Vector &gt; <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::get_aux_old_gf</td>
+          <td class="memname">void <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::check_coefficient_types </td>
+          <td>(</td>
+          <td class="paramtype">std::list&lt; <a class="el" href="Glossary_8hpp.html#a1204ef61577dbf022e130de662bc755a">GlossaryType</a> &gt;&#160;</td>
+          <td class="paramname"><em>expected_type</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -319,30 +362,399 @@ template&lt;class VARS &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Return a vector of GridFunction associated with auxiliary variables at the previous time-step. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>Order of the vector is implicitly the same as the order of auxiliary variables</dd></dl>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">VARS</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;mfem::ParGridFunction&gt; </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00130">130</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="DiffusionNLFormIntegrator_8hpp_source.html#l00152">DiffusionNLFormIntegrator&lt; VARS, SCHEME, DIFFU_NAME &gt;::DiffusionNLFormIntegrator()</a>, and <a class="el" href="HeatNLFormIntegrator_8hpp_source.html#l00150">HeatNLFormIntegrator&lt; VARS, SCHEME, COND_NAME &gt;::HeatNLFormIntegrator()</a>.</p>
-<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classSlothNLFormIntegrator_abfe86f09f35b0f9b279ed0ea0e66a205_icgraph.svg" width="459" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
+<a id="ae1b9ee1ec6bcc316d0e6188625537120"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1b9ee1ec6bcc316d0e6188625537120">&#9670;&nbsp;</a></span>compute_coefficient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::compute_coefficient </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classCoefficient.html">Coefficient</a>&#160;</td>
+          <td class="paramname"><em>coef</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::span&lt; const double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>values</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::span&lt; const double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>aux_values</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6adf3d85add425bdc2484058e830ff99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6adf3d85add425bdc2484058e830ff99">&#9670;&nbsp;</a></span>compute_gradient_coefficient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::compute_gradient_coefficient </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classCoefficient.html">Coefficient</a>&#160;</td>
+          <td class="paramname"><em>coef</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>blk</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::span&lt; const double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>values</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::span&lt; const double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>aux_values</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a223e286bfa63f83a5a0d12ebe73b872c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a223e286bfa63f83a5a0d12ebe73b872c">&#9670;&nbsp;</a></span>compute_hessian_coefficient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::compute_hessian_coefficient </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classCoefficient.html">Coefficient</a>&#160;</td>
+          <td class="paramname"><em>coef</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>iblk</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>jblk</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::span&lt; const double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>values</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::span&lt; const double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>aux_values</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae6a7fae0e0cc9b09ef54f4b6673c1439"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6a7fae0e0cc9b09ef54f4b6673c1439">&#9670;&nbsp;</a></span>get_aux_gf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;mfem::ParGridFunction&gt; <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::get_aux_gf </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6b1405fedb8b06f25a4f99ff8fd43a8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b1405fedb8b06f25a4f99ff8fd43a8f">&#9670;&nbsp;</a></span>get_aux_infos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;std::string&gt; &gt; <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::get_aux_infos </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abd6cc4c7a0a02435c1c157bfeb655a8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd6cc4c7a0a02435c1c157bfeb655a8f">&#9670;&nbsp;</a></span>get_coefficient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt;<a class="el" href="classCoefficient.html">Coefficient</a>&gt; <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::get_coefficient </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>blk</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Glossary_8hpp.html#a1204ef61577dbf022e130de662bc755a">GlossaryType</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::optional&lt; int &gt;&#160;</td>
+          <td class="paramname"><em>bdr_id</em> = <code>std::nullopt</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9074a960dd8e8af4175d2c1e0dfdbafd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9074a960dd8e8af4175d2c1e0dfdbafd">&#9670;&nbsp;</a></span>get_coefficients()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::get_coefficients </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classDiffusionNLFormIntegrator.html#aa46b8fb6609282da485554494fa0de92">DiffusionNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classTimeNLFormIntegrator.html#a540cfdf1b186168bdc3308ff3da69b6f">TimeNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classTimeCHNLFormIntegrator.html#ae4a553f4965b002c5653e6a65a0aa064">TimeCHNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classRobinNLFormIntegrator.html#acc307518ab52f3742ab33bb2459423ed">RobinNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classNeumannNLFormIntegrator.html#a71919030313b94bf6ea5ee6573aeae63">NeumannNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classMeltingBaseNLFormIntegrator.html#a5e12e476d1423f160d007ca977a78442">MeltingBaseNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classLatentHeatNLFormIntegrator.html#a074afc19a6717754dd347809d160b154">LatentHeatNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classHeatTimeNLFormIntegrator.html#aa99af04fa85f8f05fbf1815ea739fce4">HeatTimeNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classFourierNLFormIntegrator.html#a77ef0aea0e49c34b77141ed38889b8ed">FourierNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classFickNLFormIntegrator.html#a4d2f5982836b27b0a5c5c7560ce865ec">FickNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classDiffusionFluxNLFormIntegrator.html#aec79b94d096d7f4cf762780f897805a1">DiffusionFluxNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classCahnHilliardNLFormIntegrator.html#a7b5e9d32a258c56d61fff413231705e2">CahnHilliardNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classBlockAllenCahnNLFormIntegrator.html#a36febf76e26164c1096d35bfbf389b48">BlockAllenCahnNLFormIntegrator&lt; VARS &gt;</a>, and <a class="el" href="classAllenCahnNLFormIntegrator.html#add6c732fbc7414b62294fc3dbb5b9602">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>.</p>
+
+</div>
+</div>
+<a id="ad2d86746433da87c39a821ebb0e4e3d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2d86746433da87c39a821ebb0e4e3d9">&#9670;&nbsp;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classTimeNLFormIntegrator.html#a261f6aa569c20d8018ad97b00e095f58">TimeNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classTimeCHNLFormIntegrator.html#a4e6e3c86526218dda0474309311a739c">TimeCHNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classRobinNLFormIntegrator.html#af43d2497a223149e13d44f81df4fd2a4">RobinNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classMeltingBaseNLFormIntegrator.html#a7b8ffc05cd6358be205f38c8760dad0c">MeltingBaseNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classLatentHeatNLFormIntegrator.html#aa462a48bfb9b2b31257edb3db76dd1a1">LatentHeatNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classDiffusionNLFormIntegrator.html#a3d2e5cfe47fdef53aef222c72ef4e416">DiffusionNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classDiffusionFluxNLFormIntegrator.html#a47c3eddefb36bb76c7ae523e31dd0656">DiffusionFluxNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classCahnHilliardNLFormIntegrator.html#a514a1edeacb1613446173443e5a55c62">CahnHilliardNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classBlockAllenCahnNLFormIntegrator.html#a65d517ef4d9212f7153497a0d992cf50">BlockAllenCahnNLFormIntegrator&lt; VARS &gt;</a>, and <a class="el" href="classAllenCahnNLFormIntegrator.html#a49e62c612719b5c6e2049a6a16790347">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a12cff5a7745edf7611bbcbbd3e4ccf44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12cff5a7745edf7611bbcbbd3e4ccf44">&#9670;&nbsp;</a></span>aux_gf_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;mfem::ParGridFunction&gt; <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::aux_gf_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00072">72</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a828c57f4004006c8bbb2cd979378e0a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a828c57f4004006c8bbb2cd979378e0a6">&#9670;&nbsp;</a></span>aux_infos_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::vector&lt;std::string&gt; &gt; <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::aux_infos_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00074">74</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
+
+</div>
+</div>
+<a id="adaf6b8e1a193e3afb9718f7af373efa5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaf6b8e1a193e3afb9718f7af373efa5">&#9670;&nbsp;</a></span>aux_old_gf_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;mfem::ParGridFunction&gt; <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::aux_old_gf_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00073">73</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a2c77ea694c8462fb42362e0e5fa1bdca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2c77ea694c8462fb42362e0e5fa1bdca">&#9670;&nbsp;</a></span>auxvariables_</h2>
 
@@ -365,12 +777,12 @@ template&lt;class VARS &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00054">54</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00076">76</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a066a0e84e74fb7b242f6e480066f69cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a066a0e84e74fb7b242f6e480066f69cd">&#9670;&nbsp;</a></span>params_</h2>
+<a id="acfe04714eaa948c0eb0a9eb009d6c516"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfe04714eaa948c0eb0a9eb009d6c516">&#9670;&nbsp;</a></span>coefficients_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -381,7 +793,7 @@ template&lt;class VARS &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classParameters.html">Parameters</a> <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::params_</td>
+          <td class="memname">std::vector&lt;<a class="el" href="classCoefficients.html">Coefficients</a>&gt; <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::coefficients_</td>
         </tr>
       </table>
   </td>
@@ -391,7 +803,111 @@ template&lt;class VARS &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00055">55</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00078">78</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af8723abe42a5e62f51f0ac7a9fa66742"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8723abe42a5e62f51f0ac7a9fa66742">&#9670;&nbsp;</a></span>integrator_name_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::integrator_name_ = &quot;&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00059">59</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a09c34b31eddb940c0ba3b7a0ca3e24e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09c34b31eddb940c0ba3b7a0ca3e24e5">&#9670;&nbsp;</a></span>nb_blk_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::nb_blk_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00079">79</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a763b47aba2c679bd8be07a5dc8c49859"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a763b47aba2c679bd8be07a5dc8c49859">&#9670;&nbsp;</a></span>params_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classParameters.html">Parameters</a> <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::params_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00077">77</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
+
+</div>
+</div>
+<a id="abd5a49c6bb8ac06c4172c37d6702b39d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd5a49c6bb8ac06c4172c37d6702b39d">&#9670;&nbsp;</a></span>u_old_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;mfem::ParGridFunction&gt; <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::u_old_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00071">71</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
 
 </div>
 </div>
@@ -401,7 +917,7 @@ template&lt;class VARS &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 15:39:07 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

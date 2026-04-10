@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SLOTH: OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt; Class Template Reference</title>
+<title>SLOTH: OperatorBase&lt; T, DIM &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,9 +25,9 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v2.0.0</span>
    </div>
-   <div id="projectbrief">PhaseField solver</div>
+   <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
  </tr>
  </tbody>
@@ -72,7 +72,7 @@ $(function() {
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classOperatorBase-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">OperatorBase&lt; T, DIM &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -81,234 +81,215 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for OperatorBase&lt; T, DIM &gt;:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classOperatorBase__inherit__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classOperatorBase__inherit__graph.svg" width="350" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;:</div>
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for OperatorBase&lt; T, DIM &gt;:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classOperatorBase__coll__graph.svg" width="392" height="156"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classOperatorBase__coll__graph.svg" width="407" height="156"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5c91ece08b6e3fbe26851ee815705c86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a5c91ece08b6e3fbe26851ee815705c86">clear_iso_time_specialized</a> ()</td></tr>
-<tr class="memdesc:a5c91ece08b6e3fbe26851ee815705c86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear time_iso_specialized_ container.  <a href="classOperatorBase.html#a5c91ece08b6e3fbe26851ee815705c86">More...</a><br /></td></tr>
-<tr class="separator:a5c91ece08b6e3fbe26851ee815705c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32f383de71a3c81b7907116a10403f0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a32f383de71a3c81b7907116a10403f0f">clear_time_specialized</a> ()</td></tr>
-<tr class="memdesc:a32f383de71a3c81b7907116a10403f0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear time_specialized_ container.  <a href="classOperatorBase.html#a32f383de71a3c81b7907116a10403f0f">More...</a><br /></td></tr>
-<tr class="separator:a32f383de71a3c81b7907116a10403f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a575a797897c7816dc16d22e658e618af"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a575a797897c7816dc16d22e658e618af">ComputeEnergies</a> (const int &amp;it, const double &amp;dt, const double &amp;t, const std::vector&lt; mfem::Vector &gt; &amp;u)=0</td></tr>
-<tr class="separator:a575a797897c7816dc16d22e658e618af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8bc324e6179cfa9c5479bddd7c895b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#af8bc324e6179cfa9c5479bddd7c895b2">ComputeError</a> (const int &amp;it, const double &amp;t, const double &amp;dt, const int id_var, const std::string &amp;name, const mfem::Vector &amp;u, std::function&lt; double(const mfem::Vector &amp;, double)&gt; solution_func)</td></tr>
-<tr class="memdesc:af8bc324e6179cfa9c5479bddd7c895b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute L2 error.  <a href="classOperatorBase.html#af8bc324e6179cfa9c5479bddd7c895b2">More...</a><br /></td></tr>
-<tr class="separator:af8bc324e6179cfa9c5479bddd7c895b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4283c6b49189a413ba3e55dc8a1c5ff2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a4283c6b49189a413ba3e55dc8a1c5ff2">ComputeIntegral</a> (const int &amp;it, const double &amp;t, const double &amp;dt, const int id_var, const std::string &amp;name, const mfem::Vector &amp;u, const double lower_bound, const double upper_bound)</td></tr>
-<tr class="memdesc:a4283c6b49189a413ba3e55dc8a1c5ff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute integrals of a variable over the domain.  <a href="classOperatorBase.html#a4283c6b49189a413ba3e55dc8a1c5ff2">More...</a><br /></td></tr>
-<tr class="separator:a4283c6b49189a413ba3e55dc8a1c5ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8cc466eb4bb6b3af07705815520e6fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#af8cc466eb4bb6b3af07705815520e6fb">ComputeIsoVal</a> (const int &amp;it, const double &amp;t, const double &amp;dt, const int var_id, const std::string &amp;var_name, const mfem::Vector &amp;u, const double &amp;iso_value)</td></tr>
-<tr class="memdesc:af8cc466eb4bb6b3af07705815520e6fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the position of an isovalue.  <a href="classOperatorBase.html#af8cc466eb4bb6b3af07705815520e6fb">More...</a><br /></td></tr>
-<tr class="separator:af8cc466eb4bb6b3af07705815520e6fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebf9c30d287ed02e66637e87f8fc666e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#aebf9c30d287ed02e66637e87f8fc666e">get_description</a> ()</td></tr>
-<tr class="separator:aebf9c30d287ed02e66637e87f8fc666e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4f32eb8b435554fab93b0028bf4969f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ad4f32eb8b435554fab93b0028bf4969f">get_parameters</a> ()=0</td></tr>
-<tr class="separator:ad4f32eb8b435554fab93b0028bf4969f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab59707453a087ec79d1ade168bc03889"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ab59707453a087ec79d1ade168bc03889">get_source_term</a> (const int id_block, const std::function&lt; double(const mfem::Vector &amp;, double)&gt; &amp;src_func, mfem::Vector &amp;source_term, mfem::ParLinearForm *RHHS) const</td></tr>
-<tr class="memdesc:ab59707453a087ec79d1ade168bc03889"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the source term by equation of the PDEs.  <a href="classOperatorBase.html#ab59707453a087ec79d1ade168bc03889">More...</a><br /></td></tr>
-<tr class="separator:ab59707453a087ec79d1ade168bc03889"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d81127ea03f3f9acbee66f22fb6d6b1"><td class="memItemLeft" align="right" valign="top">const std::map&lt; std::string, std::multimap&lt; <a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a0d81127ea03f3f9acbee66f22fb6d6b1">get_time_iso_specialized</a> () const</td></tr>
-<tr class="memdesc:a0d81127ea03f3f9acbee66f22fb6d6b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a of a multimap of integral values calculated at a given iteration (see computeEnergies and computeError)  <a href="classOperatorBase.html#a0d81127ea03f3f9acbee66f22fb6d6b1">More...</a><br /></td></tr>
-<tr class="separator:a0d81127ea03f3f9acbee66f22fb6d6b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac74aa7d897b8444e2790569cdeb93046"><td class="memItemLeft" align="right" valign="top">const std::multimap&lt; <a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ac74aa7d897b8444e2790569cdeb93046">get_time_specialized</a> () const</td></tr>
-<tr class="memdesc:ac74aa7d897b8444e2790569cdeb93046"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a of a multimap of integral values calculated at a given iteration (see computeEnergies and computeError)  <a href="classOperatorBase.html#ac74aa7d897b8444e2790569cdeb93046">More...</a><br /></td></tr>
-<tr class="separator:ac74aa7d897b8444e2790569cdeb93046"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab610e1c53fc27ec56ecab45c226be49c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ab610e1c53fc27ec56ecab45c226be49c">initialize</a> (const double &amp;initial_time, <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &amp;vars, std::vector&lt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; * &gt; auxvars)</td></tr>
-<tr class="memdesc:ab610e1c53fc27ec56ecab45c226be49c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization stage (call by imeDiscretization&lt;PST, OPE, VAR&gt;::initialize())  <a href="classOperatorBase.html#ab610e1c53fc27ec56ecab45c226be49c">More...</a><br /></td></tr>
-<tr class="separator:ab610e1c53fc27ec56ecab45c226be49c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfa1bf7d14e46915bd8c5476e4b0356e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#acfa1bf7d14e46915bd8c5476e4b0356e">OperatorBase</a> (std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt; spatials)</td></tr>
-<tr class="memdesc:acfa1bf7d14e46915bd8c5476e4b0356e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classOperatorBase.html" title="Base class for building Steady and TimeDependent PhaseFieldOperators.">OperatorBase</a> object.  <a href="classOperatorBase.html#acfa1bf7d14e46915bd8c5476e4b0356e">More...</a><br /></td></tr>
-<tr class="separator:acfa1bf7d14e46915bd8c5476e4b0356e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f7ae7e469bee89ecb390932baf467f9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a4f7ae7e469bee89ecb390932baf467f9">OperatorBase</a> (std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt; spatials, const <a class="el" href="classParameters.html">Parameters</a> &amp;params)</td></tr>
-<tr class="memdesc:a4f7ae7e469bee89ecb390932baf467f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classOperatorBase.html" title="Base class for building Steady and TimeDependent PhaseFieldOperators.">OperatorBase</a> object.  <a href="classOperatorBase.html#a4f7ae7e469bee89ecb390932baf467f9">More...</a><br /></td></tr>
-<tr class="separator:a4f7ae7e469bee89ecb390932baf467f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4fb69ee694d4bc53bedc586ed71c9b7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ab4fb69ee694d4bc53bedc586ed71c9b7">OperatorBase</a> (std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt; spatials, const <a class="el" href="classParameters.html">Parameters</a> &amp;params, const std::vector&lt; <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt;&gt; &amp;source_term_name)</td></tr>
-<tr class="memdesc:ab4fb69ee694d4bc53bedc586ed71c9b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Phase Field Operator Base&lt; T,  DIM, NLFI&gt;:: Phase Field Operator Base object.  <a href="classOperatorBase.html#ab4fb69ee694d4bc53bedc586ed71c9b7">More...</a><br /></td></tr>
-<tr class="separator:ab4fb69ee694d4bc53bedc586ed71c9b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02f13b6504514db86dda751ff61ca107"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a02f13b6504514db86dda751ff61ca107">OperatorBase</a> (std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt; spatials, const std::vector&lt; <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt;&gt; &amp;source_term_name)</td></tr>
-<tr class="memdesc:a02f13b6504514db86dda751ff61ca107"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classOperatorBase.html" title="Base class for building Steady and TimeDependent PhaseFieldOperators.">OperatorBase</a> object.  <a href="classOperatorBase.html#a02f13b6504514db86dda751ff61ca107">More...</a><br /></td></tr>
-<tr class="separator:a02f13b6504514db86dda751ff61ca107"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a908186fe49ea62e44392fa606d32c2ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a908186fe49ea62e44392fa606d32c2ce">overload_nl_solver</a> (<a class="el" href="SolversOptions_8hpp.html#a765a4007c12a84454a77f1a29ad04b4a">NLSolverType</a> NLSOLVER)</td></tr>
-<tr class="memdesc:a908186fe49ea62e44392fa606d32c2ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload the nonlinear algorithm.  <a href="classOperatorBase.html#a908186fe49ea62e44392fa606d32c2ce">More...</a><br /></td></tr>
-<tr class="separator:a908186fe49ea62e44392fa606d32c2ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af27e83ba05a13993fb7bf87b49a50d8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#af27e83ba05a13993fb7bf87b49a50d8c">overload_nl_solver</a> (<a class="el" href="SolversOptions_8hpp.html#a765a4007c12a84454a77f1a29ad04b4a">NLSolverType</a> NLSOLVER, const <a class="el" href="classParameters.html">Parameters</a> &amp;nl_params)</td></tr>
-<tr class="memdesc:af27e83ba05a13993fb7bf87b49a50d8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload <a class="el" href="classParameters.html">Parameters</a> associated with nonlinear algorithm.  <a href="classOperatorBase.html#af27e83ba05a13993fb7bf87b49a50d8c">More...</a><br /></td></tr>
-<tr class="separator:af27e83ba05a13993fb7bf87b49a50d8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa946e918dc7957ece22fe645220cf4b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#aa946e918dc7957ece22fe645220cf4b4">overload_preconditioner</a> (<a class="el" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a> PRECOND)</td></tr>
-<tr class="memdesc:aa946e918dc7957ece22fe645220cf4b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload the preconditioner used by the solver in the NL algorithm.  <a href="classOperatorBase.html#aa946e918dc7957ece22fe645220cf4b4">More...</a><br /></td></tr>
-<tr class="separator:aa946e918dc7957ece22fe645220cf4b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfc19e81dd6288858ea06269ce5c8185"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#abfc19e81dd6288858ea06269ce5c8185">overload_preconditioner</a> (<a class="el" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a> PRECOND, const <a class="el" href="classParameters.html">Parameters</a> &amp;p_params)</td></tr>
-<tr class="memdesc:abfc19e81dd6288858ea06269ce5c8185"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload the parameters of the preconditioner used by the solver in the NL algorithm.  <a href="classOperatorBase.html#abfc19e81dd6288858ea06269ce5c8185">More...</a><br /></td></tr>
-<tr class="separator:abfc19e81dd6288858ea06269ce5c8185"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4568000bbdef5898949208f566657354"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a4568000bbdef5898949208f566657354">overload_solver</a> (<a class="el" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a> SOLVER)</td></tr>
-<tr class="memdesc:a4568000bbdef5898949208f566657354"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload the default linear solver used for the LHS.  <a href="classOperatorBase.html#a4568000bbdef5898949208f566657354">More...</a><br /></td></tr>
-<tr class="separator:a4568000bbdef5898949208f566657354"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91d0e78db12ce4001c6312cc8921daed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a91d0e78db12ce4001c6312cc8921daed">overload_solver</a> (<a class="el" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a> SOLVER, const <a class="el" href="classParameters.html">Parameters</a> &amp;s_params)</td></tr>
-<tr class="memdesc:a91d0e78db12ce4001c6312cc8921daed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload the parameter for the linear solver used for the LHS.  <a href="classOperatorBase.html#a91d0e78db12ce4001c6312cc8921daed">More...</a><br /></td></tr>
-<tr class="separator:a91d0e78db12ce4001c6312cc8921daed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40d94f0057a98d045bcf11c5653a9684"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a40d94f0057a98d045bcf11c5653a9684">set_default_properties</a> ()=0</td></tr>
-<tr class="separator:a40d94f0057a98d045bcf11c5653a9684"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e8dcbb2025da9b0fb0dfe636df812d8"><td class="memItemLeft" align="right" valign="top">virtual NLFI *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a5e8dcbb2025da9b0fb0dfe636df812d8">set_nlfi_ptr</a> (const double dt, const std::vector&lt; mfem::Vector &gt; &amp;u)=0</td></tr>
-<tr class="separator:a5e8dcbb2025da9b0fb0dfe636df812d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a827c0763544a099d3531e040c8e7753d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a827c0763544a099d3531e040c8e7753d">SetConstantParameters</a> (const double dt, const std::vector&lt; mfem::Vector &gt; &amp;u_vect)=0</td></tr>
-<tr class="separator:a827c0763544a099d3531e040c8e7753d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc95f1b581c4122171c7fb02ddc9b9ed"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#adc95f1b581c4122171c7fb02ddc9b9ed">SetTransientParameters</a> (const double dt, const std::vector&lt; mfem::Vector &gt; &amp;u_vect)=0</td></tr>
-<tr class="separator:adc95f1b581c4122171c7fb02ddc9b9ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bb9151efc6da7566d63a0290cb7ad74"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a5bb9151efc6da7566d63a0290cb7ad74">solve</a> (std::vector&lt; std::unique_ptr&lt; mfem::Vector &gt;&gt; &amp;vect_unk, double &amp;next_time, const double &amp;current_time, double current_time_step, const int iter)=0</td></tr>
-<tr class="separator:a5bb9151efc6da7566d63a0290cb7ad74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe220e925a3ea9df3e9dd42d9ef706e9"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#abe220e925a3ea9df3e9dd42d9ef706e9">~OperatorBase</a> ()</td></tr>
-<tr class="memdesc:abe220e925a3ea9df3e9dd42d9ef706e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the Operator Base&lt;T, DIM,  NLFI&gt;:: Operator Base object.  <a href="classOperatorBase.html#abe220e925a3ea9df3e9dd42d9ef706e9">More...</a><br /></td></tr>
-<tr class="separator:abe220e925a3ea9df3e9dd42d9ef706e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a315548b258e51523a8a9001e602c58d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a315548b258e51523a8a9001e602c58d3">clear_iso_time_specialized</a> ()</td></tr>
+<tr class="separator:a315548b258e51523a8a9001e602c58d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54659db19141bbc2e173f5ad43d67953"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a54659db19141bbc2e173f5ad43d67953">clear_time_specialized</a> ()</td></tr>
+<tr class="separator:a54659db19141bbc2e173f5ad43d67953"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae93baf2d27e0dfe32475160076a0a4d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ae93baf2d27e0dfe32475160076a0a4d5">ComputeEnergies</a> (const int &amp;it, const double &amp;t, const double &amp;dt, const std::vector&lt; mfem::Vector &gt; &amp;u)</td></tr>
+<tr class="separator:ae93baf2d27e0dfe32475160076a0a4d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f4761d1f82d64d35ad8f3d8a0df7dea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a9f4761d1f82d64d35ad8f3d8a0df7dea">ComputeError</a> (const int &amp;it, const double &amp;t, const double &amp;dt, const int id_var, const std::string &amp;name, const mfem::Vector &amp;u, std::function&lt; double(const mfem::Vector &amp;, double)&gt; solution_func)</td></tr>
+<tr class="separator:a9f4761d1f82d64d35ad8f3d8a0df7dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37f519fd2eb201e9c67155ef554c6eab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a37f519fd2eb201e9c67155ef554c6eab">ComputeIntegral</a> (const int &amp;it, const double &amp;t, const double &amp;dt, const int id_var, const std::string &amp;name, const mfem::Vector &amp;u, const double lower_bound, const double upper_bound)</td></tr>
+<tr class="separator:a37f519fd2eb201e9c67155ef554c6eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6161d3964b402b1e4df5f6244f897c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#af6161d3964b402b1e4df5f6244f897c5">ComputeIsoVal</a> (const int &amp;it, const double &amp;t, const double &amp;dt, const int var_id, const std::string &amp;var_name, const mfem::Vector &amp;u, const double &amp;iso_value)</td></tr>
+<tr class="separator:af6161d3964b402b1e4df5f6244f897c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57da61393153838547e98b29a97f0f43"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a57da61393153838547e98b29a97f0f43">get_current_time_step</a> () const</td></tr>
+<tr class="separator:a57da61393153838547e98b29a97f0f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0ecac0e6917de9a36dbe56fb52131ba"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#aa0ecac0e6917de9a36dbe56fb52131ba">get_description</a> ()</td></tr>
+<tr class="separator:aa0ecac0e6917de9a36dbe56fb52131ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c5a20697e839d42d2301858f8b99795"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a5c5a20697e839d42d2301858f8b99795">get_source_term</a> (const int id_block, const std::function&lt; double(const mfem::Vector &amp;, double)&gt; &amp;src_func, mfem::Vector &amp;source_term, mfem::ParLinearForm *RHHS) const</td></tr>
+<tr class="separator:a5c5a20697e839d42d2301858f8b99795"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48021f01776f78be3dc5c5303e7dad76"><td class="memItemLeft" align="right" valign="top">const std::map&lt; std::string, std::multimap&lt; <a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a48021f01776f78be3dc5c5303e7dad76">get_time_iso_specialized</a> () const</td></tr>
+<tr class="separator:a48021f01776f78be3dc5c5303e7dad76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7baa47376e7e3e56cbc094846dfa2e87"><td class="memItemLeft" align="right" valign="top">const std::multimap&lt; <a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a7baa47376e7e3e56cbc094846dfa2e87">get_time_specialized</a> () const</td></tr>
+<tr class="separator:a7baa47376e7e3e56cbc094846dfa2e87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34ab97919cacd677a6d2e9f09aaba073"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a34ab97919cacd677a6d2e9f09aaba073">initialize</a> (const double &amp;initial_time, <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &amp;vars, std::vector&lt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; * &gt; auxvars)</td></tr>
+<tr class="separator:a34ab97919cacd677a6d2e9f09aaba073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90a7252811544f72984c1931eb02f64e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a90a7252811544f72984c1931eb02f64e">OperatorBase</a> (const std::vector&lt; std::string &gt; &amp;integrators, std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt; spatials)</td></tr>
+<tr class="separator:a90a7252811544f72984c1931eb02f64e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b974ec3fb7865895a4e24cc33d1ae08"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a8b974ec3fb7865895a4e24cc33d1ae08">OperatorBase</a> (const std::vector&lt; std::string &gt; &amp;integrators, std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt; spatials, const <a class="el" href="classParameters.html">Parameters</a> &amp;params)</td></tr>
+<tr class="separator:a8b974ec3fb7865895a4e24cc33d1ae08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfc8bb102ac9214d934f6fec3ea51d63"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#adfc8bb102ac9214d934f6fec3ea51d63">OperatorBase</a> (const std::vector&lt; std::string &gt; &amp;integrators, std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt; spatials, const <a class="el" href="classParameters.html">Parameters</a> &amp;params, const std::vector&lt; <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt;&gt; &amp;source_term_name)</td></tr>
+<tr class="separator:adfc8bb102ac9214d934f6fec3ea51d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab14e4838819a32993d9babb9d7707d74"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ab14e4838819a32993d9babb9d7707d74">OperatorBase</a> (const std::vector&lt; std::string &gt; &amp;integrators, std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt; spatials, const std::vector&lt; <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt;&gt; &amp;source_term_name)</td></tr>
+<tr class="separator:ab14e4838819a32993d9babb9d7707d74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb5d83adf63a0ed63f518d5ae0830f7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#aeb5d83adf63a0ed63f518d5ae0830f7a">overload_nl_solver</a> (<a class="el" href="SolversOptions_8hpp.html#a765a4007c12a84454a77f1a29ad04b4a">NLSolverType</a> NLSOLVER)</td></tr>
+<tr class="separator:aeb5d83adf63a0ed63f518d5ae0830f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab58055482c046a548e06a41a72b0236c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ab58055482c046a548e06a41a72b0236c">overload_nl_solver</a> (<a class="el" href="SolversOptions_8hpp.html#a765a4007c12a84454a77f1a29ad04b4a">NLSolverType</a> NLSOLVER, const <a class="el" href="classParameters.html">Parameters</a> &amp;nl_params)</td></tr>
+<tr class="separator:ab58055482c046a548e06a41a72b0236c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7f9ccab46711990d6c1b0fe5e783d3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ab7f9ccab46711990d6c1b0fe5e783d3f">overload_preconditioner</a> (<a class="el" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a> PRECOND)</td></tr>
+<tr class="separator:ab7f9ccab46711990d6c1b0fe5e783d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a664956c04b4632e1d10270bc3dbef534"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a664956c04b4632e1d10270bc3dbef534">overload_preconditioner</a> (<a class="el" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a> PRECOND, const <a class="el" href="classParameters.html">Parameters</a> &amp;p_params)</td></tr>
+<tr class="separator:a664956c04b4632e1d10270bc3dbef534"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08638e737e888b9161e465cf22d5e4df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a08638e737e888b9161e465cf22d5e4df">overload_solver</a> (<a class="el" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a> SOLVER)</td></tr>
+<tr class="separator:a08638e737e888b9161e465cf22d5e4df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1adf8f1bee43f26b4a10cd086d02b9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ae1adf8f1bee43f26b4a10cd086d02b9b">overload_solver</a> (<a class="el" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a> SOLVER, const <a class="el" href="classParameters.html">Parameters</a> &amp;s_params)</td></tr>
+<tr class="separator:ae1adf8f1bee43f26b4a10cd086d02b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a018f2e553851f70311aeec8bbd4abf68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a018f2e553851f70311aeec8bbd4abf68">set_bdr_nlfi_ptr</a> (const std::string nlfi, const std::vector&lt; mfem::Vector &gt; &amp;u, const unsigned int block, const unsigned int bdr_id)</td></tr>
+<tr class="separator:a018f2e553851f70311aeec8bbd4abf68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed2450c581a8da373a9354134bf11770"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#aed2450c581a8da373a9354134bf11770">set_coefficients</a> (const std::vector&lt; <a class="el" href="classCoefficients.html">Coefficients</a> &gt; &amp;coefficients, bool enable_compute_energies)</td></tr>
+<tr class="separator:aed2450c581a8da373a9354134bf11770"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a250ff464dfc6c6ffb4b456d6b4882f2e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a250ff464dfc6c6ffb4b456d6b4882f2e">set_nlfi_ptr</a> (const std::string nlfi, const std::vector&lt; mfem::Vector &gt; &amp;u)</td></tr>
+<tr class="separator:a250ff464dfc6c6ffb4b456d6b4882f2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79a4e8e8866afd0b7e4ef8bbc1648523"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a79a4e8e8866afd0b7e4ef8bbc1648523">set_time_coefficients</a> (double time)</td></tr>
+<tr class="separator:a79a4e8e8866afd0b7e4ef8bbc1648523"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33be318888c048a4251e4849b3125459"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a33be318888c048a4251e4849b3125459">SetTransientParameters</a> (const std::vector&lt; mfem::Vector &gt; &amp;u_vect)=0</td></tr>
+<tr class="separator:a33be318888c048a4251e4849b3125459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24dfec9f30ad357293d6a7e3c1d65184"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a24dfec9f30ad357293d6a7e3c1d65184">solve</a> (std::vector&lt; std::unique_ptr&lt; mfem::Vector &gt;&gt; &amp;vect_unk, double &amp;next_time, const double &amp;current_time, double current_time_step, const int iter)=0</td></tr>
+<tr class="separator:a24dfec9f30ad357293d6a7e3c1d65184"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70016b4c81b71e8408da86756df944d1"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a70016b4c81b71e8408da86756df944d1">~OperatorBase</a> ()=default</td></tr>
+<tr class="separator:a70016b4c81b71e8408da86756df944d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ac01c5ab35bdfab3fdefdcd2306fc7ed4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ac01c5ab35bdfab3fdefdcd2306fc7ed4">build_rhs_nonlinear_form</a> (const double dt, const std::vector&lt; mfem::Vector &gt; &amp;u)</td></tr>
-<tr class="memdesc:ac01c5ab35bdfab3fdefdcd2306fc7ed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the NonLinear Form Integrator associated with the RHS of the PDEs.  <a href="classOperatorBase.html#ac01c5ab35bdfab3fdefdcd2306fc7ed4">More...</a><br /></td></tr>
-<tr class="separator:ac01c5ab35bdfab3fdefdcd2306fc7ed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c7e572a6a70cb1669c7830742851304"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a7c7e572a6a70cb1669c7830742851304">compute_total_height</a> (const std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt; &amp;spatials)</td></tr>
-<tr class="memdesc:a7c7e572a6a70cb1669c7830742851304"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the total height (output=rows of Operator) of the PDE system.  <a href="classOperatorBase.html#a7c7e572a6a70cb1669c7830742851304">More...</a><br /></td></tr>
-<tr class="separator:a7c7e572a6a70cb1669c7830742851304"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cabd9833d47cb2a9bb28d126184af43"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a7cabd9833d47cb2a9bb28d126184af43">compute_total_width</a> (const std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt; &amp;spatials)</td></tr>
-<tr class="memdesc:a7cabd9833d47cb2a9bb28d126184af43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the total width (input=column of Operator) of the PDE system.  <a href="classOperatorBase.html#a7cabd9833d47cb2a9bb28d126184af43">More...</a><br /></td></tr>
-<tr class="separator:a7cabd9833d47cb2a9bb28d126184af43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e268c78fc9e025da38af0af9c4689bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a5e268c78fc9e025da38af0af9c4689bb">SetNewtonAlgorithm</a> (mfem::Operator *oper)</td></tr>
-<tr class="memdesc:a5e268c78fc9e025da38af0af9c4689bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure the Newton solver.  <a href="classOperatorBase.html#a5e268c78fc9e025da38af0af9c4689bb">More...</a><br /></td></tr>
-<tr class="separator:a5e268c78fc9e025da38af0af9c4689bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3af5631c6122676c19a86ff6e8fa419f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a3af5631c6122676c19a86ff6e8fa419f">build_rhs_nonlinear_form</a> (const std::vector&lt; mfem::Vector &gt; &amp;u)</td></tr>
+<tr class="separator:a3af5631c6122676c19a86ff6e8fa419f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3e90f7649879184b38e9938a4852eaa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ae3e90f7649879184b38e9938a4852eaa">compute_total_height</a> (const std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt; &amp;spatials)</td></tr>
+<tr class="separator:ae3e90f7649879184b38e9938a4852eaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77913e69d610289dc3d172319b60cf22"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a77913e69d610289dc3d172319b60cf22">compute_total_width</a> (const std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt; &amp;spatials)</td></tr>
+<tr class="separator:a77913e69d610289dc3d172319b60cf22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a923ab486abd56e7eb2dc2f2d51b9bb8f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a923ab486abd56e7eb2dc2f2d51b9bb8f">get_bdr_integrator</a> (const std::string integrator, const std::vector&lt; mfem::ParGridFunction &gt; &amp;vun, const std::vector&lt; mfem::ParGridFunction &gt; &amp;vauxn, const <a class="el" href="classParameters.html">Parameters</a> &amp;all_params, const unsigned int block, const unsigned int bdr_id)</td></tr>
+<tr class="separator:a923ab486abd56e7eb2dc2f2d51b9bb8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af876c0500e6eae23ccb0d295862e0099"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#af876c0500e6eae23ccb0d295862e0099">get_rhs_integrator</a> (const std::string integrator, const std::vector&lt; mfem::ParGridFunction &gt; &amp;vun, const std::vector&lt; mfem::ParGridFunction &gt; &amp;vauxn, const <a class="el" href="classParameters.html">Parameters</a> &amp;all_params)</td></tr>
+<tr class="separator:af876c0500e6eae23ccb0d295862e0099"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40af76d9b521a9a7e82779e2d24db958"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a40af76d9b521a9a7e82779e2d24db958">SetNewtonAlgorithm</a> (mfem::Operator *oper)</td></tr>
+<tr class="separator:a40af76d9b521a9a7e82779e2d24db958"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a06b3b231e18e9f29eb5fa72589d9be4d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a06b3b231e18e9f29eb5fa72589d9be4d">auxvariables_</a></td></tr>
-<tr class="separator:a06b3b231e18e9f29eb5fa72589d9be4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c562312941a3ed8275f9092f4c3fe8c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a0c562312941a3ed8275f9092f4c3fe8c">bcs_</a></td></tr>
-<tr class="memdesc:a0c562312941a3ed8275f9092f4c3fe8c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classBoundary.html" title="Class for defining a boundary with a name, an index, a type and, if needed, a value.">Boundary</a> conditions.  <a href="classOperatorBase.html#a0c562312941a3ed8275f9092f4c3fe8c">More...</a><br /></td></tr>
-<tr class="separator:a0c562312941a3ed8275f9092f4c3fe8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60447c5c32463f5ad05682435fadee05"><td class="memItemLeft" align="right" valign="top">mfem::Array&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a60447c5c32463f5ad05682435fadee05">block_trueOffsets_</a></td></tr>
-<tr class="separator:a60447c5c32463f5ad05682435fadee05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af109e406e0850a3d66694e309f739aa9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#af109e406e0850a3d66694e309f739aa9">current_dt_</a></td></tr>
-<tr class="separator:af109e406e0850a3d66694e309f739aa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe54346be2aae87ac82e87a9fe2ca4ff"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#afe54346be2aae87ac82e87a9fe2ca4ff">current_time_</a></td></tr>
-<tr class="separator:afe54346be2aae87ac82e87a9fe2ca4ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fcaa05849bcf820fffc68d9a84f2c6e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classParameter.html">Parameter</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a6fcaa05849bcf820fffc68d9a84f2c6e">default_p_</a> = <a class="el" href="classParameter.html">Parameter</a>(&quot;default parameter&quot;, false)</td></tr>
-<tr class="separator:a6fcaa05849bcf820fffc68d9a84f2c6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addecfb7fe4fa55438be53091dcca6709"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classParameters.html">Parameters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#addecfb7fe4fa55438be53091dcca6709">default_params_</a> = <a class="el" href="classParameters.html">Parameters</a>(<a class="el" href="classOperatorBase.html#a6fcaa05849bcf820fffc68d9a84f2c6e">default_p_</a>)</td></tr>
-<tr class="separator:addecfb7fe4fa55438be53091dcca6709"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99bc00fb0dae9df5e039d4507d99fc96"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a99bc00fb0dae9df5e039d4507d99fc96">description_</a> {&quot;UNKNOWN OPERATOR&quot;}</td></tr>
-<tr class="separator:a99bc00fb0dae9df5e039d4507d99fc96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89f7d24559d360460f8ef68aeaf6cbe5"><td class="memItemLeft" align="right" valign="top">std::vector&lt; mfem::Array&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a89f7d24559d360460f8ef68aeaf6cbe5">ess_tdof_list_</a></td></tr>
-<tr class="separator:a89f7d24559d360460f8ef68aeaf6cbe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada583cb64143791a54913ca08e2c97b9"><td class="memItemLeft" align="right" valign="top">mfem::Array&lt; mfem::ParFiniteElementSpace * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ada583cb64143791a54913ca08e2c97b9">fes_</a></td></tr>
-<tr class="memdesc:ada583cb64143791a54913ca08e2c97b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finite Element Space and BCs.  <a href="classOperatorBase.html#ada583cb64143791a54913ca08e2c97b9">More...</a><br /></td></tr>
-<tr class="separator:ada583cb64143791a54913ca08e2c97b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24748598a5172d723934040c51bc3667"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a24748598a5172d723934040c51bc3667">height_</a></td></tr>
-<tr class="separator:a24748598a5172d723934040c51bc3667"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a047a2fbaaa2b63338c5b28f4657b0148"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; mfem::NewtonSolver &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a047a2fbaaa2b63338c5b28f4657b0148">newton_solver_</a></td></tr>
-<tr class="separator:a047a2fbaaa2b63338c5b28f4657b0148"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a64558884a9c13a719b1f5a66ce789cdc"><td class="memItemLeft" align="right" valign="top">NLFI *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a64558884a9c13a719b1f5a66ce789cdc">nlfi_ptr_</a></td></tr>
-<tr class="separator:a64558884a9c13a719b1f5a66ce789cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c51d5bf9bfaa25a9728fff0b5e88505"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classParameters.html">Parameters</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a8c51d5bf9bfaa25a9728fff0b5e88505">params_</a></td></tr>
-<tr class="separator:a8c51d5bf9bfaa25a9728fff0b5e88505"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a802150d85ef46a966de2d24c07dca37a"><td class="memItemLeft" align="right" valign="top">mfem::ParBlockNonlinearForm *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a802150d85ef46a966de2d24c07dca37a">RHS</a></td></tr>
-<tr class="memdesc:a802150d85ef46a966de2d24c07dca37a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right-Hand-Side.  <a href="classOperatorBase.html#a802150d85ef46a966de2d24c07dca37a">More...</a><br /></td></tr>
-<tr class="separator:a802150d85ef46a966de2d24c07dca37a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bcaa08f1590947aa4ca2986da59aa5f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNLSolver.html">NLSolver</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a7bcaa08f1590947aa4ca2986da59aa5f">rhs_solver_</a></td></tr>
-<tr class="separator:a7bcaa08f1590947aa4ca2986da59aa5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7d6e13d7a57204720cfd532d4e2f36a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::function&lt; double(const mfem::Vector &amp;, double)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#af7d6e13d7a57204720cfd532d4e2f36a">src_func_</a></td></tr>
-<tr class="separator:af7d6e13d7a57204720cfd532d4e2f36a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad881d31f7617ad86a7e91553a23fb57d"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::multimap&lt; <a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ad881d31f7617ad86a7e91553a23fb57d">time_iso_specialized_</a></td></tr>
-<tr class="separator:ad881d31f7617ad86a7e91553a23fb57d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af80fe4625c5155e99936ca20f5fb3a53"><td class="memItemLeft" align="right" valign="top">std::multimap&lt; <a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#af80fe4625c5155e99936ca20f5fb3a53">time_specialized_</a></td></tr>
-<tr class="memdesc:af80fe4625c5155e99936ca20f5fb3a53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time integral results.  <a href="classOperatorBase.html#af80fe4625c5155e99936ca20f5fb3a53">More...</a><br /></td></tr>
-<tr class="separator:af80fe4625c5155e99936ca20f5fb3a53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28cac1bc44bfd5245e046969cf69b2b6"><td class="memItemLeft" align="right" valign="top">mfem::Vector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a28cac1bc44bfd5245e046969cf69b2b6">z</a></td></tr>
-<tr class="separator:a28cac1bc44bfd5245e046969cf69b2b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee0a93eacbc31abc422578cedf736fc7"><td class="memItemLeft" align="right" valign="top">mfem::Array&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#aee0a93eacbc31abc422578cedf736fc7">array_bdr_</a></td></tr>
+<tr class="separator:aee0a93eacbc31abc422578cedf736fc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4e42d59a151f6654d7d87508d6a081d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ac4e42d59a151f6654d7d87508d6a081d">auxvariables_</a></td></tr>
+<tr class="separator:ac4e42d59a151f6654d7d87508d6a081d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a284389af2d5deb934149b860041ea315"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a284389af2d5deb934149b860041ea315">bcs_</a></td></tr>
+<tr class="memdesc:a284389af2d5deb934149b860041ea315"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classBoundary.html" title="Class for defining a boundary with a name, an index, a type and, if needed, a value.">Boundary</a> conditions.  <a href="classOperatorBase.html#a284389af2d5deb934149b860041ea315">More...</a><br /></td></tr>
+<tr class="separator:a284389af2d5deb934149b860041ea315"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f168971ddc71471c40b6ef5d56e1ef9"><td class="memItemLeft" align="right" valign="top">mfem::Array&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a1f168971ddc71471c40b6ef5d56e1ef9">block_trueOffsets_</a></td></tr>
+<tr class="separator:a1f168971ddc71471c40b6ef5d56e1ef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7824b011ddc98bcab78945b73cbbfbef"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classCoefficients.html">Coefficients</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a7824b011ddc98bcab78945b73cbbfbef">coefficients_</a></td></tr>
+<tr class="separator:a7824b011ddc98bcab78945b73cbbfbef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29fc0b682c95483f9f7953d9b754b401"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a29fc0b682c95483f9f7953d9b754b401">current_dt_</a></td></tr>
+<tr class="separator:a29fc0b682c95483f9f7953d9b754b401"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac2db03c9df9d84bce33fcca5fd5c952"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#aac2db03c9df9d84bce33fcca5fd5c952">current_time_</a></td></tr>
+<tr class="separator:aac2db03c9df9d84bce33fcca5fd5c952"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a687e94d31c07ca81dd9fb6655840c146"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classParameter.html">Parameter</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a687e94d31c07ca81dd9fb6655840c146">default_p_</a> = <a class="el" href="classParameter.html">Parameter</a>(&quot;default parameter&quot;, false)</td></tr>
+<tr class="separator:a687e94d31c07ca81dd9fb6655840c146"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dcc73c1c4b0c61a88dca73f762daf46"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classParameters.html">Parameters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a2dcc73c1c4b0c61a88dca73f762daf46">default_params_</a> = <a class="el" href="classParameters.html">Parameters</a>(<a class="el" href="classOperatorBase.html#a687e94d31c07ca81dd9fb6655840c146">default_p_</a>)</td></tr>
+<tr class="separator:a2dcc73c1c4b0c61a88dca73f762daf46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaae764fd7084462712dcedd00538acab"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#aaae764fd7084462712dcedd00538acab">description_</a> {&quot;UNKNOWN OPERATOR&quot;}</td></tr>
+<tr class="separator:aaae764fd7084462712dcedd00538acab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04b4998ce31bd733bc3dfd174630bd2e"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classCoefficient.html">Coefficient</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a04b4998ce31bd733bc3dfd174630bd2e">energy_coefficient_</a></td></tr>
+<tr class="separator:a04b4998ce31bd733bc3dfd174630bd2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf3bcd0d2da25e5d17f838571a3911ae"><td class="memItemLeft" align="right" valign="top">std::vector&lt; mfem::Array&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#abf3bcd0d2da25e5d17f838571a3911ae">ess_tdof_list_</a></td></tr>
+<tr class="separator:abf3bcd0d2da25e5d17f838571a3911ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1616446fe2fbf2c3e4df6cf0059c672"><td class="memItemLeft" align="right" valign="top">mfem::Array&lt; mfem::ParFiniteElementSpace * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ac1616446fe2fbf2c3e4df6cf0059c672">fes_</a></td></tr>
+<tr class="memdesc:ac1616446fe2fbf2c3e4df6cf0059c672"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finite Element Space and BCs.  <a href="classOperatorBase.html#ac1616446fe2fbf2c3e4df6cf0059c672">More...</a><br /></td></tr>
+<tr class="separator:ac1616446fe2fbf2c3e4df6cf0059c672"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a373040051c3fdf52ead07edc6b3d4079"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classCoefficient.html">Coefficient</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a373040051c3fdf52ead07edc6b3d4079">grad_energy_coefficient_</a></td></tr>
+<tr class="separator:a373040051c3fdf52ead07edc6b3d4079"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21b5eba5bae108462fb00a3cc3507e5f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a21b5eba5bae108462fb00a3cc3507e5f">height_</a></td></tr>
+<tr class="separator:a21b5eba5bae108462fb00a3cc3507e5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5c9f5f88e5105b4756147ffb94fa898"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; mfem::NewtonSolver &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ad5c9f5f88e5105b4756147ffb94fa898">newton_solver_</a></td></tr>
+<tr class="separator:ad5c9f5f88e5105b4756147ffb94fa898"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9f23d78c4887a7b8096d916bc1c937c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classParameters.html">Parameters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ac9f23d78c4887a7b8096d916bc1c937c">nl_solver_params_</a></td></tr>
+<tr class="separator:ac9f23d78c4887a7b8096d916bc1c937c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9304e7a5d72d0b0886457094b4d4df7c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classParameters.html">Parameters</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a9304e7a5d72d0b0886457094b4d4df7c">params_</a></td></tr>
+<tr class="separator:a9304e7a5d72d0b0886457094b4d4df7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fe5c3dda18a79b22e39b32300555a41"><td class="memItemLeft" align="right" valign="top">mfem::ParBlockNonlinearForm *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a6fe5c3dda18a79b22e39b32300555a41">RHS</a></td></tr>
+<tr class="memdesc:a6fe5c3dda18a79b22e39b32300555a41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right-Hand-Side.  <a href="classOperatorBase.html#a6fe5c3dda18a79b22e39b32300555a41">More...</a><br /></td></tr>
+<tr class="separator:a6fe5c3dda18a79b22e39b32300555a41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4db66d54873c6aeffb83677acdf8473f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a4db66d54873c6aeffb83677acdf8473f">rhs_integrators_</a></td></tr>
+<tr class="separator:a4db66d54873c6aeffb83677acdf8473f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad47902d896f6e1122a2ea3ead37b7f6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNLSolver.html">NLSolver</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ad47902d896f6e1122a2ea3ead37b7f6e">rhs_solver_</a></td></tr>
+<tr class="separator:ad47902d896f6e1122a2ea3ead37b7f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97a41de0f26f20ed856841877bb79dab"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::function&lt; double(const mfem::Vector &amp;, double)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a97a41de0f26f20ed856841877bb79dab">src_func_</a></td></tr>
+<tr class="separator:a97a41de0f26f20ed856841877bb79dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1748183af3da8d66eafce75028599f29"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::multimap&lt; <a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a1748183af3da8d66eafce75028599f29">time_iso_specialized_</a></td></tr>
+<tr class="separator:a1748183af3da8d66eafce75028599f29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23c10fec01b5c02ddfdc78da5128c83e"><td class="memItemLeft" align="right" valign="top">std::multimap&lt; <a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a23c10fec01b5c02ddfdc78da5128c83e">time_specialized_</a></td></tr>
+<tr class="memdesc:a23c10fec01b5c02ddfdc78da5128c83e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time integral results.  <a href="classOperatorBase.html#a23c10fec01b5c02ddfdc78da5128c83e">More...</a><br /></td></tr>
+<tr class="separator:a23c10fec01b5c02ddfdc78da5128c83e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd67b779cc5e44ea8e837b19b43345ae"><td class="memItemLeft" align="right" valign="top">mfem::Vector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#acd67b779cc5e44ea8e837b19b43345ae">z</a></td></tr>
+<tr class="separator:acd67b779cc5e44ea8e837b19b43345ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;class T, int DIM, class NLFI, class LHS_NLFI&gt;<br />
-class OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</h3>
+<div class="textblock"><h3>template&lt;class T, int DIM&gt;<br />
+class OperatorBase&lt; T, DIM &gt;</h3>
 
 <p>Base class for building Steady and TimeDependent PhaseFieldOperators. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-    <tr><td class="paramname">NLFI</td><td></td></tr>
+    <tr><td class="paramname">T</td><td>Finite Element collection (mfem object) </td></tr>
+    <tr><td class="paramname">DIM</td><td>Spatial dimension </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00059">59</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00060">60</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="acfa1bf7d14e46915bd8c5476e4b0356e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acfa1bf7d14e46915bd8c5476e4b0356e">&#9670;&nbsp;</a></span>OperatorBase() <span class="overload">[1/4]</span></h2>
+<a id="a90a7252811544f72984c1931eb02f64e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90a7252811544f72984c1931eb02f64e">&#9670;&nbsp;</a></span>OperatorBase() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
+template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::<a class="el" href="classOperatorBase.html">OperatorBase</a> </td>
+          <td class="memname"><a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::<a class="el" href="classOperatorBase.html">OperatorBase</a> </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt;&#160;</td>
-          <td class="paramname"><em>spatials</em></td><td>)</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>integrators</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt;&#160;</td>
+          <td class="paramname"><em>spatials</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classOperatorBase.html" title="Base class for building Steady and TimeDependent PhaseFieldOperators.">OperatorBase</a> object. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-    <tr><td class="paramname">NLFI</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">spatial</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00220">220</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
 </div>
 </div>
-<a id="a02f13b6504514db86dda751ff61ca107"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02f13b6504514db86dda751ff61ca107">&#9670;&nbsp;</a></span>OperatorBase() <span class="overload">[2/4]</span></h2>
+<a id="ab14e4838819a32993d9babb9d7707d74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab14e4838819a32993d9babb9d7707d74">&#9670;&nbsp;</a></span>OperatorBase() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::<a class="el" href="classOperatorBase.html">OperatorBase</a> </td>
+          <td class="memname"><a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::<a class="el" href="classOperatorBase.html">OperatorBase</a> </td>
           <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>integrators</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt;&#160;</td>
           <td class="paramname"><em>spatials</em>, </td>
         </tr>
@@ -326,38 +307,25 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classOperatorBase.html" title="Base class for building Steady and TimeDependent PhaseFieldOperators.">OperatorBase</a> object. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-    <tr><td class="paramname">NLFI</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">spatial</td><td></td></tr>
-    <tr><td class="paramname">source_term_name</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00256">256</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
 </div>
 </div>
-<a id="a4f7ae7e469bee89ecb390932baf467f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f7ae7e469bee89ecb390932baf467f9">&#9670;&nbsp;</a></span>OperatorBase() <span class="overload">[3/4]</span></h2>
+<a id="a8b974ec3fb7865895a4e24cc33d1ae08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b974ec3fb7865895a4e24cc33d1ae08">&#9670;&nbsp;</a></span>OperatorBase() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::<a class="el" href="classOperatorBase.html">OperatorBase</a> </td>
+          <td class="memname"><a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::<a class="el" href="classOperatorBase.html">OperatorBase</a> </td>
           <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>integrators</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt;&#160;</td>
           <td class="paramname"><em>spatials</em>, </td>
         </tr>
@@ -375,38 +343,25 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classOperatorBase.html" title="Base class for building Steady and TimeDependent PhaseFieldOperators.">OperatorBase</a> object. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-    <tr><td class="paramname">NLFI</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">spatial</td><td></td></tr>
-    <tr><td class="paramname">params</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00297">297</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
 </div>
 </div>
-<a id="ab4fb69ee694d4bc53bedc586ed71c9b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4fb69ee694d4bc53bedc586ed71c9b7">&#9670;&nbsp;</a></span>OperatorBase() <span class="overload">[4/4]</span></h2>
+<a id="adfc8bb102ac9214d934f6fec3ea51d63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfc8bb102ac9214d934f6fec3ea51d63">&#9670;&nbsp;</a></span>OperatorBase() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::<a class="el" href="classOperatorBase.html">OperatorBase</a> </td>
+          <td class="memname"><a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::<a class="el" href="classOperatorBase.html">OperatorBase</a> </td>
           <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>integrators</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt;&#160;</td>
           <td class="paramname"><em>spatials</em>, </td>
         </tr>
@@ -430,94 +385,53 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new Phase Field Operator Base&lt; T,  DIM, NLFI&gt;:: Phase Field Operator Base object. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-    <tr><td class="paramname">NLFI</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">spatial</td><td></td></tr>
-    <tr><td class="paramname">params</td><td></td></tr>
-    <tr><td class="paramname">vars</td><td></td></tr>
-    <tr><td class="paramname">auxvars</td><td></td></tr>
-    <tr><td class="paramname">source_term_name</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00337">337</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
 </div>
 </div>
-<a id="abe220e925a3ea9df3e9dd42d9ef706e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe220e925a3ea9df3e9dd42d9ef706e9">&#9670;&nbsp;</a></span>~OperatorBase()</h2>
+<a id="a70016b4c81b71e8408da86756df944d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70016b4c81b71e8408da86756df944d1">&#9670;&nbsp;</a></span>~OperatorBase()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::~<a class="el" href="classOperatorBase.html">OperatorBase</a></td>
+          <td class="memname">virtual <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::~<a class="el" href="classOperatorBase.html">OperatorBase</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Destroy the Operator Base&lt;T, DIM,  NLFI&gt;:: Operator Base object. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-    <tr><td class="paramname">NLFI</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00859">859</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac01c5ab35bdfab3fdefdcd2306fc7ed4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac01c5ab35bdfab3fdefdcd2306fc7ed4">&#9670;&nbsp;</a></span>build_rhs_nonlinear_form()</h2>
+<a id="a3af5631c6122676c19a86ff6e8fa419f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3af5631c6122676c19a86ff6e8fa419f">&#9670;&nbsp;</a></span>build_rhs_nonlinear_form()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::build_rhs_nonlinear_form </td>
+          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::build_rhs_nonlinear_form </td>
           <td>(</td>
-          <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>dt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">const std::vector&lt; mfem::Vector &gt; &amp;&#160;</td>
-          <td class="paramname"><em>u_vect</em>&#160;</td>
-        </tr>
-        <tr>
+          <td class="paramname"><em>u</em></td><td>)</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -527,92 +441,59 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Build the NonLinear Form Integrator associated with the RHS of the PDEs. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-    <tr><td class="paramname">NLFI</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">dt</td><td></td></tr>
-    <tr><td class="paramname">u</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00416">416</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
 </div>
 </div>
-<a id="a5c91ece08b6e3fbe26851ee815705c86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c91ece08b6e3fbe26851ee815705c86">&#9670;&nbsp;</a></span>clear_iso_time_specialized()</h2>
+<a id="a315548b258e51523a8a9001e602c58d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a315548b258e51523a8a9001e602c58d3">&#9670;&nbsp;</a></span>clear_iso_time_specialized()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::clear_iso_time_specialized</td>
+          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::clear_iso_time_specialized </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Clear time_iso_specialized_ container. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00708">708</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
 </div>
 </div>
-<a id="a32f383de71a3c81b7907116a10403f0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32f383de71a3c81b7907116a10403f0f">&#9670;&nbsp;</a></span>clear_time_specialized()</h2>
+<a id="a54659db19141bbc2e173f5ad43d67953"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54659db19141bbc2e173f5ad43d67953">&#9670;&nbsp;</a></span>clear_time_specialized()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::clear_time_specialized</td>
+          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::clear_time_specialized </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Clear time_specialized_ container. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00733">733</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
 </div>
 </div>
-<a id="a7c7e572a6a70cb1669c7830742851304"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c7e572a6a70cb1669c7830742851304">&#9670;&nbsp;</a></span>compute_total_height()</h2>
+<a id="ae3e90f7649879184b38e9938a4852eaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3e90f7649879184b38e9938a4852eaa">&#9670;&nbsp;</a></span>compute_total_height()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::compute_total_height </td>
+          <td class="memname">int <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::compute_total_height </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt; &amp;&#160;</td>
           <td class="paramname"><em>spatials</em></td><td>)</td>
@@ -626,40 +507,21 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Return the total height (output=rows of Operator) of the PDE system. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-    <tr><td class="paramname">NLFI</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">spatials</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00181">181</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
 </div>
 </div>
-<a id="a7cabd9833d47cb2a9bb28d126184af43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7cabd9833d47cb2a9bb28d126184af43">&#9670;&nbsp;</a></span>compute_total_width()</h2>
+<a id="a77913e69d610289dc3d172319b60cf22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77913e69d610289dc3d172319b60cf22">&#9670;&nbsp;</a></span>compute_total_width()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::compute_total_width </td>
+          <td class="memname">int <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::compute_total_width </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt; &amp;&#160;</td>
           <td class="paramname"><em>spatials</em></td><td>)</td>
@@ -673,41 +535,18 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Return the total width (input=column of Operator) of the PDE system. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-    <tr><td class="paramname">NLFI</td><td></td></tr>
-    <tr><td class="paramname">LHS_NLFI</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">spatials</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00201">201</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
 </div>
 </div>
-<a id="a575a797897c7816dc16d22e658e618af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a575a797897c7816dc16d22e658e618af">&#9670;&nbsp;</a></span>ComputeEnergies()</h2>
+<a id="ae93baf2d27e0dfe32475160076a0a4d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae93baf2d27e0dfe32475160076a0a4d5">&#9670;&nbsp;</a></span>ComputeEnergies()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
+template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::ComputeEnergies </td>
+          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::ComputeEnergies </td>
           <td>(</td>
           <td class="paramtype">const int &amp;&#160;</td>
           <td class="paramname"><em>it</em>, </td>
@@ -716,13 +555,13 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const double &amp;&#160;</td>
-          <td class="paramname"><em>dt</em>, </td>
+          <td class="paramname"><em>t</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const double &amp;&#160;</td>
-          <td class="paramname"><em>t</em>, </td>
+          <td class="paramname"><em>dt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -736,27 +575,20 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classTransientOperatorBase.html#aa6bf2ad27264db54f61913b717bdbc07">TransientOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>, <a class="el" href="classSteadyOperatorBase.html#adb5376a888d009fe825b17434f5fd0bd">SteadyOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>, <a class="el" href="classPhaseFieldOperatorBase.html#ad904bca5a5208860f6af434f6c4cba85">PhaseFieldOperatorBase&lt; T, DIM, NLFI, mfem::BlockNonlinearFormIntegrator, SteadyOperatorBase &gt;</a>, <a class="el" href="classPhaseFieldOperatorBase.html#ad904bca5a5208860f6af434f6c4cba85">PhaseFieldOperatorBase&lt; T, DIM, NLFI, LHS_NLFI, TransientOperatorBase &gt;</a>, <a class="el" href="classHeatOperatorBase.html#aa2790c5a785c5a92d5d93c0c673e3e4e">HeatOperatorBase&lt; T, DIM, NLFI, mfem::BlockNonlinearFormIntegrator, SteadyOperatorBase &gt;</a>, <a class="el" href="classHeatOperatorBase.html#aa2790c5a785c5a92d5d93c0c673e3e4e">HeatOperatorBase&lt; T, DIM, NLFI, LHS_NLFI, TransientOperatorBase &gt;</a>, <a class="el" href="classDiffusionOperatorBase.html#aa7b06c4d760abe543f04b15df9ade72b">DiffusionOperatorBase&lt; T, DIM, NLFI, mfem::BlockNonlinearFormIntegrator, SteadyOperatorBase &gt;</a>, and <a class="el" href="classDiffusionOperatorBase.html#aa7b06c4d760abe543f04b15df9ade72b">DiffusionOperatorBase&lt; T, DIM, NLFI, LHS_NLFI, TransientOperatorBase &gt;</a>.</p>
-
 </div>
 </div>
-<a id="af8bc324e6179cfa9c5479bddd7c895b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8bc324e6179cfa9c5479bddd7c895b2">&#9670;&nbsp;</a></span>ComputeError()</h2>
+<a id="a9f4761d1f82d64d35ad8f3d8a0df7dea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f4761d1f82d64d35ad8f3d8a0df7dea">&#9670;&nbsp;</a></span>ComputeError()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::ComputeError </td>
+          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::ComputeError </td>
           <td>(</td>
           <td class="paramtype">const int &amp;&#160;</td>
           <td class="paramname"><em>it</em>, </td>
@@ -805,43 +637,18 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Compute L2 error. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-    <tr><td class="paramname">NLFI</td><td></td></tr>
-    <tr><td class="paramname">LHS_NLFI</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">it</td><td></td></tr>
-    <tr><td class="paramname">t</td><td></td></tr>
-    <tr><td class="paramname">dt</td><td></td></tr>
-    <tr><td class="paramname">id_var</td><td></td></tr>
-    <tr><td class="paramname">name</td><td></td></tr>
-    <tr><td class="paramname">u</td><td></td></tr>
-    <tr><td class="paramname">solution_func</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00465">465</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
 </div>
 </div>
-<a id="a4283c6b49189a413ba3e55dc8a1c5ff2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4283c6b49189a413ba3e55dc8a1c5ff2">&#9670;&nbsp;</a></span>ComputeIntegral()</h2>
+<a id="a37f519fd2eb201e9c67155ef554c6eab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37f519fd2eb201e9c67155ef554c6eab">&#9670;&nbsp;</a></span>ComputeIntegral()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::ComputeIntegral </td>
+          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::ComputeIntegral </td>
           <td>(</td>
           <td class="paramtype">const int &amp;&#160;</td>
           <td class="paramname"><em>it</em>, </td>
@@ -896,43 +703,18 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Compute integrals of a variable over the domain. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-    <tr><td class="paramname">NLFI</td><td></td></tr>
-    <tr><td class="paramname">LHS_NLFI</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">it</td><td></td></tr>
-    <tr><td class="paramname">t</td><td></td></tr>
-    <tr><td class="paramname">dt</td><td></td></tr>
-    <tr><td class="paramname">id_var</td><td></td></tr>
-    <tr><td class="paramname">name</td><td></td></tr>
-    <tr><td class="paramname">u</td><td></td></tr>
-    <tr><td class="paramname">integral_threshold</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00520">520</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
 </div>
 </div>
-<a id="af8cc466eb4bb6b3af07705815520e6fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8cc466eb4bb6b3af07705815520e6fb">&#9670;&nbsp;</a></span>ComputeIsoVal()</h2>
+<a id="af6161d3964b402b1e4df5f6244f897c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6161d3964b402b1e4df5f6244f897c5">&#9670;&nbsp;</a></span>ComputeIsoVal()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::ComputeIsoVal </td>
+          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::ComputeIsoVal </td>
           <td>(</td>
           <td class="paramtype">const int &amp;&#160;</td>
           <td class="paramname"><em>it</em>, </td>
@@ -981,35 +763,114 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Compute the position of an isovalue. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">it</td><td>current iteration </td></tr>
-    <tr><td class="paramname">t</td><td>current time </td></tr>
-    <tr><td class="paramname">dt</td><td>current timestep </td></tr>
-    <tr><td class="paramname">u</td><td>unknown vector </td></tr>
-    <tr><td class="paramname">iso_value</td><td>value of the solution </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00591">591</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
 </div>
 </div>
-<a id="aebf9c30d287ed02e66637e87f8fc666e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aebf9c30d287ed02e66637e87f8fc666e">&#9670;&nbsp;</a></span>get_description()</h2>
+<a id="a923ab486abd56e7eb2dc2f2d51b9bb8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a923ab486abd56e7eb2dc2f2d51b9bb8f">&#9670;&nbsp;</a></span>get_bdr_integrator()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::get_description </td>
+          <td class="memname"><a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt;<a class="el" href="classVariables.html">Variables</a>&lt;T, DIM&gt; &gt;* <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::get_bdr_integrator </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>integrator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; mfem::ParGridFunction &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vun</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; mfem::ParGridFunction &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vauxn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classParameters.html">Parameters</a> &amp;&#160;</td>
+          <td class="paramname"><em>all_params</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>block</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>bdr_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a57da61393153838547e98b29a97f0f43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57da61393153838547e98b29a97f0f43">&#9670;&nbsp;</a></span>get_current_time_step()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::get_current_time_step </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00138">138</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+
+<p class="reference">References <a class="el" href="OperatorBase_8hpp_source.html#l00101">OperatorBase&lt; T, DIM &gt;::current_dt_</a>.</p>
+
+</div>
+</div>
+<a id="aa0ecac0e6917de9a36dbe56fb52131ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0ecac0e6917de9a36dbe56fb52131ba">&#9670;&nbsp;</a></span>get_description()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::get_description </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1022,51 +883,72 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00139">139</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00164">164</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="OperatorBase_8hpp_source.html#l00073">OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;::description_</a>.</p>
+<p class="reference">References <a class="el" href="OperatorBase_8hpp_source.html#l00077">OperatorBase&lt; T, DIM &gt;::description_</a>.</p>
 
 </div>
 </div>
-<a id="ad4f32eb8b435554fab93b0028bf4969f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4f32eb8b435554fab93b0028bf4969f">&#9670;&nbsp;</a></span>get_parameters()</h2>
+<a id="af876c0500e6eae23ccb0d295862e0099"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af876c0500e6eae23ccb0d295862e0099">&#9670;&nbsp;</a></span>get_rhs_integrator()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::get_parameters </td>
+          <td class="memname"><a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt;<a class="el" href="classVariables.html">Variables</a>&lt;T, DIM&gt; &gt;* <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::get_rhs_integrator </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>integrator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const std::vector&lt; mfem::ParGridFunction &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vun</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; mfem::ParGridFunction &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vauxn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classParameters.html">Parameters</a> &amp;&#160;</td>
+          <td class="paramname"><em>all_params</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classTransientOperatorBase.html#a417ed395da7be57ac8eb957e16958ba8">TransientOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>, <a class="el" href="classSteadyOperatorBase.html#a6b931a26baa740c639cdc33245edf25c">SteadyOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>, <a class="el" href="classPhaseFieldOperatorBase.html#a0dfecb93bce3a6d04dd756e508273c57">PhaseFieldOperatorBase&lt; T, DIM, NLFI, mfem::BlockNonlinearFormIntegrator, SteadyOperatorBase &gt;</a>, <a class="el" href="classPhaseFieldOperatorBase.html#a0dfecb93bce3a6d04dd756e508273c57">PhaseFieldOperatorBase&lt; T, DIM, NLFI, LHS_NLFI, TransientOperatorBase &gt;</a>, <a class="el" href="classHeatOperatorBase.html#a409b4f776ddf7f62df9c22af38e0d7b3">HeatOperatorBase&lt; T, DIM, NLFI, mfem::BlockNonlinearFormIntegrator, SteadyOperatorBase &gt;</a>, <a class="el" href="classHeatOperatorBase.html#a409b4f776ddf7f62df9c22af38e0d7b3">HeatOperatorBase&lt; T, DIM, NLFI, LHS_NLFI, TransientOperatorBase &gt;</a>, <a class="el" href="classDiffusionOperatorBase.html#abe0dfd9400f3c53a0f3761ef44005b60">DiffusionOperatorBase&lt; T, DIM, NLFI, mfem::BlockNonlinearFormIntegrator, SteadyOperatorBase &gt;</a>, and <a class="el" href="classDiffusionOperatorBase.html#abe0dfd9400f3c53a0f3761ef44005b60">DiffusionOperatorBase&lt; T, DIM, NLFI, LHS_NLFI, TransientOperatorBase &gt;</a>.</p>
-
 </div>
 </div>
-<a id="ab59707453a087ec79d1ade168bc03889"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab59707453a087ec79d1ade168bc03889">&#9670;&nbsp;</a></span>get_source_term()</h2>
+<a id="a5c5a20697e839d42d2301858f8b99795"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c5a20697e839d42d2301858f8b99795">&#9670;&nbsp;</a></span>get_source_term()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::get_source_term </td>
+          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::get_source_term </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>id_block</em>, </td>
@@ -1087,7 +969,7 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">mfem::ParLinearForm *&#160;</td>
-          <td class="paramname"><em>RHSS</em>&#160;</td>
+          <td class="paramname"><em>RHHS</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1097,91 +979,59 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Get the source term by equation of the PDEs. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-    <tr><td class="paramname">NLFI</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00672">672</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
 </div>
 </div>
-<a id="a0d81127ea03f3f9acbee66f22fb6d6b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d81127ea03f3f9acbee66f22fb6d6b1">&#9670;&nbsp;</a></span>get_time_iso_specialized()</h2>
+<a id="a48021f01776f78be3dc5c5303e7dad76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48021f01776f78be3dc5c5303e7dad76">&#9670;&nbsp;</a></span>get_time_iso_specialized()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">const std::map&lt; std::string, std::multimap&lt; <a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a> &gt; &gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::get_time_iso_specialized</td>
+          <td class="memname">const std::map&lt;std::string, std::multimap&lt;<a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a>&gt; &gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::get_time_iso_specialized </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get a of a multimap of integral values calculated at a given iteration (see computeEnergies and computeError) </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-    <tr><td class="paramname">NLFI</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>const std::map&lt;std::tuple&lt;int, double, double&gt;, double&gt; </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00698">698</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
 </div>
 </div>
-<a id="ac74aa7d897b8444e2790569cdeb93046"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac74aa7d897b8444e2790569cdeb93046">&#9670;&nbsp;</a></span>get_time_specialized()</h2>
+<a id="a7baa47376e7e3e56cbc094846dfa2e87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7baa47376e7e3e56cbc094846dfa2e87">&#9670;&nbsp;</a></span>get_time_specialized()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">const std::multimap&lt; <a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a> &gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::get_time_specialized</td>
+          <td class="memname">const std::multimap&lt;<a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a>&gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::get_time_specialized </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get a of a multimap of integral values calculated at a given iteration (see computeEnergies and computeError) </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-    <tr><td class="paramname">NLFI</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>const std::map&lt;std::tuple&lt;int, double, double&gt;, double&gt; </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00723">723</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
 </div>
 </div>
-<a id="ab610e1c53fc27ec56ecab45c226be49c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab610e1c53fc27ec56ecab45c226be49c">&#9670;&nbsp;</a></span>initialize()</h2>
+<a id="a34ab97919cacd677a6d2e9f09aaba073"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34ab97919cacd677a6d2e9f09aaba073">&#9670;&nbsp;</a></span>initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::initialize </td>
+          <td class="memname">virtual void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::initialize </td>
           <td>(</td>
           <td class="paramtype">const double &amp;&#160;</td>
           <td class="paramname"><em>initial_time</em>, </td>
@@ -1211,57 +1061,20 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Initialization stage (call by imeDiscretization&lt;PST, OPE, VAR&gt;::initialize()) </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-    <tr><td class="paramname">NLFI</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">initial_time</td><td></td></tr>
-    <tr><td class="paramname">vars</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Reimplemented in <a class="el" href="classTransientOperatorBase.html#a3cf55d9efdfe06f6f5bd29b282b6b34b">TransientOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>, and <a class="el" href="classSteadyOperatorBase.html#a73bf80a16acb0b54cdd94a91ed1bd6c4">SteadyOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00379">379</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Variables_8hpp_source.html#l00110">Variables&lt; T, DIM &gt;::get_variables_number()</a>, and <a class="el" href="Variables_8hpp_source.html#l00121">Variables&lt; T, DIM &gt;::getIVariable()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="SteadyOperatorBase_8hpp_source.html#l00176">SteadyOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;::initialize()</a>, and <a class="el" href="TransientOperatorBase_8hpp_source.html#l00291">TransientOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;::initialize()</a>.</p>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classOperatorBase_ab610e1c53fc27ec56ecab45c226be49c_cgraph.svg" width="423" height="104"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classOperatorBase_ab610e1c53fc27ec56ecab45c226be49c_icgraph.svg" width="422" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<p>Reimplemented in <a class="el" href="classTransientOperator.html#a4f725fdfc4d327df8341b7998e6e32c5">TransientOperator&lt; T, DIM &gt;</a>, and <a class="el" href="classSteadyOperator.html#a919e4a66717a6cc45b632f2f8ca336b3">SteadyOperator&lt; T, DIM &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a908186fe49ea62e44392fa606d32c2ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a908186fe49ea62e44392fa606d32c2ce">&#9670;&nbsp;</a></span>overload_nl_solver() <span class="overload">[1/2]</span></h2>
+<a id="aeb5d83adf63a0ed63f518d5ae0830f7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb5d83adf63a0ed63f518d5ae0830f7a">&#9670;&nbsp;</a></span>overload_nl_solver() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::overload_nl_solver </td>
+          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::overload_nl_solver </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="SolversOptions_8hpp.html#a765a4007c12a84454a77f1a29ad04b4a">NLSolverType</a>&#160;</td>
           <td class="paramname"><em>NLSOLVER</em></td><td>)</td>
@@ -1270,46 +1083,18 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Overload the nonlinear algorithm. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>NewtonSolver is the only one implemented</dd></dl>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-    <tr><td class="paramname">NLFI</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">NLSOLVER</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00770">770</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="SteadyOperatorBase_8hpp_source.html#l00100">SteadyOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;::SteadyOperatorBase()</a>.</p>
-<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classOperatorBase_a908186fe49ea62e44392fa606d32c2ce_icgraph.svg" width="412" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
-<a id="af27e83ba05a13993fb7bf87b49a50d8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af27e83ba05a13993fb7bf87b49a50d8c">&#9670;&nbsp;</a></span>overload_nl_solver() <span class="overload">[2/2]</span></h2>
+<a id="ab58055482c046a548e06a41a72b0236c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab58055482c046a548e06a41a72b0236c">&#9670;&nbsp;</a></span>overload_nl_solver() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::overload_nl_solver </td>
+          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::overload_nl_solver </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="SolversOptions_8hpp.html#a765a4007c12a84454a77f1a29ad04b4a">NLSolverType</a>&#160;</td>
           <td class="paramname"><em>NLSOLVER</em>, </td>
@@ -1328,37 +1113,18 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Overload <a class="el" href="classParameters.html">Parameters</a> associated with nonlinear algorithm. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-    <tr><td class="paramname">NLFI</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">NLSOLVER</td><td></td></tr>
-    <tr><td class="paramname">nl_params</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00784">784</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
 </div>
 </div>
-<a id="aa946e918dc7957ece22fe645220cf4b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa946e918dc7957ece22fe645220cf4b4">&#9670;&nbsp;</a></span>overload_preconditioner() <span class="overload">[1/2]</span></h2>
+<a id="ab7f9ccab46711990d6c1b0fe5e783d3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7f9ccab46711990d6c1b0fe5e783d3f">&#9670;&nbsp;</a></span>overload_preconditioner() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::overload_preconditioner </td>
+          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::overload_preconditioner </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a>&#160;</td>
           <td class="paramname"><em>PRECOND</em></td><td>)</td>
@@ -1367,36 +1133,18 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Overload the preconditioner used by the solver in the NL algorithm. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-    <tr><td class="paramname">NLFI</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">PRECOND</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00831">831</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
 </div>
 </div>
-<a id="abfc19e81dd6288858ea06269ce5c8185"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfc19e81dd6288858ea06269ce5c8185">&#9670;&nbsp;</a></span>overload_preconditioner() <span class="overload">[2/2]</span></h2>
+<a id="a664956c04b4632e1d10270bc3dbef534"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a664956c04b4632e1d10270bc3dbef534">&#9670;&nbsp;</a></span>overload_preconditioner() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::overload_preconditioner </td>
+          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::overload_preconditioner </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a>&#160;</td>
           <td class="paramname"><em>PRECOND</em>, </td>
@@ -1415,37 +1163,18 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Overload the parameters of the preconditioner used by the solver in the NL algorithm. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-    <tr><td class="paramname">NLFI</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">PRECOND</td><td></td></tr>
-    <tr><td class="paramname">p_params</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00845">845</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
 </div>
 </div>
-<a id="a4568000bbdef5898949208f566657354"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4568000bbdef5898949208f566657354">&#9670;&nbsp;</a></span>overload_solver() <span class="overload">[1/2]</span></h2>
+<a id="a08638e737e888b9161e465cf22d5e4df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08638e737e888b9161e465cf22d5e4df">&#9670;&nbsp;</a></span>overload_solver() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::overload_solver </td>
+          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::overload_solver </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a>&#160;</td>
           <td class="paramname"><em>SOLVER</em></td><td>)</td>
@@ -1454,38 +1183,18 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Overload the default linear solver used for the LHS. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>only used for explicit time-scheme</dd></dl>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-    <tr><td class="paramname">NLFI</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">SOLVER</td><td></td></tr>
-    <tr><td class="paramname">s_params</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00801">801</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
 </div>
 </div>
-<a id="a91d0e78db12ce4001c6312cc8921daed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a91d0e78db12ce4001c6312cc8921daed">&#9670;&nbsp;</a></span>overload_solver() <span class="overload">[2/2]</span></h2>
+<a id="ae1adf8f1bee43f26b4a10cd086d02b9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1adf8f1bee43f26b4a10cd086d02b9b">&#9670;&nbsp;</a></span>overload_solver() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::overload_solver </td>
+          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::overload_solver </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a>&#160;</td>
           <td class="paramname"><em>SOLVER</em>, </td>
@@ -1504,73 +1213,93 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Overload the parameter for the linear solver used for the LHS. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>only used for explicit time-scheme</dd></dl>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-    <tr><td class="paramname">NLFI</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">SOLVER</td><td></td></tr>
-    <tr><td class="paramname">s_params</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00816">816</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
 </div>
 </div>
-<a id="a40d94f0057a98d045bcf11c5653a9684"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40d94f0057a98d045bcf11c5653a9684">&#9670;&nbsp;</a></span>set_default_properties()</h2>
+<a id="a018f2e553851f70311aeec8bbd4abf68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a018f2e553851f70311aeec8bbd4abf68">&#9670;&nbsp;</a></span>set_bdr_nlfi_ptr()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
+template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::set_default_properties </td>
+          <td class="memname"><a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt;<a class="el" href="classVariables.html">Variables</a>&lt;T, DIM&gt; &gt;* <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::set_bdr_nlfi_ptr </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>nlfi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const std::vector&lt; mfem::Vector &gt; &amp;&#160;</td>
+          <td class="paramname"><em>u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>block</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>bdr_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classTransientOperatorBase.html#afd9ff79834506425db3119e1669d5bb0">TransientOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>, <a class="el" href="classSteadyOperatorBase.html#ad37174f8072304db5cda9a3628afd2e9">SteadyOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>, <a class="el" href="classPhaseFieldOperatorBase.html#a1101c1605bfdf084ff850604c79216f4">PhaseFieldOperatorBase&lt; T, DIM, NLFI, mfem::BlockNonlinearFormIntegrator, SteadyOperatorBase &gt;</a>, <a class="el" href="classPhaseFieldOperatorBase.html#a1101c1605bfdf084ff850604c79216f4">PhaseFieldOperatorBase&lt; T, DIM, NLFI, LHS_NLFI, TransientOperatorBase &gt;</a>, <a class="el" href="classHeatOperatorBase.html#ac3724933d36a791adca9eb6616c76df0">HeatOperatorBase&lt; T, DIM, NLFI, mfem::BlockNonlinearFormIntegrator, SteadyOperatorBase &gt;</a>, <a class="el" href="classHeatOperatorBase.html#ac3724933d36a791adca9eb6616c76df0">HeatOperatorBase&lt; T, DIM, NLFI, LHS_NLFI, TransientOperatorBase &gt;</a>, <a class="el" href="classDiffusionOperatorBase.html#ac18f14cdfca295552d24e59e66712692">DiffusionOperatorBase&lt; T, DIM, NLFI, mfem::BlockNonlinearFormIntegrator, SteadyOperatorBase &gt;</a>, <a class="el" href="classDiffusionOperatorBase.html#ac18f14cdfca295552d24e59e66712692">DiffusionOperatorBase&lt; T, DIM, NLFI, LHS_NLFI, TransientOperatorBase &gt;</a>, <a class="el" href="classPhaseFieldOperator.html#a2717b1376cac2c84f9448a8652722043">PhaseFieldOperator&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>, <a class="el" href="classSteadyPhaseFieldOperator.html#a8d266f0d23c0a66311d01a98bdbe5711">SteadyPhaseFieldOperator&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>, <a class="el" href="classHeatOperator.html#aea115c8266549489fde4b3e860d1d065">HeatOperator&lt; T, DIM, NLFI, LHS_NLFI, RHO, CP &gt;</a>, <a class="el" href="classSteadyHeatOperator.html#a1e1cd1ebb0b1bc683bdfed082ecfc39b">SteadyHeatOperator&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>, <a class="el" href="classDiffusionOperator.html#a058c0547dea220d0ed0709eb19fb8e8d">DiffusionOperator&lt; T, DIM, NLFI, DENS, LHS_NLFI &gt;</a>, and <a class="el" href="classSteadyDiffusionOperator.html#aeb3ce2f99565bb1a3a0e138f17c125e7">SteadyDiffusionOperator&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>.</p>
-
 </div>
 </div>
-<a id="a5e8dcbb2025da9b0fb0dfe636df812d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e8dcbb2025da9b0fb0dfe636df812d8">&#9670;&nbsp;</a></span>set_nlfi_ptr()</h2>
+<a id="aed2450c581a8da373a9354134bf11770"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed2450c581a8da373a9354134bf11770">&#9670;&nbsp;</a></span>set_coefficients()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
+template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">virtual NLFI* <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::set_nlfi_ptr </td>
+          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::set_coefficients </td>
           <td>(</td>
-          <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>dt</em>, </td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classCoefficients.html">Coefficients</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>coefficients</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable_compute_energies</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a250ff464dfc6c6ffb4b456d6b4882f2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a250ff464dfc6c6ffb4b456d6b4882f2e">&#9670;&nbsp;</a></span>set_nlfi_ptr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt;<a class="el" href="classVariables.html">Variables</a>&lt;T, DIM&gt; &gt;* <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::set_nlfi_ptr </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>nlfi</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1584,70 +1313,43 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classTransientOperatorBase.html#afbc254c47e4a9203feaa39d3955da592">TransientOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>, <a class="el" href="classSteadyOperatorBase.html#a8fa38cbdcbff70d1de0c7855d85b2b26">SteadyOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>, <a class="el" href="classPhaseFieldOperatorBase.html#ada80cb83b38415bb8868340438526d37">PhaseFieldOperatorBase&lt; T, DIM, NLFI, mfem::BlockNonlinearFormIntegrator, SteadyOperatorBase &gt;</a>, <a class="el" href="classPhaseFieldOperatorBase.html#ada80cb83b38415bb8868340438526d37">PhaseFieldOperatorBase&lt; T, DIM, NLFI, LHS_NLFI, TransientOperatorBase &gt;</a>, <a class="el" href="classHeatOperatorBase.html#ab9c9dea17c66962ae707a0e5c0ce93c9">HeatOperatorBase&lt; T, DIM, NLFI, mfem::BlockNonlinearFormIntegrator, SteadyOperatorBase &gt;</a>, <a class="el" href="classHeatOperatorBase.html#ab9c9dea17c66962ae707a0e5c0ce93c9">HeatOperatorBase&lt; T, DIM, NLFI, LHS_NLFI, TransientOperatorBase &gt;</a>, <a class="el" href="classDiffusionOperatorBase.html#af199fd041ec8a9d05400a41753a2a58c">DiffusionOperatorBase&lt; T, DIM, NLFI, mfem::BlockNonlinearFormIntegrator, SteadyOperatorBase &gt;</a>, and <a class="el" href="classDiffusionOperatorBase.html#af199fd041ec8a9d05400a41753a2a58c">DiffusionOperatorBase&lt; T, DIM, NLFI, LHS_NLFI, TransientOperatorBase &gt;</a>.</p>
-
 </div>
 </div>
-<a id="a827c0763544a099d3531e040c8e7753d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a827c0763544a099d3531e040c8e7753d">&#9670;&nbsp;</a></span>SetConstantParameters()</h2>
+<a id="a79a4e8e8866afd0b7e4ef8bbc1648523"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79a4e8e8866afd0b7e4ef8bbc1648523">&#9670;&nbsp;</a></span>set_time_coefficients()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
+template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::SetConstantParameters </td>
+          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::set_time_coefficients </td>
           <td>(</td>
-          <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>dt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>time</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">const std::vector&lt; mfem::Vector &gt; &amp;&#160;</td>
-          <td class="paramname"><em>u_vect</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classTransientOperatorBase.html#a9079951b88cde84b0d0cd362e0bf5318">TransientOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>, and <a class="el" href="classSteadyOperatorBase.html#a115c3fd8d0a81a70a9deaa861e7117b8">SteadyOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>.</p>
-
 </div>
 </div>
-<a id="a5e268c78fc9e025da38af0af9c4689bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e268c78fc9e025da38af0af9c4689bb">&#9670;&nbsp;</a></span>SetNewtonAlgorithm()</h2>
+<a id="a40af76d9b521a9a7e82779e2d24db958"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40af76d9b521a9a7e82779e2d24db958">&#9670;&nbsp;</a></span>SetNewtonAlgorithm()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::SetNewtonAlgorithm </td>
+          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::SetNewtonAlgorithm </td>
           <td>(</td>
           <td class="paramtype">mfem::Operator *&#160;</td>
           <td class="paramname"><em>oper</em></td><td>)</td>
@@ -1661,62 +1363,25 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Configure the Newton solver. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-    <tr><td class="paramname">NLFI</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">oper</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00437">437</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="NLSolver_8hpp_source.html#l00117">NLSolver::get_nl_solver()</a>.</p>
-<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classOperatorBase_a5e268c78fc9e025da38af0af9c4689bb_cgraph.svg" width="510" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
-<a id="adc95f1b581c4122171c7fb02ddc9b9ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc95f1b581c4122171c7fb02ddc9b9ed">&#9670;&nbsp;</a></span>SetTransientParameters()</h2>
+<a id="a33be318888c048a4251e4849b3125459"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33be318888c048a4251e4849b3125459">&#9670;&nbsp;</a></span>SetTransientParameters()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::SetTransientParameters </td>
+          <td class="memname">virtual void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::SetTransientParameters </td>
           <td>(</td>
-          <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>dt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">const std::vector&lt; mfem::Vector &gt; &amp;&#160;</td>
-          <td class="paramname"><em>u_vect</em>&#160;</td>
-        </tr>
-        <tr>
+          <td class="paramname"><em>u_vect</em></td><td>)</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -1726,23 +1391,23 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classSteadyOperatorBase.html#afef3a1b775a4d5f068fab776f99fdc26">SteadyOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>, and <a class="el" href="classTransientOperatorBase.html#a3a1de6deb844578b95b1791a9300658b">TransientOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classSteadyOperator.html#a7791ee4f58b3b831bc16fd9ed16d926f">SteadyOperator&lt; T, DIM &gt;</a>, and <a class="el" href="classTransientOperator.html#a690bda9a78ad456068991e3a93aa2c93">TransientOperator&lt; T, DIM &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a5bb9151efc6da7566d63a0290cb7ad74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5bb9151efc6da7566d63a0290cb7ad74">&#9670;&nbsp;</a></span>solve()</h2>
+<a id="a24dfec9f30ad357293d6a7e3c1d65184"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24dfec9f30ad357293d6a7e3c1d65184">&#9670;&nbsp;</a></span>solve()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::solve </td>
+          <td class="memname">virtual void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::solve </td>
           <td>(</td>
           <td class="paramtype">std::vector&lt; std::unique_ptr&lt; mfem::Vector &gt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>vect_unk</em>, </td>
@@ -1784,130 +1449,24 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classSteadyOperatorBase.html#a8a432c92d1bbb31d2de7c7b8b1b3c98d">SteadyOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>, and <a class="el" href="classTransientOperatorBase.html#abaae7e26d28c4794aa2e0a666c041bb7">TransientOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classSteadyOperator.html#a4a869371d2a32235bb9f4b4f2306f252">SteadyOperator&lt; T, DIM &gt;</a>, and <a class="el" href="classTransientOperator.html#af5690bc12c9873e22becbfd7ee281bce">TransientOperator&lt; T, DIM &gt;</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a06b3b231e18e9f29eb5fa72589d9be4d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06b3b231e18e9f29eb5fa72589d9be4d">&#9670;&nbsp;</a></span>auxvariables_</h2>
+<a id="aee0a93eacbc31abc422578cedf736fc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee0a93eacbc31abc422578cedf736fc7">&#9670;&nbsp;</a></span>array_bdr_</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classVariables.html">Variables</a>&lt;T, DIM&gt;*&gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::auxvariables_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00072">72</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a0c562312941a3ed8275f9092f4c3fe8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c562312941a3ed8275f9092f4c3fe8c">&#9670;&nbsp;</a></span>bcs_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt;T, DIM&gt;*&gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::bcs_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="classBoundary.html" title="Class for defining a boundary with a name, an index, a type and, if needed, a value.">Boundary</a> conditions. </p>
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00092">92</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a60447c5c32463f5ad05682435fadee05"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60447c5c32463f5ad05682435fadee05">&#9670;&nbsp;</a></span>block_trueOffsets_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">mfem::Array&lt;int&gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::block_trueOffsets_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00083">83</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
-</div>
-</div>
-<a id="af109e406e0850a3d66694e309f739aa9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af109e406e0850a3d66694e309f739aa9">&#9670;&nbsp;</a></span>current_dt_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::current_dt_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00096">96</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
-</div>
-</div>
-<a id="afe54346be2aae87ac82e87a9fe2ca4ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe54346be2aae87ac82e87a9fe2ca4ff">&#9670;&nbsp;</a></span>current_time_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::current_time_</td>
+          <td class="memname">mfem::Array&lt;int&gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::array_bdr_</td>
         </tr>
       </table>
   </td>
@@ -1921,231 +1480,19 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
 
 </div>
 </div>
-<a id="a6fcaa05849bcf820fffc68d9a84f2c6e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6fcaa05849bcf820fffc68d9a84f2c6e">&#9670;&nbsp;</a></span>default_p_</h2>
+<a id="ac4e42d59a151f6654d7d87508d6a081d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4e42d59a151f6654d7d87508d6a081d">&#9670;&nbsp;</a></span>auxvariables_</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classParameter.html">Parameter</a> <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::default_p_ = <a class="el" href="classParameter.html">Parameter</a>(&quot;default parameter&quot;, false)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00074">74</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
-</div>
-</div>
-<a id="addecfb7fe4fa55438be53091dcca6709"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#addecfb7fe4fa55438be53091dcca6709">&#9670;&nbsp;</a></span>default_params_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="classParameters.html">Parameters</a> <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::default_params_ = <a class="el" href="classParameters.html">Parameters</a>(<a class="el" href="classOperatorBase.html#a6fcaa05849bcf820fffc68d9a84f2c6e">default_p_</a>)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00075">75</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a99bc00fb0dae9df5e039d4507d99fc96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99bc00fb0dae9df5e039d4507d99fc96">&#9670;&nbsp;</a></span>description_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::description_ {&quot;UNKNOWN OPERATOR&quot;}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00073">73</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="OperatorBase_8hpp_source.html#l00139">OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;::get_description()</a>.</p>
-
-</div>
-</div>
-<a id="a89f7d24559d360460f8ef68aeaf6cbe5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89f7d24559d360460f8ef68aeaf6cbe5">&#9670;&nbsp;</a></span>ess_tdof_list_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;mfem::Array&lt;int&gt; &gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::ess_tdof_list_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00082">82</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ada583cb64143791a54913ca08e2c97b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada583cb64143791a54913ca08e2c97b9">&#9670;&nbsp;</a></span>fes_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">mfem::Array&lt;mfem::ParFiniteElementSpace*&gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::fes_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Finite Element Space and BCs. </p>
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00081">81</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a24748598a5172d723934040c51bc3667"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24748598a5172d723934040c51bc3667">&#9670;&nbsp;</a></span>height_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::height_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00098">98</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a047a2fbaaa2b63338c5b28f4657b0148"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a047a2fbaaa2b63338c5b28f4657b0148">&#9670;&nbsp;</a></span>newton_solver_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt;mfem::NewtonSolver&gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::newton_solver_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00089">89</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a64558884a9c13a719b1f5a66ce789cdc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a64558884a9c13a719b1f5a66ce789cdc">&#9670;&nbsp;</a></span>nlfi_ptr_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">NLFI* <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::nlfi_ptr_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00100">100</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a8c51d5bf9bfaa25a9728fff0b5e88505"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c51d5bf9bfaa25a9728fff0b5e88505">&#9670;&nbsp;</a></span>params_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="classParameters.html">Parameters</a>&amp; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::params_</td>
+          <td class="memname">std::vector&lt;<a class="el" href="classVariables.html">Variables</a>&lt;T, DIM&gt;*&gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::auxvariables_</td>
         </tr>
       </table>
   </td>
@@ -2159,19 +1506,19 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
 
 </div>
 </div>
-<a id="a802150d85ef46a966de2d24c07dca37a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a802150d85ef46a966de2d24c07dca37a">&#9670;&nbsp;</a></span>RHS</h2>
+<a id="a284389af2d5deb934149b860041ea315"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a284389af2d5deb934149b860041ea315">&#9670;&nbsp;</a></span>bcs_</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">mfem::ParBlockNonlinearForm* <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::RHS</td>
+          <td class="memname">std::vector&lt;<a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt;T, DIM&gt;*&gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::bcs_</td>
         </tr>
       </table>
   </td>
@@ -2181,25 +1528,25 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Right-Hand-Side. </p>
+<p><a class="el" href="classBoundary.html" title="Class for defining a boundary with a name, an index, a type and, if needed, a value.">Boundary</a> conditions. </p>
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00086">86</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00096">96</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a7bcaa08f1590947aa4ca2986da59aa5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7bcaa08f1590947aa4ca2986da59aa5f">&#9670;&nbsp;</a></span>rhs_solver_</h2>
+<a id="a1f168971ddc71471c40b6ef5d56e1ef9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f168971ddc71471c40b6ef5d56e1ef9">&#9670;&nbsp;</a></span>block_trueOffsets_</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classNLSolver.html">NLSolver</a>* <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::rhs_solver_</td>
+          <td class="memname">mfem::Array&lt;int&gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::block_trueOffsets_</td>
         </tr>
       </table>
   </td>
@@ -2209,23 +1556,23 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00088">88</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00087">87</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
-<a id="af7d6e13d7a57204720cfd532d4e2f36a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7d6e13d7a57204720cfd532d4e2f36a">&#9670;&nbsp;</a></span>src_func_</h2>
+<a id="a7824b011ddc98bcab78945b73cbbfbef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7824b011ddc98bcab78945b73cbbfbef">&#9670;&nbsp;</a></span>coefficients_</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::function&lt;double(const mfem::Vector&amp;, double)&gt; &gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::src_func_</td>
+          <td class="memname">std::vector&lt;<a class="el" href="classCoefficients.html">Coefficients</a>&gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::coefficients_</td>
         </tr>
       </table>
   </td>
@@ -2235,23 +1582,103 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00094">94</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00075">75</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ad881d31f7617ad86a7e91553a23fb57d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad881d31f7617ad86a7e91553a23fb57d">&#9670;&nbsp;</a></span>time_iso_specialized_</h2>
+<a id="a29fc0b682c95483f9f7953d9b754b401"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29fc0b682c95483f9f7953d9b754b401">&#9670;&nbsp;</a></span>current_dt_</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt;std::string, std::multimap&lt;<a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a>&gt; &gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::time_iso_specialized_</td>
+          <td class="memname">double <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::current_dt_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00101">101</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="OperatorBase_8hpp_source.html#l00138">OperatorBase&lt; T, DIM &gt;::get_current_time_step()</a>.</p>
+
+</div>
+</div>
+<a id="aac2db03c9df9d84bce33fcca5fd5c952"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac2db03c9df9d84bce33fcca5fd5c952">&#9670;&nbsp;</a></span>current_time_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::current_time_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00102">102</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a687e94d31c07ca81dd9fb6655840c146"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a687e94d31c07ca81dd9fb6655840c146">&#9670;&nbsp;</a></span>default_p_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classParameter.html">Parameter</a> <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::default_p_ = <a class="el" href="classParameter.html">Parameter</a>(&quot;default parameter&quot;, false)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00078">78</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a2dcc73c1c4b0c61a88dca73f762daf46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dcc73c1c4b0c61a88dca73f762daf46">&#9670;&nbsp;</a></span>default_params_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classParameters.html">Parameters</a> <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::default_params_ = <a class="el" href="classParameters.html">Parameters</a>(<a class="el" href="classOperatorBase.html#a687e94d31c07ca81dd9fb6655840c146">default_p_</a>)</td>
         </tr>
       </table>
   </td>
@@ -2265,19 +1692,389 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
 
 </div>
 </div>
-<a id="af80fe4625c5155e99936ca20f5fb3a53"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af80fe4625c5155e99936ca20f5fb3a53">&#9670;&nbsp;</a></span>time_specialized_</h2>
+<a id="aaae764fd7084462712dcedd00538acab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaae764fd7084462712dcedd00538acab">&#9670;&nbsp;</a></span>description_</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::multimap&lt;<a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a>&gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::time_specialized_</td>
+          <td class="memname">std::string <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::description_ {&quot;UNKNOWN OPERATOR&quot;}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00077">77</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="OperatorBase_8hpp_source.html#l00164">OperatorBase&lt; T, DIM &gt;::get_description()</a>.</p>
+
+</div>
+</div>
+<a id="a04b4998ce31bd733bc3dfd174630bd2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04b4998ce31bd733bc3dfd174630bd2e">&#9670;&nbsp;</a></span>energy_coefficient_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt;<a class="el" href="classCoefficient.html">Coefficient</a>&gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::energy_coefficient_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00073">73</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+
+</div>
+</div>
+<a id="abf3bcd0d2da25e5d17f838571a3911ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf3bcd0d2da25e5d17f838571a3911ae">&#9670;&nbsp;</a></span>ess_tdof_list_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;mfem::Array&lt;int&gt; &gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::ess_tdof_list_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00086">86</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ac1616446fe2fbf2c3e4df6cf0059c672"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1616446fe2fbf2c3e4df6cf0059c672">&#9670;&nbsp;</a></span>fes_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mfem::Array&lt;mfem::ParFiniteElementSpace*&gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::fes_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Finite Element Space and BCs. </p>
+
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00085">85</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a373040051c3fdf52ead07edc6b3d4079"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a373040051c3fdf52ead07edc6b3d4079">&#9670;&nbsp;</a></span>grad_energy_coefficient_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt;<a class="el" href="classCoefficient.html">Coefficient</a>&gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::grad_energy_coefficient_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00074">74</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a21b5eba5bae108462fb00a3cc3507e5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21b5eba5bae108462fb00a3cc3507e5f">&#9670;&nbsp;</a></span>height_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::height_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00103">103</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ad5c9f5f88e5105b4756147ffb94fa898"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5c9f5f88e5105b4756147ffb94fa898">&#9670;&nbsp;</a></span>newton_solver_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;mfem::NewtonSolver&gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::newton_solver_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00093">93</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ac9f23d78c4887a7b8096d916bc1c937c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9f23d78c4887a7b8096d916bc1c937c">&#9670;&nbsp;</a></span>nl_solver_params_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classParameters.html">Parameters</a> <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::nl_solver_params_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00072">72</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a9304e7a5d72d0b0886457094b4d4df7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9304e7a5d72d0b0886457094b4d4df7c">&#9670;&nbsp;</a></span>params_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classParameters.html">Parameters</a>&amp; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::params_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00080">80</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a6fe5c3dda18a79b22e39b32300555a41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fe5c3dda18a79b22e39b32300555a41">&#9670;&nbsp;</a></span>RHS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mfem::ParBlockNonlinearForm* <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::RHS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Right-Hand-Side. </p>
+
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00090">90</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a4db66d54873c6aeffb83677acdf8473f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4db66d54873c6aeffb83677acdf8473f">&#9670;&nbsp;</a></span>rhs_integrators_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::string&gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::rhs_integrators_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00106">106</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ad47902d896f6e1122a2ea3ead37b7f6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad47902d896f6e1122a2ea3ead37b7f6e">&#9670;&nbsp;</a></span>rhs_solver_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classNLSolver.html">NLSolver</a>* <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::rhs_solver_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00092">92</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a97a41de0f26f20ed856841877bb79dab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97a41de0f26f20ed856841877bb79dab">&#9670;&nbsp;</a></span>src_func_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::function&lt;double(const mfem::Vector&amp;, double)&gt; &gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::src_func_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00099">99</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a1748183af3da8d66eafce75028599f29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1748183af3da8d66eafce75028599f29">&#9670;&nbsp;</a></span>time_iso_specialized_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string, std::multimap&lt;<a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a>&gt; &gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::time_iso_specialized_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00083">83</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a23c10fec01b5c02ddfdc78da5128c83e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23c10fec01b5c02ddfdc78da5128c83e">&#9670;&nbsp;</a></span>time_specialized_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::multimap&lt;<a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a>&gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::time_specialized_</td>
         </tr>
       </table>
   </td>
@@ -2289,23 +2086,23 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
 
 <p>Time integral results. </p>
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00078">78</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00082">82</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a28cac1bc44bfd5245e046969cf69b2b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28cac1bc44bfd5245e046969cf69b2b6">&#9670;&nbsp;</a></span>z</h2>
+<a id="acd67b779cc5e44ea8e837b19b43345ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd67b779cc5e44ea8e837b19b43345ae">&#9670;&nbsp;</a></span>z</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
+template&lt;class T , int DIM&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">mfem::Vector <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM, NLFI, LHS_NLFI &gt;::z</td>
+          <td class="memname">mfem::Vector <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::z</td>
         </tr>
       </table>
   </td>
@@ -2315,7 +2112,7 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00099">99</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00104">104</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -2325,7 +2122,7 @@ template&lt;class T , int DIM, class NLFI , class LHS_NLFI &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 15:39:06 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

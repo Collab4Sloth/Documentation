@@ -25,9 +25,9 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v2.0.0</span>
    </div>
-   <div id="projectbrief">PhaseField solver</div>
+   <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
  </tr>
  </tbody>
@@ -75,6 +75,7 @@ $(function() {
 , <a class="el" href="structcalphad__nodes__strategies.html#a432a1ed4e50b3407f82480aec5cc1d3e">calphad_nodes_strategies</a>
 , <a class="el" href="structcalphad__outputs.html#a3b9ee0f8fee1d86f37ad937912c864fe">calphad_outputs</a>
 , <a class="el" href="structConvergenceType.html#aa13c6cb18fa906fb291a48956ec6d831">ConvergenceType</a>
+, <a class="el" href="structIntegrators.html#a2b9da6dcbb0d390cf08308d150f795f3">Integrators</a>
 , <a class="el" href="structKKS__nucleation__strategy.html#af736ec54bf6e10d0ff2d3cde5ef4b4e5">KKS_nucleation_strategy</a>
 , <a class="el" href="structMeshes.html#a17ce7cdf7c4aef0633ce80f5e526b706">Meshes</a>
 , <a class="el" href="structpressure__sort__method.html#a1ac4c2333d614ef2ec93ea855d772d28">pressure_sort_method</a>
@@ -82,17 +83,43 @@ $(function() {
 , <a class="el" href="structtemperature__sort__method.html#ac9be78aeed58bba6ff59673d454d65ab">temperature_sort_method</a>
 , <a class="el" href="structTimeScheme.html#a29f8ffca06683f47a693e679d0d1a0e6">TimeScheme</a>
 </li>
+<li>value_
+: <a class="el" href="classConstantCoefficient.html#ae4a7360a5f44fa03648265907fb5ae9a">ConstantCoefficient</a>
+</li>
+<li>VAR
+: <a class="el" href="structTest.html#a1734fd45bef004bbe51e36a88f86da9b">Test&lt; DIM &gt;</a>
+, <a class="el" href="structTest_3_011_01_4.html#a0b5d3a8ecfd77c3c501f72c31beb1f4e">Test&lt; 1 &gt;</a>
+, <a class="el" href="structTest_3_012_01_4.html#a9abf58be1a52531b26ade0b1d03718a3">Test&lt; 2 &gt;</a>
+, <a class="el" href="structTest_3_013_01_4.html#ab2e95f73811252cd8823247b1b5f3fd0">Test&lt; 3 &gt;</a>
+</li>
 <li>var_convergence_
 : <a class="el" href="classProblemBase.html#a2d7f8245e5bda60144d4c5f470f9e46c">ProblemBase&lt; VAR, PST &gt;</a>
 </li>
 <li>Variable()
-: <a class="el" href="classVariable.html#a0592a8e4e93a8e9e36cb26bc43c0e53a">Variable&lt; T, DIM &gt;</a>
+: <a class="el" href="classVariable.html#ac4fba92c0907ea9c42f29464007b6543">Variable&lt; T, DIM &gt;</a>
 </li>
 <li>Variables()
 : <a class="el" href="classVariables.html#a125cbddbe8bdfbb40e7b16ae6498b24c">Variables&lt; T, DIM &gt;</a>
 </li>
 <li>variables_
 : <a class="el" href="classProblemBase.html#a70ba17e6f76882aac6819462388fa2e4">ProblemBase&lt; VAR, PST &gt;</a>
+</li>
+<li>VARS
+: <a class="el" href="structTest.html#ae7f9bd03472e5c7949b7d62a94e5df04">Test&lt; DIM &gt;</a>
+, <a class="el" href="structTest_3_011_01_4.html#ae8afbdd89c61c063d57a88c1e9c929b4">Test&lt; 1 &gt;</a>
+, <a class="el" href="structTest_3_012_01_4.html#a87fc7b482f838aea733051bdf6cbc063">Test&lt; 2 &gt;</a>
+, <a class="el" href="structTest_3_013_01_4.html#a4415bc6824a18c24c063795507c26f4b">Test&lt; 3 &gt;</a>
+</li>
+<li>vaux_gf_
+: <a class="el" href="classAllenCahnNLFormIntegrator.html#af71f9f496260198a21031497f540bb31">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classBlockAllenCahnNLFormIntegrator.html#aca50837fa2294802daa0b53b0b6b9e02">BlockAllenCahnNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classCahnHilliardNLFormIntegrator.html#a1b4724f1fe645eb7262876cc489a3fb2">CahnHilliardNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classDiffusionFluxNLFormIntegrator.html#a8b85a2da0b293c8f7584dd819c70a431">DiffusionFluxNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classDiffusionNLFormIntegrator.html#ab7a04a61b93f82540ed16e70a8a324ae">DiffusionNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classMeltingBaseNLFormIntegrator.html#ae59a4b5012ed98c13ed979a624866178">MeltingBaseNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classRobinNLFormIntegrator.html#a6c1893058b7a30e0d379c41ffdecbfcf">RobinNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classTimeCHNLFormIntegrator.html#aa0263698309314160e03ca1ec984901a">TimeCHNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classTimeNLFormIntegrator.html#a16423f098323f96e1d99ac9a442f802c">TimeNLFormIntegrator&lt; VARS &gt;</a>
 </li>
 <li>verbose()
 : <a class="el" href="classSlothInfo.html#ad6fa3fa2789f2c6779ba9c6ec2712c31">SlothInfo</a>
@@ -101,7 +128,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 15:39:07 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

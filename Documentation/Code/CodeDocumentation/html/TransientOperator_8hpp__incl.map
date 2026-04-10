@@ -1,0 +1,86 @@
+<map id="TransientOperator.hpp" name="TransientOperator.hpp">
+<area shape="rect" id="node1" title="Transient Operator." alt="" coords="5255,5,5433,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="9041,945,9119,972"/>
+<area shape="rect" id="node3" title=" " alt="" coords="6299,1020,6362,1047"/>
+<area shape="rect" id="node4" title=" " alt="" coords="3441,1020,3505,1047"/>
+<area shape="rect" id="node5" href="$AnalyticalFunctions_8hpp.html" title="List of Analytical functions used by phase&#45;field models." alt="" coords="1006,543,1197,584"/>
+<area shape="rect" id="node9" href="$Options_8hpp.html" title="List of all Options files." alt="" coords="5044,632,5207,659"/>
+<area shape="rect" id="node11" href="$Utils_8hpp.html" title="List of all Utils files." alt="" coords="3011,796,3130,823"/>
+<area shape="rect" id="node21" title=" " alt="" coords="10215,1020,10307,1047"/>
+<area shape="rect" id="node41" title=" " alt="" coords="10190,453,10402,495"/>
+<area shape="rect" id="node42" href="$OperatorBase_8hpp.html" title="Base class for building Steady and TimeDependent PhaseFieldOperators." alt="" coords="4481,80,4700,107"/>
+<area shape="rect" id="node46" href="$Spatial_8hpp.html" title="Spatial discretization." alt="" coords="1742,550,1893,577"/>
+<area shape="rect" id="node63" href="$Parameters_8hpp.html" title="Parameter class used to build and manage calculation parameter." alt="" coords="5767,461,5977,487"/>
+<area shape="rect" id="node64" href="$Parameter_8hpp.html" title="Parameter class." alt="" coords="6944,550,7147,577"/>
+<area shape="rect" id="node68" href="$LSolver_8hpp.html" title="Class used to manage Linear Solver objet." alt="" coords="5626,155,5785,181"/>
+<area shape="rect" id="node78" href="$Variables_8hpp.html" title="Variables class used to build and manage variables." alt="" coords="1071,229,1252,256"/>
+<area shape="rect" id="node83" href="$ReducedOperator_8hpp.html" title="UnSteady version of the linear system resulting from the NonLinear algorithm." alt="" coords="9649,871,9895,897"/>
+<area shape="rect" id="node84" href="$TransientOperator_8tpp.html" title=" " alt="" coords="10881,80,11127,107"/>
+<area shape="rect" id="node6" title=" " alt="" coords="1715,871,1762,897"/>
+<area shape="rect" id="node7" title=" " alt="" coords="1024,1020,1115,1047"/>
+<area shape="rect" id="node8" title=" " alt="" coords="1393,1020,1455,1047"/>
+<area shape="rect" id="node10" href="$AnalyticalFunctionOptions_8hpp.html" title="Options for Analytical functions." alt="" coords="5498,707,5705,748"/>
+<area shape="rect" id="node31" href="$CalphadOptions_8hpp.html" title="Options for Calphad problems." alt="" coords="4417,714,4637,741"/>
+<area shape="rect" id="node32" href="$DiffusionOptions_8hpp.html" title="Option for Mass Diffusion problems." alt="" coords="3285,714,3509,741"/>
+<area shape="rect" id="node33" href="$IntegratorsOptions_8hpp.html" title="Options for Integrators." alt="" coords="5831,714,6070,741"/>
+<area shape="rect" id="node34" href="$PhaseFieldOptions_8hpp.html" title="Options for PhaseField problems." alt="" coords="3534,714,3773,741"/>
+<area shape="rect" id="node35" href="$PhysicalConvergenceOptions_8hpp.html" title="Options for PhysicalConvergence objects." alt="" coords="4762,707,4987,748"/>
+<area shape="rect" id="node36" href="$PhysicalPropertiesOptions_8hpp.html" title="Options for physical properties." alt="" coords="3797,707,4003,748"/>
+<area shape="rect" id="node37" href="$ProblemsOptions_8hpp.html" title="Options for Problem objects." alt="" coords="5012,714,5239,741"/>
+<area shape="rect" id="node38" href="$SolversOptions_8hpp.html" title="Options for solvers and preconditioners." alt="" coords="4027,714,4240,741"/>
+<area shape="rect" id="node39" href="$SpatialOptions_8hpp.html" title="Options for Spatial discretization." alt="" coords="5263,714,5473,741"/>
+<area shape="rect" id="node40" href="$TimeOptions_8hpp.html" title="Options for Time discretization." alt="" coords="7007,714,7204,741"/>
+<area shape="rect" id="node12" href="$UtilsForData_8hpp.html" title="Usefull methods for data." alt="" coords="1715,945,1890,972"/>
+<area shape="rect" id="node22" href="$UtilsForDebug_8hpp.html" title="Usefull methods for debug." alt="" coords="2633,871,2821,897"/>
+<area shape="rect" id="node25" href="$UtilsForOptions_8hpp.html" title="Usefull methods for Options." alt="" coords="2845,871,3040,897"/>
+<area shape="rect" id="node28" href="$UtilsForPostProcessing_8hpp.html" title="Usefull methods for post&#45;processing." alt="" coords="3065,871,3309,897"/>
+<area shape="rect" id="node29" href="$UtilsForVariants_8hpp.html" title="manage std::Variants" alt="" coords="6669,871,6867,897"/>
+<area shape="rect" id="node13" title=" " alt="" coords="1653,1020,1731,1047"/>
+<area shape="rect" id="node14" title=" " alt="" coords="1985,1020,2073,1047"/>
+<area shape="rect" id="node15" title=" " alt="" coords="1769,1020,1836,1047"/>
+<area shape="rect" id="node16" title=" " alt="" coords="1879,1020,1942,1047"/>
+<area shape="rect" id="node17" title=" " alt="" coords="1264,1020,1355,1047"/>
+<area shape="rect" id="node18" title=" " alt="" coords="3121,1020,3202,1047"/>
+<area shape="rect" id="node19" title=" " alt="" coords="385,1020,437,1047"/>
+<area shape="rect" id="node20" title=" " alt="" coords="1167,1020,1225,1047"/>
+<area shape="rect" id="node23" title=" " alt="" coords="2576,945,2696,972"/>
+<area shape="rect" id="node24" title=" " alt="" coords="2720,945,2795,972"/>
+<area shape="rect" id="node26" title=" " alt="" coords="2269,945,2328,972"/>
+<area shape="rect" id="node27" title=" " alt="" coords="6597,945,6667,972"/>
+<area shape="rect" id="node30" title=" " alt="" coords="6907,945,7002,972"/>
+<area shape="rect" id="node43" href="$BoundaryConditions_8hpp.html" title="BoundaryConditions class used to build and manage boundary conditions." alt="" coords="2175,379,2399,405"/>
+<area shape="rect" id="node50" href="$Coefficients_8hpp.html" title="Coefficients class used to build and manage a collection of Coefficient." alt="" coords="2699,461,2914,487"/>
+<area shape="rect" id="node61" href="$SlothNLFormIntegrator_8hpp.html" title="Class prodiving common methods to all NLFormIntegrators." alt="" coords="8375,379,8668,405"/>
+<area shape="rect" id="node76" href="$NLSolver_8hpp.html" title="Class used to manage a NonLinear Solver( Newton type)" alt="" coords="5431,155,5601,181"/>
+<area shape="rect" id="node82" href="$OperatorBase_8tpp.html" title=" " alt="" coords="4654,155,4869,181"/>
+<area shape="rect" id="node44" title=" " alt="" coords="1933,461,2054,487"/>
+<area shape="rect" id="node45" href="$Boundary_8hpp.html" title="Boundary class used to build a boundary with a name, an index, a type and, if needed,..." alt="" coords="2475,461,2624,487"/>
+<area shape="rect" id="node49" href="$BoundaryConditions_8tpp.html" title=" " alt="" coords="2078,461,2298,487"/>
+<area shape="rect" id="node47" title=" " alt="" coords="1832,632,1893,659"/>
+<area shape="rect" id="node48" title=" " alt="" coords="1856,871,1899,897"/>
+<area shape="rect" id="node51" href="$Coefficient_8hpp.html" title="Base class definining a coefficient from an analytical formula." alt="" coords="7285,550,7493,577"/>
+<area shape="rect" id="node60" href="$Glossary_8hpp.html" title="Glossary used to defined variables and properties in SLOTH." alt="" coords="7983,796,8156,823"/>
+<area shape="rect" id="node52" title=" " alt="" coords="7431,714,7507,741"/>
+<area shape="rect" id="node53" href="$FunctionCoefficient_8hpp.html" title="Base class defining analytical expression, first and second derivatives of a Coefficient." alt="" coords="7381,796,7649,823"/>
+<area shape="rect" id="node58" href="$SlothBaseCoefficient_8hpp.html" title="Base class definining a coefficient from an analytical formula." alt="" coords="7725,632,8001,659"/>
+<area shape="rect" id="node54" title=" " alt="" coords="7556,871,7620,897"/>
+<area shape="rect" id="node55" title=" " alt="" coords="7695,871,7777,897"/>
+<area shape="rect" id="node56" title=" " alt="" coords="8129,871,8207,897"/>
+<area shape="rect" id="node57" title=" " alt="" coords="7802,871,7857,897"/>
+<area shape="rect" id="node59" href="$ConstantCoefficient_8hpp.html" title="Constant coefficient." alt="" coords="7583,714,7852,741"/>
+<area shape="rect" id="node62" title=" " alt="" coords="8559,461,8601,487"/>
+<area shape="rect" id="node67" href="$SlothNLFormIntegrator_8tpp.html" title=" " alt="" coords="8626,461,8915,487"/>
+<area shape="rect" id="node66" href="$Parameters_8tpp.html" title=" " alt="" coords="5965,550,6171,577"/>
+<area shape="rect" id="node65" title=" " alt="" coords="8178,632,8257,659"/>
+<area shape="rect" id="node69" href="$SlothSolver_8hpp.html" title="Class to define a SlothSolver objet." alt="" coords="5913,229,6097,256"/>
+<area shape="rect" id="node70" href="$DSolverBase_8hpp.html" title="Direct solvers." alt="" coords="5685,304,5880,331"/>
+<area shape="rect" id="node72" href="$HPrecondBase_8hpp.html" title="Base class for hypre preconditionners used in linear system involved in non linear algorithm." alt="" coords="6561,304,6769,331"/>
+<area shape="rect" id="node73" href="$HSolverBase_8hpp.html" title="Base class for Hypre solvers." alt="" coords="6343,304,6537,331"/>
+<area shape="rect" id="node74" href="$IPrecondBase_8hpp.html" title="Base class for preconditionners used in linear system involved in non linear algorithm." alt="" coords="5905,304,6106,331"/>
+<area shape="rect" id="node75" href="$ISolverBase_8hpp.html" title="Base class for iterative solvers." alt="" coords="6130,304,6318,331"/>
+<area shape="rect" id="node71" href="$SolverBase_8hpp.html" title="Base class for Hypre, Iterative, Direct and Non Linear Solvers." alt="" coords="6298,379,6481,405"/>
+<area shape="rect" id="node77" href="$NLSolverBase_8hpp.html" title="ase class for non linear solvers" alt="" coords="5350,304,5554,331"/>
+<area shape="rect" id="node79" href="$Variable_8hpp.html" title="Variable class used to build and manage variables of model." alt="" coords="1074,304,1249,331"/>
+<area shape="rect" id="node81" href="$Variables_8tpp.html" title=" " alt="" coords="1273,304,1450,331"/>
+<area shape="rect" id="node80" href="$Variable_8tpp.html" title=" " alt="" coords="1077,379,1248,405"/>
+</map>

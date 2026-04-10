@@ -25,9 +25,9 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v2.0.0</span>
    </div>
-   <div id="projectbrief">PhaseField solver</div>
+   <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
  </tr>
  </tbody>
@@ -87,15 +87,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a10e9c0ab47cd8bc7917638a56dcf6f3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute y = N(unk + dt*k) + M k.  <a href="classSteadyPhaseFieldReducedOperator.html#a10e9c0ab47cd8bc7917638a56dcf6f3c">More...</a><br /></td></tr>
 <tr class="separator:a10e9c0ab47cd8bc7917638a56dcf6f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa22586510198bec3b136e9e9f4150773"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSteadyPhaseFieldReducedOperator.html#aa22586510198bec3b136e9e9f4150773">SteadyPhaseFieldReducedOperator</a> (mfem::ParBlockNonlinearForm *RHS, const std::vector&lt; mfem::Array&lt; int &gt;&gt; &amp;ess_tdof)</td></tr>
-<tr class="memdesc:aa22586510198bec3b136e9e9f4150773"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Phase Field Reduced Operator:: Phase Field Reduced Operator object.  <a href="classSteadyPhaseFieldReducedOperator.html#aa22586510198bec3b136e9e9f4150773">More...</a><br /></td></tr>
+<tr class="memdesc:aa22586510198bec3b136e9e9f4150773"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Steady Phase Field Reduced Operator:: Steady Phase Field Reduced Operator object.  <a href="classSteadyPhaseFieldReducedOperator.html#aa22586510198bec3b136e9e9f4150773">More...</a><br /></td></tr>
 <tr class="separator:aa22586510198bec3b136e9e9f4150773"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cb31534774ca66c1baa1eaa8388e435"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSteadyPhaseFieldReducedOperator.html#a4cb31534774ca66c1baa1eaa8388e435">~SteadyPhaseFieldReducedOperator</a> ()</td></tr>
-<tr class="memdesc:a4cb31534774ca66c1baa1eaa8388e435"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the Phase Field Reduced Operator:: Phase Field Reduced Operator object.  <a href="classSteadyPhaseFieldReducedOperator.html#a4cb31534774ca66c1baa1eaa8388e435">More...</a><br /></td></tr>
-<tr class="separator:a4cb31534774ca66c1baa1eaa8388e435"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedccdd92d1a7a5cb4cb2a5f803feffe1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSteadyPhaseFieldReducedOperator.html#aedccdd92d1a7a5cb4cb2a5f803feffe1">~SteadyPhaseFieldReducedOperator</a> ()=default</td></tr>
+<tr class="separator:aedccdd92d1a7a5cb4cb2a5f803feffe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="SteadyReducedOperator_8hpp_source.html#l00033">33</a> of file <a class="el" href="SteadyReducedOperator_8hpp_source.html">SteadyReducedOperator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SteadyReducedOperator_8hpp_source.html#l00035">35</a> of file <a class="el" href="SteadyReducedOperator_8hpp_source.html">SteadyReducedOperator.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa22586510198bec3b136e9e9f4150773"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa22586510198bec3b136e9e9f4150773">&#9670;&nbsp;</a></span>SteadyPhaseFieldReducedOperator()</h2>
@@ -123,24 +122,27 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new Phase Field Reduced Operator:: Phase Field Reduced Operator object. </p>
+<p>Construct a new Steady Phase Field Reduced Operator:: Steady Phase Field Reduced Operator object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">M</td><td></td></tr>
-    <tr><td class="paramname">N</td><td></td></tr>
+    <tr><td class="paramname">RHS</td><td></td></tr>
+    <tr><td class="paramname">ess_tdof</td><td></td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="SteadyReducedOperator_8hpp_source.html#l00065">65</a> of file <a class="el" href="SteadyReducedOperator_8hpp_source.html">SteadyReducedOperator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SteadyReducedOperator_8cpp_source.html#l00041">41</a> of file <a class="el" href="SteadyReducedOperator_8cpp_source.html">SteadyReducedOperator.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a4cb31534774ca66c1baa1eaa8388e435"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4cb31534774ca66c1baa1eaa8388e435">&#9670;&nbsp;</a></span>~SteadyPhaseFieldReducedOperator()</h2>
+<a id="aedccdd92d1a7a5cb4cb2a5f803feffe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedccdd92d1a7a5cb4cb2a5f803feffe1">&#9670;&nbsp;</a></span>~SteadyPhaseFieldReducedOperator()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">SteadyPhaseFieldReducedOperator::~SteadyPhaseFieldReducedOperator </td>
@@ -149,11 +151,12 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p>Destroy the Phase Field Reduced Operator:: Phase Field Reduced Operator object. </p>
-
-<p class="definition">Definition at line <a class="el" href="SteadyReducedOperator_8hpp_source.html#l00145">145</a> of file <a class="el" href="SteadyReducedOperator_8hpp_source.html">SteadyReducedOperator.hpp</a>.</p>
 
 </div>
 </div>
@@ -168,7 +171,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">mfem::Operator &amp; SteadyPhaseFieldReducedOperator::GetGradient </td>
           <td>(</td>
           <td class="paramtype">const mfem::Vector &amp;&#160;</td>
-          <td class="paramname"><em>k</em></td><td>)</td>
+          <td class="paramname"><em>z</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -184,7 +187,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>mfem::Operator&amp; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SteadyReducedOperator_8hpp_source.html#l00101">101</a> of file <a class="el" href="SteadyReducedOperator_8hpp_source.html">SteadyReducedOperator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SteadyReducedOperator_8cpp_source.html#l00075">75</a> of file <a class="el" href="SteadyReducedOperator_8cpp_source.html">SteadyReducedOperator.cpp</a>.</p>
 
 </div>
 </div>
@@ -223,17 +226,18 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="SteadyReducedOperator_8hpp_source.html#l00080">80</a> of file <a class="el" href="SteadyReducedOperator_8hpp_source.html">SteadyReducedOperator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SteadyReducedOperator_8cpp_source.html#l00056">56</a> of file <a class="el" href="SteadyReducedOperator_8cpp_source.html">SteadyReducedOperator.cpp</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="SteadyReducedOperator_8hpp_source.html">SteadyReducedOperator.hpp</a></li>
+<li><a class="el" href="SteadyReducedOperator_8cpp_source.html">SteadyReducedOperator.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 15:39:07 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

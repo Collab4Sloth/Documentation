@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['interdiffusioncoefficient_880',['InterDiffusionCoefficient',['../classInterDiffusionCoefficient.html',1,'']]],
-  ['iterationkey_881',['IterationKey',['../structIterationKey.html',1,'']]]
+  ['glossaryquantity_986',['GlossaryQuantity',['../structGlossaryQuantity.html',1,'']]],
+  ['gradientenergy_987',['GradientEnergy',['../classGradientEnergy.html',1,'']]]
 ];

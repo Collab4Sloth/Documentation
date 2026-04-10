@@ -25,9 +25,9 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v2.0.0</span>
    </div>
-   <div id="projectbrief">PhaseField solver</div>
+   <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
  </tr>
  </tbody>
@@ -66,7 +66,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li><li class="navelem"><a class="el" href="dir_776fdf42423b0a1b81b2a68528f2db8d.html">Utils</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li><li class="navelem"><a class="el" href="dir_009f605b833ac4622acd6c3c0c26c0f0.html">include</a></li><li class="navelem"><a class="el" href="dir_97cd71bc012adc9145264269177778ae.html">Utils</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -84,9 +84,9 @@ $(function() {
 <p>Usefull methods for data.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;cctype&gt;</code><br />
 <code>#include &lt;cstdio&gt;</code><br />
-<code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;filesystem&gt;</code><br />
 <code>#include &lt;functional&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
@@ -108,7 +108,8 @@ $(function() {
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="UtilsForData_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="UtilsForData_8hpp__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div>
 <p><a href="UtilsForData_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -166,32 +167,32 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a00c16f753cc7812a3a97fb5a5ddd11d2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UtilsForData_8hpp.html#a00c16f753cc7812a3a97fb5a5ddd11d2">check_file_existence</a> (const std::string &amp;file)</td></tr>
-<tr class="memdesc:a00c16f753cc7812a3a97fb5a5ddd11d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check existence of a file.  <a href="UtilsForData_8hpp.html#a00c16f753cc7812a3a97fb5a5ddd11d2">More...</a><br /></td></tr>
-<tr class="separator:a00c16f753cc7812a3a97fb5a5ddd11d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43b240dffbc07766fb34bc43067a6ae9"><td class="memTemplParams" colspan="2">template&lt;typename Func , typename... Args&gt; </td></tr>
-<tr class="memitem:a43b240dffbc07766fb34bc43067a6ae9"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="UtilsForData_8hpp.html#a43b240dffbc07766fb34bc43067a6ae9">external_call</a> (<a class="el" href="UtilsForData_8hpp.html#abf3be10d03894afb391f3a2935e3b313">Verbosity</a> verbosity, Func func, Args &amp;&amp;... args)</td></tr>
-<tr class="memdesc:a43b240dffbc07766fb34bc43067a6ae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method used to capture the flux coming from an external method and print it depending on the verbosity level.  <a href="UtilsForData_8hpp.html#a43b240dffbc07766fb34bc43067a6ae9">More...</a><br /></td></tr>
-<tr class="separator:a43b240dffbc07766fb34bc43067a6ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32aec655b9f57530a6f1c20619d2ed45"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UtilsForData_8hpp.html#a32aec655b9f57530a6f1c20619d2ed45">setVerbosity</a> (<a class="el" href="UtilsForData_8hpp.html#abf3be10d03894afb391f3a2935e3b313">Verbosity</a> verbosity)</td></tr>
-<tr class="memdesc:a32aec655b9f57530a6f1c20619d2ed45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the level of verbosity.  <a href="UtilsForData_8hpp.html#a32aec655b9f57530a6f1c20619d2ed45">More...</a><br /></td></tr>
-<tr class="separator:a32aec655b9f57530a6f1c20619d2ed45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98ce7d5a46cee2d6eb81eb24216bdece"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UtilsForData_8hpp.html#a98ce7d5a46cee2d6eb81eb24216bdece">toLowerCase</a> (const std::string &amp;str)</td></tr>
-<tr class="memdesc:a98ce7d5a46cee2d6eb81eb24216bdece"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put string in lowercase.  <a href="UtilsForData_8hpp.html#a98ce7d5a46cee2d6eb81eb24216bdece">More...</a><br /></td></tr>
-<tr class="separator:a98ce7d5a46cee2d6eb81eb24216bdece"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acac248a5343828fdf45fdd9bba5ee05d"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UtilsForData_8hpp.html#acac248a5343828fdf45fdd9bba5ee05d">toUpperCase</a> (const std::string &amp;str)</td></tr>
-<tr class="memdesc:acac248a5343828fdf45fdd9bba5ee05d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put string in uppercase.  <a href="UtilsForData_8hpp.html#acac248a5343828fdf45fdd9bba5ee05d">More...</a><br /></td></tr>
-<tr class="separator:acac248a5343828fdf45fdd9bba5ee05d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c3dcfc7f0222d5de8ca7c6f7dd5f978"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UtilsForData_8hpp.html#a3c3dcfc7f0222d5de8ca7c6f7dd5f978">trim</a> (const std::string &amp;str)</td></tr>
-<tr class="memdesc:a3c3dcfc7f0222d5de8ca7c6f7dd5f978"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trim leading and trailing whitespace.  <a href="UtilsForData_8hpp.html#a3c3dcfc7f0222d5de8ca7c6f7dd5f978">More...</a><br /></td></tr>
-<tr class="separator:a3c3dcfc7f0222d5de8ca7c6f7dd5f978"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa752d3c4b4cd491f0c1a32cc5389188"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UtilsForData_8hpp.html#aaa752d3c4b4cd491f0c1a32cc5389188">check_file_existence</a> (const std::string &amp;file)</td></tr>
+<tr class="memdesc:aaa752d3c4b4cd491f0c1a32cc5389188"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check existence of a file.  <a href="UtilsForData_8hpp.html#aaa752d3c4b4cd491f0c1a32cc5389188">More...</a><br /></td></tr>
+<tr class="separator:aaa752d3c4b4cd491f0c1a32cc5389188"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaae11a05b491012cff8e953cafb5fee7"><td class="memTemplParams" colspan="2">template&lt;typename Func , typename... Args&gt; </td></tr>
+<tr class="memitem:aaae11a05b491012cff8e953cafb5fee7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="UtilsForData_8hpp.html#aaae11a05b491012cff8e953cafb5fee7">external_call</a> (<a class="el" href="UtilsForData_8hpp.html#abf3be10d03894afb391f3a2935e3b313">Verbosity</a> verbosity, Func func, Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:aaae11a05b491012cff8e953cafb5fee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method used to capture the flux coming from an external method and print it depending on the verbosity level.  <a href="UtilsForData_8hpp.html#aaae11a05b491012cff8e953cafb5fee7">More...</a><br /></td></tr>
+<tr class="separator:aaae11a05b491012cff8e953cafb5fee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa81001b8fe8db57d44007921da1b6970"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UtilsForData_8hpp.html#aa81001b8fe8db57d44007921da1b6970">setVerbosity</a> (<a class="el" href="UtilsForData_8hpp.html#abf3be10d03894afb391f3a2935e3b313">Verbosity</a> verbosity)</td></tr>
+<tr class="memdesc:aa81001b8fe8db57d44007921da1b6970"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the level of verbosity.  <a href="UtilsForData_8hpp.html#aa81001b8fe8db57d44007921da1b6970">More...</a><br /></td></tr>
+<tr class="separator:aa81001b8fe8db57d44007921da1b6970"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8200839a864ebdf2f129fbffa33967b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UtilsForData_8hpp.html#ad8200839a864ebdf2f129fbffa33967b">toLowerCase</a> (const std::string &amp;str)</td></tr>
+<tr class="memdesc:ad8200839a864ebdf2f129fbffa33967b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put string in lowercase.  <a href="UtilsForData_8hpp.html#ad8200839a864ebdf2f129fbffa33967b">More...</a><br /></td></tr>
+<tr class="separator:ad8200839a864ebdf2f129fbffa33967b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa504de245b08376b4309366fa40a5815"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UtilsForData_8hpp.html#aa504de245b08376b4309366fa40a5815">toUpperCase</a> (const std::string &amp;str)</td></tr>
+<tr class="memdesc:aa504de245b08376b4309366fa40a5815"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put string in uppercase.  <a href="UtilsForData_8hpp.html#aa504de245b08376b4309366fa40a5815">More...</a><br /></td></tr>
+<tr class="separator:aa504de245b08376b4309366fa40a5815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a01f705cc7b4a7317a57f6bf41aef25"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UtilsForData_8hpp.html#a5a01f705cc7b4a7317a57f6bf41aef25">trim</a> (const std::string &amp;str)</td></tr>
+<tr class="memdesc:a5a01f705cc7b4a7317a57f6bf41aef25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trim leading and trailing whitespace.  <a href="UtilsForData_8hpp.html#a5a01f705cc7b4a7317a57f6bf41aef25">More...</a><br /></td></tr>
+<tr class="separator:a5a01f705cc7b4a7317a57f6bf41aef25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a45e81499106a51142ad6751c744ea490"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UtilsForData_8hpp.html#a45e81499106a51142ad6751c744ea490">stringfindInVectorOfString</a></td></tr>
+<tr class="memitem:a45e81499106a51142ad6751c744ea490"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UtilsForData_8hpp.html#a45e81499106a51142ad6751c744ea490">stringfindInVectorOfString</a></td></tr>
 <tr class="memdesc:a45e81499106a51142ad6751c744ea490"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search string in a vector of string.  <a href="UtilsForData_8hpp.html#a45e81499106a51142ad6751c744ea490">More...</a><br /></td></tr>
 <tr class="separator:a45e81499106a51142ad6751c744ea490"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63c88b80b21d9d2e2eaf190d19365d04"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="UtilsForData_8hpp.html#abf3be10d03894afb391f3a2935e3b313">Verbosity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UtilsForData_8hpp.html#a63c88b80b21d9d2e2eaf190d19365d04">verbosityLevel</a> = <a class="el" href="UtilsForData_8hpp.html#abf3be10d03894afb391f3a2935e3b313a098753f8980036f4b936e3d4b6997111">Verbosity::Quiet</a></td></tr>
+<tr class="memitem:a63c88b80b21d9d2e2eaf190d19365d04"><td class="memItemLeft" align="right" valign="top"><a class="el" href="UtilsForData_8hpp.html#abf3be10d03894afb391f3a2935e3b313">Verbosity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UtilsForData_8hpp.html#a63c88b80b21d9d2e2eaf190d19365d04">verbosityLevel</a> = <a class="el" href="UtilsForData_8hpp.html#abf3be10d03894afb391f3a2935e3b313a098753f8980036f4b936e3d4b6997111">Verbosity::Quiet</a></td></tr>
 <tr class="memdesc:a63c88b80b21d9d2e2eaf190d19365d04"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current level of verbosity.  <a href="UtilsForData_8hpp.html#a63c88b80b21d9d2e2eaf190d19365d04">More...</a><br /></td></tr>
 <tr class="separator:a63c88b80b21d9d2e2eaf190d19365d04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -200,7 +201,7 @@ Variables</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Clément Introïni (<a href="#" onclick="location.href='mai'+'lto:'+'cle'+'me'+'nt.'+'in'+'tro'+'in'+'i@c'+'ea'+'.fr'; return false;">cleme<span style="display: none;">.nosp@m.</span>nt.i<span style="display: none;">.nosp@m.</span>ntroi<span style="display: none;">.nosp@m.</span>ni@c<span style="display: none;">.nosp@m.</span>ea.fr</a>) </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025-09-05</dd></dl>
-<p>Copyright CEA (C) 2025</p>
+<dl class="section copyright"><dt>Copyright</dt><dd>CEA (C) 2025</dd></dl>
 <p>This file is part of SLOTH.</p>
 <p>SLOTH is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</p>
 <p>SLOTH is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</p>
@@ -220,7 +221,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00048">48</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00044">44</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
 </div>
 </div>
@@ -236,7 +237,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00047">47</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00043">43</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
 </div>
 </div>
@@ -252,7 +253,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00057">57</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00053">53</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
 </div>
 </div>
@@ -268,7 +269,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00056">56</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00052">52</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
 </div>
 </div>
@@ -284,7 +285,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00054">54</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00050">50</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
 </div>
 </div>
@@ -300,7 +301,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00059">59</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00055">55</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
 </div>
 </div>
@@ -316,7 +317,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00061">61</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00057">57</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
 </div>
 </div>
@@ -332,7 +333,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00052">52</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00048">48</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
 </div>
 </div>
@@ -348,7 +349,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00053">53</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00049">49</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
 </div>
 </div>
@@ -364,7 +365,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00051">51</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00047">47</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
 </div>
 </div>
@@ -380,7 +381,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00062">62</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00058">58</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
 </div>
 </div>
@@ -396,7 +397,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00055">55</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00051">51</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
 </div>
 </div>
@@ -412,7 +413,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00049">49</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00045">45</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
 </div>
 </div>
@@ -428,7 +429,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00050">50</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00046">46</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
 </div>
 </div>
@@ -462,13 +463,13 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="abf3be10d03894afb391f3a2935e3b313a902b0d55fddef6f8d651fe1035b7d4bd"></a>Error&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00120">120</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00116">116</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a00c16f753cc7812a3a97fb5a5ddd11d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00c16f753cc7812a3a97fb5a5ddd11d2">&#9670;&nbsp;</a></span>check_file_existence()</h2>
+<a id="aaa752d3c4b4cd491f0c1a32cc5389188"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa752d3c4b4cd491f0c1a32cc5389188">&#9670;&nbsp;</a></span>check_file_existence()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -477,7 +478,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void check_file_existence </td>
+          <td class="memname">void check_file_existence </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>file</em></td><td>)</td>
@@ -486,7 +487,7 @@ Variables</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -499,21 +500,12 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00218">218</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="CalphadInformedNeuralNetwork_8hpp_source.html#l00140">CalphadInformedNeuralNetwork&lt; T &gt;::get_parameters()</a>.</p>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="UtilsForData_8hpp_a00c16f753cc7812a3a97fb5a5ddd11d2_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00190">190</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a43b240dffbc07766fb34bc43067a6ae9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43b240dffbc07766fb34bc43067a6ae9">&#9670;&nbsp;</a></span>external_call()</h2>
+<a id="aaae11a05b491012cff8e953cafb5fee7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaae11a05b491012cff8e953cafb5fee7">&#9670;&nbsp;</a></span>external_call()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -524,7 +516,7 @@ template&lt;typename Func , typename... Args&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void external_call </td>
+          <td class="memname">void external_call </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="UtilsForData_8hpp.html#abf3be10d03894afb391f3a2935e3b313">Verbosity</a>&#160;</td>
           <td class="paramname"><em>verbosity</em>, </td>
@@ -549,7 +541,7 @@ template&lt;typename Func , typename... Args&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -571,14 +563,14 @@ template&lt;typename Func , typename... Args&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00170">170</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00142">142</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
 <p class="reference">References <a class="el" href="UtilsForData_8hpp.html#abf3be10d03894afb391f3a2935e3b313ad4a9fa383ab700c5bdd6f31cf7df0faf">Verbose</a>.</p>
 
 </div>
 </div>
-<a id="a32aec655b9f57530a6f1c20619d2ed45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32aec655b9f57530a6f1c20619d2ed45">&#9670;&nbsp;</a></span>setVerbosity()</h2>
+<a id="aa81001b8fe8db57d44007921da1b6970"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa81001b8fe8db57d44007921da1b6970">&#9670;&nbsp;</a></span>setVerbosity()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -587,7 +579,7 @@ template&lt;typename Func , typename... Args&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void setVerbosity </td>
+          <td class="memname">void setVerbosity </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="UtilsForData_8hpp.html#abf3be10d03894afb391f3a2935e3b313">Verbosity</a>&#160;</td>
           <td class="paramname"><em>verbosity</em></td><td>)</td>
@@ -596,7 +588,7 @@ template&lt;typename Func , typename... Args&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -609,14 +601,14 @@ template&lt;typename Func , typename... Args&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00133">133</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00129">129</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="UtilsForData_8hpp_source.html#l00126">verbosityLevel</a>.</p>
+<p class="reference">References <a class="el" href="UtilsForData_8hpp_source.html#l00122">verbosityLevel</a>.</p>
 
 </div>
 </div>
-<a id="a98ce7d5a46cee2d6eb81eb24216bdece"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98ce7d5a46cee2d6eb81eb24216bdece">&#9670;&nbsp;</a></span>toLowerCase()</h2>
+<a id="ad8200839a864ebdf2f129fbffa33967b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8200839a864ebdf2f129fbffa33967b">&#9670;&nbsp;</a></span>toLowerCase()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -625,7 +617,7 @@ template&lt;typename Func , typename... Args&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::string toLowerCase </td>
+          <td class="memname">std::string toLowerCase </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>str</em></td><td>)</td>
@@ -634,7 +626,7 @@ template&lt;typename Func , typename... Args&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -648,21 +640,22 @@ template&lt;typename Func , typename... Args&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00090">90</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00086">86</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="InterDiffusionCoefficient_8hpp_source.html#l00118">InterDiffusionCoefficient::check_variables_consistency()</a>.</p>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p class="reference">Referenced by <a class="el" href="InterDiffusionCoefficient_8cpp_source.html#l00067">InterDiffusionCoefficient::check_variables_consistency()</a>.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="UtilsForData_8hpp_a98ce7d5a46cee2d6eb81eb24216bdece_icgraph.svg" width="394" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="UtilsForData_8hpp_ad8200839a864ebdf2f129fbffa33967b_icgraph.svg" width="394" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="acac248a5343828fdf45fdd9bba5ee05d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acac248a5343828fdf45fdd9bba5ee05d">&#9670;&nbsp;</a></span>toUpperCase()</h2>
+<a id="aa504de245b08376b4309366fa40a5815"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa504de245b08376b4309366fa40a5815">&#9670;&nbsp;</a></span>toUpperCase()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -671,7 +664,7 @@ template&lt;typename Func , typename... Args&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::string toUpperCase </td>
+          <td class="memname">std::string toUpperCase </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>str</em></td><td>)</td>
@@ -680,7 +673,7 @@ template&lt;typename Func , typename... Args&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -694,21 +687,22 @@ template&lt;typename Func , typename... Args&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00078">78</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00074">74</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="InterDiffusionCoefficient_8hpp_source.html#l00192">InterDiffusionCoefficient::get_property()</a>, and <a class="el" href="InterDiffusionCoefficient_8hpp_source.html#l00099">InterDiffusionCoefficient::InterDiffusionCoefficient()</a>.</p>
-<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p class="reference">Referenced by <a class="el" href="InterDiffusionCoefficient_8cpp_source.html#l00143">InterDiffusionCoefficient::get_property()</a>, and <a class="el" href="InterDiffusionCoefficient_8cpp_source.html#l00048">InterDiffusionCoefficient::InterDiffusionCoefficient()</a>.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="UtilsForData_8hpp_acac248a5343828fdf45fdd9bba5ee05d_icgraph.svg" width="366" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="UtilsForData_8hpp_aa504de245b08376b4309366fa40a5815_icgraph.svg" width="366" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="a3c3dcfc7f0222d5de8ca7c6f7dd5f978"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c3dcfc7f0222d5de8ca7c6f7dd5f978">&#9670;&nbsp;</a></span>trim()</h2>
+<a id="a5a01f705cc7b4a7317a57f6bf41aef25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a01f705cc7b4a7317a57f6bf41aef25">&#9670;&nbsp;</a></span>trim()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -717,7 +711,7 @@ template&lt;typename Func , typename... Args&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::string trim </td>
+          <td class="memname">std::string trim </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>str</em></td><td>)</td>
@@ -726,7 +720,7 @@ template&lt;typename Func , typename... Args&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -740,7 +734,7 @@ template&lt;typename Func , typename... Args&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00102">102</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00098">98</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
 </div>
 </div>
@@ -760,7 +754,7 @@ template&lt;typename Func , typename... Args&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -770,7 +764,7 @@ template&lt;typename Func , typename... Args&gt; </div>
 </div><!-- fragment -->
 <p>Search string in a vector of string. </p>
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00068">68</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00064">64</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
 </div>
 </div>
@@ -789,23 +783,23 @@ template&lt;typename Func , typename... Args&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>The current level of verbosity. </p>
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00126">126</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00122">122</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="UtilsForData_8hpp_source.html#l00240">SlothInfo::debug()</a>, <a class="el" href="UtilsForData_8hpp_source.html#l00252">SlothInfo::error()</a>, <a class="el" href="KKS_8hpp_source.html#l00285">KKS&lt; T &gt;::execute_linearization()</a>, <a class="el" href="UtilsForData_8hpp_source.html#l00278">SlothInfo::print()</a>, <a class="el" href="UtilsForData_8hpp_source.html#l00133">setVerbosity()</a>, and <a class="el" href="UtilsForData_8hpp_source.html#l00265">SlothInfo::verbose()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="UtilsForData_8hpp_source.html#l00212">SlothInfo::debug()</a>, <a class="el" href="UtilsForData_8hpp_source.html#l00224">SlothInfo::error()</a>, <a class="el" href="UtilsForData_8hpp_source.html#l00250">SlothInfo::print()</a>, <a class="el" href="UtilsForData_8hpp_source.html#l00129">setVerbosity()</a>, and <a class="el" href="UtilsForData_8hpp_source.html#l00237">SlothInfo::verbose()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 15:39:06 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Apr 10 2026 10:16:45 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

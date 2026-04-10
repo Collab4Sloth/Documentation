@@ -25,9 +25,9 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v2.0.0</span>
    </div>
-   <div id="projectbrief">PhaseField solver</div>
+   <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
  </tr>
  </tbody>
@@ -69,15 +69,6 @@ $(function() {
 <div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a id="index_o"></a>- o -</h3><ul>
-<li>omega_
-: <a class="el" href="classPhaseFieldOperatorBase.html#a93e012cefaf580dbe2063888bcf9fd30">PhaseFieldOperatorBase&lt; T, DIM, NLFI, LHS_NLFI, OPEBASE &gt;</a>
-</li>
-<li>OmegaCoefficient()
-: <a class="el" href="classOmegaCoefficient.html#a83b0b1debd5a906b5be15396dd8fbe2f">OmegaCoefficient&lt; ORDER, NAME &gt;</a>
-</li>
-<li>OmegaFunctions()
-: <a class="el" href="classOmegaFunctions.html#ae675935393a4c970911acd9ec226fd37">OmegaFunctions&lt; ORDER, NAME &gt;</a>
-</li>
 <li>op
 : <a class="el" href="structSetPrecondNLSolver.html#a1ad0b24b09bbaedb03d798123d821306">SetPrecondNLSolver</a>
 , <a class="el" href="structSetPrecondSolver.html#a7220faf12eb2730ad739bdaa409fcd1d">SetPrecondSolver</a>
@@ -102,48 +93,33 @@ $(function() {
 <li>operator=()
 : <a class="el" href="classPostProcessing.html#ac0c65c2178f8892317b0339f1a6207d2">PostProcessing&lt; T, DC, DIM &gt;</a>
 </li>
+<li>operator[]()
+: <a class="el" href="classCoefficients.html#a48561c2320c968314d74ea1f671d0135">Coefficients</a>
+, <a class="el" href="classVariables.html#a7a87a77aee433e769a09c1b751867bfc">Variables&lt; T, DIM &gt;</a>
+</li>
 <li>OperatorBase()
-: <a class="el" href="classOperatorBase.html#acfa1bf7d14e46915bd8c5476e4b0356e">OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
-</li>
-<li>overload_conductivity()
-: <a class="el" href="classHeatOperator.html#a64d5a6ed52373524f0fadd7479e21781">HeatOperator&lt; T, DIM, NLFI, LHS_NLFI, RHO, CP &gt;</a>
-, <a class="el" href="classSteadyHeatOperator.html#a92dc44e1d946e2458c04ced85ef5c3b6">SteadyHeatOperator&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
-</li>
-<li>overload_density()
-: <a class="el" href="classDiffusionOperator.html#a31204dfe71e65b8b06daf4966a8d3a5e">DiffusionOperator&lt; T, DIM, NLFI, DENS, LHS_NLFI &gt;</a>
-, <a class="el" href="classHeatOperator.html#a26a4faf53b8294a9a862c6d9b6a07e5e">HeatOperator&lt; T, DIM, NLFI, LHS_NLFI, RHO, CP &gt;</a>
-</li>
-<li>overload_diffusion()
-: <a class="el" href="classDiffusionOperator.html#a3b36564e0c29cf2dd62165e077349555">DiffusionOperator&lt; T, DIM, NLFI, DENS, LHS_NLFI &gt;</a>
-, <a class="el" href="classSteadyDiffusionOperator.html#af8c3a0dfdd6ec92e3fad410498f63ca2">SteadyDiffusionOperator&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
-</li>
-<li>overload_heat_capacity()
-: <a class="el" href="classHeatOperator.html#a987364b5a71eee5b76e0113091d3f3b2">HeatOperator&lt; T, DIM, NLFI, LHS_NLFI, RHO, CP &gt;</a>
+: <a class="el" href="classOperatorBase.html#a90a7252811544f72984c1931eb02f64e">OperatorBase&lt; T, DIM &gt;</a>
 </li>
 <li>overload_mass_preconditioner()
-: <a class="el" href="classTransientOperatorBase.html#afb62732cf5934d8d91fd0274aab68060">TransientOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
+: <a class="el" href="classTransientOperator.html#a0219dd6622c747457a86dd79c3b49185">TransientOperator&lt; T, DIM &gt;</a>
 </li>
 <li>overload_mass_solver()
-: <a class="el" href="classTransientOperatorBase.html#af5e06d4effa8bcae14fd85ee059d2199">TransientOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
-</li>
-<li>overload_mobility()
-: <a class="el" href="classPhaseFieldOperator.html#a48374cb96b59cf6b73aaa1659720eb5b">PhaseFieldOperator&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
-, <a class="el" href="classSteadyPhaseFieldOperator.html#ae6537b1814985fdf99602d6630f2cd53">SteadyPhaseFieldOperator&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
+: <a class="el" href="classTransientOperator.html#afe11a04dc3a736e47322b98dfe4c7da8">TransientOperator&lt; T, DIM &gt;</a>
 </li>
 <li>overload_nl_solver()
-: <a class="el" href="classOperatorBase.html#a908186fe49ea62e44392fa606d32c2ce">OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
+: <a class="el" href="classOperatorBase.html#aeb5d83adf63a0ed63f518d5ae0830f7a">OperatorBase&lt; T, DIM &gt;</a>
 </li>
 <li>overload_preconditioner()
-: <a class="el" href="classOperatorBase.html#aa946e918dc7957ece22fe645220cf4b4">OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
+: <a class="el" href="classOperatorBase.html#ab7f9ccab46711990d6c1b0fe5e783d3f">OperatorBase&lt; T, DIM &gt;</a>
 </li>
 <li>overload_solver()
-: <a class="el" href="classOperatorBase.html#a4568000bbdef5898949208f566657354">OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
+: <a class="el" href="classOperatorBase.html#a08638e737e888b9161e465cf22d5e4df">OperatorBase&lt; T, DIM &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 15:39:07 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="UtilsForData_8hpp.html#a98ce7d5a46cee2d6eb81eb24216bdece" target="_top" xlink:title="Put string in lowercase.">
+<g id="a_node2"><a xlink:href="UtilsForData_8hpp.html#ad8200839a864ebdf2f129fbffa33967b" target="_top" xlink:title="Put string in lowercase.">
 <polygon fill="none" stroke="black" points="204,-6 204,-25 287,-25 287,-6 204,-6"/>
 <text text-anchor="middle" x="245.5" y="-13" font-family="serif" font-size="10.00">toLowerCase</text>
 </a>

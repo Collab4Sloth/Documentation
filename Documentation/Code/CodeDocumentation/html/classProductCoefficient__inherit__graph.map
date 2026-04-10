@@ -1,0 +1,4 @@
+<map id="ProductCoefficient" name="ProductCoefficient">
+<area shape="rect" id="node1" title="Define a product of FunctionCoefficient objects as a FunctionCoefficient." alt="" coords="9,80,156,107"/>
+<area shape="rect" id="node2" href="$classFunctionCoefficient.html" title="Base class defining analytical expression, first and second derivatives of a Coefficient." alt="" coords="5,5,160,32"/>
+</map>

@@ -25,9 +25,9 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v2.0.0</span>
    </div>
-   <div id="projectbrief">PhaseField solver</div>
+   <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
  </tr>
  </tbody>
@@ -86,8 +86,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a01d8545f1cf8ddf44b1468d0ddbe9b60"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolverBase.html#a01d8545f1cf8ddf44b1468d0ddbe9b60">create_solver</a> (S SOLVER, const <a class="el" href="classParameters.html">Parameters</a> &amp;params)=0</td></tr>
-<tr class="separator:a01d8545f1cf8ddf44b1468d0ddbe9b60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a271d286d566da45ac41bf03d479a12eb"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolverBase.html#a271d286d566da45ac41bf03d479a12eb">create_solver</a> (const <a class="el" href="classParameters.html">Parameters</a> &amp;params)=0</td></tr>
+<tr class="separator:a271d286d566da45ac41bf03d479a12eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52edc30e08c2552f8ceb3d9ea928b059"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolverBase.html#a52edc30e08c2552f8ceb3d9ea928b059">get_description</a> ()</td></tr>
 <tr class="separator:a52edc30e08c2552f8ceb3d9ea928b059"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d55970f2c60c3e917f902a14eeb9e14"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolverBase.html#a1d55970f2c60c3e917f902a14eeb9e14">~SolverBase</a> ()=default</td></tr>
@@ -133,8 +133,8 @@ template&lt;class T , class S &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a01d8545f1cf8ddf44b1468d0ddbe9b60"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01d8545f1cf8ddf44b1468d0ddbe9b60">&#9670;&nbsp;</a></span>create_solver()</h2>
+<a id="a271d286d566da45ac41bf03d479a12eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a271d286d566da45ac41bf03d479a12eb">&#9670;&nbsp;</a></span>create_solver()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -147,19 +147,9 @@ template&lt;class T , class S &gt; </div>
         <tr>
           <td class="memname">virtual std::shared_ptr&lt;T&gt; <a class="el" href="classSolverBase.html">SolverBase</a>&lt; T, S &gt;::create_solver </td>
           <td>(</td>
-          <td class="paramtype">S&#160;</td>
-          <td class="paramname"><em>SOLVER</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">const <a class="el" href="classParameters.html">Parameters</a> &amp;&#160;</td>
-          <td class="paramname"><em>params</em>&#160;</td>
-        </tr>
-        <tr>
+          <td class="paramname"><em>params</em></td><td>)</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -169,7 +159,7 @@ template&lt;class T , class S &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classPrecondDSmoother.html#a04b157c452b242897c2e7e2fbdda790c">PrecondDSmoother</a>, <a class="el" href="classNLSolverBase.html#a6454b04a9444bb6edb36bd417c1f681e">NLSolverBase</a>, <a class="el" href="classSolverGMRES.html#a7416f84035ad3da9e20adbda9ffd8c22">SolverGMRES</a>, <a class="el" href="classSolverCG.html#abb8abcd3768a748ab1c4cc366799e146">SolverCG</a>, <a class="el" href="classSolverMINRES.html#ae0ec160e28632f6538ec16fc476cd14b">SolverMINRES</a>, <a class="el" href="classSolverBICGSTAB.html#a555f9875dc6d8572bfc1ff0032635c6d">SolverBICGSTAB</a>, <a class="el" href="classSolverHypreFGMRES.html#a59a039f5afb942d01777103bad40c300">SolverHypreFGMRES</a>, <a class="el" href="classSolverHypreGMRES.html#ae8cd627c6a9dddb56c4ac48a134de7e0">SolverHypreGMRES</a>, <a class="el" href="classSolverHyprePCG.html#a2122f479fde910c6a27b6f74bf750324">SolverHyprePCG</a>, <a class="el" href="classPrecondHypreDiagScale.html#a99a26e0ad57569f0186c286191e591cc">PrecondHypreDiagScale</a>, <a class="el" href="classPrecondHypreBoomerAMG.html#ae9b8748901ee350584a1c8e3b33eb0a6">PrecondHypreBoomerAMG</a>, <a class="el" href="classPrecondHypreSmoother.html#a1d685276c8db4a0c7c3acd12662fffd1">PrecondHypreSmoother</a>, <a class="el" href="classPrecondHypreILU.html#a9747a2d4154f14a83fb87b1f398973ff">PrecondHypreILU</a>, and <a class="el" href="classSolverUMFPACK.html#a8a0cb7f36e9e9fa812fb45b23e39ab62">SolverUMFPACK</a>.</p>
+<p>Implemented in <a class="el" href="classNLSolverBase.html#a5fe7ec560c9c9e10591a08aaa123f2dd">NLSolverBase</a>, <a class="el" href="classSolverGMRES.html#aea5f0ae2948f5e66d2ef5d508ce61f68">SolverGMRES</a>, <a class="el" href="classSolverCG.html#a22bb7e38585bc24764881aa0f5aa200c">SolverCG</a>, <a class="el" href="classSolverMINRES.html#ace4d6324acb77a33354204e692a2463f">SolverMINRES</a>, <a class="el" href="classSolverBICGSTAB.html#a088138ab2b4e2295192b98abd8e4eefc">SolverBICGSTAB</a>, <a class="el" href="classPrecondDSmoother.html#a286f01fb24a1d08cc00950b04e9e0bfc">PrecondDSmoother</a>, <a class="el" href="classSolverHypreFGMRES.html#a54588ca870f9439ec8f4bccd7d8615a8">SolverHypreFGMRES</a>, <a class="el" href="classSolverHypreGMRES.html#a94293cedbdd903adcd5866ce3554ef10">SolverHypreGMRES</a>, <a class="el" href="classSolverHyprePCG.html#af4a480332bac2a5014c3e2a84f3403ba">SolverHyprePCG</a>, <a class="el" href="classPrecondHypreDiagScale.html#addd6474561b2dc1caef97fbf187bae91">PrecondHypreDiagScale</a>, <a class="el" href="classPrecondHypreBoomerAMG.html#a9274064ab381792bf2f034344d2d621d">PrecondHypreBoomerAMG</a>, <a class="el" href="classPrecondHypreSmoother.html#aadca5acda7af3396285f385654c24a1b">PrecondHypreSmoother</a>, <a class="el" href="classPrecondHypreILU.html#a7e7defa37401cea9cac7183a5994b13b">PrecondHypreILU</a>, and <a class="el" href="classSolverUMFPACK.html#a83fe21379896c4df62b1df2947767d2e">SolverUMFPACK</a>.</p>
 
 </div>
 </div>
@@ -231,7 +221,7 @@ template&lt;class T , class S &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 15:39:07 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

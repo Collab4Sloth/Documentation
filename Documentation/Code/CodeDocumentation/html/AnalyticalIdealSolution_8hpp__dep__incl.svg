@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="sloth_8hpp.html" target="_top" xlink:title="List of all header files contained in the kernel directory.">
+<g id="a_node2"><a xlink:href="sloth_8hpp.html" target="_top" xlink:title="List of SLOTH header files.">
 <polygon fill="none" stroke="black" points="46.5,-0.5 46.5,-19.5 111.5,-19.5 111.5,-0.5 46.5,-0.5"/>
 <text text-anchor="middle" x="79" y="-7.5" font-family="serif" font-size="10.00">sloth.hpp</text>
 </a>
