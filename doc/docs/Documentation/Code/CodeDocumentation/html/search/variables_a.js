@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['lambda_5f_1542',['lambda_',['../classPhaseFieldOperatorBase.html#a0bad04555b173f18ab12afc2f8064578',1,'PhaseFieldOperatorBase']]],
-  ['last_5fcomponent_5f_1543',['last_component_',['../classInterDiffusionCoefficient.html#a556f6fd47f83d46b42b213ab8b20fc49',1,'InterDiffusionCoefficient']]],
-  ['lhs_1544',['LHS',['../classTransientOperatorBase.html#a645ec7120a86f51271a190f176b9dbfa',1,'TransientOperatorBase']]],
-  ['lhs_5fnlfi_5fptr_5f_1545',['lhs_nlfi_ptr_',['../classTransientOperatorBase.html#a54d47fc38fc0c1c663a4befb41185f2e',1,'TransientOperatorBase']]]
+  ['lambda_1731',['lambda',['../classAllenCahnNLFormIntegrator.html#a3f4f2bbb0c1bd2b2d055145acd50f16b',1,'AllenCahnNLFormIntegrator::lambda()'],['../classBlockAllenCahnNLFormIntegrator.html#aa88315da089bc5bc4ec742f8506549f4',1,'BlockAllenCahnNLFormIntegrator::lambda()'],['../classCahnHilliardNLFormIntegrator.html#ab1bb89ce99e8ac24fa89f52886f6f540',1,'CahnHilliardNLFormIntegrator::lambda()']]],
+  ['last_5fcomponent_5f_1732',['last_component_',['../classInterDiffusionCoefficient.html#a556f6fd47f83d46b42b213ab8b20fc49',1,'InterDiffusionCoefficient']]],
+  ['lhs_1733',['LHS',['../classTransientOperator.html#a72ab1a449e644b09fcd686c2702e543f',1,'TransientOperator']]]
 ];

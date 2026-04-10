@@ -25,9 +25,9 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v2.0.0</span>
    </div>
-   <div id="projectbrief">PhaseField solver</div>
+   <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
  </tr>
  </tbody>
@@ -96,42 +96,32 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a36b758dd30a42967cc6c46910e3ca9ae"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadInformedNeuralNetwork.html#a36b758dd30a42967cc6c46910e3ca9ae">CalphadInformedNeuralNetwork</a> (const <a class="el" href="classParameters.html">Parameters</a> &amp;params)</td></tr>
-<tr class="memdesc:a36b758dd30a42967cc6c46910e3ca9ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classCalphadInformedNeuralNetwork.html#a36b758dd30a42967cc6c46910e3ca9ae" title="Construct a new CalphadInformedNeuralNetwork::CalphadInformedNeuralNetwork object.">CalphadInformedNeuralNetwork::CalphadInformedNeuralNetwork</a> object.  <a href="classCalphadInformedNeuralNetwork.html#a36b758dd30a42967cc6c46910e3ca9ae">More...</a><br /></td></tr>
 <tr class="separator:a36b758dd30a42967cc6c46910e3ca9ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a984e15e1a48520abc2006081ef7127ed"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadInformedNeuralNetwork.html#a984e15e1a48520abc2006081ef7127ed">CalphadInformedNeuralNetwork</a> (const <a class="el" href="classParameters.html">Parameters</a> &amp;params, bool is_KKS)</td></tr>
-<tr class="memdesc:a984e15e1a48520abc2006081ef7127ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classCalphadInformedNeuralNetwork.html#a36b758dd30a42967cc6c46910e3ca9ae" title="Construct a new CalphadInformedNeuralNetwork::CalphadInformedNeuralNetwork object.">CalphadInformedNeuralNetwork::CalphadInformedNeuralNetwork</a> object.  <a href="classCalphadInformedNeuralNetwork.html#a984e15e1a48520abc2006081ef7127ed">More...</a><br /></td></tr>
 <tr class="separator:a984e15e1a48520abc2006081ef7127ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8705a569071ca7519d424c223ae83759"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadInformedNeuralNetwork.html#a8705a569071ca7519d424c223ae83759">execute</a> (const int dt, const std::set&lt; int &gt; &amp;list_nodes, const std::vector&lt; T &gt; &amp;aux_gf, const std::vector&lt; std::tuple&lt; std::string, std::string &gt;&gt; &amp;chemical_system, std::optional&lt; std::vector&lt; std::tuple&lt; std::string, std::string, double &gt;&gt;&gt; status_phase=std::nullopt) override</td></tr>
-<tr class="memdesc:a8705a569071ca7519d424c223ae83759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform equilibrium calculations in a specific phase.  <a href="classCalphadInformedNeuralNetwork.html#a8705a569071ca7519d424c223ae83759">More...</a><br /></td></tr>
 <tr class="separator:a8705a569071ca7519d424c223ae83759"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17f940187c1b2893113f7b8f3461e9ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadInformedNeuralNetwork.html#a17f940187c1b2893113f7b8f3461e9ce">finalize</a> () override</td></tr>
-<tr class="memdesc:a17f940187c1b2893113f7b8f3461e9ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalization actions (free memory)  <a href="classCalphadInformedNeuralNetwork.html#a17f940187c1b2893113f7b8f3461e9ce">More...</a><br /></td></tr>
 <tr class="separator:a17f940187c1b2893113f7b8f3461e9ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65455151b7486c06d1b346c377468800"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadInformedNeuralNetwork.html#a65455151b7486c06d1b346c377468800">get_parameters</a> () override</td></tr>
-<tr class="memdesc:a65455151b7486c06d1b346c377468800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the parameters associated with the <a class="el" href="classCalphadInformedNeuralNetwork.html" title="Calphad calculation performed by neural network Dedicated to simulations with multicomponent inter-di...">CalphadInformedNeuralNetwork</a> object.  <a href="classCalphadInformedNeuralNetwork.html#a65455151b7486c06d1b346c377468800">More...</a><br /></td></tr>
 <tr class="separator:a65455151b7486c06d1b346c377468800"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab06f17b3e62dc920518fc54ce90b6aaf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadInformedNeuralNetwork.html#ab06f17b3e62dc920518fc54ce90b6aaf">initialize</a> (const std::vector&lt; std::tuple&lt; std::string, std::string &gt;&gt; &amp;sorted_chemical_system) override</td></tr>
-<tr class="memdesc:ab06f17b3e62dc920518fc54ce90b6aaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization of the thermodynamic calculation.  <a href="classCalphadInformedNeuralNetwork.html#ab06f17b3e62dc920518fc54ce90b6aaf">More...</a><br /></td></tr>
 <tr class="separator:ab06f17b3e62dc920518fc54ce90b6aaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a075cdac7e32d303cbb79f5e988693bbf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadInformedNeuralNetwork.html#a075cdac7e32d303cbb79f5e988693bbf">~CalphadInformedNeuralNetwork</a> ()</td></tr>
-<tr class="memdesc:a075cdac7e32d303cbb79f5e988693bbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the Binary Melting&lt; T&gt;:: Binary Melting object.  <a href="classCalphadInformedNeuralNetwork.html#a075cdac7e32d303cbb79f5e988693bbf">More...</a><br /></td></tr>
 <tr class="separator:a075cdac7e32d303cbb79f5e988693bbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classCalphadBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classCalphadBase')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classCalphadBase.html">CalphadBase&lt; T &gt;</a></td></tr>
 <tr class="memitem:aa1952e5548a0cbe9ffc68d86ef678a51 inherit pub_methods_classCalphadBase"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadBase.html#aa1952e5548a0cbe9ffc68d86ef678a51">CalphadBase</a> (const <a class="el" href="classParameters.html">Parameters</a> &amp;params)</td></tr>
-<tr class="memdesc:aa1952e5548a0cbe9ffc68d86ef678a51 inherit pub_methods_classCalphadBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classCalphadBase.html">CalphadBase</a> object.  <a href="classCalphadBase.html#aa1952e5548a0cbe9ffc68d86ef678a51">More...</a><br /></td></tr>
 <tr class="separator:aa1952e5548a0cbe9ffc68d86ef678a51 inherit pub_methods_classCalphadBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95e7865fbf452eeda0ff9cf71e7c0431 inherit pub_methods_classCalphadBase"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadBase.html#a95e7865fbf452eeda0ff9cf71e7c0431">CalphadBase</a> (const <a class="el" href="classParameters.html">Parameters</a> &amp;params, bool is_KKS)</td></tr>
-<tr class="memdesc:a95e7865fbf452eeda0ff9cf71e7c0431 inherit pub_methods_classCalphadBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classCalphadBase.html">CalphadBase</a> object.  <a href="classCalphadBase.html#a95e7865fbf452eeda0ff9cf71e7c0431">More...</a><br /></td></tr>
 <tr class="separator:a95e7865fbf452eeda0ff9cf71e7c0431 inherit pub_methods_classCalphadBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a089dbea39b53ec48324792de15e21d55 inherit pub_methods_classCalphadBase"><td class="memItemLeft" align="right" valign="top">const std::multimap&lt; <a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadBase.html#a089dbea39b53ec48324792de15e21d55">get_time_specialized</a> () const</td></tr>
-<tr class="memdesc:a089dbea39b53ec48324792de15e21d55 inherit pub_methods_classCalphadBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return values calculated at a given iteration.  <a href="classCalphadBase.html#a089dbea39b53ec48324792de15e21d55">More...</a><br /></td></tr>
-<tr class="separator:a089dbea39b53ec48324792de15e21d55 inherit pub_methods_classCalphadBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d0553a34f3ab33c123e662da0917023 inherit pub_methods_classCalphadBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadBase.html#a0d0553a34f3ab33c123e662da0917023">clear_time_specialized</a> ()</td></tr>
+<tr class="separator:a0d0553a34f3ab33c123e662da0917023 inherit pub_methods_classCalphadBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a77cf1b1fc63668bd05652465907371 inherit pub_methods_classCalphadBase"><td class="memItemLeft" align="right" valign="top">const std::multimap&lt; <a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadBase.html#a7a77cf1b1fc63668bd05652465907371">get_time_specialized</a> () const</td></tr>
+<tr class="separator:a7a77cf1b1fc63668bd05652465907371 inherit pub_methods_classCalphadBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a455e82eb47e99b485bacba19fe36ca84 inherit pub_methods_classCalphadBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadBase.html#a455e82eb47e99b485bacba19fe36ca84">global_execute</a> (const int dt, const double time_step, const std::vector&lt; T &gt; &amp;tp_gf, const std::vector&lt; std::tuple&lt; std::string, std::string &gt;&gt; &amp;chemicalsystem, std::vector&lt; std::tuple&lt; std::vector&lt; std::string &gt;, std::reference_wrapper&lt; T &gt;&gt;&gt; &amp;output_system, const std::vector&lt; std::tuple&lt; std::vector&lt; std::string &gt;, mfem::Vector &gt;&gt; &amp;previous_output_system, std::optional&lt; const std::tuple&lt; std::string, T, T &gt;&gt; phase_fields=std::nullopt, std::optional&lt; const std::vector&lt; T &gt;&gt; tp_gf_old=std::nullopt, std::optional&lt; const std::vector&lt; std::tuple&lt; std::string, std::string, T, T &gt;&gt;&gt; x_gf=std::nullopt, std::optional&lt; const std::vector&lt; std::tuple&lt; std::string, T &gt;&gt;&gt; coordinates=std::nullopt)</td></tr>
-<tr class="memdesc:a455e82eb47e99b485bacba19fe36ca84 inherit pub_methods_classCalphadBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">High-level method for managing equilibrium calculations.  <a href="classCalphadBase.html#a455e82eb47e99b485bacba19fe36ca84">More...</a><br /></td></tr>
 <tr class="separator:a455e82eb47e99b485bacba19fe36ca84 inherit pub_methods_classCalphadBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02df89293b462e926928668fd35ea2c1 inherit pub_methods_classCalphadBase"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadBase.html#a02df89293b462e926928668fd35ea2c1">~CalphadBase</a> ()</td></tr>
-<tr class="memdesc:a02df89293b462e926928668fd35ea2c1 inherit pub_methods_classCalphadBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the Calphad Base&lt; T&gt;:: Calphad Base object.  <a href="classCalphadBase.html#a02df89293b462e926928668fd35ea2c1">More...</a><br /></td></tr>
-<tr class="separator:a02df89293b462e926928668fd35ea2c1 inherit pub_methods_classCalphadBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b38eb0498ee80a63540762eb2464e15 inherit pub_methods_classCalphadBase"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadBase.html#a5b38eb0498ee80a63540762eb2464e15">~CalphadBase</a> ()</td></tr>
+<tr class="separator:a5b38eb0498ee80a63540762eb2464e15 inherit pub_methods_classCalphadBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -161,10 +151,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:adf4c50c8cf751d674fdb841fb88f86fc inherit pub_attribs_classCalphadBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classCalphadBase"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classCalphadBase')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classCalphadBase.html">CalphadBase&lt; T &gt;</a></td></tr>
 <tr class="memitem:a6568b530acb59a5b9341e8e673cca979 inherit pro_methods_classCalphadBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadBase.html#a6568b530acb59a5b9341e8e673cca979">clear_containers</a> ()</td></tr>
-<tr class="memdesc:a6568b530acb59a5b9341e8e673cca979 inherit pro_methods_classCalphadBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear containers used to store the results of equilibrium calculations.  <a href="classCalphadBase.html#a6568b530acb59a5b9341e8e673cca979">More...</a><br /></td></tr>
 <tr class="separator:a6568b530acb59a5b9341e8e673cca979 inherit pro_methods_classCalphadBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e6fb47d8f2aebfa96cb134dbea8cfc8 inherit pro_methods_classCalphadBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadBase.html#a8e6fb47d8f2aebfa96cb134dbea8cfc8">update_outputs</a> (const int dt, const size_t nb_nodes, std::vector&lt; std::tuple&lt; std::vector&lt; std::string &gt;, std::reference_wrapper&lt; T &gt;&gt;&gt; &amp;output_system, const std::vector&lt; std::tuple&lt; std::vector&lt; std::string &gt;, mfem::Vector &gt;&gt; &amp;previous_output_system)</td></tr>
-<tr class="memdesc:a8e6fb47d8f2aebfa96cb134dbea8cfc8 inherit pro_methods_classCalphadBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the outputs on the basis of results stored in containers.  <a href="classCalphadBase.html#a8e6fb47d8f2aebfa96cb134dbea8cfc8">More...</a><br /></td></tr>
 <tr class="separator:a8e6fb47d8f2aebfa96cb134dbea8cfc8 inherit pro_methods_classCalphadBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classCalphadBase"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classCalphadBase')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classCalphadBase.html">CalphadBase&lt; T &gt;</a></td></tr>
 <tr class="memitem:a26f00f02756827aa4c9930f974e015bd inherit pro_attribs_classCalphadBase"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classCalphadUtils.html">CalphadUtils</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadBase.html#a26f00f02756827aa4c9930f974e015bd">CU_</a></td></tr>
@@ -218,25 +206,6 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classCalphadInformedNeuralNetwork.html#a36b758dd30a42967cc6c46910e3ca9ae" title="Construct a new CalphadInformedNeuralNetwork::CalphadInformedNeuralNetwork object.">CalphadInformedNeuralNetwork::CalphadInformedNeuralNetwork</a> object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">params</td><td>The parameter of the Calphad problem </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="CalphadInformedNeuralNetwork_8hpp_source.html#l00299">299</a> of file <a class="el" href="CalphadInformedNeuralNetwork_8hpp_source.html">CalphadInformedNeuralNetwork.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="CalphadInformedNeuralNetwork_8hpp_source.html#l00140">CalphadInformedNeuralNetwork&lt; T &gt;::get_parameters()</a>.</p>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classCalphadInformedNeuralNetwork_a36b758dd30a42967cc6c46910e3ca9ae_cgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
 </div>
 </div>
 <a id="a984e15e1a48520abc2006081ef7127ed"></a>
@@ -275,26 +244,6 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classCalphadInformedNeuralNetwork.html#a36b758dd30a42967cc6c46910e3ca9ae" title="Construct a new CalphadInformedNeuralNetwork::CalphadInformedNeuralNetwork object.">CalphadInformedNeuralNetwork::CalphadInformedNeuralNetwork</a> object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">params</td><td>The parameter of the Calphad problem </td></tr>
-    <tr><td class="paramname">is_KKS</td><td>A boolean flag indicating whether to initialize <a class="el" href="classKKS.html" title="Linearized KKS problem for two-phase multi-component system.">KKS</a>. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="CalphadInformedNeuralNetwork_8hpp_source.html#l00315">315</a> of file <a class="el" href="CalphadInformedNeuralNetwork_8hpp_source.html">CalphadInformedNeuralNetwork.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="CalphadInformedNeuralNetwork_8hpp_source.html#l00140">CalphadInformedNeuralNetwork&lt; T &gt;::get_parameters()</a>.</p>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classCalphadInformedNeuralNetwork_a984e15e1a48520abc2006081ef7127ed_cgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
 </div>
 </div>
 <a id="a075cdac7e32d303cbb79f5e988693bbf"></a>
@@ -306,20 +255,13 @@ template&lt;typename T &gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classCalphadInformedNeuralNetwork.html">CalphadInformedNeuralNetwork</a>&lt; T &gt;::~<a class="el" href="classCalphadInformedNeuralNetwork.html">CalphadInformedNeuralNetwork</a></td>
+          <td class="memname"><a class="el" href="classCalphadInformedNeuralNetwork.html">CalphadInformedNeuralNetwork</a>&lt; T &gt;::~<a class="el" href="classCalphadInformedNeuralNetwork.html">CalphadInformedNeuralNetwork</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Destroy the Binary Melting&lt; T&gt;:: Binary Melting object. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="CalphadInformedNeuralNetwork_8hpp_source.html#l00680">680</a> of file <a class="el" href="CalphadInformedNeuralNetwork_8hpp_source.html">CalphadInformedNeuralNetwork.hpp</a>.</p>
 
 </div>
 </div>
@@ -351,7 +293,7 @@ template&lt;typename T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::vector&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>tp_gf</em>, </td>
+          <td class="paramname"><em>aux_gf</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -378,27 +320,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Perform equilibrium calculations in a specific phase. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">dt</td><td>The current iteration of the simulation </td></tr>
-    <tr><td class="paramname">list_nodes</td><td>The list of nodes where calculations are performed </td></tr>
-    <tr><td class="paramname">tp_gf</td><td>The thermodynamic condition for equilibrium calculations </td></tr>
-    <tr><td class="paramname">chemical_system</td><td>The targeted chemical system </td></tr>
-    <tr><td class="paramname">status_phase</td><td>A vector of phases with their status </td></tr>
-  </table>
-  </dd>
-</dl>
-
 <p>Implements <a class="el" href="classCalphadBase.html#a1c26c89e3cdc44b737f91aad07d42b25">CalphadBase&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="CalphadInformedNeuralNetwork_8hpp_source.html#l00426">426</a> of file <a class="el" href="CalphadInformedNeuralNetwork_8hpp_source.html">CalphadInformedNeuralNetwork.hpp</a>.</p>
 
 </div>
 </div>
@@ -414,7 +336,10 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classCalphadInformedNeuralNetwork.html">CalphadInformedNeuralNetwork</a>&lt; T &gt;::finalize</td>
+          <td class="memname">void <a class="el" href="classCalphadInformedNeuralNetwork.html">CalphadInformedNeuralNetwork</a>&lt; T &gt;::finalize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -424,17 +349,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Finalization actions (free memory) </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
 <p>Implements <a class="el" href="classCalphadBase.html#a7641ec83a2065e436cfe454d12084438">CalphadBase&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="CalphadInformedNeuralNetwork_8hpp_source.html#l00672">672</a> of file <a class="el" href="CalphadInformedNeuralNetwork_8hpp_source.html">CalphadInformedNeuralNetwork.hpp</a>.</p>
 
 </div>
 </div>
@@ -450,7 +365,10 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classCalphadInformedNeuralNetwork.html">CalphadInformedNeuralNetwork</a>&lt; T &gt;::get_parameters</td>
+          <td class="memname">void <a class="el" href="classCalphadInformedNeuralNetwork.html">CalphadInformedNeuralNetwork</a>&lt; T &gt;::get_parameters </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -460,35 +378,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Get the parameters associated with the <a class="el" href="classCalphadInformedNeuralNetwork.html" title="Calphad calculation performed by neural network Dedicated to simulations with multicomponent inter-di...">CalphadInformedNeuralNetwork</a> object. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Reimplemented from <a class="el" href="classCalphadBase.html#acf1e5755a33921216777fbd78558a051">CalphadBase&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="CalphadInformedNeuralNetwork_8hpp_source.html#l00140">140</a> of file <a class="el" href="CalphadInformedNeuralNetwork_8hpp_source.html">CalphadInformedNeuralNetwork.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="UtilsForData_8hpp_source.html#l00218">check_file_existence()</a>, and <a class="el" href="CalphadBase_8hpp_source.html#l00179">CalphadBase&lt; T &gt;::get_parameters()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="CalphadInformedNeuralNetwork_8hpp_source.html#l00299">CalphadInformedNeuralNetwork&lt; T &gt;::CalphadInformedNeuralNetwork()</a>.</p>
-<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classCalphadInformedNeuralNetwork_a65455151b7486c06d1b346c377468800_cgraph.svg" width="532" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classCalphadInformedNeuralNetwork_a65455151b7486c06d1b346c377468800_icgraph.svg" width="560" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<p>Reimplemented from <a class="el" href="classCalphadBase.html#aaf520c2833ba973b0254e5d5fb676acc">CalphadBase&lt; T &gt;</a>.</p>
 
 </div>
 </div>
@@ -518,17 +408,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Initialization of the thermodynamic calculation. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
 <p>Implements <a class="el" href="classCalphadBase.html#a4264ca0e77c9d9f8a5f2d9fc62800966">CalphadBase&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="CalphadInformedNeuralNetwork_8hpp_source.html#l00331">331</a> of file <a class="el" href="CalphadInformedNeuralNetwork_8hpp_source.html">CalphadInformedNeuralNetwork.hpp</a>.</p>
 
 </div>
 </div>
@@ -538,7 +418,7 @@ template&lt;typename T &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 15:39:06 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Apr 10 2026 10:16:45 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

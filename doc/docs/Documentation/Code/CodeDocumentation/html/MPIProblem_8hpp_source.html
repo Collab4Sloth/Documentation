@@ -25,9 +25,9 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v2.0.0</span>
    </div>
-   <div id="projectbrief">PhaseField solver</div>
+   <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
  </tr>
  </tbody>
@@ -66,7 +66,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li><li class="navelem"><a class="el" href="dir_40d523f69030cd312e56865939dc94d8.html">Problems</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li><li class="navelem"><a class="el" href="dir_009f605b833ac4622acd6c3c0c26c0f0.html">include</a></li><li class="navelem"><a class="el" href="dir_965ceb73a91008e75bf87a86c0811e42.html">Problems</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -90,49 +90,27 @@ $(function() {
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> VAR, <span class="keyword">class</span> PST&gt;</div>
 <div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classMPI__Problem.html">   40</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMPI__Problem.html">MPI_Problem</a> : <span class="keyword">public</span> <a class="code" href="classProblemBase.html">ProblemBase</a>&lt;VAR, PST&gt; {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="classMPI__Problem.html#a3eb47c56cfbe5679246cfa0110685b49">MPI_Problem</a>(VAR&amp; variables, PST&amp; pst);</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classMPI__Problem.html#a3eb47c56cfbe5679246cfa0110685b49">   42</a></span>&#160;  <a class="code" href="classMPI__Problem.html#a3eb47c56cfbe5679246cfa0110685b49">MPI_Problem</a>(VAR&amp; variables, PST&amp; pst);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classMPI__Problem.html#a3af1ff9a0a5584f1819f9ce6d4bfcd66">do_time_step</a>(<span class="keywordtype">double</span>&amp; next_time, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; current_time, <span class="keywordtype">double</span> current_time_step,</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classMPI__Problem.html#a3af1ff9a0a5584f1819f9ce6d4bfcd66">   45</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classMPI__Problem.html#a3af1ff9a0a5584f1819f9ce6d4bfcd66">do_time_step</a>(<span class="keywordtype">double</span>&amp; next_time, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; current_time, <span class="keywordtype">double</span> current_time_step,</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> iter, std::vector&lt;std::unique_ptr&lt;mfem::Vector&gt;&gt;&amp; unks,</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                    <span class="keyword">const</span> std::vector&lt;std::vector&lt;std::string&gt;&gt;&amp; unks_info) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="classMPI__Problem.html#a49d82a40404f1283a1f7c9f0049f76f1">~MPI_Problem</a>();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;};</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> VAR, <span class="keyword">class</span> PST&gt;</div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classMPI__Problem.html#a3eb47c56cfbe5679246cfa0110685b49">   64</a></span>&#160;<a class="code" href="classMPI__Problem.html#a3eb47c56cfbe5679246cfa0110685b49">MPI_Problem&lt;VAR, PST&gt;::MPI_Problem</a>(VAR&amp; variables, PST&amp; pst)</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    : <a class="code" href="classProblemBase.html">ProblemBase</a>&lt;VAR, PST&gt;(<span class="stringliteral">&quot;MPI problem&quot;</span>, variables, pst) {}</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> VAR, <span class="keyword">class</span> PST&gt;</div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classMPI__Problem.html#a3af1ff9a0a5584f1819f9ce6d4bfcd66">   77</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classMPI__Problem.html#a3af1ff9a0a5584f1819f9ce6d4bfcd66">MPI_Problem&lt;VAR, PST&gt;::do_time_step</a>(<span class="keywordtype">double</span>&amp; next_time, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; current_time,</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                         <span class="keywordtype">double</span> current_time_step, <span class="keyword">const</span> <span class="keywordtype">int</span> iter,</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                         std::vector&lt;std::unique_ptr&lt;mfem::Vector&gt;&gt;&amp; vect_unk,</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                         <span class="keyword">const</span> std::vector&lt;std::vector&lt;std::string&gt;&gt;&amp; unks_info) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">int</span> rank = mfem::Mpi::WorldRank();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keyword">auto</span>&amp; unk = *(vect_unk[0]);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  unk = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(rank);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="comment">// Store the solution into a temporary mfem::Vector that will be used during updating stage,</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="comment">// TODO(cci) : utile? à voir avec le restart de paraview dan mfem et peut etre l&#39;AMR</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  this-&gt;unknown_.emplace_back(unk);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> VAR, <span class="keyword">class</span> PST&gt;</div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classMPI__Problem.html#a49d82a40404f1283a1f7c9f0049f76f1">   97</a></span>&#160;<a class="code" href="classMPI__Problem.html#a49d82a40404f1283a1f7c9f0049f76f1">MPI_Problem&lt;VAR, PST&gt;::~MPI_Problem</a>() {}</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MPIProblem_8tpp.html">Problems/MPIProblem.tpp</a>&quot;</span></div>
+<div class="ttc" id="aMPIProblem_8tpp_html"><div class="ttname"><a href="MPIProblem_8tpp.html">MPIProblem.tpp</a></div></div>
 <div class="ttc" id="aParameter_8hpp_html"><div class="ttname"><a href="Parameter_8hpp.html">Parameter.hpp</a></div><div class="ttdoc">Parameter class.</div></div>
 <div class="ttc" id="aProblemBase_8hpp_html"><div class="ttname"><a href="ProblemBase_8hpp.html">ProblemBase.hpp</a></div><div class="ttdoc">Base class for building Problems.</div></div>
 <div class="ttc" id="aVariable_8hpp_html"><div class="ttname"><a href="Variable_8hpp.html">Variable.hpp</a></div><div class="ttdoc">Variable class used to build and manage variables of model.</div></div>
 <div class="ttc" id="aclassMPI__Problem_html"><div class="ttname"><a href="classMPI__Problem.html">MPI_Problem</a></div><div class="ttdef"><b>Definition:</b> <a href="MPIProblem_8hpp_source.html#l00040">MPIProblem.hpp:40</a></div></div>
-<div class="ttc" id="aclassMPI__Problem_html_a3af1ff9a0a5584f1819f9ce6d4bfcd66"><div class="ttname"><a href="classMPI__Problem.html#a3af1ff9a0a5584f1819f9ce6d4bfcd66">MPI_Problem::do_time_step</a></div><div class="ttdeci">void do_time_step(double &amp;next_time, const double &amp;current_time, double current_time_step, const int iter, std::vector&lt; std::unique_ptr&lt; mfem::Vector &gt;&gt; &amp;unks, const std::vector&lt; std::vector&lt; std::string &gt;&gt; &amp;unks_info) override</div><div class="ttdoc">Do a time-step by calling Step method of the ODE.</div><div class="ttdef"><b>Definition:</b> <a href="MPIProblem_8hpp_source.html#l00077">MPIProblem.hpp:77</a></div></div>
-<div class="ttc" id="aclassMPI__Problem_html_a3eb47c56cfbe5679246cfa0110685b49"><div class="ttname"><a href="classMPI__Problem.html#a3eb47c56cfbe5679246cfa0110685b49">MPI_Problem::MPI_Problem</a></div><div class="ttdeci">MPI_Problem(VAR &amp;variables, PST &amp;pst)</div><div class="ttdoc">Construct a new Unsteady MPI_Problem object.</div><div class="ttdef"><b>Definition:</b> <a href="MPIProblem_8hpp_source.html#l00064">MPIProblem.hpp:64</a></div></div>
-<div class="ttc" id="aclassMPI__Problem_html_a49d82a40404f1283a1f7c9f0049f76f1"><div class="ttname"><a href="classMPI__Problem.html#a49d82a40404f1283a1f7c9f0049f76f1">MPI_Problem::~MPI_Problem</a></div><div class="ttdeci">~MPI_Problem()</div><div class="ttdoc">Destroy the Problem object.</div><div class="ttdef"><b>Definition:</b> <a href="MPIProblem_8hpp_source.html#l00097">MPIProblem.hpp:97</a></div></div>
-<div class="ttc" id="aclassProblemBase_html"><div class="ttname"><a href="classProblemBase.html">ProblemBase</a></div><div class="ttdef"><b>Definition:</b> <a href="ProblemBase_8hpp_source.html#l00049">ProblemBase.hpp:49</a></div></div>
+<div class="ttc" id="aclassMPI__Problem_html_a3af1ff9a0a5584f1819f9ce6d4bfcd66"><div class="ttname"><a href="classMPI__Problem.html#a3af1ff9a0a5584f1819f9ce6d4bfcd66">MPI_Problem::do_time_step</a></div><div class="ttdeci">void do_time_step(double &amp;next_time, const double &amp;current_time, double current_time_step, const int iter, std::vector&lt; std::unique_ptr&lt; mfem::Vector &gt;&gt; &amp;unks, const std::vector&lt; std::vector&lt; std::string &gt;&gt; &amp;unks_info) override</div></div>
+<div class="ttc" id="aclassMPI__Problem_html_a3eb47c56cfbe5679246cfa0110685b49"><div class="ttname"><a href="classMPI__Problem.html#a3eb47c56cfbe5679246cfa0110685b49">MPI_Problem::MPI_Problem</a></div><div class="ttdeci">MPI_Problem(VAR &amp;variables, PST &amp;pst)</div></div>
+<div class="ttc" id="aclassProblemBase_html"><div class="ttname"><a href="classProblemBase.html">ProblemBase</a></div><div class="ttdoc">Base class for SLOTH problem.</div><div class="ttdef"><b>Definition:</b> <a href="ProblemBase_8hpp_source.html#l00062">ProblemBase.hpp:62</a></div></div>
 <div class="ttc" id="apostprocessing_8hpp_html"><div class="ttname"><a href="postprocessing_8hpp.html">postprocessing.hpp</a></div><div class="ttdoc">Post-processing features.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 15:39:06 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Apr 10 2026 10:16:45 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

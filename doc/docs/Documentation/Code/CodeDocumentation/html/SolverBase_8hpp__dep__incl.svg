@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 1005;
+var viewWidth = 1352;
 var viewHeight = 420;
 var sectionId = 'dynsection-1';
 </script>
@@ -58,430 +58,535 @@ var sectionId = 'dynsection-1';
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title="Base class for Hypre, Iterative, Direct and Non Linear Solvers.">
-<polygon fill="#bfbfbf" stroke="black" points="301.5,-392.5 301.5,-411.5 398.5,-411.5 398.5,-392.5 301.5,-392.5"/>
-<text text-anchor="middle" x="350" y="-399.5" font-family="serif" font-size="10.00">SolverBase.hpp</text>
+<polygon fill="#bfbfbf" stroke="black" points="623,-392.5 623,-411.5 720,-411.5 720,-392.5 623,-392.5"/>
+<text text-anchor="middle" x="671.5" y="-399.5" font-family="serif" font-size="10.00">SolverBase.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="sloth_8hpp.html" target="_top" xlink:title="List of all header files contained in the kernel directory.">
-<polygon fill="none" stroke="black" points="274.5,-0.5 274.5,-19.5 339.5,-19.5 339.5,-0.5 274.5,-0.5"/>
-<text text-anchor="middle" x="307" y="-7.5" font-family="serif" font-size="10.00">sloth.hpp</text>
+<g id="a_node2"><a xlink:href="DSolverBase_8hpp.html" target="_top" xlink:title="Direct solvers.">
+<polygon fill="none" stroke="black" points="351,-336.5 351,-355.5 456,-355.5 456,-336.5 351,-336.5"/>
+<text text-anchor="middle" x="403.5" y="-343.5" font-family="serif" font-size="10.00">DSolverBase.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M291.3,-399.36C210.46,-396 70.27,-385.92 30,-356 4.46,-337.02 0,-322.82 0,-291 0,-291 0,-291 0,-121 0,-83.16 22.21,-74.89 55,-56 91.87,-34.76 214.59,-20.12 274.09,-14.09"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="291.21,-402.85 301.34,-399.75 291.48,-395.86 291.21,-402.85"/>
-</g>
-<!-- Node3 -->
-<g id="node3" class="node">
-<title>Node3</title>
-<g id="a_node3"><a xlink:href="DSolverBase_8hpp.html" target="_top" xlink:title="Direct solvers.">
-<polygon fill="none" stroke="black" points="297.5,-336.5 297.5,-355.5 402.5,-355.5 402.5,-336.5 297.5,-336.5"/>
-<text text-anchor="middle" x="350" y="-343.5" font-family="serif" font-size="10.00">DSolverBase.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
-<title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M350,-381.8C350,-372.91 350,-362.78 350,-355.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="346.5,-382.08 350,-392.08 353.5,-382.08 346.5,-382.08"/>
-</g>
-<!-- Node13 -->
-<g id="node13" class="node">
-<title>Node13</title>
-<g id="a_node13"><a xlink:href="HPrecondBase_8hpp.html" target="_top" xlink:title="Base class for hypre preconditionners used in linear system involved in non linear algorithm.">
-<polygon fill="none" stroke="black" points="39,-336.5 39,-355.5 155,-355.5 155,-336.5 39,-336.5"/>
-<text text-anchor="middle" x="97" y="-343.5" font-family="serif" font-size="10.00">HPrecondBase.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node13 -->
-<g id="edge30" class="edge">
-<title>Node1&#45;&gt;Node13</title>
-<path fill="none" stroke="midnightblue" d="M300.08,-390.35C252.27,-380.14 181.05,-364.94 136.9,-355.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="299.4,-393.78 309.91,-392.44 300.86,-386.93 299.4,-393.78"/>
+<path fill="none" stroke="midnightblue" d="M618.94,-390.41C568.29,-380.2 492.63,-364.96 445.77,-355.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="618.54,-393.9 629.03,-392.44 619.92,-387.04 618.54,-393.9"/>
 </g>
 <!-- Node14 -->
 <g id="node14" class="node">
 <title>Node14</title>
-<g id="a_node14"><a xlink:href="HSolverBase_8hpp.html" target="_top" xlink:title="Base class for Hypre solvers.">
-<polygon fill="none" stroke="black" points="173,-336.5 173,-355.5 279,-355.5 279,-336.5 173,-336.5"/>
-<text text-anchor="middle" x="226" y="-343.5" font-family="serif" font-size="10.00">HSolverBase.hpp</text>
+<g id="a_node14"><a xlink:href="DSolverBase_8cpp.html" target="_top" xlink:title="Direct solvers.">
+<polygon fill="none" stroke="black" points="205.5,-280.5 205.5,-299.5 309.5,-299.5 309.5,-280.5 205.5,-280.5"/>
+<text text-anchor="middle" x="257.5" y="-287.5" font-family="serif" font-size="10.00">DSolverBase.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node14 -->
-<g id="edge33" class="edge">
+<g id="edge48" class="edge">
 <title>Node1&#45;&gt;Node14</title>
-<path fill="none" stroke="midnightblue" d="M320.99,-388.37C297.77,-378.26 265.84,-364.35 245.56,-355.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="319.79,-391.66 330.35,-392.44 322.58,-385.24 319.79,-391.66"/>
+<path fill="none" stroke="midnightblue" d="M612.84,-396.6C531.77,-389.9 390.1,-375.81 342.5,-356 310.6,-342.72 280.18,-314.43 265.93,-299.94"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="612.64,-400.1 622.89,-397.42 613.21,-393.12 612.64,-400.1"/>
 </g>
 <!-- Node15 -->
 <g id="node15" class="node">
 <title>Node15</title>
-<g id="a_node15"><a xlink:href="IPrecondBase_8hpp.html" target="_top" xlink:title="Base class for preconditionners used in linear system involved in non linear algorithm.">
-<polygon fill="none" stroke="black" points="540,-336.5 540,-355.5 650,-355.5 650,-336.5 540,-336.5"/>
-<text text-anchor="middle" x="595" y="-343.5" font-family="serif" font-size="10.00">IPrecondBase.hpp</text>
+<g id="a_node15"><a xlink:href="HPrecondBase_8hpp.html" target="_top" xlink:title="Base class for hypre preconditionners used in linear system involved in non linear algorithm.">
+<polygon fill="none" stroke="black" points="952.5,-336.5 952.5,-355.5 1068.5,-355.5 1068.5,-336.5 952.5,-336.5"/>
+<text text-anchor="middle" x="1010.5" y="-343.5" font-family="serif" font-size="10.00">HPrecondBase.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node15 -->
-<g id="edge36" class="edge">
+<g id="edge24" class="edge">
 <title>Node1&#45;&gt;Node15</title>
-<path fill="none" stroke="midnightblue" d="M398.63,-390.28C444.93,-380.08 513.69,-364.92 556.36,-355.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="397.83,-386.87 388.82,-392.44 399.34,-393.71 397.83,-386.87"/>
+<path fill="none" stroke="midnightblue" d="M729.98,-391.68C793.82,-381.51 895.18,-365.37 956.99,-355.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="729.4,-388.23 720.07,-393.26 730.5,-395.15 729.4,-388.23"/>
 </g>
 <!-- Node16 -->
 <g id="node16" class="node">
 <title>Node16</title>
-<g id="a_node16"><a xlink:href="ISolverBase_8hpp.html" target="_top" xlink:title="Base class for iterative solvers.">
-<polygon fill="none" stroke="black" points="420.5,-336.5 420.5,-355.5 521.5,-355.5 521.5,-336.5 420.5,-336.5"/>
-<text text-anchor="middle" x="471" y="-343.5" font-family="serif" font-size="10.00">ISolverBase.hpp</text>
+<g id="a_node16"><a xlink:href="HPrecondBase_8cpp.html" target="_top" xlink:title="Base class for hypre preconditionners used in linear system involved in non linear algorithm.">
+<polygon fill="none" stroke="black" points="1069.5,-280.5 1069.5,-299.5 1183.5,-299.5 1183.5,-280.5 1069.5,-280.5"/>
+<text text-anchor="middle" x="1126.5" y="-287.5" font-family="serif" font-size="10.00">HPrecondBase.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node16 -->
-<g id="edge40" class="edge">
+<g id="edge49" class="edge">
 <title>Node1&#45;&gt;Node16</title>
-<path fill="none" stroke="midnightblue" d="M378.31,-388.37C400.97,-378.26 432.13,-364.35 451.92,-355.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="376.88,-385.17 369.17,-392.44 379.73,-391.56 376.88,-385.17"/>
+<path fill="none" stroke="midnightblue" d="M730.19,-400.14C828.07,-397.78 1019.62,-388.96 1077.5,-356 1100.59,-342.85 1116.19,-313.96 1122.85,-299.54"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="730.08,-396.64 720.16,-400.37 730.24,-403.64 730.08,-396.64"/>
 </g>
 <!-- Node17 -->
 <g id="node17" class="node">
 <title>Node17</title>
-<g id="a_node17"><a xlink:href="NLSolverBase_8hpp.html" target="_top" xlink:title="ase class for non linear solvers">
-<polygon fill="none" stroke="black" points="883.5,-280.5 883.5,-299.5 996.5,-299.5 996.5,-280.5 883.5,-280.5"/>
-<text text-anchor="middle" x="940" y="-287.5" font-family="serif" font-size="10.00">NLSolverBase.hpp</text>
+<g id="a_node17"><a xlink:href="HSolverBase_8hpp.html" target="_top" xlink:title="Base class for Hypre solvers.">
+<polygon fill="none" stroke="black" points="1149.5,-336.5 1149.5,-355.5 1255.5,-355.5 1255.5,-336.5 1149.5,-336.5"/>
+<text text-anchor="middle" x="1202.5" y="-343.5" font-family="serif" font-size="10.00">HSolverBase.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node17 -->
-<g id="edge44" class="edge">
+<g id="edge28" class="edge">
 <title>Node1&#45;&gt;Node17</title>
-<path fill="none" stroke="midnightblue" d="M408.68,-393.92C471.01,-386.06 572.32,-372.31 659,-356 749.3,-339.01 854.52,-312.98 906.88,-299.6"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="408.13,-390.46 398.64,-395.18 409,-397.41 408.13,-390.46"/>
+<path fill="none" stroke="midnightblue" d="M730.18,-395.56C816.89,-387.44 984.32,-371.45 1126.5,-356 1133.9,-355.2 1141.69,-354.31 1149.36,-353.42"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="729.65,-392.1 720.02,-396.51 730.3,-399.07 729.65,-392.1"/>
 </g>
-<!-- Node3&#45;&gt;Node2 -->
-<g id="edge3" class="edge">
-<title>Node3&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M305.51,-333.93C237.12,-315.6 114,-276.79 114,-235 114,-235 114,-235 114,-121 114,-48.11 219.2,-22.89 274.26,-14.68"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="304.62,-337.32 315.18,-336.48 306.4,-330.55 304.62,-337.32"/>
-</g>
-<!-- Node4 -->
-<g id="node4" class="node">
-<title>Node4</title>
-<g id="a_node4"><a xlink:href="NLSolver_8hpp.html" target="_top" xlink:title="Class used to manage a NonLinear Solver( Newton type)">
-<polygon fill="none" stroke="black" points="473.5,-224.5 473.5,-243.5 560.5,-243.5 560.5,-224.5 473.5,-224.5"/>
-<text text-anchor="middle" x="517" y="-231.5" font-family="serif" font-size="10.00">NLSolver.hpp</text>
+<!-- Node18 -->
+<g id="node18" class="node">
+<title>Node18</title>
+<g id="a_node18"><a xlink:href="HSolverBase_8cpp.html" target="_top" xlink:title="Base class for Hypre solvers.">
+<polygon fill="none" stroke="black" points="1239.5,-280.5 1239.5,-299.5 1343.5,-299.5 1343.5,-280.5 1239.5,-280.5"/>
+<text text-anchor="middle" x="1291.5" y="-287.5" font-family="serif" font-size="10.00">HSolverBase.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node4 -->
-<g id="edge4" class="edge">
-<title>Node3&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M371.69,-330.71C406.88,-307.53 475.36,-262.43 503.96,-243.59"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="369.53,-327.94 363.1,-336.37 373.38,-333.79 369.53,-327.94"/>
+<!-- Node1&#45;&gt;Node18 -->
+<g id="edge50" class="edge">
+<title>Node1&#45;&gt;Node18</title>
+<path fill="none" stroke="midnightblue" d="M730.4,-399.99C871.8,-397.08 1221.91,-386.82 1264.5,-356 1282.91,-342.68 1288.82,-314.4 1290.68,-299.93"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="730.11,-396.5 720.19,-400.2 730.25,-403.49 730.11,-396.5"/>
 </g>
-<!-- Node11 -->
-<g id="node11" class="node">
-<title>Node11</title>
-<g id="a_node11"><a xlink:href="SlothSolver_8hpp.html" target="_top" xlink:title="Class to define a SlothSolver objet.">
-<polygon fill="none" stroke="black" points="301,-280.5 301,-299.5 399,-299.5 399,-280.5 301,-280.5"/>
-<text text-anchor="middle" x="350" y="-287.5" font-family="serif" font-size="10.00">SlothSolver.hpp</text>
+<!-- Node19 -->
+<g id="node19" class="node">
+<title>Node19</title>
+<g id="a_node19"><a xlink:href="IPrecondBase_8hpp.html" target="_top" xlink:title="Base class for preconditionners used in linear system involved in non linear algorithm.">
+<polygon fill="none" stroke="black" points="692.5,-336.5 692.5,-355.5 802.5,-355.5 802.5,-336.5 692.5,-336.5"/>
+<text text-anchor="middle" x="747.5" y="-343.5" font-family="serif" font-size="10.00">IPrecondBase.hpp</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node11 -->
-<g id="edge22" class="edge">
-<title>Node3&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M350,-325.8C350,-316.91 350,-306.78 350,-299.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="346.5,-326.08 350,-336.08 353.5,-326.08 346.5,-326.08"/>
+<!-- Node1&#45;&gt;Node19 -->
+<g id="edge32" class="edge">
+<title>Node1&#45;&gt;Node19</title>
+<path fill="none" stroke="midnightblue" d="M692.08,-386.38C705.81,-376.62 723.43,-364.11 735.07,-355.83"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="689.84,-383.68 683.71,-392.32 693.89,-389.38 689.84,-383.68"/>
 </g>
-<!-- Node4&#45;&gt;Node2 -->
-<g id="edge21" class="edge">
-<title>Node4&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M555.34,-221.35C635.01,-195.32 805.78,-128.97 740,-56 713.27,-26.35 435.81,-14.99 339.62,-11.93"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="554.09,-218.07 545.64,-224.47 556.23,-224.74 554.09,-218.07"/>
-</g>
-<!-- Node5 -->
-<g id="node5" class="node">
-<title>Node5</title>
-<g id="a_node5"><a xlink:href="OperatorBase_8hpp.html" target="_top" xlink:title="Base class for building Steady and TimeDependent PhaseFieldOperators.">
-<polygon fill="none" stroke="black" points="343,-168.5 343,-187.5 453,-187.5 453,-168.5 343,-168.5"/>
-<text text-anchor="middle" x="398" y="-175.5" font-family="serif" font-size="10.00">OperatorBase.hpp</text>
+<!-- Node20 -->
+<g id="node20" class="node">
+<title>Node20</title>
+<g id="a_node20"><a xlink:href="IPrecondBase_8cpp.html" target="_top" xlink:title="Base class for preconditionners used in linear system involved in non linear algorithm.">
+<polygon fill="none" stroke="black" points="904,-280.5 904,-299.5 1013,-299.5 1013,-280.5 904,-280.5"/>
+<text text-anchor="middle" x="958.5" y="-287.5" font-family="serif" font-size="10.00">IPrecondBase.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node5 -->
-<g id="edge5" class="edge">
-<title>Node4&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M488.86,-220.23C466.6,-210.13 436.14,-196.31 416.77,-187.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="487.59,-223.5 498.14,-224.44 490.48,-217.12 487.59,-223.5"/>
+<!-- Node1&#45;&gt;Node20 -->
+<g id="edge51" class="edge">
+<title>Node1&#45;&gt;Node20</title>
+<path fill="none" stroke="midnightblue" d="M710.94,-389.54C739.21,-381.03 778.03,-368.74 811.5,-356 858.96,-337.94 913.24,-312.7 940.65,-299.63"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="709.62,-386.28 701.04,-392.49 711.62,-392.99 709.62,-386.28"/>
 </g>
-<!-- Node6 -->
-<g id="node6" class="node">
-<title>Node6</title>
-<g id="a_node6"><a xlink:href="SteadyOperatorBase_8hpp.html" target="_top" xlink:title="Steady Operator base.">
-<polygon fill="none" stroke="black" points="446,-112.5 446,-131.5 592,-131.5 592,-112.5 446,-112.5"/>
-<text text-anchor="middle" x="519" y="-119.5" font-family="serif" font-size="10.00">SteadyOperatorBase.hpp</text>
+<!-- Node21 -->
+<g id="node21" class="node">
+<title>Node21</title>
+<g id="a_node21"><a xlink:href="ISolverBase_8hpp.html" target="_top" xlink:title="Base class for iterative solvers.">
+<polygon fill="none" stroke="black" points="559,-336.5 559,-355.5 660,-355.5 660,-336.5 559,-336.5"/>
+<text text-anchor="middle" x="609.5" y="-343.5" font-family="serif" font-size="10.00">ISolverBase.hpp</text>
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node6 -->
-<g id="edge20" class="edge">
-<title>Node4&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M517.34,-214.35C517.78,-190.25 518.52,-149.31 518.84,-131.59"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="513.84,-214.31 517.16,-224.37 520.84,-214.43 513.84,-214.31"/>
+<!-- Node1&#45;&gt;Node21 -->
+<g id="edge38" class="edge">
+<title>Node1&#45;&gt;Node21</title>
+<path fill="none" stroke="midnightblue" d="M653.75,-385.54C642.69,-375.91 628.87,-363.87 619.64,-355.83"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="651.7,-388.4 661.54,-392.32 656.3,-383.12 651.7,-388.4"/>
 </g>
-<!-- Node5&#45;&gt;Node2 -->
-<g id="edge19" class="edge">
-<title>Node5&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M332.98,-172.22C305.86,-166.63 276.81,-155.16 260,-132 233.13,-94.97 278.43,-40.58 298.34,-19.65"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="332.39,-175.67 342.86,-174.02 333.65,-168.78 332.39,-175.67"/>
-</g>
-<!-- Node5&#45;&gt;Node6 -->
-<g id="edge6" class="edge">
-<title>Node5&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M426.31,-164.37C448.97,-154.26 480.13,-140.35 499.92,-131.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="424.88,-161.17 417.17,-168.44 427.73,-167.56 424.88,-161.17"/>
-</g>
-<!-- Node10 -->
-<g id="node10" class="node">
-<title>Node10</title>
-<g id="a_node10"><a xlink:href="TransientOperatorBase_8hpp.html" target="_top" xlink:title="Transient Operator base.">
-<polygon fill="none" stroke="black" points="268.5,-112.5 268.5,-131.5 427.5,-131.5 427.5,-112.5 268.5,-112.5"/>
-<text text-anchor="middle" x="348" y="-119.5" font-family="serif" font-size="10.00">TransientOperatorBase.hpp</text>
+<!-- Node22 -->
+<g id="node22" class="node">
+<title>Node22</title>
+<g id="a_node22"><a xlink:href="ISolverBase_8cpp.html" target="_top" xlink:title="Base class for iterative solvers.">
+<polygon fill="none" stroke="black" points="442,-280.5 442,-299.5 541,-299.5 541,-280.5 442,-280.5"/>
+<text text-anchor="middle" x="491.5" y="-287.5" font-family="serif" font-size="10.00">ISolverBase.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node10 -->
-<g id="edge14" class="edge">
-<title>Node5&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M382.92,-160.72C374.11,-151.2 363.33,-139.56 356.1,-131.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="380.38,-163.12 389.74,-168.08 385.52,-158.37 380.38,-163.12"/>
+<!-- Node1&#45;&gt;Node22 -->
+<g id="edge52" class="edge">
+<title>Node1&#45;&gt;Node22</title>
+<path fill="none" stroke="midnightblue" d="M625.65,-389.6C601.92,-382.35 573.24,-371.39 550.5,-356 527.28,-340.28 506.96,-313.58 497.36,-299.8"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="624.91,-393.03 635.49,-392.49 626.88,-386.32 624.91,-393.03"/>
 </g>
-<!-- Node6&#45;&gt;Node2 -->
-<g id="edge13" class="edge">
-<title>Node6&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M602.22,-118.87C674.24,-114.13 761.13,-99.6 722,-56 696.56,-27.65 432.98,-15.51 339.59,-12.08"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="601.95,-115.39 592.17,-119.48 602.37,-122.37 601.95,-115.39"/>
-</g>
-<!-- Node7 -->
-<g id="node7" class="node">
-<title>Node7</title>
-<g id="a_node7"><a xlink:href="DiffusionOperator_8hpp.html" target="_top" xlink:title="Diffusion operator (Base, Steady and TimeDependent)">
-<polygon fill="none" stroke="black" points="581.5,-56.5 581.5,-75.5 712.5,-75.5 712.5,-56.5 581.5,-56.5"/>
-<text text-anchor="middle" x="647" y="-63.5" font-family="serif" font-size="10.00">DiffusionOperator.hpp</text>
+<!-- Node23 -->
+<g id="node23" class="node">
+<title>Node23</title>
+<g id="a_node23"><a xlink:href="NLSolverBase_8hpp.html" target="_top" xlink:title="ase class for non linear solvers">
+<polygon fill="none" stroke="black" points="112,-336.5 112,-355.5 225,-355.5 225,-336.5 112,-336.5"/>
+<text text-anchor="middle" x="168.5" y="-343.5" font-family="serif" font-size="10.00">NLSolverBase.hpp</text>
 </a>
 </g>
 </g>
-<!-- Node6&#45;&gt;Node7 -->
-<g id="edge7" class="edge">
-<title>Node6&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M548.62,-108.5C572.62,-98.38 605.78,-84.39 626.81,-75.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="547.14,-105.33 539.28,-112.44 549.86,-111.78 547.14,-105.33"/>
+<!-- Node1&#45;&gt;Node23 -->
+<g id="edge44" class="edge">
+<title>Node1&#45;&gt;Node23</title>
+<path fill="none" stroke="midnightblue" d="M612.84,-394.7C515.39,-384.24 321.39,-363.41 225.23,-353.09"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="612.5,-398.19 622.81,-395.77 613.24,-391.23 612.5,-398.19"/>
 </g>
-<!-- Node8 -->
-<g id="node8" class="node">
-<title>Node8</title>
-<g id="a_node8"><a xlink:href="HeatOperator_8hpp.html" target="_top" xlink:title="Heat operator (Base, Steady and TimeDependent)">
-<polygon fill="none" stroke="black" points="294,-56.5 294,-75.5 404,-75.5 404,-56.5 294,-56.5"/>
-<text text-anchor="middle" x="349" y="-63.5" font-family="serif" font-size="10.00">HeatOperator.hpp</text>
+<!-- Node24 -->
+<g id="node24" class="node">
+<title>Node24</title>
+<g id="a_node24"><a xlink:href="NLSolverBase_8cpp.html" target="_top" xlink:title="ase class for non linear solvers">
+<polygon fill="none" stroke="black" points="0,-280.5 0,-299.5 111,-299.5 111,-280.5 0,-280.5"/>
+<text text-anchor="middle" x="55.5" y="-287.5" font-family="serif" font-size="10.00">NLSolverBase.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node6&#45;&gt;Node8 -->
-<g id="edge9" class="edge">
-<title>Node6&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M482.18,-109.3C450.15,-99.13 404.48,-84.62 375.81,-75.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="481.47,-112.75 492.06,-112.44 483.59,-106.08 481.47,-112.75"/>
+<!-- Node1&#45;&gt;Node24 -->
+<g id="edge53" class="edge">
+<title>Node1&#45;&gt;Node24</title>
+<path fill="none" stroke="midnightblue" d="M612.64,-399.09C476.33,-394.28 147.22,-380.28 103.5,-356 80.44,-343.2 65.36,-314.14 58.98,-299.61"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="612.78,-402.6 622.89,-399.45 613.02,-395.6 612.78,-402.6"/>
+</g>
+<!-- Node3 -->
+<g id="node3" class="node">
+<title>Node3</title>
+<g id="a_node3"><a xlink:href="NLSolver_8hpp.html" target="_top" xlink:title="Class used to manage a NonLinear Solver( Newton type)">
+<polygon fill="none" stroke="black" points="636,-224.5 636,-243.5 723,-243.5 723,-224.5 636,-224.5"/>
+<text text-anchor="middle" x="679.5" y="-231.5" font-family="serif" font-size="10.00">NLSolver.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node2&#45;&gt;Node3 -->
+<g id="edge2" class="edge">
+<title>Node2&#45;&gt;Node3</title>
+<path fill="none" stroke="midnightblue" d="M396.05,-326.45C391.62,-312.1 388.75,-292.62 399.5,-280 429.36,-244.96 565,-237.1 635.95,-235.41"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="392.87,-327.98 399.53,-336.22 399.47,-325.63 392.87,-327.98"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="PhaseFieldOperator_8hpp.html" target="_top" xlink:title="AllenCahn operator (Base, Steady and TimeDependent)">
-<polygon fill="none" stroke="black" points="422.5,-56.5 422.5,-75.5 563.5,-75.5 563.5,-56.5 422.5,-56.5"/>
-<text text-anchor="middle" x="493" y="-63.5" font-family="serif" font-size="10.00">PhaseFieldOperator.hpp</text>
+<g id="a_node9"><a xlink:href="NLSolver_8cpp.html" target="_top" xlink:title="Class used to manage a NonLinear Solver( Newton type)">
+<polygon fill="none" stroke="black" points="526.5,-168.5 526.5,-187.5 612.5,-187.5 612.5,-168.5 526.5,-168.5"/>
+<text text-anchor="middle" x="569.5" y="-175.5" font-family="serif" font-size="10.00">NLSolver.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node6&#45;&gt;Node9 -->
+<!-- Node2&#45;&gt;Node9 -->
+<g id="edge22" class="edge">
+<title>Node2&#45;&gt;Node9</title>
+<path fill="none" stroke="midnightblue" d="M392.47,-327.54C385.35,-313.83 378.87,-294.67 387.5,-280 418.76,-226.9 489.11,-199.73 532.62,-187.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="389.56,-329.49 397.57,-336.42 395.63,-326 389.56,-329.49"/>
+</g>
+<!-- Node10 -->
+<g id="node10" class="node">
+<title>Node10</title>
+<g id="a_node10"><a xlink:href="SlothSolver_8hpp.html" target="_top" xlink:title="Class to define a SlothSolver objet.">
+<polygon fill="none" stroke="black" points="711.5,-280.5 711.5,-299.5 809.5,-299.5 809.5,-280.5 711.5,-280.5"/>
+<text text-anchor="middle" x="760.5" y="-287.5" font-family="serif" font-size="10.00">SlothSolver.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node2&#45;&gt;Node10 -->
 <g id="edge11" class="edge">
-<title>Node6&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M510.33,-102.98C505.91,-93.82 500.75,-83.09 497.21,-75.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="507.21,-104.59 514.71,-112.08 513.52,-101.55 507.21,-104.59"/>
+<title>Node2&#45;&gt;Node10</title>
+<path fill="none" stroke="midnightblue" d="M466.17,-335.52C536.02,-324.96 647.51,-308.09 711.34,-298.44"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="465.54,-332.08 456.18,-337.03 466.59,-339 465.54,-332.08"/>
 </g>
-<!-- Node7&#45;&gt;Node2 -->
-<g id="edge8" class="edge">
-<title>Node7&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M583.21,-54.87C510.81,-43.37 395.55,-25.06 339.6,-16.18"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="582.7,-58.33 593.13,-56.44 583.8,-51.42 582.7,-58.33"/>
+<!-- Node13 -->
+<g id="node13" class="node">
+<title>Node13</title>
+<g id="a_node13"><a xlink:href="SlothSolver_8cpp.html" target="_top" xlink:title="Class to define a SlothSolver objet.">
+<polygon fill="none" stroke="black" points="913.5,-224.5 913.5,-243.5 1009.5,-243.5 1009.5,-224.5 913.5,-224.5"/>
+<text text-anchor="middle" x="961.5" y="-231.5" font-family="serif" font-size="10.00">SlothSolver.cpp</text>
+</a>
 </g>
-<!-- Node8&#45;&gt;Node2 -->
+</g>
+<!-- Node2&#45;&gt;Node13 -->
+<g id="edge23" class="edge">
+<title>Node2&#45;&gt;Node13</title>
+<path fill="none" stroke="midnightblue" d="M406.82,-326.17C410.56,-311.04 418.22,-290.62 433.5,-280 519.7,-220.09 800.24,-256.2 904.5,-244 907.39,-243.66 910.35,-243.29 913.34,-242.88"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="403.38,-325.53 404.74,-336.04 410.23,-326.97 403.38,-325.53"/>
+</g>
+<!-- Node2&#45;&gt;Node14 -->
+<g id="edge21" class="edge">
+<title>Node2&#45;&gt;Node14</title>
+<path fill="none" stroke="midnightblue" d="M370.8,-332.91C343.35,-322.75 304.83,-308.51 280.53,-299.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="369.77,-336.26 380.37,-336.44 372.2,-329.69 369.77,-336.26"/>
+</g>
+<!-- Node4 -->
+<g id="node4" class="node">
+<title>Node4</title>
+<g id="a_node4"><a xlink:href="OperatorBase_8hpp.html" target="_top" xlink:title="Base class for building Steady and TimeDependent PhaseFieldOperators.">
+<polygon fill="none" stroke="black" points="668.5,-168.5 668.5,-187.5 778.5,-187.5 778.5,-168.5 668.5,-168.5"/>
+<text text-anchor="middle" x="723.5" y="-175.5" font-family="serif" font-size="10.00">OperatorBase.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node3&#45;&gt;Node4 -->
+<g id="edge3" class="edge">
+<title>Node3&#45;&gt;Node4</title>
+<path fill="none" stroke="midnightblue" d="M693.23,-216.14C700.9,-206.74 710.13,-195.4 716.37,-187.75"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="690.37,-214.12 686.77,-224.08 695.8,-218.54 690.37,-214.12"/>
+</g>
+<!-- Node5 -->
+<g id="node5" class="node">
+<title>Node5</title>
+<g id="a_node5"><a xlink:href="SteadyOperator_8hpp.html" target="_top" xlink:title="Steady Operator.">
+<polygon fill="none" stroke="black" points="663.5,-112.5 663.5,-131.5 783.5,-131.5 783.5,-112.5 663.5,-112.5"/>
+<text text-anchor="middle" x="723.5" y="-119.5" font-family="serif" font-size="10.00">SteadyOperator.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node3&#45;&gt;Node5 -->
+<g id="edge9" class="edge">
+<title>Node3&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M667,-215.46C659.06,-201.99 651.62,-183.18 659.5,-168 668.39,-150.88 687.11,-138.91 702.02,-131.64"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="664.29,-217.71 672.67,-224.2 670.17,-213.91 664.29,-217.71"/>
+</g>
+<!-- Node3&#45;&gt;Node9 -->
 <g id="edge10" class="edge">
-<title>Node8&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M335.89,-48.14C328.57,-38.74 319.76,-27.4 313.81,-19.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="333.16,-50.34 342.06,-56.08 338.69,-46.04 333.16,-50.34"/>
+<title>Node3&#45;&gt;Node9</title>
+<path fill="none" stroke="midnightblue" d="M652.74,-219.86C632.34,-209.85 604.83,-196.35 587.13,-187.65"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="651.31,-223.06 661.83,-224.32 654.39,-216.78 651.31,-223.06"/>
 </g>
-<!-- Node9&#45;&gt;Node2 -->
-<g id="edge12" class="edge">
-<title>Node9&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M453.62,-53.57C418.53,-43.38 367.98,-28.7 336.33,-19.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="452.95,-57.02 463.53,-56.44 454.9,-50.29 452.95,-57.02"/>
+<!-- Node4&#45;&gt;Node5 -->
+<g id="edge4" class="edge">
+<title>Node4&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M723.5,-157.8C723.5,-148.91 723.5,-138.78 723.5,-131.75"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="720,-158.08 723.5,-168.08 727,-158.08 720,-158.08"/>
 </g>
-<!-- Node10&#45;&gt;Node2 -->
-<g id="edge18" class="edge">
-<title>Node10&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M318.18,-107.61C305.52,-100.23 292.08,-89.75 285,-76 275.19,-56.93 290.05,-32.54 299.74,-19.74"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="316.69,-110.78 327.15,-112.43 320,-104.61 316.69,-110.78"/>
+<!-- Node8 -->
+<g id="node8" class="node">
+<title>Node8</title>
+<g id="a_node8"><a xlink:href="TransientOperator_8hpp.html" target="_top" xlink:title="Transient Operator.">
+<polygon fill="none" stroke="black" points="801.5,-112.5 801.5,-131.5 935.5,-131.5 935.5,-112.5 801.5,-112.5"/>
+<text text-anchor="middle" x="868.5" y="-119.5" font-family="serif" font-size="10.00">TransientOperator.hpp</text>
+</a>
 </g>
-<!-- Node10&#45;&gt;Node7 -->
-<g id="edge15" class="edge">
-<title>Node10&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M405.23,-110.66C461.74,-100.46 547.12,-85.04 599.84,-75.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="404.6,-107.22 395.38,-112.44 405.84,-114.11 404.6,-107.22"/>
 </g>
-<!-- Node10&#45;&gt;Node8 -->
-<g id="edge16" class="edge">
-<title>Node10&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M348.36,-101.8C348.52,-92.91 348.71,-82.78 348.84,-75.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="344.85,-102.02 348.17,-112.08 351.85,-102.15 344.85,-102.02"/>
+<!-- Node4&#45;&gt;Node8 -->
+<g id="edge7" class="edge">
+<title>Node4&#45;&gt;Node8</title>
+<path fill="none" stroke="midnightblue" d="M755.98,-164.91C783.24,-154.75 821.49,-140.51 845.63,-131.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="754.63,-161.67 746.48,-168.44 757.07,-168.23 754.63,-161.67"/>
+</g>
+<!-- Node6 -->
+<g id="node6" class="node">
+<title>Node6</title>
+<g id="a_node6"><a xlink:href="ListOperators_8hpp.html" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="black" points="740.5,-56.5 740.5,-75.5 850.5,-75.5 850.5,-56.5 740.5,-56.5"/>
+<text text-anchor="middle" x="795.5" y="-63.5" font-family="serif" font-size="10.00">ListOperators.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node5&#45;&gt;Node6 -->
+<g id="edge5" class="edge">
+<title>Node5&#45;&gt;Node6</title>
+<path fill="none" stroke="midnightblue" d="M743.37,-106.1C756.32,-96.38 772.8,-84.03 783.72,-75.83"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="740.97,-103.52 735.07,-112.32 745.17,-109.12 740.97,-103.52"/>
+</g>
+<!-- Node7 -->
+<g id="node7" class="node">
+<title>Node7</title>
+<g id="a_node7"><a xlink:href="sloth_8hpp.html" target="_top" xlink:title="List of SLOTH header files.">
+<polygon fill="none" stroke="black" points="763,-0.5 763,-19.5 828,-19.5 828,-0.5 763,-0.5"/>
+<text text-anchor="middle" x="795.5" y="-7.5" font-family="serif" font-size="10.00">sloth.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node6&#45;&gt;Node7 -->
+<g id="edge6" class="edge">
+<title>Node6&#45;&gt;Node7</title>
+<path fill="none" stroke="midnightblue" d="M795.5,-45.8C795.5,-36.91 795.5,-26.78 795.5,-19.75"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="792,-46.08 795.5,-56.08 799,-46.08 792,-46.08"/>
+</g>
+<!-- Node8&#45;&gt;Node6 -->
+<g id="edge8" class="edge">
+<title>Node8&#45;&gt;Node6</title>
+<path fill="none" stroke="midnightblue" d="M848.36,-106.1C835.22,-96.38 818.52,-84.03 807.44,-75.83"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="846.65,-109.19 856.77,-112.32 850.81,-103.56 846.65,-109.19"/>
+</g>
+<!-- Node10&#45;&gt;Node3 -->
+<g id="edge17" class="edge">
+<title>Node10&#45;&gt;Node3</title>
+<path fill="none" stroke="midnightblue" d="M738.93,-274.62C724.14,-264.76 704.99,-251.99 692.48,-243.65"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="737.22,-277.69 747.49,-280.32 741.11,-271.86 737.22,-277.69"/>
 </g>
 <!-- Node10&#45;&gt;Node9 -->
-<g id="edge17" class="edge">
+<g id="edge19" class="edge">
 <title>Node10&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M380.48,-108.91C407.74,-98.75 445.99,-84.51 470.13,-75.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="379.13,-105.67 370.98,-112.44 381.57,-112.23 379.13,-105.67"/>
+<path fill="none" stroke="midnightblue" d="M757.09,-270.5C753.45,-255.86 746.23,-235.96 732.5,-224 699.19,-194.98 648.71,-184.53 612.76,-180.84"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="753.71,-271.4 759.23,-280.45 760.55,-269.93 753.71,-271.4"/>
 </g>
-<!-- Node11&#45;&gt;Node2 -->
-<g id="edge23" class="edge">
-<title>Node11&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M290.92,-281.44C232.57,-270.27 152,-243.22 152,-179 152,-179 152,-179 152,-121 152,-61.6 228.63,-31.35 274.13,-18.62"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="290.34,-284.89 300.8,-283.22 291.58,-278 290.34,-284.89"/>
+<!-- Node11 -->
+<g id="node11" class="node">
+<title>Node11</title>
+<g id="a_node11"><a xlink:href="LSolver_8hpp.html" target="_top" xlink:title="Class used to manage Linear Solver objet.">
+<polygon fill="none" stroke="black" points="817.5,-224.5 817.5,-243.5 895.5,-243.5 895.5,-224.5 817.5,-224.5"/>
+<text text-anchor="middle" x="856.5" y="-231.5" font-family="serif" font-size="10.00">LSolver.hpp</text>
+</a>
 </g>
-<!-- Node11&#45;&gt;Node4 -->
-<g id="edge29" class="edge">
-<title>Node11&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M386.17,-277.3C417.64,-267.13 462.49,-252.62 490.66,-243.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="384.9,-274.04 376.46,-280.44 387.05,-280.7 384.9,-274.04"/>
+</g>
+<!-- Node10&#45;&gt;Node11 -->
+<g id="edge12" class="edge">
+<title>Node10&#45;&gt;Node11</title>
+<path fill="none" stroke="midnightblue" d="M785.07,-275.18C802.74,-265.24 826.01,-252.15 841.11,-243.65"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="782.92,-272.37 775.92,-280.32 786.36,-278.47 782.92,-272.37"/>
 </g>
 <!-- Node12 -->
 <g id="node12" class="node">
 <title>Node12</title>
-<g id="a_node12"><a xlink:href="LSolver_8hpp.html" target="_top" xlink:title="Class used to manage Linear Solver objet.">
-<polygon fill="none" stroke="black" points="311,-224.5 311,-243.5 389,-243.5 389,-224.5 311,-224.5"/>
-<text text-anchor="middle" x="350" y="-231.5" font-family="serif" font-size="10.00">LSolver.hpp</text>
+<g id="a_node12"><a xlink:href="LSolver_8cpp.html" target="_top" xlink:title="Class used to manage Linear Solver objet.">
+<polygon fill="none" stroke="black" points="797,-168.5 797,-187.5 874,-187.5 874,-168.5 797,-168.5"/>
+<text text-anchor="middle" x="835.5" y="-175.5" font-family="serif" font-size="10.00">LSolver.cpp</text>
 </a>
 </g>
 </g>
+<!-- Node10&#45;&gt;Node12 -->
+<g id="edge18" class="edge">
+<title>Node10&#45;&gt;Node12</title>
+<path fill="none" stroke="midnightblue" d="M772.12,-271.96C788.37,-248.12 817.29,-205.71 829.64,-187.59"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="769.13,-270.13 766.39,-280.37 774.91,-274.08 769.13,-270.13"/>
+</g>
+<!-- Node10&#45;&gt;Node13 -->
+<g id="edge20" class="edge">
+<title>Node10&#45;&gt;Node13</title>
+<path fill="none" stroke="midnightblue" d="M802.08,-277.83C840.03,-267.63 895.31,-252.78 929.8,-243.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="801.1,-274.47 792.35,-280.44 802.91,-281.23 801.1,-274.47"/>
+</g>
+<!-- Node11&#45;&gt;Node4 -->
+<g id="edge13" class="edge">
+<title>Node11&#45;&gt;Node4</title>
+<path fill="none" stroke="midnightblue" d="M826.05,-220.64C801.09,-210.5 766.42,-196.43 744.48,-187.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="824.84,-223.92 835.43,-224.44 827.48,-217.44 824.84,-223.92"/>
+</g>
+<!-- Node11&#45;&gt;Node5 -->
+<g id="edge14" class="edge">
+<title>Node11&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M872.09,-216.51C883.29,-202.61 894.62,-182.68 883.5,-168 870.82,-151.27 820.87,-139.02 780.11,-131.56"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="869.24,-214.44 865.33,-224.29 874.53,-219.03 869.24,-214.44"/>
+</g>
+<!-- Node11&#45;&gt;Node8 -->
+<g id="edge15" class="edge">
+<title>Node11&#45;&gt;Node8</title>
+<path fill="none" stroke="midnightblue" d="M884.79,-219.38C896.89,-211.93 909.77,-201.46 916.5,-188 927.54,-165.92 900.71,-143.48 882.87,-131.61"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="882.77,-216.5 875.8,-224.48 886.22,-222.59 882.77,-216.5"/>
+</g>
 <!-- Node11&#45;&gt;Node12 -->
-<g id="edge24" class="edge">
+<g id="edge16" class="edge">
 <title>Node11&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M350,-269.8C350,-260.91 350,-250.78 350,-243.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="346.5,-270.08 350,-280.08 353.5,-270.08 346.5,-270.08"/>
+<path fill="none" stroke="midnightblue" d="M849.38,-214.69C845.84,-205.59 841.73,-195.01 838.9,-187.75"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="846.15,-216.03 853.03,-224.08 852.67,-213.49 846.15,-216.03"/>
 </g>
-<!-- Node12&#45;&gt;Node2 -->
-<g id="edge28" class="edge">
-<title>Node12&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M327.41,-218.6C302.79,-201.41 264.8,-170.16 249,-132 242.23,-115.65 247.33,-72.41 256,-56 264.27,-40.34 280.36,-27.58 292.27,-19.7"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="325.57,-221.58 335.81,-224.28 329.49,-215.78 325.57,-221.58"/>
-</g>
-<!-- Node12&#45;&gt;Node5 -->
+<!-- Node15&#45;&gt;Node10 -->
 <g id="edge25" class="edge">
-<title>Node12&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M364.73,-216.43C373.14,-206.97 383.35,-195.48 390.22,-187.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="361.95,-214.28 357.93,-224.08 367.19,-218.93 361.95,-214.28"/>
+<title>Node15&#45;&gt;Node10</title>
+<path fill="none" stroke="midnightblue" d="M960.88,-334.28C913.63,-324.08 843.46,-308.92 799.93,-299.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="960.37,-337.75 970.89,-336.44 961.85,-330.91 960.37,-337.75"/>
 </g>
-<!-- Node12&#45;&gt;Node6 -->
-<g id="edge26" class="edge">
-<title>Node12&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M392.17,-221.27C414.23,-213.9 440.95,-202.92 462,-188 484.53,-172.03 504.12,-145.44 513.36,-131.74"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="390.86,-218.02 382.41,-224.41 393,-224.69 390.86,-218.02"/>
-</g>
-<!-- Node12&#45;&gt;Node10 -->
+<!-- Node15&#45;&gt;Node13 -->
 <g id="edge27" class="edge">
-<title>Node12&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M341.94,-214.83C338.79,-206.78 335.57,-197.09 334,-188 330.51,-167.75 338.64,-144.24 343.92,-131.79"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="338.81,-216.4 345.89,-224.28 345.26,-213.7 338.81,-216.4"/>
+<title>Node15&#45;&gt;Node13</title>
+<path fill="none" stroke="midnightblue" d="M1019.72,-326.87C1025.26,-313.33 1029.92,-294.69 1022.5,-280 1013.96,-263.08 995.72,-250.96 981.41,-243.59"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1016.48,-325.54 1015.51,-336.09 1022.85,-328.45 1016.48,-325.54"/>
 </g>
-<!-- Node13&#45;&gt;Node2 -->
+<!-- Node15&#45;&gt;Node16 -->
+<g id="edge26" class="edge">
+<title>Node15&#45;&gt;Node16</title>
+<path fill="none" stroke="midnightblue" d="M1038.22,-332.1C1059.89,-322.01 1089.4,-308.27 1108.21,-299.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1036.47,-329.05 1028.88,-336.44 1039.42,-335.4 1036.47,-329.05"/>
+</g>
+<!-- Node17&#45;&gt;Node10 -->
+<g id="edge29" class="edge">
+<title>Node17&#45;&gt;Node10</title>
+<path fill="none" stroke="midnightblue" d="M1139.23,-337.27C1050.28,-326.4 890.15,-306.84 809.6,-297"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1138.83,-340.75 1149.18,-338.49 1139.68,-333.8 1138.83,-340.75"/>
+</g>
+<!-- Node17&#45;&gt;Node13 -->
 <g id="edge31" class="edge">
-<title>Node13&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M81.69,-328.79C64.21,-308.53 38,-271.98 38,-235 38,-235 38,-235 38,-121 38,-84.55 57.1,-75.33 88,-56 146.41,-19.47 229.11,-11.96 274.33,-10.79"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="79.26,-331.33 88.55,-336.44 84.47,-326.66 79.26,-331.33"/>
+<title>Node17&#45;&gt;Node13</title>
+<path fill="none" stroke="midnightblue" d="M1204.96,-325.73C1205.66,-311.25 1203.99,-291.95 1192.5,-280 1167.83,-254.33 1069.72,-242.76 1009.58,-237.98"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1201.44,-325.79 1204.03,-336.06 1208.41,-326.42 1201.44,-325.79"/>
 </g>
-<!-- Node13&#45;&gt;Node11 -->
-<g id="edge32" class="edge">
-<title>Node13&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M146.92,-334.35C194.73,-324.14 265.95,-308.94 310.1,-299.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="146.14,-330.93 137.09,-336.44 147.6,-337.78 146.14,-330.93"/>
+<!-- Node17&#45;&gt;Node18 -->
+<g id="edge30" class="edge">
+<title>Node17&#45;&gt;Node18</title>
+<path fill="none" stroke="midnightblue" d="M1225.74,-330.9C1242.06,-321 1263.37,-308.07 1277.24,-299.65"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1223.53,-328.14 1216.8,-336.32 1227.16,-334.13 1223.53,-328.14"/>
 </g>
-<!-- Node14&#45;&gt;Node2 -->
+<!-- Node19&#45;&gt;Node3 -->
+<g id="edge33" class="edge">
+<title>Node19&#45;&gt;Node3</title>
+<path fill="none" stroke="midnightblue" d="M728.76,-329.77C719.81,-321.7 709.54,-311.16 702.5,-300 690.88,-281.57 684.16,-256.49 681.24,-243.53"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="726.62,-332.55 736.47,-336.44 731.19,-327.25 726.62,-332.55"/>
+</g>
+<!-- Node19&#45;&gt;Node9 -->
+<g id="edge36" class="edge">
+<title>Node19&#45;&gt;Node9</title>
+<path fill="none" stroke="midnightblue" d="M727.35,-330.34C715.78,-321.75 701.09,-310.55 688.5,-300 660.28,-276.37 653.34,-270.21 627.5,-244 608.39,-224.61 587.48,-200.35 576.75,-187.66"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="725.37,-333.23 735.5,-336.34 729.52,-327.6 725.37,-333.23"/>
+</g>
+<!-- Node19&#45;&gt;Node10 -->
 <g id="edge34" class="edge">
-<title>Node14&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M182.63,-333.39C138.33,-318.59 76,-288.29 76,-235 76,-235 76,-235 76,-121 76,-34.16 210.72,-15.8 274.39,-11.98"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="181.75,-336.78 192.34,-336.48 183.87,-330.11 181.75,-336.78"/>
+<title>Node19&#45;&gt;Node10</title>
+<path fill="none" stroke="midnightblue" d="M752.05,-326.1C754.21,-317.14 756.68,-306.86 758.39,-299.75"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="748.58,-325.54 749.65,-336.08 755.39,-327.18 748.58,-325.54"/>
 </g>
-<!-- Node14&#45;&gt;Node11 -->
-<g id="edge35" class="edge">
-<title>Node14&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M255.01,-332.37C278.23,-322.26 310.16,-308.35 330.44,-299.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="253.42,-329.24 245.65,-336.44 256.21,-335.66 253.42,-329.24"/>
-</g>
-<!-- Node15&#45;&gt;Node2 -->
+<!-- Node19&#45;&gt;Node13 -->
 <g id="edge37" class="edge">
-<title>Node15&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M646.33,-334.22C722.09,-316.8 855,-279.85 855,-235 855,-235 855,-235 855,-121 855,-80.14 826.98,-73.37 790,-56 709.77,-18.31 434.92,-12.18 339.75,-11.19"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="645.47,-330.82 636.49,-336.44 647.01,-337.65 645.47,-330.82"/>
+<title>Node19&#45;&gt;Node13</title>
+<path fill="none" stroke="midnightblue" d="M778.73,-332.69C799.63,-324.15 827.59,-312.18 851.5,-300 887.48,-281.68 927.9,-256.56 948.26,-243.56"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="777.34,-329.47 769.38,-336.47 779.96,-335.96 777.34,-329.47"/>
 </g>
-<!-- Node15&#45;&gt;Node4 -->
-<g id="edge38" class="edge">
-<title>Node15&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M582.92,-327.96C566.01,-304.12 535.94,-261.71 523.09,-243.59"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="580.24,-330.24 588.88,-336.37 585.95,-326.19 580.24,-330.24"/>
+<!-- Node19&#45;&gt;Node20 -->
+<g id="edge35" class="edge">
+<title>Node19&#45;&gt;Node20</title>
+<path fill="none" stroke="midnightblue" d="M790.64,-333.96C830.49,-323.76 888.86,-308.82 925.22,-299.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="789.75,-330.57 780.93,-336.44 791.49,-337.35 789.75,-330.57"/>
 </g>
-<!-- Node15&#45;&gt;Node11 -->
+<!-- Node21&#45;&gt;Node3 -->
 <g id="edge39" class="edge">
-<title>Node15&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M546.37,-334.28C500.07,-324.08 431.31,-308.92 388.64,-299.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="545.66,-337.71 556.18,-336.44 547.17,-330.87 545.66,-337.71"/>
+<title>Node21&#45;&gt;Node3</title>
+<path fill="none" stroke="midnightblue" d="M620.55,-327.64C635.75,-303.74 662.55,-261.63 674.03,-243.59"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="617.41,-326.05 614.99,-336.37 623.31,-329.81 617.41,-326.05"/>
 </g>
-<!-- Node16&#45;&gt;Node2 -->
-<g id="edge41" class="edge">
-<title>Node16&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M521.14,-334.35C617.04,-313.28 817,-265.67 817,-235 817,-235 817,-235 817,-121 817,-82.28 793.51,-73.56 759,-56 685.55,-18.62 430.77,-12.28 339.69,-11.21"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="520.39,-330.93 511.37,-336.48 521.88,-337.77 520.39,-330.93"/>
-</g>
-<!-- Node16&#45;&gt;Node4 -->
+<!-- Node21&#45;&gt;Node9 -->
 <g id="edge42" class="edge">
-<title>Node16&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M478.53,-327C488.56,-303 505.93,-261.47 513.41,-243.59"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="475.24,-325.79 474.61,-336.37 481.7,-328.49 475.24,-325.79"/>
+<title>Node21&#45;&gt;Node9</title>
+<path fill="none" stroke="midnightblue" d="M604.9,-325.93C596.23,-289.92 577.75,-213.23 571.56,-187.57"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="601.6,-327.17 607.35,-336.08 608.41,-325.53 601.6,-327.17"/>
 </g>
-<!-- Node16&#45;&gt;Node11 -->
+<!-- Node21&#45;&gt;Node10 -->
+<g id="edge40" class="edge">
+<title>Node21&#45;&gt;Node10</title>
+<path fill="none" stroke="midnightblue" d="M642.95,-333.04C671.36,-322.88 711.44,-308.55 736.69,-299.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="641.66,-329.78 633.43,-336.44 644.02,-336.37 641.66,-329.78"/>
+</g>
+<!-- Node21&#45;&gt;Node13 -->
 <g id="edge43" class="edge">
-<title>Node16&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M442.69,-332.37C420.03,-322.26 388.87,-308.35 369.08,-299.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="441.27,-335.56 451.83,-336.44 444.12,-329.17 441.27,-335.56"/>
+<title>Node21&#45;&gt;Node13</title>
+<path fill="none" stroke="midnightblue" d="M670.22,-337.39C712.79,-330.75 770.45,-319.11 818.5,-300 834.44,-293.66 836.18,-287.71 851.5,-280 880.25,-265.52 914.81,-251.98 937.42,-243.61"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="669.65,-333.93 660.28,-338.89 670.69,-340.85 669.65,-333.93"/>
 </g>
-<!-- Node17&#45;&gt;Node2 -->
+<!-- Node21&#45;&gt;Node22 -->
+<g id="edge41" class="edge">
+<title>Node21&#45;&gt;Node22</title>
+<path fill="none" stroke="midnightblue" d="M581.6,-332.23C559.53,-322.13 529.32,-308.31 510.11,-299.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="580.25,-335.46 590.8,-336.44 583.17,-329.1 580.25,-335.46"/>
+</g>
+<!-- Node23&#45;&gt;Node3 -->
 <g id="edge45" class="edge">
-<title>Node17&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M927.64,-272.04C913.72,-251.21 893,-214.3 893,-179 893,-179 893,-179 893,-121 893,-90.2 893.54,-74.6 869,-56 826.73,-23.96 453.16,-13.92 339.6,-11.59"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="924.88,-274.2 933.46,-280.41 930.63,-270.2 924.88,-274.2"/>
+<title>Node23&#45;&gt;Node3</title>
+<path fill="none" stroke="midnightblue" d="M171.38,-325.83C174.71,-310.8 181.77,-290.71 196.5,-280 231.63,-254.47 523.67,-240.87 635.85,-236.55"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="167.86,-325.62 169.49,-336.09 174.74,-326.89 167.86,-325.62"/>
 </g>
-<!-- Node17&#45;&gt;Node4 -->
+<!-- Node23&#45;&gt;Node9 -->
 <g id="edge46" class="edge">
-<title>Node17&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M873.31,-280.49C785.88,-269.33 634.94,-250.06 560.75,-240.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="873.03,-283.98 883.39,-281.77 873.91,-277.04 873.03,-283.98"/>
+<title>Node23&#45;&gt;Node9</title>
+<path fill="none" stroke="midnightblue" d="M165.57,-325.98C164.49,-311.64 165.6,-292.4 176.5,-280 222.71,-227.41 434.05,-195.6 526.26,-184"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="162.13,-326.67 166.77,-336.2 169.08,-325.86 162.13,-326.67"/>
+</g>
+<!-- Node23&#45;&gt;Node24 -->
+<g id="edge47" class="edge">
+<title>Node23&#45;&gt;Node24</title>
+<path fill="none" stroke="midnightblue" d="M141.5,-332.1C120.39,-322.01 91.64,-308.27 73.32,-299.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="140.06,-335.29 150.59,-336.44 143.08,-328.97 140.06,-335.29"/>
 </g>
 </g>
 </svg>

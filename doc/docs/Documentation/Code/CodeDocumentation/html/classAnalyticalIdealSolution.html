@@ -25,9 +25,9 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v2.0.0</span>
    </div>
-   <div id="projectbrief">PhaseField solver</div>
+   <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
  </tr>
  </tbody>
@@ -93,42 +93,34 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9401722422b269f076357392f4919f92"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnalyticalIdealSolution.html#a9401722422b269f076357392f4919f92">AnalyticalIdealSolution</a> (const <a class="el" href="classParameters.html">Parameters</a> &amp;params)</td></tr>
-<tr class="memdesc:a9401722422b269f076357392f4919f92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classAnalyticalIdealSolution.html#a9401722422b269f076357392f4919f92" title="Construct a new AnalyticalIdealSolution::AnalyticalIdealSolution object.">AnalyticalIdealSolution::AnalyticalIdealSolution</a> object.  <a href="classAnalyticalIdealSolution.html#a9401722422b269f076357392f4919f92">More...</a><br /></td></tr>
 <tr class="separator:a9401722422b269f076357392f4919f92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d28ace349cf70436c1d6c702b744601"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnalyticalIdealSolution.html#a5d28ace349cf70436c1d6c702b744601">AnalyticalIdealSolution</a> (const <a class="el" href="classParameters.html">Parameters</a> &amp;params, bool is_KKS)</td></tr>
-<tr class="memdesc:a5d28ace349cf70436c1d6c702b744601"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classAnalyticalIdealSolution.html#a9401722422b269f076357392f4919f92" title="Construct a new AnalyticalIdealSolution::AnalyticalIdealSolution object.">AnalyticalIdealSolution::AnalyticalIdealSolution</a> object.  <a href="classAnalyticalIdealSolution.html#a5d28ace349cf70436c1d6c702b744601">More...</a><br /></td></tr>
 <tr class="separator:a5d28ace349cf70436c1d6c702b744601"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27020c57a0f7e0f859f7c78a303defc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnalyticalIdealSolution.html#a27020c57a0f7e0f859f7c78a303defc8">execute</a> (const int dt, const std::set&lt; int &gt; &amp;list_nodes, const std::vector&lt; T &gt; &amp;aux_gf, const std::vector&lt; std::tuple&lt; std::string, std::string &gt;&gt; &amp;chemical_system, std::optional&lt; std::vector&lt; std::tuple&lt; std::string, std::string, double &gt;&gt;&gt; status_phase=std::nullopt) override</td></tr>
-<tr class="memdesc:a27020c57a0f7e0f859f7c78a303defc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main method to calculate equilibrium states.  <a href="classAnalyticalIdealSolution.html#a27020c57a0f7e0f859f7c78a303defc8">More...</a><br /></td></tr>
 <tr class="separator:a27020c57a0f7e0f859f7c78a303defc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0125a6933d5a1ebde7e662c5627dd2e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnalyticalIdealSolution.html#a0125a6933d5a1ebde7e662c5627dd2e3">finalize</a> () override</td></tr>
-<tr class="memdesc:a0125a6933d5a1ebde7e662c5627dd2e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalization actions (free memory)  <a href="classAnalyticalIdealSolution.html#a0125a6933d5a1ebde7e662c5627dd2e3">More...</a><br /></td></tr>
 <tr class="separator:a0125a6933d5a1ebde7e662c5627dd2e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3a098f88d3a7889809f7118b9fcf10a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnalyticalIdealSolution.html#ac3a098f88d3a7889809f7118b9fcf10a">get_parameters</a> () override</td></tr>
-<tr class="memdesc:ac3a098f88d3a7889809f7118b9fcf10a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the parameters associated with the <a class="el" href="classAnalyticalIdealSolution.html">AnalyticalIdealSolution</a> object.  <a href="classAnalyticalIdealSolution.html#ac3a098f88d3a7889809f7118b9fcf10a">More...</a><br /></td></tr>
 <tr class="separator:ac3a098f88d3a7889809f7118b9fcf10a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad479e4c3115b7124ba658eb2d3358417"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnalyticalIdealSolution.html#ad479e4c3115b7124ba658eb2d3358417">initialize</a> (const std::vector&lt; std::tuple&lt; std::string, std::string &gt;&gt; &amp;sorted_chemical_system) override</td></tr>
-<tr class="memdesc:ad479e4c3115b7124ba658eb2d3358417"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization of the thermodynamic calculation.  <a href="classAnalyticalIdealSolution.html#ad479e4c3115b7124ba658eb2d3358417">More...</a><br /></td></tr>
-<tr class="separator:ad479e4c3115b7124ba658eb2d3358417"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebff5220f6623613ea7cf94e43bc97ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnalyticalIdealSolution.html#aebff5220f6623613ea7cf94e43bc97ce">initialize</a> ([[maybe_unused]] const std::vector&lt; std::tuple&lt; std::string, std::string &gt;&gt; &amp;sorted_chemical_system) override</td></tr>
+<tr class="separator:aebff5220f6623613ea7cf94e43bc97ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a22afa653b7c774a7fb5fbec26c3631"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAnalyticalIdealSolution.html#a3a22afa653b7c774a7fb5fbec26c3631">~AnalyticalIdealSolution</a> ()</td></tr>
-<tr class="memdesc:a3a22afa653b7c774a7fb5fbec26c3631"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the Binary Melting&lt; T&gt;:: Binary Melting object.  <a href="classAnalyticalIdealSolution.html#a3a22afa653b7c774a7fb5fbec26c3631">More...</a><br /></td></tr>
 <tr class="separator:a3a22afa653b7c774a7fb5fbec26c3631"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classCalphadBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classCalphadBase')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classCalphadBase.html">CalphadBase&lt; T &gt;</a></td></tr>
 <tr class="memitem:aa1952e5548a0cbe9ffc68d86ef678a51 inherit pub_methods_classCalphadBase"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadBase.html#aa1952e5548a0cbe9ffc68d86ef678a51">CalphadBase</a> (const <a class="el" href="classParameters.html">Parameters</a> &amp;params)</td></tr>
-<tr class="memdesc:aa1952e5548a0cbe9ffc68d86ef678a51 inherit pub_methods_classCalphadBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classCalphadBase.html">CalphadBase</a> object.  <a href="classCalphadBase.html#aa1952e5548a0cbe9ffc68d86ef678a51">More...</a><br /></td></tr>
 <tr class="separator:aa1952e5548a0cbe9ffc68d86ef678a51 inherit pub_methods_classCalphadBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95e7865fbf452eeda0ff9cf71e7c0431 inherit pub_methods_classCalphadBase"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadBase.html#a95e7865fbf452eeda0ff9cf71e7c0431">CalphadBase</a> (const <a class="el" href="classParameters.html">Parameters</a> &amp;params, bool is_KKS)</td></tr>
-<tr class="memdesc:a95e7865fbf452eeda0ff9cf71e7c0431 inherit pub_methods_classCalphadBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classCalphadBase.html">CalphadBase</a> object.  <a href="classCalphadBase.html#a95e7865fbf452eeda0ff9cf71e7c0431">More...</a><br /></td></tr>
 <tr class="separator:a95e7865fbf452eeda0ff9cf71e7c0431 inherit pub_methods_classCalphadBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a089dbea39b53ec48324792de15e21d55 inherit pub_methods_classCalphadBase"><td class="memItemLeft" align="right" valign="top">const std::multimap&lt; <a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadBase.html#a089dbea39b53ec48324792de15e21d55">get_time_specialized</a> () const</td></tr>
-<tr class="memdesc:a089dbea39b53ec48324792de15e21d55 inherit pub_methods_classCalphadBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return values calculated at a given iteration.  <a href="classCalphadBase.html#a089dbea39b53ec48324792de15e21d55">More...</a><br /></td></tr>
-<tr class="separator:a089dbea39b53ec48324792de15e21d55 inherit pub_methods_classCalphadBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d0553a34f3ab33c123e662da0917023 inherit pub_methods_classCalphadBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadBase.html#a0d0553a34f3ab33c123e662da0917023">clear_time_specialized</a> ()</td></tr>
+<tr class="separator:a0d0553a34f3ab33c123e662da0917023 inherit pub_methods_classCalphadBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a77cf1b1fc63668bd05652465907371 inherit pub_methods_classCalphadBase"><td class="memItemLeft" align="right" valign="top">const std::multimap&lt; <a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadBase.html#a7a77cf1b1fc63668bd05652465907371">get_time_specialized</a> () const</td></tr>
+<tr class="separator:a7a77cf1b1fc63668bd05652465907371 inherit pub_methods_classCalphadBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a455e82eb47e99b485bacba19fe36ca84 inherit pub_methods_classCalphadBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadBase.html#a455e82eb47e99b485bacba19fe36ca84">global_execute</a> (const int dt, const double time_step, const std::vector&lt; T &gt; &amp;tp_gf, const std::vector&lt; std::tuple&lt; std::string, std::string &gt;&gt; &amp;chemicalsystem, std::vector&lt; std::tuple&lt; std::vector&lt; std::string &gt;, std::reference_wrapper&lt; T &gt;&gt;&gt; &amp;output_system, const std::vector&lt; std::tuple&lt; std::vector&lt; std::string &gt;, mfem::Vector &gt;&gt; &amp;previous_output_system, std::optional&lt; const std::tuple&lt; std::string, T, T &gt;&gt; phase_fields=std::nullopt, std::optional&lt; const std::vector&lt; T &gt;&gt; tp_gf_old=std::nullopt, std::optional&lt; const std::vector&lt; std::tuple&lt; std::string, std::string, T, T &gt;&gt;&gt; x_gf=std::nullopt, std::optional&lt; const std::vector&lt; std::tuple&lt; std::string, T &gt;&gt;&gt; coordinates=std::nullopt)</td></tr>
-<tr class="memdesc:a455e82eb47e99b485bacba19fe36ca84 inherit pub_methods_classCalphadBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">High-level method for managing equilibrium calculations.  <a href="classCalphadBase.html#a455e82eb47e99b485bacba19fe36ca84">More...</a><br /></td></tr>
 <tr class="separator:a455e82eb47e99b485bacba19fe36ca84 inherit pub_methods_classCalphadBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02df89293b462e926928668fd35ea2c1 inherit pub_methods_classCalphadBase"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadBase.html#a02df89293b462e926928668fd35ea2c1">~CalphadBase</a> ()</td></tr>
-<tr class="memdesc:a02df89293b462e926928668fd35ea2c1 inherit pub_methods_classCalphadBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the Calphad Base&lt; T&gt;:: Calphad Base object.  <a href="classCalphadBase.html#a02df89293b462e926928668fd35ea2c1">More...</a><br /></td></tr>
-<tr class="separator:a02df89293b462e926928668fd35ea2c1 inherit pub_methods_classCalphadBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4264ca0e77c9d9f8a5f2d9fc62800966 inherit pub_methods_classCalphadBase"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadBase.html#a4264ca0e77c9d9f8a5f2d9fc62800966">initialize</a> (const std::vector&lt; std::tuple&lt; std::string, std::string &gt;&gt; &amp;sorted_chemical_system)=0</td></tr>
+<tr class="separator:a4264ca0e77c9d9f8a5f2d9fc62800966 inherit pub_methods_classCalphadBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b38eb0498ee80a63540762eb2464e15 inherit pub_methods_classCalphadBase"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadBase.html#a5b38eb0498ee80a63540762eb2464e15">~CalphadBase</a> ()</td></tr>
+<tr class="separator:a5b38eb0498ee80a63540762eb2464e15 inherit pub_methods_classCalphadBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -158,10 +150,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:adf4c50c8cf751d674fdb841fb88f86fc inherit pub_attribs_classCalphadBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classCalphadBase"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classCalphadBase')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classCalphadBase.html">CalphadBase&lt; T &gt;</a></td></tr>
 <tr class="memitem:a6568b530acb59a5b9341e8e673cca979 inherit pro_methods_classCalphadBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadBase.html#a6568b530acb59a5b9341e8e673cca979">clear_containers</a> ()</td></tr>
-<tr class="memdesc:a6568b530acb59a5b9341e8e673cca979 inherit pro_methods_classCalphadBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear containers used to store the results of equilibrium calculations.  <a href="classCalphadBase.html#a6568b530acb59a5b9341e8e673cca979">More...</a><br /></td></tr>
 <tr class="separator:a6568b530acb59a5b9341e8e673cca979 inherit pro_methods_classCalphadBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e6fb47d8f2aebfa96cb134dbea8cfc8 inherit pro_methods_classCalphadBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadBase.html#a8e6fb47d8f2aebfa96cb134dbea8cfc8">update_outputs</a> (const int dt, const size_t nb_nodes, std::vector&lt; std::tuple&lt; std::vector&lt; std::string &gt;, std::reference_wrapper&lt; T &gt;&gt;&gt; &amp;output_system, const std::vector&lt; std::tuple&lt; std::vector&lt; std::string &gt;, mfem::Vector &gt;&gt; &amp;previous_output_system)</td></tr>
-<tr class="memdesc:a8e6fb47d8f2aebfa96cb134dbea8cfc8 inherit pro_methods_classCalphadBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the outputs on the basis of results stored in containers.  <a href="classCalphadBase.html#a8e6fb47d8f2aebfa96cb134dbea8cfc8">More...</a><br /></td></tr>
 <tr class="separator:a8e6fb47d8f2aebfa96cb134dbea8cfc8 inherit pro_methods_classCalphadBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classCalphadBase"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classCalphadBase')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classCalphadBase.html">CalphadBase&lt; T &gt;</a></td></tr>
 <tr class="memitem:a26f00f02756827aa4c9930f974e015bd inherit pro_attribs_classCalphadBase"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classCalphadUtils.html">CalphadUtils</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalphadBase.html#a26f00f02756827aa4c9930f974e015bd">CU_</a></td></tr>
@@ -180,7 +170,7 @@ Additional Inherited Members</h2></td></tr>
 class AnalyticalIdealSolution&lt; T &gt;</h3>
 
 
-<p class="definition">Definition at line <a class="el" href="AnalyticalIdealSolution_8hpp_source.html#l00044">44</a> of file <a class="el" href="AnalyticalIdealSolution_8hpp_source.html">AnalyticalIdealSolution.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AnalyticalIdealSolution_8hpp_source.html#l00043">43</a> of file <a class="el" href="AnalyticalIdealSolution_8hpp_source.html">AnalyticalIdealSolution.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9401722422b269f076357392f4919f92"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9401722422b269f076357392f4919f92">&#9670;&nbsp;</a></span>AnalyticalIdealSolution() <span class="overload">[1/2]</span></h2>
@@ -207,25 +197,6 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Construct a new <a class="el" href="classAnalyticalIdealSolution.html#a9401722422b269f076357392f4919f92" title="Construct a new AnalyticalIdealSolution::AnalyticalIdealSolution object.">AnalyticalIdealSolution::AnalyticalIdealSolution</a> object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">params</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="AnalyticalIdealSolution_8hpp_source.html#l00097">97</a> of file <a class="el" href="AnalyticalIdealSolution_8hpp_source.html">AnalyticalIdealSolution.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="AnalyticalIdealSolution_8hpp_source.html#l00085">AnalyticalIdealSolution&lt; T &gt;::get_parameters()</a>.</p>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classAnalyticalIdealSolution_a9401722422b269f076357392f4919f92_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
 
 </div>
 </div>
@@ -265,26 +236,6 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classAnalyticalIdealSolution.html#a9401722422b269f076357392f4919f92" title="Construct a new AnalyticalIdealSolution::AnalyticalIdealSolution object.">AnalyticalIdealSolution::AnalyticalIdealSolution</a> object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">params</td><td></td></tr>
-    <tr><td class="paramname">is_KKS</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="AnalyticalIdealSolution_8hpp_source.html#l00110">110</a> of file <a class="el" href="AnalyticalIdealSolution_8hpp_source.html">AnalyticalIdealSolution.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="AnalyticalIdealSolution_8hpp_source.html#l00085">AnalyticalIdealSolution&lt; T &gt;::get_parameters()</a>.</p>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classAnalyticalIdealSolution_a5d28ace349cf70436c1d6c702b744601_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
 </div>
 </div>
 <a id="a3a22afa653b7c774a7fb5fbec26c3631"></a>
@@ -296,20 +247,13 @@ template&lt;typename T &gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classAnalyticalIdealSolution.html">AnalyticalIdealSolution</a>&lt; T &gt;::~<a class="el" href="classAnalyticalIdealSolution.html">AnalyticalIdealSolution</a></td>
+          <td class="memname"><a class="el" href="classAnalyticalIdealSolution.html">AnalyticalIdealSolution</a>&lt; T &gt;::~<a class="el" href="classAnalyticalIdealSolution.html">AnalyticalIdealSolution</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Destroy the Binary Melting&lt; T&gt;:: Binary Melting object. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="AnalyticalIdealSolution_8hpp_source.html#l00265">265</a> of file <a class="el" href="AnalyticalIdealSolution_8hpp_source.html">AnalyticalIdealSolution.hpp</a>.</p>
 
 </div>
 </div>
@@ -341,7 +285,7 @@ template&lt;typename T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::vector&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>tp_gf</em>, </td>
+          <td class="paramname"><em>aux_gf</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -368,26 +312,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Main method to calculate equilibrium states. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">dt</td><td></td></tr>
-    <tr><td class="paramname">aux_gf</td><td></td></tr>
-    <tr><td class="paramname">chemical_system</td><td></td></tr>
-    <tr><td class="paramname">output_system</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
 <p>Implements <a class="el" href="classCalphadBase.html#a1c26c89e3cdc44b737f91aad07d42b25">CalphadBase&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="AnalyticalIdealSolution_8hpp_source.html#l00135">135</a> of file <a class="el" href="AnalyticalIdealSolution_8hpp_source.html">AnalyticalIdealSolution.hpp</a>.</p>
 
 </div>
 </div>
@@ -403,7 +328,10 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classAnalyticalIdealSolution.html">AnalyticalIdealSolution</a>&lt; T &gt;::finalize</td>
+          <td class="memname">void <a class="el" href="classAnalyticalIdealSolution.html">AnalyticalIdealSolution</a>&lt; T &gt;::finalize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -413,17 +341,7 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Finalization actions (free memory) </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
 <p>Implements <a class="el" href="classCalphadBase.html#a7641ec83a2065e436cfe454d12084438">CalphadBase&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="AnalyticalIdealSolution_8hpp_source.html#l00257">257</a> of file <a class="el" href="AnalyticalIdealSolution_8hpp_source.html">AnalyticalIdealSolution.hpp</a>.</p>
 
 </div>
 </div>
@@ -439,7 +357,10 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classAnalyticalIdealSolution.html">AnalyticalIdealSolution</a>&lt; T &gt;::get_parameters</td>
+          <td class="memname">void <a class="el" href="classAnalyticalIdealSolution.html">AnalyticalIdealSolution</a>&lt; T &gt;::get_parameters </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -449,40 +370,12 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Get the parameters associated with the <a class="el" href="classAnalyticalIdealSolution.html">AnalyticalIdealSolution</a> object. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Reimplemented from <a class="el" href="classCalphadBase.html#acf1e5755a33921216777fbd78558a051">CalphadBase&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="AnalyticalIdealSolution_8hpp_source.html#l00085">85</a> of file <a class="el" href="AnalyticalIdealSolution_8hpp_source.html">AnalyticalIdealSolution.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="CalphadBase_8hpp_source.html#l00179">CalphadBase&lt; T &gt;::get_parameters()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="AnalyticalIdealSolution_8hpp_source.html#l00097">AnalyticalIdealSolution&lt; T &gt;::AnalyticalIdealSolution()</a>.</p>
-<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classAnalyticalIdealSolution_ac3a098f88d3a7889809f7118b9fcf10a_cgraph.svg" width="464" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classAnalyticalIdealSolution_ac3a098f88d3a7889809f7118b9fcf10a_icgraph.svg" width="424" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<p>Reimplemented from <a class="el" href="classCalphadBase.html#aaf520c2833ba973b0254e5d5fb676acc">CalphadBase&lt; T &gt;</a>.</p>
 
 </div>
 </div>
-<a id="ad479e4c3115b7124ba658eb2d3358417"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad479e4c3115b7124ba658eb2d3358417">&#9670;&nbsp;</a></span>initialize()</h2>
+<a id="aebff5220f6623613ea7cf94e43bc97ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebff5220f6623613ea7cf94e43bc97ce">&#9670;&nbsp;</a></span>initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -495,29 +388,19 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classAnalyticalIdealSolution.html">AnalyticalIdealSolution</a>&lt; T &gt;::initialize </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; std::tuple&lt; std::string, std::string &gt;&gt; &amp;&#160;</td>
+          <td class="paramtype">[[maybe_unused] ] const std::vector&lt; std::tuple&lt; std::string, std::string &gt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>sorted_chemical_system</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initialization of the thermodynamic calculation. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implements <a class="el" href="classCalphadBase.html#a4264ca0e77c9d9f8a5f2d9fc62800966">CalphadBase&lt; T &gt;</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="AnalyticalIdealSolution_8hpp_source.html#l00122">122</a> of file <a class="el" href="AnalyticalIdealSolution_8hpp_source.html">AnalyticalIdealSolution.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AnalyticalIdealSolution_8hpp_source.html#l00056">56</a> of file <a class="el" href="AnalyticalIdealSolution_8hpp_source.html">AnalyticalIdealSolution.hpp</a>.</p>
 
 </div>
 </div>
@@ -527,7 +410,7 @@ template&lt;typename T &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 15:39:06 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Apr 10 2026 10:16:45 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -25,9 +25,9 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v2.0.0</span>
    </div>
-   <div id="projectbrief">PhaseField solver</div>
+   <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
  </tr>
  </tbody>
@@ -97,7 +97,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Generic class for defining linear solvers with or without preconditionners. </p>
 
-<p class="definition">Definition at line <a class="el" href="LSolver_8hpp_source.html#l00041">41</a> of file <a class="el" href="LSolver_8hpp_source.html">LSolver.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LSolver_8hpp_source.html#l00040">40</a> of file <a class="el" href="LSolver_8hpp_source.html">LSolver.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab25ab66df06e194e1f7b87239ba77716"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab25ab66df06e194e1f7b87239ba77716">&#9670;&nbsp;</a></span>LSolver() <span class="overload">[1/2]</span></h2>
@@ -141,15 +141,16 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="LSolver_8hpp_source.html#l00088">88</a> of file <a class="el" href="LSolver_8hpp_source.html">LSolver.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LSolver_8cpp_source.html#l00067">67</a> of file <a class="el" href="LSolver_8cpp_source.html">LSolver.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="UtilsForData_8hpp_source.html#l00240">SlothInfo::debug()</a>.</p>
+<p class="reference">References <a class="el" href="UtilsForData_8hpp_source.html#l00212">SlothInfo::debug()</a>.</p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classLSolver_ab25ab66df06e194e1f7b87239ba77716_cgraph.svg" width="330" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classLSolver_ab25ab66df06e194e1f7b87239ba77716_cgraph.svg" width="330" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -210,15 +211,16 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="LSolver_8hpp_source.html#l00067">67</a> of file <a class="el" href="LSolver_8hpp_source.html">LSolver.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LSolver_8cpp_source.html#l00046">46</a> of file <a class="el" href="LSolver_8cpp_source.html">LSolver.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="UtilsForData_8hpp_source.html#l00240">SlothInfo::debug()</a>.</p>
+<p class="reference">References <a class="el" href="UtilsForData_8hpp_source.html#l00212">SlothInfo::debug()</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classLSolver_aea68e9ca2bd547b8eb0ebf98c428aa9a_cgraph.svg" width="330" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classLSolver_aea68e9ca2bd547b8eb0ebf98c428aa9a_cgraph.svg" width="330" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -240,7 +242,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Destroy the <a class="el" href="classLSolver.html#ab25ab66df06e194e1f7b87239ba77716" title="Construct a new LSolver::LSolver object without precondnitioner.">LSolver::LSolver</a> object. </p>
 
-<p class="definition">Definition at line <a class="el" href="LSolver_8hpp_source.html#l00113">113</a> of file <a class="el" href="LSolver_8hpp_source.html">LSolver.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LSolver_8cpp_source.html#l00092">92</a> of file <a class="el" href="LSolver_8cpp_source.html">LSolver.cpp</a>.</p>
 
 </div>
 </div>
@@ -263,17 +265,18 @@ Public Member Functions</h2></td></tr>
 <p>Return the solver. </p>
 <dl class="section return"><dt>Returns</dt><dd>VSharedMFEMSolver </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="LSolver_8hpp_source.html#l00107">107</a> of file <a class="el" href="LSolver_8hpp_source.html">LSolver.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LSolver_8cpp_source.html#l00086">86</a> of file <a class="el" href="LSolver_8cpp_source.html">LSolver.cpp</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="LSolver_8hpp_source.html">LSolver.hpp</a></li>
+<li><a class="el" href="LSolver_8cpp_source.html">LSolver.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 15:39:06 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

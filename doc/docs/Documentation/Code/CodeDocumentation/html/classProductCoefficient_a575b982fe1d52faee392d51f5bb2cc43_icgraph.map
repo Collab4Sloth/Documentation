@@ -1,0 +1,5 @@
+<map id="ProductCoefficient::F" name="ProductCoefficient::F">
+<area shape="rect" id="node1" title="Compute the value of the coefficient as a summation of the value of coefficients." alt="" coords="200,46,364,73"/>
+<area shape="rect" id="node2" href="$classProductCoefficient.html#a4f52838ace9637e6156246aa881610d1" title="Gradient." alt="" coords="5,5,152,47"/>
+<area shape="rect" id="node3" href="$classProductCoefficient.html#a43c7046575666085a23e46ac8d3b5c37" title="Hessian." alt="" coords="5,71,152,112"/>
+</map>

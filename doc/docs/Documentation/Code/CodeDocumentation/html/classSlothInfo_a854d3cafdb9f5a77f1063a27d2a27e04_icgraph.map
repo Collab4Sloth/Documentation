@@ -1,28 +1,26 @@
 <map id="SlothInfo::debug" name="SlothInfo::debug">
-<area shape="rect" id="node1" title="Print information on Debug mode." alt="" coords="532,653,668,679"/>
-<area shape="rect" id="node2" href="$classSolverUMFPACK.html#a8a0cb7f36e9e9fa812fb45b23e39ab62" title="Create a direct solver based of the SolverType and a list of Parameters." alt="" coords="285,711,471,752"/>
-<area shape="rect" id="node4" href="$classPrecondHypreILU.html#a9747a2d4154f14a83fb87b1f398973ff" title="Create preconditioner based of the PreconditionerType and a list of Parameters." alt="" coords="281,776,475,817"/>
-<area shape="rect" id="node5" href="$classPrecondHypreSmoother.html#a1d685276c8db4a0c7c3acd12662fffd1" title="Create preconditioner based of the PreconditionerType and a list of Parameters." alt="" coords="285,5,471,47"/>
-<area shape="rect" id="node6" href="$classPrecondHypreBoomerAMG.html#ae9b8748901ee350584a1c8e3b33eb0a6" title="Create preconditioner based of the PreconditionerType and a list of Parameters." alt="" coords="273,71,483,112"/>
-<area shape="rect" id="node7" href="$classPrecondHypreDiagScale.html#a99a26e0ad57569f0186c286191e591cc" title="Create preconditioner based of the PreconditionerType and a list of Parameters." alt="" coords="283,136,473,177"/>
-<area shape="rect" id="node8" href="$classSolverHyprePCG.html#a2122f479fde910c6a27b6f74bf750324" title="Create a iterative solver based of the SolverType and a list of Parameters." alt="" coords="284,201,472,243"/>
-<area shape="rect" id="node9" href="$classSolverHypreGMRES.html#ae8cd627c6a9dddb56c4ac48a134de7e0" title="Create a iterative solver based of the SolverType and a list of Parameters." alt="" coords="272,267,484,308"/>
-<area shape="rect" id="node10" href="$classSolverHypreFGMRES.html#a59a039f5afb942d01777103bad40c300" title="Create a iterative solver based of the SolverType and a list of Parameters." alt="" coords="289,332,467,373"/>
-<area shape="rect" id="node11" href="$classSolverBICGSTAB.html#a555f9875dc6d8572bfc1ff0032635c6d" title="Create a iterative solver based of the SolverType and a list of Parameters." alt="" coords="284,397,472,439"/>
-<area shape="rect" id="node12" href="$classSolverMINRES.html#ae0ec160e28632f6538ec16fc476cd14b" title=" " alt="" coords="291,463,465,504"/>
-<area shape="rect" id="node13" href="$classSolverCG.html#abb8abcd3768a748ab1c4cc366799e146" title=" " alt="" coords="286,529,470,555"/>
-<area shape="rect" id="node14" href="$classSolverGMRES.html#a7416f84035ad3da9e20adbda9ffd8c22" title=" " alt="" coords="293,580,463,621"/>
-<area shape="rect" id="node15" href="$classPrecondDSmoother.html#a04b157c452b242897c2e7e2fbdda790c" title="Create preconditioner based of the PreconditionerType and a list of Parameters." alt="" coords="275,645,481,687"/>
-<area shape="rect" id="node16" href="$classKKS.html#adb4477c43ac2d3cef4abecf5d7a31c46" title="Compute Calphad contributions needed by KKS resolution." alt="" coords="277,842,479,869"/>
-<area shape="rect" id="node17" href="$classLSolver.html#aea68e9ca2bd547b8eb0ebf98c428aa9a" title="Construct a new LSolver::LSolver object with a preconditionner." alt="" coords="311,893,445,919"/>
-<area shape="rect" id="node18" href="$classNLSolver.html#a6edb14f7b1e99a6c0c9b37350738a10f" title="Construct a new NLSolver::NLSolver object." alt="" coords="299,943,457,970"/>
-<area shape="rect" id="node19" href="$structSetPrecondSolver.html#aa4e37e62a935fea0c1926352c0ecd1d2" title="Main function." alt="" coords="5,1053,224,1079"/>
-<area shape="rect" id="node20" href="$structSetPrecondNLSolver.html#a3579c089c95ed6ddc8ee6678327d2712" title="Main function." alt="" coords="33,1107,197,1148"/>
-<area shape="rect" id="node21" href="$structUtilsSolvers.html#a840e1af50b97b7df296c16477f372d3d" title="Print the name of the Preconditioner." alt="" coords="306,1111,450,1152"/>
-<area shape="rect" id="node22" href="$structUtilsSolvers.html#ad4e84303433eca9ff539ea48b744d9d4" title="Print the name of the Solver." alt="" coords="306,1045,450,1087"/>
-<area shape="rect" id="node23" href="$classSpatialDiscretization.html#a8400a265a094312b4d57708d44f9d627" title="Set the FE_Collection, the FE_Space and associated size." alt="" coords="278,1243,478,1284"/>
-<area shape="rect" id="node3" href="$classSlothSolver.html#aa9c78d816c02f2d4ab70af64cb3f7791" title="Create the linear solver depending on SolverType." alt="" coords="27,405,202,431"/>
-<area shape="rect" id="node24" href="$structspecialized__spatial__constructor_3_01T_00_011_01_4.html#a9d28d9d2735b1b9d2ca88de45cfda15b" title="operator() specialized for a mesh built from GMSH file" alt="" coords="35,1173,194,1229"/>
-<area shape="rect" id="node25" href="$structspecialized__spatial__constructor_3_01T_00_012_01_4.html#a367e7535f528d675144feb9ec420a28b" title="operator() specialized for a mesh built from GMSH file" alt="" coords="35,1253,194,1309"/>
-<area shape="rect" id="node26" href="$structspecialized__spatial__constructor_3_01T_00_013_01_4.html#ac2e4126ca21896e53bd7800cf989d462" title="operator() specialized for a mesh built from GMSH file" alt="" coords="35,1333,194,1389"/>
+<area shape="rect" id="node1" title="Print information on Debug mode." alt="" coords="532,587,668,614"/>
+<area shape="rect" id="node2" href="$classSolverUMFPACK.html#a83fe21379896c4df62b1df2947767d2e" title="Create a direct solver based of the SolverType and a list of Parameters." alt="" coords="285,319,471,360"/>
+<area shape="rect" id="node4" href="$classPrecondHypreILU.html#a7e7defa37401cea9cac7183a5994b13b" title="Create preconditioner based of the PreconditionerType and a list of Parameters." alt="" coords="281,384,475,425"/>
+<area shape="rect" id="node5" href="$classPrecondHypreSmoother.html#aadca5acda7af3396285f385654c24a1b" title="Create preconditioner based of the PreconditionerType and a list of Parameters." alt="" coords="285,449,471,491"/>
+<area shape="rect" id="node6" href="$classPrecondHypreBoomerAMG.html#a9274064ab381792bf2f034344d2d621d" title="Create preconditioner based of the PreconditionerType and a list of Parameters." alt="" coords="273,515,483,556"/>
+<area shape="rect" id="node7" href="$classPrecondHypreDiagScale.html#addd6474561b2dc1caef97fbf187bae91" title="Create preconditioner based of the PreconditionerType and a list of Parameters." alt="" coords="283,580,473,621"/>
+<area shape="rect" id="node8" href="$classSolverHyprePCG.html#af4a480332bac2a5014c3e2a84f3403ba" title="Create a iterative solver based of the SolverType and a list of Parameters." alt="" coords="284,645,472,687"/>
+<area shape="rect" id="node9" href="$classSolverHypreGMRES.html#a94293cedbdd903adcd5866ce3554ef10" title="Create a iterative solver based of the SolverType and a list of Parameters." alt="" coords="272,711,484,752"/>
+<area shape="rect" id="node10" href="$classSolverHypreFGMRES.html#a54588ca870f9439ec8f4bccd7d8615a8" title="Create a iterative solver based of the SolverType and a list of Parameters." alt="" coords="289,776,467,817"/>
+<area shape="rect" id="node11" href="$classPrecondDSmoother.html#a286f01fb24a1d08cc00950b04e9e0bfc" title="Create preconditioner based of the PreconditionerType and a list of Parameters." alt="" coords="275,5,481,47"/>
+<area shape="rect" id="node12" href="$classSolverBICGSTAB.html#a088138ab2b4e2295192b98abd8e4eefc" title="Create a iterative solver based of the SolverType and a list of Parameters." alt="" coords="284,71,472,112"/>
+<area shape="rect" id="node13" href="$classSolverMINRES.html#ace4d6324acb77a33354204e692a2463f" title=" " alt="" coords="291,136,465,177"/>
+<area shape="rect" id="node14" href="$classSolverCG.html#a22bb7e38585bc24764881aa0f5aa200c" title=" " alt="" coords="286,202,470,229"/>
+<area shape="rect" id="node15" href="$classSolverGMRES.html#aea5f0ae2948f5e66d2ef5d508ce61f68" title=" " alt="" coords="293,253,463,295"/>
+<area shape="rect" id="node16" href="$classLSolver.html#aea68e9ca2bd547b8eb0ebf98c428aa9a" title="Construct a new LSolver::LSolver object with a preconditionner." alt="" coords="311,842,445,869"/>
+<area shape="rect" id="node17" href="$structSetPrecondSolver.html#aa4e37e62a935fea0c1926352c0ecd1d2" title="Main function." alt="" coords="5,951,224,978"/>
+<area shape="rect" id="node18" href="$structSetPrecondNLSolver.html#a3579c089c95ed6ddc8ee6678327d2712" title="Main function." alt="" coords="33,1005,197,1047"/>
+<area shape="rect" id="node19" href="$structUtilsSolvers.html#a840e1af50b97b7df296c16477f372d3d" title="Print the name of the Preconditioner." alt="" coords="306,1009,450,1051"/>
+<area shape="rect" id="node20" href="$structUtilsSolvers.html#ad4e84303433eca9ff539ea48b744d9d4" title="Print the name of the Solver." alt="" coords="306,944,450,985"/>
+<area shape="rect" id="node21" href="$classSpatialDiscretization.html#a8400a265a094312b4d57708d44f9d627" title="Set the FE_Collection, the FE_Space and associated size." alt="" coords="278,1141,478,1183"/>
+<area shape="rect" id="node3" href="$classSlothSolver.html#aa9c78d816c02f2d4ab70af64cb3f7791" title="Create the linear solver depending on SolverType." alt="" coords="27,391,202,418"/>
+<area shape="rect" id="node22" href="$structspecialized__spatial__constructor_3_01T_00_011_01_4.html#a9d28d9d2735b1b9d2ca88de45cfda15b" title="operator() specialized for a mesh built from GMSH file" alt="" coords="35,1071,194,1127"/>
+<area shape="rect" id="node23" href="$structspecialized__spatial__constructor_3_01T_00_012_01_4.html#a367e7535f528d675144feb9ec420a28b" title="operator() specialized for a mesh built from GMSH file" alt="" coords="35,1151,194,1207"/>
+<area shape="rect" id="node24" href="$structspecialized__spatial__constructor_3_01T_00_013_01_4.html#ac2e4126ca21896e53bd7800cf989d462" title="operator() specialized for a mesh built from GMSH file" alt="" coords="35,1231,194,1287"/>
 </map>

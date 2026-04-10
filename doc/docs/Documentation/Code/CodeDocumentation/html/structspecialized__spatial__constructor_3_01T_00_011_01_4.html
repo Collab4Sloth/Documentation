@@ -25,9 +25,9 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v2.0.0</span>
    </div>
-   <div id="projectbrief">PhaseField solver</div>
+   <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
  </tr>
  </tbody>
@@ -97,10 +97,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0a8186789144df3cda3f131a9d766408"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structspecialized__spatial__constructor_3_01T_00_011_01_4.html#a0a8186789144df3cda3f131a9d766408">operator()</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, 1 &gt; &amp;a_my_class, const std::string &amp;mesh_type, const int &amp;fe_order, const int &amp;ref_level, std::tuple&lt; Args... &gt; tup_args)</td></tr>
 <tr class="memdesc:a0a8186789144df3cda3f131a9d766408"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator() specialized for a mesh built from MFEM methods  <a href="structspecialized__spatial__constructor_3_01T_00_011_01_4.html#a0a8186789144df3cda3f131a9d766408">More...</a><br /></td></tr>
 <tr class="separator:a0a8186789144df3cda3f131a9d766408"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba1d244c76ac626e72d712148c53cb46"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
-<tr class="memitem:aba1d244c76ac626e72d712148c53cb46"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structspecialized__spatial__constructor_3_01T_00_011_01_4.html#aba1d244c76ac626e72d712148c53cb46">operator()</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, 1 &gt; &amp;a_my_class, const std::string &amp;mesh_type, const int &amp;fe_order, const int &amp;ref_level, std::tuple&lt; Args... &gt; tup_args, std::vector&lt; mfem::Vector &gt; translations)</td></tr>
-<tr class="memdesc:aba1d244c76ac626e72d712148c53cb46"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator() specialized for a periodic mesh built from MFEM methods  <a href="structspecialized__spatial__constructor_3_01T_00_011_01_4.html#aba1d244c76ac626e72d712148c53cb46">More...</a><br /></td></tr>
-<tr class="separator:aba1d244c76ac626e72d712148c53cb46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e23122ebfa50924500e4df0818c5be4"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:a2e23122ebfa50924500e4df0818c5be4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structspecialized__spatial__constructor_3_01T_00_011_01_4.html#a2e23122ebfa50924500e4df0818c5be4">operator()</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, 1 &gt; &amp;a_my_class, const std::string &amp;mesh_type, const int &amp;fe_order, const int &amp;ref_level, std::tuple&lt; Args... &gt; tup_args, [[maybe_unused]] std::vector&lt; mfem::Vector &gt; translations)</td></tr>
+<tr class="memdesc:a2e23122ebfa50924500e4df0818c5be4"><td class="mdescLeft">&#160;</td><td class="mdescRight">operator() specialized for a periodic mesh built from MFEM methods  <a href="structspecialized__spatial__constructor_3_01T_00_011_01_4.html#a2e23122ebfa50924500e4df0818c5be4">More...</a><br /></td></tr>
+<tr class="separator:a2e23122ebfa50924500e4df0818c5be4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T&gt;<br />
@@ -185,13 +185,14 @@ template&lt;typename... Args&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00305">305</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00161">SpatialDiscretization&lt; T, DIM &gt;::dimension_</a>, <a class="el" href="Spatial_8hpp_source.html#l00160">SpatialDiscretization&lt; T, DIM &gt;::fe_order_</a>, <a class="el" href="SpatialOptions_8hpp_source.html#l00048">Meshes::from()</a>, <a class="el" href="SpatialOptions_8hpp_source.html#l00038">Meshes::InlineLineWithSegments</a>, <a class="el" href="Spatial_8hpp_source.html#l00162">SpatialDiscretization&lt; T, DIM &gt;::mesh_</a>, and <a class="el" href="Spatial_8hpp_source.html#l00163">SpatialDiscretization&lt; T, DIM &gt;::mesh_max_bdr_attributes_</a>.</p>
+<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00161">SpatialDiscretization&lt; T, DIM &gt;::dimension_</a>, <a class="el" href="Spatial_8hpp_source.html#l00160">SpatialDiscretization&lt; T, DIM &gt;::fe_order_</a>, <a class="el" href="SpatialOptions_8cpp_source.html#l00037">Meshes::from()</a>, <a class="el" href="SpatialOptions_8hpp_source.html#l00037">Meshes::InlineLineWithSegments</a>, <a class="el" href="Spatial_8hpp_source.html#l00162">SpatialDiscretization&lt; T, DIM &gt;::mesh_</a>, and <a class="el" href="Spatial_8hpp_source.html#l00163">SpatialDiscretization&lt; T, DIM &gt;::mesh_max_bdr_attributes_</a>.</p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structspecialized__spatial__constructor_3_01T_00_011_01_4_ad9287439f1ff6f197b292f62549a75ad_cgraph.svg" width="332" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structspecialized__spatial__constructor_3_01T_00_011_01_4_ad9287439f1ff6f197b292f62549a75ad_cgraph.svg" width="332" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -265,13 +266,14 @@ template&lt;typename... Args&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00349">349</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00161">SpatialDiscretization&lt; T, DIM &gt;::dimension_</a>, <a class="el" href="Spatial_8hpp_source.html#l00160">SpatialDiscretization&lt; T, DIM &gt;::fe_order_</a>, <a class="el" href="SpatialOptions_8hpp_source.html#l00048">Meshes::from()</a>, <a class="el" href="SpatialOptions_8hpp_source.html#l00038">Meshes::InlineLineWithSegments</a>, <a class="el" href="Spatial_8hpp_source.html#l00162">SpatialDiscretization&lt; T, DIM &gt;::mesh_</a>, and <a class="el" href="Spatial_8hpp_source.html#l00163">SpatialDiscretization&lt; T, DIM &gt;::mesh_max_bdr_attributes_</a>.</p>
+<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00161">SpatialDiscretization&lt; T, DIM &gt;::dimension_</a>, <a class="el" href="Spatial_8hpp_source.html#l00160">SpatialDiscretization&lt; T, DIM &gt;::fe_order_</a>, <a class="el" href="SpatialOptions_8cpp_source.html#l00037">Meshes::from()</a>, <a class="el" href="SpatialOptions_8hpp_source.html#l00037">Meshes::InlineLineWithSegments</a>, <a class="el" href="Spatial_8hpp_source.html#l00162">SpatialDiscretization&lt; T, DIM &gt;::mesh_</a>, and <a class="el" href="Spatial_8hpp_source.html#l00163">SpatialDiscretization&lt; T, DIM &gt;::mesh_max_bdr_attributes_</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structspecialized__spatial__constructor_3_01T_00_011_01_4_acc009540b0294c236332a5179c51d854_cgraph.svg" width="344" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structspecialized__spatial__constructor_3_01T_00_011_01_4_acc009540b0294c236332a5179c51d854_cgraph.svg" width="344" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -357,13 +359,14 @@ template&lt;typename... Args&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00210">210</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00161">SpatialDiscretization&lt; T, DIM &gt;::dimension_</a>, <a class="el" href="Spatial_8hpp_source.html#l00160">SpatialDiscretization&lt; T, DIM &gt;::fe_order_</a>, <a class="el" href="SpatialOptions_8hpp_source.html#l00048">Meshes::from()</a>, <a class="el" href="SpatialOptions_8hpp_source.html#l00043">Meshes::GMSH</a>, <a class="el" href="Spatial_8hpp_source.html#l00135">SpatialDiscretization&lt; T, DIM &gt;::GMSHReaderSplitFiles()</a>, <a class="el" href="Spatial_8hpp_source.html#l00164">SpatialDiscretization&lt; T, DIM &gt;::is_periodic_mesh_</a>, <a class="el" href="Spatial_8hpp_source.html#l00162">SpatialDiscretization&lt; T, DIM &gt;::mesh_</a>, <a class="el" href="Spatial_8hpp_source.html#l00163">SpatialDiscretization&lt; T, DIM &gt;::mesh_max_bdr_attributes_</a>, <a class="el" href="Spatial_8hpp_source.html#l00857">SpatialDiscretization&lt; T, DIM &gt;::set_finite_element_space()</a>, and <a class="el" href="UtilsForData_8hpp_source.html#l00265">SlothInfo::verbose()</a>.</p>
+<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00956">SpatialDiscretization&lt; T, DIM &gt;::apply_uniform_refinement()</a>, <a class="el" href="Spatial_8hpp_source.html#l00161">SpatialDiscretization&lt; T, DIM &gt;::dimension_</a>, <a class="el" href="Spatial_8hpp_source.html#l00160">SpatialDiscretization&lt; T, DIM &gt;::fe_order_</a>, <a class="el" href="SpatialOptions_8cpp_source.html#l00037">Meshes::from()</a>, <a class="el" href="SpatialOptions_8hpp_source.html#l00042">Meshes::GMSH</a>, <a class="el" href="Spatial_8hpp_source.html#l00135">SpatialDiscretization&lt; T, DIM &gt;::GMSHReaderSplitFiles()</a>, <a class="el" href="Spatial_8hpp_source.html#l00164">SpatialDiscretization&lt; T, DIM &gt;::is_periodic_mesh_</a>, <a class="el" href="Spatial_8hpp_source.html#l00162">SpatialDiscretization&lt; T, DIM &gt;::mesh_</a>, <a class="el" href="Spatial_8hpp_source.html#l00163">SpatialDiscretization&lt; T, DIM &gt;::mesh_max_bdr_attributes_</a>, <a class="el" href="Spatial_8hpp_source.html#l00857">SpatialDiscretization&lt; T, DIM &gt;::set_finite_element_space()</a>, and <a class="el" href="UtilsForData_8hpp_source.html#l00237">SlothInfo::verbose()</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structspecialized__spatial__constructor_3_01T_00_011_01_4_a9d28d9d2735b1b9d2ca88de45cfda15b_cgraph.svg" width="602" height="220"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structspecialized__spatial__constructor_3_01T_00_011_01_4_a9d28d9d2735b1b9d2ca88de45cfda15b_cgraph.svg" width="612" height="287"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -454,8 +457,8 @@ template&lt;typename... Args&gt; </div>
 
 </div>
 </div>
-<a id="aba1d244c76ac626e72d712148c53cb46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba1d244c76ac626e72d712148c53cb46">&#9670;&nbsp;</a></span>operator()() <span class="overload">[3/3]</span></h2>
+<a id="a2e23122ebfa50924500e4df0818c5be4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e23122ebfa50924500e4df0818c5be4">&#9670;&nbsp;</a></span>operator()() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -500,7 +503,7 @@ template&lt;typename... Args&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; mfem::Vector &gt;&#160;</td>
+          <td class="paramtype">[[maybe_unused] ] std::vector&lt; mfem::Vector &gt;&#160;</td>
           <td class="paramname"><em>translations</em>&#160;</td>
         </tr>
         <tr>
@@ -541,7 +544,7 @@ template&lt;typename... Args&gt; </div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structspecialized__spatial__constructor_3_01T_00_011_01_4_aba1d244c76ac626e72d712148c53cb46_cgraph.svg" width="612" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structspecialized__spatial__constructor_3_01T_00_011_01_4_a2e23122ebfa50924500e4df0818c5be4_cgraph.svg" width="612" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -552,7 +555,7 @@ template&lt;typename... Args&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 15:39:07 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

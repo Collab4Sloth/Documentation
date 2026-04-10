@@ -20,9 +20,9 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="sloth_8hpp.html" target="_top" xlink:title="List of all header files contained in the kernel directory.">
-<polygon fill="none" stroke="black" points="82,-0.5 82,-19.5 147,-19.5 147,-0.5 82,-0.5"/>
-<text text-anchor="middle" x="114.5" y="-7.5" font-family="serif" font-size="10.00">sloth.hpp</text>
+<g id="a_node2"><a xlink:href="ListIntegrators_8hpp.html" target="_top" xlink:title="List of header files contained in the Integrators directory.">
+<polygon fill="none" stroke="black" points="56.5,-0.5 56.5,-19.5 172.5,-19.5 172.5,-0.5 56.5,-0.5"/>
+<text text-anchor="middle" x="114.5" y="-7.5" font-family="serif" font-size="10.00">ListIntegrators.hpp</text>
 </a>
 </g>
 </g>

@@ -1,5 +1,6 @@
 <map id="DiffusionFluxNLFormIntegrator&lt; VARS &gt;" name="DiffusionFluxNLFormIntegrator&lt; VARS &gt;">
-<area shape="rect" id="node1" title="Class dedicated to the VF of an inter&#45;diffusion equation." alt="" coords="5,185,244,227"/>
-<area shape="rect" id="node2" href="$classSlothNLFormIntegrator.html" title="Class prodiving common methods to all NLFormIntegrators." alt="" coords="33,95,216,136"/>
-<area shape="rect" id="node3" href="$classParameters.html" title=" " alt="" coords="75,5,174,32"/>
+<area shape="rect" id="node1" title="Class dedicated to the VF of an inter&#45;diffusion equation." alt="" coords="60,199,299,240"/>
+<area shape="rect" id="node2" href="$classSlothNLFormIntegrator.html" title="Class prodiving common methods to all NLFormIntegrators." alt="" coords="5,95,188,136"/>
+<area shape="rect" id="node3" href="$classParameters.html" title=" " alt="" coords="47,5,146,32"/>
+<area shape="rect" id="node4" href="$classCoefficients.html" title="Class used to manage a collection of Coefficient." alt="" coords="213,102,314,129"/>
 </map>

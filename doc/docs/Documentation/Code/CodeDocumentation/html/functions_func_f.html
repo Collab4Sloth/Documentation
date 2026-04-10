@@ -25,9 +25,9 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v2.0.0</span>
    </div>
-   <div id="projectbrief">PhaseField solver</div>
+   <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
  </tr>
  </tbody>
@@ -69,6 +69,21 @@ $(function() {
 &#160;
 
 <h3><a id="index_f"></a>- f -</h3><ul>
+<li>F()
+: <a class="el" href="classConstantCoefficient.html#ab417b258ebc82c14efd50c971c7fe759">ConstantCoefficient</a>
+, <a class="el" href="classExprTkCoefficient.html#ab9e0e1e1c6994559a6e8b08393091e41">ExprTkCoefficient</a>
+, <a class="el" href="classFunctionCoefficient.html#aecc7a698843a1977a0fd2e7291dc1b47">FunctionCoefficient</a>
+, <a class="el" href="classFw.html#ab9f4b246f84dfc5f4e948f788a8b767e">Fw</a>
+, <a class="el" href="classGradientEnergy.html#a70fd3bf2b1ab9f67c81b5ecfa3e7d9c8">GradientEnergy</a>
+, <a class="el" href="classH.html#aab5ca08f3fd76b725b19495d87189968">H</a>
+, <a class="el" href="classLog.html#a329089bbeb1f371728586419b23a880d">Log</a>
+, <a class="el" href="classProductCoefficient.html#a575b982fe1d52faee392d51f5bb2cc43">ProductCoefficient</a>
+, <a class="el" href="classSumCoefficient.html#a3c76f614a73291a7f6ada1ebd9fdcedd">SumCoefficient</a>
+, <a class="el" href="classW.html#a7f5875687c8118b447345e397f659f89">W</a>
+</li>
+<li>FickNLFormIntegrator()
+: <a class="el" href="classFickNLFormIntegrator.html#aa9686e7a7a8ba49804bd2ba456197b74">FickNLFormIntegrator&lt; VARS &gt;</a>
+</li>
 <li>finalize()
 : <a class="el" href="classAnalyticalIdealSolution.html#a0125a6933d5a1ebde7e662c5627dd2e3">AnalyticalIdealSolution&lt; T &gt;</a>
 , <a class="el" href="classCalphad__Problem.html#aae9cbfdc31162becb69d716761d50b17">Calphad_Problem&lt; CALPHAD, VAR, PST &gt;</a>
@@ -76,10 +91,13 @@ $(function() {
 , <a class="el" href="classCalphadInformedNeuralNetwork.html#a17f940187c1b2893113f7b8f3461e9ce">CalphadInformedNeuralNetwork&lt; T &gt;</a>
 , <a class="el" href="classCoupling.html#ab7a760d27b2e221318e14afcfe990564">Coupling&lt; Args &gt;</a>
 , <a class="el" href="classProblem.html#af852ee85da09c891ed7dd9debba93324">Problem&lt; OPE, VAR, PST &gt;</a>
-, <a class="el" href="classProblemBase.html#ac2fd9d9d8f3b9c33c902dd225f5a9a90">ProblemBase&lt; VAR, PST &gt;</a>
+, <a class="el" href="classProblemBase.html#a12f0cb7e58b16783e8957b1a911aca56">ProblemBase&lt; VAR, PST &gt;</a>
 </li>
 <li>find()
 : <a class="el" href="structPhaseFieldPrivate_1_1mmap.html#a412a60528e4d31d7d3fa2d4c80480df1">PhaseFieldPrivate::mmap&lt; T &gt;</a>
+</li>
+<li>FourierNLFormIntegrator()
+: <a class="el" href="classFourierNLFormIntegrator.html#a6103287f915a431dbed53125fcad5f53">FourierNLFormIntegrator&lt; VARS &gt;</a>
 </li>
 <li>from()
 : <a class="el" href="structAnalyticalFunctionsType.html#a2446df6460acecf21abad99e6b79c3db">AnalyticalFunctionsType</a>
@@ -87,6 +105,7 @@ $(function() {
 , <a class="el" href="structcalphad__nodes__strategies.html#a37b7705f3074ca6751bbe984f17d26c9">calphad_nodes_strategies</a>
 , <a class="el" href="structcalphad__outputs.html#a841bbe9dba2c46be52d1f0700eab0c93">calphad_outputs</a>
 , <a class="el" href="structConvergenceType.html#a165217356868575de9ae3ef5082be8b9">ConvergenceType</a>
+, <a class="el" href="structIntegrators.html#a49bf1c501ac4adc47ad737a909f9176e">Integrators</a>
 , <a class="el" href="structKKS__nucleation__strategy.html#a9ced3346807daab7cef579de52e64602">KKS_nucleation_strategy</a>
 , <a class="el" href="structMeshes.html#a41bce2494d7e83bb16a7f79faf1c5d97">Meshes</a>
 , <a class="el" href="structpressure__sort__method.html#acf40129f45ca7bf18645a20ea37b9f3b">pressure_sort_method</a>
@@ -94,11 +113,17 @@ $(function() {
 , <a class="el" href="structtemperature__sort__method.html#a2ac6758df9fee285c5c072ca554289fa">temperature_sort_method</a>
 , <a class="el" href="structTimeScheme.html#aac011aba84db035d8b7bd83bae1bb1c1">TimeScheme</a>
 </li>
+<li>FunctionCoefficient()
+: <a class="el" href="classFunctionCoefficient.html#af2e0ca5907426edd5d25b374bf1c9b17">FunctionCoefficient</a>
+</li>
+<li>Fw()
+: <a class="el" href="classFw.html#a59fe4723c13fc28afb180f8a051c330c">Fw</a>
+</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 15:39:07 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

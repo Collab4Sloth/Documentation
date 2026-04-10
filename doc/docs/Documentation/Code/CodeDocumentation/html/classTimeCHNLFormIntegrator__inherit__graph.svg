@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="Class dedicated to the FV of the Allen Cahn equation.">
+<g id="a_node1"><a xlink:title="Class dedicated to the VF of the time&#45;derivative (eg. LHS of Cahn&#45;Hilliard and Allen&#45;Cahn equations u...">
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-30.5 153,-30.5 153,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-18.5" font-family="serif" font-size="10.00">TimeCHNLFormIntegrator</text>
 <text text-anchor="middle" x="76.5" y="-7.5" font-family="serif" font-size="10.00">&lt; VARS &gt;</text>

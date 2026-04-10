@@ -1,0 +1,11 @@
+<map id="CalphadUtils.tpp" name="CalphadUtils.tpp">
+<area shape="rect" id="node1" title=" " alt="" coords="435,5,573,32"/>
+<area shape="rect" id="node2" href="$CalphadUtils_8hpp.html" title="Class of methods usefull for to compute equilibrium state object." alt="" coords="433,80,575,107"/>
+<area shape="rect" id="node3" href="$AnalyticalIdealSolution_8hpp.html" title="Analytical thermodynamic description for an ideal solution." alt="" coords="5,229,216,256"/>
+<area shape="rect" id="node5" href="$CalphadBase_8hpp.html" title="Base class for Calphad objets." alt="" coords="307,155,450,181"/>
+<area shape="rect" id="node6" href="$CalphadInformedNeuralNetwork_8hpp.html" title="Calphad&#45;informed neuronal network used to predict Calphad contributions." alt="" coords="490,229,769,256"/>
+<area shape="rect" id="node9" href="$KKS_8hpp.html" title="All needed for Calphad calculation including KKS model." alt="" coords="616,304,699,331"/>
+<area shape="rect" id="node4" href="$sloth_8hpp.html" title="List of SLOTH header files." alt="" coords="269,379,355,405"/>
+<area shape="rect" id="node7" href="$Calphad__problem_8hpp.html" title="Class used to defined a Calphad_Problem objet." alt="" coords="291,229,466,256"/>
+<area shape="rect" id="node8" href="$ListProblems_8hpp.html" title=" " alt="" coords="299,304,442,331"/>
+</map>

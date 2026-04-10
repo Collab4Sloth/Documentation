@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['w_1737',['W',['../PhaseFieldOptions_8hpp.html#ada0d4ce732f91afe18119f725a6da825a61e9c06ea9a85a5088a499df6458d276',1,'PhaseFieldOptions.hpp']]],
-  ['ww_1738',['WW',['../PhaseFieldOptions_8hpp.html#ada0d4ce732f91afe18119f725a6da825a0a9b52fb6605edc74fd7d5359f34477e',1,'PhaseFieldOptions.hpp']]]
+  ['umfpack_2008',['UMFPACK',['../SolversOptions_8hpp.html#ae4bd942aef151e8b326d52771f5bd98ead2a602ed8582b78e22141784e4a86165',1,'SolversOptions.hpp']]],
+  ['uniform_2009',['Uniform',['../structAnalyticalFunctionsType.html#a9679669709a07a7255b7f2522af78f2cac0572af9dbb6cead4123d44cb78c51c3',1,'AnalyticalFunctionsType']]]
 ];

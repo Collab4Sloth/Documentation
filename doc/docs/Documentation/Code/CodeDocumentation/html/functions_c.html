@@ -25,9 +25,9 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v2.0.0</span>
    </div>
-   <div id="projectbrief">PhaseField solver</div>
+   <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
  </tr>
  </tbody>
@@ -69,14 +69,17 @@ $(function() {
 <div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a id="index_c"></a>- c -</h3><ul>
+<li>CahnHilliard
+: <a class="el" href="structIntegrators.html#a2b9da6dcbb0d390cf08308d150f795f3ac7d14afb799526bd614330abcafa98d4">Integrators</a>
+</li>
 <li>CahnHilliardNLFormIntegrator()
-: <a class="el" href="classCahnHilliardNLFormIntegrator.html#a69ebe5d9c99fea61715ed87c7c986543">CahnHilliardNLFormIntegrator&lt; VARS, SCHEME, ENERGY, MOBI &gt;</a>
+: <a class="el" href="classCahnHilliardNLFormIntegrator.html#afa2825987682d54e7e7f4fa554ec29ca">CahnHilliardNLFormIntegrator&lt; VARS &gt;</a>
 </li>
 <li>Calphad
 : <a class="el" href="structProblems.html#a612aafd57af03188e90e32ccf486cdfdacf8949f2d5ccc56b4f0407e51b876173">Problems</a>
 </li>
 <li>Calphad_Problem()
-: <a class="el" href="classCalphad__Problem.html#a190dc7f30d21736c4fe8744c9d274c7b">Calphad_Problem&lt; CALPHAD, VAR, PST &gt;</a>
+: <a class="el" href="classCalphad__Problem.html#aecceec5e0a64531f97b329ba42142584">Calphad_Problem&lt; CALPHAD, VAR, PST &gt;</a>
 </li>
 <li>CalphadBase()
 : <a class="el" href="classCalphadBase.html#aa1952e5548a0cbe9ffc68d86ef678a51">CalphadBase&lt; T &gt;</a>
@@ -87,8 +90,12 @@ $(function() {
 <li>CalphadUtils()
 : <a class="el" href="classCalphadUtils.html#aeaddff82184497c6574de6e99d4b5c67">CalphadUtils&lt; T &gt;</a>
 </li>
+<li>check_coefficient_types()
+: <a class="el" href="classSlothNLFormIntegrator.html#a91695d51c2a9e35b25a82128f9d68894">SlothNLFormIntegrator&lt; VARS &gt;</a>
+</li>
 <li>check_variables_consistency()
 : <a class="el" href="classInterDiffusionCoefficient.html#a7cf69475b322e1eae457a6ece3ab44e7">InterDiffusionCoefficient</a>
+, <a class="el" href="classLatentHeatNLFormIntegrator.html#ad8a4a74a69e7cc89c77af78564260fd8">LatentHeatNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classPropertyBase.html#a5473e1f260f47460818a86cbaa3965ef">PropertyBase</a>
 </li>
 <li>chemical_potentials_
@@ -114,51 +121,75 @@ $(function() {
 , <a class="el" href="classKKS.html#afca2ff7fbe28cb0358317f1952c97a98">KKS&lt; T &gt;</a>
 </li>
 <li>clear_iso_time_specialized()
-: <a class="el" href="classOperatorBase.html#a5c91ece08b6e3fbe26851ee815705c86">OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
+: <a class="el" href="classOperatorBase.html#a315548b258e51523a8a9001e602c58d3">OperatorBase&lt; T, DIM &gt;</a>
 </li>
 <li>clear_time_specialized()
-: <a class="el" href="classOperatorBase.html#a32f383de71a3c81b7907116a10403f0f">OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
+: <a class="el" href="classCalphadBase.html#a0d0553a34f3ab33c123e662da0917023">CalphadBase&lt; T &gt;</a>
+, <a class="el" href="classOperatorBase.html#a54659db19141bbc2e173f5ad43d67953">OperatorBase&lt; T, DIM &gt;</a>
+</li>
+<li>Coefficient()
+: <a class="el" href="classCoefficient.html#a6a3890e4a715e6eab4220afb4b90df6c">Coefficient</a>
+</li>
+<li>coefficient_A
+: <a class="el" href="classTimeCHNLFormIntegrator.html#abaec31e5a38d7dc2ec109b32aa1d95c6">TimeCHNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classTimeNLFormIntegrator.html#ae618fcca33f3e82e403d8e7376944e6b">TimeNLFormIntegrator&lt; VARS &gt;</a>
+</li>
+<li>coefficient_B
+: <a class="el" href="classTimeNLFormIntegrator.html#a744be1f8241e72ac7b367e8315909636">TimeNLFormIntegrator&lt; VARS &gt;</a>
+</li>
+<li>Coefficients()
+: <a class="el" href="classCoefficients.html#ad5976c84bef315024c40c308230a2b82">Coefficients</a>
+</li>
+<li>coefficients_
+: <a class="el" href="classOperatorBase.html#a7824b011ddc98bcab78945b73cbbfbef">OperatorBase&lt; T, DIM &gt;</a>
+, <a class="el" href="classProblemBase.html#a6a4d0e345cd6961951c185afe4d7ce34">ProblemBase&lt; VAR, PST &gt;</a>
+, <a class="el" href="classSlothNLFormIntegrator.html#acfe04714eaa948c0eb0a9eb009d6c516">SlothNLFormIntegrator&lt; VARS &gt;</a>
 </li>
 <li>compute()
 : <a class="el" href="classPropertyBase.html#adcd21ad3b4a73d1fe6d14edca1501629">PropertyBase</a>
+, <a class="el" href="classSlothBaseCoefficient.html#a6da1fc836fbbeb38d053fc64f6a48df8">SlothBaseCoefficient</a>
+</li>
+<li>compute_coefficient()
+: <a class="el" href="classSlothNLFormIntegrator.html#ae1b9ee1ec6bcc316d0e6188625537120">SlothNLFormIntegrator&lt; VARS &gt;</a>
+</li>
+<li>compute_gradient()
+: <a class="el" href="classSlothBaseCoefficient.html#a38231d43b2b84693561153bc0dceaa60">SlothBaseCoefficient</a>
+</li>
+<li>compute_gradient_coefficient()
+: <a class="el" href="classSlothNLFormIntegrator.html#a6adf3d85add425bdc2484058e830ff99">SlothNLFormIntegrator&lt; VARS &gt;</a>
+</li>
+<li>compute_hessian()
+: <a class="el" href="classSlothBaseCoefficient.html#a6062df3770a30511fbc2948fc3d6d832">SlothBaseCoefficient</a>
+</li>
+<li>compute_hessian_coefficient()
+: <a class="el" href="classSlothNLFormIntegrator.html#a223e286bfa63f83a5a0d12ebe73b872c">SlothNLFormIntegrator&lt; VARS &gt;</a>
 </li>
 <li>compute_total_height()
-: <a class="el" href="classOperatorBase.html#a7c7e572a6a70cb1669c7830742851304">OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
+: <a class="el" href="classOperatorBase.html#ae3e90f7649879184b38e9938a4852eaa">OperatorBase&lt; T, DIM &gt;</a>
 </li>
 <li>compute_total_width()
-: <a class="el" href="classOperatorBase.html#a7cabd9833d47cb2a9bb28d126184af43">OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
+: <a class="el" href="classOperatorBase.html#a77913e69d610289dc3d172319b60cf22">OperatorBase&lt; T, DIM &gt;</a>
 </li>
 <li>ComputeEnergies()
-: <a class="el" href="classDiffusionOperatorBase.html#aa7b06c4d760abe543f04b15df9ade72b">DiffusionOperatorBase&lt; T, DIM, NLFI, LHS_NLFI, OPEBASE &gt;</a>
-, <a class="el" href="classHeatOperatorBase.html#aa2790c5a785c5a92d5d93c0c673e3e4e">HeatOperatorBase&lt; T, DIM, NLFI, LHS_NLFI, OPEBASE &gt;</a>
-, <a class="el" href="classOperatorBase.html#a575a797897c7816dc16d22e658e618af">OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
-, <a class="el" href="classPhaseFieldOperatorBase.html#ad904bca5a5208860f6af434f6c4cba85">PhaseFieldOperatorBase&lt; T, DIM, NLFI, LHS_NLFI, OPEBASE &gt;</a>
-, <a class="el" href="classSteadyOperatorBase.html#adb5376a888d009fe825b17434f5fd0bd">SteadyOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
-, <a class="el" href="classTransientOperatorBase.html#aa6bf2ad27264db54f61913b717bdbc07">TransientOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
+: <a class="el" href="classOperatorBase.html#ae93baf2d27e0dfe32475160076a0a4d5">OperatorBase&lt; T, DIM &gt;</a>
 </li>
 <li>ComputeError()
-: <a class="el" href="classOperatorBase.html#af8bc324e6179cfa9c5479bddd7c895b2">OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
+: <a class="el" href="classOperatorBase.html#a9f4761d1f82d64d35ad8f3d8a0df7dea">OperatorBase&lt; T, DIM &gt;</a>
 </li>
 <li>ComputeIntegral()
-: <a class="el" href="classOperatorBase.html#a4283c6b49189a413ba3e55dc8a1c5ff2">OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
+: <a class="el" href="classOperatorBase.html#a37f519fd2eb201e9c67155ef554c6eab">OperatorBase&lt; T, DIM &gt;</a>
 </li>
 <li>ComputeIsoVal()
-: <a class="el" href="classOperatorBase.html#af8cc466eb4bb6b3af07705815520e6fb">OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
-</li>
-<li>conductivity_params_
-: <a class="el" href="classHeatOperatorBase.html#a955e9e1feb9c4a470354104f8af46f4c">HeatOperatorBase&lt; T, DIM, NLFI, LHS_NLFI, OPEBASE &gt;</a>
-</li>
-<li>ConductivityCoefficient()
-: <a class="el" href="classConductivityCoefficient.html#a4c2dccab0b1076fd128385c14d14a5a0">ConductivityCoefficient&lt; ORDER, NAME &gt;</a>
-</li>
-<li>ConductivityFunctions()
-: <a class="el" href="classConductivityFunctions.html#a68bf43c212ace7c74d79b71229fc8322">ConductivityFunctions&lt; ORDER, NAME &gt;</a>
+: <a class="el" href="classOperatorBase.html#af6161d3964b402b1e4df5f6244f897c5">OperatorBase&lt; T, DIM &gt;</a>
 </li>
 <li>constant_mass_matrix_
-: <a class="el" href="classTransientOperatorBase.html#a5260d5c88d244a6ae59afd960512b46d">TransientOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
+: <a class="el" href="classTransientOperator.html#ac0c6819e542d22d28332c0b14e6ba740">TransientOperator&lt; T, DIM &gt;</a>
+</li>
+<li>ConstantCoefficient()
+: <a class="el" href="classConstantCoefficient.html#ae4facfdfc10c3a2cbf73f3660787a0c0">ConstantCoefficient</a>
 </li>
 <li>Convergence()
-: <a class="el" href="classConvergence.html#a644fb586d68b13c52f88379ad2122a8f">Convergence</a>
+: <a class="el" href="classConvergence.html#afef3b73f9055c3baacb89c834e0f56ab">Convergence</a>
 </li>
 <li>convergence_
 : <a class="el" href="classProblemBase.html#a2acb8d1fc7da0f7d9ffa6b7411d4f16c">ProblemBase&lt; VAR, PST &gt;</a>
@@ -173,37 +204,37 @@ $(function() {
 : <a class="el" href="structcalphad__outputs.html#a3b9ee0f8fee1d86f37ad937912c864fea2167cf90fc931c65d451b1ac0f03eb6c">calphad_outputs</a>
 </li>
 <li>create_solver()
-: <a class="el" href="classNLSolverBase.html#a6454b04a9444bb6edb36bd417c1f681e">NLSolverBase</a>
-, <a class="el" href="classPrecondDSmoother.html#a04b157c452b242897c2e7e2fbdda790c">PrecondDSmoother</a>
-, <a class="el" href="classPrecondHypreBoomerAMG.html#ae9b8748901ee350584a1c8e3b33eb0a6">PrecondHypreBoomerAMG</a>
-, <a class="el" href="classPrecondHypreDiagScale.html#a99a26e0ad57569f0186c286191e591cc">PrecondHypreDiagScale</a>
-, <a class="el" href="classPrecondHypreILU.html#a9747a2d4154f14a83fb87b1f398973ff">PrecondHypreILU</a>
-, <a class="el" href="classPrecondHypreSmoother.html#a1d685276c8db4a0c7c3acd12662fffd1">PrecondHypreSmoother</a>
-, <a class="el" href="classSolverBase.html#a01d8545f1cf8ddf44b1468d0ddbe9b60">SolverBase&lt; T, S &gt;</a>
-, <a class="el" href="classSolverBICGSTAB.html#a555f9875dc6d8572bfc1ff0032635c6d">SolverBICGSTAB</a>
-, <a class="el" href="classSolverCG.html#abb8abcd3768a748ab1c4cc366799e146">SolverCG</a>
-, <a class="el" href="classSolverGMRES.html#a7416f84035ad3da9e20adbda9ffd8c22">SolverGMRES</a>
-, <a class="el" href="classSolverHypreFGMRES.html#a59a039f5afb942d01777103bad40c300">SolverHypreFGMRES</a>
-, <a class="el" href="classSolverHypreGMRES.html#ae8cd627c6a9dddb56c4ac48a134de7e0">SolverHypreGMRES</a>
-, <a class="el" href="classSolverHyprePCG.html#a2122f479fde910c6a27b6f74bf750324">SolverHyprePCG</a>
-, <a class="el" href="classSolverMINRES.html#ae0ec160e28632f6538ec16fc476cd14b">SolverMINRES</a>
-, <a class="el" href="classSolverUMFPACK.html#a8a0cb7f36e9e9fa812fb45b23e39ab62">SolverUMFPACK</a>
+: <a class="el" href="classNLSolverBase.html#a5fe7ec560c9c9e10591a08aaa123f2dd">NLSolverBase</a>
+, <a class="el" href="classPrecondDSmoother.html#a286f01fb24a1d08cc00950b04e9e0bfc">PrecondDSmoother</a>
+, <a class="el" href="classPrecondHypreBoomerAMG.html#a9274064ab381792bf2f034344d2d621d">PrecondHypreBoomerAMG</a>
+, <a class="el" href="classPrecondHypreDiagScale.html#addd6474561b2dc1caef97fbf187bae91">PrecondHypreDiagScale</a>
+, <a class="el" href="classPrecondHypreILU.html#a7e7defa37401cea9cac7183a5994b13b">PrecondHypreILU</a>
+, <a class="el" href="classPrecondHypreSmoother.html#aadca5acda7af3396285f385654c24a1b">PrecondHypreSmoother</a>
+, <a class="el" href="classSolverBase.html#a271d286d566da45ac41bf03d479a12eb">SolverBase&lt; T, S &gt;</a>
+, <a class="el" href="classSolverBICGSTAB.html#a088138ab2b4e2295192b98abd8e4eefc">SolverBICGSTAB</a>
+, <a class="el" href="classSolverCG.html#a22bb7e38585bc24764881aa0f5aa200c">SolverCG</a>
+, <a class="el" href="classSolverGMRES.html#aea5f0ae2948f5e66d2ef5d508ce61f68">SolverGMRES</a>
+, <a class="el" href="classSolverHypreFGMRES.html#a54588ca870f9439ec8f4bccd7d8615a8">SolverHypreFGMRES</a>
+, <a class="el" href="classSolverHypreGMRES.html#a94293cedbdd903adcd5866ce3554ef10">SolverHypreGMRES</a>
+, <a class="el" href="classSolverHyprePCG.html#af4a480332bac2a5014c3e2a84f3403ba">SolverHyprePCG</a>
+, <a class="el" href="classSolverMINRES.html#ace4d6324acb77a33354204e692a2463f">SolverMINRES</a>
+, <a class="el" href="classSolverUMFPACK.html#a83fe21379896c4df62b1df2947767d2e">SolverUMFPACK</a>
 </li>
 <li>CU_
 : <a class="el" href="classCalphadBase.html#a26f00f02756827aa4c9930f974e015bd">CalphadBase&lt; T &gt;</a>
 , <a class="el" href="classKKS.html#adccd0e012978dcb35bf7ab31c1f11b95">KKS&lt; T &gt;</a>
 </li>
 <li>current_dt_
-: <a class="el" href="classOperatorBase.html#af109e406e0850a3d66694e309f739aa9">OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
+: <a class="el" href="classOperatorBase.html#a29fc0b682c95483f9f7953d9b754b401">OperatorBase&lt; T, DIM &gt;</a>
 </li>
 <li>current_time_
-: <a class="el" href="classOperatorBase.html#afe54346be2aae87ac82e87a9fe2ca4ff">OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
+: <a class="el" href="classOperatorBase.html#aac2db03c9df9d84bce33fcca5fd5c952">OperatorBase&lt; T, DIM &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 15:39:07 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

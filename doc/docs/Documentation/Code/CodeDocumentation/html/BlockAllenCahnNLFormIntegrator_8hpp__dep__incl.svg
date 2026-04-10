@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="VF of the AllenCahn equations (splitting version)">
+<g id="a_node1"><a xlink:title="VF of the AllenCahn equations (splitted form)">
 <polygon fill="#bfbfbf" stroke="black" points="0,-56.5 0,-75.5 215,-75.5 215,-56.5 0,-56.5"/>
 <text text-anchor="middle" x="107.5" y="-63.5" font-family="serif" font-size="10.00">BlockAllenCahnNLFormIntegrator.hpp</text>
 </a>
@@ -20,9 +20,9 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="sloth_8hpp.html" target="_top" xlink:title="List of all header files contained in the kernel directory.">
-<polygon fill="none" stroke="black" points="75,-0.5 75,-19.5 140,-19.5 140,-0.5 75,-0.5"/>
-<text text-anchor="middle" x="107.5" y="-7.5" font-family="serif" font-size="10.00">sloth.hpp</text>
+<g id="a_node2"><a xlink:href="ListIntegrators_8hpp.html" target="_top" xlink:title="List of header files contained in the Integrators directory.">
+<polygon fill="none" stroke="black" points="49.5,-0.5 49.5,-19.5 165.5,-19.5 165.5,-0.5 49.5,-0.5"/>
+<text text-anchor="middle" x="107.5" y="-7.5" font-family="serif" font-size="10.00">ListIntegrators.hpp</text>
 </a>
 </g>
 </g>

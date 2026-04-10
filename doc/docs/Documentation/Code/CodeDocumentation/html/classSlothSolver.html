@@ -25,9 +25,9 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v2.0.0</span>
    </div>
-   <div id="projectbrief">PhaseField solver</div>
+   <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
  </tr>
  </tbody>
@@ -94,7 +94,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class used to manage linear and non linear solvers. </p>
 
-<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00279">279</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00278">278</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac8ddcda189008d4401645dc984c25dd5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac8ddcda189008d4401645dc984c25dd5">&#9670;&nbsp;</a></span>SlothSolver()</h2>
@@ -131,7 +131,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00297">297</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothSolver_8cpp_source.html#l00047">47</a> of file <a class="el" href="SlothSolver_8cpp_source.html">SlothSolver.cpp</a>.</p>
 
 </div>
 </div>
@@ -152,7 +152,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Destroy the <a class="el" href="classSlothSolver.html" title="Base class used to manage linear and non linear solvers.">SlothSolver</a> object. </p>
 
-<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00403">403</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothSolver_8cpp_source.html#l00153">153</a> of file <a class="el" href="SlothSolver_8cpp_source.html">SlothSolver.cpp</a>.</p>
 
 </div>
 </div>
@@ -175,26 +175,28 @@ Public Member Functions</h2></td></tr>
 <p>Create the linear solver depending on SolverType. </p>
 <dl class="section return"><dt>Returns</dt><dd>VSharedMFEMSolver </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00305">305</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothSolver_8cpp_source.html#l00055">55</a> of file <a class="el" href="SlothSolver_8cpp_source.html">SlothSolver.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="SolversOptions_8hpp.html#a4ac4a4d7d8d59ed200cfdd9222d1c17aa3ba9af3d947159b5c87263ded6096b9d">BICGSTAB</a>, <a class="el" href="SolversOptions_8hpp.html#a4ac4a4d7d8d59ed200cfdd9222d1c17aa5202c6586cac8bee468e86d1ff854231">CG</a>, <a class="el" href="DSolverBase_8hpp_source.html#l00058">SolverUMFPACK::create_solver()</a>, <a class="el" href="HPrecondBase_8hpp_source.html#l00053">PrecondHypreILU::create_solver()</a>, <a class="el" href="HPrecondBase_8hpp_source.html#l00097">PrecondHypreSmoother::create_solver()</a>, <a class="el" href="HPrecondBase_8hpp_source.html#l00133">PrecondHypreBoomerAMG::create_solver()</a>, <a class="el" href="HPrecondBase_8hpp_source.html#l00171">PrecondHypreDiagScale::create_solver()</a>, <a class="el" href="HSolverBase_8hpp_source.html#l00059">SolverHyprePCG::create_solver()</a>, <a class="el" href="HSolverBase_8hpp_source.html#l00112">SolverHypreGMRES::create_solver()</a>, <a class="el" href="HSolverBase_8hpp_source.html#l00168">SolverHypreFGMRES::create_solver()</a>, <a class="el" href="ISolverBase_8hpp_source.html#l00053">SolverBICGSTAB::create_solver()</a>, <a class="el" href="ISolverBase_8hpp_source.html#l00092">SolverMINRES::create_solver()</a>, <a class="el" href="ISolverBase_8hpp_source.html#l00130">SolverCG::create_solver()</a>, <a class="el" href="ISolverBase_8hpp_source.html#l00169">SolverGMRES::create_solver()</a>, <a class="el" href="IPrecondBase_8hpp_source.html#l00058">PrecondDSmoother::create_solver()</a>, <a class="el" href="SolversOptions_8hpp.html#a4ac4a4d7d8d59ed200cfdd9222d1c17aac1bfd84e7215afa3204b8e1cdb21a2bd">GMRES</a>, <a class="el" href="SolversOptions_8hpp.html#ac6c5f8024503cbd3fb378e7a7ad3be8da5819f2676144d54a3efd8c857ab6631c">HYPRE_BOOMER_AMG</a>, <a class="el" href="SolversOptions_8hpp.html#ac6c5f8024503cbd3fb378e7a7ad3be8da559d839b567fcaf993d18f6b4d4a7c1b">HYPRE_DIAG_SCALE</a>, <a class="el" href="SolversOptions_8hpp.html#a4aa268ed6c4ccc82594b8746025d5bcbabdcff1d63e7d28010fa87d9f75f8e38d">HYPRE_FGMRES</a>, <a class="el" href="SolversOptions_8hpp.html#a4aa268ed6c4ccc82594b8746025d5bcbaa041e676411a3114cc8c0e6cd5d11225">HYPRE_GMRES</a>, <a class="el" href="SolversOptions_8hpp.html#ac6c5f8024503cbd3fb378e7a7ad3be8da3359b0a14a1f4d2180497c8f13bb63c0">HYPRE_ILU</a>, <a class="el" href="SolversOptions_8hpp.html#a4aa268ed6c4ccc82594b8746025d5bcba4870b70d4856ac361d97d7d164e4e83b">HYPRE_PCG</a>, <a class="el" href="SolversOptions_8hpp.html#ac6c5f8024503cbd3fb378e7a7ad3be8da48709532406c67d05257a9eff46b77a8">HYPRE_SMOOTHER</a>, <a class="el" href="SolversOptions_8hpp.html#a4ac4a4d7d8d59ed200cfdd9222d1c17aae2f671961423d2c80ef2826765952d39">MINRES</a>, <a class="el" href="SolversOptions_8hpp.html#ac6c5f8024503cbd3fb378e7a7ad3be8dac2f3f489a00553e7a01d369c103c7251">NO</a>, <a class="el" href="SolversOptions_8hpp.html#a8b341faac6531c4543c9dc6e5e4592cfa37f9b244a11cfd8f401e78df165da036">SMOOTHER</a>, and <a class="el" href="SolversOptions_8hpp.html#ae4bd942aef151e8b326d52771f5bd98ead2a602ed8582b78e22141784e4a86165">UMFPACK</a>.</p>
+<p class="reference">References <a class="el" href="SolversOptions_8hpp.html#a4ac4a4d7d8d59ed200cfdd9222d1c17aa3ba9af3d947159b5c87263ded6096b9d">BICGSTAB</a>, <a class="el" href="SolversOptions_8hpp.html#a4ac4a4d7d8d59ed200cfdd9222d1c17aa5202c6586cac8bee468e86d1ff854231">CG</a>, <a class="el" href="DSolverBase_8cpp_source.html#l00050">SolverUMFPACK::create_solver()</a>, <a class="el" href="HPrecondBase_8cpp_source.html#l00045">PrecondHypreILU::create_solver()</a>, <a class="el" href="HPrecondBase_8cpp_source.html#l00080">PrecondHypreSmoother::create_solver()</a>, <a class="el" href="HPrecondBase_8cpp_source.html#l00106">PrecondHypreBoomerAMG::create_solver()</a>, <a class="el" href="HPrecondBase_8cpp_source.html#l00135">PrecondHypreDiagScale::create_solver()</a>, <a class="el" href="HSolverBase_8cpp_source.html#l00051">SolverHyprePCG::create_solver()</a>, <a class="el" href="HSolverBase_8cpp_source.html#l00092">SolverHypreGMRES::create_solver()</a>, <a class="el" href="HSolverBase_8cpp_source.html#l00136">SolverHypreFGMRES::create_solver()</a>, <a class="el" href="IPrecondBase_8cpp_source.html#l00050">PrecondDSmoother::create_solver()</a>, <a class="el" href="ISolverBase_8cpp_source.html#l00045">SolverBICGSTAB::create_solver()</a>, <a class="el" href="ISolverBase_8cpp_source.html#l00071">SolverMINRES::create_solver()</a>, <a class="el" href="ISolverBase_8cpp_source.html#l00097">SolverCG::create_solver()</a>, <a class="el" href="ISolverBase_8cpp_source.html#l00123">SolverGMRES::create_solver()</a>, <a class="el" href="SolversOptions_8hpp.html#a4ac4a4d7d8d59ed200cfdd9222d1c17aac1bfd84e7215afa3204b8e1cdb21a2bd">GMRES</a>, <a class="el" href="SolversOptions_8hpp.html#ac6c5f8024503cbd3fb378e7a7ad3be8da5819f2676144d54a3efd8c857ab6631c">HYPRE_BOOMER_AMG</a>, <a class="el" href="SolversOptions_8hpp.html#ac6c5f8024503cbd3fb378e7a7ad3be8da559d839b567fcaf993d18f6b4d4a7c1b">HYPRE_DIAG_SCALE</a>, <a class="el" href="SolversOptions_8hpp.html#a4aa268ed6c4ccc82594b8746025d5bcbabdcff1d63e7d28010fa87d9f75f8e38d">HYPRE_FGMRES</a>, <a class="el" href="SolversOptions_8hpp.html#a4aa268ed6c4ccc82594b8746025d5bcbaa041e676411a3114cc8c0e6cd5d11225">HYPRE_GMRES</a>, <a class="el" href="SolversOptions_8hpp.html#ac6c5f8024503cbd3fb378e7a7ad3be8da3359b0a14a1f4d2180497c8f13bb63c0">HYPRE_ILU</a>, <a class="el" href="SolversOptions_8hpp.html#a4aa268ed6c4ccc82594b8746025d5bcba4870b70d4856ac361d97d7d164e4e83b">HYPRE_PCG</a>, <a class="el" href="SolversOptions_8hpp.html#ac6c5f8024503cbd3fb378e7a7ad3be8da48709532406c67d05257a9eff46b77a8">HYPRE_SMOOTHER</a>, <a class="el" href="SolversOptions_8hpp.html#a4ac4a4d7d8d59ed200cfdd9222d1c17aae2f671961423d2c80ef2826765952d39">MINRES</a>, <a class="el" href="SolversOptions_8hpp.html#ac6c5f8024503cbd3fb378e7a7ad3be8dac2f3f489a00553e7a01d369c103c7251">NO</a>, <a class="el" href="SolversOptions_8hpp.html#a8b341faac6531c4543c9dc6e5e4592cfa37f9b244a11cfd8f401e78df165da036">SMOOTHER</a>, and <a class="el" href="SolversOptions_8hpp.html#ae4bd942aef151e8b326d52771f5bd98ead2a602ed8582b78e22141784e4a86165">UMFPACK</a>.</p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classSlothSolver_aa9c78d816c02f2d4ab70af64cb3f7791_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classSlothSolver_aa9c78d816c02f2d4ab70af64cb3f7791_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a></li>
+<li><a class="el" href="SlothSolver_8cpp_source.html">SlothSolver.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 15:39:07 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

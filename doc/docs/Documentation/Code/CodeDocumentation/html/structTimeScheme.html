@@ -25,9 +25,9 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v2.0.0</span>
    </div>
-   <div id="projectbrief">PhaseField solver</div>
+   <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
  </tr>
  </tbody>
@@ -79,9 +79,14 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a29f8ffca06683f47a693e679d0d1a0e6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeScheme.html#a29f8ffca06683f47a693e679d0d1a0e6">value</a> { <a class="el" href="structTimeScheme.html#a29f8ffca06683f47a693e679d0d1a0e6a3f66e1899cfb276b9af006be1dd7bca9">EulerImplicit</a>
+<tr class="memitem:a29f8ffca06683f47a693e679d0d1a0e6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTimeScheme.html#a29f8ffca06683f47a693e679d0d1a0e6">value</a> { <br />
+&#160;&#160;<a class="el" href="structTimeScheme.html#a29f8ffca06683f47a693e679d0d1a0e6a3f66e1899cfb276b9af006be1dd7bca9">EulerImplicit</a>
+, <a class="el" href="structTimeScheme.html#a29f8ffca06683f47a693e679d0d1a0e6a64a7b30221cf381c31cfffd534e8d8d2">SDIRK23</a>
+, <a class="el" href="structTimeScheme.html#a29f8ffca06683f47a693e679d0d1a0e6a078a3b61c3c4e770368bf7ae6ffd9ec3">SDIRK33</a>
 , <a class="el" href="structTimeScheme.html#a29f8ffca06683f47a693e679d0d1a0e6af84830189518c7e09b18ba037cfbeab4">EulerExplicit</a>
-, <a class="el" href="structTimeScheme.html#a29f8ffca06683f47a693e679d0d1a0e6a214017fa03be87dba0606f0386bccbab">RungeKutta4</a>
+, <br />
+&#160;&#160;<a class="el" href="structTimeScheme.html#a29f8ffca06683f47a693e679d0d1a0e6a214017fa03be87dba0606f0386bccbab">RungeKutta4</a>
+<br />
  }</td></tr>
 <tr class="separator:a29f8ffca06683f47a693e679d0d1a0e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -92,7 +97,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="TimeOptions_8hpp_source.html#l00039">39</a> of file <a class="el" href="TimeOptions_8hpp_source.html">TimeOptions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TimeOptions_8hpp_source.html#l00054">54</a> of file <a class="el" href="TimeOptions_8hpp_source.html">TimeOptions.hpp</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a29f8ffca06683f47a693e679d0d1a0e6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a29f8ffca06683f47a693e679d0d1a0e6">&#9670;&nbsp;</a></span>value</h2>
@@ -107,11 +112,13 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a29f8ffca06683f47a693e679d0d1a0e6a3f66e1899cfb276b9af006be1dd7bca9"></a>EulerImplicit&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a29f8ffca06683f47a693e679d0d1a0e6a64a7b30221cf381c31cfffd534e8d8d2"></a>SDIRK23&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a29f8ffca06683f47a693e679d0d1a0e6a078a3b61c3c4e770368bf7ae6ffd9ec3"></a>SDIRK33&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a29f8ffca06683f47a693e679d0d1a0e6af84830189518c7e09b18ba037cfbeab4"></a>EulerExplicit&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a29f8ffca06683f47a693e679d0d1a0e6a214017fa03be87dba0606f0386bccbab"></a>RungeKutta4&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="TimeOptions_8hpp_source.html#l00040">40</a> of file <a class="el" href="TimeOptions_8hpp_source.html">TimeOptions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TimeOptions_8hpp_source.html#l00055">55</a> of file <a class="el" href="TimeOptions_8hpp_source.html">TimeOptions.hpp</a>.</p>
 
 </div>
 </div>
@@ -140,19 +147,20 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TimeOptions_8hpp_source.html#l00043">43</a> of file <a class="el" href="TimeOptions_8hpp_source.html">TimeOptions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TimeOptions_8cpp_source.html#l00036">36</a> of file <a class="el" href="TimeOptions_8cpp_source.html">TimeOptions.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="TimeOptions_8hpp_source.html#l00040">EulerExplicit</a>, <a class="el" href="TimeOptions_8hpp_source.html#l00040">EulerImplicit</a>, and <a class="el" href="TimeOptions_8hpp_source.html#l00040">RungeKutta4</a>.</p>
+<p class="reference">References <a class="el" href="TimeOptions_8hpp_source.html#l00055">EulerExplicit</a>, <a class="el" href="TimeOptions_8hpp_source.html#l00055">EulerImplicit</a>, <a class="el" href="TimeOptions_8hpp_source.html#l00055">RungeKutta4</a>, <a class="el" href="TimeOptions_8hpp_source.html#l00055">SDIRK23</a>, and <a class="el" href="TimeOptions_8hpp_source.html#l00055">SDIRK33</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<hr/>The documentation for this struct was generated from the following files:<ul>
 <li><a class="el" href="TimeOptions_8hpp_source.html">TimeOptions.hpp</a></li>
+<li><a class="el" href="TimeOptions_8cpp_source.html">TimeOptions.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 15:39:07 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

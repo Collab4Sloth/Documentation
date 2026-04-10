@@ -25,9 +25,9 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v2.0.0</span>
    </div>
-   <div id="projectbrief">PhaseField solver</div>
+   <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
  </tr>
  </tbody>
@@ -84,50 +84,47 @@ $(function() {
 <li>set_additional_information()
 : <a class="el" href="classVariable.html#a57ea93a2f246b4480bd43c0847d70a49">Variable&lt; T, DIM &gt;</a>
 </li>
-<li>set_default_properties()
-: <a class="el" href="classDiffusionOperator.html#a058c0547dea220d0ed0709eb19fb8e8d">DiffusionOperator&lt; T, DIM, NLFI, DENS, LHS_NLFI &gt;</a>
-, <a class="el" href="classDiffusionOperatorBase.html#ac18f14cdfca295552d24e59e66712692">DiffusionOperatorBase&lt; T, DIM, NLFI, LHS_NLFI, OPEBASE &gt;</a>
-, <a class="el" href="classHeatOperator.html#aea115c8266549489fde4b3e860d1d065">HeatOperator&lt; T, DIM, NLFI, LHS_NLFI, RHO, CP &gt;</a>
-, <a class="el" href="classHeatOperatorBase.html#ac3724933d36a791adca9eb6616c76df0">HeatOperatorBase&lt; T, DIM, NLFI, LHS_NLFI, OPEBASE &gt;</a>
-, <a class="el" href="classOperatorBase.html#a40d94f0057a98d045bcf11c5653a9684">OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
-, <a class="el" href="classPhaseFieldOperator.html#a2717b1376cac2c84f9448a8652722043">PhaseFieldOperator&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
-, <a class="el" href="classPhaseFieldOperatorBase.html#a1101c1605bfdf084ff850604c79216f4">PhaseFieldOperatorBase&lt; T, DIM, NLFI, LHS_NLFI, OPEBASE &gt;</a>
-, <a class="el" href="classSteadyDiffusionOperator.html#aeb3ce2f99565bb1a3a0e138f17c125e7">SteadyDiffusionOperator&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
-, <a class="el" href="classSteadyHeatOperator.html#a1e1cd1ebb0b1bc683bdfed082ecfc39b">SteadyHeatOperator&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
-, <a class="el" href="classSteadyOperatorBase.html#ad37174f8072304db5cda9a3628afd2e9">SteadyOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
-, <a class="el" href="classSteadyPhaseFieldOperator.html#a8d266f0d23c0a66311d01a98bdbe5711">SteadyPhaseFieldOperator&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
-, <a class="el" href="classTransientOperatorBase.html#afd9ff79834506425db3119e1669d5bb0">TransientOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
+<li>set_bdr_index_coef()
+: <a class="el" href="classSlothBaseCoefficient.html#aea8e479ed9d56de50ba537c1c7a166f6">SlothBaseCoefficient</a>
+</li>
+<li>set_bdr_nlfi_ptr()
+: <a class="el" href="classOperatorBase.html#a018f2e553851f70311aeec8bbd4abf68">OperatorBase&lt; T, DIM &gt;</a>
+</li>
+<li>set_coefficients()
+: <a class="el" href="classOperatorBase.html#aed2450c581a8da373a9354134bf11770">OperatorBase&lt; T, DIM &gt;</a>
 </li>
 <li>set_finite_element_space()
 : <a class="el" href="classSpatialDiscretization.html#a8400a265a094312b4d57708d44f9d627">SpatialDiscretization&lt; T, DIM &gt;</a>
-</li>
-<li>set_lhs_nlfi_ptr()
-: <a class="el" href="classTransientOperatorBase.html#aed49c6f6d3f445c607f1f3f6a2d1000e">TransientOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
 </li>
 <li>set_mesh_attributes_from_file()
 : <a class="el" href="classSpatialDiscretization.html#a667d7d008e0e692dac951d5f52132ee3">SpatialDiscretization&lt; T, DIM &gt;</a>
 </li>
 <li>set_nlfi_ptr()
-: <a class="el" href="classDiffusionOperatorBase.html#af199fd041ec8a9d05400a41753a2a58c">DiffusionOperatorBase&lt; T, DIM, NLFI, LHS_NLFI, OPEBASE &gt;</a>
-, <a class="el" href="classHeatOperatorBase.html#ab9c9dea17c66962ae707a0e5c0ce93c9">HeatOperatorBase&lt; T, DIM, NLFI, LHS_NLFI, OPEBASE &gt;</a>
-, <a class="el" href="classOperatorBase.html#a5e8dcbb2025da9b0fb0dfe636df812d8">OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
-, <a class="el" href="classPhaseFieldOperatorBase.html#ada80cb83b38415bb8868340438526d37">PhaseFieldOperatorBase&lt; T, DIM, NLFI, LHS_NLFI, OPEBASE &gt;</a>
-, <a class="el" href="classSteadyOperatorBase.html#a8fa38cbdcbff70d1de0c7855d85b2b26">SteadyOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
-, <a class="el" href="classTransientOperatorBase.html#afbc254c47e4a9203feaa39d3955da592">TransientOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
+: <a class="el" href="classOperatorBase.html#a250ff464dfc6c6ffb4b456d6b4882f2e">OperatorBase&lt; T, DIM &gt;</a>
+</li>
+<li>set_time()
+: <a class="el" href="classCoefficients.html#a2677c97600128b09b9c5a0981f5f069c">Coefficients</a>
+, <a class="el" href="classFunctionCoefficient.html#ab6af464880b5c26e61b32b80ddbd8071">FunctionCoefficient</a>
+, <a class="el" href="classProductCoefficient.html#af9fe6721013b032b48c706015e327a0d">ProductCoefficient</a>
+, <a class="el" href="classSlothBaseCoefficient.html#a7f7eb57a7a39cd512ac7c3a73a2860c3">SlothBaseCoefficient</a>
+, <a class="el" href="classSumCoefficient.html#a640cb1be0df809afa9a84ebba3afba40">SumCoefficient</a>
+</li>
+<li>set_time_coefficients()
+: <a class="el" href="classOperatorBase.html#a79a4e8e8866afd0b7e4ef8bbc1648523">OperatorBase&lt; T, DIM &gt;</a>
+, <a class="el" href="classProblem.html#a7fe5d03298ed6e0ff9f0001ac3149c26">Problem&lt; OPE, VAR, PST &gt;</a>
+, <a class="el" href="classProblemBase.html#a9dc5fa3e9f65564ca38a10005e11b60c">ProblemBase&lt; VAR, PST &gt;</a>
 </li>
 <li>SetBoundaryConditions()
 : <a class="el" href="classBoundaryConditions.html#a23f5cf33a22290a61bb2dcba457f086d">BoundaryConditions&lt; T, DIM &gt;</a>
 </li>
-<li>SetConstantParameters()
-: <a class="el" href="classOperatorBase.html#a827c0763544a099d3531e040c8e7753d">OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
-, <a class="el" href="classSteadyOperatorBase.html#a115c3fd8d0a81a70a9deaa861e7117b8">SteadyOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
-, <a class="el" href="classTransientOperatorBase.html#a9079951b88cde84b0d0cd362e0bf5318">TransientOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
-</li>
 <li>SetExplicitTransientParameters()
-: <a class="el" href="classTransientOperatorBase.html#afa2351c22b114dfaa8d6389f5d6b1c97">TransientOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
+: <a class="el" href="classTransientOperator.html#a4211a7bd9a7b7881c752ac13a8094528">TransientOperator&lt; T, DIM &gt;</a>
+</li>
+<li>setId()
+: <a class="el" href="structGlossaryQuantity.html#afd6eb940affe7077952c434badd28586">GlossaryQuantity</a>
 </li>
 <li>SetNewtonAlgorithm()
-: <a class="el" href="classOperatorBase.html#a5e268c78fc9e025da38af0af9c4689bb">OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
+: <a class="el" href="classOperatorBase.html#a40af76d9b521a9a7e82779e2d24db958">OperatorBase&lt; T, DIM &gt;</a>
 </li>
 <li>SetParameters()
 : <a class="el" href="classPhaseFieldReducedOperator.html#ab4d6728cad7df38c6fb791706002563f">PhaseFieldReducedOperator</a>
@@ -139,24 +136,33 @@ $(function() {
 : <a class="el" href="structUtilsSolvers.html#a4a427231156cc008b1ece4ef28992f5a">UtilsSolvers</a>
 </li>
 <li>SetTransientParameters()
-: <a class="el" href="classOperatorBase.html#adc95f1b581c4122171c7fb02ddc9b9ed">OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
-, <a class="el" href="classSteadyOperatorBase.html#afef3a1b775a4d5f068fab776f99fdc26">SteadyOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
-, <a class="el" href="classTransientOperatorBase.html#a3a1de6deb844578b95b1791a9300658b">TransientOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
+: <a class="el" href="classOperatorBase.html#a33be318888c048a4251e4849b3125459">OperatorBase&lt; T, DIM &gt;</a>
+, <a class="el" href="classSteadyOperator.html#a7791ee4f58b3b831bc16fd9ed16d926f">SteadyOperator&lt; T, DIM &gt;</a>
+, <a class="el" href="classTransientOperator.html#a690bda9a78ad456068991e3a93aa2c93">TransientOperator&lt; T, DIM &gt;</a>
+</li>
+<li>setUnit()
+: <a class="el" href="structGlossaryQuantity.html#aea6b7b07b09bb5b9f174f4b4ea0d9f54">GlossaryQuantity</a>
+</li>
+<li>size()
+: <a class="el" href="classCoefficients.html#a16389045e5e4f136aa029f3bb9a2454d">Coefficients</a>
+</li>
+<li>SlothBaseCoefficient()
+: <a class="el" href="classSlothBaseCoefficient.html#a625d79f51783da7dfa053f29be01f736">SlothBaseCoefficient</a>
 </li>
 <li>SlothGridFunction()
 : <a class="el" href="classSlothGridFunction.html#a2e24a94b78364c182935588e83407b94">SlothGridFunction</a>
 </li>
 <li>SlothNLFormIntegrator()
-: <a class="el" href="classSlothNLFormIntegrator.html#a4cf9c5d3b2e9ba9a56831b1f48f1cef4">SlothNLFormIntegrator&lt; VARS &gt;</a>
+: <a class="el" href="classSlothNLFormIntegrator.html#a6d9c59b3a5536390605bef1a658213d2">SlothNLFormIntegrator&lt; VARS &gt;</a>
 </li>
 <li>SlothSolver()
 : <a class="el" href="classSlothSolver.html#ac8ddcda189008d4401645dc984c25dd5">SlothSolver</a>
 </li>
 <li>solve()
-: <a class="el" href="classOperatorBase.html#a5bb9151efc6da7566d63a0290cb7ad74">OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
-, <a class="el" href="classSteadyOperatorBase.html#a8a432c92d1bbb31d2de7c7b8b1b3c98d">SteadyOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
+: <a class="el" href="classOperatorBase.html#a24dfec9f30ad357293d6a7e3c1d65184">OperatorBase&lt; T, DIM &gt;</a>
+, <a class="el" href="classSteadyOperator.html#a4a869371d2a32235bb9f4b4f2306f252">SteadyOperator&lt; T, DIM &gt;</a>
 , <a class="el" href="classTimeDiscretization.html#a05c03871582050f04f3ebc411032ea31">TimeDiscretization&lt; Args &gt;</a>
-, <a class="el" href="classTransientOperatorBase.html#abaae7e26d28c4794aa2e0a666c041bb7">TransientOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
+, <a class="el" href="classTransientOperator.html#af5690bc12c9873e22becbfd7ee281bce">TransientOperator&lt; T, DIM &gt;</a>
 </li>
 <li>SolverBICGSTAB()
 : <a class="el" href="classSolverBICGSTAB.html#a092f5c24463d40d98ca120c33cfdda15">SolverBICGSTAB</a>
@@ -183,31 +189,25 @@ $(function() {
 : <a class="el" href="classSolverUMFPACK.html#a13f258a0ceccfa2f94f295828b2d0bf2">SolverUMFPACK</a>
 </li>
 <li>sort_nodes()
-: <a class="el" href="classCalphadUtils.html#aa3782327cf3fd65c3764c8f63ffac7eb">CalphadUtils&lt; T &gt;</a>
+: <a class="el" href="classCalphadUtils.html#a591aba1030991939bd838f86ed71d8da">CalphadUtils&lt; T &gt;</a>
 </li>
 <li>SpatialDiscretization()
 : <a class="el" href="classSpatialDiscretization.html#a3b3c5888bf57dce17ec373743dd6b026">SpatialDiscretization&lt; T, DIM &gt;</a>
 </li>
-<li>SteadyDiffusionOperator()
-: <a class="el" href="classSteadyDiffusionOperator.html#a2938aa98d9b4878d0e629587b57bdf65">SteadyDiffusionOperator&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
-</li>
-<li>SteadyHeatOperator()
-: <a class="el" href="classSteadyHeatOperator.html#a13b5108c68dde4264e10922a686bd473">SteadyHeatOperator&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
-</li>
-<li>SteadyOperatorBase()
-: <a class="el" href="classSteadyOperatorBase.html#a315f2388f7bac56a0772a46369967aef">SteadyOperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
-</li>
-<li>SteadyPhaseFieldOperator()
-: <a class="el" href="classSteadyPhaseFieldOperator.html#aa7e31d315906158cab41b94bb9edd5f9">SteadyPhaseFieldOperator&lt; T, DIM, NLFI, LHS_NLFI &gt;</a>
+<li>SteadyOperator()
+: <a class="el" href="classSteadyOperator.html#a867786ecda7b89c073510cf861baa437">SteadyOperator&lt; T, DIM &gt;</a>
 </li>
 <li>SteadyPhaseFieldReducedOperator()
 : <a class="el" href="classSteadyPhaseFieldReducedOperator.html#aa22586510198bec3b136e9e9f4150773">SteadyPhaseFieldReducedOperator</a>
+</li>
+<li>SumCoefficient()
+: <a class="el" href="classSumCoefficient.html#abdbfbf3c88bcc74b7d636bb12ca4209d">SumCoefficient</a>
 </li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 15:39:07 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

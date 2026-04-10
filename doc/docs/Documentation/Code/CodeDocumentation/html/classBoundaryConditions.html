@@ -25,9 +25,9 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v2.0.0</span>
    </div>
-   <div id="projectbrief">PhaseField solver</div>
+   <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
  </tr>
  </tbody>
@@ -83,16 +83,14 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aac17dc96feda7fc3c08c0f0308493693"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
 <tr class="memitem:aac17dc96feda7fc3c08c0f0308493693"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classBoundaryConditions.html#aac17dc96feda7fc3c08c0f0308493693">BoundaryConditions</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const Args &amp;... boundaries)</td></tr>
-<tr class="memdesc:aac17dc96feda7fc3c08c0f0308493693"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classBoundary.html" title="Class for defining a boundary with a name, an index, a type and, if needed, a value.">Boundary</a> Conditions:: <a class="el" href="classBoundary.html" title="Class for defining a boundary with a name, an index, a type and, if needed, a value.">Boundary</a> Conditions object.  <a href="classBoundaryConditions.html#aac17dc96feda7fc3c08c0f0308493693">More...</a><br /></td></tr>
 <tr class="separator:aac17dc96feda7fc3c08c0f0308493693"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3dcecb34a6ac7a00e6f110677145f7c8"><td class="memItemLeft" align="right" valign="top">mfem::Array&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBoundaryConditions.html#a3dcecb34a6ac7a00e6f110677145f7c8">GetEssentialDofs</a> ()</td></tr>
-<tr class="memdesc:a3dcecb34a6ac7a00e6f110677145f7c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the list of essential dofs  <a href="classBoundaryConditions.html#a3dcecb34a6ac7a00e6f110677145f7c8">More...</a><br /></td></tr>
-<tr class="separator:a3dcecb34a6ac7a00e6f110677145f7c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a392691b59c192225a5a1a92e3279f5f9"><td class="memItemLeft" align="right" valign="top">mfem::Array&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBoundaryConditions.html#a392691b59c192225a5a1a92e3279f5f9">get_marker_array</a> (const std::string &amp;boundary_type)</td></tr>
+<tr class="separator:a392691b59c192225a5a1a92e3279f5f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dfb9365cb6ce2c8ceb6802d174b3f82"><td class="memItemLeft" align="right" valign="top">mfem::Array&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBoundaryConditions.html#a2dfb9365cb6ce2c8ceb6802d174b3f82">GetEssentialDofs</a> ()</td></tr>
+<tr class="separator:a2dfb9365cb6ce2c8ceb6802d174b3f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23f5cf33a22290a61bb2dcba457f086d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBoundaryConditions.html#a23f5cf33a22290a61bb2dcba457f086d">SetBoundaryConditions</a> (mfem::Vector &amp;u)</td></tr>
-<tr class="memdesc:a23f5cf33a22290a61bb2dcba457f086d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set boundary conditions.  <a href="classBoundaryConditions.html#a23f5cf33a22290a61bb2dcba457f086d">More...</a><br /></td></tr>
 <tr class="separator:a23f5cf33a22290a61bb2dcba457f086d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50d3971dff965883752e17c05b468756"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBoundaryConditions.html#a50d3971dff965883752e17c05b468756">~BoundaryConditions</a> ()</td></tr>
-<tr class="memdesc:a50d3971dff965883752e17c05b468756"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classBoundary.html" title="Class for defining a boundary with a name, an index, a type and, if needed, a value.">Boundary</a> Conditions:: <a class="el" href="classBoundary.html" title="Class for defining a boundary with a name, an index, a type and, if needed, a value.">Boundary</a> Conditions object.  <a href="classBoundaryConditions.html#a50d3971dff965883752e17c05b468756">More...</a><br /></td></tr>
 <tr class="separator:a50d3971dff965883752e17c05b468756"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -101,7 +99,7 @@ class BoundaryConditions&lt; T, DIM &gt;</h3>
 
 <p>Class used to manage boundary conditions. </p>
 
-<p class="definition">Definition at line <a class="el" href="BoundaryConditions_8hpp_source.html#l00045">45</a> of file <a class="el" href="BoundaryConditions_8hpp_source.html">BoundaryConditions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BoundaryConditions_8hpp_source.html#l00046">46</a> of file <a class="el" href="BoundaryConditions_8hpp_source.html">BoundaryConditions.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aac17dc96feda7fc3c08c0f0308493693"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aac17dc96feda7fc3c08c0f0308493693">&#9670;&nbsp;</a></span>BoundaryConditions()</h2>
@@ -133,33 +131,6 @@ template&lt;class... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classBoundary.html" title="Class for defining a boundary with a name, an index, a type and, if needed, a value.">Boundary</a> Conditions:: <a class="el" href="classBoundary.html" title="Class for defining a boundary with a name, an index, a type and, if needed, a value.">Boundary</a> Conditions object. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Args</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fespace</td><td></td></tr>
-    <tr><td class="paramname">mesh_max_bdr_attributes</td><td></td></tr>
-    <tr><td class="paramname">boundaries</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="BoundaryConditions_8hpp_source.html#l00072">72</a> of file <a class="el" href="BoundaryConditions_8hpp_source.html">BoundaryConditions.hpp</a>.</p>
-
-<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00912">SpatialDiscretization&lt; T, DIM &gt;::get_finite_element_space()</a>, <a class="el" href="Spatial_8hpp_source.html#l00934">SpatialDiscretization&lt; T, DIM &gt;::get_max_bdr_attributes()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00969">SpatialDiscretization&lt; T, DIM &gt;::is_periodic()</a>.</p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classBoundaryConditions_aac17dc96feda7fc3c08c0f0308493693_cgraph.svg" width="432" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
 <a id="a50d3971dff965883752e17c05b468756"></a>
@@ -171,20 +142,19 @@ template&lt;class... Args&gt; </div>
 template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt;::~<a class="el" href="classBoundaryConditions.html">BoundaryConditions</a></td>
+          <td class="memname"><a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt;::~<a class="el" href="classBoundaryConditions.html">BoundaryConditions</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Destroy the <a class="el" href="classBoundary.html" title="Class for defining a boundary with a name, an index, a type and, if needed, a value.">Boundary</a> Conditions:: <a class="el" href="classBoundary.html" title="Class for defining a boundary with a name, an index, a type and, if needed, a value.">Boundary</a> Conditions object. </p>
-
-<p class="definition">Definition at line <a class="el" href="BoundaryConditions_8hpp_source.html#l00182">182</a> of file <a class="el" href="BoundaryConditions_8hpp_source.html">BoundaryConditions.hpp</a>.</p>
-
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a3dcecb34a6ac7a00e6f110677145f7c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3dcecb34a6ac7a00e6f110677145f7c8">&#9670;&nbsp;</a></span>GetEssentialDofs()</h2>
+<a id="a392691b59c192225a5a1a92e3279f5f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a392691b59c192225a5a1a92e3279f5f9">&#9670;&nbsp;</a></span>get_marker_array()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -192,15 +162,33 @@ template&lt;class T , int DIM&gt; </div>
 template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">mfem::Array&lt; int &gt; <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt;::GetEssentialDofs</td>
+          <td class="memname">mfem::Array&lt;int&gt; <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt;::get_marker_array </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>boundary_type</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>return the list of essential dofs </p>
-<dl class="section return"><dt>Returns</dt><dd>mfem::Array&lt;int&gt; array of essential dofs </dd></dl>
+</div>
+</div>
+<a id="a2dfb9365cb6ce2c8ceb6802d174b3f82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dfb9365cb6ce2c8ceb6802d174b3f82">&#9670;&nbsp;</a></span>GetEssentialDofs()</h2>
 
-<p class="definition">Definition at line <a class="el" href="BoundaryConditions_8hpp_source.html#l00154">154</a> of file <a class="el" href="BoundaryConditions_8hpp_source.html">BoundaryConditions.hpp</a>.</p>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">mfem::Array&lt;int&gt; <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt;::GetEssentialDofs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -222,16 +210,6 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Set boundary conditions. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">u</td><td>unknown vector </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="BoundaryConditions_8hpp_source.html#l00164">164</a> of file <a class="el" href="BoundaryConditions_8hpp_source.html">BoundaryConditions.hpp</a>.</p>
-
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
@@ -240,7 +218,7 @@ template&lt;class T , int DIM&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 15:39:06 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Apr 10 2026 10:16:45 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

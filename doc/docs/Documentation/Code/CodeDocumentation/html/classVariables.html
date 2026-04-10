@@ -25,9 +25,9 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v2.0.0</span>
    </div>
-   <div id="projectbrief">PhaseField solver</div>
+   <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
  </tr>
  </tbody>
@@ -82,35 +82,25 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a27e62c655731650bb57e70fc656a5040"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariables.html#a27e62c655731650bb57e70fc656a5040">add</a> (<a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt; var)</td></tr>
-<tr class="memdesc:a27e62c655731650bb57e70fc656a5040"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new variable.  <a href="classVariables.html#a27e62c655731650bb57e70fc656a5040">More...</a><br /></td></tr>
 <tr class="separator:a27e62c655731650bb57e70fc656a5040"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e7fd6bb8f3e46f06abf56b178bddcec"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, mfem::ParGridFunction &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariables.html#a0e7fd6bb8f3e46f06abf56b178bddcec">get_map_gridfunction</a> () const</td></tr>
-<tr class="memdesc:a0e7fd6bb8f3e46f06abf56b178bddcec"><td class="mdescLeft">&#160;</td><td class="mdescRight">return a map of GridFunction for each variable name  <a href="classVariables.html#a0e7fd6bb8f3e46f06abf56b178bddcec">More...</a><br /></td></tr>
-<tr class="separator:a0e7fd6bb8f3e46f06abf56b178bddcec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a264223262f52f484b018cbe3d1f40fa8"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariables.html#a264223262f52f484b018cbe3d1f40fa8">get_map_variable</a> () const</td></tr>
-<tr class="memdesc:a264223262f52f484b018cbe3d1f40fa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">return a map of variables for each variable name  <a href="classVariables.html#a264223262f52f484b018cbe3d1f40fa8">More...</a><br /></td></tr>
-<tr class="separator:a264223262f52f484b018cbe3d1f40fa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ebd51b179445ea0d6b6276b9e90cfa6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariables.html#a4ebd51b179445ea0d6b6276b9e90cfa6">get_variable</a> (const std::string &amp;name)</td></tr>
-<tr class="memdesc:a4ebd51b179445ea0d6b6276b9e90cfa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">return the variable called vname  <a href="classVariables.html#a4ebd51b179445ea0d6b6276b9e90cfa6">More...</a><br /></td></tr>
-<tr class="separator:a4ebd51b179445ea0d6b6276b9e90cfa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38d3f9df896ed022618d6aadb6257ad6"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, mfem::ParGridFunction &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariables.html#a38d3f9df896ed022618d6aadb6257ad6">get_map_gridfunction</a> () const</td></tr>
+<tr class="separator:a38d3f9df896ed022618d6aadb6257ad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2860c8c5be326adea04c6e241a67d285"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariables.html#a2860c8c5be326adea04c6e241a67d285">get_map_variable</a> () const</td></tr>
+<tr class="separator:a2860c8c5be326adea04c6e241a67d285"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9903edd158a866c416f95f4626dcbac6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariables.html#a9903edd158a866c416f95f4626dcbac6">get_variable</a> (const std::string &amp;name)</td></tr>
+<tr class="separator:a9903edd158a866c416f95f4626dcbac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadf815b64b6a43387f7f393d06b45887"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariables.html#aadf815b64b6a43387f7f393d06b45887">get_variables_number</a> () const</td></tr>
-<tr class="memdesc:aadf815b64b6a43387f7f393d06b45887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of variables.  <a href="classVariables.html#aadf815b64b6a43387f7f393d06b45887">More...</a><br /></td></tr>
 <tr class="separator:aadf815b64b6a43387f7f393d06b45887"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fb59f4145974f7d284a5b6f906285a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariables.html#a0fb59f4145974f7d284a5b6f906285a9">getIVariable</a> (const int &amp;i)</td></tr>
-<tr class="memdesc:a0fb59f4145974f7d284a5b6f906285a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">get i-th variable  <a href="classVariables.html#a0fb59f4145974f7d284a5b6f906285a9">More...</a><br /></td></tr>
-<tr class="separator:a0fb59f4145974f7d284a5b6f906285a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62a9cd30a9cfce3896ede05747e14871"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariables.html#a62a9cd30a9cfce3896ede05747e14871">getVariables</a> () const</td></tr>
-<tr class="memdesc:a62a9cd30a9cfce3896ede05747e14871"><td class="mdescLeft">&#160;</td><td class="mdescRight">get vector of variables  <a href="classVariables.html#a62a9cd30a9cfce3896ede05747e14871">More...</a><br /></td></tr>
-<tr class="separator:a62a9cd30a9cfce3896ede05747e14871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fd18bca07e1ea4f3d9522a3ca0acded"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariables.html#a5fd18bca07e1ea4f3d9522a3ca0acded">getVariables</a> () const</td></tr>
+<tr class="separator:a5fd18bca07e1ea4f3d9522a3ca0acded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a87a77aee433e769a09c1b751867bfc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariables.html#a7a87a77aee433e769a09c1b751867bfc">operator[]</a> (size_t i)</td></tr>
+<tr class="separator:a7a87a77aee433e769a09c1b751867bfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe53197ea1895f91ab7b68f8534ee3e0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariables.html#afe53197ea1895f91ab7b68f8534ee3e0">Variables</a> ()</td></tr>
-<tr class="memdesc:afe53197ea1895f91ab7b68f8534ee3e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classVariables.html" title="Class used to manage a list of Variable.">Variables</a>:: <a class="el" href="classVariables.html" title="Class used to manage a list of Variable.">Variables</a> object.  <a href="classVariables.html#afe53197ea1895f91ab7b68f8534ee3e0">More...</a><br /></td></tr>
 <tr class="separator:afe53197ea1895f91ab7b68f8534ee3e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a125cbddbe8bdfbb40e7b16ae6498b24c"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
 <tr class="memitem:a125cbddbe8bdfbb40e7b16ae6498b24c"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classVariables.html#a125cbddbe8bdfbb40e7b16ae6498b24c">Variables</a> (Args... args)</td></tr>
-<tr class="memdesc:a125cbddbe8bdfbb40e7b16ae6498b24c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classVariables.html" title="Class used to manage a list of Variable.">Variables</a>:: <a class="el" href="classVariables.html" title="Class used to manage a list of Variable.">Variables</a> object.  <a href="classVariables.html#a125cbddbe8bdfbb40e7b16ae6498b24c">More...</a><br /></td></tr>
 <tr class="separator:a125cbddbe8bdfbb40e7b16ae6498b24c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae98784407228932fdbd67ec09a42f294"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariables.html#ae98784407228932fdbd67ec09a42f294">~Variables</a> ()</td></tr>
-<tr class="memdesc:ae98784407228932fdbd67ec09a42f294"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classVariables.html" title="Class used to manage a list of Variable.">Variables</a>:: <a class="el" href="classVariables.html" title="Class used to manage a list of Variable.">Variables</a> object.  <a href="classVariables.html#ae98784407228932fdbd67ec09a42f294">More...</a><br /></td></tr>
 <tr class="separator:ae98784407228932fdbd67ec09a42f294"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -149,22 +139,6 @@ template&lt;class... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classVariables.html" title="Class used to manage a list of Variable.">Variables</a>:: <a class="el" href="classVariables.html" title="Class used to manage a list of Variable.">Variables</a> object. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Args</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">args</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Variables_8hpp_source.html#l00078">78</a> of file <a class="el" href="Variables_8hpp_source.html">Variables.hpp</a>.</p>
-
 </div>
 </div>
 <a id="afe53197ea1895f91ab7b68f8534ee3e0"></a>
@@ -176,14 +150,13 @@ template&lt;class... Args&gt; </div>
 template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt;::<a class="el" href="classVariables.html">Variables</a></td>
+          <td class="memname"><a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt;::<a class="el" href="classVariables.html">Variables</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Construct a new <a class="el" href="classVariables.html" title="Class used to manage a list of Variable.">Variables</a>:: <a class="el" href="classVariables.html" title="Class used to manage a list of Variable.">Variables</a> object. </p>
-
-<p class="definition">Definition at line <a class="el" href="Variables_8hpp_source.html#l00068">68</a> of file <a class="el" href="Variables_8hpp_source.html">Variables.hpp</a>.</p>
 
 </div>
 </div>
@@ -196,14 +169,13 @@ template&lt;class T , int DIM&gt; </div>
 template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt;::~<a class="el" href="classVariables.html">Variables</a></td>
+          <td class="memname"><a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt;::~<a class="el" href="classVariables.html">Variables</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Destroy the <a class="el" href="classVariables.html" title="Class used to manage a list of Variable.">Variables</a>:: <a class="el" href="classVariables.html" title="Class used to manage a list of Variable.">Variables</a> object. </p>
-
-<p class="definition">Definition at line <a class="el" href="Variables_8hpp_source.html#l00180">180</a> of file <a class="el" href="Variables_8hpp_source.html">Variables.hpp</a>.</p>
 
 </div>
 </div>
@@ -226,20 +198,10 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Add a new variable. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">var</td><td>variable to add </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="Variables_8hpp_source.html#l00088">88</a> of file <a class="el" href="Variables_8hpp_source.html">Variables.hpp</a>.</p>
-
 </div>
 </div>
-<a id="a0e7fd6bb8f3e46f06abf56b178bddcec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e7fd6bb8f3e46f06abf56b178bddcec">&#9670;&nbsp;</a></span>get_map_gridfunction()</h2>
+<a id="a38d3f9df896ed022618d6aadb6257ad6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38d3f9df896ed022618d6aadb6257ad6">&#9670;&nbsp;</a></span>get_map_gridfunction()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -247,29 +209,18 @@ template&lt;class T , int DIM&gt; </div>
 template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt; std::string, mfem::ParGridFunction &gt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt;::get_map_gridfunction</td>
+          <td class="memname">std::map&lt;std::string, mfem::ParGridFunction&gt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt;::get_map_gridfunction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>return a map of GridFunction for each variable name </p>
-<dl class="section return"><dt>Returns</dt><dd>std::map&lt;std::string, mfem::ParGridFunction&gt; </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="Variables_8hpp_source.html#l00131">131</a> of file <a class="el" href="Variables_8hpp_source.html">Variables.hpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="postprocessing_8hpp_source.html#l00190">PostProcessing&lt; T, DC, DIM &gt;::save_variables()</a>.</p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classVariables_a0e7fd6bb8f3e46f06abf56b178bddcec_icgraph.svg" width="372" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
-<a id="a264223262f52f484b018cbe3d1f40fa8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a264223262f52f484b018cbe3d1f40fa8">&#9670;&nbsp;</a></span>get_map_variable()</h2>
+<a id="a2860c8c5be326adea04c6e241a67d285"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2860c8c5be326adea04c6e241a67d285">&#9670;&nbsp;</a></span>get_map_variable()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -277,20 +228,18 @@ template&lt;class T , int DIM&gt; </div>
 template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt; std::string, <a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt; &gt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt;::get_map_variable</td>
+          <td class="memname">std::map&lt;std::string, <a class="el" href="classVariable.html">Variable</a>&lt;T, DIM&gt; &gt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt;::get_map_variable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>return a map of variables for each variable name </p>
-<dl class="section return"><dt>Returns</dt><dd>std::map&lt;std::string, Variable&gt; </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="Variables_8hpp_source.html#l00146">146</a> of file <a class="el" href="Variables_8hpp_source.html">Variables.hpp</a>.</p>
-
 </div>
 </div>
-<a id="a4ebd51b179445ea0d6b6276b9e90cfa6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ebd51b179445ea0d6b6276b9e90cfa6">&#9670;&nbsp;</a></span>get_variable()</h2>
+<a id="a9903edd158a866c416f95f4626dcbac6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9903edd158a866c416f95f4626dcbac6">&#9670;&nbsp;</a></span>get_variable()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -298,25 +247,14 @@ template&lt;class T , int DIM&gt; </div>
 template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt; &amp; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt;::get_variable </td>
+          <td class="memname"><a class="el" href="classVariable.html">Variable</a>&lt;T, DIM&gt;&amp; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt;::get_variable </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>vname</em></td><td>)</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>return the variable called vname </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">vname</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classVariable.html">Variable</a>&amp; </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="Variables_8hpp_source.html#l00162">162</a> of file <a class="el" href="Variables_8hpp_source.html">Variables.hpp</a>.</p>
 
 </div>
 </div>
@@ -329,36 +267,18 @@ template&lt;class T , int DIM&gt; </div>
 template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">size_t <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt;::get_variables_number</td>
+          <td class="memname">size_t <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt;::get_variables_number </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Return the number of variables. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>size_t </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="Variables_8hpp_source.html#l00110">110</a> of file <a class="el" href="Variables_8hpp_source.html">Variables.hpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="OperatorBase_8hpp_source.html#l00379">OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;::initialize()</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classVariables_aadf815b64b6a43387f7f393d06b45887_icgraph.svg" width="652" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
-<a id="a0fb59f4145974f7d284a5b6f906285a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0fb59f4145974f7d284a5b6f906285a9">&#9670;&nbsp;</a></span>getIVariable()</h2>
+<a id="a5fd18bca07e1ea4f3d9522a3ca0acded"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fd18bca07e1ea4f3d9522a3ca0acded">&#9670;&nbsp;</a></span>getVariables()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -366,55 +286,33 @@ template&lt;class T , int DIM&gt; </div>
 template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt; &amp; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt;::getIVariable </td>
+          <td class="memname">std::vector&lt;<a class="el" href="classVariable.html">Variable</a>&lt;T, DIM&gt; &gt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt;::getVariables </td>
           <td>(</td>
-          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7a87a77aee433e769a09c1b751867bfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a87a77aee433e769a09c1b751867bfc">&#9670;&nbsp;</a></span>operator[]()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classVariable.html">Variable</a>&lt;T, DIM&gt;&amp; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>i</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>get i-th variable </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">i</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classVariable.html">Variable</a>&amp; </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="Variables_8hpp_source.html#l00121">121</a> of file <a class="el" href="Variables_8hpp_source.html">Variables.hpp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="OperatorBase_8hpp_source.html#l00379">OperatorBase&lt; T, DIM, NLFI, LHS_NLFI &gt;::initialize()</a>.</p>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classVariables_a0fb59f4145974f7d284a5b6f906285a9_icgraph.svg" width="644" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a62a9cd30a9cfce3896ede05747e14871"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62a9cd30a9cfce3896ede05747e14871">&#9670;&nbsp;</a></span>getVariables()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T , int DIM&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt; &gt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt;::getVariables</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>get vector of variables </p>
-<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;Variable&gt; </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="Variables_8hpp_source.html#l00098">98</a> of file <a class="el" href="Variables_8hpp_source.html">Variables.hpp</a>.</p>
 
 </div>
 </div>
@@ -424,7 +322,7 @@ template&lt;class T , int DIM&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 15:39:07 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

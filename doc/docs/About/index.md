@@ -66,6 +66,8 @@ Consequently, the CEA is developing **SLOTH**, a **multiphase-field multicompone
     ---
     - [Alessandro Scapini (PhD 2024-2027)]()
     - [Clément Plumecocq (PhD 2023-2026)]()
+    - [Marine Harel (Master 2026)]()
+    - [Tom Schnetz (Master 2026)]()
     - [Victor Navarre (Master 2025)]()
     - [Jules Czuckermand (Master 2025)]()     
     - [Mouad Bakhkakh (Master 2024)]()

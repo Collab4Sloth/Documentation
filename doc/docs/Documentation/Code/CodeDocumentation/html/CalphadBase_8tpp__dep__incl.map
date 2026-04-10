@@ -1,0 +1,9 @@
+<map id="CalphadBase.tpp" name="CalphadBase.tpp">
+<area shape="rect" id="node1" title=" " alt="" coords="272,5,411,32"/>
+<area shape="rect" id="node2" href="$CalphadBase_8hpp.html" title="Base class for Calphad objets." alt="" coords="270,80,413,107"/>
+<area shape="rect" id="node3" href="$AnalyticalIdealSolution_8hpp.html" title="Analytical thermodynamic description for an ideal solution." alt="" coords="5,229,216,256"/>
+<area shape="rect" id="node4" href="$sloth_8hpp.html" title="List of SLOTH header files." alt="" coords="210,304,297,331"/>
+<area shape="rect" id="node5" href="$CalphadInformedNeuralNetwork_8hpp.html" title="Calphad&#45;informed neuronal network used to predict Calphad contributions." alt="" coords="291,155,570,181"/>
+<area shape="rect" id="node6" href="$Calphad__problem_8hpp.html" title="Class used to defined a Calphad_Problem objet." alt="" coords="594,155,769,181"/>
+<area shape="rect" id="node7" href="$ListProblems_8hpp.html" title=" " alt="" coords="450,229,593,256"/>
+</map>

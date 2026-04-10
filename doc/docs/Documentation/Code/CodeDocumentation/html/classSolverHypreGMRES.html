@@ -25,9 +25,9 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v1.0.0</span>
+   &#160;<span id="projectnumber">v2.0.0</span>
    </div>
-   <div id="projectbrief">PhaseField solver</div>
+   <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
  </tr>
  </tbody>
@@ -92,9 +92,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae8cd627c6a9dddb56c4ac48a134de7e0"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; mfem::HypreGMRES &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolverHypreGMRES.html#ae8cd627c6a9dddb56c4ac48a134de7e0">create_solver</a> (<a class="el" href="SolversOptions_8hpp.html#a4aa268ed6c4ccc82594b8746025d5bcb">HypreSolverType</a> SOLVER, const <a class="el" href="classParameters.html">Parameters</a> &amp;params) override</td></tr>
-<tr class="memdesc:ae8cd627c6a9dddb56c4ac48a134de7e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a iterative solver based of the SolverType and a list of <a class="el" href="classParameters.html">Parameters</a>.  <a href="classSolverHypreGMRES.html#ae8cd627c6a9dddb56c4ac48a134de7e0">More...</a><br /></td></tr>
-<tr class="separator:ae8cd627c6a9dddb56c4ac48a134de7e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94293cedbdd903adcd5866ce3554ef10"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; mfem::HypreGMRES &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolverHypreGMRES.html#a94293cedbdd903adcd5866ce3554ef10">create_solver</a> (const <a class="el" href="classParameters.html">Parameters</a> &amp;params) override</td></tr>
+<tr class="memdesc:a94293cedbdd903adcd5866ce3554ef10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a iterative solver based of the SolverType and a list of <a class="el" href="classParameters.html">Parameters</a>.  <a href="classSolverHypreGMRES.html#a94293cedbdd903adcd5866ce3554ef10">More...</a><br /></td></tr>
+<tr class="separator:a94293cedbdd903adcd5866ce3554ef10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6aa6b7c73138ca7d2c542014b5f5846a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSolverHypreGMRES.html#a6aa6b7c73138ca7d2c542014b5f5846a">SolverHypreGMRES</a> ()</td></tr>
 <tr class="memdesc:a6aa6b7c73138ca7d2c542014b5f5846a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new HSolverBase::HSolverBase object.  <a href="classSolverHypreGMRES.html#a6aa6b7c73138ca7d2c542014b5f5846a">More...</a><br /></td></tr>
 <tr class="separator:a6aa6b7c73138ca7d2c542014b5f5846a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -115,7 +115,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="HSolverBase_8hpp_source.html#l00090">90</a> of file <a class="el" href="HSolverBase_8hpp_source.html">HSolverBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HSolverBase_8hpp_source.html#l00047">47</a> of file <a class="el" href="HSolverBase_8hpp_source.html">HSolverBase.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6aa6b7c73138ca7d2c542014b5f5846a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6aa6b7c73138ca7d2c542014b5f5846a">&#9670;&nbsp;</a></span>SolverHypreGMRES()</h2>
@@ -134,7 +134,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Construct a new HSolverBase::HSolverBase object. </p>
 
-<p class="definition">Definition at line <a class="el" href="HSolverBase_8hpp_source.html#l00103">103</a> of file <a class="el" href="HSolverBase_8hpp_source.html">HSolverBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HSolverBase_8cpp_source.html#l00083">83</a> of file <a class="el" href="HSolverBase_8cpp_source.html">HSolverBase.cpp</a>.</p>
 
 </div>
 </div>
@@ -155,13 +155,13 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Destroy the HSolverBase::HSolverBase object. </p>
 
-<p class="definition">Definition at line <a class="el" href="HSolverBase_8hpp_source.html#l00142">142</a> of file <a class="el" href="HSolverBase_8hpp_source.html">HSolverBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HSolverBase_8cpp_source.html#l00121">121</a> of file <a class="el" href="HSolverBase_8cpp_source.html">HSolverBase.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ae8cd627c6a9dddb56c4ac48a134de7e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8cd627c6a9dddb56c4ac48a134de7e0">&#9670;&nbsp;</a></span>create_solver()</h2>
+<a id="a94293cedbdd903adcd5866ce3554ef10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94293cedbdd903adcd5866ce3554ef10">&#9670;&nbsp;</a></span>create_solver()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -172,19 +172,9 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">std::shared_ptr&lt; mfem::HypreGMRES &gt; SolverHypreGMRES::create_solver </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="SolversOptions_8hpp.html#a4aa268ed6c4ccc82594b8746025d5bcb">HypreSolverType</a>&#160;</td>
-          <td class="paramname"><em>SOLVER</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">const <a class="el" href="classParameters.html">Parameters</a> &amp;&#160;</td>
-          <td class="paramname"><em>params</em>&#160;</td>
-        </tr>
-        <tr>
+          <td class="paramname"><em>params</em></td><td>)</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -204,37 +194,40 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::shared_ptr&lt;mfem::IterativeSolver&gt; </dd></dl>
 
-<p>Implements <a class="el" href="classSolverBase.html#a01d8545f1cf8ddf44b1468d0ddbe9b60">SolverBase&lt; mfem::HypreGMRES, HypreSolverType &gt;</a>.</p>
+<p>Implements <a class="el" href="classSolverBase.html#a271d286d566da45ac41bf03d479a12eb">SolverBase&lt; mfem::HypreGMRES, HypreSolverType &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="HSolverBase_8hpp_source.html#l00112">112</a> of file <a class="el" href="HSolverBase_8hpp_source.html">HSolverBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HSolverBase_8cpp_source.html#l00092">92</a> of file <a class="el" href="HSolverBase_8cpp_source.html">HSolverBase.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="UtilsForData_8hpp_source.html#l00240">SlothInfo::debug()</a>, <a class="el" href="SolverBase_8hpp_source.html#l00048">SolverBase&lt; mfem::HypreGMRES, HypreSolverType &gt;::get_description()</a>, <a class="el" href="Parameters_8hpp_source.html#l00225">Parameters::get_param_value()</a>, <a class="el" href="Parameters_8hpp_source.html#l00194">Parameters::get_param_value_or_default()</a>, <a class="el" href="SolversOptions_8hpp_source.html#l00059">NewtonDefaultConstant::iter_max</a>, <a class="el" href="SolversOptions_8hpp_source.html#l00159">HYPRE_GMRES_DefaultConstant::iter_max</a>, <a class="el" href="SolversOptions_8hpp_source.html#l00110">GMRESDefaultConstant::kdim</a>, <a class="el" href="SolversOptions_8hpp_source.html#l00161">HYPRE_GMRES_DefaultConstant::kdim</a>, <a class="el" href="SolversOptions_8hpp_source.html#l00063">NewtonDefaultConstant::print_level</a>, <a class="el" href="SolversOptions_8hpp_source.html#l00162">HYPRE_GMRES_DefaultConstant::print_level</a>, <a class="el" href="SolverBase_8hpp_source.html#l00042">SolverBase&lt; mfem::HypreGMRES, HypreSolverType &gt;::solver_description_</a>, <a class="el" href="SolversOptions_8hpp_source.html#l00149">HYPRE_PCG_DefaultConstant::tol</a>, and <a class="el" href="SolversOptions_8hpp_source.html#l00160">HYPRE_GMRES_DefaultConstant::tol</a>.</p>
+<p class="reference">References <a class="el" href="UtilsForData_8hpp_source.html#l00212">SlothInfo::debug()</a>, <a class="el" href="SolverBase_8hpp_source.html#l00048">SolverBase&lt; mfem::HypreGMRES, HypreSolverType &gt;::get_description()</a>, <a class="el" href="classParameters.html#ae3b314c5ebc3fde8684b0634b2406da6">Parameters::get_param_value()</a>, <a class="el" href="classParameters.html#a857c53fbe60d7bd2f91e91626f85b6d2">Parameters::get_param_value_or_default()</a>, <a class="el" href="SolversOptions_8hpp_source.html#l00058">NewtonDefaultConstant::iter_max</a>, <a class="el" href="SolversOptions_8hpp_source.html#l00158">HYPRE_GMRES_DefaultConstant::iter_max</a>, <a class="el" href="SolversOptions_8hpp_source.html#l00109">GMRESDefaultConstant::kdim</a>, <a class="el" href="SolversOptions_8hpp_source.html#l00160">HYPRE_GMRES_DefaultConstant::kdim</a>, <a class="el" href="SolversOptions_8hpp_source.html#l00062">NewtonDefaultConstant::print_level</a>, <a class="el" href="SolversOptions_8hpp_source.html#l00161">HYPRE_GMRES_DefaultConstant::print_level</a>, <a class="el" href="SolverBase_8hpp_source.html#l00042">SolverBase&lt; mfem::HypreGMRES, HypreSolverType &gt;::solver_description_</a>, <a class="el" href="SolversOptions_8hpp_source.html#l00148">HYPRE_PCG_DefaultConstant::tol</a>, and <a class="el" href="SolversOptions_8hpp_source.html#l00159">HYPRE_GMRES_DefaultConstant::tol</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SlothSolver_8hpp_source.html#l00305">SlothSolver::get_value()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SlothSolver_8cpp_source.html#l00055">SlothSolver::get_value()</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classSolverHypreGMRES_ae8cd627c6a9dddb56c4ac48a134de7e0_cgraph.svg" width="100%" height="476"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classSolverHypreGMRES_a94293cedbdd903adcd5866ce3554ef10_cgraph.svg" width="546" height="235"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classSolverHypreGMRES_ae8cd627c6a9dddb56c4ac48a134de7e0_icgraph.svg" width="446" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classSolverHypreGMRES_a94293cedbdd903adcd5866ce3554ef10_icgraph.svg" width="446" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="HSolverBase_8hpp_source.html">HSolverBase.hpp</a></li>
+<li><a class="el" href="HSolverBase_8cpp_source.html">HSolverBase.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 15:39:07 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
