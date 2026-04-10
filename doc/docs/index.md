@@ -46,6 +46,7 @@ icon: material/shield-home
 
     ---
     :octicons-tag-24: [__V2.0.0__](https://github.com/Collab4Sloth/SLOTH/releases/tag/v2.0.0)
+    
     :octicons-tag-24: [__V1.0.0__](https://github.com/Collab4Sloth/SLOTH/releases/tag/v1.0.0)
     
 
