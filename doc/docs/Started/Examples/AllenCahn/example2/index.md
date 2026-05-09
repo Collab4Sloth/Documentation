@@ -86,10 +86,10 @@ Periodic boundary conditions are prescribed on boundary of the domain.
 ### __Results__ 
 
 Figures 1 shows the evolution of the normalized fraction and energy density. 
-The results are in good agreement with those presented in [@WU2021110371] (see Figure 3 and 4 in the reference).
+The results are in good agreement with those presented in [@WU2021110371] (see Figures 3 and 4 in the reference).
 
 <figure markdown="span">
-    ![MMS](img/normalized_quantities.png){  width=700px}
+    ![nucleation](img/normalized_quantities.png){  width=700px}
     <figcaption>Figure 1: normalized fraction and energy density
     </figcaption>
 </figure>
