@@ -114,6 +114,8 @@ nav:
           - Started/Examples/CahnHilliard/example5/index.md
       - Allen-Cahn:
         - Started/Examples/AllenCahn/index.md
+      - Allen-Cahn + Cahn Hilliard:
+        - Started/Examples/Multiphasefield/index.md
       - Mass Diffusion:
         - Started/Examples/MassDiffusion/index.md
       - Heat Transfer:

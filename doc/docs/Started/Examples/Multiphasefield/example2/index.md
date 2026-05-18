@@ -3,14 +3,14 @@
 
 ### __Files__ 
 
-- Comprehensive test file: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/Studies/sintering/test1/main.cpp)
-- Reference results for comparison (regression test) (t=0.0002): [time_specialized.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/Studies/sintering/test1/ref/time_specialized.csv)
-- Reference results for comparison (t=2): [time_specialized.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/Studies/sintering/test1/resu/time_specialized.csv)
+- Comprehensive test file: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/Studies/sintering/test2/main.cpp)
+- Reference results for comparison (regression test) (t=0.0002): [time_specialized.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/Studies/sintering/test2/ref/time_specialized.csv)
+- Reference results for comparison (t=0.25): [time_specialized.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/Studies/sintering/test2/resu/time_specialized.csv)
 
 
 ### __Statement of the problem__ 
 
-This test is a Finite Element version of the sintering test of two unequal sized particles from [@biner2017programming].
+This test is a Finite Element version of the sintering test of nine unequal sized particles from [@biner2017programming].
 
 Allen-Cahn (AC) and Cahn-Hilliard (CH) equations are solved in a square $`\Omega=[0,50]\times[0,50]`$ using a partitioned algorithm (but the Allen-Cahn equations are tightly coupled).
 
@@ -39,7 +39,7 @@ D \nabla
 \frac{\partial f}{\partial \eta_i}
 -
 \kappa_{\eta}\nabla^{2}\eta_i
-\right), \quad i=1,2
+\right), \quad i=1,9
 
 
 \end{align}
@@ -130,19 +130,18 @@ The initial condition for the Cahn-Hilliard equation is given by:
 
 \begin{align}
 
-\rho(x,y)=
+\rho(\mathbf{x}, 0) &= 
 \begin{cases}
-1,
-&
-(x-25)^2+(y-20)^2 < 100,
-\\[4pt]
-1,
-&
-(x-25)^2+(y-35)^2 < 25,
-\\[4pt]
-0,
-&
-\text{otherwise}.
+1, & \sqrt{(x - 14.5)^2 + (y - 25)^2} < 5, \\
+1, & \sqrt{(x - 35.5)^2 + (y - 25)^2} < 5, \\ 
+1, & \sqrt{(x - 25)^2 + (y - 14.5)^2} < 5  \\
+1, & \sqrt{(x - 25)^2 + (y - 35.5)^2} < 5, \\ 
+1, & \sqrt{(x - 25)^2 + (y - 25)^2} < 5,  \\
+1, & \sqrt{(x - 19.5)^2 + (y - 19.5)^2} < 2.5, \\ 
+1, & \sqrt{(x - 30.5)^2 + (y - 19.5)^2} < 2.5  \\
+1, & \sqrt{(x - 19.5)^2 + (y - 30.5)^2} < 2.5, \\ 
+1, & \sqrt{(x - 30.5)^2 + (y - 30.5)^2} < 2.5, \\
+0, & \text{otherwise}.
 \end{cases}
 \end{align}
 
@@ -155,16 +154,13 @@ The initial conditions for the Allen-Cahn equations are given by:
 
 \begin{align}
 
-\eta_1(x,y)=
+
+\eta_1(\mathbf{x}, 0) &= 
 \begin{cases}
-1,
-&
-(x-25)^2+(y-20)^2 < 100,
-\\[4pt]
-0,
-&
-\text{otherwise}.
+1 &  \sqrt{(x - 14.5)^2 + (y - 25)^2} < 5, \\
+0 & \text{otherwise}.
 \end{cases}
+
 
 \end{align}
 
@@ -175,21 +171,121 @@ The initial conditions for the Allen-Cahn equations are given by:
 
 \begin{align}
 
-\eta_2(x,y)=
+
+\eta_2(\mathbf{x}, 0) &= 
 \begin{cases}
-1,
-&
-(x-25)^2+(y-35)^2 < 25,
-\\[4pt]
-0,
-&
-\text{otherwise}.
+1 &  \sqrt{(x - 35.5)^2 + (y - 25)^2} < 5, \\
+0 & \text{otherwise}.
+\end{cases}
+
+
+\end{align}
+
+```
+
+```math
+
+\begin{align}
+
+\eta_3(\mathbf{x}, 0) &= 
+\begin{cases}
+1 &  \sqrt{(x - 25)^2 + (y - 14.5)^2} < 5, \\
+0 & \text{otherwise}.
+\end{cases}
+
+
+\end{align}
+
+```
+
+```math
+
+\begin{align}
+
+
+\eta_4(\mathbf{x}, 0) &= 
+\begin{cases}
+1, &  \sqrt{(x - 25)^2 + (y - 35.5)^2} < 5, \\
+0, & \text{otherwise}.
 \end{cases}
 
 \end{align}
 
 ```
 
+```math
+
+\begin{align}
+
+
+\eta_5(\mathbf{x}, 0) &= 
+\begin{cases}
+1, &  \sqrt{(x - 25)^2 + (y - 25)^2} < 5, \\
+0, & \text{otherwise}.
+\end{cases}
+
+\end{align}
+
+```
+
+```math
+
+\begin{align}
+
+\eta_6(\mathbf{x}, 0) &= 
+\begin{cases}
+1, &  \sqrt{(x - 19.5)^2 + (y - 19.5)^2} < 2.5, \\
+0, & \text{otherwise}.
+\end{cases}
+
+
+\end{align}
+
+```
+
+```math
+
+\begin{align}
+
+\eta_7(\mathbf{x}, 0) &= 
+\begin{cases}
+1, &  \sqrt{(x - 30.5)^2 + (y - 19.5)^2} < 2.5, \\
+0, & \text{otherwise}.
+\end{cases}
+
+
+\end{align}
+
+```
+
+```math
+
+\begin{align}
+
+\eta_8(\mathbf{x}, 0) &= 
+\begin{cases}
+1, &  \sqrt{(x - 19.5)^2 + (y - 30.5)^2} < 2.5, \\
+0, & \text{otherwise}.
+\end{cases}
+
+
+\end{align}
+
+```
+
+```math
+
+\begin{align}
+
+\eta_9(\mathbf{x}, 0) &= 
+\begin{cases}
+1, &  \sqrt{(x - 30.5)^2 + (y - 30.5)^2} < 2.5, \\
+0, & \text{otherwise}.
+\end{cases}
+
+
+\end{align}
+```
 
 ### **Parameters used for the test**
 
@@ -210,29 +306,27 @@ Neumann boundary conditions are prescribed on boundary of the domain.
 
 ### __Numerical scheme__
 
-- Time integration: Euler Implicit over the interval $`t\in[0,2]`$ with a time-step $`\delta t=10^{-4}`$. 
+- Time integration: Euler Implicit over the interval $`t\in[0,0.25]`$ with a time-step $`\delta t=10^{-4}`$. 
 - Spatial discretization for convergence analysis: uniform grid with $`N={200}`$ nodes in each spatial direction, with $`\mathcal{Q}_1`$ finite elements
 - Newton solver: relative tolerance $`10^{-10}`$, absolute tolerance $`10^{-14}`$
 
 
 ### __Results__ 
 
-Figure 1 shows the evolution of conserved and non conserved phase-fields at time step $`100`$, $`5000`$, $`12500`$, and $`20000`$ (from top to bottom).
-Figure 2 shows the time evolution of two unequal sized particles. 
+Figure 1 shows the evolution of conserved and non conserved phase-fields at time step 100 and 2500 (from top to bottom). 
+Figure 2 shows the time evolution of nine unequal sized particles. 
 The results are in good agreement with those presented in [@biner2017programming] (see Figure 4.12 in the reference).
 
 <figure markdown="span">
     ![sintering](img/step100.png){  width=500px}
-    ![sintering](img/step5000.png){  width=500px}
-    ![sintering](img/step12500.png){  width=500px}
-    ![sintering](img/step20000.png){  width=500px}
-    <figcaption>Figure 1: evolution of conserved and non conserved phase-fields at time step 100, 5000, 12500, and 20000 (from top to bottom).
+    ![sintering](img/step2500.png){  width=500px}
+    <figcaption>Figure 1: evolution of conserved and non conserved phase-fields at time step 100 and 2500 (from top to bottom).
     </figcaption>
 </figure>
 
 <figure markdown="span">
     ![sintering](img/anim_sintering.gif){ width=500px}
-    <figcaption>Figure 2: time evolution of two unequal sized particles.
+    <figcaption>Figure 2: time evolution of nine unequal sized particles.
     </figcaption>
 </figure>
 
