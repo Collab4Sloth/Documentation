@@ -1,9 +1,10 @@
 
-# **Example 1: sintering of two unequal sized particles**
+# **Example 2: sintering of nine unequal sized particles**
 
 ### __Files__ 
 
 - Comprehensive test file: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/Studies/sintering/test2/main.cpp)
+- Comprehensive test file extended in 3D: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/Studies/sintering/test3/main.cpp)
 - Reference results for comparison (regression test) (t=0.0002): [time_specialized.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/Studies/sintering/test2/ref/time_specialized.csv)
 - Reference results for comparison (t=0.25): [time_specialized.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/Studies/sintering/test2/resu/time_specialized.csv)
 
@@ -318,15 +319,21 @@ Figure 2 shows the time evolution of nine unequal sized particles.
 The results are in good agreement with those presented in [@biner2017programming] (see Figure 4.12 in the reference).
 
 <figure markdown="span">
-    ![sintering](img/step100.png){  width=500px}
-    ![sintering](img/step2500.png){  width=500px}
+    ![sintering](img/step100.png){  width=1000px}
+    ![sintering](img/step2500.png){  width=1000px}
     <figcaption>Figure 1: evolution of conserved and non conserved phase-fields at time step 100 and 2500 (from top to bottom).
     </figcaption>
 </figure>
 
 <figure markdown="span">
-    ![sintering](img/anim_sintering.gif){ width=500px}
+    ![sintering](img/anim_sintering.gif){ width=1000px}
     <figcaption>Figure 2: time evolution of nine unequal sized particles.
+    </figcaption>
+</figure>
+
+<figure markdown="span">
+    ![sintering](img/anim_sintering3D.gif){ width=2000px}
+    <figcaption>Figure 3: 3D extension of the time evolution of nine unequal sized particles ($`4.8`$ million DOF). The simulation has been performed with $`4096`$ MPI processes on Topaze supercomputer at CEA.
     </figcaption>
 </figure>
 
