@@ -317,6 +317,7 @@ Neumann boundary conditions are prescribed on boundary of the domain.
 Figure 1 shows the evolution of conserved and non conserved phase-fields at time step 100 and 2500 (from top to bottom). 
 Figure 2 shows the time evolution of nine unequal sized particles. 
 The results are in good agreement with those presented in [@biner2017programming] (see Figure 4.12 in the reference).
+Figure 3 shows the 3D extension of the time evolution of nine unequal sized particles.
 
 <figure markdown="span">
     ![sintering](img/step100.png){  width=1000px}
