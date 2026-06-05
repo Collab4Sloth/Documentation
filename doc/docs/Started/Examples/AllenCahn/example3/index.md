@@ -11,7 +11,6 @@
     - 3D Reference results for comparison (N=128, t=25): [time_specialized.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/Studies/multigrains/test2/resu/time_specialized.csv)
 - 102 grains
     - Comprehensive test file (2D): [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/Studies/multigrains/test1/main.cpp)
-    - 2D Reference results for comparison (regression test) (N=32, t=0.2): [time_specialized.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/Studies/multigrains/test3/ref/time_specialized.csv)
     - 2D Reference results for comparison (N=128, t=25): [time_specialized.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/Studies/multigrains/test3/resu/time_specialized.csv)
 
 
