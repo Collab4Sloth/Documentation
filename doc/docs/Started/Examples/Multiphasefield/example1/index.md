@@ -217,7 +217,7 @@ Neumann boundary conditions are prescribed on boundary of the domain.
 
 ### __Results__ 
 
-Figure 1 shows the time evolution of the normalized area and energy density. 
+Figure 1 shows the evolution of conserved and non conserved phase-fields at time step $`100`$, $`5000`$, $`12500`$, and $`20000`$ (from top to bottom).
 Figure 2 shows the time evolution of two unequal sized particles. 
 The results are in good agreement with those presented in [@biner2017programming] (see Figure 4.12 in the reference).
 
