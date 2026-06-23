@@ -1760,6 +1760,8 @@
       
         
       
+        
+      
     
     
     
@@ -2001,6 +2003,74 @@
             
   
     Example 3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_6_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../Started/Examples/HeatTransfer/example4/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example 4
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Example 4
   
 
           </label>
@@ -3332,34 +3402,52 @@
 <td><code>"time_step"</code></td>
 <td><code>double</code></td>
 <td></td>
-<td>The time-step of the simulation</td>
+<td>The time-step of the simulation (constant value)</td>
 </tr>
 </tbody>
 </table>
 <dl>
 <dd>Table 1 - parameters allowed with <code>TimeDiscretization</code></dd>
 </dl>
-<div class="admonition warning">
-<p class="admonition-title">On the time-step</p>
-<ul>
-<li>The time-step is currently constant. Adaptative time-stepping will be implemented in the future. </li>
-</ul>
+<div class="admonition tips">
+<p class="admonition-title">Definition of time-step as a function of the time</p>
+<p>The time step can also be defined as a function of the current simulation time. However, this is not an adaptative time-stepping algorithm which will be implemented in the future. </p>
+<p>When a <code>std::function&lt;double(double)&gt;</code> is passed to <code>TimeDiscretization</code>, the <code>time_step</code> parameter is ignored and the time step is evaluated dynamically at each iteration. In the following example, the time-step increases as the simulation progresses.</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">auto</span><span class="w"> </span><span class="n">user_time_step</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="o">&gt;</span><span class="p">([](</span><span class="kt">double</span><span class="w"> </span><span class="n">time</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">dt</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">time</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0.1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.01</span><span class="p">;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">time</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0.2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.02</span><span class="p">;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">time</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0.4</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.04</span><span class="p">;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.05</span><span class="p">;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">dt</span><span class="p">;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">});</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="k">auto</span><span class="w"> </span><span class="n">time_params</span><span class="w"> </span><span class="o">=</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="n">Parameters</span><span class="p">(</span><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;initial_time&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">t_initial</span><span class="p">),</span><span class="w"> </span><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;final_time&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">t_final</span><span class="p">));</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="k">auto</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TimeDiscretization</span><span class="p">(</span><span class="n">user_time_step</span><span class="p">,</span><span class="w"> </span><span class="n">time_params</span><span class="p">,</span><span class="w"> </span><span class="n">cc</span><span class="p">);</span>
+</span></code></pre></div>
+<p>If no function is provided, the constant value specified by the <code>time_step</code> parameter is used as before.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example of <code>TimeDiscretization</code> with parameters</p>
 <p>The following example assume a multiphysics simulation based on two <a href="../Couplings/index.html">couplings</a>, each composed of three <a href="../Problems/index.html">problems</a>. </p>
 <p>The time loop starts at <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span> s, ends at <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> s with a time-step of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.1</mn></mrow><annotation encoding="application/x-tex">0.1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0.1</span></span></span></span> s.</p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">coupling_example_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Coupling</span><span class="p">(</span><span class="s">&quot;MyCoupling1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Problem1_1</span><span class="p">,</span><span class="w"> </span><span class="n">Problem1_2</span><span class="p">,</span><span class="w"> </span><span class="n">Problem1_3</span><span class="p">);</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">coupling_example_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Coupling</span><span class="p">(</span><span class="s">&quot;MyCoupling2&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Problem2_1</span><span class="p">,</span><span class="w"> </span><span class="n">Problem2_2</span><span class="p">,</span><span class="w"> </span><span class="n">Problem2_3</span><span class="p">);</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">t_initial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">t_final</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span><span class="p">;</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">time_params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parameters</span><span class="p">(</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;initial_time&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">t_initial</span><span class="p">),</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;final_time&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">t_final</span><span class="p">),</span><span class="w"> </span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;time_step&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">));</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TimeDiscretization</span><span class="p">(</span><span class="n">time_parameters</span><span class="p">,</span><span class="w"> </span><span class="n">coupling_example_1</span><span class="p">,</span><span class="w"> </span><span class="n">coupling_example_2</span><span class="p">);</span>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">coupling_example_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Coupling</span><span class="p">(</span><span class="s">&quot;MyCoupling1&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Problem1_1</span><span class="p">,</span><span class="w"> </span><span class="n">Problem1_2</span><span class="p">,</span><span class="w"> </span><span class="n">Problem1_3</span><span class="p">);</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">coupling_example_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Coupling</span><span class="p">(</span><span class="s">&quot;MyCoupling2&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Problem2_1</span><span class="p">,</span><span class="w"> </span><span class="n">Problem2_2</span><span class="p">,</span><span class="w"> </span><span class="n">Problem2_3</span><span class="p">);</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">t_initial</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="p">;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">t_final</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span><span class="p">;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">time_params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parameters</span><span class="p">(</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;initial_time&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">t_initial</span><span class="p">),</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;final_time&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">t_final</span><span class="p">),</span><span class="w"> </span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;time_step&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">));</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TimeDiscretization</span><span class="p">(</span><span class="n">time_parameters</span><span class="p">,</span><span class="w"> </span><span class="n">coupling_example_1</span><span class="p">,</span><span class="w"> </span><span class="n">coupling_example_2</span><span class="p">);</span>
 </span></code></pre></div>
 </div>
 

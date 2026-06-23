@@ -1760,6 +1760,8 @@
       
         
       
+        
+      
     
     
     
@@ -2001,6 +2003,74 @@
             
   
     Example 3
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_6_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../Started/Examples/HeatTransfer/example4/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example 4
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Example 4
   
 
           </label>
@@ -3887,6 +3957,18 @@ The <code>OPERATOR</code> object, denoted by <code>phasefield_ope</code>, is wel
 <p>For this problem, a vector of two <a href="../../../Coefficients/index.html">Coefficients</a> is considered for <code>phi</code> and <code>mu</code>, respectively. Here, the same <code>Coefficients</code> are used for both variables accordingly with the <code>CahnHilliard</code> integrator. 
 As expected by this integrator, coefficients of type <code>Glossary::FreeEnergy</code>, <code>Glossary::Capillary</code> and <code>Glossary::Mobility</code> are defined. The coefficient of type <code>Glossary::GradEnergy</code> is only used to compute the gradient terms in the output of the density of energy. </p>
 <p>This example has no parameters or auxiliary variables.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Axisymmetric geometry support</p>
+<p>To enable simulations on axisymmetric geometries, the current definition of the <code>Problem</code> class needs to be enhanced. The proposed modification is as follows:</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">    </span><span class="n">PDE</span><span class="w"> </span><span class="nf">phase_filed_pb</span><span class="p">(</span><span class="n">phasefield_ope</span><span class="p">,</span><span class="w"> </span><span class="n">vars</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">coef_phase_field</span><span class="p">,</span><span class="w"> </span><span class="n">coef_phase_field</span><span class="p">},</span><span class="w"> </span><span class="n">pst</span><span class="p">);</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="n">phase_filed_pb</span><span class="p">.</span><span class="n">setGeometry</span><span class="p">(</span><span class="n">Geometry</span><span class="o">::</span><span class="n">Axisymmetric</span><span class="p">);</span>
+</span></code></pre></div>
+<p>By default, the geometry will be set to <code>Geometry::Cartesian</code> if no specific geometry is defined.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Defining source terms on axisymmetric geometries</p>
+<p>When defining a source term on an <a href="#operators"><code>Operator</code></a>, ensure that it is multiplied by the radius. This multiplication is automatically handled by all integrators. However, source terms defined in the input datafile will not be automatically adjusted and must be manually multiplied by the radius.</p>
 </div>
 <div class="footnote">
 <hr />
