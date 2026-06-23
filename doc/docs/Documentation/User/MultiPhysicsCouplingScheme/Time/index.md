@@ -14,13 +14,39 @@ The parameters allowed with `TimeDiscretization` are summarized in table 1.
 |------|----------------|------|---------------|---------------|
 | `TimeDiscretization` | `"initial_time"` | `double` | `0.` | The initial time of the simulation |
 | `TimeDiscretization` | `"final_time"` | `double` | | The final time of the simulation|
-| `TimeDiscretization` | `"time_step"` | `double` | |The time-step of the simulation |
+| `TimeDiscretization` | `"time_step"` | `double` | |The time-step of the simulation (constant value)|
 
 : Table 1 - parameters allowed with `TimeDiscretization`
 
 
-!!! warning "On the time-step"
-    - The time-step is currently constant. Adaptative time-stepping will be implemented in the future. 
+!!! tips "Definition of time-step as a function of the time"
+
+    The time step can also be defined as a function of the current simulation time. However, this is not an adaptative time-stepping algorithm which will be implemented in the future. 
+
+    When a `std::function<double(double)>` is passed to `TimeDiscretization`, the `time_step` parameter is ignored and the time step is evaluated dynamically at each iteration. In the following example, the time-step increases as the simulation progresses.
+    
+    ```c++
+    auto user_time_step = std::function<double(double)>([](double time) {
+        double dt;
+        if (time < 0.1) {
+        dt = 0.01;
+        } else if (time < 0.2) {
+        dt = 0.02;
+        } else if (time < 0.4) {
+        dt = 0.04;
+        } else {
+        dt = 0.05;
+        }
+        return dt;
+    });
+
+    auto time_params =
+        Parameters(Parameter("initial_time", t_initial), Parameter("final_time", t_final));
+    auto time = TimeDiscretization(user_time_step, time_params, cc);
+    ```
+
+    If no function is provided, the constant value specified by the `time_step` parameter is used as before.
+
 
 
 !!! example "Example of `TimeDiscretization` with parameters"
