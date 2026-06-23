@@ -522,7 +522,22 @@ The `PDE` problem must be defined by:
     This example has no parameters or auxiliary variables.
 
 
+!!! note "Axisymmetric geometry support"
+        
+    To enable simulations on axisymmetric geometries, the current definition of the `Problem` class needs to be enhanced. The proposed modification is as follows:
+
+    ```c++
+
+        PDE phase_filed_pb(phasefield_ope, vars, {coef_phase_field, coef_phase_field}, pst);
+        phase_filed_pb.setGeometry(Geometry::Axisymmetric);
+
+    ```
+
+    By default, the geometry will be set to `Geometry::Cartesian` if no specific geometry is defined.
 
 
+!!! warning "Defining source terms on axisymmetric geometries"
+
+    When defining a source term on an [`Operator`](#operators), ensure that it is multiplied by the radius. This multiplication is automatically handled by all integrators. However, source terms defined in the input datafile will not be automatically adjusted and must be manually multiplied by the radius.
 
 

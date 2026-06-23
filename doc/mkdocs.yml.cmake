@@ -126,6 +126,8 @@ nav:
           - Started/Examples/HeatTransfer/example2/index.md
         - Example 3:
           - Started/Examples/HeatTransfer/example3/index.md
+        - Example 4:
+          - Started/Examples/HeatTransfer/example4/index.md
       - CALPHAD:
         - Started/Examples/Calphad/index.md
     - Code quality: Started/Quality/quality.md
