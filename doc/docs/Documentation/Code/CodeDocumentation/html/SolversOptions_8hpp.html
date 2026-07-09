@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -87,7 +87,8 @@ $(function() {
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="SolversOptions_8hpp__incl.svg" width="100%" height="552"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="SolversOptions_8hpp__incl.svg" width="100%" height="552"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
@@ -135,6 +136,9 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespaceHYPRE__SMOOTHER__DefaultConstant"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHYPRE__SMOOTHER__DefaultConstant.html">HYPRE_SMOOTHER_DefaultConstant</a></td></tr>
 <tr class="memdesc:namespaceHYPRE__SMOOTHER__DefaultConstant"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constant used by HYPRE_SMOOTHER Preconditioner. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceLBFGSDefaultConstant"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLBFGSDefaultConstant.html">LBFGSDefaultConstant</a></td></tr>
+<tr class="memdesc:namespaceLBFGSDefaultConstant"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constant used by LBFGS algorithm. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceMINRESDefaultConstant"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMINRESDefaultConstant.html">MINRESDefaultConstant</a></td></tr>
 <tr class="memdesc:namespaceMINRESDefaultConstant"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constant used by MINRES Solver. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -172,6 +176,7 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="separator:a4ac4a4d7d8d59ed200cfdd9222d1c17a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a765a4007c12a84454a77f1a29ad04b4a"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SolversOptions_8hpp.html#a765a4007c12a84454a77f1a29ad04b4a">NLSolverType</a> { <a class="el" href="SolversOptions_8hpp.html#a765a4007c12a84454a77f1a29ad04b4aa543a80c769aa267bbf02f31e2d7e07e6">NEWTON</a>
+, <a class="el" href="SolversOptions_8hpp.html#a765a4007c12a84454a77f1a29ad04b4aa341acbe802de0e3a8902fb8d8a3a352c">LBFGS</a>
  }</td></tr>
 <tr class="separator:a765a4007c12a84454a77f1a29ad04b4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b341faac6531c4543c9dc6e5e4592cf"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SolversOptions_8hpp.html#a8b341faac6531c4543c9dc6e5e4592cf">PreconditionerType</a> { <a class="el" href="SolversOptions_8hpp.html#a8b341faac6531c4543c9dc6e5e4592cfa37f9b244a11cfd8f401e78df165da036">SMOOTHER</a>
@@ -183,6 +188,8 @@ Enumerations</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:ac1eef27763caad41ca330703399e1225"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNewtonDefaultConstant.html#ac1eef27763caad41ca330703399e1225">NewtonDefaultConstant::abs_tol</a> = 1.e-13</td></tr>
 <tr class="separator:ac1eef27763caad41ca330703399e1225"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77da042e172c433100e9b5e2128fac4c"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLBFGSDefaultConstant.html#a77da042e172c433100e9b5e2128fac4c">LBFGSDefaultConstant::abs_tol</a> = 1.e-13</td></tr>
+<tr class="separator:a77da042e172c433100e9b5e2128fac4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4aa9e77a101c313c45e1f9071c9c0b02"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceBICGSTABDefaultConstant.html#a4aa9e77a101c313c45e1f9071c9c0b02">BICGSTABDefaultConstant::abs_tol</a> = 1.e-24</td></tr>
 <tr class="separator:a4aa9e77a101c313c45e1f9071c9c0b02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfa92df3838b1db99e8e3c39f8a49c71"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCGDefaultConstant.html#adfa92df3838b1db99e8e3c39f8a49c71">CGDefaultConstant::abs_tol</a> = 1.e-24</td></tr>
@@ -191,8 +198,12 @@ Variables</h2></td></tr>
 <tr class="separator:a51be378380f456184ea14f3ebe1af756"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63b66e4476d66c517a6a7547302c5a5a"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGMRESDefaultConstant.html#a63b66e4476d66c517a6a7547302c5a5a">GMRESDefaultConstant::abs_tol</a> = 1.e-24</td></tr>
 <tr class="separator:a63b66e4476d66c517a6a7547302c5a5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17c3d0648b8806b3fd7e811047cc7cf0"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLBFGSDefaultConstant.html#a17c3d0648b8806b3fd7e811047cc7cf0">LBFGSDefaultConstant::history_size</a> = 10</td></tr>
+<tr class="separator:a17c3d0648b8806b3fd7e811047cc7cf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54fd5f536239148e4b6944fc4ca69b68"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNewtonDefaultConstant.html#a54fd5f536239148e4b6944fc4ca69b68">NewtonDefaultConstant::iter_max</a> = 100</td></tr>
 <tr class="separator:a54fd5f536239148e4b6944fc4ca69b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52acf9165cbe76a3f69a6fce58501b09"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLBFGSDefaultConstant.html#a52acf9165cbe76a3f69a6fce58501b09">LBFGSDefaultConstant::iter_max</a> = 1000</td></tr>
+<tr class="separator:a52acf9165cbe76a3f69a6fce58501b09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42249bc4230fdee3b0e88973cbf03bf2"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceBICGSTABDefaultConstant.html#a42249bc4230fdee3b0e88973cbf03bf2">BICGSTABDefaultConstant::iter_max</a> = 1000</td></tr>
 <tr class="separator:a42249bc4230fdee3b0e88973cbf03bf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6610b20e336bf83b06afb3ef80f33be2"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCGDefaultConstant.html#a6610b20e336bf83b06afb3ef80f33be2">CGDefaultConstant::iter_max</a> = 1000</td></tr>
@@ -213,6 +224,8 @@ Variables</h2></td></tr>
 <tr class="separator:a8cc0b3195677411cb5abbd702289e1da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a629a0f60e031b0323fb11977b84e07a5"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNewtonDefaultConstant.html#a629a0f60e031b0323fb11977b84e07a5">NewtonDefaultConstant::iterative_mode</a> = false</td></tr>
 <tr class="separator:a629a0f60e031b0323fb11977b84e07a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e70c99fa75fb1890a8d24bad42d55bd"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLBFGSDefaultConstant.html#a5e70c99fa75fb1890a8d24bad42d55bd">LBFGSDefaultConstant::iterative_mode</a> = false</td></tr>
+<tr class="separator:a5e70c99fa75fb1890a8d24bad42d55bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59b11fd1d442255c70a6279dbd1269af"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceBICGSTABDefaultConstant.html#a59b11fd1d442255c70a6279dbd1269af">BICGSTABDefaultConstant::iterative_mode</a> = false</td></tr>
 <tr class="separator:a59b11fd1d442255c70a6279dbd1269af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a034afdd581c5eeb896518fad09a5103e"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCGDefaultConstant.html#a034afdd581c5eeb896518fad09a5103e">CGDefaultConstant::iterative_mode</a> = false</td></tr>
@@ -231,32 +244,36 @@ Variables</h2></td></tr>
 <tr class="separator:aae02547c7d9c2203084126005d24f173"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bd17649a3288c668f91b15b49e8662d"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHYPRE__SMOOTHER__DefaultConstant.html#a0bd17649a3288c668f91b15b49e8662d">HYPRE_SMOOTHER_DefaultConstant::positive_diagonal</a> = true</td></tr>
 <tr class="separator:a0bd17649a3288c668f91b15b49e8662d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ed2f048dc8a07bd1ee5b614baeb4a06"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNewtonDefaultConstant.html#a3ed2f048dc8a07bd1ee5b614baeb4a06">NewtonDefaultConstant::print_level</a> = 0</td></tr>
+<tr class="memitem:a3ed2f048dc8a07bd1ee5b614baeb4a06"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNewtonDefaultConstant.html#a3ed2f048dc8a07bd1ee5b614baeb4a06">NewtonDefaultConstant::print_level</a> = -1</td></tr>
 <tr class="separator:a3ed2f048dc8a07bd1ee5b614baeb4a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d4e24341888c4a4a674afc1a16137d3"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceBICGSTABDefaultConstant.html#a1d4e24341888c4a4a674afc1a16137d3">BICGSTABDefaultConstant::print_level</a> = 0</td></tr>
+<tr class="memitem:ae73c28f70f6bb9cf5e2e3d533ef81b81"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLBFGSDefaultConstant.html#ae73c28f70f6bb9cf5e2e3d533ef81b81">LBFGSDefaultConstant::print_level</a> = -1</td></tr>
+<tr class="separator:ae73c28f70f6bb9cf5e2e3d533ef81b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d4e24341888c4a4a674afc1a16137d3"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceBICGSTABDefaultConstant.html#a1d4e24341888c4a4a674afc1a16137d3">BICGSTABDefaultConstant::print_level</a> = -1</td></tr>
 <tr class="separator:a1d4e24341888c4a4a674afc1a16137d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af69e286d4f115e9867493be7126e04a9"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCGDefaultConstant.html#af69e286d4f115e9867493be7126e04a9">CGDefaultConstant::print_level</a> = 0</td></tr>
+<tr class="memitem:af69e286d4f115e9867493be7126e04a9"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCGDefaultConstant.html#af69e286d4f115e9867493be7126e04a9">CGDefaultConstant::print_level</a> = -1</td></tr>
 <tr class="separator:af69e286d4f115e9867493be7126e04a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57faae19b8800aa498a12fa26a679b6d"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMINRESDefaultConstant.html#a57faae19b8800aa498a12fa26a679b6d">MINRESDefaultConstant::print_level</a> = 0</td></tr>
+<tr class="memitem:a57faae19b8800aa498a12fa26a679b6d"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMINRESDefaultConstant.html#a57faae19b8800aa498a12fa26a679b6d">MINRESDefaultConstant::print_level</a> = -1</td></tr>
 <tr class="separator:a57faae19b8800aa498a12fa26a679b6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15ec40714edccdc31b1db46c82abe31a"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGMRESDefaultConstant.html#a15ec40714edccdc31b1db46c82abe31a">GMRESDefaultConstant::print_level</a> = 0</td></tr>
+<tr class="memitem:a15ec40714edccdc31b1db46c82abe31a"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGMRESDefaultConstant.html#a15ec40714edccdc31b1db46c82abe31a">GMRESDefaultConstant::print_level</a> = -1</td></tr>
 <tr class="separator:a15ec40714edccdc31b1db46c82abe31a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a757dec5688430adda0e8c46ef93b0d93"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUMFPACK__DefaultConstant.html#a757dec5688430adda0e8c46ef93b0d93">UMFPACK_DefaultConstant::print_level</a> = 0</td></tr>
+<tr class="memitem:a757dec5688430adda0e8c46ef93b0d93"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUMFPACK__DefaultConstant.html#a757dec5688430adda0e8c46ef93b0d93">UMFPACK_DefaultConstant::print_level</a> = -1</td></tr>
 <tr class="separator:a757dec5688430adda0e8c46ef93b0d93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe328d26f62063e19a3b46ecb4ab35fd"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDSMOOTHER__DefaultConstant.html#afe328d26f62063e19a3b46ecb4ab35fd">DSMOOTHER_DefaultConstant::print_level</a> = 0</td></tr>
+<tr class="memitem:afe328d26f62063e19a3b46ecb4ab35fd"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDSMOOTHER__DefaultConstant.html#afe328d26f62063e19a3b46ecb4ab35fd">DSMOOTHER_DefaultConstant::print_level</a> = -1</td></tr>
 <tr class="separator:afe328d26f62063e19a3b46ecb4ab35fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1965cf2231f074dc1aa3a19eca4e3d5"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHYPRE__PCG__DefaultConstant.html#ae1965cf2231f074dc1aa3a19eca4e3d5">HYPRE_PCG_DefaultConstant::print_level</a> = 0</td></tr>
+<tr class="memitem:ae1965cf2231f074dc1aa3a19eca4e3d5"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHYPRE__PCG__DefaultConstant.html#ae1965cf2231f074dc1aa3a19eca4e3d5">HYPRE_PCG_DefaultConstant::print_level</a> = -1</td></tr>
 <tr class="separator:ae1965cf2231f074dc1aa3a19eca4e3d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a813de300272b70a9cc700d2af69fb313"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHYPRE__GMRES__DefaultConstant.html#a813de300272b70a9cc700d2af69fb313">HYPRE_GMRES_DefaultConstant::print_level</a> = 0</td></tr>
+<tr class="memitem:a813de300272b70a9cc700d2af69fb313"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHYPRE__GMRES__DefaultConstant.html#a813de300272b70a9cc700d2af69fb313">HYPRE_GMRES_DefaultConstant::print_level</a> = -1</td></tr>
 <tr class="separator:a813de300272b70a9cc700d2af69fb313"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a278dd7da6c0258c39e774cfd8e766f66"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHYPRE__FGMRES__DefaultConstant.html#a278dd7da6c0258c39e774cfd8e766f66">HYPRE_FGMRES_DefaultConstant::print_level</a> = 0</td></tr>
+<tr class="memitem:a278dd7da6c0258c39e774cfd8e766f66"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHYPRE__FGMRES__DefaultConstant.html#a278dd7da6c0258c39e774cfd8e766f66">HYPRE_FGMRES_DefaultConstant::print_level</a> = -1</td></tr>
 <tr class="separator:a278dd7da6c0258c39e774cfd8e766f66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac957b67e9fc0a250ce4fa661b5e50312"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHYPRE__ILU__DefaultConstant.html#ac957b67e9fc0a250ce4fa661b5e50312">HYPRE_ILU_DefaultConstant::print_level</a> = 0</td></tr>
+<tr class="memitem:ac957b67e9fc0a250ce4fa661b5e50312"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHYPRE__ILU__DefaultConstant.html#ac957b67e9fc0a250ce4fa661b5e50312">HYPRE_ILU_DefaultConstant::print_level</a> = -1</td></tr>
 <tr class="separator:ac957b67e9fc0a250ce4fa661b5e50312"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58571f4cb855057d0f4d2e86f4652db7"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHYPRE__BOOMER__AMG__DefaultConstant.html#a58571f4cb855057d0f4d2e86f4652db7">HYPRE_BOOMER_AMG_DefaultConstant::print_level</a> = 0</td></tr>
+<tr class="memitem:a58571f4cb855057d0f4d2e86f4652db7"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHYPRE__BOOMER__AMG__DefaultConstant.html#a58571f4cb855057d0f4d2e86f4652db7">HYPRE_BOOMER_AMG_DefaultConstant::print_level</a> = -1</td></tr>
 <tr class="separator:a58571f4cb855057d0f4d2e86f4652db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a120c87f4ed67c7d6cfcdb2588d2713ea"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNewtonDefaultConstant.html#a120c87f4ed67c7d6cfcdb2588d2713ea">NewtonDefaultConstant::rel_tol</a> = 1.e-13</td></tr>
 <tr class="separator:a120c87f4ed67c7d6cfcdb2588d2713ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8c8bfe61dba23dbe555534a98fe72cd"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceLBFGSDefaultConstant.html#ab8c8bfe61dba23dbe555534a98fe72cd">LBFGSDefaultConstant::rel_tol</a> = 1.e-13</td></tr>
+<tr class="separator:ab8c8bfe61dba23dbe555534a98fe72cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80d068b9c4d0d249e92f2f0bac5d2631"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceBICGSTABDefaultConstant.html#a80d068b9c4d0d249e92f2f0bac5d2631">BICGSTABDefaultConstant::rel_tol</a> = 1.e-12</td></tr>
 <tr class="separator:a80d068b9c4d0d249e92f2f0bac5d2631"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca322e471ab6d5a923adb65c7cb701a2"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCGDefaultConstant.html#aca322e471ab6d5a923adb65c7cb701a2">CGDefaultConstant::rel_tol</a> = 1.e-12</td></tr>
@@ -435,6 +452,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a765a4007c12a84454a77f1a29ad04b4aa543a80c769aa267bbf02f31e2d7e07e6"></a>NEWTON&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a765a4007c12a84454a77f1a29ad04b4aa341acbe802de0e3a8902fb8d8a3a352c"></a>LBFGS&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="SolversOptions_8hpp_source.html#l00033">33</a> of file <a class="el" href="SolversOptions_8hpp_source.html">SolversOptions.hpp</a>.</p>
@@ -472,7 +490,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:45 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

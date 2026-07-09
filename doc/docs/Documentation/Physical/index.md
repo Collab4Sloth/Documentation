@@ -58,7 +58,7 @@ The governing equations associated with the evolution of a physical system can b
         ```math
 
         \begin{align*} 
-        \frac{\partial \phi_i}{\partial t}&= -\left[\sum_{k} L_{i,k} \nabla \frac{\delta \mathcal{F}}{\delta \phi_k}\right] \text{ in }\Omega 
+        \frac{\partial \phi_i}{\partial t}&= -\left[\sum_{k} L_{i,k} \frac{\delta \mathcal{F}}{\delta \phi_k}\right] \text{ in }\Omega 
         \\[6pt]    
         \sum_{i}\phi_i &=1
         \end{align*}

@@ -1,9 +1,9 @@
 
 # Examples
 
-This page describes the tests that are relevant for performing multiphysics simulations. 
+This section presents the example problems available in `SLOTH` for multiphysics simulations.
 
-These tests are naturally grouped into the following categories:
+The examples are organized into the following categories:
 
 - [Cahn-Hilliard](CahnHilliard/index.md) 
 - [Allen-Cahn](AllenCahn/index.md)
@@ -12,5 +12,5 @@ These tests are naturally grouped into the following categories:
 - [Heat Transfer](HeatTransfer/index.md)
 - [CALPHAD](Calphad/index.md)
 
-
-They are continuously run during the `SLOTH` continuous integration process to detect code regressions early while maintaining high code coverage.
+All examples are automatically executed as part of the `SLOTH` continuous integration (CI) pipeline. 
+This ensures that code regressions are detected early while maintaining comprehensive test coverage.

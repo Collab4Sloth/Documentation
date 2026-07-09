@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -141,6 +141,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa966ac7e202197c3e7cac1a1488e7989"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa33a13c0ac53394a53ae134d53bb008d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#aa33a13c0ac53394a53ae134d53bb008d">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a> type, const int &amp;depth, const mfem::FunctionCoefficient &amp;initial_condition_function, const std::set&lt; std::string &gt; &amp;attribute_names, const mfem::FunctionCoefficient &amp;analytical_solution_function)</td></tr>
 <tr class="separator:aa33a13c0ac53394a53ae134d53bb008d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a8833820205ae9709b7e9e4ddcc71a0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a2a8833820205ae9709b7e9e4ddcc71a0">Variable</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *spatial, const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;bcs, const std::string &amp;variable_name, <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a> type, const int &amp;depth, const std::tuple&lt; std::string, std::string &gt; &amp;input_file_dir)</td></tr>
+<tr class="separator:a2a8833820205ae9709b7e9e4ddcc71a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a9bfaa6d8079310ce7781794caff32b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVariable.html#a5a9bfaa6d8079310ce7781794caff32b">~Variable</a> ()</td></tr>
 <tr class="separator:a5a9bfaa6d8079310ce7781794caff32b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -151,8 +153,62 @@ class Variable&lt; T, DIM &gt;</h3>
 
 <p class="definition">Definition at line <a class="el" href="Variable_8hpp_source.html#l00045">45</a> of file <a class="el" href="Variable_8hpp_source.html">Variable.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a2a8833820205ae9709b7e9e4ddcc71a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a8833820205ae9709b7e9e4ddcc71a0">&#9670;&nbsp;</a></span>Variable() <span class="overload">[1/19]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classVariable.html">Variable</a>&lt; T, DIM &gt;::<a class="el" href="classVariable.html">Variable</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *&#160;</td>
+          <td class="paramname"><em>spatial</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>bcs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>variable_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>depth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::tuple&lt; std::string, std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>input_file_dir</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a65ff6a21307c5adde352b6778e0c37bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65ff6a21307c5adde352b6778e0c37bd">&#9670;&nbsp;</a></span>Variable() <span class="overload">[1/18]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a65ff6a21307c5adde352b6778e0c37bd">&#9670;&nbsp;</a></span>Variable() <span class="overload">[2/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -206,7 +262,7 @@ template&lt;class T , int DIM&gt; </div>
 </div>
 </div>
 <a id="a496dff956f07d85049e5b7a4675f994f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a496dff956f07d85049e5b7a4675f994f">&#9670;&nbsp;</a></span>Variable() <span class="overload">[2/18]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a496dff956f07d85049e5b7a4675f994f">&#9670;&nbsp;</a></span>Variable() <span class="overload">[3/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -266,7 +322,7 @@ template&lt;class T , int DIM&gt; </div>
 </div>
 </div>
 <a id="ab9b61ba5056101888eb5fa4ad599bdf5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9b61ba5056101888eb5fa4ad599bdf5">&#9670;&nbsp;</a></span>Variable() <span class="overload">[3/18]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9b61ba5056101888eb5fa4ad599bdf5">&#9670;&nbsp;</a></span>Variable() <span class="overload">[4/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -326,7 +382,7 @@ template&lt;class T , int DIM&gt; </div>
 </div>
 </div>
 <a id="af4835389736d7be25eef5655b6a32cc6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af4835389736d7be25eef5655b6a32cc6">&#9670;&nbsp;</a></span>Variable() <span class="overload">[4/18]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af4835389736d7be25eef5655b6a32cc6">&#9670;&nbsp;</a></span>Variable() <span class="overload">[5/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -380,7 +436,7 @@ template&lt;class T , int DIM&gt; </div>
 </div>
 </div>
 <a id="abea1a8dc15b2b7b6a5070139b2e79fc5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abea1a8dc15b2b7b6a5070139b2e79fc5">&#9670;&nbsp;</a></span>Variable() <span class="overload">[5/18]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abea1a8dc15b2b7b6a5070139b2e79fc5">&#9670;&nbsp;</a></span>Variable() <span class="overload">[6/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -440,7 +496,7 @@ template&lt;class T , int DIM&gt; </div>
 </div>
 </div>
 <a id="a69f300893841689561dce17b7488b555"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69f300893841689561dce17b7488b555">&#9670;&nbsp;</a></span>Variable() <span class="overload">[6/18]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a69f300893841689561dce17b7488b555">&#9670;&nbsp;</a></span>Variable() <span class="overload">[7/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -500,7 +556,7 @@ template&lt;class T , int DIM&gt; </div>
 </div>
 </div>
 <a id="a3fe67f6bdd9a6c899c0ff34351e0a736"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3fe67f6bdd9a6c899c0ff34351e0a736">&#9670;&nbsp;</a></span>Variable() <span class="overload">[7/18]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fe67f6bdd9a6c899c0ff34351e0a736">&#9670;&nbsp;</a></span>Variable() <span class="overload">[8/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -554,7 +610,7 @@ template&lt;class T , int DIM&gt; </div>
 </div>
 </div>
 <a id="af0c1a65b8215a7da843f36bfbd291fc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0c1a65b8215a7da843f36bfbd291fc9">&#9670;&nbsp;</a></span>Variable() <span class="overload">[8/18]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af0c1a65b8215a7da843f36bfbd291fc9">&#9670;&nbsp;</a></span>Variable() <span class="overload">[9/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -614,7 +670,7 @@ template&lt;class T , int DIM&gt; </div>
 </div>
 </div>
 <a id="ad75f42911ef407801b525802ac713463"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad75f42911ef407801b525802ac713463">&#9670;&nbsp;</a></span>Variable() <span class="overload">[9/18]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad75f42911ef407801b525802ac713463">&#9670;&nbsp;</a></span>Variable() <span class="overload">[10/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -674,7 +730,7 @@ template&lt;class T , int DIM&gt; </div>
 </div>
 </div>
 <a id="a3c1085c39164c337a1a705f4b52bda2e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c1085c39164c337a1a705f4b52bda2e">&#9670;&nbsp;</a></span>Variable() <span class="overload">[10/18]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c1085c39164c337a1a705f4b52bda2e">&#9670;&nbsp;</a></span>Variable() <span class="overload">[11/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -734,7 +790,7 @@ template&lt;class T , int DIM&gt; </div>
 </div>
 </div>
 <a id="a3ae648d6b746bb0e52f55a0e8c43fe6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ae648d6b746bb0e52f55a0e8c43fe6c">&#9670;&nbsp;</a></span>Variable() <span class="overload">[11/18]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ae648d6b746bb0e52f55a0e8c43fe6c">&#9670;&nbsp;</a></span>Variable() <span class="overload">[12/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -800,7 +856,7 @@ template&lt;class T , int DIM&gt; </div>
 </div>
 </div>
 <a id="ab698d637ec6a36ef76e6dd37f048dc78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab698d637ec6a36ef76e6dd37f048dc78">&#9670;&nbsp;</a></span>Variable() <span class="overload">[12/18]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab698d637ec6a36ef76e6dd37f048dc78">&#9670;&nbsp;</a></span>Variable() <span class="overload">[13/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -866,7 +922,7 @@ template&lt;class T , int DIM&gt; </div>
 </div>
 </div>
 <a id="adf8126517f10c8644f9b40b584a95424"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf8126517f10c8644f9b40b584a95424">&#9670;&nbsp;</a></span>Variable() <span class="overload">[13/18]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adf8126517f10c8644f9b40b584a95424">&#9670;&nbsp;</a></span>Variable() <span class="overload">[14/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -926,7 +982,7 @@ template&lt;class T , int DIM&gt; </div>
 </div>
 </div>
 <a id="aa966ac7e202197c3e7cac1a1488e7989"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa966ac7e202197c3e7cac1a1488e7989">&#9670;&nbsp;</a></span>Variable() <span class="overload">[14/18]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa966ac7e202197c3e7cac1a1488e7989">&#9670;&nbsp;</a></span>Variable() <span class="overload">[15/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -992,7 +1048,7 @@ template&lt;class T , int DIM&gt; </div>
 </div>
 </div>
 <a id="aa33a13c0ac53394a53ae134d53bb008d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa33a13c0ac53394a53ae134d53bb008d">&#9670;&nbsp;</a></span>Variable() <span class="overload">[15/18]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa33a13c0ac53394a53ae134d53bb008d">&#9670;&nbsp;</a></span>Variable() <span class="overload">[16/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1058,7 +1114,7 @@ template&lt;class T , int DIM&gt; </div>
 </div>
 </div>
 <a id="a6bff1bd7518d5cccd5161e1d049414cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6bff1bd7518d5cccd5161e1d049414cc">&#9670;&nbsp;</a></span>Variable() <span class="overload">[16/18]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bff1bd7518d5cccd5161e1d049414cc">&#9670;&nbsp;</a></span>Variable() <span class="overload">[17/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1118,7 +1174,7 @@ template&lt;class T , int DIM&gt; </div>
 </div>
 </div>
 <a id="ab3c58093bd87cd9c2ebc78cb21e04751"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3c58093bd87cd9c2ebc78cb21e04751">&#9670;&nbsp;</a></span>Variable() <span class="overload">[17/18]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3c58093bd87cd9c2ebc78cb21e04751">&#9670;&nbsp;</a></span>Variable() <span class="overload">[18/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1184,7 +1240,7 @@ template&lt;class T , int DIM&gt; </div>
 </div>
 </div>
 <a id="ac4fba92c0907ea9c42f29464007b6543"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4fba92c0907ea9c42f29464007b6543">&#9670;&nbsp;</a></span>Variable() <span class="overload">[18/18]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4fba92c0907ea9c42f29464007b6543">&#9670;&nbsp;</a></span>Variable() <span class="overload">[19/19]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1526,7 +1582,7 @@ template&lt;class T , int DIM&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

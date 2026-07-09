@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nlsolvertype_1873',['NLSolverType',['../SolversOptions_8hpp.html#a765a4007c12a84454a77f1a29ad04b4a',1,'SolversOptions.hpp']]]
+  ['nlsolvertype_1899',['NLSolverType',['../SolversOptions_8hpp.html#a765a4007c12a84454a77f1a29ad04b4a',1,'SolversOptions.hpp']]]
 ];

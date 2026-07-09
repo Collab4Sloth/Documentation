@@ -15,6 +15,7 @@ The parameters allowed with `TimeDiscretization` are summarized in table 1.
 | `TimeDiscretization` | `"initial_time"` | `double` | `0.` | The initial time of the simulation |
 | `TimeDiscretization` | `"final_time"` | `double` | | The final time of the simulation|
 | `TimeDiscretization` | `"time_step"` | `double` | |The time-step of the simulation (constant value)|
+| `TimeDiscretization` | `"initial_iteration"` | `int` |0 |Initial iteration number used to restart a simulation from a previously saved state (constant value)|
 
 : Table 1 - parameters allowed with `TimeDiscretization`
 

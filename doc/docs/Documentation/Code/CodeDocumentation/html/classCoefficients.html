@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -92,18 +92,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0d16390dd9f85fa33e5d839343f565c0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classCoefficient.html">Coefficient</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCoefficients.html#a0d16390dd9f85fa33e5d839343f565c0">getCoefficients</a> () const</td></tr>
 <tr class="memdesc:a0d16390dd9f85fa33e5d839343f565c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the vector of coefficients.  <a href="classCoefficients.html#a0d16390dd9f85fa33e5d839343f565c0">More...</a><br /></td></tr>
 <tr class="separator:a0d16390dd9f85fa33e5d839343f565c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48561c2320c968314d74ea1f671d0135"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCoefficient.html">Coefficient</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCoefficients.html#a48561c2320c968314d74ea1f671d0135">operator[]</a> (size_t i)</td></tr>
-<tr class="memdesc:a48561c2320c968314d74ea1f671d0135"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the i-th coefficient.  <a href="classCoefficients.html#a48561c2320c968314d74ea1f671d0135">More...</a><br /></td></tr>
-<tr class="separator:a48561c2320c968314d74ea1f671d0135"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99d191b5b06d98f3cf08813d1d479c2b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCoefficient.html">Coefficient</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCoefficients.html#a99d191b5b06d98f3cf08813d1d479c2b">operator[]</a> (size_t i)</td></tr>
+<tr class="memdesc:a99d191b5b06d98f3cf08813d1d479c2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the i-th coefficient.  <a href="classCoefficients.html#a99d191b5b06d98f3cf08813d1d479c2b">More...</a><br /></td></tr>
+<tr class="separator:a99d191b5b06d98f3cf08813d1d479c2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc1952bd3523b79cac2289f66094a4af"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classCoefficient.html">Coefficient</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCoefficients.html#afc1952bd3523b79cac2289f66094a4af">operator[]</a> (size_t i) const</td></tr>
+<tr class="memdesc:afc1952bd3523b79cac2289f66094a4af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the i-th coefficient.  <a href="classCoefficients.html#afc1952bd3523b79cac2289f66094a4af">More...</a><br /></td></tr>
+<tr class="separator:afc1952bd3523b79cac2289f66094a4af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7572d8a99769b3cacb222d94afe2171"><td class="memTemplParams" colspan="2">template&lt;CoeffVar&lt; Coefficient &gt;... Args&gt; </td></tr>
 <tr class="memitem:ad7572d8a99769b3cacb222d94afe2171"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classCoefficients.html#ad7572d8a99769b3cacb222d94afe2171">requires</a> ((sizeof...(Args) &gt; 0)) explicit <a class="el" href="classCoefficients.html">Coefficients</a>(const Args &amp;... args)</td></tr>
 <tr class="separator:ad7572d8a99769b3cacb222d94afe2171"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2677c97600128b09b9c5a0981f5f069c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCoefficients.html#a2677c97600128b09b9c5a0981f5f069c">set_time</a> (double time)</td></tr>
 <tr class="memdesc:a2677c97600128b09b9c5a0981f5f069c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the time value to each coefficients.  <a href="classCoefficients.html#a2677c97600128b09b9c5a0981f5f069c">More...</a><br /></td></tr>
 <tr class="separator:a2677c97600128b09b9c5a0981f5f069c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16389045e5e4f136aa029f3bb9a2454d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCoefficients.html#a16389045e5e4f136aa029f3bb9a2454d">size</a> () noexcept</td></tr>
-<tr class="memdesc:a16389045e5e4f136aa029f3bb9a2454d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of coefficients.  <a href="classCoefficients.html#a16389045e5e4f136aa029f3bb9a2454d">More...</a><br /></td></tr>
-<tr class="separator:a16389045e5e4f136aa029f3bb9a2454d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f21a18ca67111929f66e4b561d9be73"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCoefficients.html#a7f21a18ca67111929f66e4b561d9be73">size</a> () const noexcept</td></tr>
+<tr class="memdesc:a7f21a18ca67111929f66e4b561d9be73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of coefficients.  <a href="classCoefficients.html#a7f21a18ca67111929f66e4b561d9be73">More...</a><br /></td></tr>
+<tr class="separator:a7f21a18ca67111929f66e4b561d9be73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ae938da52e0960062ae54a279ff8e25"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCoefficients.html#a0ae938da52e0960062ae54a279ff8e25">~Coefficients</a> ()=default</td></tr>
 <tr class="separator:a0ae938da52e0960062ae54a279ff8e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -209,7 +212,7 @@ Public Member Functions</h2></td></tr>
 <p>Returns a copy of the glossary types associated with the coefficients. </p>
 <dl class="section return"><dt>Returns</dt><dd>Vector of glossary types. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Coefficients_8cpp_source.html#l00083">83</a> of file <a class="el" href="Coefficients_8cpp_source.html">Coefficients.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Coefficients_8cpp_source.html#l00096">96</a> of file <a class="el" href="Coefficients_8cpp_source.html">Coefficients.cpp</a>.</p>
 
 </div>
 </div>
@@ -235,14 +238,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a48561c2320c968314d74ea1f671d0135"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48561c2320c968314d74ea1f671d0135">&#9670;&nbsp;</a></span>operator[]()</h2>
+<a id="a99d191b5b06d98f3cf08813d1d479c2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99d191b5b06d98f3cf08813d1d479c2b">&#9670;&nbsp;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classCoefficient.html">Coefficient</a> Coefficients::operator[] </td>
+          <td class="memname"><a class="el" href="classCoefficient.html">Coefficient</a> &amp; Coefficients::operator[] </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>i</em></td><td>)</td>
@@ -267,6 +270,41 @@ Public Member Functions</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="Coefficients_8cpp_source.html#l00073">73</a> of file <a class="el" href="Coefficients_8cpp_source.html">Coefficients.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afc1952bd3523b79cac2289f66094a4af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc1952bd3523b79cac2289f66094a4af">&#9670;&nbsp;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classCoefficient.html">Coefficient</a> &amp; Coefficients::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the i-th coefficient. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>Index of the coefficient. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the i-th coefficient.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::out_of_range</td><td>if i is out of bounds. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Coefficients_8cpp_source.html#l00086">86</a> of file <a class="el" href="Coefficients_8cpp_source.html">Coefficients.cpp</a>.</p>
 
 </div>
 </div>
@@ -308,12 +346,12 @@ template&lt;CoeffVar&lt; Coefficient &gt;... Args&gt; </div>
 
 <p>Set the time value to each coefficients. </p>
 
-<p class="definition">Definition at line <a class="el" href="Coefficients_8cpp_source.html#l00089">89</a> of file <a class="el" href="Coefficients_8cpp_source.html">Coefficients.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Coefficients_8cpp_source.html#l00102">102</a> of file <a class="el" href="Coefficients_8cpp_source.html">Coefficients.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a16389045e5e4f136aa029f3bb9a2454d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a16389045e5e4f136aa029f3bb9a2454d">&#9670;&nbsp;</a></span>size()</h2>
+<a id="a7f21a18ca67111929f66e4b561d9be73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f21a18ca67111929f66e4b561d9be73">&#9670;&nbsp;</a></span>size()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -325,7 +363,7 @@ template&lt;CoeffVar&lt; Coefficient &gt;... Args&gt; </div>
           <td class="memname">size_t Coefficients::size </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -349,7 +387,7 @@ template&lt;CoeffVar&lt; Coefficient &gt;... Args&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:45 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

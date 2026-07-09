@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -316,188 +316,191 @@ $(function() {
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; *   PostProcessing.</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; * @param initial_time</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; *   Initial time</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; */</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;template &lt;class OPE, class VAR, class PST&gt;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;void Problem&lt;OPE, VAR, PST&gt;::initialize(const double&amp; initial_time) {</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  this-&gt;oper_.initialize(initial_time, this-&gt;variables_, this-&gt;auxvariables_);</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;}</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;/**</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; * @brief Finalize the Problem</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; *</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; * Save specialized results in CSV files</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; * @param time_step</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; *   current time_step</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; */</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;template &lt;class OPE, class VAR, class PST&gt;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;void Problem&lt;OPE, VAR, PST&gt;::initialize(const double&amp; initial_time, const double time_step) {</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;  this-&gt;oper_.initialize(initial_time, time_step, this-&gt;variables_, this-&gt;auxvariables_);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;}</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;/**</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; * @brief Finalize the Problem</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; *</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; * @tparam OPE</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; *   Operator type defining the nonlinear PDE.</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; * @tparam VAR</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; *   Primary variable container type.</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; * @tparam PST</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; *   PostProcessing.</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; */</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;template &lt;class OPE, class VAR, class PST&gt;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;void Problem&lt;OPE, VAR, PST&gt;::finalize() {</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  // Save specialized values only at the end of calculation if required</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  bool must_be_saved = !this-&gt;pst_.get_enable_save_specialized_at_iter();</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  this-&gt;save_specialized(must_be_saved);</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;}</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;/**</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; * @brief Save specialized results</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; *</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; * @tparam OPE</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; *   Operator type defining the nonlinear PDE.</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; * @tparam VAR</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; *   Primary variable container type.</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; * @tparam PST</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; *   PostProcessing.</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; *</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; * @param must_be_saved Flag used to indicate if specialized results must be saved</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; * Save specialized results in CSV files</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; *</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; * @tparam OPE</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; *   Operator type defining the nonlinear PDE.</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; * @tparam VAR</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; *   Primary variable container type.</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; * @tparam PST</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; *   PostProcessing.</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; */</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;template &lt;class OPE, class VAR, class PST&gt;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;void Problem&lt;OPE, VAR, PST&gt;::finalize() {</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  // Save specialized values only at the end of calculation if required</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  bool must_be_saved = !this-&gt;pst_.get_enable_save_specialized_at_iter();</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  this-&gt;save_specialized(must_be_saved);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;}</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;/**</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; * @brief Save specialized results</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; *</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; * @tparam OPE</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; *   Operator type defining the nonlinear PDE.</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; * @tparam VAR</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; *   Primary variable container type.</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; * @tparam PST</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; *   PostProcessing.</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; *</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; */</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;template &lt;class OPE, class VAR, class PST&gt;</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;void Problem&lt;OPE, VAR, PST&gt;::save_specialized(bool must_be_saved) {</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;  int rank = mfem::Mpi::WorldRank();</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  if (rank == 0) {</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    if (must_be_saved) {</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;      if (!this-&gt;oper_.get_time_specialized().empty()) {</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        this-&gt;pst_.save_specialized(this-&gt;oper_.get_time_specialized());</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;      }</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;      if (!this-&gt;oper_.get_time_iso_specialized().empty()) {</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        for (const auto&amp; [var_name, variable_time_iso_specialized] :</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;             this-&gt;oper_.get_time_iso_specialized()) {</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;          std::string str = var_name + &quot;_iso_computation.csv&quot;;</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;          this-&gt;pst_.save_specialized(variable_time_iso_specialized, str);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        }</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;      }</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    }</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;  }</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;  if (must_be_saved) {</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    this-&gt;oper_.clear_time_specialized();</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    this-&gt;oper_.clear_iso_time_specialized();</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  }</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;}</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;/**</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; * @brief Saves variables according PostProcessing settings</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; *</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; * @tparam OPE</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; *   Operator type defining the nonlinear PDE.</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; * @tparam VAR</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; *   Primary variable container type.</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; * @tparam PST</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; *   PostProcessing.</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; *</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; * @param iter Current iteration</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; * @param current_time Current time</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; *</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; */</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;template &lt;class OPE, class VAR, class PST&gt;</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;void Problem&lt;OPE, VAR, PST&gt;::post_processing(const int&amp; iter, const double&amp; current_time) {</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;  const auto nvars = this-&gt;variables_.get_variables_number();</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;  std::vector&lt;mfem::Vector&gt; u_vect;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;  const double current_time_step = this-&gt;oper_.get_current_time_step();</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  // Isovalue to compute by variable</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  const std::map&lt;std::string, double&gt; map_iso_value = this-&gt;pst_.get_iso_val_to_compute();</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  // Integral value to compute by variable</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;  const std::map&lt;std::string, std::tuple&lt;double, double&gt;&gt; map_integral =</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;      this-&gt;pst_.get_integral_to_compute();</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;  for (unsigned int iv = 0; iv &lt; nvars; iv++) {</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    auto vv = this-&gt;variables_[iv];</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    auto solution = vv.get_analytical_solution();</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    auto unk = vv.get_unknown();</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    auto unk_name = vv.getVariableName();</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    // Errors</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    if (solution != nullptr) {</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;      auto solution_func = solution.get();</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;      this-&gt;oper_.ComputeError(iter, current_time, current_time_step, iv, unk_name, unk,</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                               *solution_func);</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    }</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160; </div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    // Isovalues</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    if (!map_iso_value.empty() &amp;&amp; map_iso_value.contains(unk_name)) {</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;      const double iso_value = map_iso_value.at(unk_name);</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;      this-&gt;oper_.ComputeIsoVal(iter, current_time, current_time_step, iv, unk_name, unk,</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                                iso_value);</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    }</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    // Integral</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    if (!map_integral.empty() &amp;&amp; map_integral.contains(unk_name)) {</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;      const auto&amp; [lower_bound, upper_bound] = map_integral.at(unk_name);</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;      this-&gt;oper_.ComputeIntegral(iter, current_time, current_time_step, iv, unk_name, unk,</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                                  lower_bound, upper_bound);</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    }</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    u_vect.emplace_back(std::move(unk));</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;  }</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;  // Compute Energies is required (True by default)</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;  if (this-&gt;pst_.get_enable_compute_energies()) {</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    this-&gt;oper_.ComputeEnergies(iter, current_time, current_time_step, u_vect);</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;  }</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;  // Save variables for visualization</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;  ProblemBase&lt;VAR, PST&gt;::post_processing(iter, current_time);</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  // Save specialized values at each time-step if required</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;  bool must_be_saved = this-&gt;pst_.get_enable_save_specialized_at_iter();</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;  this-&gt;save_specialized(must_be_saved);</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;}</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;/**</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; * @brief Do a time-step by calling Step method of the ODE</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; *</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; * @tparam OPE</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; *   Operator type defining the nonlinear PDE.</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; * @tparam VAR</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; *   Primary variable container type.</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; * @tparam PST</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; *   PostProcessing.</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; *</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; * @param next_time Next time.</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; * @param current_time Current time.</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; * @param current_time_step Current time-step.</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; * @param iter Current iteration.</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160; * @param vect_unk Vector of pointers towards the unknowns.</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; * @param unks_info Vector containing information associated with the unknowns.</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; */</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;template &lt;class OPE, class VAR, class PST&gt;</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;void Problem&lt;OPE, VAR, PST&gt;::do_time_step(</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    double&amp; next_time, const double&amp; current_time, double current_time_step, const int iter,</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    std::vector&lt;std::unique_ptr&lt;mfem::Vector&gt;&gt;&amp; vect_unk,</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    [[maybe_unused]] const std::vector&lt;std::vector&lt;std::string&gt;&gt;&amp; unks_info) {</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;  const size_t unk_size = vect_unk.size();</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160; </div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;  this-&gt;set_time_coefficients(next_time);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; * @param must_be_saved Flag used to indicate if specialized results must be saved</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; *</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; */</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;template &lt;class OPE, class VAR, class PST&gt;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;void Problem&lt;OPE, VAR, PST&gt;::save_specialized(bool must_be_saved) {</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  int rank = mfem::Mpi::WorldRank();</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  if (rank == 0) {</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    if (must_be_saved) {</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;      if (!this-&gt;oper_.get_time_specialized().empty()) {</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        this-&gt;pst_.save_specialized(this-&gt;oper_.get_time_specialized());</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;      }</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;      if (!this-&gt;oper_.get_time_iso_specialized().empty()) {</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        for (const auto&amp; [var_name, variable_time_iso_specialized] :</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;             this-&gt;oper_.get_time_iso_specialized()) {</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;          std::string str = var_name + &quot;_iso_computation.csv&quot;;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;          this-&gt;pst_.save_specialized(variable_time_iso_specialized, str);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        }</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;      }</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    }</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;  }</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  if (must_be_saved) {</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    this-&gt;oper_.clear_time_specialized();</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    this-&gt;oper_.clear_iso_time_specialized();</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  }</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;}</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;/**</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; * @brief Saves variables according PostProcessing settings</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; *</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; * @tparam OPE</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; *   Operator type defining the nonlinear PDE.</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; * @tparam VAR</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; *   Primary variable container type.</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; * @tparam PST</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; *   PostProcessing.</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; *</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; * @param iter Current iteration</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; * @param current_time Current time</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; *</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; */</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;template &lt;class OPE, class VAR, class PST&gt;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;void Problem&lt;OPE, VAR, PST&gt;::post_processing(const int&amp; iter, const double&amp; current_time) {</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;  const auto nvars = this-&gt;variables_.get_variables_number();</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  std::vector&lt;mfem::Vector&gt; u_vect;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  const double current_time_step = this-&gt;oper_.get_current_time_step();</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  // Isovalue to compute by variable</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  const std::map&lt;std::string, double&gt; map_iso_value = this-&gt;pst_.get_iso_val_to_compute();</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  // Integral value to compute by variable</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;  const std::map&lt;std::string, std::tuple&lt;double, double&gt;&gt; map_integral =</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;      this-&gt;pst_.get_integral_to_compute();</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;  for (unsigned int iv = 0; iv &lt; nvars; iv++) {</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    auto vv = this-&gt;variables_[iv];</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    auto solution = vv.get_analytical_solution();</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    auto unk = vv.get_unknown();</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    auto unk_name = vv.getVariableName();</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    // Errors</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    if (solution != nullptr) {</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;      auto solution_func = solution.get();</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;      this-&gt;oper_.ComputeError(iter, current_time, current_time_step, iv, unk_name, unk,</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                               *solution_func);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    }</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    // Isovalues</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    if (!map_iso_value.empty() &amp;&amp; map_iso_value.contains(unk_name)) {</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;      const double iso_value = map_iso_value.at(unk_name);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;      this-&gt;oper_.ComputeIsoVal(iter, current_time, current_time_step, iv, unk_name, unk,</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                                iso_value);</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    }</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    // Integral</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    if (!map_integral.empty() &amp;&amp; map_integral.contains(unk_name)) {</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;      const auto&amp; [lower_bound, upper_bound] = map_integral.at(unk_name);</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;      this-&gt;oper_.ComputeIntegral(iter, current_time, current_time_step, iv, unk_name, unk,</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                                  lower_bound, upper_bound);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    }</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    u_vect.emplace_back(std::move(unk));</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;  }</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;  // Compute Energies is required (True by default)</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;  if (this-&gt;pst_.get_enable_compute_energies()) {</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    this-&gt;oper_.ComputeEnergies(iter, current_time, current_time_step, u_vect);</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;  }</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;  // Save variables for visualization</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  ProblemBase&lt;VAR, PST&gt;::post_processing(iter, current_time);</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;  // Save specialized values at each time-step if required</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;  bool must_be_saved = this-&gt;pst_.get_enable_save_specialized_at_iter();</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;  this-&gt;save_specialized(must_be_saved);</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;}</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;/**</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; * @brief Do a time-step by calling Step method of the ODE</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; *</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; * @tparam OPE</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; *   Operator type defining the nonlinear PDE.</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; * @tparam VAR</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; *   Primary variable container type.</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; * @tparam PST</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; *   PostProcessing.</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; *</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; * @param next_time Next time.</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; * @param current_time Current time.</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160; * @param current_time_step Current time-step.</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; * @param iter Current iteration.</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160; * @param vect_unk Vector of pointers towards the unknowns.</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; * @param unks_info Vector containing information associated with the unknowns.</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160; */</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;template &lt;class OPE, class VAR, class PST&gt;</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;void Problem&lt;OPE, VAR, PST&gt;::do_time_step(</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    double&amp; next_time, const double&amp; current_time, double current_time_step, const int iter,</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    std::vector&lt;std::unique_ptr&lt;mfem::Vector&gt;&gt;&amp; vect_unk,</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    [[maybe_unused]] const std::vector&lt;std::vector&lt;std::string&gt;&gt;&amp; unks_info) {</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;  const size_t unk_size = vect_unk.size();</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;  this-&gt;oper_.solve(vect_unk, next_time, current_time, current_time_step, iter);</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;  this-&gt;set_time_coefficients(next_time);</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;  // Store the solution into a temporary mfem::Vector that will be used during updating stage, if</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;  // calculation converges</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;  for (size_t i = 0; i &lt; unk_size; i++) {</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    this-&gt;unknown_.emplace_back(*(vect_unk[i]));</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;  }</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;}</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160; </div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;/**</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; * @brief Call OperatorBase method to set the time to coefficients</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160; *</div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; * @tparam OPE</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160; *   Operator type defining the nonlinear PDE.</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160; * @tparam VAR</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; *   Primary variable container type.</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160; * @tparam PST</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; *</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; * @param time current time</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160; */</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;template &lt;class OPE, class VAR, class PST&gt;</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;void Problem&lt;OPE, VAR, PST&gt;::set_time_coefficients(double time) {</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;  this-&gt;oper_.set_time_coefficients(time);</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;}</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;  this-&gt;oper_.setGeometry(this-&gt;geometry_);</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;  this-&gt;oper_.solve(vect_unk, next_time, current_time, current_time_step, iter);</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160; </div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;  // Store the solution into a temporary mfem::Vector that will be used during updating stage, if</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;  // calculation converges</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;  for (size_t i = 0; i &lt; unk_size; i++) {</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    this-&gt;unknown_.emplace_back(*(vect_unk[i]));</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;  }</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;}</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160; </div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;/**</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160; * @brief Call OperatorBase method to set the time to coefficients</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160; *</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; * @tparam OPE</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160; *   Operator type defining the nonlinear PDE.</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; * @tparam VAR</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; *   Primary variable container type.</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160; * @tparam PST</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160; *</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160; * @param time current time</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160; */</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;template &lt;class OPE, class VAR, class PST&gt;</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;void Problem&lt;OPE, VAR, PST&gt;::set_time_coefficients(double time) {</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;  this-&gt;oper_.set_time_coefficients(time);</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:45 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

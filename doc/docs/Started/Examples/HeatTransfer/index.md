@@ -1,11 +1,11 @@
+# Heat Transfer
 
-# Heat transfer 
+The following examples are used to verify the implementation of the heat transfer equation in `SLOTH`:
 
-Verification of the Heat Transfer equation is made with the following tests:
+- **Example 1:** One-dimensional semi-infinite solid with a constant surface heat flux ([documentation](example1/index.md))
+- **Example 2:** One-dimensional semi-infinite solid with surface convection ([documentation](example2/index.md))
+- **Example 3:** Two-dimensional solid with surface convection and radiation ([documentation](example3/index.md))
+- **Example 4:** Two-dimensional axisymmetric geometry with uniform Neumann boundary conditions ([documentation](example4/index.md))
 
-- 1D Semi-infinite solid with constant surface heat flux (see [Example 1](example1/index.md))
-- 1D Semi-infinite solid with surface convection (see [Example 2](example2/index.md))
-- 2D Solid with surface convection and radiation (see [Example 3](example3/index.md))
-- 2D axisymmetric geometry with uniform Neumann BCs(see [Example 4](example4/index.md))
-
-
+!!! info "Additional examples"
+    This list is not exhaustive. Additional examples and their documentation will be added as new verification cases become available.

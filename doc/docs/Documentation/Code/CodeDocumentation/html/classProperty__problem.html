@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -80,20 +80,24 @@ $(function() {
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classProperty__problem__inherit__graph.svg" width="250" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classProperty__problem__inherit__graph.svg" width="250" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for Property_problem&lt; PROPERTY, VAR, PST &gt;:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classProperty__problem__coll__graph.svg" width="250" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classProperty__problem__coll__graph.svg" width="250" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5b24c254299c39f7bf3923608e875423"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProperty__problem.html#a5b24c254299c39f7bf3923608e875423">do_time_step</a> (double &amp;next_time, const double &amp;current_time, double current_time_step, const int iter, std::vector&lt; std::unique_ptr&lt; mfem::Vector &gt;&gt; &amp;unks, const std::vector&lt; std::vector&lt; std::string &gt;&gt; &amp;unks_info) override</td></tr>
 <tr class="separator:a5b24c254299c39f7bf3923608e875423"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affb5c6f117e9859b2df68746ddfc40e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProperty__problem.html#affb5c6f117e9859b2df68746ddfc40e1">initialize</a> (const double &amp;initial_time, const double time_step) override</td></tr>
+<tr class="separator:affb5c6f117e9859b2df68746ddfc40e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a833486f940da58ac3497687124d0babd"><td class="memTemplParams" colspan="2">template&lt;PbVar&lt; VAR &gt;... Args&gt; </td></tr>
 <tr class="memitem:a833486f940da58ac3497687124d0babd"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classProperty__problem.html#a833486f940da58ac3497687124d0babd">Property_problem</a> (const <a class="el" href="classParameters.html">Parameters</a> &amp;params, VAR &amp;variables, const std::vector&lt; <a class="el" href="classCoefficients.html">Coefficients</a> &gt; &amp;Coeff, <a class="el" href="classConvergence.html">Convergence</a> &amp;convergence, PST &amp;pst, Args &amp;&amp;... auxvariable)</td></tr>
 <tr class="separator:a833486f940da58ac3497687124d0babd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -131,8 +135,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae07a98b0fcc4692d14cb62e7756f3b43 inherit pub_methods_classProblemBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae63324d4b2152faac1b7aef134bab890 inherit pub_methods_classProblemBase"><td class="memItemLeft" align="right" valign="top">VAR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProblemBase.html#ae63324d4b2152faac1b7aef134bab890">get_problem_variables</a> ()</td></tr>
 <tr class="separator:ae63324d4b2152faac1b7aef134bab890 inherit pub_methods_classProblemBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6caf96b6602143ae7a04c87de9ba2567 inherit pub_methods_classProblemBase"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProblemBase.html#a6caf96b6602143ae7a04c87de9ba2567">initialize</a> ([[maybe_unused]] const double &amp;initial_time)</td></tr>
-<tr class="separator:a6caf96b6602143ae7a04c87de9ba2567 inherit pub_methods_classProblemBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae12e47d17dfae85179eae7003ff228d8 inherit pub_methods_classProblemBase"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProblemBase.html#ae12e47d17dfae85179eae7003ff228d8">initialize</a> ([[maybe_unused]] const double &amp;initial_time, [[maybe_unused]] const double time_step)</td></tr>
+<tr class="separator:ae12e47d17dfae85179eae7003ff228d8 inherit pub_methods_classProblemBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae996bb81dcd527cb28aa472807af82fa inherit pub_methods_classProblemBase"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProblemBase.html#ae996bb81dcd527cb28aa472807af82fa">post_processing</a> (const int &amp;iter, const double &amp;current_time)</td></tr>
 <tr class="separator:ae996bb81dcd527cb28aa472807af82fa inherit pub_methods_classProblemBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e31002e1fc9e6ee44b4b8fa9f99e0d6 inherit pub_methods_classProblemBase"><td class="memTemplParams" colspan="2">template&lt;PbVar&lt; VAR &gt;... Args&gt; </td></tr>
@@ -151,6 +155,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a85fe22ef472e74e996a8730efe1c8467 inherit pub_methods_classProblemBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9dc5fa3e9f65564ca38a10005e11b60c inherit pub_methods_classProblemBase"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProblemBase.html#a9dc5fa3e9f65564ca38a10005e11b60c">set_time_coefficients</a> (double)</td></tr>
 <tr class="separator:a9dc5fa3e9f65564ca38a10005e11b60c inherit pub_methods_classProblemBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bfb1fa27ff308b071804644c8feb0f9 inherit pub_methods_classProblemBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProblemBase.html#a8bfb1fa27ff308b071804644c8feb0f9">setGeometry</a> (<a class="el" href="ProblemsOptions_8hpp.html#a5047b3c22ba65d974596c2729dcf1409">Geometry</a> geometry)</td></tr>
+<tr class="separator:a8bfb1fa27ff308b071804644c8feb0f9 inherit pub_methods_classProblemBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6321f5daa9525145b4ff08ffd88f08c inherit pub_methods_classProblemBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProblemBase.html#ae6321f5daa9525145b4ff08ffd88f08c">update</a> ()</td></tr>
 <tr class="separator:ae6321f5daa9525145b4ff08ffd88f08c inherit pub_methods_classProblemBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a975f7f03f52d0f5b51041d5b7596312b inherit pub_methods_classProblemBase"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProblemBase.html#a975f7f03f52d0f5b51041d5b7596312b">~ProblemBase</a> ()=default</td></tr>
@@ -165,6 +171,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a6a4d0e345cd6961951c185afe4d7ce34 inherit pro_attribs_classProblemBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2acb8d1fc7da0f7d9ffa6b7411d4f16c inherit pro_attribs_classProblemBase"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classConvergence.html">Convergence</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProblemBase.html#a2acb8d1fc7da0f7d9ffa6b7411d4f16c">convergence_</a></td></tr>
 <tr class="separator:a2acb8d1fc7da0f7d9ffa6b7411d4f16c inherit pro_attribs_classProblemBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a923b1c0b8b1836049094c2e556656227 inherit pro_attribs_classProblemBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ProblemsOptions_8hpp.html#a5047b3c22ba65d974596c2729dcf1409">Geometry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProblemBase.html#a923b1c0b8b1836049094c2e556656227">geometry_</a> = <a class="el" href="ProblemsOptions_8hpp.html#a5047b3c22ba65d974596c2729dcf1409ac62cd6a7dfc8d04ae078b2b3d6293b9c">Geometry::Cartesian</a></td></tr>
+<tr class="separator:a923b1c0b8b1836049094c2e556656227 inherit pro_attribs_classProblemBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa97ec7932a8f7aa942e80fc35b61e08a inherit pro_attribs_classProblemBase"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProblemBase.html#aa97ec7932a8f7aa942e80fc35b61e08a">name_</a> {&quot;Unnamed problem&quot;}</td></tr>
 <tr class="separator:aa97ec7932a8f7aa942e80fc35b61e08a inherit pro_attribs_classProblemBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cbb3d4b83b20777f839cae77ee3a53f inherit pro_attribs_classProblemBase"><td class="memItemLeft" align="right" valign="top">PST &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProblemBase.html#a1cbb3d4b83b20777f839cae77ee3a53f">pst_</a></td></tr>
@@ -691,13 +699,51 @@ template&lt;class PROPERTY , class VAR , class PST &gt; </div>
 
 </div>
 </div>
+<a id="affb5c6f117e9859b2df68746ddfc40e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affb5c6f117e9859b2df68746ddfc40e1">&#9670;&nbsp;</a></span>initialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class PROPERTY , class VAR , class PST &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classProperty__problem.html">Property_problem</a>&lt; PROPERTY, VAR, PST &gt;::initialize </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>initial_time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>time_step</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="PropertyProblem_8hpp_source.html">PropertyProblem.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

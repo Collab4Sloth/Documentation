@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -98,7 +98,7 @@ $(function() {
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classCoupling.html#a55f778276392a16fae6c1ae05cecea05">   48</a></span>&#160;  std::string <a class="code" href="classCoupling.html#a55f778276392a16fae6c1ae05cecea05">get_name</a>();</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classCoupling.html#a87f0f74fff4c34b98aa8885908db73f0">   50</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classCoupling.html#a87f0f74fff4c34b98aa8885908db73f0">get_tree</a>();</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classCoupling.html#aac932c229284cd61451c9014ff690ba8">   51</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classCoupling.html#aac932c229284cd61451c9014ff690ba8">initialize</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; iter, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; initial_time);</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classCoupling.html#a1013895d3182ce71eaaf22866c824236">   51</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classCoupling.html#a1013895d3182ce71eaaf22866c824236">initialize</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; iter, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; initial_time, <span class="keyword">const</span> <span class="keywordtype">double</span> time_step);</div>
 <div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classCoupling.html#a5cb62986cc60f8503d9e8c8e34191a32">   52</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classCoupling.html#a5cb62986cc60f8503d9e8c8e34191a32">execute</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; iter, <span class="keywordtype">double</span>&amp; next_time, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; current_time,</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;               <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; current_time_step);</div>
 <div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classCoupling.html#ad08acffd204d8a23e4de280981d7a53f">   54</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classCoupling.html#ad08acffd204d8a23e4de280981d7a53f">update</a>();</div>
@@ -113,20 +113,20 @@ $(function() {
 <div class="ttc" id="aCoupling_8tpp_html"><div class="ttname"><a href="Coupling_8tpp.html">Coupling.tpp</a></div></div>
 <div class="ttc" id="aUtilsForDebug_8hpp_html"><div class="ttname"><a href="UtilsForDebug_8hpp.html">UtilsForDebug.hpp</a></div><div class="ttdoc">Usefull methods for debug.</div></div>
 <div class="ttc" id="aclassCoupling_html"><div class="ttname"><a href="classCoupling.html">Coupling</a></div><div class="ttdef"><b>Definition:</b> <a href="Coupling_8hpp_source.html#l00038">Coupling.hpp:38</a></div></div>
+<div class="ttc" id="aclassCoupling_html_a1013895d3182ce71eaaf22866c824236"><div class="ttname"><a href="classCoupling.html#a1013895d3182ce71eaaf22866c824236">Coupling::initialize</a></div><div class="ttdeci">void initialize(const int &amp;iter, const double &amp;initial_time, const double time_step)</div></div>
 <div class="ttc" id="aclassCoupling_html_a55f778276392a16fae6c1ae05cecea05"><div class="ttname"><a href="classCoupling.html#a55f778276392a16fae6c1ae05cecea05">Coupling::get_name</a></div><div class="ttdeci">std::string get_name()</div></div>
 <div class="ttc" id="aclassCoupling_html_a58a48fd5421070659f49572b3795c873"><div class="ttname"><a href="classCoupling.html#a58a48fd5421070659f49572b3795c873">Coupling::Coupling</a></div><div class="ttdeci">Coupling(const std::string &amp;name, Args... problems)</div></div>
 <div class="ttc" id="aclassCoupling_html_a5cb62986cc60f8503d9e8c8e34191a32"><div class="ttname"><a href="classCoupling.html#a5cb62986cc60f8503d9e8c8e34191a32">Coupling::execute</a></div><div class="ttdeci">void execute(const int &amp;iter, double &amp;next_time, const double &amp;current_time, const double &amp;current_time_step)</div></div>
 <div class="ttc" id="aclassCoupling_html_a857decf34488b0be47c6e5d7f8366e5e"><div class="ttname"><a href="classCoupling.html#a857decf34488b0be47c6e5d7f8366e5e">Coupling::post_processing</a></div><div class="ttdeci">void post_processing(const int &amp;iter, const double &amp;current_time)</div></div>
 <div class="ttc" id="aclassCoupling_html_a87f0f74fff4c34b98aa8885908db73f0"><div class="ttname"><a href="classCoupling.html#a87f0f74fff4c34b98aa8885908db73f0">Coupling::get_tree</a></div><div class="ttdeci">void get_tree()</div></div>
 <div class="ttc" id="aclassCoupling_html_a8932116e9eff35ad00772bdb42f1ba75"><div class="ttname"><a href="classCoupling.html#a8932116e9eff35ad00772bdb42f1ba75">Coupling::~Coupling</a></div><div class="ttdeci">~Coupling()</div></div>
-<div class="ttc" id="aclassCoupling_html_aac932c229284cd61451c9014ff690ba8"><div class="ttname"><a href="classCoupling.html#aac932c229284cd61451c9014ff690ba8">Coupling::initialize</a></div><div class="ttdeci">void initialize(const int &amp;iter, const double &amp;initial_time)</div></div>
 <div class="ttc" id="aclassCoupling_html_ab7a760d27b2e221318e14afcfe990564"><div class="ttname"><a href="classCoupling.html#ab7a760d27b2e221318e14afcfe990564">Coupling::finalize</a></div><div class="ttdeci">void finalize()</div></div>
 <div class="ttc" id="aclassCoupling_html_ac4c7039952d2ed0a430e7d542a02496e"><div class="ttname"><a href="classCoupling.html#ac4c7039952d2ed0a430e7d542a02496e">Coupling::get_convergence</a></div><div class="ttdeci">std::vector&lt; std::tuple&lt; std::string, std::vector&lt; std::tuple&lt; std::string, bool, double &gt; &gt; &gt; &gt; get_convergence()</div></div>
 <div class="ttc" id="aclassCoupling_html_ad08acffd204d8a23e4de280981d7a53f"><div class="ttname"><a href="classCoupling.html#ad08acffd204d8a23e4de280981d7a53f">Coupling::update</a></div><div class="ttdeci">void update()</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:45 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:15 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

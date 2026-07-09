@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -92,40 +92,69 @@ $(function() {
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;mfem.hpp&quot;</span>  <span class="comment">// NOLINT [no include the directory when naming mfem include file]</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<a class="code" href="classNLSolver.html#a6edb14f7b1e99a6c0c9b37350738a10f">NLSolver::NLSolver</a>([[maybe_unused]] <a class="code" href="SolversOptions_8hpp.html#a765a4007c12a84454a77f1a29ad04b4a">NLSolverType</a> NLSOLVER, <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; nl_params,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                   <a class="code" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a> SOLVER, <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; s_params, <a class="code" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a> PRECOND,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                   <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; p_params, mfem::Operator&amp; ope)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    : nl_solver_(NLSolverBase_.create_solver(nl_params)) {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="classSlothInfo.html#a854d3cafdb9f5a77f1063a27d2a27e04">SlothInfo::debug</a>(<span class="stringliteral">&quot;NLSolver::NLSolver start&quot;</span>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  ss = std::make_shared&lt;SlothSolver&gt;(SOLVER, s_params);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  this-&gt;variant_solver_ = ss-&gt;get_value();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                   <a class="code" href="SlothSolver_8hpp.html#a2420a22bd32d2b143074e466b1344560">VSolverType</a> SOLVER, <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; s_params, <a class="code" href="SlothSolver_8hpp.html#a2420a22bd32d2b143074e466b1344560">VSolverType</a> PRECOND,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                   <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; p_params, mfem::Operator&amp; ope) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="classSlothInfo.html#a854d3cafdb9f5a77f1063a27d2a27e04">SlothInfo::debug</a>(<span class="stringliteral">&quot;NLSolver::NLSolver start&quot;</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">auto</span> nl = std::make_shared&lt;SlothSolver&gt;(NLSOLVER, nl_params);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  this-&gt;variant_nl_solver_ = nl-&gt;get_value();</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  pp = std::make_shared&lt;SlothSolver&gt;(PRECOND, p_params);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  this-&gt;variant_precond_ = pp-&gt;get_value();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="structSetPrecondNLSolver.html">SetPrecondNLSolver</a> func_prec = {ope, nl_solver_};</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  std::visit(func_prec, this-&gt;variant_solver_, this-&gt;variant_precond_);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<a class="code" href="classNLSolver.html#a6edb14f7b1e99a6c0c9b37350738a10f">NLSolver::NLSolver</a>([[maybe_unused]] <a class="code" href="SolversOptions_8hpp.html#a765a4007c12a84454a77f1a29ad04b4a">NLSolverType</a> NLSOLVER, <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; nl_params,</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                   <a class="code" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a> SOLVER, <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; s_params, mfem::Operator&amp; ope)</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    : nl_solver_(NLSolverBase_.create_solver(nl_params)) {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="classSlothInfo.html#a854d3cafdb9f5a77f1063a27d2a27e04">SlothInfo::debug</a>(<span class="stringliteral">&quot;NLSolver::NLSolver start&quot;</span>);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  ss = std::make_shared&lt;SlothSolver&gt;(SOLVER, s_params);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  this-&gt;variant_solver_ = ss-&gt;get_value();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  this-&gt;variant_precond_ = std::make_shared&lt;std::monostate&gt;();</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <a class="code" href="structSetPrecondNLSolver.html">SetPrecondNLSolver</a> func_prec = {ope, nl_solver_};</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  std::visit(func_prec, this-&gt;variant_solver_, this-&gt;variant_precond_);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classNLSolver.html#af272ee9ef43ff8ae809759e7345457e2">   95</a></span>&#160;std::shared_ptr&lt;mfem::NewtonSolver&gt; <a class="code" href="classNLSolver.html#af272ee9ef43ff8ae809759e7345457e2">NLSolver::get_nl_solver</a>() { <span class="keywordflow">return</span> this-&gt;nl_solver_; }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classNLSolver.html#a3be640af25d23f00ca1912706dee8709">  101</a></span>&#160;<a class="code" href="classNLSolver.html#a3be640af25d23f00ca1912706dee8709">NLSolver::~NLSolver</a>() {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  ss.reset();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  pp.reset();</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  nl_solver_.reset();</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  std::visit(</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      [&amp;](<span class="keyword">auto</span>&amp;&amp; arg) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keyword">using</span> NN = std::decay_t&lt;decltype(arg)&gt;;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">if</span> constexpr (!std::is_same_v&lt;NN, std::shared_ptr&lt;std::monostate&gt;&gt;) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;          MFEM_VERIFY((is_in_variant_v&lt;NN, VNLSolver&gt;),</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                      <span class="stringliteral">&quot;Only NEWTON and LBFGS nonlinear solvers are implemented&quot;</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;          this-&gt;nl_solver_ = std::dynamic_pointer_cast&lt;mfem::NewtonSolver&gt;(arg);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      },</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      this-&gt;variant_nl_solver_);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  this-&gt;ss = std::make_shared&lt;SlothSolver&gt;(SOLVER, s_params);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  this-&gt;variant_solver_ = ss-&gt;get_value();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  this-&gt;pp = std::make_shared&lt;SlothSolver&gt;(PRECOND, p_params);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  this-&gt;variant_precond_ = pp-&gt;get_value();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <a class="code" href="structSetPrecondNLSolver.html">SetPrecondNLSolver</a> func_prec = {ope, nl_solver_};</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  std::visit(func_prec, this-&gt;variant_solver_, this-&gt;variant_precond_);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<a class="code" href="classNLSolver.html#a6edb14f7b1e99a6c0c9b37350738a10f">NLSolver::NLSolver</a>([[maybe_unused]] <a class="code" href="SolversOptions_8hpp.html#a765a4007c12a84454a77f1a29ad04b4a">NLSolverType</a> NLSOLVER, <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; nl_params,</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                   <a class="code" href="SlothSolver_8hpp.html#a2420a22bd32d2b143074e466b1344560">VSolverType</a> SOLVER, <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; s_params, mfem::Operator&amp; ope) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <a class="code" href="classSlothInfo.html#a854d3cafdb9f5a77f1063a27d2a27e04">SlothInfo::debug</a>(<span class="stringliteral">&quot;NLSolver::NLSolver start&quot;</span>);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keyword">auto</span> nl = std::make_shared&lt;SlothSolver&gt;(NLSOLVER, nl_params);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  this-&gt;variant_nl_solver_ = nl-&gt;get_value();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  std::visit(</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      [&amp;](<span class="keyword">auto</span>&amp;&amp; arg) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keyword">using</span> NN = std::decay_t&lt;decltype(arg)&gt;;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">if</span> constexpr (!std::is_same_v&lt;NN, std::shared_ptr&lt;std::monostate&gt;&gt;) {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;          MFEM_VERIFY((is_in_variant_v&lt;NN, VNLSolver&gt;),</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                      <span class="stringliteral">&quot;Only NEWTON and LBFGS nonlinear solvers are implemented&quot;</span>);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;          this-&gt;nl_solver_ = std::dynamic_pointer_cast&lt;mfem::NewtonSolver&gt;(arg);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      },</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      this-&gt;variant_nl_solver_);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  this-&gt;ss = std::make_shared&lt;SlothSolver&gt;(SOLVER, s_params);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  this-&gt;variant_solver_ = ss-&gt;get_value();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  this-&gt;variant_precond_ = std::make_shared&lt;std::monostate&gt;();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <a class="code" href="structSetPrecondNLSolver.html">SetPrecondNLSolver</a> func_prec = {ope, this-&gt;nl_solver_};</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  std::visit(func_prec, this-&gt;variant_solver_, this-&gt;variant_precond_);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="classNLSolver.html#af272ee9ef43ff8ae809759e7345457e2">  124</a></span>&#160;std::shared_ptr&lt;mfem::NewtonSolver&gt; <a class="code" href="classNLSolver.html#af272ee9ef43ff8ae809759e7345457e2">NLSolver::get_nl_solver</a>() { <span class="keywordflow">return</span> this-&gt;nl_solver_; }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="classNLSolver.html#a3be640af25d23f00ca1912706dee8709">  130</a></span>&#160;<a class="code" href="classNLSolver.html#a3be640af25d23f00ca1912706dee8709">NLSolver::~NLSolver</a>() {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  this-&gt;ss.reset();</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  this-&gt;pp.reset();</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  this-&gt;nl_solver_.reset();</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
 <div class="ttc" id="aDSolverBase_8hpp_html"><div class="ttname"><a href="DSolverBase_8hpp.html">DSolverBase.hpp</a></div><div class="ttdoc">Direct solvers.</div></div>
 <div class="ttc" id="aIPrecondBase_8hpp_html"><div class="ttname"><a href="IPrecondBase_8hpp.html">IPrecondBase.hpp</a></div><div class="ttdoc">Base class for preconditionners used in linear system involved in non linear algorithm.</div></div>
 <div class="ttc" id="aISolverBase_8hpp_html"><div class="ttname"><a href="ISolverBase_8hpp.html">ISolverBase.hpp</a></div><div class="ttdoc">Base class for iterative solvers.</div></div>
@@ -134,19 +163,19 @@ $(function() {
 <div class="ttc" id="aOptions_8hpp_html"><div class="ttname"><a href="Options_8hpp.html">Options.hpp</a></div><div class="ttdoc">List of all Options files.</div></div>
 <div class="ttc" id="aParameters_8hpp_html"><div class="ttname"><a href="Parameters_8hpp.html">Parameters.hpp</a></div><div class="ttdoc">Parameter class used to build and manage calculation parameter.</div></div>
 <div class="ttc" id="aSlothSolver_8hpp_html"><div class="ttname"><a href="SlothSolver_8hpp.html">SlothSolver.hpp</a></div><div class="ttdoc">Class to define a SlothSolver objet.</div></div>
-<div class="ttc" id="aSlothSolver_8hpp_html_a2a746321a69b40843a1ad2b71c46fea4"><div class="ttname"><a href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a></div><div class="ttdeci">std::variant&lt; HypreSolverType, IterativeSolverType, DirectSolverType, PreconditionerType, HyprePreconditionerType &gt; VSolverType</div><div class="ttdoc">List of Solver and Preconditioner type.</div><div class="ttdef"><b>Definition:</b> <a href="SlothSolver_8hpp_source.html#l00051">SlothSolver.hpp:52</a></div></div>
+<div class="ttc" id="aSlothSolver_8hpp_html_a2420a22bd32d2b143074e466b1344560"><div class="ttname"><a href="SlothSolver_8hpp.html#a2420a22bd32d2b143074e466b1344560">VSolverType</a></div><div class="ttdeci">std::variant&lt; HypreSolverType, IterativeSolverType, DirectSolverType, NLSolverType, PreconditionerType, HyprePreconditionerType &gt; VSolverType</div><div class="ttdoc">List of Solver and Preconditioner type.</div><div class="ttdef"><b>Definition:</b> <a href="SlothSolver_8hpp_source.html#l00052">SlothSolver.hpp:53</a></div></div>
 <div class="ttc" id="aSolversOptions_8hpp_html_a765a4007c12a84454a77f1a29ad04b4a"><div class="ttname"><a href="SolversOptions_8hpp.html#a765a4007c12a84454a77f1a29ad04b4a">NLSolverType</a></div><div class="ttdeci">NLSolverType</div><div class="ttdef"><b>Definition:</b> <a href="SolversOptions_8hpp_source.html#l00033">SolversOptions.hpp:33</a></div></div>
 <div class="ttc" id="aUtils_8hpp_html"><div class="ttname"><a href="Utils_8hpp.html">Utils.hpp</a></div><div class="ttdoc">List of all Utils files.</div></div>
-<div class="ttc" id="aclassNLSolver_html_a3be640af25d23f00ca1912706dee8709"><div class="ttname"><a href="classNLSolver.html#a3be640af25d23f00ca1912706dee8709">NLSolver::~NLSolver</a></div><div class="ttdeci">~NLSolver()</div><div class="ttdoc">Destroy the Solver::Solver object.</div><div class="ttdef"><b>Definition:</b> <a href="NLSolver_8cpp_source.html#l00101">NLSolver.cpp:101</a></div></div>
+<div class="ttc" id="aclassNLSolver_html_a3be640af25d23f00ca1912706dee8709"><div class="ttname"><a href="classNLSolver.html#a3be640af25d23f00ca1912706dee8709">NLSolver::~NLSolver</a></div><div class="ttdeci">~NLSolver()</div><div class="ttdoc">Destroy the Solver::Solver object.</div><div class="ttdef"><b>Definition:</b> <a href="NLSolver_8cpp_source.html#l00130">NLSolver.cpp:130</a></div></div>
 <div class="ttc" id="aclassNLSolver_html_a6edb14f7b1e99a6c0c9b37350738a10f"><div class="ttname"><a href="classNLSolver.html#a6edb14f7b1e99a6c0c9b37350738a10f">NLSolver::NLSolver</a></div><div class="ttdeci">NLSolver(NLSolverType NLSOLVER, const Parameters &amp;nl_params, VSolverType SOLVER, const Parameters &amp;s_params, VSolverType PRECOND, const Parameters &amp;p_params, mfem::Operator &amp;ope)</div></div>
-<div class="ttc" id="aclassNLSolver_html_af272ee9ef43ff8ae809759e7345457e2"><div class="ttname"><a href="classNLSolver.html#af272ee9ef43ff8ae809759e7345457e2">NLSolver::get_nl_solver</a></div><div class="ttdeci">std::shared_ptr&lt; mfem::NewtonSolver &gt; get_nl_solver()</div><div class="ttdoc">Return the Non Linear Solver.</div><div class="ttdef"><b>Definition:</b> <a href="NLSolver_8cpp_source.html#l00095">NLSolver.cpp:95</a></div></div>
+<div class="ttc" id="aclassNLSolver_html_af272ee9ef43ff8ae809759e7345457e2"><div class="ttname"><a href="classNLSolver.html#af272ee9ef43ff8ae809759e7345457e2">NLSolver::get_nl_solver</a></div><div class="ttdeci">std::shared_ptr&lt; mfem::NewtonSolver &gt; get_nl_solver()</div><div class="ttdoc">Return the Non Linear Solver.</div><div class="ttdef"><b>Definition:</b> <a href="NLSolver_8cpp_source.html#l00124">NLSolver.cpp:124</a></div></div>
 <div class="ttc" id="aclassParameters_html"><div class="ttname"><a href="classParameters.html">Parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8hpp_source.html#l00046">Parameters.hpp:46</a></div></div>
-<div class="ttc" id="aclassSlothInfo_html_a854d3cafdb9f5a77f1063a27d2a27e04"><div class="ttname"><a href="classSlothInfo.html#a854d3cafdb9f5a77f1063a27d2a27e04">SlothInfo::debug</a></div><div class="ttdeci">static void debug(Args... args)</div><div class="ttdoc">Print information on Debug mode.</div><div class="ttdef"><b>Definition:</b> <a href="UtilsForData_8hpp_source.html#l00212">UtilsForData.hpp:212</a></div></div>
-<div class="ttc" id="astructSetPrecondNLSolver_html"><div class="ttname"><a href="structSetPrecondNLSolver.html">SetPrecondNLSolver</a></div><div class="ttdoc">Define a non linear solver and its preconditioner (if required)</div><div class="ttdef"><b>Definition:</b> <a href="SlothSolver_8hpp_source.html#l00222">SlothSolver.hpp:222</a></div></div>
+<div class="ttc" id="aclassSlothInfo_html_a854d3cafdb9f5a77f1063a27d2a27e04"><div class="ttname"><a href="classSlothInfo.html#a854d3cafdb9f5a77f1063a27d2a27e04">SlothInfo::debug</a></div><div class="ttdeci">static void debug(Args... args)</div><div class="ttdoc">Print information on Debug mode.</div><div class="ttdef"><b>Definition:</b> <a href="UtilsForData_8hpp_source.html#l00219">UtilsForData.hpp:219</a></div></div>
+<div class="ttc" id="astructSetPrecondNLSolver_html"><div class="ttname"><a href="structSetPrecondNLSolver.html">SetPrecondNLSolver</a></div><div class="ttdoc">Define a non linear solver and its preconditioner (if required)</div><div class="ttdef"><b>Definition:</b> <a href="SlothSolver_8hpp_source.html#l00246">SlothSolver.hpp:246</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:45 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

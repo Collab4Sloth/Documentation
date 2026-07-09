@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -94,29 +94,31 @@ $(function() {
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classHeatTimeNLFormIntegrator.html#aa99af04fa85f8f05fbf1815ea739fce4">   48</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classHeatTimeNLFormIntegrator.html#aa99af04fa85f8f05fbf1815ea739fce4">get_coefficients</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classHeatTimeNLFormIntegrator.html#ae38b20d34ca4b17a3dae9795c9376a07">   51</a></span>&#160;  <a class="code" href="classHeatTimeNLFormIntegrator.html#ae38b20d34ca4b17a3dae9795c9376a07">HeatTimeNLFormIntegrator</a>(<span class="keyword">const</span> std::vector&lt;mfem::ParGridFunction&gt; u_old,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                           <span class="keyword">const</span> std::vector&lt;mfem::ParGridFunction&gt;&amp; aux_old,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                           <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; params, std::vector&lt;VARS*&gt; auxvars,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                           <span class="keyword">const</span> std::vector&lt;Coefficients&gt;&amp; coefficients);</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classHeatTimeNLFormIntegrator.html#a84d59fbfd6972f1b7ae73f004b5b10f2">   55</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classHeatTimeNLFormIntegrator.html#a84d59fbfd6972f1b7ae73f004b5b10f2">~HeatTimeNLFormIntegrator</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="HeatTimeNLFormIntegrator_8tpp.html">Integrators/HeatTimeNLFormIntegrator.tpp</a>&quot;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classHeatTimeNLFormIntegrator.html#a5073276ede4ea3c1a10699aea1994f7e">   51</a></span>&#160;  <a class="code" href="classHeatTimeNLFormIntegrator.html#a5073276ede4ea3c1a10699aea1994f7e">HeatTimeNLFormIntegrator</a>(<a class="code" href="ProblemsOptions_8hpp.html#a5047b3c22ba65d974596c2729dcf1409">Geometry</a> geometry, <span class="keyword">const</span> <span class="keywordtype">double</span> time_step,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                           <span class="keyword">const</span> std::vector&lt;mfem::ParGridFunction&gt; u_old,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                           <span class="keyword">const</span> std::vector&lt;mfem::ParGridFunction&gt;&amp; aux_old,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                           <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; params, std::vector&lt;VARS*&gt; auxvars,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                           <span class="keyword">const</span> std::vector&lt;Coefficients&gt;&amp; coefficients);</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classHeatTimeNLFormIntegrator.html#a84d59fbfd6972f1b7ae73f004b5b10f2">   56</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classHeatTimeNLFormIntegrator.html#a84d59fbfd6972f1b7ae73f004b5b10f2">~HeatTimeNLFormIntegrator</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="HeatTimeNLFormIntegrator_8tpp.html">Integrators/HeatTimeNLFormIntegrator.tpp</a>&quot;</span></div>
 <div class="ttc" id="aHeatTimeNLFormIntegrator_8tpp_html"><div class="ttname"><a href="HeatTimeNLFormIntegrator_8tpp.html">HeatTimeNLFormIntegrator.tpp</a></div></div>
 <div class="ttc" id="aParameters_8hpp_html"><div class="ttname"><a href="Parameters_8hpp.html">Parameters.hpp</a></div><div class="ttdoc">Parameter class used to build and manage calculation parameter.</div></div>
+<div class="ttc" id="aProblemsOptions_8hpp_html_a5047b3c22ba65d974596c2729dcf1409"><div class="ttname"><a href="ProblemsOptions_8hpp.html#a5047b3c22ba65d974596c2729dcf1409">Geometry</a></div><div class="ttdeci">Geometry</div><div class="ttdef"><b>Definition:</b> <a href="ProblemsOptions_8hpp_source.html#l00041">ProblemsOptions.hpp:41</a></div></div>
 <div class="ttc" id="aSlothNLFormIntegrator_8hpp_html"><div class="ttname"><a href="SlothNLFormIntegrator_8hpp.html">SlothNLFormIntegrator.hpp</a></div><div class="ttdoc">Class prodiving common methods to all NLFormIntegrators.</div></div>
 <div class="ttc" id="aTimeNLFormIntegrator_8hpp_html"><div class="ttname"><a href="TimeNLFormIntegrator_8hpp.html">TimeNLFormIntegrator.hpp</a></div><div class="ttdoc">VF of the time derivative.</div></div>
 <div class="ttc" id="aUtils_8hpp_html"><div class="ttname"><a href="Utils_8hpp.html">Utils.hpp</a></div><div class="ttdoc">List of all Utils files.</div></div>
 <div class="ttc" id="aclassHeatTimeNLFormIntegrator_html"><div class="ttname"><a href="classHeatTimeNLFormIntegrator.html">HeatTimeNLFormIntegrator</a></div><div class="ttdoc">Class dedicated to the VF of the time-derivativefor heat transfer equation.</div><div class="ttdef"><b>Definition:</b> <a href="HeatTimeNLFormIntegrator_8hpp_source.html#l00046">HeatTimeNLFormIntegrator.hpp:46</a></div></div>
+<div class="ttc" id="aclassHeatTimeNLFormIntegrator_html_a5073276ede4ea3c1a10699aea1994f7e"><div class="ttname"><a href="classHeatTimeNLFormIntegrator.html#a5073276ede4ea3c1a10699aea1994f7e">HeatTimeNLFormIntegrator::HeatTimeNLFormIntegrator</a></div><div class="ttdeci">HeatTimeNLFormIntegrator(Geometry geometry, const double time_step, const std::vector&lt; mfem::ParGridFunction &gt; u_old, const std::vector&lt; mfem::ParGridFunction &gt; &amp;aux_old, const Parameters &amp;params, std::vector&lt; VARS * &gt; auxvars, const std::vector&lt; Coefficients &gt; &amp;coefficients)</div></div>
 <div class="ttc" id="aclassHeatTimeNLFormIntegrator_html_a84d59fbfd6972f1b7ae73f004b5b10f2"><div class="ttname"><a href="classHeatTimeNLFormIntegrator.html#a84d59fbfd6972f1b7ae73f004b5b10f2">HeatTimeNLFormIntegrator::~HeatTimeNLFormIntegrator</a></div><div class="ttdeci">virtual ~HeatTimeNLFormIntegrator()=default</div></div>
 <div class="ttc" id="aclassHeatTimeNLFormIntegrator_html_aa99af04fa85f8f05fbf1815ea739fce4"><div class="ttname"><a href="classHeatTimeNLFormIntegrator.html#aa99af04fa85f8f05fbf1815ea739fce4">HeatTimeNLFormIntegrator::get_coefficients</a></div><div class="ttdeci">void get_coefficients() override</div></div>
-<div class="ttc" id="aclassHeatTimeNLFormIntegrator_html_ae38b20d34ca4b17a3dae9795c9376a07"><div class="ttname"><a href="classHeatTimeNLFormIntegrator.html#ae38b20d34ca4b17a3dae9795c9376a07">HeatTimeNLFormIntegrator::HeatTimeNLFormIntegrator</a></div><div class="ttdeci">HeatTimeNLFormIntegrator(const std::vector&lt; mfem::ParGridFunction &gt; u_old, const std::vector&lt; mfem::ParGridFunction &gt; &amp;aux_old, const Parameters &amp;params, std::vector&lt; VARS * &gt; auxvars, const std::vector&lt; Coefficients &gt; &amp;coefficients)</div></div>
 <div class="ttc" id="aclassParameters_html"><div class="ttname"><a href="classParameters.html">Parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8hpp_source.html#l00046">Parameters.hpp:46</a></div></div>
 <div class="ttc" id="aclassTimeNLFormIntegrator_html"><div class="ttname"><a href="classTimeNLFormIntegrator.html">TimeNLFormIntegrator</a></div><div class="ttdoc">Class dedicated to the VF of the time-derivative (eg. LHS of Allen-Cahn equation)</div><div class="ttdef"><b>Definition:</b> <a href="TimeNLFormIntegrator_8hpp_source.html#l00048">TimeNLFormIntegrator.hpp:48</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:45 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:15 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

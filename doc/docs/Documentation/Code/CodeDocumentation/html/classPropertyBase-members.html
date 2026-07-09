@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -75,15 +75,18 @@ $(function() {
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="classPropertyBase.html#a5473e1f260f47460818a86cbaa3965ef">check_variables_consistency</a>(std::vector&lt; std::tuple&lt; std::vector&lt; std::string &gt;, std::reference_wrapper&lt; mfem::Vector &gt;&gt;&gt; &amp;output_system, std::vector&lt; std::tuple&lt; std::vector&lt; std::string &gt;, mfem::Vector &gt;&gt; input_system)=0</td><td class="entry"><a class="el" href="classPropertyBase.html">PropertyBase</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="classPropertyBase.html#adcd21ad3b4a73d1fe6d14edca1501629">compute</a>(std::vector&lt; std::tuple&lt; std::vector&lt; std::string &gt;, std::reference_wrapper&lt; mfem::Vector &gt;&gt;&gt; &amp;output_system, std::vector&lt; std::tuple&lt; std::vector&lt; std::string &gt;, mfem::Vector &gt;&gt; input_system)</td><td class="entry"><a class="el" href="classPropertyBase.html">PropertyBase</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classPropertyBase.html#a40e6ad497420c68660474b6f5553a273">get_property</a>(std::vector&lt; std::tuple&lt; std::vector&lt; std::string &gt;, std::reference_wrapper&lt; mfem::Vector &gt;&gt;&gt; &amp;output_system, std::vector&lt; std::tuple&lt; std::vector&lt; std::string &gt;, mfem::Vector &gt;&gt; input_system)=0</td><td class="entry"><a class="el" href="classPropertyBase.html">PropertyBase</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classPropertyBase.html#af212bc6364755e5e269b6d3b23269ddb">is_checked_</a></td><td class="entry"><a class="el" href="classPropertyBase.html">PropertyBase</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classPropertyBase.html#a81bc73d42e879500ef5ce6e50fdecc1f">params_</a></td><td class="entry"><a class="el" href="classPropertyBase.html">PropertyBase</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classPropertyBase.html#a49b6d25e8d20e26f2e66e9a69ea4b4b5">PropertyBase</a>(const Parameters &amp;params)</td><td class="entry"><a class="el" href="classPropertyBase.html">PropertyBase</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classPropertyBase.html#aca2c0ce24d0c332872fea5a57a11ef7d">~PropertyBase</a>()=default</td><td class="entry"><a class="el" href="classPropertyBase.html">PropertyBase</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classPropertyBase.html#af9f2588d5af974df8eee17c8bd063b05">current_time_</a></td><td class="entry"><a class="el" href="classPropertyBase.html">PropertyBase</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classPropertyBase.html#a40e6ad497420c68660474b6f5553a273">get_property</a>(std::vector&lt; std::tuple&lt; std::vector&lt; std::string &gt;, std::reference_wrapper&lt; mfem::Vector &gt;&gt;&gt; &amp;output_system, std::vector&lt; std::tuple&lt; std::vector&lt; std::string &gt;, mfem::Vector &gt;&gt; input_system)=0</td><td class="entry"><a class="el" href="classPropertyBase.html">PropertyBase</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classPropertyBase.html#af212bc6364755e5e269b6d3b23269ddb">is_checked_</a></td><td class="entry"><a class="el" href="classPropertyBase.html">PropertyBase</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classPropertyBase.html#a81bc73d42e879500ef5ce6e50fdecc1f">params_</a></td><td class="entry"><a class="el" href="classPropertyBase.html">PropertyBase</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classPropertyBase.html#a49b6d25e8d20e26f2e66e9a69ea4b4b5">PropertyBase</a>(const Parameters &amp;params)</td><td class="entry"><a class="el" href="classPropertyBase.html">PropertyBase</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classPropertyBase.html#a09100d126b3c70be478e4d1b984b49d6">set_times</a>(const double time, const double dt)</td><td class="entry"><a class="el" href="classPropertyBase.html">PropertyBase</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classPropertyBase.html#a9ea18afdf558f9c3a58839430e69b11a">time_step_</a></td><td class="entry"><a class="el" href="classPropertyBase.html">PropertyBase</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classPropertyBase.html#aca2c0ce24d0c332872fea5a57a11ef7d">~PropertyBase</a>()=default</td><td class="entry"><a class="el" href="classPropertyBase.html">PropertyBase</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

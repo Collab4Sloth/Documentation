@@ -44,7 +44,14 @@ The latter enables to use pre-defined mathematical functions currently used in t
     The following examples assume that the spatial discretisation and the boundary conditions are defined. 
     In the code snippets, the first is referred to as a `spatial` object, while the second is referred to as a `bcs` object. Without loss of generality, the alias `VAR` is also used.
 
-    These examples show how to initialize a variable with `double`, `AnalyticalFunctions` and `std::function` types.
+    These examples show how to initialize variables using:
+
+    - a constant `double` value,
+    - an `AnalyticalFunction`,
+    - a `std::function`,
+    - or a file in the MFEM field format.
+
+    The latter option is primarily intended for **save/restart** simulations, enabling calculations to resume from a previously saved state.
 
     === "`double`"
         In this example, the variable is named `phi`. Its initial value is zero.
@@ -101,6 +108,24 @@ The latter enables to use pre-defined mathematical functions currently used in t
         ```
 
         `SLOTH` provides several pre-implemented analytical functions, including the Heaviside function, sinusoidal profiles, hyperbolic tangent, and parabolic profiles. Each of these functions requires a set of parameters detailed in [a dedicated page of the user manual](../AnalyticalVariables/index.md).
+
+    === "`File`"
+
+        In this example, the variable `phi` is initialized from the file `phi_2.gf`. The file name follows the convention `<variable_name>_<iteration>.gf`, where the iteration number matches the initial iteration of the simulation.
+
+        This initialization method is typically used to **restart a simulation** from a previously saved state. In this example, the simulation resumes from **iteration 2** (see the `initial_iteration` parameter in [the Time section of the user manual](../MultiPhysicsCouplingScheme/Time/index.md)).
+
+        ```c++
+        int level_of_storage= 2;
+        std::string variable_name = "phi";
+        GlossaryQuantity variable_type = Glossary::Phi;
+
+        std::string file_restart = "phi_2.gf";
+        auto initial_condition =  std::make_tuple(file_restart, gf_folder_path)
+
+        auto var_1 = VAR(&spatial, bcs, variable_name, variable_type, level_of_storage, initial_condition);
+        ```
+
 
 ### __Optional parameters__ {#var_option}
 

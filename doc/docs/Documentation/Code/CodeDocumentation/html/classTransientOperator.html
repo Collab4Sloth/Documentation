@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -85,36 +85,38 @@ $(function() {
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classTransientOperator__inherit__graph.svg" width="202" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classTransientOperator__inherit__graph.svg" width="202" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for TransientOperator&lt; T, DIM &gt;:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classTransientOperator__coll__graph.svg" width="510" height="260"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classTransientOperator__coll__graph.svg" width="510" height="260"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a740e7e3c0e1799c06d4604d386fc334e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransientOperator.html#a740e7e3c0e1799c06d4604d386fc334e">ImplicitSolve</a> (const double dt, const mfem::Vector &amp;u, mfem::Vector &amp;k) override</td></tr>
 <tr class="separator:a740e7e3c0e1799c06d4604d386fc334e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f725fdfc4d327df8341b7998e6e32c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransientOperator.html#a4f725fdfc4d327df8341b7998e6e32c5">initialize</a> (const double &amp;initial_time, <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &amp;vars, std::vector&lt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; * &gt; auxvars) override</td></tr>
-<tr class="separator:a4f725fdfc4d327df8341b7998e6e32c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7902b17123b3681f63aaba51336dcc5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransientOperator.html#a7902b17123b3681f63aaba51336dcc5b">initialize</a> (const double &amp;initial_time, const double time_step, <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &amp;vars, std::vector&lt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; * &gt; auxvars) override</td></tr>
+<tr class="separator:a7902b17123b3681f63aaba51336dcc5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69628506c46b5054247b683739c7d249"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransientOperator.html#a69628506c46b5054247b683739c7d249">Mult</a> (const mfem::Vector &amp;u, mfem::Vector &amp;du_dt) const override</td></tr>
 <tr class="separator:a69628506c46b5054247b683739c7d249"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2c3bd18abf7ff837fdf84636062e06e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransientOperator.html#aa2c3bd18abf7ff837fdf84636062e06e">overload_mass_preconditioner</a> (<a class="el" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a> PRECOND)</td></tr>
+<tr class="memitem:aa2c3bd18abf7ff837fdf84636062e06e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransientOperator.html#aa2c3bd18abf7ff837fdf84636062e06e">overload_mass_preconditioner</a> (<a class="el" href="SlothSolver_8hpp.html#a2420a22bd32d2b143074e466b1344560">VSolverType</a> PRECOND)</td></tr>
 <tr class="separator:aa2c3bd18abf7ff837fdf84636062e06e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0219dd6622c747457a86dd79c3b49185"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransientOperator.html#a0219dd6622c747457a86dd79c3b49185">overload_mass_preconditioner</a> (<a class="el" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a> PRECOND, const <a class="el" href="classParameters.html">Parameters</a> &amp;p_params)</td></tr>
+<tr class="memitem:a0219dd6622c747457a86dd79c3b49185"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransientOperator.html#a0219dd6622c747457a86dd79c3b49185">overload_mass_preconditioner</a> (<a class="el" href="SlothSolver_8hpp.html#a2420a22bd32d2b143074e466b1344560">VSolverType</a> PRECOND, const <a class="el" href="classParameters.html">Parameters</a> &amp;p_params)</td></tr>
 <tr class="separator:a0219dd6622c747457a86dd79c3b49185"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe11a04dc3a736e47322b98dfe4c7da8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransientOperator.html#afe11a04dc3a736e47322b98dfe4c7da8">overload_mass_solver</a> (<a class="el" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a> SOLVER)</td></tr>
+<tr class="memitem:afe11a04dc3a736e47322b98dfe4c7da8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransientOperator.html#afe11a04dc3a736e47322b98dfe4c7da8">overload_mass_solver</a> (<a class="el" href="SlothSolver_8hpp.html#a2420a22bd32d2b143074e466b1344560">VSolverType</a> SOLVER)</td></tr>
 <tr class="separator:afe11a04dc3a736e47322b98dfe4c7da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa788b2ef4f5331e1708526b3edf245f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransientOperator.html#afa788b2ef4f5331e1708526b3edf245f">overload_mass_solver</a> (<a class="el" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a> SOLVER, const <a class="el" href="classParameters.html">Parameters</a> &amp;s_params)</td></tr>
+<tr class="memitem:afa788b2ef4f5331e1708526b3edf245f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransientOperator.html#afa788b2ef4f5331e1708526b3edf245f">overload_mass_solver</a> (<a class="el" href="SlothSolver_8hpp.html#a2420a22bd32d2b143074e466b1344560">VSolverType</a> SOLVER, const <a class="el" href="classParameters.html">Parameters</a> &amp;s_params)</td></tr>
 <tr class="separator:afa788b2ef4f5331e1708526b3edf245f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4211a7bd9a7b7881c752ac13a8094528"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransientOperator.html#a4211a7bd9a7b7881c752ac13a8094528">SetExplicitTransientParameters</a> (const std::vector&lt; mfem::Vector &gt; &amp;un_vect)</td></tr>
-<tr class="separator:a4211a7bd9a7b7881c752ac13a8094528"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a690bda9a78ad456068991e3a93aa2c93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransientOperator.html#a690bda9a78ad456068991e3a93aa2c93">SetTransientParameters</a> (const std::vector&lt; mfem::Vector &gt; &amp;u_vect) override</td></tr>
-<tr class="separator:a690bda9a78ad456068991e3a93aa2c93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fdd8585a9d6041d3457a44a3ef10939"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransientOperator.html#a6fdd8585a9d6041d3457a44a3ef10939">SetExplicitTransientParameters</a> (const double dt, const std::vector&lt; mfem::Vector &gt; &amp;un_vect)</td></tr>
+<tr class="separator:a6fdd8585a9d6041d3457a44a3ef10939"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a804223d6737acfc12f9f8d68a4d07f88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransientOperator.html#a804223d6737acfc12f9f8d68a4d07f88">SetTransientParameters</a> (const double dt, const std::vector&lt; mfem::Vector &gt; &amp;u_vect) override</td></tr>
+<tr class="separator:a804223d6737acfc12f9f8d68a4d07f88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5690bc12c9873e22becbfd7ee281bce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransientOperator.html#af5690bc12c9873e22becbfd7ee281bce">solve</a> (std::vector&lt; std::unique_ptr&lt; mfem::Vector &gt;&gt; &amp;vect_unk, double &amp;next_time, const double &amp;current_time, double current_time_step, const int iter) override</td></tr>
 <tr class="separator:af5690bc12c9873e22becbfd7ee281bce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ca0f38298ae911dd6667f24e673d94f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransientOperator.html#a1ca0f38298ae911dd6667f24e673d94f">TransientOperator</a> (std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt; spatials, const std::vector&lt; std::string &gt; &amp;rhs_integrators, const <a class="el" href="classParameters.html">Parameters</a> &amp;params, <a class="el" href="structTimeScheme.html#a29f8ffca06683f47a693e679d0d1a0e6">TimeScheme::value</a> ode, const std::string lhs_integrator)</td></tr>
@@ -146,8 +148,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a5c5a20697e839d42d2301858f8b99795 inherit pub_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48021f01776f78be3dc5c5303e7dad76 inherit pub_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top">const std::map&lt; std::string, std::multimap&lt; <a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a48021f01776f78be3dc5c5303e7dad76">get_time_iso_specialized</a> () const</td></tr>
 <tr class="separator:a48021f01776f78be3dc5c5303e7dad76 inherit pub_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7baa47376e7e3e56cbc094846dfa2e87 inherit pub_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top">const std::multimap&lt; <a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a7baa47376e7e3e56cbc094846dfa2e87">get_time_specialized</a> () const</td></tr>
-<tr class="separator:a7baa47376e7e3e56cbc094846dfa2e87 inherit pub_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cfc35f92ec6ce5ac63f2a8c9592e6d1 inherit pub_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top">const std::multimap&lt; <a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a7cfc35f92ec6ce5ac63f2a8c9592e6d1">get_time_specialized</a> () const</td></tr>
+<tr class="separator:a7cfc35f92ec6ce5ac63f2a8c9592e6d1 inherit pub_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90a7252811544f72984c1931eb02f64e inherit pub_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a90a7252811544f72984c1931eb02f64e">OperatorBase</a> (const std::vector&lt; std::string &gt; &amp;integrators, std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt; spatials)</td></tr>
 <tr class="separator:a90a7252811544f72984c1931eb02f64e inherit pub_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b974ec3fb7865895a4e24cc33d1ae08 inherit pub_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a8b974ec3fb7865895a4e24cc33d1ae08">OperatorBase</a> (const std::vector&lt; std::string &gt; &amp;integrators, std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt; spatials, const <a class="el" href="classParameters.html">Parameters</a> &amp;params)</td></tr>
@@ -160,42 +162,44 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aeb5d83adf63a0ed63f518d5ae0830f7a inherit pub_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab58055482c046a548e06a41a72b0236c inherit pub_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ab58055482c046a548e06a41a72b0236c">overload_nl_solver</a> (<a class="el" href="SolversOptions_8hpp.html#a765a4007c12a84454a77f1a29ad04b4a">NLSolverType</a> NLSOLVER, const <a class="el" href="classParameters.html">Parameters</a> &amp;nl_params)</td></tr>
 <tr class="separator:ab58055482c046a548e06a41a72b0236c inherit pub_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7f9ccab46711990d6c1b0fe5e783d3f inherit pub_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ab7f9ccab46711990d6c1b0fe5e783d3f">overload_preconditioner</a> (<a class="el" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a> PRECOND)</td></tr>
+<tr class="memitem:ab7f9ccab46711990d6c1b0fe5e783d3f inherit pub_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ab7f9ccab46711990d6c1b0fe5e783d3f">overload_preconditioner</a> (<a class="el" href="SlothSolver_8hpp.html#a2420a22bd32d2b143074e466b1344560">VSolverType</a> PRECOND)</td></tr>
 <tr class="separator:ab7f9ccab46711990d6c1b0fe5e783d3f inherit pub_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a664956c04b4632e1d10270bc3dbef534 inherit pub_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a664956c04b4632e1d10270bc3dbef534">overload_preconditioner</a> (<a class="el" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a> PRECOND, const <a class="el" href="classParameters.html">Parameters</a> &amp;p_params)</td></tr>
+<tr class="memitem:a664956c04b4632e1d10270bc3dbef534 inherit pub_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a664956c04b4632e1d10270bc3dbef534">overload_preconditioner</a> (<a class="el" href="SlothSolver_8hpp.html#a2420a22bd32d2b143074e466b1344560">VSolverType</a> PRECOND, const <a class="el" href="classParameters.html">Parameters</a> &amp;p_params)</td></tr>
 <tr class="separator:a664956c04b4632e1d10270bc3dbef534 inherit pub_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08638e737e888b9161e465cf22d5e4df inherit pub_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a08638e737e888b9161e465cf22d5e4df">overload_solver</a> (<a class="el" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a> SOLVER)</td></tr>
+<tr class="memitem:a08638e737e888b9161e465cf22d5e4df inherit pub_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a08638e737e888b9161e465cf22d5e4df">overload_solver</a> (<a class="el" href="SlothSolver_8hpp.html#a2420a22bd32d2b143074e466b1344560">VSolverType</a> SOLVER)</td></tr>
 <tr class="separator:a08638e737e888b9161e465cf22d5e4df inherit pub_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1adf8f1bee43f26b4a10cd086d02b9b inherit pub_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ae1adf8f1bee43f26b4a10cd086d02b9b">overload_solver</a> (<a class="el" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a> SOLVER, const <a class="el" href="classParameters.html">Parameters</a> &amp;s_params)</td></tr>
+<tr class="memitem:ae1adf8f1bee43f26b4a10cd086d02b9b inherit pub_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ae1adf8f1bee43f26b4a10cd086d02b9b">overload_solver</a> (<a class="el" href="SlothSolver_8hpp.html#a2420a22bd32d2b143074e466b1344560">VSolverType</a> SOLVER, const <a class="el" href="classParameters.html">Parameters</a> &amp;s_params)</td></tr>
 <tr class="separator:ae1adf8f1bee43f26b4a10cd086d02b9b inherit pub_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a018f2e553851f70311aeec8bbd4abf68 inherit pub_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a018f2e553851f70311aeec8bbd4abf68">set_bdr_nlfi_ptr</a> (const std::string nlfi, const std::vector&lt; mfem::Vector &gt; &amp;u, const unsigned int block, const unsigned int bdr_id)</td></tr>
-<tr class="separator:a018f2e553851f70311aeec8bbd4abf68 inherit pub_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecd48222b7636150ec513a421268bed4 inherit pub_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#aecd48222b7636150ec513a421268bed4">set_bdr_nlfi_ptr</a> (const double dt, const std::string nlfi, const std::vector&lt; mfem::Vector &gt; &amp;u, const unsigned int block, const unsigned int bdr_id)</td></tr>
+<tr class="separator:aecd48222b7636150ec513a421268bed4 inherit pub_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed2450c581a8da373a9354134bf11770 inherit pub_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#aed2450c581a8da373a9354134bf11770">set_coefficients</a> (const std::vector&lt; <a class="el" href="classCoefficients.html">Coefficients</a> &gt; &amp;coefficients, bool enable_compute_energies)</td></tr>
 <tr class="separator:aed2450c581a8da373a9354134bf11770 inherit pub_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a250ff464dfc6c6ffb4b456d6b4882f2e inherit pub_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a250ff464dfc6c6ffb4b456d6b4882f2e">set_nlfi_ptr</a> (const std::string nlfi, const std::vector&lt; mfem::Vector &gt; &amp;u)</td></tr>
-<tr class="separator:a250ff464dfc6c6ffb4b456d6b4882f2e inherit pub_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6307d56381af03e443ef84848190a91c inherit pub_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a6307d56381af03e443ef84848190a91c">set_nlfi_ptr</a> (const double dt, const std::string nlfi, const std::vector&lt; mfem::Vector &gt; &amp;u)</td></tr>
+<tr class="separator:a6307d56381af03e443ef84848190a91c inherit pub_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79a4e8e8866afd0b7e4ef8bbc1648523 inherit pub_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a79a4e8e8866afd0b7e4ef8bbc1648523">set_time_coefficients</a> (double time)</td></tr>
 <tr class="separator:a79a4e8e8866afd0b7e4ef8bbc1648523 inherit pub_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a404f6d1641c9fc53d497a31eca597ff4 inherit pub_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a404f6d1641c9fc53d497a31eca597ff4">setGeometry</a> (<a class="el" href="ProblemsOptions_8hpp.html#a5047b3c22ba65d974596c2729dcf1409">Geometry</a> geometry)</td></tr>
+<tr class="separator:a404f6d1641c9fc53d497a31eca597ff4 inherit pub_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70016b4c81b71e8408da86756df944d1 inherit pub_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a70016b4c81b71e8408da86756df944d1">~OperatorBase</a> ()=default</td></tr>
 <tr class="separator:a70016b4c81b71e8408da86756df944d1 inherit pub_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ae79cb350840db1289214d6e63d39b199"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransientOperator.html#ae79cb350840db1289214d6e63d39b199">build_lhs_nonlinear_form</a> (const std::vector&lt; mfem::Vector &gt; &amp;u)</td></tr>
-<tr class="separator:ae79cb350840db1289214d6e63d39b199"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23938490b69b8f382fe2f7532b2cea2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransientOperator.html#a23938490b69b8f382fe2f7532b2cea2c">build_lhs_nonlinear_form</a> (const double dt, const std::vector&lt; mfem::Vector &gt; &amp;u)</td></tr>
+<tr class="separator:a23938490b69b8f382fe2f7532b2cea2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8753a8cd4ea6294c4d66b656cdfe5729"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransientOperator.html#a8753a8cd4ea6294c4d66b656cdfe5729">build_mass_matrix</a> (const std::vector&lt; mfem::Vector &gt; &amp;u_vect)</td></tr>
 <tr class="separator:a8753a8cd4ea6294c4d66b656cdfe5729"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classOperatorBase"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classOperatorBase')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classOperatorBase.html">OperatorBase&lt; T, DIM &gt;</a></td></tr>
-<tr class="memitem:a3af5631c6122676c19a86ff6e8fa419f inherit pro_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a3af5631c6122676c19a86ff6e8fa419f">build_rhs_nonlinear_form</a> (const std::vector&lt; mfem::Vector &gt; &amp;u)</td></tr>
-<tr class="separator:a3af5631c6122676c19a86ff6e8fa419f inherit pro_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeb570f97d143aaa19178a42f0afa496 inherit pro_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#aaeb570f97d143aaa19178a42f0afa496">build_rhs_nonlinear_form</a> (const double dt, const std::vector&lt; mfem::Vector &gt; &amp;u)</td></tr>
+<tr class="separator:aaeb570f97d143aaa19178a42f0afa496 inherit pro_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3e90f7649879184b38e9938a4852eaa inherit pro_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ae3e90f7649879184b38e9938a4852eaa">compute_total_height</a> (const std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt; &amp;spatials)</td></tr>
 <tr class="separator:ae3e90f7649879184b38e9938a4852eaa inherit pro_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77913e69d610289dc3d172319b60cf22 inherit pro_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a77913e69d610289dc3d172319b60cf22">compute_total_width</a> (const std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt; &amp;spatials)</td></tr>
 <tr class="separator:a77913e69d610289dc3d172319b60cf22 inherit pro_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a923ab486abd56e7eb2dc2f2d51b9bb8f inherit pro_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a923ab486abd56e7eb2dc2f2d51b9bb8f">get_bdr_integrator</a> (const std::string integrator, const std::vector&lt; mfem::ParGridFunction &gt; &amp;vun, const std::vector&lt; mfem::ParGridFunction &gt; &amp;vauxn, const <a class="el" href="classParameters.html">Parameters</a> &amp;all_params, const unsigned int block, const unsigned int bdr_id)</td></tr>
-<tr class="separator:a923ab486abd56e7eb2dc2f2d51b9bb8f inherit pro_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af876c0500e6eae23ccb0d295862e0099 inherit pro_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#af876c0500e6eae23ccb0d295862e0099">get_rhs_integrator</a> (const std::string integrator, const std::vector&lt; mfem::ParGridFunction &gt; &amp;vun, const std::vector&lt; mfem::ParGridFunction &gt; &amp;vauxn, const <a class="el" href="classParameters.html">Parameters</a> &amp;all_params)</td></tr>
-<tr class="separator:af876c0500e6eae23ccb0d295862e0099 inherit pro_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d0415a3bcd9bc692ef82bbf4d2f7b96 inherit pro_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a3d0415a3bcd9bc692ef82bbf4d2f7b96">get_bdr_integrator</a> (const double dt, const std::string integrator, const std::vector&lt; mfem::ParGridFunction &gt; &amp;vun, const std::vector&lt; mfem::ParGridFunction &gt; &amp;vauxn, const <a class="el" href="classParameters.html">Parameters</a> &amp;all_params, const unsigned int block, const unsigned int bdr_id)</td></tr>
+<tr class="separator:a3d0415a3bcd9bc692ef82bbf4d2f7b96 inherit pro_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3d2e9b7e28be1195e87d4a567707edb inherit pro_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#af3d2e9b7e28be1195e87d4a567707edb">get_rhs_integrator</a> (const double dt, const std::string integrator, const std::vector&lt; mfem::ParGridFunction &gt; &amp;vun, const std::vector&lt; mfem::ParGridFunction &gt; &amp;vauxn, const <a class="el" href="classParameters.html">Parameters</a> &amp;all_params)</td></tr>
+<tr class="separator:af3d2e9b7e28be1195e87d4a567707edb inherit pro_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40af76d9b521a9a7e82779e2d24db958 inherit pro_methods_classOperatorBase"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a40af76d9b521a9a7e82779e2d24db958">SetNewtonAlgorithm</a> (mfem::Operator *oper)</td></tr>
 <tr class="separator:a40af76d9b521a9a7e82779e2d24db958 inherit pro_methods_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -213,13 +217,13 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a8c362513eb5be81d8d73df882b9c4b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d17fdd753318bb7c8263716d0853cb5"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classLSolver.html">LSolver</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransientOperator.html#a2d17fdd753318bb7c8263716d0853cb5">mass_matrix_solver_</a></td></tr>
 <tr class="separator:a2d17fdd753318bb7c8263716d0853cb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5a74a5cd4f0787b4c43b3dd762d4e95"><td class="memItemLeft" align="right" valign="top">mfem::HypreParMatrix *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransientOperator.html#ae5a74a5cd4f0787b4c43b3dd762d4e95">Mmat</a></td></tr>
-<tr class="separator:ae5a74a5cd4f0787b4c43b3dd762d4e95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25e0f1e87cab2e8af6a8266cad4f2799"><td class="memItemLeft" align="right" valign="top">std::vector&lt; mfem::HypreParMatrix * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransientOperator.html#a25e0f1e87cab2e8af6a8266cad4f2799">Mmat_</a></td></tr>
+<tr class="separator:a25e0f1e87cab2e8af6a8266cad4f2799"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af79d84567328f52a665ffbf62c1faf07"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPhaseFieldReducedOperator.html">PhaseFieldReducedOperator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTransientOperator.html#af79d84567328f52a665ffbf62c1faf07">reduced_oper</a></td></tr>
 <tr class="separator:af79d84567328f52a665ffbf62c1faf07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classOperatorBase"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classOperatorBase')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classOperatorBase.html">OperatorBase&lt; T, DIM &gt;</a></td></tr>
-<tr class="memitem:aee0a93eacbc31abc422578cedf736fc7 inherit pro_attribs_classOperatorBase"><td class="memItemLeft" align="right" valign="top">mfem::Array&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#aee0a93eacbc31abc422578cedf736fc7">array_bdr_</a></td></tr>
-<tr class="separator:aee0a93eacbc31abc422578cedf736fc7 inherit pro_attribs_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26da719e47eb3b9d7353d02cc2f3ac19 inherit pro_attribs_classOperatorBase"><td class="memItemLeft" align="right" valign="top">std::vector&lt; mfem::Array&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a26da719e47eb3b9d7353d02cc2f3ac19">array_bdr_</a></td></tr>
+<tr class="separator:a26da719e47eb3b9d7353d02cc2f3ac19 inherit pro_attribs_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4e42d59a151f6654d7d87508d6a081d inherit pro_attribs_classOperatorBase"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ac4e42d59a151f6654d7d87508d6a081d">auxvariables_</a></td></tr>
 <tr class="separator:ac4e42d59a151f6654d7d87508d6a081d inherit pro_attribs_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a284389af2d5deb934149b860041ea315 inherit pro_attribs_classOperatorBase"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt; * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a284389af2d5deb934149b860041ea315">bcs_</a></td></tr>
@@ -246,6 +250,8 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:ac1616446fe2fbf2c3e4df6cf0059c672 inherit pro_attribs_classOperatorBase"><td class="memItemLeft" align="right" valign="top">mfem::Array&lt; mfem::ParFiniteElementSpace * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ac1616446fe2fbf2c3e4df6cf0059c672">fes_</a></td></tr>
 <tr class="memdesc:ac1616446fe2fbf2c3e4df6cf0059c672 inherit pro_attribs_classOperatorBase"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finite Element Space and BCs.  <a href="classOperatorBase.html#ac1616446fe2fbf2c3e4df6cf0059c672">More...</a><br /></td></tr>
 <tr class="separator:ac1616446fe2fbf2c3e4df6cf0059c672 inherit pro_attribs_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35a8795b1b7330c6ab1a88442b8f0211 inherit pro_attribs_classOperatorBase"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ProblemsOptions_8hpp.html#a5047b3c22ba65d974596c2729dcf1409">Geometry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a35a8795b1b7330c6ab1a88442b8f0211">geometry_</a> = <a class="el" href="ProblemsOptions_8hpp.html#a5047b3c22ba65d974596c2729dcf1409ac62cd6a7dfc8d04ae078b2b3d6293b9c">Geometry::Cartesian</a></td></tr>
+<tr class="separator:a35a8795b1b7330c6ab1a88442b8f0211 inherit pro_attribs_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a373040051c3fdf52ead07edc6b3d4079 inherit pro_attribs_classOperatorBase"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classCoefficient.html">Coefficient</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a373040051c3fdf52ead07edc6b3d4079">grad_energy_coefficient_</a></td></tr>
 <tr class="separator:a373040051c3fdf52ead07edc6b3d4079 inherit pro_attribs_classOperatorBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21b5eba5bae108462fb00a3cc3507e5f inherit pro_attribs_classOperatorBase"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a21b5eba5bae108462fb00a3cc3507e5f">height_</a></td></tr>
@@ -474,8 +480,8 @@ template&lt;class T , int DIM&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ae79cb350840db1289214d6e63d39b199"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae79cb350840db1289214d6e63d39b199">&#9670;&nbsp;</a></span>build_lhs_nonlinear_form()</h2>
+<a id="a23938490b69b8f382fe2f7532b2cea2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23938490b69b8f382fe2f7532b2cea2c">&#9670;&nbsp;</a></span>build_lhs_nonlinear_form()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -488,9 +494,19 @@ template&lt;class T , int DIM&gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classTransientOperator.html">TransientOperator</a>&lt; T, DIM &gt;::build_lhs_nonlinear_form </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; mfem::Vector &gt; &amp;&#160;</td>
-          <td class="paramname"><em>u</em></td><td>)</td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>dt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const std::vector&lt; mfem::Vector &gt; &amp;&#160;</td>
+          <td class="paramname"><em>u</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -574,8 +590,8 @@ template&lt;class T , int DIM&gt; </div>
 
 </div>
 </div>
-<a id="a4f725fdfc4d327df8341b7998e6e32c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f725fdfc4d327df8341b7998e6e32c5">&#9670;&nbsp;</a></span>initialize()</h2>
+<a id="a7902b17123b3681f63aaba51336dcc5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7902b17123b3681f63aaba51336dcc5b">&#9670;&nbsp;</a></span>initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -590,6 +606,12 @@ template&lt;class T , int DIM&gt; </div>
           <td>(</td>
           <td class="paramtype">const double &amp;&#160;</td>
           <td class="paramname"><em>initial_time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>time_step</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -616,7 +638,7 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="classOperatorBase.html#a34ab97919cacd677a6d2e9f09aaba073">OperatorBase&lt; T, DIM &gt;</a>.</p>
+<p>Reimplemented from <a class="el" href="classOperatorBase.html#a30966f1edc6335eb16e7adb1064bbaaa">OperatorBase&lt; T, DIM &gt;</a>.</p>
 
 </div>
 </div>
@@ -669,7 +691,7 @@ template&lt;class T , int DIM&gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classTransientOperator.html">TransientOperator</a>&lt; T, DIM &gt;::overload_mass_preconditioner </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="SlothSolver_8hpp.html#a2420a22bd32d2b143074e466b1344560">VSolverType</a>&#160;</td>
           <td class="paramname"><em>PRECOND</em></td><td>)</td>
           <td></td>
         </tr>
@@ -689,7 +711,7 @@ template&lt;class T , int DIM&gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classTransientOperator.html">TransientOperator</a>&lt; T, DIM &gt;::overload_mass_preconditioner </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="SlothSolver_8hpp.html#a2420a22bd32d2b143074e466b1344560">VSolverType</a>&#160;</td>
           <td class="paramname"><em>PRECOND</em>, </td>
         </tr>
         <tr>
@@ -719,7 +741,7 @@ template&lt;class T , int DIM&gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classTransientOperator.html">TransientOperator</a>&lt; T, DIM &gt;::overload_mass_solver </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="SlothSolver_8hpp.html#a2420a22bd32d2b143074e466b1344560">VSolverType</a>&#160;</td>
           <td class="paramname"><em>SOLVER</em></td><td>)</td>
           <td></td>
         </tr>
@@ -739,7 +761,7 @@ template&lt;class T , int DIM&gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classTransientOperator.html">TransientOperator</a>&lt; T, DIM &gt;::overload_mass_solver </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="SlothSolver_8hpp.html#a2420a22bd32d2b143074e466b1344560">VSolverType</a>&#160;</td>
           <td class="paramname"><em>SOLVER</em>, </td>
         </tr>
         <tr>
@@ -758,8 +780,8 @@ template&lt;class T , int DIM&gt; </div>
 
 </div>
 </div>
-<a id="a4211a7bd9a7b7881c752ac13a8094528"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4211a7bd9a7b7881c752ac13a8094528">&#9670;&nbsp;</a></span>SetExplicitTransientParameters()</h2>
+<a id="a6fdd8585a9d6041d3457a44a3ef10939"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fdd8585a9d6041d3457a44a3ef10939">&#9670;&nbsp;</a></span>SetExplicitTransientParameters()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -769,17 +791,27 @@ template&lt;class T , int DIM&gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classTransientOperator.html">TransientOperator</a>&lt; T, DIM &gt;::SetExplicitTransientParameters </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; mfem::Vector &gt; &amp;&#160;</td>
-          <td class="paramname"><em>un_vect</em></td><td>)</td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>dt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const std::vector&lt; mfem::Vector &gt; &amp;&#160;</td>
+          <td class="paramname"><em>un_vect</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a690bda9a78ad456068991e3a93aa2c93"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a690bda9a78ad456068991e3a93aa2c93">&#9670;&nbsp;</a></span>SetTransientParameters()</h2>
+<a id="a804223d6737acfc12f9f8d68a4d07f88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a804223d6737acfc12f9f8d68a4d07f88">&#9670;&nbsp;</a></span>SetTransientParameters()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -792,9 +824,19 @@ template&lt;class T , int DIM&gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classTransientOperator.html">TransientOperator</a>&lt; T, DIM &gt;::SetTransientParameters </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; mfem::Vector &gt; &amp;&#160;</td>
-          <td class="paramname"><em>u_vect</em></td><td>)</td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>dt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const std::vector&lt; mfem::Vector &gt; &amp;&#160;</td>
+          <td class="paramname"><em>u_vect</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -804,7 +846,7 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="classOperatorBase.html#a33be318888c048a4251e4849b3125459">OperatorBase&lt; T, DIM &gt;</a>.</p>
+<p>Implements <a class="el" href="classOperatorBase.html#a388dac99562a653686d9ea601815b35e">OperatorBase&lt; T, DIM &gt;</a>.</p>
 
 </div>
 </div>
@@ -889,7 +931,7 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TransientOperator_8hpp_source.html#l00089">89</a> of file <a class="el" href="TransientOperator_8hpp_source.html">TransientOperator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TransientOperator_8hpp_source.html#l00091">91</a> of file <a class="el" href="TransientOperator_8hpp_source.html">TransientOperator.hpp</a>.</p>
 
 </div>
 </div>
@@ -917,7 +959,7 @@ template&lt;class T , int DIM&gt; </div>
 
 <p>Left-Hand-Side. </p>
 
-<p class="definition">Definition at line <a class="el" href="TransientOperator_8hpp_source.html#l00082">82</a> of file <a class="el" href="TransientOperator_8hpp_source.html">TransientOperator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TransientOperator_8hpp_source.html#l00085">85</a> of file <a class="el" href="TransientOperator_8hpp_source.html">TransientOperator.hpp</a>.</p>
 
 </div>
 </div>
@@ -945,7 +987,7 @@ template&lt;class T , int DIM&gt; </div>
 
 <p>Mass operator. </p>
 
-<p class="definition">Definition at line <a class="el" href="TransientOperator_8hpp_source.html#l00078">78</a> of file <a class="el" href="TransientOperator_8hpp_source.html">TransientOperator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TransientOperator_8hpp_source.html#l00081">81</a> of file <a class="el" href="TransientOperator_8hpp_source.html">TransientOperator.hpp</a>.</p>
 
 </div>
 </div>
@@ -971,7 +1013,7 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TransientOperator_8hpp_source.html#l00080">80</a> of file <a class="el" href="TransientOperator_8hpp_source.html">TransientOperator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TransientOperator_8hpp_source.html#l00083">83</a> of file <a class="el" href="TransientOperator_8hpp_source.html">TransientOperator.hpp</a>.</p>
 
 </div>
 </div>
@@ -997,12 +1039,12 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TransientOperator_8hpp_source.html#l00079">79</a> of file <a class="el" href="TransientOperator_8hpp_source.html">TransientOperator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TransientOperator_8hpp_source.html#l00082">82</a> of file <a class="el" href="TransientOperator_8hpp_source.html">TransientOperator.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ae5a74a5cd4f0787b4c43b3dd762d4e95"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5a74a5cd4f0787b4c43b3dd762d4e95">&#9670;&nbsp;</a></span>Mmat</h2>
+<a id="a25e0f1e87cab2e8af6a8266cad4f2799"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25e0f1e87cab2e8af6a8266cad4f2799">&#9670;&nbsp;</a></span>Mmat_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1013,7 +1055,7 @@ template&lt;class T , int DIM&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">mfem::HypreParMatrix* <a class="el" href="classTransientOperator.html">TransientOperator</a>&lt; T, DIM &gt;::Mmat</td>
+          <td class="memname">std::vector&lt;mfem::HypreParMatrix*&gt; <a class="el" href="classTransientOperator.html">TransientOperator</a>&lt; T, DIM &gt;::Mmat_</td>
         </tr>
       </table>
   </td>
@@ -1023,7 +1065,7 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TransientOperator_8hpp_source.html#l00085">85</a> of file <a class="el" href="TransientOperator_8hpp_source.html">TransientOperator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TransientOperator_8hpp_source.html#l00087">87</a> of file <a class="el" href="TransientOperator_8hpp_source.html">TransientOperator.hpp</a>.</p>
 
 </div>
 </div>
@@ -1049,7 +1091,7 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TransientOperator_8hpp_source.html#l00092">92</a> of file <a class="el" href="TransientOperator_8hpp_source.html">TransientOperator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TransientOperator_8hpp_source.html#l00094">94</a> of file <a class="el" href="TransientOperator_8hpp_source.html">TransientOperator.hpp</a>.</p>
 
 </div>
 </div>
@@ -1059,7 +1101,7 @@ template&lt;class T , int DIM&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

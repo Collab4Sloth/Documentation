@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['exprtkcoefficient_981',['ExprTkCoefficient',['../classExprTkCoefficient.html',1,'']]]
+  ['exprtkcoefficient_995',['ExprTkCoefficient',['../classExprTkCoefficient.html',1,'']]]
 ];

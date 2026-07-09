@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['minresdefaultconstant_1101',['MINRESDefaultConstant',['../namespaceMINRESDefaultConstant.html',1,'']]]
+  ['lbfgsdefaultconstant_1117',['LBFGSDefaultConstant',['../namespaceLBFGSDefaultConstant.html',1,'']]]
 ];

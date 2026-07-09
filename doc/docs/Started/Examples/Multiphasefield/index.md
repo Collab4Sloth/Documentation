@@ -1,10 +1,9 @@
+# Allen-Cahn / Cahn-Hilliard
 
-# Allen-Cahn/Cahn-Hilliard 
+The following examples are used to verify the implementation of the coupled Allen-Cahn/Cahn-Hilliard model in `SLOTH`:
 
-Verification of the Allen-Cahn/Cahn-Hilliard equations is made with the following tests:
+- **Example 1:** Sintering of two particles with different sizes ([documentation](example1/index.md))
+- **Example 2:** Sintering of nine particles with different sizes ([documentation](example2/index.md))
 
-- Sintering test 1: two unequal sized particles (see [Example 1](example1/index.md))
-- Sintering test 2: nine unequal sized particles (see [Example 2](example2/index.md))
-
-!!! info "Description of tests"
-    The list of tests is not exhaustive. Description of all tests will be completed over time.
+!!! info "Additional examples"
+    This list is not exhaustive. Additional examples and their documentation will be added as new verification cases become available.
