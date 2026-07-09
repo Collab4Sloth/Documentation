@@ -3562,7 +3562,14 @@ The latter enables to use pre-defined mathematical functions currently used in t
 <p class="admonition-title">Example of <code>Variable</code>objects with mandatory parameters</p>
 <p>The following examples assume that the spatial discretisation and the boundary conditions are defined. 
 In the code snippets, the first is referred to as a <code>spatial</code> object, while the second is referred to as a <code>bcs</code> object. Without loss of generality, the alias <code>VAR</code> is also used.</p>
-<p>These examples show how to initialize a variable with <code>double</code>, <code>AnalyticalFunctions</code> and <code>std::function</code> types or using a file under a format designed by MFEM. The latter can be used to perform save/restart calculations.</p>
+<p>These examples show how to initialize variables using:</p>
+<ul>
+<li>a constant <code>double</code> value,</li>
+<li>an <code>AnalyticalFunction</code>,</li>
+<li>a <code>std::function</code>,</li>
+<li>or a file in the MFEM field format.</li>
+</ul>
+<p>The latter option is primarily intended for <strong>save/restart</strong> simulations, enabling calculations to resume from a previously saved state.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1"><code>double</code></label><label for="__tabbed_1_2"><code>std::function</code></label><label for="__tabbed_1_3"><code>AnalyticalFunctions</code></label><label for="__tabbed_1_4"><code>File</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -3613,7 +3620,8 @@ In the code snippets, the first is referred to as a <code>spatial</code> object,
 <p><code>SLOTH</code> provides several pre-implemented analytical functions, including the Heaviside function, sinusoidal profiles, hyperbolic tangent, and parabolic profiles. Each of these functions requires a set of parameters detailed in <a href="../AnalyticalVariables/index.html">a dedicated page of the user manual</a>.</p>
 </div>
 <div class="tabbed-block">
-<p>In this example, the values contained in the file "phi_2.gf" are used to initialize the variable is named <code>phi</code>. The name of the file is consistant with the initial iteration number of the simulation. Here, such an initialization allows restarting a calculation at iteration two (see <code>initial_iteration</code> parameter in <a href="../MultiPhysicsCouplingScheme/Time/index.html">the dedicated page of the user manual</a>).</p>
+<p>In this example, the variable <code>phi</code> is initialized from the file <code>phi_2.gf</code>. The file name follows the convention <code>&lt;variable_name&gt;_&lt;iteration&gt;.gf</code>, where the iteration number matches the initial iteration of the simulation.</p>
+<p>This initialization method is typically used to <strong>restart a simulation</strong> from a previously saved state. In this example, the simulation resumes from <strong>iteration 2</strong> (see the <code>initial_iteration</code> parameter in <a href="../MultiPhysicsCouplingScheme/Time/index.html">the Time section of the user manual</a>).</p>
 <div class="language-c++ highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">level_of_storage</span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">variable_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;phi&quot;</span><span class="p">;</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">GlossaryQuantity</span><span class="w"> </span><span class="n">variable_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Glossary</span><span class="o">::</span><span class="n">Phi</span><span class="p">;</span>
