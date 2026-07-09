@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -104,144 +104,147 @@ $(function() {
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;#include &lt;string&gt;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;#include &lt;vector&gt;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;#include &quot;Integrators/SlothGridFunction.hpp&quot;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;#include &quot;Options/Options.hpp&quot;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;#include &quot;Parameters/Parameters.hpp&quot;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;#include &quot;mfem.hpp&quot;  // NOLINT [no include the directory when naming mfem include file]</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;/**</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; * @brief Retrieve and initialize model parameters from the parameter set.</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; *</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; * @tparam VARS Template parameter defining the variables used</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; *              in the integrator.</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; */</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;template &lt;class VARS&gt;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;void ThermalDiffusionFluxNLFormIntegrator&lt;VARS&gt;::get_parameters() {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  DiffusionFluxNLFormIntegrator&lt;VARS&gt;::get_parameters();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;/**</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; * @brief Construct a new ThermalDiffusionFluxNLFormIntegrator object.</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; *</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; * This constructor initializes the nonlinear form integrator. It forwards the provided previous</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; * solution fields, simulation parameters, auxiliary variables, and coefficients to the base</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; * DiffusionFlux nonlinear form integrator.</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; *</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; * @tparam VARS Template parameter defining the variables used</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; *              in the integrator.</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; *</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; * @param u_old        Vector of previous-time-step solution fields.</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; * @param params       Paramters that can be used with the integrator.</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; * @param auxvars      Auxiliary variables required by the inetgrator.</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; * @param coefficients List of coefficients defining material properties.</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; *</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; */</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;template &lt;class VARS&gt;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;ThermalDiffusionFluxNLFormIntegrator&lt;VARS&gt;::ThermalDiffusionFluxNLFormIntegrator(</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    const std::vector&lt;mfem::ParGridFunction&gt;&amp; u_old, const Parameters&amp; params,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    std::vector&lt;VARS*&gt; auxvars, const std::vector&lt;Coefficients&gt;&amp; coefficients)</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    : DiffusionFluxNLFormIntegrator&lt;VARS&gt;(u_old, params, auxvars, coefficients) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  this-&gt;check_variables_consistency();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;/**</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; * @brief  Check variables consistency</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; *</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; * @tparam VARS Template parameter defining the variables used</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; *              in the integrator.</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; */</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;template &lt;class VARS&gt;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;void ThermalDiffusionFluxNLFormIntegrator&lt;VARS&gt;::check_variables_consistency() {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  std::vector&lt;mfem::ParGridFunction&gt; aux_gf = this-&gt;get_aux_gf();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  std::vector&lt;std::vector&lt;std::string&gt;&gt; aux_infos = this-&gt;get_aux_infos();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  //==============================================================</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  // Get Temperature and thermal diffusivity (aux. variables)</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  //==============================================================</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  bool temperature_found = false;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  bool diffusivity_found = false;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  for (std::size_t i = 0; i &lt; aux_infos.size(); ++i) {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    const auto&amp; variable_info = aux_infos[i];</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    MFEM_VERIFY(!variable_info.empty(), &quot;Empty variable_info encountered.&quot;);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    size_t vsize = variable_info.size();</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    MFEM_VERIFY(vsize &gt; 1,</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                &quot;ThermalDiffusionFluxNLFormIntegrator&lt;VARS&gt;::check_variables_consistency: at least &quot;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                &quot;two additionnal information are expected for auxiliary variables associated with &quot;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                &quot;this integrator&quot;);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    const std::string&amp; symbol = toUpperCase(variable_info.back());</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    if (toUpperCase(symbol) == &quot;T&quot;) {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      this-&gt;temp_gf_ = aux_gf[i];</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      temperature_found = true;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    } else if (toLowerCase(symbol) == &quot;lambda&quot;) {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      // Diffusivity can be directly supplied within this integrator or overloaded by considering a</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      // child class.</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      this-&gt;diffu_gf_ = aux_gf[i];</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      this-&gt;diffusivity_found_ = true;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    if (temperature_found &amp;&amp; diffusivity_found) break;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;#include &quot;Coefficients/AxiCylindricalCoefficient.hpp&quot;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;#include &quot;Integrators/SlothGridFunction.hpp&quot;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;#include &quot;Options/Options.hpp&quot;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;#include &quot;Parameters/Parameters.hpp&quot;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;#include &quot;mfem.hpp&quot;  // NOLINT [no include the directory when naming mfem include file]</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;/**</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; * @brief Retrieve and initialize model parameters from the parameter set.</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; *</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; * @tparam VARS Template parameter defining the variables used</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; *              in the integrator.</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; */</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;template &lt;class VARS&gt;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;void ThermalDiffusionFluxNLFormIntegrator&lt;VARS&gt;::get_parameters() {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  DiffusionFluxNLFormIntegrator&lt;VARS&gt;::get_parameters();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;/**</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; * @brief Construct a new ThermalDiffusionFluxNLFormIntegrator object.</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; *</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; * This constructor initializes the nonlinear form integrator. It forwards the provided previous</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; * solution fields, simulation parameters, auxiliary variables, and coefficients to the base</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; * DiffusionFlux nonlinear form integrator.</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; *</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; * @tparam VARS Template parameter defining the variables used</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; *              in the integrator.</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; *</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; * @param u_old        Vector of previous-time-step solution fields.</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; * @param params       Paramters that can be used with the integrator.</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; * @param auxvars      Auxiliary variables required by the inetgrator.</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; * @param coefficients List of coefficients defining material properties.</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; *</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; */</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;template &lt;class VARS&gt;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;ThermalDiffusionFluxNLFormIntegrator&lt;VARS&gt;::ThermalDiffusionFluxNLFormIntegrator(</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    Geometry geometry, const double time_step, const std::vector&lt;mfem::ParGridFunction&gt;&amp; u_old,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    const Parameters&amp; params, std::vector&lt;VARS*&gt; auxvars,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    const std::vector&lt;Coefficients&gt;&amp; coefficients)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    : DiffusionFluxNLFormIntegrator&lt;VARS&gt;(geometry, time_step, u_old, params, auxvars,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                          coefficients) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  this-&gt;check_variables_consistency();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;/**</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; * @brief  Check variables consistency</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; *</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; * @tparam VARS Template parameter defining the variables used</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; *              in the integrator.</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; */</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;template &lt;class VARS&gt;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;void ThermalDiffusionFluxNLFormIntegrator&lt;VARS&gt;::check_variables_consistency() {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  std::vector&lt;mfem::ParGridFunction&gt; aux_gf = this-&gt;get_aux_gf();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  std::vector&lt;std::vector&lt;std::string&gt;&gt; aux_infos = this-&gt;get_aux_infos();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  //==============================================================</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  // Get Temperature and thermal diffusivity (aux. variables)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  //==============================================================</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  bool temperature_found = false;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  bool diffusivity_found = false;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  for (std::size_t i = 0; i &lt; aux_infos.size(); ++i) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    const auto&amp; variable_info = aux_infos[i];</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    MFEM_VERIFY(!variable_info.empty(), &quot;Empty variable_info encountered.&quot;);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    size_t vsize = variable_info.size();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    MFEM_VERIFY(vsize &gt; 1,</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                &quot;ThermalDiffusionFluxNLFormIntegrator&lt;VARS&gt;::check_variables_consistency: at least &quot;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                &quot;two additionnal information are expected for auxiliary variables associated with &quot;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                &quot;this integrator&quot;);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    const std::string&amp; symbol = toUpperCase(variable_info.back());</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    if (toUpperCase(symbol) == &quot;T&quot;) {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      this-&gt;temp_gf_ = aux_gf[i];</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      temperature_found = true;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    } else if (toLowerCase(symbol) == &quot;lambda&quot;) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      // Diffusivity can be directly supplied within this integrator or overloaded by considering a</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      // child class.</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      this-&gt;diffu_gf_ = aux_gf[i];</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      this-&gt;diffusivity_found_ = true;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  MFEM_VERIFY(temperature_found,</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;              &quot;ThermalDiffusionFluxNLFormIntegrator&lt;VARS&gt;::check_variables_consistency: &quot;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;              &quot;Temperature not found. Please check your data.&quot;);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;/**</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; * @brief Compute the diffusion coefficients at the integration point</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; *</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; * @tparam VARS Template parameter defining the variables used in the integrator.</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; *</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; * @param Tr Element transformation.</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; * @param nElement number of the element</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; * @param ip Integration point</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; * @param dim Spatial dimension</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; *</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; * @return The diffusion coefficients at integration point</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; */</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;template &lt;class VARS&gt;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;std::vector&lt;double&gt; ThermalDiffusionFluxNLFormIntegrator&lt;VARS&gt;::get_flux_coefficient(</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    const int nElement, const mfem::IntegrationPoint&amp; ip) {</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  std::vector&lt;double&gt; coefficient;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  if (this-&gt;diffusivity_found_) {</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    coefficient.emplace_back(this-&gt;diffu_gf_.GetValue(nElement, ip));</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  }</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  return coefficient;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;/**</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; * @brief The thermal diffusion flux at integration point</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; *</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; * @tparam VARS Template parameter defining the variables used in the integrator.</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; *</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; * @param Tr Element transformation.</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; * @param nElement number of the element</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; * @param ip Integration point</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; * @param dim Spatial dimension</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; *</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; * @return The thermal diffusion flux at integration point</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; */</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;template &lt;class VARS&gt;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;std::vector&lt;mfem::Vector&gt; ThermalDiffusionFluxNLFormIntegrator&lt;VARS&gt;::get_flux_gradient(</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    mfem::ElementTransformation&amp; Tr, [[maybe_unused]] const int nElement,</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    [[maybe_unused]] const mfem::IntegrationPoint&amp; ip, const int dim) {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  std::vector&lt;mfem::Vector&gt; gradient;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  mfem::Vector gradT;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  gradT.SetSize(dim);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  auto temp = SlothGridFunction(this-&gt;temp_gf_);</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  temp.GetGradient(Tr, this-&gt;gradPsi, gradT);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  gradient.emplace_back(gradT);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  return gradient;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    if (temperature_found &amp;&amp; diffusivity_found) break;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  MFEM_VERIFY(temperature_found,</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;              &quot;ThermalDiffusionFluxNLFormIntegrator&lt;VARS&gt;::check_variables_consistency: &quot;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;              &quot;Temperature not found. Please check your data.&quot;);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;/**</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; * @brief Compute the diffusion coefficients at the integration point</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; *</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; * @tparam VARS Template parameter defining the variables used in the integrator.</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; *</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; * @param Tr Element transformation.</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; * @param nElement number of the element</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; * @param ip Integration point</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; * @param dim Spatial dimension</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; *</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; * @return The diffusion coefficients at integration point</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; */</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;template &lt;class VARS&gt;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;std::vector&lt;double&gt; ThermalDiffusionFluxNLFormIntegrator&lt;VARS&gt;::get_flux_coefficient(</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    const int nElement, const mfem::IntegrationPoint&amp; ip) {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  std::vector&lt;double&gt; coefficient;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  if (this-&gt;diffusivity_found_) {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    coefficient.emplace_back(this-&gt;diffu_gf_.GetValue(nElement, ip));</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  return coefficient;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;}</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;/**</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; * @brief The thermal diffusion flux at integration point</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; *</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; * @tparam VARS Template parameter defining the variables used in the integrator.</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; *</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; * @param Tr Element transformation.</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; * @param nElement number of the element</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; * @param ip Integration point</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; * @param dim Spatial dimension</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; *</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; * @return The thermal diffusion flux at integration point</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; */</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;template &lt;class VARS&gt;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;std::vector&lt;mfem::Vector&gt; ThermalDiffusionFluxNLFormIntegrator&lt;VARS&gt;::get_flux_gradient(</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    mfem::ElementTransformation&amp; Tr, [[maybe_unused]] const int nElement,</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    [[maybe_unused]] const mfem::IntegrationPoint&amp; ip, const int dim) {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  std::vector&lt;mfem::Vector&gt; gradient;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  mfem::Vector gradT;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  gradT.SetSize(dim);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  auto temp = SlothGridFunction(this-&gt;temp_gf_);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  temp.GetGradient(Tr, this-&gt;gradPsi, gradT);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  gradient.emplace_back(gradT);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  return gradient;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:45 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -1,3 +1,22 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classSlothInfo.html" title="Class used to print information depending on the level of verbosity." alt="" coords="5,5,89,32"/>
+<area shape="rect" id="node1" href="$classCahnHilliardNLFormIntegrator.html" title="Class dedicated to the VF of the RHS of the Cahn&#45;Hilliard equation (splitted form) (see SplitTimeDeri..." alt="" coords="5,267,240,308"/>
+<area shape="rect" id="node2" href="$classSlothNLFormIntegrator.html" title="Class prodiving common methods to all NLFormIntegrators." alt="" coords="288,267,471,308"/>
+<area shape="rect" id="node3" href="$classAllenCahnNLFormIntegrator.html" title="Class dedicated to the VF of the RHS of the AllenCahn equation (see TimeDerivative integrator for the..." alt="" coords="537,5,756,47"/>
+<area shape="rect" id="node4" href="$classBlockAllenCahnNLFormIntegrator.html" title="Class dedicated to the VF of the AllenCahn equation (splitted form)" alt="" coords="519,71,775,112"/>
+<area shape="rect" id="node5" href="$classDiffusionFluxNLFormIntegrator.html" title="Class dedicated to the VF of an inter&#45;diffusion equation." alt="" coords="527,136,766,177"/>
+<area shape="rect" id="node8" href="$classDiffusionNLFormIntegrator.html" title="Nonlinear form integrator for diffusion&#45;type problems." alt="" coords="542,201,751,243"/>
+<area shape="rect" id="node11" href="$classLatentHeatNLFormIntegrator.html" title="Latent heat contribution for heat transfer equations." alt="" coords="534,267,759,308"/>
+<area shape="rect" id="node12" href="$classMeltingBaseNLFormIntegrator.html" title="Base class for melting integrators." alt="" coords="529,332,764,373"/>
+<area shape="rect" id="node16" href="$classRobinNLFormIntegrator.html" title="Class dedicated to the Robin boundary condition integrator." alt="" coords="553,397,741,439"/>
+<area shape="rect" id="node18" href="$classTimeCHNLFormIntegrator.html" title="Class dedicated to the VF of the time&#45;derivative (eg. LHS of Cahn&#45;Hilliard and Allen&#45;Cahn equations u..." alt="" coords="545,463,749,504"/>
+<area shape="rect" id="node19" href="$classTimeNLFormIntegrator.html" title="Class dedicated to the VF of the time&#45;derivative (eg. LHS of Allen&#45;Cahn equation)" alt="" coords="555,528,738,569"/>
+<area shape="rect" id="node6" href="$classMassDiffusionFluxNLFormIntegrator.html" title="Class dedicated to the VF of diffusion flux (gradient of chemical potential) used in mass balance equ..." alt="" coords="823,5,1097,47"/>
+<area shape="rect" id="node7" href="$classThermalDiffusionFluxNLFormIntegrator.html" title="Class dedicated to the VF of thermal diffusion flux used in energy balance equation." alt="" coords="847,71,1073,112"/>
+<area shape="rect" id="node9" href="$classFickNLFormIntegrator.html" title="Nonlinear form integrator for the right&#45;hand side of the mass diffusion equation (Fick&#39;s law)." alt="" coords="872,136,1048,177"/>
+<area shape="rect" id="node10" href="$classFourierNLFormIntegrator.html" title="Nonlinear form integrator for the right&#45;hand side of the heat transfer equation (Fourier&#39;s law)." alt="" coords="861,201,1059,243"/>
+<area shape="rect" id="node13" href="$classMeltingCalphadNLFormIntegrator.html" title="Class dedicated to the VF of Calphad melting contribution found in Allen&#45;Cahn&#45;type equations." alt="" coords="831,267,1089,308"/>
+<area shape="rect" id="node14" href="$classMeltingConstantNLFormIntegrator.html" title="Class dedicated to the VF of an ad&#45;hoc constant melting contribution found in Allen&#45;Cahn&#45;type equatio..." alt="" coords="829,332,1091,373"/>
+<area shape="rect" id="node15" href="$classMeltingTemperatureNLFormIntegrator.html" title="Class dedicated to the VF of an ad&#45;hoc temperature melting contribution found in Allen&#45;Cahn&#45;type equa..." alt="" coords="850,397,1070,439"/>
+<area shape="rect" id="node17" href="$classNeumannNLFormIntegrator.html" title="Class dedicated to the Neumann boundary condiiton integrator." alt="" coords="852,463,1068,504"/>
+<area shape="rect" id="node20" href="$classHeatTimeNLFormIntegrator.html" title="Class dedicated to the VF of the time&#45;derivativefor heat transfer equation." alt="" coords="853,528,1067,569"/>
 </map>

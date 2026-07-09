@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -90,8 +90,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a55f778276392a16fae6c1ae05cecea05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87f0f74fff4c34b98aa8885908db73f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCoupling.html#a87f0f74fff4c34b98aa8885908db73f0">get_tree</a> ()</td></tr>
 <tr class="separator:a87f0f74fff4c34b98aa8885908db73f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac932c229284cd61451c9014ff690ba8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCoupling.html#aac932c229284cd61451c9014ff690ba8">initialize</a> (const int &amp;iter, const double &amp;initial_time)</td></tr>
-<tr class="separator:aac932c229284cd61451c9014ff690ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1013895d3182ce71eaaf22866c824236"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCoupling.html#a1013895d3182ce71eaaf22866c824236">initialize</a> (const int &amp;iter, const double &amp;initial_time, const double time_step)</td></tr>
+<tr class="separator:a1013895d3182ce71eaaf22866c824236"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a857decf34488b0be47c6e5d7f8366e5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCoupling.html#a857decf34488b0be47c6e5d7f8366e5e">post_processing</a> (const int &amp;iter, const double &amp;current_time)</td></tr>
 <tr class="separator:a857decf34488b0be47c6e5d7f8366e5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad08acffd204d8a23e4de280981d7a53f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCoupling.html#ad08acffd204d8a23e4de280981d7a53f">update</a> ()</td></tr>
@@ -282,8 +282,8 @@ template&lt;class... Args&gt; </div>
 
 </div>
 </div>
-<a id="aac932c229284cd61451c9014ff690ba8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac932c229284cd61451c9014ff690ba8">&#9670;&nbsp;</a></span>initialize()</h2>
+<a id="a1013895d3182ce71eaaf22866c824236"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1013895d3182ce71eaaf22866c824236">&#9670;&nbsp;</a></span>initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -300,7 +300,13 @@ template&lt;class... Args&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const double &amp;&#160;</td>
-          <td class="paramname"><em>initial_time</em>&#160;</td>
+          <td class="paramname"><em>initial_time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>time_step</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -367,7 +373,7 @@ template&lt;class... Args&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:45 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

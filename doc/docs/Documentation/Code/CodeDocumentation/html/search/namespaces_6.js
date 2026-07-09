@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['newtondefaultconstant_1102',['NewtonDefaultConstant',['../namespaceNewtonDefaultConstant.html',1,'']]]
+  ['minresdefaultconstant_1118',['MINRESDefaultConstant',['../namespaceMINRESDefaultConstant.html',1,'']]]
 ];

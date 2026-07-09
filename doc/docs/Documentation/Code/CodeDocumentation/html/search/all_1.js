@@ -8,7 +8,7 @@ var searchData=
   ['bicgstabdefaultconstant_35',['BICGSTABDefaultConstant',['../namespaceBICGSTABDefaultConstant.html',1,'']]],
   ['blk_5f_36',['blk_',['../classRobinNLFormIntegrator.html#a38dc4c3639697168a3ade69239df1d4b',1,'RobinNLFormIntegrator']]],
   ['block_5ftrueoffsets_5f_37',['block_trueOffsets_',['../classOperatorBase.html#a1f168971ddc71471c40b6ef5d56e1ef9',1,'OperatorBase']]],
-  ['blockallencahnnlformintegrator_38',['BlockAllenCahnNLFormIntegrator',['../classBlockAllenCahnNLFormIntegrator.html',1,'BlockAllenCahnNLFormIntegrator&lt; VARS &gt;'],['../classBlockAllenCahnNLFormIntegrator.html#ab94a53254a06a501fa8c5237e567ab12',1,'BlockAllenCahnNLFormIntegrator::BlockAllenCahnNLFormIntegrator()']]],
+  ['blockallencahnnlformintegrator_38',['BlockAllenCahnNLFormIntegrator',['../classBlockAllenCahnNLFormIntegrator.html',1,'BlockAllenCahnNLFormIntegrator&lt; VARS &gt;'],['../classBlockAllenCahnNLFormIntegrator.html#a8050a8467728e440ce67fc7ec1661080',1,'BlockAllenCahnNLFormIntegrator::BlockAllenCahnNLFormIntegrator()']]],
   ['blockallencahnnlformintegrator_2ehpp_39',['BlockAllenCahnNLFormIntegrator.hpp',['../BlockAllenCahnNLFormIntegrator_8hpp.html',1,'']]],
   ['blockallencahnnlformintegrator_2etpp_40',['BlockAllenCahnNLFormIntegrator.tpp',['../BlockAllenCahnNLFormIntegrator_8tpp.html',1,'']]],
   ['boundary_41',['Boundary',['../classBoundary.html#aa9e58f860a0e52208f602ab0880aa2c1',1,'Boundary::Boundary(const std::string &amp;boundary_name, int boundary_index, const std::string &amp;boundary_type)'],['../classBoundary.html#a346a3ddbebfcd6bf83c98100ff758904',1,'Boundary::Boundary(const std::string &amp;boundary_name, int boundary_index, const std::string &amp;boundary_type, double boundary_value)'],['../classBoundary.html',1,'Boundary']]],
@@ -18,9 +18,9 @@ var searchData=
   ['boundaryconditions_2ehpp_45',['BoundaryConditions.hpp',['../BoundaryConditions_8hpp.html',1,'']]],
   ['boundaryconditions_2etpp_46',['BoundaryConditions.tpp',['../BoundaryConditions_8tpp.html',1,'']]],
   ['boundaryconditiontype_47',['BoundaryConditionType',['../structBoundaryConditionType.html',1,'']]],
-  ['build_5flhs_5fnonlinear_5fform_48',['build_lhs_nonlinear_form',['../classTransientOperator.html#ae79cb350840db1289214d6e63d39b199',1,'TransientOperator']]],
+  ['build_5flhs_5fnonlinear_5fform_48',['build_lhs_nonlinear_form',['../classTransientOperator.html#a23938490b69b8f382fe2f7532b2cea2c',1,'TransientOperator']]],
   ['build_5fmass_5fmatrix_49',['build_mass_matrix',['../classTransientOperator.html#a8753a8cd4ea6294c4d66b656cdfe5729',1,'TransientOperator']]],
   ['build_5fmesh_50',['build_mesh',['../structspecialized__spatial__constructor_3_01T_00_011_01_4.html#ad9287439f1ff6f197b292f62549a75ad',1,'specialized_spatial_constructor&lt; T, 1 &gt;::build_mesh()'],['../structspecialized__spatial__constructor_3_01T_00_012_01_4.html#a005fb02e74a9ce0b54581b6f0db5f5c7',1,'specialized_spatial_constructor&lt; T, 2 &gt;::build_mesh()'],['../structspecialized__spatial__constructor_3_01T_00_013_01_4.html#a8014c724d751df65257185c4cc4ea106',1,'specialized_spatial_constructor&lt; T, 3 &gt;::build_mesh()']]],
   ['build_5fperiodic_5fmesh_51',['build_periodic_mesh',['../structspecialized__spatial__constructor_3_01T_00_011_01_4.html#acc009540b0294c236332a5179c51d854',1,'specialized_spatial_constructor&lt; T, 1 &gt;::build_periodic_mesh()'],['../structspecialized__spatial__constructor_3_01T_00_012_01_4.html#abe1d650198fb88c3210101569b22a6a3',1,'specialized_spatial_constructor&lt; T, 2 &gt;::build_periodic_mesh()'],['../structspecialized__spatial__constructor_3_01T_00_013_01_4.html#a67870a398304104983d23b5886a4844d',1,'specialized_spatial_constructor&lt; T, 3 &gt;::build_periodic_mesh()']]],
-  ['build_5frhs_5fnonlinear_5fform_52',['build_rhs_nonlinear_form',['../classOperatorBase.html#a3af5631c6122676c19a86ff6e8fa419f',1,'OperatorBase']]]
+  ['build_5frhs_5fnonlinear_5fform_52',['build_rhs_nonlinear_form',['../classOperatorBase.html#aaeb570f97d143aaa19178a42f0afa496',1,'OperatorBase']]]
 ];

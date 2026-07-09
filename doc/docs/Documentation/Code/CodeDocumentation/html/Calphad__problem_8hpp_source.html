@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -157,7 +157,7 @@ $(function() {
 <div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="classCalphad__Problem.html#afdf205d152e1c432f52cc66f8af1b0ff">  106</a></span>&#160;  <a class="code" href="classCalphad__Problem.html#afdf205d152e1c432f52cc66f8af1b0ff">Calphad_Problem</a>(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; params, VAR&amp; variables, PST&amp; pst,</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                  Args&amp;&amp;... auxvariable);</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classCalphad__Problem.html#ab62afe9de2a1eb5589f459bb710d3876">  110</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classCalphad__Problem.html#ab62afe9de2a1eb5589f459bb710d3876">initialize</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; initial_time) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classCalphad__Problem.html#a9fc30e6a89a6944ea60ef10bfe5e1ea1">  110</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classCalphad__Problem.html#a9fc30e6a89a6944ea60ef10bfe5e1ea1">initialize</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; initial_time, <span class="keyword">const</span> <span class="keywordtype">double</span> time_step) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
 <div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="classCalphad__Problem.html#ae28888c1eb8cc7c6e90c896b7367d41a">  114</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classCalphad__Problem.html#ae28888c1eb8cc7c6e90c896b7367d41a">do_time_step</a>(<span class="keywordtype">double</span>&amp; next_time, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; current_time, <span class="keywordtype">double</span> current_time_step,</div>
@@ -186,8 +186,8 @@ $(function() {
 <div class="ttc" id="aclassCalphad__Problem_html_a6f85c74bb114e14f950b95d77b60fa1e"><div class="ttname"><a href="classCalphad__Problem.html#a6f85c74bb114e14f950b95d77b60fa1e">Calphad_Problem::Calphad_Problem</a></div><div class="ttdeci">Calphad_Problem(const std::string &amp;name, const Parameters &amp;params, VAR &amp;variables, const std::vector&lt; Coefficients &gt; &amp;Coeff, Convergence &amp;convergence, PST &amp;pst, Args &amp;&amp;... auxvariable)</div></div>
 <div class="ttc" id="aclassCalphad__Problem_html_a89648cf089cab49ca115ea186b3232ca"><div class="ttname"><a href="classCalphad__Problem.html#a89648cf089cab49ca115ea186b3232ca">Calphad_Problem::sorted_KKS_phases_</a></div><div class="ttdeci">std::vector&lt; std::string &gt; sorted_KKS_phases_</div><div class="ttdef"><b>Definition:</b> <a href="Calphad__problem_8hpp_source.html#l00074">Calphad_problem.hpp:74</a></div></div>
 <div class="ttc" id="aclassCalphad__Problem_html_a91724aaaf5c1f1175b1a31a65ea50090"><div class="ttname"><a href="classCalphad__Problem.html#a91724aaaf5c1f1175b1a31a65ea50090">Calphad_Problem::Calphad_Problem</a></div><div class="ttdeci">Calphad_Problem(const std::string &amp;name, const Parameters &amp;params, VAR &amp;variables, const std::vector&lt; Coefficients &gt; &amp;Coeff, PST &amp;pst, Args &amp;&amp;... auxvariable)</div></div>
+<div class="ttc" id="aclassCalphad__Problem_html_a9fc30e6a89a6944ea60ef10bfe5e1ea1"><div class="ttname"><a href="classCalphad__Problem.html#a9fc30e6a89a6944ea60ef10bfe5e1ea1">Calphad_Problem::initialize</a></div><div class="ttdeci">void initialize(const double &amp;initial_time, const double time_step) override</div></div>
 <div class="ttc" id="aclassCalphad__Problem_html_aae9cbfdc31162becb69d716761d50b17"><div class="ttname"><a href="classCalphad__Problem.html#aae9cbfdc31162becb69d716761d50b17">Calphad_Problem::finalize</a></div><div class="ttdeci">void finalize() override</div></div>
-<div class="ttc" id="aclassCalphad__Problem_html_ab62afe9de2a1eb5589f459bb710d3876"><div class="ttname"><a href="classCalphad__Problem.html#ab62afe9de2a1eb5589f459bb710d3876">Calphad_Problem::initialize</a></div><div class="ttdeci">void initialize(const double &amp;initial_time) override</div></div>
 <div class="ttc" id="aclassCalphad__Problem_html_ac63f7d8a017cd04933e195705dacaa1b"><div class="ttname"><a href="classCalphad__Problem.html#ac63f7d8a017cd04933e195705dacaa1b">Calphad_Problem::Calphad_Problem</a></div><div class="ttdeci">Calphad_Problem(const Parameters &amp;params, VAR &amp;variables, const std::vector&lt; Coefficients &gt; &amp;Coeff, PST &amp;pst, Args &amp;&amp;... auxvariable)</div></div>
 <div class="ttc" id="aclassCalphad__Problem_html_aca72842aaea7582a0f18566870d0e719"><div class="ttname"><a href="classCalphad__Problem.html#aca72842aaea7582a0f18566870d0e719">Calphad_Problem::Calphad_Problem</a></div><div class="ttdeci">Calphad_Problem(const Parameters &amp;params, VAR &amp;variables, Convergence &amp;convergence, PST &amp;pst, Args &amp;&amp;... auxvariable)</div></div>
 <div class="ttc" id="aclassCalphad__Problem_html_acdbd21d17051778d326bd179058eff96"><div class="ttname"><a href="classCalphad__Problem.html#acdbd21d17051778d326bd179058eff96">Calphad_Problem::~Calphad_Problem</a></div><div class="ttdeci">~Calphad_Problem()</div></div>
@@ -196,11 +196,11 @@ $(function() {
 <div class="ttc" id="aclassCalphad__Problem_html_afdf205d152e1c432f52cc66f8af1b0ff"><div class="ttname"><a href="classCalphad__Problem.html#afdf205d152e1c432f52cc66f8af1b0ff">Calphad_Problem::Calphad_Problem</a></div><div class="ttdeci">Calphad_Problem(const std::string &amp;name, const Parameters &amp;params, VAR &amp;variables, PST &amp;pst, Args &amp;&amp;... auxvariable)</div></div>
 <div class="ttc" id="aclassConvergence_html"><div class="ttname"><a href="classConvergence.html">Convergence</a></div><div class="ttdef"><b>Definition:</b> <a href="Convergence_8hpp_source.html#l00041">Convergence.hpp:41</a></div></div>
 <div class="ttc" id="aclassParameters_html"><div class="ttname"><a href="classParameters.html">Parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8hpp_source.html#l00046">Parameters.hpp:46</a></div></div>
-<div class="ttc" id="aclassProblemBase_html"><div class="ttname"><a href="classProblemBase.html">ProblemBase</a></div><div class="ttdoc">Base class for SLOTH problem.</div><div class="ttdef"><b>Definition:</b> <a href="ProblemBase_8hpp_source.html#l00062">ProblemBase.hpp:62</a></div></div>
+<div class="ttc" id="aclassProblemBase_html"><div class="ttname"><a href="classProblemBase.html">ProblemBase</a></div><div class="ttdoc">Base class for SLOTH problem.</div><div class="ttdef"><b>Definition:</b> <a href="ProblemBase_8hpp_source.html#l00063">ProblemBase.hpp:63</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:45 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:15 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

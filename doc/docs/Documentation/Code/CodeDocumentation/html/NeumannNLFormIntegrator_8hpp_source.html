@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -93,31 +93,33 @@ $(function() {
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classNeumannNLFormIntegrator.html#a71919030313b94bf6ea5ee6573aeae63">   48</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classNeumannNLFormIntegrator.html#a71919030313b94bf6ea5ee6573aeae63">get_coefficients</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classNeumannNLFormIntegrator.html#a899e72b4dc022254f84f877f80923158">   51</a></span>&#160;  <a class="code" href="classNeumannNLFormIntegrator.html#a899e72b4dc022254f84f877f80923158">NeumannNLFormIntegrator</a>(<span class="keyword">const</span> std::vector&lt;mfem::ParGridFunction&gt;&amp; u_old,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                          <span class="keyword">const</span> std::vector&lt;mfem::ParGridFunction&gt;&amp; aux_old,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                          <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; params, std::vector&lt;VARS*&gt; auxvars,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                          <span class="keyword">const</span> std::vector&lt;Coefficients&gt;&amp; coefficients, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> block,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                          <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> bdr_id);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classNeumannNLFormIntegrator.html#afb0ddfe84227b01b964993c0cf42ce4b">   57</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classNeumannNLFormIntegrator.html#afb0ddfe84227b01b964993c0cf42ce4b">~NeumannNLFormIntegrator</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="NeumannNLFormIntegrator_8tpp.html">Integrators/NeumannNLFormIntegrator.tpp</a>&quot;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classNeumannNLFormIntegrator.html#aba193cf90ab3bd5810ef36c7b6d80e45">   51</a></span>&#160;  <a class="code" href="classNeumannNLFormIntegrator.html#aba193cf90ab3bd5810ef36c7b6d80e45">NeumannNLFormIntegrator</a>(<a class="code" href="ProblemsOptions_8hpp.html#a5047b3c22ba65d974596c2729dcf1409">Geometry</a> geometry, <span class="keyword">const</span> <span class="keywordtype">double</span> time_step,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                          <span class="keyword">const</span> std::vector&lt;mfem::ParGridFunction&gt;&amp; u_old,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                          <span class="keyword">const</span> std::vector&lt;mfem::ParGridFunction&gt;&amp; aux_old,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                          <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; params, std::vector&lt;VARS*&gt; auxvars,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                          <span class="keyword">const</span> std::vector&lt;Coefficients&gt;&amp; coefficients, <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> block,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                          <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> bdr_id);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classNeumannNLFormIntegrator.html#afb0ddfe84227b01b964993c0cf42ce4b">   58</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classNeumannNLFormIntegrator.html#afb0ddfe84227b01b964993c0cf42ce4b">~NeumannNLFormIntegrator</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="NeumannNLFormIntegrator_8tpp.html">Integrators/NeumannNLFormIntegrator.tpp</a>&quot;</span></div>
 <div class="ttc" id="aNeumannNLFormIntegrator_8tpp_html"><div class="ttname"><a href="NeumannNLFormIntegrator_8tpp.html">NeumannNLFormIntegrator.tpp</a></div></div>
 <div class="ttc" id="aOptions_8hpp_html"><div class="ttname"><a href="Options_8hpp.html">Options.hpp</a></div><div class="ttdoc">List of all Options files.</div></div>
 <div class="ttc" id="aParameters_8hpp_html"><div class="ttname"><a href="Parameters_8hpp.html">Parameters.hpp</a></div><div class="ttdoc">Parameter class used to build and manage calculation parameter.</div></div>
+<div class="ttc" id="aProblemsOptions_8hpp_html_a5047b3c22ba65d974596c2729dcf1409"><div class="ttname"><a href="ProblemsOptions_8hpp.html#a5047b3c22ba65d974596c2729dcf1409">Geometry</a></div><div class="ttdeci">Geometry</div><div class="ttdef"><b>Definition:</b> <a href="ProblemsOptions_8hpp_source.html#l00041">ProblemsOptions.hpp:41</a></div></div>
 <div class="ttc" id="aRobinNLFormIntegrator_8hpp_html"><div class="ttname"><a href="RobinNLFormIntegrator_8hpp.html">RobinNLFormIntegrator.hpp</a></div><div class="ttdoc">Robin integrator.</div></div>
 <div class="ttc" id="aSlothGridFunction_8hpp_html"><div class="ttname"><a href="SlothGridFunction_8hpp.html">SlothGridFunction.hpp</a></div><div class="ttdoc">Class dedicated to the calculation of the gradient of a GridFunction.</div></div>
 <div class="ttc" id="aclassNeumannNLFormIntegrator_html"><div class="ttname"><a href="classNeumannNLFormIntegrator.html">NeumannNLFormIntegrator</a></div><div class="ttdoc">Class dedicated to the Neumann boundary condiiton integrator.</div><div class="ttdef"><b>Definition:</b> <a href="NeumannNLFormIntegrator_8hpp_source.html#l00046">NeumannNLFormIntegrator.hpp:46</a></div></div>
 <div class="ttc" id="aclassNeumannNLFormIntegrator_html_a71919030313b94bf6ea5ee6573aeae63"><div class="ttname"><a href="classNeumannNLFormIntegrator.html#a71919030313b94bf6ea5ee6573aeae63">NeumannNLFormIntegrator::get_coefficients</a></div><div class="ttdeci">void get_coefficients() override</div></div>
-<div class="ttc" id="aclassNeumannNLFormIntegrator_html_a899e72b4dc022254f84f877f80923158"><div class="ttname"><a href="classNeumannNLFormIntegrator.html#a899e72b4dc022254f84f877f80923158">NeumannNLFormIntegrator::NeumannNLFormIntegrator</a></div><div class="ttdeci">NeumannNLFormIntegrator(const std::vector&lt; mfem::ParGridFunction &gt; &amp;u_old, const std::vector&lt; mfem::ParGridFunction &gt; &amp;aux_old, const Parameters &amp;params, std::vector&lt; VARS * &gt; auxvars, const std::vector&lt; Coefficients &gt; &amp;coefficients, const unsigned int block, const unsigned int bdr_id)</div></div>
+<div class="ttc" id="aclassNeumannNLFormIntegrator_html_aba193cf90ab3bd5810ef36c7b6d80e45"><div class="ttname"><a href="classNeumannNLFormIntegrator.html#aba193cf90ab3bd5810ef36c7b6d80e45">NeumannNLFormIntegrator::NeumannNLFormIntegrator</a></div><div class="ttdeci">NeumannNLFormIntegrator(Geometry geometry, const double time_step, const std::vector&lt; mfem::ParGridFunction &gt; &amp;u_old, const std::vector&lt; mfem::ParGridFunction &gt; &amp;aux_old, const Parameters &amp;params, std::vector&lt; VARS * &gt; auxvars, const std::vector&lt; Coefficients &gt; &amp;coefficients, const unsigned int block, const unsigned int bdr_id)</div></div>
 <div class="ttc" id="aclassNeumannNLFormIntegrator_html_afb0ddfe84227b01b964993c0cf42ce4b"><div class="ttname"><a href="classNeumannNLFormIntegrator.html#afb0ddfe84227b01b964993c0cf42ce4b">NeumannNLFormIntegrator::~NeumannNLFormIntegrator</a></div><div class="ttdeci">virtual ~NeumannNLFormIntegrator()=default</div></div>
 <div class="ttc" id="aclassParameters_html"><div class="ttname"><a href="classParameters.html">Parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8hpp_source.html#l00046">Parameters.hpp:46</a></div></div>
 <div class="ttc" id="aclassRobinNLFormIntegrator_html"><div class="ttname"><a href="classRobinNLFormIntegrator.html">RobinNLFormIntegrator</a></div><div class="ttdoc">Class dedicated to the Robin boundary condition integrator.</div><div class="ttdef"><b>Definition:</b> <a href="RobinNLFormIntegrator_8hpp_source.html#l00048">RobinNLFormIntegrator.hpp:48</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:45 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

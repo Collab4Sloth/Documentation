@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -107,18 +107,19 @@ $(function() {
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classCoefficients.html#ae979a062c1019b4ced674570e357bedf">add</a>(<a class="code" href="classCoefficient.html">Coefficient</a> coef);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  std::vector&lt;<a class="code" href="classCoefficient.html">Coefficient</a>&gt; <a class="code" href="classCoefficients.html#a0d16390dd9f85fa33e5d839343f565c0">getCoefficients</a>() const;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">size_t</span> <a class="code" href="classCoefficients.html#a16389045e5e4f136aa029f3bb9a2454d">size</a>() noexcept;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="classCoefficient.html">Coefficient</a> operator[](<span class="keywordtype">size_t</span> i);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  std::vector&lt;<a class="code" href="Glossary_8hpp.html#a1204ef61577dbf022e130de662bc755a">GlossaryType</a>&gt; <a class="code" href="classCoefficients.html#a2939bada134818a5eaf8fc2dcdf2d5f9">get_types</a>() const;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classCoefficients.html#a2677c97600128b09b9c5a0981f5f069c">set_time</a>(<span class="keywordtype">double</span> time);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;template &lt;<a class="code" href="Coefficients_8hpp.html#a9c3b9d70f391d7432428a4127d74ce9c">CoeffVar</a>&lt;<a class="code" href="classCoefficient.html">Coefficient</a>&gt;... Args&gt;</div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="Coefficients_8hpp.html#ad4bb1e2bbf5a3815eafa54c50b17be77">   80</a></span>&#160;  <a class="code" href="classCoefficients.html#ad7572d8a99769b3cacb222d94afe2171">requires</a>((sizeof...(Args) &gt; 0))</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<a class="code" href="classCoefficients.html">Coefficients</a>::<a class="code" href="classCoefficients.html">Coefficients</a>(const Args&amp;... args)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    : vect_coefficients_{args...}, vect_coefficient_types_{args.get_type()...} {}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">size_t</span> <a class="code" href="classCoefficients.html#a7f21a18ca67111929f66e4b561d9be73">size</a>() const noexcept;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="classCoefficient.html">Coefficient</a>&amp; operator[](<span class="keywordtype">size_t</span> i);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  const <a class="code" href="classCoefficient.html">Coefficient</a>&amp; operator[](<span class="keywordtype">size_t</span> i) const;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  std::vector&lt;<a class="code" href="Glossary_8hpp.html#a1204ef61577dbf022e130de662bc755a">GlossaryType</a>&gt; <a class="code" href="classCoefficients.html#a2939bada134818a5eaf8fc2dcdf2d5f9">get_types</a>() const;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classCoefficients.html#a2677c97600128b09b9c5a0981f5f069c">set_time</a>(<span class="keywordtype">double</span> time);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;template &lt;<a class="code" href="Coefficients_8hpp.html#a9c3b9d70f391d7432428a4127d74ce9c">CoeffVar</a>&lt;<a class="code" href="classCoefficient.html">Coefficient</a>&gt;... Args&gt;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="Coefficients_8hpp.html#ad4bb1e2bbf5a3815eafa54c50b17be77">   81</a></span>&#160;  <a class="code" href="classCoefficients.html#ad7572d8a99769b3cacb222d94afe2171">requires</a>((sizeof...(Args) &gt; 0))</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<a class="code" href="classCoefficients.html">Coefficients</a>::<a class="code" href="classCoefficients.html">Coefficients</a>(const Args&amp;... args)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    : vect_coefficients_{args...}, vect_coefficient_types_{args.get_type()...} {}</div>
 <div class="ttc" id="aCoefficient_8hpp_html"><div class="ttname"><a href="Coefficient_8hpp.html">Coefficient.hpp</a></div><div class="ttdoc">Base class definining a coefficient from an analytical formula.</div></div>
 <div class="ttc" id="aCoefficients_8hpp_html_a9c3b9d70f391d7432428a4127d74ce9c"><div class="ttname"><a href="Coefficients_8hpp.html#a9c3b9d70f391d7432428a4127d74ce9c">CoeffVar</a></div><div class="ttdeci">concept CoeffVar</div><div class="ttdef"><b>Definition:</b> <a href="Coefficients_8hpp_source.html#l00044">Coefficients.hpp:44</a></div></div>
 <div class="ttc" id="aGlossary_8hpp_html"><div class="ttname"><a href="Glossary_8hpp.html">Glossary.hpp</a></div><div class="ttdoc">Glossary used to defined variables and properties in SLOTH.</div></div>
@@ -126,15 +127,15 @@ $(function() {
 <div class="ttc" id="aclassCoefficient_html"><div class="ttname"><a href="classCoefficient.html">Coefficient</a></div><div class="ttdoc">Base class definining a coefficient from an analytical formula.</div><div class="ttdef"><b>Definition:</b> <a href="Coefficient_8hpp_source.html#l00051">Coefficient.hpp:51</a></div></div>
 <div class="ttc" id="aclassCoefficients_html"><div class="ttname"><a href="classCoefficients.html">Coefficients</a></div><div class="ttdoc">Class used to manage a collection of Coefficient.</div><div class="ttdef"><b>Definition:</b> <a href="Coefficients_8hpp_source.html#l00050">Coefficients.hpp:50</a></div></div>
 <div class="ttc" id="aclassCoefficients_html_a0d16390dd9f85fa33e5d839343f565c0"><div class="ttname"><a href="classCoefficients.html#a0d16390dd9f85fa33e5d839343f565c0">Coefficients::getCoefficients</a></div><div class="ttdeci">std::vector&lt; Coefficient &gt; getCoefficients() const</div><div class="ttdoc">Returns the vector of coefficients.</div><div class="ttdef"><b>Definition:</b> <a href="Coefficients_8cpp_source.html#l00056">Coefficients.cpp:56</a></div></div>
-<div class="ttc" id="aclassCoefficients_html_a16389045e5e4f136aa029f3bb9a2454d"><div class="ttname"><a href="classCoefficients.html#a16389045e5e4f136aa029f3bb9a2454d">Coefficients::size</a></div><div class="ttdeci">size_t size() noexcept</div><div class="ttdoc">Returns the number of coefficients.</div><div class="ttdef"><b>Definition:</b> <a href="Coefficients_8cpp_source.html#l00063">Coefficients.cpp:63</a></div></div>
-<div class="ttc" id="aclassCoefficients_html_a2677c97600128b09b9c5a0981f5f069c"><div class="ttname"><a href="classCoefficients.html#a2677c97600128b09b9c5a0981f5f069c">Coefficients::set_time</a></div><div class="ttdeci">void set_time(double time)</div><div class="ttdoc">Set the time value to each coefficients.</div><div class="ttdef"><b>Definition:</b> <a href="Coefficients_8cpp_source.html#l00089">Coefficients.cpp:89</a></div></div>
-<div class="ttc" id="aclassCoefficients_html_a2939bada134818a5eaf8fc2dcdf2d5f9"><div class="ttname"><a href="classCoefficients.html#a2939bada134818a5eaf8fc2dcdf2d5f9">Coefficients::get_types</a></div><div class="ttdeci">std::vector&lt; GlossaryType &gt; get_types() const</div><div class="ttdoc">Returns a copy of the glossary types associated with the coefficients.</div><div class="ttdef"><b>Definition:</b> <a href="Coefficients_8cpp_source.html#l00083">Coefficients.cpp:83</a></div></div>
+<div class="ttc" id="aclassCoefficients_html_a2677c97600128b09b9c5a0981f5f069c"><div class="ttname"><a href="classCoefficients.html#a2677c97600128b09b9c5a0981f5f069c">Coefficients::set_time</a></div><div class="ttdeci">void set_time(double time)</div><div class="ttdoc">Set the time value to each coefficients.</div><div class="ttdef"><b>Definition:</b> <a href="Coefficients_8cpp_source.html#l00102">Coefficients.cpp:102</a></div></div>
+<div class="ttc" id="aclassCoefficients_html_a2939bada134818a5eaf8fc2dcdf2d5f9"><div class="ttname"><a href="classCoefficients.html#a2939bada134818a5eaf8fc2dcdf2d5f9">Coefficients::get_types</a></div><div class="ttdeci">std::vector&lt; GlossaryType &gt; get_types() const</div><div class="ttdoc">Returns a copy of the glossary types associated with the coefficients.</div><div class="ttdef"><b>Definition:</b> <a href="Coefficients_8cpp_source.html#l00096">Coefficients.cpp:96</a></div></div>
+<div class="ttc" id="aclassCoefficients_html_a7f21a18ca67111929f66e4b561d9be73"><div class="ttname"><a href="classCoefficients.html#a7f21a18ca67111929f66e4b561d9be73">Coefficients::size</a></div><div class="ttdeci">size_t size() const noexcept</div><div class="ttdoc">Returns the number of coefficients.</div><div class="ttdef"><b>Definition:</b> <a href="Coefficients_8cpp_source.html#l00063">Coefficients.cpp:63</a></div></div>
 <div class="ttc" id="aclassCoefficients_html_ad7572d8a99769b3cacb222d94afe2171"><div class="ttname"><a href="classCoefficients.html#ad7572d8a99769b3cacb222d94afe2171">Coefficients::requires</a></div><div class="ttdeci">requires((sizeof...(Args) &gt; 0)) explicit Coefficients(const Args &amp;... args)</div></div>
 <div class="ttc" id="aclassCoefficients_html_ae979a062c1019b4ced674570e357bedf"><div class="ttname"><a href="classCoefficients.html#ae979a062c1019b4ced674570e357bedf">Coefficients::add</a></div><div class="ttdeci">void add(Coefficient coef)</div><div class="ttdoc">Adds a new coefficient to the container.</div><div class="ttdef"><b>Definition:</b> <a href="Coefficients_8cpp_source.html#l00049">Coefficients.cpp:49</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:45 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:15 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -120,7 +120,7 @@ $(function() {
 <div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classProblem.html#a8aa182df8b635cfb6c0362c508e3017a">   80</a></span>&#160;  <a class="code" href="classProblem.html#a8aa182df8b635cfb6c0362c508e3017a">Problem</a>(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> OPE&amp; oper, VAR&amp; variables,</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;          <span class="keyword">const</span> std::vector&lt;Coefficients&gt;&amp; Coeff, PST&amp; pst, Args&amp;&amp;... auxvariable);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classProblem.html#aa3a125071d65915326f21d8898d9321f">   84</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classProblem.html#aa3a125071d65915326f21d8898d9321f">initialize</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; initial_time) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classProblem.html#a651db32fe98611402ab32f7ad771a5ad">   84</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classProblem.html#a651db32fe98611402ab32f7ad771a5ad">initialize</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; initial_time, <span class="keyword">const</span> <span class="keywordtype">double</span> time_step) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 <div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classProblem.html#ae4a08eb414dc61ef2c5d10a943707bd2">   86</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classProblem.html#ae4a08eb414dc61ef2c5d10a943707bd2">do_time_step</a>(<span class="keywordtype">double</span>&amp; next_time, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; current_time, <span class="keywordtype">double</span> current_time_step,</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> iter, std::vector&lt;std::unique_ptr&lt;mfem::Vector&gt;&gt;&amp; unks,</div>
@@ -139,14 +139,14 @@ $(function() {
 <div class="ttc" id="aProblem_8tpp_html"><div class="ttname"><a href="Problem_8tpp.html">Problem.tpp</a></div></div>
 <div class="ttc" id="aVariable_8hpp_html"><div class="ttname"><a href="Variable_8hpp.html">Variable.hpp</a></div><div class="ttdoc">Variable class used to build and manage variables of model.</div></div>
 <div class="ttc" id="aclassConvergence_html"><div class="ttname"><a href="classConvergence.html">Convergence</a></div><div class="ttdef"><b>Definition:</b> <a href="Convergence_8hpp_source.html#l00041">Convergence.hpp:41</a></div></div>
-<div class="ttc" id="aclassProblemBase_html"><div class="ttname"><a href="classProblemBase.html">ProblemBase</a></div><div class="ttdoc">Base class for SLOTH problem.</div><div class="ttdef"><b>Definition:</b> <a href="ProblemBase_8hpp_source.html#l00062">ProblemBase.hpp:62</a></div></div>
+<div class="ttc" id="aclassProblemBase_html"><div class="ttname"><a href="classProblemBase.html">ProblemBase</a></div><div class="ttdoc">Base class for SLOTH problem.</div><div class="ttdef"><b>Definition:</b> <a href="ProblemBase_8hpp_source.html#l00063">ProblemBase.hpp:63</a></div></div>
 <div class="ttc" id="aclassProblem_html"><div class="ttname"><a href="classProblem.html">Problem</a></div><div class="ttdoc">Define a PDE Problem.</div><div class="ttdef"><b>Definition:</b> <a href="Problem_8hpp_source.html#l00056">Problem.hpp:56</a></div></div>
 <div class="ttc" id="aclassProblem_html_a31c8b44420d9b242032e4b62501f6077"><div class="ttname"><a href="classProblem.html#a31c8b44420d9b242032e4b62501f6077">Problem::Problem</a></div><div class="ttdeci">Problem(const OPE &amp;oper, VAR &amp;variables, const std::vector&lt; Coefficients &gt; &amp;Coeff, PST &amp;pst, Args &amp;&amp;... auxvariable)</div></div>
+<div class="ttc" id="aclassProblem_html_a651db32fe98611402ab32f7ad771a5ad"><div class="ttname"><a href="classProblem.html#a651db32fe98611402ab32f7ad771a5ad">Problem::initialize</a></div><div class="ttdeci">void initialize(const double &amp;initial_time, const double time_step) override</div></div>
 <div class="ttc" id="aclassProblem_html_a7fe5d03298ed6e0ff9f0001ac3149c26"><div class="ttname"><a href="classProblem.html#a7fe5d03298ed6e0ff9f0001ac3149c26">Problem::set_time_coefficients</a></div><div class="ttdeci">void set_time_coefficients(double time) override</div></div>
 <div class="ttc" id="aclassProblem_html_a7ff9675506375d80633a4aa2419d12ca"><div class="ttname"><a href="classProblem.html#a7ff9675506375d80633a4aa2419d12ca">Problem::Problem</a></div><div class="ttdeci">Problem(const OPE &amp;oper, VAR &amp;variables, const std::vector&lt; Coefficients &gt; &amp;Coeff, Convergence &amp;convergence, PST &amp;pst, Args &amp;&amp;... auxvariable)</div></div>
 <div class="ttc" id="aclassProblem_html_a8aa182df8b635cfb6c0362c508e3017a"><div class="ttname"><a href="classProblem.html#a8aa182df8b635cfb6c0362c508e3017a">Problem::Problem</a></div><div class="ttdeci">Problem(const std::string &amp;name, const OPE &amp;oper, VAR &amp;variables, const std::vector&lt; Coefficients &gt; &amp;Coeff, PST &amp;pst, Args &amp;&amp;... auxvariable)</div></div>
 <div class="ttc" id="aclassProblem_html_aa28869aeb8453ad88d2ce9bcc4ddcb7f"><div class="ttname"><a href="classProblem.html#aa28869aeb8453ad88d2ce9bcc4ddcb7f">Problem::post_processing</a></div><div class="ttdeci">void post_processing(const int &amp;iter, const double &amp;current_time) override</div></div>
-<div class="ttc" id="aclassProblem_html_aa3a125071d65915326f21d8898d9321f"><div class="ttname"><a href="classProblem.html#aa3a125071d65915326f21d8898d9321f">Problem::initialize</a></div><div class="ttdeci">void initialize(const double &amp;initial_time) override</div></div>
 <div class="ttc" id="aclassProblem_html_addcb21174cefd61d4feb90493e24edf0"><div class="ttname"><a href="classProblem.html#addcb21174cefd61d4feb90493e24edf0">Problem::Problem</a></div><div class="ttdeci">Problem(const std::string &amp;name, const OPE &amp;oper, VAR &amp;variables, const std::vector&lt; Coefficients &gt; &amp;Coeff, Convergence &amp;convergence, PST &amp;pst, Args &amp;&amp;... auxvariable)</div></div>
 <div class="ttc" id="aclassProblem_html_ae4a08eb414dc61ef2c5d10a943707bd2"><div class="ttname"><a href="classProblem.html#ae4a08eb414dc61ef2c5d10a943707bd2">Problem::do_time_step</a></div><div class="ttdeci">void do_time_step(double &amp;next_time, const double &amp;current_time, double current_time_step, const int iter, std::vector&lt; std::unique_ptr&lt; mfem::Vector &gt;&gt; &amp;unks, const std::vector&lt; std::vector&lt; std::string &gt;&gt; &amp;unks_info) override</div></div>
 <div class="ttc" id="aclassProblem_html_af852ee85da09c891ed7dd9debba93324"><div class="ttname"><a href="classProblem.html#af852ee85da09c891ed7dd9debba93324">Problem::finalize</a></div><div class="ttdeci">void finalize() override</div></div>
@@ -154,7 +154,7 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:45 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
