@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -245,7 +245,7 @@ $(function() {
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    a_my_class.<a class="code" href="classSpatialDiscretization.html#a3463c09a77a0c6563a353d97cf56dfa4">apply_uniform_refinement</a>(ref_level);</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    a_my_class.<a class="code" href="classSpatialDiscretization.html#aa13f34933d977fc735db06adfce769c4">is_periodic_mesh_</a> = periodic_mesh;</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">if</span> (!a_my_class.<a class="code" href="classSpatialDiscretization.html#aa13f34933d977fc735db06adfce769c4">is_periodic_mesh_</a>) {</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;      a_my_class.<a class="code" href="classSpatialDiscretization.html#af206f17ba4eae7d9eb056183130a01b7">mesh_max_bdr_attributes_</a> = a_my_class.<a class="code" href="classSpatialDiscretization.html#acb82222b7099fe5a8966582c36c42820">mesh_</a>.bdr_attributes.Max();</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;      a_my_class.<a class="code" href="classSpatialDiscretization.html#af206f17ba4eae7d9eb056183130a01b7">mesh_max_bdr_attributes_</a> = a_my_class.<a class="code" href="classSpatialDiscretization.html#acb82222b7099fe5a8966582c36c42820">mesh_</a>-&gt;bdr_attributes.Max();</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;      a_my_class.<a class="code" href="classSpatialDiscretization.html#af206f17ba4eae7d9eb056183130a01b7">mesh_max_bdr_attributes_</a> = -1;</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    }</div>
@@ -335,8 +335,8 @@ $(function() {
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;          tmp_mesh.Clear();</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;          mfem::Mesh tmp_mesh_periodic =</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;              mfem::Mesh(periodic_mesh, <span class="keyword">true</span>);  <span class="comment">// replace the input mesh with the periodic one</span></div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;          a_my_class.<a class="code" href="classSpatialDiscretization.html#acb82222b7099fe5a8966582c36c42820">mesh_</a> =</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;              mfem::ParMesh(MPI_COMM_WORLD, tmp_mesh_periodic);  <span class="comment">// definition of the parallel mesh</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;          a_my_class.<a class="code" href="classSpatialDiscretization.html#acb82222b7099fe5a8966582c36c42820">mesh_</a> = <span class="keyword">new</span> mfem::ParMesh(</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;              MPI_COMM_WORLD, tmp_mesh_periodic);  <span class="comment">// definition of the parallel mesh</span></div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;          tmp_mesh_periodic.Clear();</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;          mfem::mfem_error(</div>
@@ -354,7 +354,7 @@ $(function() {
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;            <span class="stringliteral">&quot;InlineSquareWithTriangles, InlineSquareWithQuadrangles mesh types are allowed&quot;</span>);</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    }</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    a_my_class.<a class="code" href="classSpatialDiscretization.html#af206f17ba4eae7d9eb056183130a01b7">mesh_max_bdr_attributes_</a> = a_my_class.<a class="code" href="classSpatialDiscretization.html#acb82222b7099fe5a8966582c36c42820">mesh_</a>.bdr_attributes.Max();</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    a_my_class.<a class="code" href="classSpatialDiscretization.html#af206f17ba4eae7d9eb056183130a01b7">mesh_max_bdr_attributes_</a> = a_my_class.<a class="code" href="classSpatialDiscretization.html#acb82222b7099fe5a8966582c36c42820">mesh_</a>-&gt;bdr_attributes.Max();</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;  }</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;};</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160; </div>
@@ -763,8 +763,8 @@ $(function() {
 <div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;}</div>
 <div class="ttc" id="aOptions_8hpp_html"><div class="ttname"><a href="Options_8hpp.html">Options.hpp</a></div><div class="ttdoc">List of all Options files.</div></div>
 <div class="ttc" id="aUtils_8hpp_html"><div class="ttname"><a href="Utils_8hpp.html">Utils.hpp</a></div><div class="ttdoc">List of all Utils files.</div></div>
-<div class="ttc" id="aclassSlothInfo_html_a854d3cafdb9f5a77f1063a27d2a27e04"><div class="ttname"><a href="classSlothInfo.html#a854d3cafdb9f5a77f1063a27d2a27e04">SlothInfo::debug</a></div><div class="ttdeci">static void debug(Args... args)</div><div class="ttdoc">Print information on Debug mode.</div><div class="ttdef"><b>Definition:</b> <a href="UtilsForData_8hpp_source.html#l00212">UtilsForData.hpp:212</a></div></div>
-<div class="ttc" id="aclassSlothInfo_html_ad6fa3fa2789f2c6779ba9c6ec2712c31"><div class="ttname"><a href="classSlothInfo.html#ad6fa3fa2789f2c6779ba9c6ec2712c31">SlothInfo::verbose</a></div><div class="ttdeci">static void verbose(Args... args)</div><div class="ttdoc">Print information on Normal mode.</div><div class="ttdef"><b>Definition:</b> <a href="UtilsForData_8hpp_source.html#l00237">UtilsForData.hpp:237</a></div></div>
+<div class="ttc" id="aclassSlothInfo_html_a854d3cafdb9f5a77f1063a27d2a27e04"><div class="ttname"><a href="classSlothInfo.html#a854d3cafdb9f5a77f1063a27d2a27e04">SlothInfo::debug</a></div><div class="ttdeci">static void debug(Args... args)</div><div class="ttdoc">Print information on Debug mode.</div><div class="ttdef"><b>Definition:</b> <a href="UtilsForData_8hpp_source.html#l00219">UtilsForData.hpp:219</a></div></div>
+<div class="ttc" id="aclassSlothInfo_html_ad6fa3fa2789f2c6779ba9c6ec2712c31"><div class="ttname"><a href="classSlothInfo.html#ad6fa3fa2789f2c6779ba9c6ec2712c31">SlothInfo::verbose</a></div><div class="ttdeci">static void verbose(Args... args)</div><div class="ttdoc">Print information on Normal mode.</div><div class="ttdef"><b>Definition:</b> <a href="UtilsForData_8hpp_source.html#l00244">UtilsForData.hpp:244</a></div></div>
 <div class="ttc" id="aclassSpatialDiscretization_html"><div class="ttname"><a href="classSpatialDiscretization.html">SpatialDiscretization</a></div><div class="ttdoc">Class for defining the spatial discretization with a mesh coming from a GMSH file or built by using d...</div><div class="ttdef"><b>Definition:</b> <a href="Spatial_8hpp_source.html#l00105">Spatial.hpp:105</a></div></div>
 <div class="ttc" id="aclassSpatialDiscretization_html_a027f8542a842221b6fb2c34fcbc33249"><div class="ttname"><a href="classSpatialDiscretization.html#a027f8542a842221b6fb2c34fcbc33249">SpatialDiscretization::bdr_attr_sets_</a></div><div class="ttdeci">std::shared_ptr&lt; mfem::AttributeSets &gt; bdr_attr_sets_</div><div class="ttdef"><b>Definition:</b> <a href="Spatial_8hpp_source.html#l00173">Spatial.hpp:173</a></div></div>
 <div class="ttc" id="aclassSpatialDiscretization_html_a0963be616e6f297398c0b5ba7ac67f81"><div class="ttname"><a href="classSpatialDiscretization.html#a0963be616e6f297398c0b5ba7ac67f81">SpatialDiscretization::elem_attr_sets_</a></div><div class="ttdeci">std::shared_ptr&lt; mfem::AttributeSets &gt; elem_attr_sets_</div><div class="ttdef"><b>Definition:</b> <a href="Spatial_8hpp_source.html#l00172">Spatial.hpp:172</a></div></div>
@@ -789,7 +789,7 @@ $(function() {
 <div class="ttc" id="aclassSpatialDiscretization_html_acb82222b7099fe5a8966582c36c42820"><div class="ttname"><a href="classSpatialDiscretization.html#acb82222b7099fe5a8966582c36c42820">SpatialDiscretization::mesh_</a></div><div class="ttdeci">mfem::ParMesh * mesh_</div><div class="ttdef"><b>Definition:</b> <a href="Spatial_8hpp_source.html#l00162">Spatial.hpp:162</a></div></div>
 <div class="ttc" id="aclassSpatialDiscretization_html_acedb4435f2a339fee79bcebee64e5985"><div class="ttname"><a href="classSpatialDiscretization.html#acedb4435f2a339fee79bcebee64e5985">SpatialDiscretization::SpatialDiscretization</a></div><div class="ttdeci">SpatialDiscretization(const std::string &amp;mesh_type, const int &amp;fe_order, const int &amp;ref_level, std::tuple&lt; Args... &gt; tup_args, std::vector&lt; mfem::Vector &gt; translations)</div><div class="ttdef"><b>Definition:</b> <a href="Spatial_8hpp_source.html#l00128">Spatial.hpp:128</a></div></div>
 <div class="ttc" id="aclassSpatialDiscretization_html_af206f17ba4eae7d9eb056183130a01b7"><div class="ttname"><a href="classSpatialDiscretization.html#af206f17ba4eae7d9eb056183130a01b7">SpatialDiscretization::mesh_max_bdr_attributes_</a></div><div class="ttdeci">int mesh_max_bdr_attributes_</div><div class="ttdef"><b>Definition:</b> <a href="Spatial_8hpp_source.html#l00163">Spatial.hpp:163</a></div></div>
-<div class="ttc" id="anamespaceHYPRE__PCG__DefaultConstant_html_acddd4faedacfc8cefea158cda1c397e6"><div class="ttname"><a href="namespaceHYPRE__PCG__DefaultConstant.html#acddd4faedacfc8cefea158cda1c397e6">HYPRE_PCG_DefaultConstant::tol</a></div><div class="ttdeci">const auto tol</div><div class="ttdef"><b>Definition:</b> <a href="SolversOptions_8hpp_source.html#l00148">SolversOptions.hpp:148</a></div></div>
+<div class="ttc" id="anamespaceHYPRE__PCG__DefaultConstant_html_acddd4faedacfc8cefea158cda1c397e6"><div class="ttname"><a href="namespaceHYPRE__PCG__DefaultConstant.html#acddd4faedacfc8cefea158cda1c397e6">HYPRE_PCG_DefaultConstant::tol</a></div><div class="ttdeci">const auto tol</div><div class="ttdef"><b>Definition:</b> <a href="SolversOptions_8hpp_source.html#l00161">SolversOptions.hpp:161</a></div></div>
 <div class="ttc" id="astructMeshes_html_a17ce7cdf7c4aef0633ce80f5e526b706a2e94a7db72daabb4a4706b2aee273340"><div class="ttname"><a href="structMeshes.html#a17ce7cdf7c4aef0633ce80f5e526b706a2e94a7db72daabb4a4706b2aee273340">Meshes::InlineSquareWithTriangles</a></div><div class="ttdeci">@ InlineSquareWithTriangles</div><div class="ttdef"><b>Definition:</b> <a href="SpatialOptions_8hpp_source.html#l00038">SpatialOptions.hpp:38</a></div></div>
 <div class="ttc" id="astructMeshes_html_a17ce7cdf7c4aef0633ce80f5e526b706a70efa49375d60bfa8df948c284390922"><div class="ttname"><a href="structMeshes.html#a17ce7cdf7c4aef0633ce80f5e526b706a70efa49375d60bfa8df948c284390922">Meshes::GMSH</a></div><div class="ttdeci">@ GMSH</div><div class="ttdef"><b>Definition:</b> <a href="SpatialOptions_8hpp_source.html#l00043">SpatialOptions.hpp:42</a></div></div>
 <div class="ttc" id="astructMeshes_html_a17ce7cdf7c4aef0633ce80f5e526b706a908cb7eb31c2ac649ffe6999a0e12fc2"><div class="ttname"><a href="structMeshes.html#a17ce7cdf7c4aef0633ce80f5e526b706a908cb7eb31c2ac649ffe6999a0e12fc2">Meshes::InlineSquareWithTetraedres</a></div><div class="ttdeci">@ InlineSquareWithTetraedres</div><div class="ttdef"><b>Definition:</b> <a href="SpatialOptions_8hpp_source.html#l00040">SpatialOptions.hpp:40</a></div></div>
@@ -819,7 +819,7 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:45 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

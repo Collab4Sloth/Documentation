@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -95,29 +95,31 @@ $(function() {
 <div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classFickNLFormIntegrator.html#a4d2f5982836b27b0a5c5c7560ce865ec">   56</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classFickNLFormIntegrator.html#a4d2f5982836b27b0a5c5c7560ce865ec">get_coefficients</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classFickNLFormIntegrator.html#aa9686e7a7a8ba49804bd2ba456197b74">   59</a></span>&#160;  <a class="code" href="classFickNLFormIntegrator.html#aa9686e7a7a8ba49804bd2ba456197b74">FickNLFormIntegrator</a>(<span class="keyword">const</span> std::vector&lt;mfem::ParGridFunction&gt; u_old,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                       <span class="keyword">const</span> std::vector&lt;mfem::ParGridFunction&gt;&amp; aux_old, <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; params,</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                       std::vector&lt;VARS*&gt; auxvars, <span class="keyword">const</span> std::vector&lt;Coefficients&gt;&amp; coefficients);</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classFickNLFormIntegrator.html#a79b096e9eb481c3bd812b86483658d67">   62</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classFickNLFormIntegrator.html#a79b096e9eb481c3bd812b86483658d67">~FickNLFormIntegrator</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="FickNLFormIntegrator_8tpp.html">Integrators/FickNLFormIntegrator.tpp</a>&quot;</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classFickNLFormIntegrator.html#af69fdb8cda620648758a8ef50cfe4073">   59</a></span>&#160;  <a class="code" href="classFickNLFormIntegrator.html#af69fdb8cda620648758a8ef50cfe4073">FickNLFormIntegrator</a>(<a class="code" href="ProblemsOptions_8hpp.html#a5047b3c22ba65d974596c2729dcf1409">Geometry</a> geometry, <span class="keyword">const</span> <span class="keywordtype">double</span> time_step,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                       <span class="keyword">const</span> std::vector&lt;mfem::ParGridFunction&gt; u_old,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                       <span class="keyword">const</span> std::vector&lt;mfem::ParGridFunction&gt;&amp; aux_old, <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; params,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                       std::vector&lt;VARS*&gt; auxvars, <span class="keyword">const</span> std::vector&lt;Coefficients&gt;&amp; coefficients);</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classFickNLFormIntegrator.html#a79b096e9eb481c3bd812b86483658d67">   63</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classFickNLFormIntegrator.html#a79b096e9eb481c3bd812b86483658d67">~FickNLFormIntegrator</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="FickNLFormIntegrator_8tpp.html">Integrators/FickNLFormIntegrator.tpp</a>&quot;</span></div>
 <div class="ttc" id="aDiffusionNLFormIntegrator_8hpp_html"><div class="ttname"><a href="DiffusionNLFormIntegrator_8hpp.html">DiffusionNLFormIntegrator.hpp</a></div><div class="ttdoc">Nonlinear form integrator for diffusion-type problems.</div></div>
 <div class="ttc" id="aFickNLFormIntegrator_8tpp_html"><div class="ttname"><a href="FickNLFormIntegrator_8tpp.html">FickNLFormIntegrator.tpp</a></div></div>
 <div class="ttc" id="aParameter_8hpp_html"><div class="ttname"><a href="Parameter_8hpp.html">Parameter.hpp</a></div><div class="ttdoc">Parameter class.</div></div>
 <div class="ttc" id="aParameters_8hpp_html"><div class="ttname"><a href="Parameters_8hpp.html">Parameters.hpp</a></div><div class="ttdoc">Parameter class used to build and manage calculation parameter.</div></div>
+<div class="ttc" id="aProblemsOptions_8hpp_html_a5047b3c22ba65d974596c2729dcf1409"><div class="ttname"><a href="ProblemsOptions_8hpp.html#a5047b3c22ba65d974596c2729dcf1409">Geometry</a></div><div class="ttdeci">Geometry</div><div class="ttdef"><b>Definition:</b> <a href="ProblemsOptions_8hpp_source.html#l00041">ProblemsOptions.hpp:41</a></div></div>
 <div class="ttc" id="aSlothNLFormIntegrator_8hpp_html"><div class="ttname"><a href="SlothNLFormIntegrator_8hpp.html">SlothNLFormIntegrator.hpp</a></div><div class="ttdoc">Class prodiving common methods to all NLFormIntegrators.</div></div>
 <div class="ttc" id="aUtils_8hpp_html"><div class="ttname"><a href="Utils_8hpp.html">Utils.hpp</a></div><div class="ttdoc">List of all Utils files.</div></div>
 <div class="ttc" id="aclassDiffusionNLFormIntegrator_html"><div class="ttname"><a href="classDiffusionNLFormIntegrator.html">DiffusionNLFormIntegrator</a></div><div class="ttdoc">Nonlinear form integrator for diffusion-type problems.</div><div class="ttdef"><b>Definition:</b> <a href="DiffusionNLFormIntegrator_8hpp_source.html#l00048">DiffusionNLFormIntegrator.hpp:48</a></div></div>
 <div class="ttc" id="aclassFickNLFormIntegrator_html"><div class="ttname"><a href="classFickNLFormIntegrator.html">FickNLFormIntegrator</a></div><div class="ttdoc">Nonlinear form integrator for the right-hand side of the mass diffusion equation (Fick's law).</div><div class="ttdef"><b>Definition:</b> <a href="FickNLFormIntegrator_8hpp_source.html#l00054">FickNLFormIntegrator.hpp:54</a></div></div>
 <div class="ttc" id="aclassFickNLFormIntegrator_html_a4d2f5982836b27b0a5c5c7560ce865ec"><div class="ttname"><a href="classFickNLFormIntegrator.html#a4d2f5982836b27b0a5c5c7560ce865ec">FickNLFormIntegrator::get_coefficients</a></div><div class="ttdeci">void get_coefficients() override</div></div>
 <div class="ttc" id="aclassFickNLFormIntegrator_html_a79b096e9eb481c3bd812b86483658d67"><div class="ttname"><a href="classFickNLFormIntegrator.html#a79b096e9eb481c3bd812b86483658d67">FickNLFormIntegrator::~FickNLFormIntegrator</a></div><div class="ttdeci">virtual ~FickNLFormIntegrator()=default</div></div>
-<div class="ttc" id="aclassFickNLFormIntegrator_html_aa9686e7a7a8ba49804bd2ba456197b74"><div class="ttname"><a href="classFickNLFormIntegrator.html#aa9686e7a7a8ba49804bd2ba456197b74">FickNLFormIntegrator::FickNLFormIntegrator</a></div><div class="ttdeci">FickNLFormIntegrator(const std::vector&lt; mfem::ParGridFunction &gt; u_old, const std::vector&lt; mfem::ParGridFunction &gt; &amp;aux_old, const Parameters &amp;params, std::vector&lt; VARS * &gt; auxvars, const std::vector&lt; Coefficients &gt; &amp;coefficients)</div></div>
+<div class="ttc" id="aclassFickNLFormIntegrator_html_af69fdb8cda620648758a8ef50cfe4073"><div class="ttname"><a href="classFickNLFormIntegrator.html#af69fdb8cda620648758a8ef50cfe4073">FickNLFormIntegrator::FickNLFormIntegrator</a></div><div class="ttdeci">FickNLFormIntegrator(Geometry geometry, const double time_step, const std::vector&lt; mfem::ParGridFunction &gt; u_old, const std::vector&lt; mfem::ParGridFunction &gt; &amp;aux_old, const Parameters &amp;params, std::vector&lt; VARS * &gt; auxvars, const std::vector&lt; Coefficients &gt; &amp;coefficients)</div></div>
 <div class="ttc" id="aclassParameters_html"><div class="ttname"><a href="classParameters.html">Parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8hpp_source.html#l00046">Parameters.hpp:46</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:45 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:15 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

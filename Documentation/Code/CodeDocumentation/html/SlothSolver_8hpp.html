@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -89,6 +89,7 @@ $(function() {
 <code>#include &quot;<a class="el" href="HSolverBase_8hpp_source.html">Solvers/HSolverBase.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="IPrecondBase_8hpp_source.html">Solvers/IPrecondBase.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ISolverBase_8hpp_source.html">Solvers/ISolverBase.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="NLSolverBase_8hpp_source.html">Solvers/NLSolverBase.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Utils_8hpp_source.html">Utils/Utils.hpp</a>&quot;</code><br />
 <code>#include &quot;mfem.hpp&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -141,16 +142,18 @@ Typedefs</h2></td></tr>
 <tr class="separator:aad1bb345718b0ca2dd9e82c61e06b20d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3e0c8e1892e4a7cd4de8c74ca0850f0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SlothSolver_8hpp.html#aa3e0c8e1892e4a7cd4de8c74ca0850f0">VIterativeSolver</a> = std::variant&lt; <a class="el" href="SlothSolver_8hpp.html#a0deadff6cb131411a35e7230fcf48f0c">sptr</a>&lt; mfem::BiCGSTABSolver &gt;, <a class="el" href="SlothSolver_8hpp.html#a0deadff6cb131411a35e7230fcf48f0c">sptr</a>&lt; mfem::MINRESSolver &gt;, <a class="el" href="SlothSolver_8hpp.html#a0deadff6cb131411a35e7230fcf48f0c">sptr</a>&lt; mfem::CGSolver &gt;, <a class="el" href="SlothSolver_8hpp.html#a0deadff6cb131411a35e7230fcf48f0c">sptr</a>&lt; mfem::GMRESSolver &gt; &gt;</td></tr>
 <tr class="separator:aa3e0c8e1892e4a7cd4de8c74ca0850f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65f4460470d637ee43120326e8b08e83"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SlothSolver_8hpp.html#a65f4460470d637ee43120326e8b08e83">VNLSolver</a> = std::variant&lt; <a class="el" href="SlothSolver_8hpp.html#a0deadff6cb131411a35e7230fcf48f0c">sptr</a>&lt; mfem::NewtonSolver &gt;, <a class="el" href="SlothSolver_8hpp.html#a0deadff6cb131411a35e7230fcf48f0c">sptr</a>&lt; mfem::LBFGSSolver &gt; &gt;</td></tr>
+<tr class="separator:a65f4460470d637ee43120326e8b08e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8976791a778dfa71c7825f4223fd3db"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SlothSolver_8hpp.html#af8976791a778dfa71c7825f4223fd3db">VPreconds</a> = <a class="el" href="UtilsForVariants_8hpp.html#a5b12fef9b6cc65b45bebbf289938a7a1">concat_variant_type</a>&lt; <a class="el" href="SlothSolver_8hpp.html#a485306bb9649f51769529ecad70d7bcd">VHyprePrecond</a>, <a class="el" href="SlothSolver_8hpp.html#aad1bb345718b0ca2dd9e82c61e06b20d">VIterativePrecond</a> &gt;</td></tr>
 <tr class="separator:af8976791a778dfa71c7825f4223fd3db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fd53bd11fd909fc958b103a29186a8b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SlothSolver_8hpp.html#a5fd53bd11fd909fc958b103a29186a8b">VSharedMFEMSolver</a> = <a class="el" href="UtilsForVariants_8hpp.html#a5b12fef9b6cc65b45bebbf289938a7a1">concat_variant_type</a>&lt; <a class="el" href="SlothSolver_8hpp.html#a1bb3d98a6b89372464210853f7c7a20a">VSolvers</a>, <a class="el" href="SlothSolver_8hpp.html#af8976791a778dfa71c7825f4223fd3db">VPreconds</a>, std::variant&lt; <a class="el" href="SlothSolver_8hpp.html#a0deadff6cb131411a35e7230fcf48f0c">sptr</a>&lt; std::monostate &gt; &gt;&gt;</td></tr>
+<tr class="memitem:a5fd53bd11fd909fc958b103a29186a8b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SlothSolver_8hpp.html#a5fd53bd11fd909fc958b103a29186a8b">VSharedMFEMSolver</a> = <a class="el" href="UtilsForVariants_8hpp.html#a5b12fef9b6cc65b45bebbf289938a7a1">concat_variant_type</a>&lt; <a class="el" href="SlothSolver_8hpp.html#af1dbfab19ef2bffee52f3a47b39907e0">VSolvers</a>, <a class="el" href="SlothSolver_8hpp.html#af8976791a778dfa71c7825f4223fd3db">VPreconds</a>, std::variant&lt; <a class="el" href="SlothSolver_8hpp.html#a0deadff6cb131411a35e7230fcf48f0c">sptr</a>&lt; std::monostate &gt; &gt;&gt;</td></tr>
 <tr class="memdesc:a5fd53bd11fd909fc958b103a29186a8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of smart pointers toward MFEM solvers.  <a href="SlothSolver_8hpp.html#a5fd53bd11fd909fc958b103a29186a8b">More...</a><br /></td></tr>
 <tr class="separator:a5fd53bd11fd909fc958b103a29186a8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1bb3d98a6b89372464210853f7c7a20a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SlothSolver_8hpp.html#a1bb3d98a6b89372464210853f7c7a20a">VSolvers</a> = <a class="el" href="UtilsForVariants_8hpp.html#a5b12fef9b6cc65b45bebbf289938a7a1">concat_variant_type</a>&lt; <a class="el" href="SlothSolver_8hpp.html#af1a62a71233b80b491b9bba7aa725407">VHypreSolver</a>, <a class="el" href="SlothSolver_8hpp.html#aa3e0c8e1892e4a7cd4de8c74ca0850f0">VIterativeSolver</a>, <a class="el" href="SlothSolver_8hpp.html#ab6f08271a3a56d1c444d230433906ea1">VDirectSolver</a> &gt;</td></tr>
-<tr class="separator:a1bb3d98a6b89372464210853f7c7a20a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a746321a69b40843a1ad2b71c46fea4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a> = std::variant&lt; <a class="el" href="SolversOptions_8hpp.html#a4aa268ed6c4ccc82594b8746025d5bcb">HypreSolverType</a>, <a class="el" href="SolversOptions_8hpp.html#a4ac4a4d7d8d59ed200cfdd9222d1c17a">IterativeSolverType</a>, <a class="el" href="SolversOptions_8hpp.html#ae4bd942aef151e8b326d52771f5bd98e">DirectSolverType</a>, <a class="el" href="SolversOptions_8hpp.html#a8b341faac6531c4543c9dc6e5e4592cf">PreconditionerType</a>, <a class="el" href="SolversOptions_8hpp.html#ac6c5f8024503cbd3fb378e7a7ad3be8d">HyprePreconditionerType</a> &gt;</td></tr>
-<tr class="memdesc:a2a746321a69b40843a1ad2b71c46fea4"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of Solver and Preconditioner type.  <a href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">More...</a><br /></td></tr>
-<tr class="separator:a2a746321a69b40843a1ad2b71c46fea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1dbfab19ef2bffee52f3a47b39907e0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SlothSolver_8hpp.html#af1dbfab19ef2bffee52f3a47b39907e0">VSolvers</a> = <a class="el" href="UtilsForVariants_8hpp.html#a5b12fef9b6cc65b45bebbf289938a7a1">concat_variant_type</a>&lt; <a class="el" href="SlothSolver_8hpp.html#af1a62a71233b80b491b9bba7aa725407">VHypreSolver</a>, <a class="el" href="SlothSolver_8hpp.html#aa3e0c8e1892e4a7cd4de8c74ca0850f0">VIterativeSolver</a>, <a class="el" href="SlothSolver_8hpp.html#ab6f08271a3a56d1c444d230433906ea1">VDirectSolver</a>, <a class="el" href="SlothSolver_8hpp.html#a65f4460470d637ee43120326e8b08e83">VNLSolver</a> &gt;</td></tr>
+<tr class="separator:af1dbfab19ef2bffee52f3a47b39907e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2420a22bd32d2b143074e466b1344560"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="SlothSolver_8hpp.html#a2420a22bd32d2b143074e466b1344560">VSolverType</a> = std::variant&lt; <a class="el" href="SolversOptions_8hpp.html#a4aa268ed6c4ccc82594b8746025d5bcb">HypreSolverType</a>, <a class="el" href="SolversOptions_8hpp.html#a4ac4a4d7d8d59ed200cfdd9222d1c17a">IterativeSolverType</a>, <a class="el" href="SolversOptions_8hpp.html#ae4bd942aef151e8b326d52771f5bd98e">DirectSolverType</a>, <a class="el" href="SolversOptions_8hpp.html#a765a4007c12a84454a77f1a29ad04b4a">NLSolverType</a>, <a class="el" href="SolversOptions_8hpp.html#a8b341faac6531c4543c9dc6e5e4592cf">PreconditionerType</a>, <a class="el" href="SolversOptions_8hpp.html#ac6c5f8024503cbd3fb378e7a7ad3be8d">HyprePreconditionerType</a> &gt;</td></tr>
+<tr class="memdesc:a2420a22bd32d2b143074e466b1344560"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of Solver and Preconditioner type.  <a href="SlothSolver_8hpp.html#a2420a22bd32d2b143074e466b1344560">More...</a><br /></td></tr>
+<tr class="separator:a2420a22bd32d2b143074e466b1344560"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to define a <a class="el" href="classSlothSolver.html" title="Base class used to manage linear and non linear solvers.">SlothSolver</a> objet. </p>
@@ -187,7 +190,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00046">46</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00047">47</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
 
 </div>
 </div>
@@ -203,7 +206,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00061">61</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00062">62</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
 
 </div>
 </div>
@@ -219,7 +222,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00068">68</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00071">71</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
 
 </div>
 </div>
@@ -235,7 +238,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00057">57</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00058">58</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
 
 </div>
 </div>
@@ -251,7 +254,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00070">70</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00073">73</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
 
 </div>
 </div>
@@ -267,7 +270,23 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00059">59</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00060">60</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a65f4460470d637ee43120326e8b08e83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65f4460470d637ee43120326e8b08e83">&#9670;&nbsp;</a></span>VNLSolver</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="SlothSolver_8hpp.html#a65f4460470d637ee43120326e8b08e83">VNLSolver</a> =  std::variant&lt;<a class="el" href="SlothSolver_8hpp.html#a0deadff6cb131411a35e7230fcf48f0c">sptr</a>&lt;mfem::NewtonSolver&gt;, <a class="el" href="SlothSolver_8hpp.html#a0deadff6cb131411a35e7230fcf48f0c">sptr</a>&lt;mfem::LBFGSSolver&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00064">64</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
 
 </div>
 </div>
@@ -283,7 +302,7 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00071">71</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00074">74</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
 
 </div>
 </div>
@@ -294,55 +313,55 @@ template&lt;typename T &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="SlothSolver_8hpp.html#a5fd53bd11fd909fc958b103a29186a8b">VSharedMFEMSolver</a> =  <a class="el" href="UtilsForVariants_8hpp.html#a5b12fef9b6cc65b45bebbf289938a7a1">concat_variant_type</a>&lt;<a class="el" href="SlothSolver_8hpp.html#a1bb3d98a6b89372464210853f7c7a20a">VSolvers</a>, <a class="el" href="SlothSolver_8hpp.html#af8976791a778dfa71c7825f4223fd3db">VPreconds</a>, std::variant&lt;<a class="el" href="SlothSolver_8hpp.html#a0deadff6cb131411a35e7230fcf48f0c">sptr</a>&lt;std::monostate&gt; &gt;&gt;</td>
+          <td class="memname">using <a class="el" href="SlothSolver_8hpp.html#a5fd53bd11fd909fc958b103a29186a8b">VSharedMFEMSolver</a> =  <a class="el" href="UtilsForVariants_8hpp.html#a5b12fef9b6cc65b45bebbf289938a7a1">concat_variant_type</a>&lt;<a class="el" href="SlothSolver_8hpp.html#af1dbfab19ef2bffee52f3a47b39907e0">VSolvers</a>, <a class="el" href="SlothSolver_8hpp.html#af8976791a778dfa71c7825f4223fd3db">VPreconds</a>, std::variant&lt;<a class="el" href="SlothSolver_8hpp.html#a0deadff6cb131411a35e7230fcf48f0c">sptr</a>&lt;std::monostate&gt; &gt;&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>List of smart pointers toward MFEM solvers. </p>
 
-<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00077">77</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00080">80</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a1bb3d98a6b89372464210853f7c7a20a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1bb3d98a6b89372464210853f7c7a20a">&#9670;&nbsp;</a></span>VSolvers</h2>
+<a id="af1dbfab19ef2bffee52f3a47b39907e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1dbfab19ef2bffee52f3a47b39907e0">&#9670;&nbsp;</a></span>VSolvers</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="SlothSolver_8hpp.html#a1bb3d98a6b89372464210853f7c7a20a">VSolvers</a> =  <a class="el" href="UtilsForVariants_8hpp.html#a5b12fef9b6cc65b45bebbf289938a7a1">concat_variant_type</a>&lt;<a class="el" href="SlothSolver_8hpp.html#af1a62a71233b80b491b9bba7aa725407">VHypreSolver</a>, <a class="el" href="SlothSolver_8hpp.html#aa3e0c8e1892e4a7cd4de8c74ca0850f0">VIterativeSolver</a>, <a class="el" href="SlothSolver_8hpp.html#ab6f08271a3a56d1c444d230433906ea1">VDirectSolver</a>&gt;</td>
+          <td class="memname">using <a class="el" href="SlothSolver_8hpp.html#af1dbfab19ef2bffee52f3a47b39907e0">VSolvers</a> =  <a class="el" href="UtilsForVariants_8hpp.html#a5b12fef9b6cc65b45bebbf289938a7a1">concat_variant_type</a>&lt;<a class="el" href="SlothSolver_8hpp.html#af1a62a71233b80b491b9bba7aa725407">VHypreSolver</a>, <a class="el" href="SlothSolver_8hpp.html#aa3e0c8e1892e4a7cd4de8c74ca0850f0">VIterativeSolver</a>, <a class="el" href="SlothSolver_8hpp.html#ab6f08271a3a56d1c444d230433906ea1">VDirectSolver</a>, <a class="el" href="SlothSolver_8hpp.html#a65f4460470d637ee43120326e8b08e83">VNLSolver</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00063">63</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00066">66</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a2a746321a69b40843a1ad2b71c46fea4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a746321a69b40843a1ad2b71c46fea4">&#9670;&nbsp;</a></span>VSolverType</h2>
+<a id="a2420a22bd32d2b143074e466b1344560"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2420a22bd32d2b143074e466b1344560">&#9670;&nbsp;</a></span>VSolverType</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="SlothSolver_8hpp.html#a2a746321a69b40843a1ad2b71c46fea4">VSolverType</a> =  std::variant&lt;<a class="el" href="SolversOptions_8hpp.html#a4aa268ed6c4ccc82594b8746025d5bcb">HypreSolverType</a>, <a class="el" href="SolversOptions_8hpp.html#a4ac4a4d7d8d59ed200cfdd9222d1c17a">IterativeSolverType</a>, <a class="el" href="SolversOptions_8hpp.html#ae4bd942aef151e8b326d52771f5bd98e">DirectSolverType</a>, <a class="el" href="SolversOptions_8hpp.html#a8b341faac6531c4543c9dc6e5e4592cf">PreconditionerType</a>, <a class="el" href="SolversOptions_8hpp.html#ac6c5f8024503cbd3fb378e7a7ad3be8d">HyprePreconditionerType</a>&gt;</td>
+          <td class="memname">using <a class="el" href="SlothSolver_8hpp.html#a2420a22bd32d2b143074e466b1344560">VSolverType</a> =  std::variant&lt;<a class="el" href="SolversOptions_8hpp.html#a4aa268ed6c4ccc82594b8746025d5bcb">HypreSolverType</a>, <a class="el" href="SolversOptions_8hpp.html#a4ac4a4d7d8d59ed200cfdd9222d1c17a">IterativeSolverType</a>, <a class="el" href="SolversOptions_8hpp.html#ae4bd942aef151e8b326d52771f5bd98e">DirectSolverType</a>, <a class="el" href="SolversOptions_8hpp.html#a765a4007c12a84454a77f1a29ad04b4a">NLSolverType</a>, <a class="el" href="SolversOptions_8hpp.html#a8b341faac6531c4543c9dc6e5e4592cf">PreconditionerType</a>, <a class="el" href="SolversOptions_8hpp.html#ac6c5f8024503cbd3fb378e7a7ad3be8d">HyprePreconditionerType</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>List of Solver and Preconditioner type. </p>
 
-<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00051">51</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00052">52</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:45 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

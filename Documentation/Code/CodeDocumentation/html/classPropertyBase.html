@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -82,14 +82,16 @@ $(function() {
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classPropertyBase__inherit__graph.svg" width="199" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPropertyBase__inherit__graph.svg" width="199" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Collaboration diagram for PropertyBase:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classPropertyBase__coll__graph.svg" width="131" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classPropertyBase__coll__graph.svg" width="131" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -100,6 +102,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a49b6d25e8d20e26f2e66e9a69ea4b4b5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPropertyBase.html#a49b6d25e8d20e26f2e66e9a69ea4b4b5">PropertyBase</a> (const <a class="el" href="classParameters.html">Parameters</a> &amp;params)</td></tr>
 <tr class="memdesc:a49b6d25e8d20e26f2e66e9a69ea4b4b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classPropertyBase.html#a49b6d25e8d20e26f2e66e9a69ea4b4b5" title="Construct a new PropertyBase::PropertyBase object.">PropertyBase::PropertyBase</a> object.  <a href="classPropertyBase.html#a49b6d25e8d20e26f2e66e9a69ea4b4b5">More...</a><br /></td></tr>
 <tr class="separator:a49b6d25e8d20e26f2e66e9a69ea4b4b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09100d126b3c70be478e4d1b984b49d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPropertyBase.html#a09100d126b3c70be478e4d1b984b49d6">set_times</a> (const double time, const double dt)</td></tr>
+<tr class="memdesc:a09100d126b3c70be478e4d1b984b49d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the current time and time-step for property used in transient simulations.  <a href="classPropertyBase.html#a09100d126b3c70be478e4d1b984b49d6">More...</a><br /></td></tr>
+<tr class="separator:a09100d126b3c70be478e4d1b984b49d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca2c0ce24d0c332872fea5a57a11ef7d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPropertyBase.html#aca2c0ce24d0c332872fea5a57a11ef7d">~PropertyBase</a> ()=default</td></tr>
 <tr class="separator:aca2c0ce24d0c332872fea5a57a11ef7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -114,10 +119,14 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr class="memitem:af9f2588d5af974df8eee17c8bd063b05"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPropertyBase.html#af9f2588d5af974df8eee17c8bd063b05">current_time_</a> {std::numeric_limits&lt;double&gt;::quiet_NaN()}</td></tr>
+<tr class="separator:af9f2588d5af974df8eee17c8bd063b05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af212bc6364755e5e269b6d3b23269ddb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPropertyBase.html#af212bc6364755e5e269b6d3b23269ddb">is_checked_</a> {false}</td></tr>
 <tr class="separator:af212bc6364755e5e269b6d3b23269ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81bc73d42e879500ef5ce6e50fdecc1f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classParameters.html">Parameters</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPropertyBase.html#a81bc73d42e879500ef5ce6e50fdecc1f">params_</a></td></tr>
 <tr class="separator:a81bc73d42e879500ef5ce6e50fdecc1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ea18afdf558f9c3a58839430e69b11a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPropertyBase.html#a9ea18afdf558f9c3a58839430e69b11a">time_step_</a> {std::numeric_limits&lt;double&gt;::quiet_NaN()}</td></tr>
+<tr class="separator:a9ea18afdf558f9c3a58839430e69b11a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -343,7 +352,74 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a09100d126b3c70be478e4d1b984b49d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09100d126b3c70be478e4d1b984b49d6">&#9670;&nbsp;</a></span>set_times()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PropertyBase::set_times </td>
+          <td>(</td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the current time and time-step for property used in transient simulations. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">time</td><td>current time </td></tr>
+    <tr><td class="paramname">dt</td><td>current time-step </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="PropertyBase_8cpp_source.html#l00074">74</a> of file <a class="el" href="PropertyBase_8cpp_source.html">PropertyBase.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="PropertyBase_8hpp_source.html#l00054">current_time_</a>, and <a class="el" href="PropertyBase_8hpp_source.html#l00053">time_step_</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="af9f2588d5af974df8eee17c8bd063b05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9f2588d5af974df8eee17c8bd063b05">&#9670;&nbsp;</a></span>current_time_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PropertyBase::current_time_ {std::numeric_limits&lt;double&gt;::quiet_NaN()}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PropertyBase_8hpp_source.html#l00054">54</a> of file <a class="el" href="PropertyBase_8hpp_source.html">PropertyBase.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PropertyBase_8cpp_source.html#l00074">set_times()</a>.</p>
+
+</div>
+</div>
 <a id="af212bc6364755e5e269b6d3b23269ddb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af212bc6364755e5e269b6d3b23269ddb">&#9670;&nbsp;</a></span>is_checked_</h2>
 
@@ -396,6 +472,32 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a9ea18afdf558f9c3a58839430e69b11a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ea18afdf558f9c3a58839430e69b11a">&#9670;&nbsp;</a></span>time_step_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PropertyBase::time_step_ {std::numeric_limits&lt;double&gt;::quiet_NaN()}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PropertyBase_8hpp_source.html#l00053">53</a> of file <a class="el" href="PropertyBase_8hpp_source.html">PropertyBase.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="PropertyBase_8cpp_source.html#l00074">set_times()</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="PropertyBase_8hpp_source.html">PropertyBase.hpp</a></li>
 <li><a class="el" href="PropertyBase_8cpp_source.html">PropertyBase.cpp</a></li>
@@ -403,7 +505,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

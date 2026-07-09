@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -89,15 +89,15 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a2004e68f60f49555b25289343c127839"><td class="memItemLeft" align="right" valign="top"><a class="el" href="SlothSolver_8hpp.html#a0deadff6cb131411a35e7230fcf48f0c">sptr</a>&lt; mfem::NewtonSolver &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSetPrecondNLSolver.html#a2004e68f60f49555b25289343c127839">nl_solver</a></td></tr>
-<tr class="separator:a2004e68f60f49555b25289343c127839"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a702f59665136a2b412c8686666140529"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; mfem::NewtonSolver &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSetPrecondNLSolver.html#a702f59665136a2b412c8686666140529">nl_solver</a></td></tr>
+<tr class="separator:a702f59665136a2b412c8686666140529"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ad0b24b09bbaedb03d798123d821306"><td class="memItemLeft" align="right" valign="top">mfem::Operator &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSetPrecondNLSolver.html#a1ad0b24b09bbaedb03d798123d821306">op</a></td></tr>
 <tr class="separator:a1ad0b24b09bbaedb03d798123d821306"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Define a non linear solver and its preconditioner (if required) </p>
 
-<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00222">222</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00246">246</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a3579c089c95ed6ddc8ee6678327d2712"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3579c089c95ed6ddc8ee6678327d2712">&#9670;&nbsp;</a></span>operator()()</h2>
@@ -151,33 +151,34 @@ template&lt;typename Solv , typename Prec &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00236">236</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00260">260</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="UtilsForData_8hpp_source.html#l00212">SlothInfo::debug()</a>, <a class="el" href="SlothSolver_8hpp_source.html#l00147">UtilsSolvers::print_prec_name()</a>, <a class="el" href="SlothSolver_8hpp_source.html#l00119">UtilsSolvers::print_solver_name()</a>, <a class="el" href="SlothSolver_8hpp_source.html#l00108">UtilsSolvers::setter_hypre()</a>, and <a class="el" href="SlothSolver_8hpp_source.html#l00094">UtilsSolvers::setter_mfem()</a>.</p>
+<p class="reference">References <a class="el" href="UtilsForData_8hpp_source.html#l00219">SlothInfo::debug()</a>, <a class="el" href="SlothSolver_8hpp_source.html#l00171">UtilsSolvers::print_prec_name()</a>, <a class="el" href="SlothSolver_8hpp_source.html#l00139">UtilsSolvers::print_solver_name()</a>, <a class="el" href="SlothSolver_8hpp_source.html#l00128">UtilsSolvers::setter_hypre()</a>, and <a class="el" href="SlothSolver_8hpp_source.html#l00114">UtilsSolvers::setter_mfem()</a>.</p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structSetPrecondNLSolver_a3579c089c95ed6ddc8ee6678327d2712_cgraph.svg" width="603" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structSetPrecondNLSolver_a3579c089c95ed6ddc8ee6678327d2712_cgraph.svg" width="603" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a2004e68f60f49555b25289343c127839"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2004e68f60f49555b25289343c127839">&#9670;&nbsp;</a></span>nl_solver</h2>
+<a id="a702f59665136a2b412c8686666140529"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a702f59665136a2b412c8686666140529">&#9670;&nbsp;</a></span>nl_solver</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="SlothSolver_8hpp.html#a0deadff6cb131411a35e7230fcf48f0c">sptr</a>&lt;mfem::NewtonSolver&gt; SetPrecondNLSolver::nl_solver</td>
+          <td class="memname">std::shared_ptr&lt;mfem::NewtonSolver&gt; SetPrecondNLSolver::nl_solver</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00225">225</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00249">249</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
 
 </div>
 </div>
@@ -193,7 +194,7 @@ template&lt;typename Solv , typename Prec &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00224">224</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothSolver_8hpp_source.html#l00248">248</a> of file <a class="el" href="SlothSolver_8hpp_source.html">SlothSolver.hpp</a>.</p>
 
 </div>
 </div>
@@ -203,7 +204,7 @@ template&lt;typename Solv , typename Prec &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

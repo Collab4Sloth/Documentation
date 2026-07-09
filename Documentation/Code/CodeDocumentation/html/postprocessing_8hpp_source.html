@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -101,51 +101,53 @@ $(function() {
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  std::shared_ptr&lt;DC&gt; dc_;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  std::string main_folder_path_;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  std::string calculation_path_;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">int</span> frequency_;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  std::vector&lt;int&gt; iterations_list_;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  std::vector&lt;double&gt; times_list_;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">int</span> level_of_detail_;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">bool</span> enable_compute_energies_;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">bool</span> enable_save_specialized_at_iter_;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">bool</span> force_clean_output_dir_;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  std::map&lt;std::string, double&gt; iso_val_to_compute_;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  std::map&lt;std::string, std::tuple&lt;double, double&gt;&gt; integral_to_compute_;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; params_;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  std::map&lt;std::string, mfem::ParGridFunction&gt; fields_to_save_;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  std::string post_processing_directory_;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">void</span> get_parameters();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">bool</span> need_to_be_saved(<span class="keyword">const</span> <span class="keywordtype">int</span> iteration, <span class="keyword">const</span> <span class="keywordtype">double</span> time);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  std::string gf_folder_path_;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  std::string calculation_path_;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">int</span> frequency_;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  std::vector&lt;int&gt; iterations_list_save_gf_;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  std::vector&lt;int&gt; iterations_list_;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  std::vector&lt;double&gt; times_list_;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">int</span> level_of_detail_;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">bool</span> enable_compute_energies_;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">bool</span> enable_save_specialized_at_iter_;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">bool</span> force_clean_output_dir_;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  std::map&lt;std::string, double&gt; iso_val_to_compute_;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  std::map&lt;std::string, std::tuple&lt;double, double&gt;&gt; integral_to_compute_;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; params_;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  std::map&lt;std::string, mfem::ParGridFunction&gt; fields_to_save_;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  std::string post_processing_directory_;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">void</span> get_parameters();</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordtype">void</span> clean_output_directory();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordtype">bool</span> need_to_be_saved(<span class="keyword">const</span> <span class="keywordtype">int</span> iteration, <span class="keyword">const</span> <span class="keywordtype">double</span> time);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="comment">// Explicitly default the move constructor and move assignment operator</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="comment">// Usefull to define several PostProcessing objects in std::vector over a loop</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classPostProcessing.html#a8702797327c91dd2349f79ac826cb661">   85</a></span>&#160;  <a class="code" href="classPostProcessing.html#a8702797327c91dd2349f79ac826cb661">PostProcessing</a>(<a class="code" href="classPostProcessing.html">PostProcessing</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classPostProcessing.html#ac0c65c2178f8892317b0339f1a6207d2">   86</a></span>&#160;  <a class="code" href="classPostProcessing.html">PostProcessing</a>&amp; <a class="code" href="classPostProcessing.html#ac0c65c2178f8892317b0339f1a6207d2">operator=</a>(<a class="code" href="classPostProcessing.html">PostProcessing</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classPostProcessing.html#ad72b77f9b3f7c88a9549ea7bf85a072a">   88</a></span>&#160;  <a class="code" href="classPostProcessing.html#ad72b77f9b3f7c88a9549ea7bf85a072a">PostProcessing</a>(<a class="code" href="classSpatialDiscretization.html">SpatialDiscretization&lt;T, DIM&gt;</a>* space, <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; params);</div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classPostProcessing.html#a5872fc7f3527be648339ec33e9536578">   89</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classPostProcessing.html#a5872fc7f3527be648339ec33e9536578">save_variables</a>(<span class="keyword">const</span> <a class="code" href="classVariables.html">Variables&lt;T, DIM&gt;</a>&amp; vars, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; iter, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; time);</div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classPostProcessing.html#af5d9535c432efdfa1235da859c0cf1bd">   90</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classPostProcessing.html#af5d9535c432efdfa1235da859c0cf1bd">save_specialized</a>(<span class="keyword">const</span> std::multimap&lt;IterationKey, SpecializedValue&gt;&amp; mmap_results,</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                        std::string filename = <span class="stringliteral">&quot;time_specialized.csv&quot;</span>);</div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classPostProcessing.html#a70dfa022fbeb408b483407124c6f6d29">   92</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classPostProcessing.html#a70dfa022fbeb408b483407124c6f6d29">save_iso_specialized</a>(<span class="keyword">const</span> std::multimap&lt;IterationKey, SpecializedValue&gt;&amp; mmap_results,</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                            std::string filename = <span class="stringliteral">&quot;iso.csv&quot;</span>);</div>
-<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classPostProcessing.html#a910c85495a35f8e3303c17ece732fdcd">   94</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classPostProcessing.html#a910c85495a35f8e3303c17ece732fdcd">get_frequency</a>();</div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classPostProcessing.html#a8ea68c26f94b3f354cf1719c2a980b44">   95</a></span>&#160;  std::string <a class="code" href="classPostProcessing.html#a8ea68c26f94b3f354cf1719c2a980b44">get_post_processing_directory</a>();</div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classPostProcessing.html#a20a05990b151ded1fbb3e315ec5fc4ba">   96</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classPostProcessing.html#a20a05990b151ded1fbb3e315ec5fc4ba">get_enable_save_specialized_at_iter</a>();</div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classPostProcessing.html#ad895b2b200fb8450151736ade6f7e3a3">   97</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classPostProcessing.html#ad895b2b200fb8450151736ade6f7e3a3">get_enable_compute_energies</a>();</div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classPostProcessing.html#ad77178bd8e7f95cc1e23cd2087859738">   98</a></span>&#160;  std::map&lt;std::string, double&gt; <a class="code" href="classPostProcessing.html#ad77178bd8e7f95cc1e23cd2087859738">get_iso_val_to_compute</a>();</div>
-<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classPostProcessing.html#af08c74a4ba851459173349df7c32b41b">   99</a></span>&#160;  std::map&lt;std::string, std::tuple&lt;double, double&gt;&gt; <a class="code" href="classPostProcessing.html#af08c74a4ba851459173349df7c32b41b">get_integral_to_compute</a>();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classPostProcessing.html#a94ca1911d21fefc03c4812ee247a295b">  101</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classPostProcessing.html#a94ca1911d21fefc03c4812ee247a295b">~PostProcessing</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;};</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="postprocessing_8tpp.html">PostProcessing/postprocessing.tpp</a>&quot;</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordtype">void</span> clean_output_directory();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="comment">// Explicitly default the move constructor and move assignment operator</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="comment">// Usefull to define several PostProcessing objects in std::vector over a loop</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classPostProcessing.html#a8702797327c91dd2349f79ac826cb661">   87</a></span>&#160;  <a class="code" href="classPostProcessing.html#a8702797327c91dd2349f79ac826cb661">PostProcessing</a>(<a class="code" href="classPostProcessing.html">PostProcessing</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classPostProcessing.html#ac0c65c2178f8892317b0339f1a6207d2">   88</a></span>&#160;  <a class="code" href="classPostProcessing.html">PostProcessing</a>&amp; <a class="code" href="classPostProcessing.html#ac0c65c2178f8892317b0339f1a6207d2">operator=</a>(<a class="code" href="classPostProcessing.html">PostProcessing</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classPostProcessing.html#ad72b77f9b3f7c88a9549ea7bf85a072a">   90</a></span>&#160;  <a class="code" href="classPostProcessing.html#ad72b77f9b3f7c88a9549ea7bf85a072a">PostProcessing</a>(<a class="code" href="classSpatialDiscretization.html">SpatialDiscretization&lt;T, DIM&gt;</a>* space, <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; params);</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classPostProcessing.html#a5872fc7f3527be648339ec33e9536578">   91</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classPostProcessing.html#a5872fc7f3527be648339ec33e9536578">save_variables</a>(<span class="keyword">const</span> <a class="code" href="classVariables.html">Variables&lt;T, DIM&gt;</a>&amp; vars, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; iter, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; time);</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classPostProcessing.html#af5d9535c432efdfa1235da859c0cf1bd">   92</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classPostProcessing.html#af5d9535c432efdfa1235da859c0cf1bd">save_specialized</a>(<span class="keyword">const</span> std::multimap&lt;IterationKey, SpecializedValue&gt;&amp; mmap_results,</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                        std::string filename = <span class="stringliteral">&quot;time_specialized.csv&quot;</span>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classPostProcessing.html#a70dfa022fbeb408b483407124c6f6d29">   94</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classPostProcessing.html#a70dfa022fbeb408b483407124c6f6d29">save_iso_specialized</a>(<span class="keyword">const</span> std::multimap&lt;IterationKey, SpecializedValue&gt;&amp; mmap_results,</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                            std::string filename = <span class="stringliteral">&quot;iso.csv&quot;</span>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classPostProcessing.html#a910c85495a35f8e3303c17ece732fdcd">   96</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="classPostProcessing.html#a910c85495a35f8e3303c17ece732fdcd">get_frequency</a>();</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classPostProcessing.html#a8ea68c26f94b3f354cf1719c2a980b44">   97</a></span>&#160;  std::string <a class="code" href="classPostProcessing.html#a8ea68c26f94b3f354cf1719c2a980b44">get_post_processing_directory</a>();</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classPostProcessing.html#a20a05990b151ded1fbb3e315ec5fc4ba">   98</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classPostProcessing.html#a20a05990b151ded1fbb3e315ec5fc4ba">get_enable_save_specialized_at_iter</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classPostProcessing.html#ad895b2b200fb8450151736ade6f7e3a3">   99</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classPostProcessing.html#ad895b2b200fb8450151736ade6f7e3a3">get_enable_compute_energies</a>();</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classPostProcessing.html#ad77178bd8e7f95cc1e23cd2087859738">  100</a></span>&#160;  std::map&lt;std::string, double&gt; <a class="code" href="classPostProcessing.html#ad77178bd8e7f95cc1e23cd2087859738">get_iso_val_to_compute</a>();</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classPostProcessing.html#af08c74a4ba851459173349df7c32b41b">  101</a></span>&#160;  std::map&lt;std::string, std::tuple&lt;double, double&gt;&gt; <a class="code" href="classPostProcessing.html#af08c74a4ba851459173349df7c32b41b">get_integral_to_compute</a>();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classPostProcessing.html#a94ca1911d21fefc03c4812ee247a295b">  103</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classPostProcessing.html#a94ca1911d21fefc03c4812ee247a295b">~PostProcessing</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;};</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="postprocessing_8tpp.html">PostProcessing/postprocessing.tpp</a>&quot;</span></div>
 <div class="ttc" id="aParameters_8hpp_html"><div class="ttname"><a href="Parameters_8hpp.html">Parameters.hpp</a></div><div class="ttdoc">Parameter class used to build and manage calculation parameter.</div></div>
 <div class="ttc" id="aSpatial_8hpp_html"><div class="ttname"><a href="Spatial_8hpp.html">Spatial.hpp</a></div><div class="ttdoc">Spatial discretization.</div></div>
 <div class="ttc" id="aUtils_8hpp_html"><div class="ttname"><a href="Utils_8hpp.html">Utils.hpp</a></div><div class="ttdoc">List of all Utils files.</div></div>
@@ -172,7 +174,7 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:45 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

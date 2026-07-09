@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -97,51 +97,55 @@ $(function() {
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">double</span> alpha_;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  std::string primary_phase_;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  std::string secondary_phase_;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  std::vector&lt;mfem::ParGridFunction&gt; dgm_;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  std::vector&lt;mfem::ParGridFunction&gt; nucleus_;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">double</span> melting_temperature_;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">double</span> melting_enthalpy_;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">void</span> get_parameters();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">void</span> check_driving_forces();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">int</span> dgm_primary_phase_index_;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">int</span> dgm_secondary_phase_index_;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">int</span> primary_nucleus_index_;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">int</span> secondary_nucleus_index_;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">double</span> melting_temperature_;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">double</span> melting_enthalpy_;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">void</span> get_parameters();</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">void</span> check_nucleus();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">void</span> check_driving_forces();</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classMeltingCalphadNLFormIntegrator.html#a80593d6405b9e5e05825495bd4695a30">   67</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="classMeltingCalphadNLFormIntegrator.html#a80593d6405b9e5e05825495bd4695a30">get_phase_change_at_ip</a>(mfem::ElementTransformation&amp; Tr, <span class="keyword">const</span> mfem::IntegrationPoint&amp; ir,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> blk, <span class="keyword">const</span> <span class="keywordtype">double</span> u, <span class="keyword">const</span> <span class="keywordtype">double</span> un) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classMeltingCalphadNLFormIntegrator.html#a2304bedea8f6c26e63b73b5f549b4603">   70</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="classMeltingCalphadNLFormIntegrator.html#a2304bedea8f6c26e63b73b5f549b4603">get_seed_at_ip</a>(mfem::ElementTransformation&amp; Tr, <span class="keyword">const</span> mfem::IntegrationPoint&amp; ir,</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> blk, <span class="keyword">const</span> <span class="keywordtype">double</span> u, <span class="keyword">const</span> <span class="keywordtype">double</span> un) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classMeltingCalphadNLFormIntegrator.html#a01c61f297df8c04f27f7e9719cfd60a3">   74</a></span>&#160;  <a class="code" href="classMeltingCalphadNLFormIntegrator.html#a01c61f297df8c04f27f7e9719cfd60a3">MeltingCalphadNLFormIntegrator</a>(<span class="keyword">const</span> std::vector&lt;mfem::ParGridFunction&gt;&amp; u_old,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                 <span class="keyword">const</span> std::vector&lt;mfem::ParGridFunction&gt;&amp; aux_old,</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                 <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; params, std::vector&lt;VARS*&gt; auxvars,</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                 <span class="keyword">const</span> std::vector&lt;Coefficients&gt;&amp; coefficients);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classMeltingCalphadNLFormIntegrator.html#aec7630f25878ca7cef2462135c64802a">   79</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classMeltingCalphadNLFormIntegrator.html#aec7630f25878ca7cef2462135c64802a">~MeltingCalphadNLFormIntegrator</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">void</span> check_nucleus();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classMeltingCalphadNLFormIntegrator.html#a5ca97ca9b6dc724287fdcbb3ca765e72">   69</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="classMeltingCalphadNLFormIntegrator.html#a5ca97ca9b6dc724287fdcbb3ca765e72">get_phase_change_at_ip</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> blk, <span class="keyword">const</span> std::span&lt;const double&gt;&amp; values,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                <span class="keyword">const</span> std::span&lt;const double&gt;&amp; aux_values) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classMeltingCalphadNLFormIntegrator.html#ad8b714d8c69839aa20b80a3ed93b346e">   72</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="classMeltingCalphadNLFormIntegrator.html#ad8b714d8c69839aa20b80a3ed93b346e">get_seed_at_ip</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> blk, <span class="keyword">const</span> std::span&lt;const double&gt;&amp; values,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                        <span class="keyword">const</span> std::span&lt;const double&gt;&amp; aux_values) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classMeltingCalphadNLFormIntegrator.html#a3502ba9a9f429014c021964c1d903175">   76</a></span>&#160;  <a class="code" href="classMeltingCalphadNLFormIntegrator.html#a3502ba9a9f429014c021964c1d903175">MeltingCalphadNLFormIntegrator</a>(<a class="code" href="ProblemsOptions_8hpp.html#a5047b3c22ba65d974596c2729dcf1409">Geometry</a> geometry, <span class="keyword">const</span> <span class="keywordtype">double</span> time_step,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                 <span class="keyword">const</span> std::vector&lt;mfem::ParGridFunction&gt;&amp; u_old,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                 <span class="keyword">const</span> std::vector&lt;mfem::ParGridFunction&gt;&amp; aux_old,</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                 <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; params, std::vector&lt;VARS*&gt; auxvars,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                 <span class="keyword">const</span> std::vector&lt;Coefficients&gt;&amp; coefficients);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MeltingCalphadNLFormIntegrator_8tpp.html">Integrators/MeltingCalphadNLFormIntegrator.tpp</a>&quot;</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classMeltingCalphadNLFormIntegrator.html#aec7630f25878ca7cef2462135c64802a">   82</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classMeltingCalphadNLFormIntegrator.html#aec7630f25878ca7cef2462135c64802a">~MeltingCalphadNLFormIntegrator</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MeltingCalphadNLFormIntegrator_8tpp.html">Integrators/MeltingCalphadNLFormIntegrator.tpp</a>&quot;</span></div>
 <div class="ttc" id="aMeltingBaseNLFormIntegrator_8hpp_html"><div class="ttname"><a href="MeltingBaseNLFormIntegrator_8hpp.html">MeltingBaseNLFormIntegrator.hpp</a></div><div class="ttdoc">Base class for melting integrators.</div></div>
 <div class="ttc" id="aMeltingCalphadNLFormIntegrator_8tpp_html"><div class="ttname"><a href="MeltingCalphadNLFormIntegrator_8tpp.html">MeltingCalphadNLFormIntegrator.tpp</a></div></div>
 <div class="ttc" id="aParameter_8hpp_html"><div class="ttname"><a href="Parameter_8hpp.html">Parameter.hpp</a></div><div class="ttdoc">Parameter class.</div></div>
 <div class="ttc" id="aParameters_8hpp_html"><div class="ttname"><a href="Parameters_8hpp.html">Parameters.hpp</a></div><div class="ttdoc">Parameter class used to build and manage calculation parameter.</div></div>
+<div class="ttc" id="aProblemsOptions_8hpp_html_a5047b3c22ba65d974596c2729dcf1409"><div class="ttname"><a href="ProblemsOptions_8hpp.html#a5047b3c22ba65d974596c2729dcf1409">Geometry</a></div><div class="ttdeci">Geometry</div><div class="ttdef"><b>Definition:</b> <a href="ProblemsOptions_8hpp_source.html#l00041">ProblemsOptions.hpp:41</a></div></div>
 <div class="ttc" id="aSlothNLFormIntegrator_8hpp_html"><div class="ttname"><a href="SlothNLFormIntegrator_8hpp.html">SlothNLFormIntegrator.hpp</a></div><div class="ttdoc">Class prodiving common methods to all NLFormIntegrators.</div></div>
 <div class="ttc" id="aUtils_8hpp_html"><div class="ttname"><a href="Utils_8hpp.html">Utils.hpp</a></div><div class="ttdoc">List of all Utils files.</div></div>
 <div class="ttc" id="aclassMeltingBaseNLFormIntegrator_html"><div class="ttname"><a href="classMeltingBaseNLFormIntegrator.html">MeltingBaseNLFormIntegrator</a></div><div class="ttdoc">Base class for melting integrators.</div><div class="ttdef"><b>Definition:</b> <a href="MeltingBaseNLFormIntegrator_8hpp_source.html#l00051">MeltingBaseNLFormIntegrator.hpp:51</a></div></div>
 <div class="ttc" id="aclassMeltingCalphadNLFormIntegrator_html"><div class="ttname"><a href="classMeltingCalphadNLFormIntegrator.html">MeltingCalphadNLFormIntegrator</a></div><div class="ttdoc">Class dedicated to the VF of Calphad melting contribution found in Allen-Cahn-type equations.</div><div class="ttdef"><b>Definition:</b> <a href="MeltingCalphadNLFormIntegrator_8hpp_source.html#l00050">MeltingCalphadNLFormIntegrator.hpp:50</a></div></div>
-<div class="ttc" id="aclassMeltingCalphadNLFormIntegrator_html_a01c61f297df8c04f27f7e9719cfd60a3"><div class="ttname"><a href="classMeltingCalphadNLFormIntegrator.html#a01c61f297df8c04f27f7e9719cfd60a3">MeltingCalphadNLFormIntegrator::MeltingCalphadNLFormIntegrator</a></div><div class="ttdeci">MeltingCalphadNLFormIntegrator(const std::vector&lt; mfem::ParGridFunction &gt; &amp;u_old, const std::vector&lt; mfem::ParGridFunction &gt; &amp;aux_old, const Parameters &amp;params, std::vector&lt; VARS * &gt; auxvars, const std::vector&lt; Coefficients &gt; &amp;coefficients)</div></div>
-<div class="ttc" id="aclassMeltingCalphadNLFormIntegrator_html_a2304bedea8f6c26e63b73b5f549b4603"><div class="ttname"><a href="classMeltingCalphadNLFormIntegrator.html#a2304bedea8f6c26e63b73b5f549b4603">MeltingCalphadNLFormIntegrator::get_seed_at_ip</a></div><div class="ttdeci">double get_seed_at_ip(mfem::ElementTransformation &amp;Tr, const mfem::IntegrationPoint &amp;ir, unsigned int blk, const double u, const double un) override</div></div>
-<div class="ttc" id="aclassMeltingCalphadNLFormIntegrator_html_a80593d6405b9e5e05825495bd4695a30"><div class="ttname"><a href="classMeltingCalphadNLFormIntegrator.html#a80593d6405b9e5e05825495bd4695a30">MeltingCalphadNLFormIntegrator::get_phase_change_at_ip</a></div><div class="ttdeci">double get_phase_change_at_ip(mfem::ElementTransformation &amp;Tr, const mfem::IntegrationPoint &amp;ir, unsigned int blk, const double u, const double un) override</div></div>
+<div class="ttc" id="aclassMeltingCalphadNLFormIntegrator_html_a3502ba9a9f429014c021964c1d903175"><div class="ttname"><a href="classMeltingCalphadNLFormIntegrator.html#a3502ba9a9f429014c021964c1d903175">MeltingCalphadNLFormIntegrator::MeltingCalphadNLFormIntegrator</a></div><div class="ttdeci">MeltingCalphadNLFormIntegrator(Geometry geometry, const double time_step, const std::vector&lt; mfem::ParGridFunction &gt; &amp;u_old, const std::vector&lt; mfem::ParGridFunction &gt; &amp;aux_old, const Parameters &amp;params, std::vector&lt; VARS * &gt; auxvars, const std::vector&lt; Coefficients &gt; &amp;coefficients)</div></div>
+<div class="ttc" id="aclassMeltingCalphadNLFormIntegrator_html_a5ca97ca9b6dc724287fdcbb3ca765e72"><div class="ttname"><a href="classMeltingCalphadNLFormIntegrator.html#a5ca97ca9b6dc724287fdcbb3ca765e72">MeltingCalphadNLFormIntegrator::get_phase_change_at_ip</a></div><div class="ttdeci">double get_phase_change_at_ip(unsigned int blk, const std::span&lt; const double &gt; &amp;values, const std::span&lt; const double &gt; &amp;aux_values) override</div></div>
+<div class="ttc" id="aclassMeltingCalphadNLFormIntegrator_html_ad8b714d8c69839aa20b80a3ed93b346e"><div class="ttname"><a href="classMeltingCalphadNLFormIntegrator.html#ad8b714d8c69839aa20b80a3ed93b346e">MeltingCalphadNLFormIntegrator::get_seed_at_ip</a></div><div class="ttdeci">double get_seed_at_ip(unsigned int blk, const std::span&lt; const double &gt; &amp;values, const std::span&lt; const double &gt; &amp;aux_values) override</div></div>
 <div class="ttc" id="aclassMeltingCalphadNLFormIntegrator_html_aec7630f25878ca7cef2462135c64802a"><div class="ttname"><a href="classMeltingCalphadNLFormIntegrator.html#aec7630f25878ca7cef2462135c64802a">MeltingCalphadNLFormIntegrator::~MeltingCalphadNLFormIntegrator</a></div><div class="ttdeci">virtual ~MeltingCalphadNLFormIntegrator()=default</div></div>
 <div class="ttc" id="aclassParameters_html"><div class="ttname"><a href="classParameters.html">Parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8hpp_source.html#l00046">Parameters.hpp:46</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:45 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

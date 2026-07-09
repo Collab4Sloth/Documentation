@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -70,7 +70,7 @@ $(function() {
 
 <h3><a id="index_c"></a>- c -</h3><ul>
 <li>CahnHilliardNLFormIntegrator()
-: <a class="el" href="classCahnHilliardNLFormIntegrator.html#afa2825987682d54e7e7f4fa554ec29ca">CahnHilliardNLFormIntegrator&lt; VARS &gt;</a>
+: <a class="el" href="classCahnHilliardNLFormIntegrator.html#a45351d494b7005e9fd98bf51692c03db">CahnHilliardNLFormIntegrator&lt; VARS &gt;</a>
 </li>
 <li>Calphad_Problem()
 : <a class="el" href="classCalphad__Problem.html#aecceec5e0a64531f97b329ba42142584">Calphad_Problem&lt; CALPHAD, VAR, PST &gt;</a>
@@ -88,8 +88,10 @@ $(function() {
 : <a class="el" href="classSlothNLFormIntegrator.html#a91695d51c2a9e35b25a82128f9d68894">SlothNLFormIntegrator&lt; VARS &gt;</a>
 </li>
 <li>check_variables_consistency()
-: <a class="el" href="classInterDiffusionCoefficient.html#a7cf69475b322e1eae457a6ece3ab44e7">InterDiffusionCoefficient</a>
-, <a class="el" href="classLatentHeatNLFormIntegrator.html#ad8a4a74a69e7cc89c77af78564260fd8">LatentHeatNLFormIntegrator&lt; VARS &gt;</a>
+: <a class="el" href="classAllenCahnNLFormIntegrator.html#a17f2ecb14509f84fde89c3d0f99071b5">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classInterDiffusionCoefficient.html#a7cf69475b322e1eae457a6ece3ab44e7">InterDiffusionCoefficient</a>
+, <a class="el" href="classLatentHeatNLFormIntegrator.html#ad23ef2e0c5c9ae77b8b29cb2a2de8ff1">LatentHeatNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classMeltingBaseNLFormIntegrator.html#aef08b58c15038a6b93589fca9bedbe79">MeltingBaseNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classPropertyBase.html#a5473e1f260f47460818a86cbaa3965ef">PropertyBase</a>
 </li>
 <li>clear_containers()
@@ -121,6 +123,9 @@ $(function() {
 </li>
 <li>compute_gradient_coefficient()
 : <a class="el" href="classSlothNLFormIntegrator.html#a6adf3d85add425bdc2484058e830ff99">SlothNLFormIntegrator&lt; VARS &gt;</a>
+</li>
+<li>compute_gradient_energy_coefficient()
+: <a class="el" href="classSlothNLFormIntegrator.html#a09eca46fb4ea0c609908d909f16a01cb">SlothNLFormIntegrator&lt; VARS &gt;</a>
 </li>
 <li>compute_hessian()
 : <a class="el" href="classSlothBaseCoefficient.html#a6062df3770a30511fbc2948fc3d6d832">SlothBaseCoefficient</a>
@@ -159,8 +164,7 @@ $(function() {
 : <a class="el" href="classCoupling.html#a58a48fd5421070659f49572b3795c873">Coupling&lt; Args &gt;</a>
 </li>
 <li>create_solver()
-: <a class="el" href="classNLSolverBase.html#a5fe7ec560c9c9e10591a08aaa123f2dd">NLSolverBase</a>
-, <a class="el" href="classPrecondDSmoother.html#a286f01fb24a1d08cc00950b04e9e0bfc">PrecondDSmoother</a>
+: <a class="el" href="classPrecondDSmoother.html#a286f01fb24a1d08cc00950b04e9e0bfc">PrecondDSmoother</a>
 , <a class="el" href="classPrecondHypreBoomerAMG.html#a9274064ab381792bf2f034344d2d621d">PrecondHypreBoomerAMG</a>
 , <a class="el" href="classPrecondHypreDiagScale.html#addd6474561b2dc1caef97fbf187bae91">PrecondHypreDiagScale</a>
 , <a class="el" href="classPrecondHypreILU.html#a7e7defa37401cea9cac7183a5994b13b">PrecondHypreILU</a>
@@ -172,14 +176,16 @@ $(function() {
 , <a class="el" href="classSolverHypreFGMRES.html#a54588ca870f9439ec8f4bccd7d8615a8">SolverHypreFGMRES</a>
 , <a class="el" href="classSolverHypreGMRES.html#a94293cedbdd903adcd5866ce3554ef10">SolverHypreGMRES</a>
 , <a class="el" href="classSolverHyprePCG.html#af4a480332bac2a5014c3e2a84f3403ba">SolverHyprePCG</a>
+, <a class="el" href="classSolverLBFGS.html#a507c2bb2c75c19d0304b42dc8f9159de">SolverLBFGS</a>
 , <a class="el" href="classSolverMINRES.html#ace4d6324acb77a33354204e692a2463f">SolverMINRES</a>
+, <a class="el" href="classSolverNewton.html#ac34b1de15feb99f5539ab9007cf37800">SolverNewton</a>
 , <a class="el" href="classSolverUMFPACK.html#a83fe21379896c4df62b1df2947767d2e">SolverUMFPACK</a>
 </li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:17 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -84,6 +84,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a05c03871582050f04f3ebc411032ea31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47c18f0495516845007448f09ec039a8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimeDiscretization.html#a47c18f0495516845007448f09ec039a8">TimeDiscretization</a> (const <a class="el" href="classParameters.html">Parameters</a> &amp;params, Args... couplings)</td></tr>
 <tr class="separator:a47c18f0495516845007448f09ec039a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac03312822e01e7b7bc3cf0c6e456d224"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimeDiscretization.html#ac03312822e01e7b7bc3cf0c6e456d224">TimeDiscretization</a> (const std::function&lt; double(double)&gt; &amp;given_time_step, const <a class="el" href="classParameters.html">Parameters</a> &amp;params, Args... couplings)</td></tr>
+<tr class="separator:ac03312822e01e7b7bc3cf0c6e456d224"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a830e2b3d0acb555663f53bdfce29ebcd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTimeDiscretization.html#a830e2b3d0acb555663f53bdfce29ebcd">~TimeDiscretization</a> ()</td></tr>
 <tr class="separator:a830e2b3d0acb555663f53bdfce29ebcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -95,7 +97,7 @@ class TimeDiscretization&lt; Args &gt;</h3>
 <p class="definition">Definition at line <a class="el" href="Time_8hpp_source.html#l00041">41</a> of file <a class="el" href="Time_8hpp_source.html">Time.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a47c18f0495516845007448f09ec039a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47c18f0495516845007448f09ec039a8">&#9670;&nbsp;</a></span>TimeDiscretization()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a47c18f0495516845007448f09ec039a8">&#9670;&nbsp;</a></span>TimeDiscretization() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -108,6 +110,50 @@ template&lt;class... Args&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classTimeDiscretization.html">TimeDiscretization</a>&lt; Args &gt;::<a class="el" href="classTimeDiscretization.html">TimeDiscretization</a> </td>
           <td>(</td>
+          <td class="paramtype">const <a class="el" href="classParameters.html">Parameters</a> &amp;&#160;</td>
+          <td class="paramname"><em>params</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args...&#160;</td>
+          <td class="paramname"><em>couplings</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac03312822e01e7b7bc3cf0c6e456d224"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac03312822e01e7b7bc3cf0c6e456d224">&#9670;&nbsp;</a></span>TimeDiscretization() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTimeDiscretization.html">TimeDiscretization</a>&lt; Args &gt;::<a class="el" href="classTimeDiscretization.html">TimeDiscretization</a> </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; double(double)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>given_time_step</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const <a class="el" href="classParameters.html">Parameters</a> &amp;&#160;</td>
           <td class="paramname"><em>params</em>, </td>
         </tr>
@@ -196,7 +242,7 @@ template&lt;class... Args&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

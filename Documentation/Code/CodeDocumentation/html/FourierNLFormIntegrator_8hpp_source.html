@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -95,30 +95,32 @@ $(function() {
 <div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classFourierNLFormIntegrator.html#a77ef0aea0e49c34b77141ed38889b8ed">   56</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classFourierNLFormIntegrator.html#a77ef0aea0e49c34b77141ed38889b8ed">get_coefficients</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classFourierNLFormIntegrator.html#a6103287f915a431dbed53125fcad5f53">   59</a></span>&#160;  <a class="code" href="classFourierNLFormIntegrator.html#a6103287f915a431dbed53125fcad5f53">FourierNLFormIntegrator</a>(<span class="keyword">const</span> std::vector&lt;mfem::ParGridFunction&gt;&amp; u_old,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                          <span class="keyword">const</span> std::vector&lt;mfem::ParGridFunction&gt;&amp; aux_old,</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                          <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; params, std::vector&lt;VARS*&gt; auxvars,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                          <span class="keyword">const</span> std::vector&lt;Coefficients&gt;&amp; coefficients);</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classFourierNLFormIntegrator.html#a7cce629db53c895985fa49da5dcd9f3a">   63</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classFourierNLFormIntegrator.html#a7cce629db53c895985fa49da5dcd9f3a">~FourierNLFormIntegrator</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="FourierNLFormIntegrator_8tpp.html">Integrators/FourierNLFormIntegrator.tpp</a>&quot;</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classFourierNLFormIntegrator.html#a522267f64679942e7677bbaf2b749691">   59</a></span>&#160;  <a class="code" href="classFourierNLFormIntegrator.html#a522267f64679942e7677bbaf2b749691">FourierNLFormIntegrator</a>(<a class="code" href="ProblemsOptions_8hpp.html#a5047b3c22ba65d974596c2729dcf1409">Geometry</a> geometry, <span class="keyword">const</span> <span class="keywordtype">double</span> time_step,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                          <span class="keyword">const</span> std::vector&lt;mfem::ParGridFunction&gt;&amp; u_old,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                          <span class="keyword">const</span> std::vector&lt;mfem::ParGridFunction&gt;&amp; aux_old,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                          <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; params, std::vector&lt;VARS*&gt; auxvars,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                          <span class="keyword">const</span> std::vector&lt;Coefficients&gt;&amp; coefficients);</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classFourierNLFormIntegrator.html#a7cce629db53c895985fa49da5dcd9f3a">   64</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classFourierNLFormIntegrator.html#a7cce629db53c895985fa49da5dcd9f3a">~FourierNLFormIntegrator</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="FourierNLFormIntegrator_8tpp.html">Integrators/FourierNLFormIntegrator.tpp</a>&quot;</span></div>
 <div class="ttc" id="aDiffusionNLFormIntegrator_8hpp_html"><div class="ttname"><a href="DiffusionNLFormIntegrator_8hpp.html">DiffusionNLFormIntegrator.hpp</a></div><div class="ttdoc">Nonlinear form integrator for diffusion-type problems.</div></div>
 <div class="ttc" id="aFourierNLFormIntegrator_8tpp_html"><div class="ttname"><a href="FourierNLFormIntegrator_8tpp.html">FourierNLFormIntegrator.tpp</a></div></div>
 <div class="ttc" id="aParameter_8hpp_html"><div class="ttname"><a href="Parameter_8hpp.html">Parameter.hpp</a></div><div class="ttdoc">Parameter class.</div></div>
 <div class="ttc" id="aParameters_8hpp_html"><div class="ttname"><a href="Parameters_8hpp.html">Parameters.hpp</a></div><div class="ttdoc">Parameter class used to build and manage calculation parameter.</div></div>
+<div class="ttc" id="aProblemsOptions_8hpp_html_a5047b3c22ba65d974596c2729dcf1409"><div class="ttname"><a href="ProblemsOptions_8hpp.html#a5047b3c22ba65d974596c2729dcf1409">Geometry</a></div><div class="ttdeci">Geometry</div><div class="ttdef"><b>Definition:</b> <a href="ProblemsOptions_8hpp_source.html#l00041">ProblemsOptions.hpp:41</a></div></div>
 <div class="ttc" id="aSlothNLFormIntegrator_8hpp_html"><div class="ttname"><a href="SlothNLFormIntegrator_8hpp.html">SlothNLFormIntegrator.hpp</a></div><div class="ttdoc">Class prodiving common methods to all NLFormIntegrators.</div></div>
 <div class="ttc" id="aUtils_8hpp_html"><div class="ttname"><a href="Utils_8hpp.html">Utils.hpp</a></div><div class="ttdoc">List of all Utils files.</div></div>
 <div class="ttc" id="aclassDiffusionNLFormIntegrator_html"><div class="ttname"><a href="classDiffusionNLFormIntegrator.html">DiffusionNLFormIntegrator</a></div><div class="ttdoc">Nonlinear form integrator for diffusion-type problems.</div><div class="ttdef"><b>Definition:</b> <a href="DiffusionNLFormIntegrator_8hpp_source.html#l00048">DiffusionNLFormIntegrator.hpp:48</a></div></div>
 <div class="ttc" id="aclassFourierNLFormIntegrator_html"><div class="ttname"><a href="classFourierNLFormIntegrator.html">FourierNLFormIntegrator</a></div><div class="ttdoc">Nonlinear form integrator for the right-hand side of the heat transfer equation (Fourier's law).</div><div class="ttdef"><b>Definition:</b> <a href="FourierNLFormIntegrator_8hpp_source.html#l00054">FourierNLFormIntegrator.hpp:54</a></div></div>
-<div class="ttc" id="aclassFourierNLFormIntegrator_html_a6103287f915a431dbed53125fcad5f53"><div class="ttname"><a href="classFourierNLFormIntegrator.html#a6103287f915a431dbed53125fcad5f53">FourierNLFormIntegrator::FourierNLFormIntegrator</a></div><div class="ttdeci">FourierNLFormIntegrator(const std::vector&lt; mfem::ParGridFunction &gt; &amp;u_old, const std::vector&lt; mfem::ParGridFunction &gt; &amp;aux_old, const Parameters &amp;params, std::vector&lt; VARS * &gt; auxvars, const std::vector&lt; Coefficients &gt; &amp;coefficients)</div></div>
+<div class="ttc" id="aclassFourierNLFormIntegrator_html_a522267f64679942e7677bbaf2b749691"><div class="ttname"><a href="classFourierNLFormIntegrator.html#a522267f64679942e7677bbaf2b749691">FourierNLFormIntegrator::FourierNLFormIntegrator</a></div><div class="ttdeci">FourierNLFormIntegrator(Geometry geometry, const double time_step, const std::vector&lt; mfem::ParGridFunction &gt; &amp;u_old, const std::vector&lt; mfem::ParGridFunction &gt; &amp;aux_old, const Parameters &amp;params, std::vector&lt; VARS * &gt; auxvars, const std::vector&lt; Coefficients &gt; &amp;coefficients)</div></div>
 <div class="ttc" id="aclassFourierNLFormIntegrator_html_a77ef0aea0e49c34b77141ed38889b8ed"><div class="ttname"><a href="classFourierNLFormIntegrator.html#a77ef0aea0e49c34b77141ed38889b8ed">FourierNLFormIntegrator::get_coefficients</a></div><div class="ttdeci">void get_coefficients() override</div></div>
 <div class="ttc" id="aclassFourierNLFormIntegrator_html_a7cce629db53c895985fa49da5dcd9f3a"><div class="ttname"><a href="classFourierNLFormIntegrator.html#a7cce629db53c895985fa49da5dcd9f3a">FourierNLFormIntegrator::~FourierNLFormIntegrator</a></div><div class="ttdeci">virtual ~FourierNLFormIntegrator()=default</div></div>
 <div class="ttc" id="aclassParameters_html"><div class="ttname"><a href="classParameters.html">Parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8hpp_source.html#l00046">Parameters.hpp:46</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:45 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:15 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

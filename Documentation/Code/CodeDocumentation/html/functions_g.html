@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -72,6 +72,11 @@ $(function() {
 <li>g
 : <a class="el" href="structcalphad__outputs.html#a3b9ee0f8fee1d86f37ad937912c864fea10cf86861b30fe51b9dc863a14759092">calphad_outputs</a>
 </li>
+<li>geometry_
+: <a class="el" href="classOperatorBase.html#a35a8795b1b7330c6ab1a88442b8f0211">OperatorBase&lt; T, DIM &gt;</a>
+, <a class="el" href="classProblemBase.html#a923b1c0b8b1836049094c2e556656227">ProblemBase&lt; VAR, PST &gt;</a>
+, <a class="el" href="classSlothNLFormIntegrator.html#ac5292fff0fe4cbcc4965c492588e11f2">SlothNLFormIntegrator&lt; VARS &gt;</a>
+</li>
 <li>get_A4linearKKS()
 : <a class="el" href="classKKS.html#ab4ba6d9aa563da4015fd54797923098a">KKS&lt; T &gt;</a>
 </li>
@@ -91,10 +96,10 @@ $(function() {
 : <a class="el" href="classSpatialDiscretization.html#aa59e63ba6dc87c46897d54cff2f707c9">SpatialDiscretization&lt; T, DIM &gt;</a>
 </li>
 <li>get_bdr_index_coef()
-: <a class="el" href="classSlothBaseCoefficient.html#a37d510f2a93a0e164ad52067324390a1">SlothBaseCoefficient</a>
+: <a class="el" href="classSlothBaseCoefficient.html#a80247ae30c85d06dd100cc359ff75faa">SlothBaseCoefficient</a>
 </li>
 <li>get_bdr_integrator()
-: <a class="el" href="classOperatorBase.html#a923ab486abd56e7eb2dc2f2d51b9bb8f">OperatorBase&lt; T, DIM &gt;</a>
+: <a class="el" href="classOperatorBase.html#a3d0415a3bcd9bc692ef82bbf4d2f7b96">OperatorBase&lt; T, DIM &gt;</a>
 </li>
 <li>get_boundary_conditions()
 : <a class="el" href="classVariable.html#ac1e4f733dd84c0024de2ff634ccf65a2">Variable&lt; T, DIM &gt;</a>
@@ -152,9 +157,6 @@ $(function() {
 <li>get_enable_save_specialized_at_iter()
 : <a class="el" href="classPostProcessing.html#a20a05990b151ded1fbb3e315ec5fc4ba">PostProcessing&lt; T, DC, DIM &gt;</a>
 </li>
-<li>get_energy()
-: <a class="el" href="classAllenCahnGrainNLFormIntegrator.html#a1d770d9b19eb432751bf85482d79ed6a">AllenCahnGrainNLFormIntegrator&lt; VARS, SCHEME, ENERGY, MOBI &gt;</a>
-</li>
 <li>get_fespace()
 : <a class="el" href="classVariable.html#a6eaf56a0c81528b5cee8fc9bd056bc29">Variable&lt; T, DIM &gt;</a>
 </li>
@@ -177,9 +179,6 @@ $(function() {
 <li>get_gf()
 : <a class="el" href="classVariable.html#adebba210854c266035bd625e933dd7b9">Variable&lt; T, DIM &gt;</a>
 </li>
-<li>get_grad_energy()
-: <a class="el" href="classAllenCahnGrainNLFormIntegrator.html#a1206e3c223ab0540133420467d2645de">AllenCahnGrainNLFormIntegrator&lt; VARS, SCHEME, ENERGY, MOBI &gt;</a>
-</li>
 <li>get_h4linearKKS()
 : <a class="el" href="classKKS.html#a3c73bb4b4a90f4f40ea580663f2c3180">KKS&lt; T &gt;</a>
 </li>
@@ -199,7 +198,7 @@ $(function() {
 : <a class="el" href="classVariable.html#a939b5f0fc5678a88ccc6daaba30a2b58">Variable&lt; T, DIM &gt;</a>
 </li>
 <li>get_latent_heat_at_ip()
-: <a class="el" href="classLatentHeatNLFormIntegrator.html#a155374716efe75c11d166a019cbc3baf">LatentHeatNLFormIntegrator&lt; VARS &gt;</a>
+: <a class="el" href="classLatentHeatNLFormIntegrator.html#a15e1a99a08e698e1c8691028ead5bc3e">LatentHeatNLFormIntegrator&lt; VARS &gt;</a>
 </li>
 <li>get_m4linearKKS()
 : <a class="el" href="classKKS.html#aff05920ea97aab8e9b80c5f912d60456">KKS&lt; T &gt;</a>
@@ -221,6 +220,11 @@ $(function() {
 </li>
 <li>get_mesh()
 : <a class="el" href="classSpatialDiscretization.html#aae9bdf27b697b58cfe7e34e0f103bcc7">SpatialDiscretization&lt; T, DIM &gt;</a>
+</li>
+<li>get_mob_at_ip()
+: <a class="el" href="classAllenCahnNLFormIntegrator.html#a396aabca97496d9ff7f1c7a00fd9fdcf">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classLatentHeatNLFormIntegrator.html#a83ec03b7c7c02dfc162f22eaee0ebc75">LatentHeatNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classMeltingBaseNLFormIntegrator.html#ab273eac49361372200c109290e925297">MeltingBaseNLFormIntegrator&lt; VARS &gt;</a>
 </li>
 <li>get_name()
 : <a class="el" href="classCoupling.html#a55f778276392a16fae6c1ae05cecea05">Coupling&lt; Args &gt;</a>
@@ -249,10 +253,10 @@ $(function() {
 , <a class="el" href="classThermalDiffusionFluxNLFormIntegrator.html#a39adae71e06326c81873990eec9cd5bc">ThermalDiffusionFluxNLFormIntegrator&lt; VARS &gt;</a>
 </li>
 <li>get_phase_change_at_ip()
-: <a class="el" href="classMeltingBaseNLFormIntegrator.html#a1f2a180d70a385f11c4a4d4dc35a5367">MeltingBaseNLFormIntegrator&lt; VARS &gt;</a>
-, <a class="el" href="classMeltingCalphadNLFormIntegrator.html#a80593d6405b9e5e05825495bd4695a30">MeltingCalphadNLFormIntegrator&lt; VARS &gt;</a>
-, <a class="el" href="classMeltingConstantNLFormIntegrator.html#af848091fa32453b0fa2fa01b9bbe012c">MeltingConstantNLFormIntegrator&lt; VARS &gt;</a>
-, <a class="el" href="classMeltingTemperatureNLFormIntegrator.html#a10864188b5984b504604d17201462f5e">MeltingTemperatureNLFormIntegrator&lt; VARS &gt;</a>
+: <a class="el" href="classMeltingBaseNLFormIntegrator.html#a6dd23827d6b949f5c84609b0e151c99c">MeltingBaseNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classMeltingCalphadNLFormIntegrator.html#a5ca97ca9b6dc724287fdcbb3ca765e72">MeltingCalphadNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classMeltingConstantNLFormIntegrator.html#a7459e4b87d9f03c6c3fd7bdf34f3b5e2">MeltingConstantNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classMeltingTemperatureNLFormIntegrator.html#a23da3aae98e1308ffe7b4b343c2764aa">MeltingTemperatureNLFormIntegrator&lt; VARS &gt;</a>
 </li>
 <li>get_post_processing_directory()
 : <a class="el" href="classPostProcessing.html#a8ea68c26f94b3f354cf1719c2a980b44">PostProcessing&lt; T, DC, DIM &gt;</a>
@@ -268,14 +272,14 @@ $(function() {
 : <a class="el" href="classSlothBaseCoefficient.html#a3924e4859a9ad005c5144901908b9cac">SlothBaseCoefficient</a>
 </li>
 <li>get_rhs_integrator()
-: <a class="el" href="classOperatorBase.html#af876c0500e6eae23ccb0d295862e0099">OperatorBase&lt; T, DIM &gt;</a>
+: <a class="el" href="classOperatorBase.html#af3d2e9b7e28be1195e87d4a567707edb">OperatorBase&lt; T, DIM &gt;</a>
 </li>
 <li>get_second_to_last()
 : <a class="el" href="classVariable.html#aeda733f80a2263216eb82e4fc5d4cdc4">Variable&lt; T, DIM &gt;</a>
 </li>
 <li>get_seed_at_ip()
-: <a class="el" href="classMeltingBaseNLFormIntegrator.html#a138dd5cf62eb8f07e0d53d906ea6e009">MeltingBaseNLFormIntegrator&lt; VARS &gt;</a>
-, <a class="el" href="classMeltingCalphadNLFormIntegrator.html#a2304bedea8f6c26e63b73b5f549b4603">MeltingCalphadNLFormIntegrator&lt; VARS &gt;</a>
+: <a class="el" href="classMeltingBaseNLFormIntegrator.html#a8c7a48766ae02dc86c119f773cf64752">MeltingBaseNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classMeltingCalphadNLFormIntegrator.html#ad8b714d8c69839aa20b80a3ed93b346e">MeltingCalphadNLFormIntegrator&lt; VARS &gt;</a>
 </li>
 <li>get_size()
 : <a class="el" href="classCalphadUtils.html#ab53e10756c99b94061ed8e78a375ce60">CalphadUtils&lt; T &gt;</a>
@@ -292,7 +296,7 @@ $(function() {
 </li>
 <li>get_time_specialized()
 : <a class="el" href="classCalphadBase.html#a7a77cf1b1fc63668bd05652465907371">CalphadBase&lt; T &gt;</a>
-, <a class="el" href="classOperatorBase.html#a7baa47376e7e3e56cbc094846dfa2e87">OperatorBase&lt; T, DIM &gt;</a>
+, <a class="el" href="classOperatorBase.html#a7cfc35f92ec6ce5ac63f2a8c9592e6d1">OperatorBase&lt; T, DIM &gt;</a>
 </li>
 <li>get_tree()
 : <a class="el" href="classCoupling.html#a87f0f74fff4c34b98aa8885908db73f0">Coupling&lt; Args &gt;</a>
@@ -424,7 +428,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:17 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

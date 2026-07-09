@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -135,14 +135,16 @@ $(function() {
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keyword">template</span> &lt;PbVar&lt;VAR&gt;... Args&gt;</div>
 <div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classProperty__problem.html#a960a4b164e883db80ae0eddef3ae4ad1">   85</a></span>&#160;  <a class="code" href="classProperty__problem.html#a960a4b164e883db80ae0eddef3ae4ad1">Property_problem</a>(<span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; params, VAR&amp; variables, PST&amp; pst, Args&amp;&amp;... auxvariable);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classProperty__problem.html#a5b24c254299c39f7bf3923608e875423">   87</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classProperty__problem.html#a5b24c254299c39f7bf3923608e875423">do_time_step</a>(<span class="keywordtype">double</span>&amp; next_time, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; current_time, <span class="keywordtype">double</span> current_time_step,</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> iter, std::vector&lt;std::unique_ptr&lt;mfem::Vector&gt;&gt;&amp; unks,</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                    <span class="keyword">const</span> std::vector&lt;std::vector&lt;std::string&gt;&gt;&amp; unks_info) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classProperty__problem.html#a0edebba26158f170ea3da29417cbc178">   91</a></span>&#160;  <a class="code" href="classProperty__problem.html#a0edebba26158f170ea3da29417cbc178">~Property_problem</a>();</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classProperty__problem.html#affb5c6f117e9859b2df68746ddfc40e1">   88</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classProperty__problem.html#affb5c6f117e9859b2df68746ddfc40e1">initialize</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; initial_time, <span class="keyword">const</span> <span class="keywordtype">double</span> time_step) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classProperty__problem.html#a5b24c254299c39f7bf3923608e875423">   90</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classProperty__problem.html#a5b24c254299c39f7bf3923608e875423">do_time_step</a>(<span class="keywordtype">double</span>&amp; next_time, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; current_time, <span class="keywordtype">double</span> current_time_step,</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> iter, std::vector&lt;std::unique_ptr&lt;mfem::Vector&gt;&gt;&amp; unks,</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                    <span class="keyword">const</span> std::vector&lt;std::vector&lt;std::string&gt;&gt;&amp; unks_info) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="PropertyProblem_8tpp.html">Problems/PropertyProblem.tpp</a>&quot;</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classProperty__problem.html#a0edebba26158f170ea3da29417cbc178">   94</a></span>&#160;  <a class="code" href="classProperty__problem.html#a0edebba26158f170ea3da29417cbc178">~Property_problem</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;};</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="PropertyProblem_8tpp.html">Problems/PropertyProblem.tpp</a>&quot;</span></div>
 <div class="ttc" id="aConvergence_8hpp_html"><div class="ttname"><a href="Convergence_8hpp.html">Convergence.hpp</a></div><div class="ttdoc">Class used to build and manage PhysicalConvergence.</div></div>
 <div class="ttc" id="aParameter_8hpp_html"><div class="ttname"><a href="Parameter_8hpp.html">Parameter.hpp</a></div><div class="ttdoc">Parameter class.</div></div>
 <div class="ttc" id="aPhysicalConvergence_8hpp_html"><div class="ttname"><a href="PhysicalConvergence_8hpp.html">PhysicalConvergence.hpp</a></div><div class="ttdoc">Class used to define a PhysicalConvergence criterion (physical increment allowed per time-step)</div></div>
@@ -150,7 +152,7 @@ $(function() {
 <div class="ttc" id="aPropertyProblem_8tpp_html"><div class="ttname"><a href="PropertyProblem_8tpp.html">PropertyProblem.tpp</a></div></div>
 <div class="ttc" id="aclassConvergence_html"><div class="ttname"><a href="classConvergence.html">Convergence</a></div><div class="ttdef"><b>Definition:</b> <a href="Convergence_8hpp_source.html#l00041">Convergence.hpp:41</a></div></div>
 <div class="ttc" id="aclassParameters_html"><div class="ttname"><a href="classParameters.html">Parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8hpp_source.html#l00046">Parameters.hpp:46</a></div></div>
-<div class="ttc" id="aclassProblemBase_html"><div class="ttname"><a href="classProblemBase.html">ProblemBase</a></div><div class="ttdoc">Base class for SLOTH problem.</div><div class="ttdef"><b>Definition:</b> <a href="ProblemBase_8hpp_source.html#l00062">ProblemBase.hpp:62</a></div></div>
+<div class="ttc" id="aclassProblemBase_html"><div class="ttname"><a href="classProblemBase.html">ProblemBase</a></div><div class="ttdoc">Base class for SLOTH problem.</div><div class="ttdef"><b>Definition:</b> <a href="ProblemBase_8hpp_source.html#l00063">ProblemBase.hpp:63</a></div></div>
 <div class="ttc" id="aclassProperty__problem_html"><div class="ttname"><a href="classProperty__problem.html">Property_problem</a></div><div class="ttdef"><b>Definition:</b> <a href="PropertyProblem_8hpp_source.html#l00043">PropertyProblem.hpp:43</a></div></div>
 <div class="ttc" id="aclassProperty__problem_html_a0edebba26158f170ea3da29417cbc178"><div class="ttname"><a href="classProperty__problem.html#a0edebba26158f170ea3da29417cbc178">Property_problem::~Property_problem</a></div><div class="ttdeci">~Property_problem()</div></div>
 <div class="ttc" id="aclassProperty__problem_html_a261c631f67cd2c5633052a77bff3d0d7"><div class="ttname"><a href="classProperty__problem.html#a261c631f67cd2c5633052a77bff3d0d7">Property_problem::Property_problem</a></div><div class="ttdeci">Property_problem(const Parameters &amp;params, VAR &amp;variables, Convergence &amp;convergence, PST &amp;pst, Args &amp;&amp;... auxvariable)</div></div>
@@ -162,10 +164,11 @@ $(function() {
 <div class="ttc" id="aclassProperty__problem_html_a9e985152173171d4f3d0c9cc432b608f"><div class="ttname"><a href="classProperty__problem.html#a9e985152173171d4f3d0c9cc432b608f">Property_problem::Property_problem</a></div><div class="ttdeci">Property_problem(const std::string &amp;name, const Parameters &amp;params, VAR &amp;variables, PST &amp;pst, Args &amp;&amp;... auxvariable)</div></div>
 <div class="ttc" id="aclassProperty__problem_html_a9ea4392aab478c7bc839a10b3c6fb7cc"><div class="ttname"><a href="classProperty__problem.html#a9ea4392aab478c7bc839a10b3c6fb7cc">Property_problem::Property_problem</a></div><div class="ttdeci">Property_problem(const std::string &amp;name, const Parameters &amp;params, VAR &amp;variables, const std::vector&lt; Coefficients &gt; &amp;Coeff, Convergence &amp;convergence, PST &amp;pst, Args &amp;&amp;... auxvariable)</div></div>
 <div class="ttc" id="aclassProperty__problem_html_ac2b80313ba5df3d678453c129dd4c9ba"><div class="ttname"><a href="classProperty__problem.html#ac2b80313ba5df3d678453c129dd4c9ba">Property_problem::Property_problem</a></div><div class="ttdeci">Property_problem(const std::string &amp;name, const Parameters &amp;params, VAR &amp;variables, const std::vector&lt; Coefficients &gt; &amp;Coeff, PST &amp;pst, Args &amp;&amp;... auxvariable)</div></div>
+<div class="ttc" id="aclassProperty__problem_html_affb5c6f117e9859b2df68746ddfc40e1"><div class="ttname"><a href="classProperty__problem.html#affb5c6f117e9859b2df68746ddfc40e1">Property_problem::initialize</a></div><div class="ttdeci">void initialize(const double &amp;initial_time, const double time_step) override</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:45 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

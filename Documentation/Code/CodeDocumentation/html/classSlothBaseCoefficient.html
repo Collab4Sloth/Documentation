@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.0.0</span>
+   &#160;<span id="projectnumber">v2.1.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -83,7 +83,8 @@ $(function() {
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classSlothBaseCoefficient__inherit__graph.svg" width="174" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classSlothBaseCoefficient__inherit__graph.svg" width="174" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -118,9 +119,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6062df3770a30511fbc2948fc3d6d832"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothBaseCoefficient.html#a6062df3770a30511fbc2948fc3d6d832">compute_hessian</a> (const int i, const int j, const std::span&lt; const double &gt; &amp;values, std::optional&lt; int &gt; dimension=std::nullopt)</td></tr>
 <tr class="memdesc:a6062df3770a30511fbc2948fc3d6d832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the (i,j) component of the Hessian matrix.  <a href="classSlothBaseCoefficient.html#a6062df3770a30511fbc2948fc3d6d832">More...</a><br /></td></tr>
 <tr class="separator:a6062df3770a30511fbc2948fc3d6d832"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37d510f2a93a0e164ad52067324390a1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothBaseCoefficient.html#a37d510f2a93a0e164ad52067324390a1">get_bdr_index_coef</a> ()</td></tr>
-<tr class="memdesc:a37d510f2a93a0e164ad52067324390a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the boundary index for a coefficient.  <a href="classSlothBaseCoefficient.html#a37d510f2a93a0e164ad52067324390a1">More...</a><br /></td></tr>
-<tr class="separator:a37d510f2a93a0e164ad52067324390a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80247ae30c85d06dd100cc359ff75faa"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothBaseCoefficient.html#a80247ae30c85d06dd100cc359ff75faa">get_bdr_index_coef</a> () const</td></tr>
+<tr class="memdesc:a80247ae30c85d06dd100cc359ff75faa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the boundary index for a coefficient.  <a href="classSlothBaseCoefficient.html#a80247ae30c85d06dd100cc359ff75faa">More...</a><br /></td></tr>
+<tr class="separator:a80247ae30c85d06dd100cc359ff75faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12e8c62dafad636f762a4ae695d44e16"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothBaseCoefficient.html#a12e8c62dafad636f762a4ae695d44e16">get_id</a> () const</td></tr>
 <tr class="memdesc:a12e8c62dafad636f762a4ae695d44e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the ID of the quantity associated with the coefficient.  <a href="classSlothBaseCoefficient.html#a12e8c62dafad636f762a4ae695d44e16">More...</a><br /></td></tr>
 <tr class="separator:a12e8c62dafad636f762a4ae695d44e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -793,8 +794,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a37d510f2a93a0e164ad52067324390a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37d510f2a93a0e164ad52067324390a1">&#9670;&nbsp;</a></span>get_bdr_index_coef()</h2>
+<a id="a80247ae30c85d06dd100cc359ff75faa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80247ae30c85d06dd100cc359ff75faa">&#9670;&nbsp;</a></span>get_bdr_index_coef()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -803,7 +804,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">std::vector&lt; int &gt; SlothBaseCoefficient::get_bdr_index_coef </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1039,7 +1040,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 10 2026 10:16:46 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
