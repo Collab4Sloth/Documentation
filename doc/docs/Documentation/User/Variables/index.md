@@ -44,7 +44,7 @@ The latter enables to use pre-defined mathematical functions currently used in t
     The following examples assume that the spatial discretisation and the boundary conditions are defined. 
     In the code snippets, the first is referred to as a `spatial` object, while the second is referred to as a `bcs` object. Without loss of generality, the alias `VAR` is also used.
 
-    These examples show how to initialize a variable with `double`, `AnalyticalFunctions` and `std::function` types.
+    These examples show how to initialize a variable with `double`, `AnalyticalFunctions` and `std::function` types or using a file under a format designed by MFEM. The latter can be used to perform save/restart calculations.
 
     === "`double`"
         In this example, the variable is named `phi`. Its initial value is zero.
@@ -101,6 +101,22 @@ The latter enables to use pre-defined mathematical functions currently used in t
         ```
 
         `SLOTH` provides several pre-implemented analytical functions, including the Heaviside function, sinusoidal profiles, hyperbolic tangent, and parabolic profiles. Each of these functions requires a set of parameters detailed in [a dedicated page of the user manual](../AnalyticalVariables/index.md).
+
+    === "`File`"
+
+        In this example, the values contained in the file "phi_2.gf" are used to initialize the variable is named `phi`. The name of the file is consistant with the initial iteration number of the simulation. Here, such an initialization allows restarting a calculation at iteration two (see `initial_iteration` parameter in [the dedicated page of the user manual](../MultiPhysicsCouplingScheme/Time/index.md)).
+
+        ```c++
+        int level_of_storage= 2;
+        std::string variable_name = "phi";
+        GlossaryQuantity variable_type = Glossary::Phi;
+
+        std::string file_restart = "phi_2.gf";
+        auto initial_condition =  std::make_tuple(file_restart, gf_folder_path)
+
+        auto var_1 = VAR(&spatial, bcs, variable_name, variable_type, level_of_storage, initial_condition);
+        ```
+
 
 ### __Optional parameters__ {#var_option}
 
