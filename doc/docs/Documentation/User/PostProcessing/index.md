@@ -73,14 +73,22 @@ The parameters allowed with `PostProcessing` for exporting specialized values in
  | `"iso_val_to_compute"` | `MapStringDouble` ||Map of isovalue for each variable. The key must match with the name of a `Variable`.|
  | `"integral_to_compute"` | `MapString2Double` ||Map of lower and upper bounds used to compute the average value of each variable. The key must match with the name of a `Variable`.|
  | `"enable_compute_energies"` | `bool` |true|Indicates if energies are calculated. |
+ | `"iterations_list_save_gf"` | `std::vector<int>` ||Iterations at which variables are saved as MFEM `GridFunction` files..|
 
 : Table 2 - parameters allowed with `PostProcessing` to save specialized values in the `time_specialized.csv` file.
+
+
+The `iterations_list_save_gf` parameter specifies the iterations at which variables are saved as MFEM `GridFunction` files.
+By default, the files are written to a directory named `GF`. This location can be customized using the `gf_folder_path` parameter (type `std::string`). 
+Each file follows the naming convention ` <variable_name>_<iteration>.gf.<MPI_rank>`. 
+For example,  `eta_2.gf.000010` corresponds to the variable `eta` saved at iteration `2` on MPI rank `10`.
+
 
 Isovalues are not stored in the `time_specialized.csv` file.
 Instead, the parameter `"iso_val_to_compute"` generates separate `CSV` files, one for each variable.
 
 !!! warning "On the dimension of `"iso_val_to_compute"` and `"integral_to_compute"` "
-    Parameters `"iso_val_to_compute"` and `"integral_to_compute"` must have exactly the dimension equalt to the  number of variables.
+    Parameters `"iso_val_to_compute"` and `"integral_to_compute"` must have exactly the dimension equal to the  number of variables.
 
 
 !!! warning "On the lower and upper bounds used with `"integral_to_compute"` "
