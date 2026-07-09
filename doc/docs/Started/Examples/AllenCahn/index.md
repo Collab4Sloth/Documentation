@@ -1,11 +1,10 @@
+# Allen-Cahn
 
-# Allen-Cahn 
+The following examples are used to verify the implementation of the Allen-Cahn equation in `SLOTH`:
 
-Verification of the Allen-Cahn equations is made with the following tests:
+- **Example 1:** Analytical steady-state solution ([documentation](example1/index.md))
+- **Example 2:** Homogeneous nucleation from a single seed ([documentation](example2/index.md))
+- **Example 3:** Evolution of a polycrystalline microstructure containing 30 and 102 grains ([documentation](example3/index.md))
 
-- Analytical steady solution (see [Example 1](example1/index.md))
-- Homogeneous nucleation (single seed) (see [Example 2](example2/index.md))
-- Time evolution of the polycrystalline microstructure composed of 30 and 102 grains (see [Example 3](example3/index.md))
-
-!!! info "Description of tests"
-    The list of tests is not exhaustive. Description of all tests will be completed over time.
+!!! info "Additional examples"
+    This list is not exhaustive. Additional examples and their documentation will be added as new verification cases become available.

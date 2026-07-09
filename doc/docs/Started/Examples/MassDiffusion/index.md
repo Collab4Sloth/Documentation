@@ -1,12 +1,8 @@
+# Mass Diffusion 
 
-# Mass Diffusion (_coming soon_)
+The following examples are used to verify the implementation of the mass diffusion equation in `SLOTH`:
 
+- **Example 1:** Nonlinear diffusion in a star-shaped domain ([documentation](example1/index.md))
 
-Verification of the diffusion equations is made with the following tests:
-
-- Nonlinear diffusion in a star (see [Example 1](example1/index.md))
-
-!!! info "Description of tests"
-    The list of tests is not exhaustive. Description of all tests will be completed over time.
-
-
+!!! info "Additional examples"
+    This list is not exhaustive. Additional examples and their documentation will be added as new verification cases become available.

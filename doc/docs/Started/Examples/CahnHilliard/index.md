@@ -1,10 +1,9 @@
-
 # Cahn-Hilliard
 
-Verification of the Cahn-Hilliard equations is made with the following tests:
+The following examples are used to verify the implementation of the Cahn-Hilliard equations in `SLOTH`:
 
-- Coalescence of two kissing bubbles (see [Example 1](example1/index.md))
-- Square bubble (see [Example 2](example2/index.md))
-- Spinodal decomposition (see [Example 3](example3/index.md))
-- Manufactured Cahn-Hilliard Solution (see [Example 4](example4/index.md))
-- Analytical steady solution (see [Example 5](example5/index.md))
+- **Example 1:** Coalescence of two kissing bubbles ([documentation](example1/index.md))
+- **Example 2:** Square bubble ([documentation](example2/index.md))
+- **Example 3:** Spinodal decomposition ([documentation](example3/index.md))
+- **Example 4:** Manufactured solution for the Cahn-Hilliard equation ([documentation](example4/index.md))
+- **Example 5:** Analytical steady-state solution ([documentation](example5/index.md))
