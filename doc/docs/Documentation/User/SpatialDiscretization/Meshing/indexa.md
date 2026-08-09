@@ -22,7 +22,7 @@ Without loss of generality, the alias `SPA` is used in this page in order to sim
     Every constructor below (except the [shared-mesh](#shared-mesh) one) accepts two optional, trailing boolean flags, always in this order:
 
     - `enable_nc_mesh` *(default `false`)* — builds the mesh in non-conforming mode. It **must** be set to `true` to later use [Adaptive Mesh Refinement (AMR)](../../AMR/index.md): a conforming mesh cannot be converted afterwards.
-    - `allow_nc_simplices` *(default `false`)* — additionally allows non-conforming refinement on **simplex** (triangle/tetrahedron) elements specifically. It has no effect on quadrilateral/hexahedral meshes, which natively support non-conforming refinement regardless of this flag. Its value is what `is_nc_simplices()` returns afterwards.
+    - `allow_nc_simplices` *(default `false`)* — additionally allows non-conforming refinement on triangle/tetrahedron elements specifically. It has no effect on quadrilateral/hexahedral meshes, which natively support non-conforming refinement regardless of this flag. Its value is what `is_nc_simplices()` returns afterwards.
 
     Both are illustrated as "With AMR" variants in the examples below. See the [AMR tutorial](../../../../Started/HowTo/Tutorials/AMR/index.md) for the complete workflow.
 
@@ -42,7 +42,7 @@ Defining a mesh from `GMSH` involves creating an object of type `SPA` with the f
 4. A string associated with the name of the `GMSH` mesh file,
 5. *(Optional, default `false`)* A boolean to indicate whether the imported mesh is periodic or not,
 6. *(Optional, default `false`)* `enable_nc_mesh` — builds the mesh in non-conforming mode, required to use [Adaptive Mesh Refinement (AMR)](../../AMR/index.md),
-7. *(Optional, default `false`)* `allow_nc_simplices` — allows non-conforming refinement on simplex elements specifically (no effect on quadrangle/hexahedron meshes).
+7. *(Optional, default `false`)* `allow_nc_simplices` — allows non-conforming refinement on triangle/tetrahedron elements specifically (no effect on quadrangle/hexahedron meshes).
 
 !!! example "Defining a mesh from `GMSH`"
 
@@ -92,7 +92,7 @@ Here again, defining a mesh involves creating an object of type `SPA` with the f
 4. A C++ object of type `std::tuple` to provide the number of elements and maximum length in each direction.
 5. *(Optional)* A C++ object of type `std::vector<mfem::Vector>` to provide translations to apply in each direction, if the final mesh is periodic. **This parameter must be entirely omitted for a non-periodic mesh** — it is not defaulted; a distinct, non-periodic constructor overload is used instead (see the tabs below).
 6. *(Optional, default `false`)* `enable_nc_mesh` — builds the mesh in non-conforming mode, required to use [Adaptive Mesh Refinement (AMR)](../../AMR/index.md).
-7. *(Optional, default `false`)* `allow_nc_simplices` — allows non-conforming refinement on simplex elements specifically (no effect on quadrangle/hexahedron meshes).
+7. *(Optional, default `false`)* `allow_nc_simplices` — allows non-conforming refinement on triangle/tetrahedron elements specifically (no effect on quadrangle/hexahedron meshes).
 
 !!! note "Parameter position without periodicity"
     When the mesh is **not** periodic, parameter 5 (translations) is simply absent: `enable_nc_mesh` and `allow_nc_simplices` directly follow `tuple_of_dimensions`, as shown in the "Without periodicity" tabs below.
@@ -206,7 +206,7 @@ In these examples, one considers a cubic domain with a side length of 1 mm. The 
 
         SPA spatial(mesh_type, order_fe, refinement_level, tuple_of_dimensions, enable_nc_mesh, allow_nc_simplices );
         ```
-        `allow_nc_simplices` is set here since tetrahedra are simplices — see the [AMR tutorial](../../../../Started/HowTo/Tutorials/AMR/index.md) for the complete workflow, including how to share this mesh across the other variables of the coupling.
+        `allow_nc_simplices` is set here since tetrahedra are used — see the [AMR tutorial](../../../../Started/HowTo/Tutorials/AMR/index.md) for the complete workflow, including how to share this mesh across the other variables of the coupling.
     
     === "With periodicity (without/with AMR)"
         ```c++
@@ -304,4 +304,4 @@ To read partitionned files, the pattern of the file name, ending explicitly with
     The number of processes must be equal to the number of files, otherwise reading will fail.
 
 !!! warning "AMR is not available on split GMSH meshes"
-    As noted [above](#gmsh), this construction path does not build a non-conforming mesh, regardless of `enable_nc_mesh` / `allow_nc_simplices`. AMR is therefore not usable on a mesh read this way.
+    As noted [above](#gmsh), this approach does not build a non-conforming mesh, regardless of `enable_nc_mesh` / `allow_nc_simplices`. AMR is therefore not usable on a mesh read this way.

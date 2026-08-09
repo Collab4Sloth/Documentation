@@ -22,6 +22,7 @@ This page focuses on the kernel of `SLOTH`, providing all the essential informat
 - [Multiphysics coupling scheme](MultiPhysicsCouplingScheme/index.md), including the `SLOTH`objects [TimeDiscretization](MultiPhysicsCouplingScheme/Time/index.md), [Coupling](MultiPhysicsCouplingScheme/Couplings/index.md), [Problems](MultiPhysicsCouplingScheme/Problems/index.md) and [Convergence](MultiPhysicsCouplingScheme/Convergence/index.md)
 - [Post-Processing](PostProcessing/index.md)
 - [Profiling](Profiling/index.md)
+- [Adaptive Mesh Refinement](AMR/index.md)
 
 !!! tip "On the use of tutorials"
     Development team recommend visiting the [tutorials page](../../Started/HowTo/Tutorials/index.md) to discover tips and tricks for specific `SLOTH` features

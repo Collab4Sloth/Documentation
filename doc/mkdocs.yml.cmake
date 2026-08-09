@@ -153,6 +153,7 @@ nav:
         - Documentation/User/MultiPhysicsCouplingScheme/Problems/Remainder/index.md
       - Documentation/User/MultiPhysicsCouplingScheme/Convergence/index.md
     - Documentation/User/PostProcessing/index.md
+    - Documentation/User/AMR/index.md
     - Documentation/User/Profiling/index.md
   - Modelling Description: 
     - Documentation/Physical/index.md
