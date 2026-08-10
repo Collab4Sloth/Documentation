@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2245,6 +2245,8 @@
       
         
       
+        
+      
     
     
     
@@ -2947,6 +2949,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../Documentation/User/AMR/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adaptive Mesh Refinement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../Documentation/User/Profiling/index.html" class="md-nav__link">
         
   
@@ -3447,10 +3477,12 @@
 <h3 id="files"><strong>Files</strong><a class="headerlink" href="#files" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Comprehensive test file: <a href="https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test2/main.cpp">main.cpp</a></li>
+<li>Comprehensive test file with Adaptive Mesh Refinement (AMR): <a href="https://github.com/Collab4Sloth/SLOTH/blob/master/tests/CahnHilliard/2D/test2/main_amr.cpp">main_amr.cpp</a></li>
 <li>Reference results for comparison: <a href="https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test2/ref/time_specialized.csv">time_specialized.csv</a></li>
 </ul>
 <h3 id="statement-of-the-problem"><strong>Statement of the problem</strong><a class="headerlink" href="#statement-of-the-problem" title="Permanent link">&para;</a></h3>
-<p>This test corresponds to the 2D simulation of spinodal decomposition proposed on <a href="https://pages.nist.gov/pfhub/benchmarks/benchmark1.ipynb/">PFhub</a></p>
+<p>This test corresponds to the 2D simulation of spinodal decomposition proposed on <a href="https://pages.nist.gov/pfhub/benchmarks/benchmark1.ipynb/">PFhub</a>. 
+For a version of the test using AMR, see the <a href="../../../HowTo/Tutorials/AMR/index.html">dedicated tutorial</a>.</p>
 <p>The domain <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">\Omega</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Ω</span></span></span></span> is a square <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mn>200</mn><mo stretchy="false">]</mo><mo>×</mo><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mn>200</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0,200]\times[0,200]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">200</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">200</span><span class="mclose">]</span></span></span></span></p>
 <p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right left" columnspacing="0em"><mtr><mtd class ="mtr-glue"></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>ϕ</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>t</mi></mrow></mfrac></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi>M</mi><mi mathvariant="normal">Δ</mi><mi>μ</mi><mtext> in </mtext><mi mathvariant="normal">Ω</mi></mrow></mstyle></mtd><mtd class ="mtr-glue"></mtd><mtd class ="mml-eqn-num"></mtd></mtr><mtr><mtd class ="mtr-glue"></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mi>μ</mi></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><msup><mi>F</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>ϕ</mi><mo stretchy="false">)</mo><mo>−</mo><mi>λ</mi><mi mathvariant="normal">Δ</mi><mi>ϕ</mi><mtext> in </mtext><mi mathvariant="normal">Ω</mi></mrow></mstyle></mtd><mtd class ="mtr-glue"></mtd><mtd class ="mml-eqn-num"></mtd></mtr></mtable><annotation encoding="application/x-tex">
 
@@ -3617,7 +3649,7 @@ F(\phi)&amp;=\omega(\phi - 0.3)^2 (0.7 - \phi)^2.
       <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.top", "navigation.instant", "navigation.tracking", "content.tabs.link", "content.code.copy", "content.code.select"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../../javascripts/katex.js"></script>
       

@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2236,6 +2236,8 @@
       
         
       
+        
+      
     
     
     
@@ -2947,6 +2949,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../AMR/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adaptive Mesh Refinement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../Profiling/index.html" class="md-nav__link">
         
   
@@ -3399,6 +3429,34 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Problems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#axi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to perform simulations on axisymmetric geometries?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to use Adaptive Mesh Refinement (AMR)?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3931,7 +3989,7 @@ The <code>OPERATOR</code> object, denoted by <code>phasefield_ope</code>, is wel
 </span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="n">Coefficients</span><span class="w"> </span><span class="nf">coef_phase_field</span><span class="p">(</span><span class="n">double_well</span><span class="p">,</span><span class="w"> </span><span class="n">capillary</span><span class="p">,</span><span class="w"> </span><span class="n">mobility</span><span class="p">,</span><span class="w"> </span><span class="n">grad_energy</span><span class="p">);</span>
 </span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>
 </span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="c1">// Problem (pst is PostProcessing object not detailed here)</span>
-</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="n">PDE</span><span class="w"> </span><span class="nf">phase_filed_pb</span><span class="p">(</span><span class="n">phasefield_ope</span><span class="p">,</span><span class="w"> </span><span class="n">vars</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">coef_phase_field</span><span class="p">,</span><span class="w"> </span><span class="n">coef_phase_field</span><span class="p">},</span><span class="w"> </span><span class="n">pst</span><span class="p">);</span>
+</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="n">PDE</span><span class="w"> </span><span class="nf">phase_field_pb</span><span class="p">(</span><span class="n">phasefield_ope</span><span class="p">,</span><span class="w"> </span><span class="n">vars</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">coef_phase_field</span><span class="p">,</span><span class="w"> </span><span class="n">coef_phase_field</span><span class="p">},</span><span class="w"> </span><span class="n">pst</span><span class="p">);</span>
 </span></code></pre></div>
 <p>This example assume an two-phase problem solved by Cahn-Hilliard equations with two unknowns (<code>phi</code> and <code>mu</code>). </p>
 <p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mrow><mo fence="true">(</mo><mtable rowspacing="0.16em" columnalign="center" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>φ</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>t</mi></mrow></mfrac></mstyle></mstyle></mtd></mtr></mtable><mo fence="true">)</mo></mrow><mo>=</mo><mrow><mo fence="true">(</mo><mtable rowspacing="0.16em" columnalign="center" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>μ</mi><mo>−</mo><mi mathvariant="normal">∇</mi><mo>⋅</mo><mrow><mo fence="true">(</mo><mi>λ</mi><mi mathvariant="normal">∇</mi><mi>φ</mi><mo fence="true">)</mo></mrow><mo>+</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>F</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>φ</mi></mrow></mfrac></mstyle></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi mathvariant="normal">∇</mi><mo>⋅</mo><mrow><mo fence="true">(</mo><mi>M</mi><mi mathvariant="normal">∇</mi><mi>μ</mi><mo fence="true">)</mo></mrow></mrow></mstyle></mtd></mtr></mtable><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">
@@ -3958,17 +4016,39 @@ The <code>OPERATOR</code> object, denoted by <code>phasefield_ope</code>, is wel
 As expected by this integrator, coefficients of type <code>Glossary::FreeEnergy</code>, <code>Glossary::Capillary</code> and <code>Glossary::Mobility</code> are defined. The coefficient of type <code>Glossary::GradEnergy</code> is only used to compute the gradient terms in the output of the density of energy. </p>
 <p>This example has no parameters or auxiliary variables.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Axisymmetric geometry support</p>
+<h4 id="axi"><strong>How to perform simulations on axisymmetric geometries?</strong><a class="headerlink" href="#axi" title="Permanent link">&para;</a></h4>
 <p>To enable simulations on axisymmetric geometries, the current definition of the <code>Problem</code> class needs to be enhanced. The proposed modification is as follows:</p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">    </span><span class="n">PDE</span><span class="w"> </span><span class="nf">phase_filed_pb</span><span class="p">(</span><span class="n">phasefield_ope</span><span class="p">,</span><span class="w"> </span><span class="n">vars</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">coef_phase_field</span><span class="p">,</span><span class="w"> </span><span class="n">coef_phase_field</span><span class="p">},</span><span class="w"> </span><span class="n">pst</span><span class="p">);</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="n">phase_filed_pb</span><span class="p">.</span><span class="n">setGeometry</span><span class="p">(</span><span class="n">Geometry</span><span class="o">::</span><span class="n">Axisymmetric</span><span class="p">);</span>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">    </span><span class="n">PDE</span><span class="w"> </span><span class="nf">phase_field_pb</span><span class="p">(</span><span class="n">phasefield_ope</span><span class="p">,</span><span class="w"> </span><span class="n">vars</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">coef_phase_field</span><span class="p">,</span><span class="w"> </span><span class="n">coef_phase_field</span><span class="p">},</span><span class="w"> </span><span class="n">pst</span><span class="p">);</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="n">phase_field_pb</span><span class="p">.</span><span class="n">setGeometry</span><span class="p">(</span><span class="n">Geometry</span><span class="o">::</span><span class="n">Axisymmetric</span><span class="p">);</span>
 </span></code></pre></div>
 <p>By default, the geometry will be set to <code>Geometry::Cartesian</code> if no specific geometry is defined.</p>
-</div>
 <div class="admonition warning">
 <p class="admonition-title">Defining source terms on axisymmetric geometries</p>
 <p>When defining a source term on an <a href="#operators"><code>Operator</code></a>, ensure that it is multiplied by the radius. This multiplication is automatically handled by all integrators. However, source terms defined in the input datafile will not be automatically adjusted and must be manually multiplied by the radius.</p>
+</div>
+<h4 id="amr"><strong>How to use Adaptive Mesh Refinement (AMR)?</strong><a class="headerlink" href="#amr" title="Permanent link">&para;</a></h4>
+<p>Once a <code>Problem</code> is fully defined, an AMR driver can be attached to it so that <code>SLOTH</code> locally refines/coarsens the mesh — and every finite element space and variable (primary + auxiliary) built on it — as the simulation progresses. This assumes the <a href="../../../SpatialDiscretization/Meshing/index.html">spatial discretization</a> used by the problem was built with <code>enable_nc_mesh = true</code>.</p>
+<div class="admonition example">
+<p class="admonition-title">Attaching AMR to the Cahn-Hilliard problem defined above</p>
+<p><div class="language-c++ highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="w">    </span><span class="n">mfem</span><span class="o">::</span><span class="n">ConstantCoefficient</span><span class="w"> </span><span class="n">amr_coef</span><span class="p">{</span><span class="mf">1.0</span><span class="p">};</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="n">mfem</span><span class="o">::</span><span class="n">DiffusionIntegrator</span><span class="w"> </span><span class="n">amr_integ</span><span class="p">{</span><span class="n">amr_coef</span><span class="p">};</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="n">SlothErrorEstimators</span><span class="w"> </span><span class="nf">estimator</span><span class="p">(</span><span class="n">ErrorEstimatorType</span><span class="o">::</span><span class="n">KELLY</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amr_integ</span><span class="p">);</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="n">SingleVariableAMR</span><span class="o">&lt;</span><span class="n">VARS</span><span class="o">&gt;</span><span class="w"> </span><span class="n">amr</span><span class="p">(</span><span class="o">*</span><span class="n">spatial</span><span class="p">.</span><span class="n">get_mesh</span><span class="p">(),</span><span class="w"> </span><span class="n">spatial</span><span class="p">.</span><span class="n">is_nc_simplices</span><span class="p">(),</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="n">amr</span><span class="p">.</span><span class="n">SetCriteria</span><span class="p">(</span><span class="cm">/*estimator*/</span><span class="w"> </span><span class="o">&amp;</span><span class="n">estimator</span><span class="p">,</span><span class="w"> </span><span class="cm">/*max_elem_error*/</span><span class="w"> </span><span class="mf">1e-4</span><span class="p">,</span><span class="w"> </span><span class="cm">/*amr_max_level*/</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">                    </span><span class="cm">/*nc_limit*/</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="cm">/*max_preref_cycles*/</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">    </span><span class="n">phase_field_pb</span><span class="p">.</span><span class="n">set_amr</span><span class="p">(</span><span class="o">&amp;</span><span class="n">amr</span><span class="p">);</span>
+</span></code></pre></div>
+An error estimator is first built from an <code>MFEM</code> integrator and wrapped into a <code>SlothErrorEstimators</code> object, then used to configure a <code>SingleVariableAMR</code> driver — here based on <code>phi</code> (index <code>0</code> in <code>vars</code>). The driver is finally attached to the problem with <code>set_amr()</code>, exactly as <code>setGeometry()</code> is used above for axisymmetric geometries.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Full AMR workflow</p>
+<p>This page only shows how to attach an already-configured AMR driver to a <code>Problem</code>. </p>
+<ul>
+<li>For the complete step-by-step workflow, see the <a href="../../../../../Started/HowTo/Tutorials/AMR/index.html">AMR tutorial</a>;</li>
+<li>For the full reference on error estimators (<code>ErrorEstimatorType::KELLY</code>, <code>ErrorEstimatorType::ZZ</code>) and AMR drivers (<code>SingleVariableAMR</code>, <code>MultiVariableMaxAMR</code>), see the <a href="../../../AMR/index.html">Adaptive Mesh Refinement</a> page of the User Manual.</li>
+</ul>
 </div>
 <div class="footnote">
 <hr />
@@ -4042,7 +4122,7 @@ As expected by this integrator, coefficients of type <code>Glossary::FreeEnergy<
       <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.top", "navigation.instant", "navigation.tracking", "content.tabs.link", "content.code.copy", "content.code.select"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../../../../javascripts/katex.js"></script>
       
