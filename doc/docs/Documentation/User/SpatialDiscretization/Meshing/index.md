@@ -70,8 +70,8 @@ Defining a mesh from `GMSH` involves creating an object of type `SPA` with the f
         ```
         Setting `enable_nc_mesh` to `true` builds the mesh in non-conforming mode, a prerequisite for attaching an AMR driver to the problem. `allow_nc_simplices` only matters for triangle/tetrahedron meshes. See the [AMR tutorial](../../../../Started/HowTo/Tutorials/AMR/index.md) for the complete workflow.
 
-!!! warning "AMR is not available on split GMSH meshes"
-    Meshes read from pre-partitioned `GMSH` files (see [GMSH Split Meshes](#gmsh-split-meshes) below) are **not** converted to non-conforming mode, regardless of `enable_nc_mesh` / `allow_nc_simplices`. AMR is therefore currently not usable on a mesh built this way.
+!!! warning "AMR on split GMSH meshes"
+    To use AMR on meshes read from pre-partitioned `GMSH` files (see [GMSH Split Meshes](#gmsh-split-meshes) below), they must be converted to non-conforming mode, regardless of `enable_nc_mesh` / `allow_nc_simplices`.
 
 ## __Build a mesh from `MFEM` meshing functionalities__ {#mfem}
 
@@ -304,4 +304,4 @@ To read partitionned files, the pattern of the file name, ending explicitly with
     The number of processes must be equal to the number of files, otherwise reading will fail.
 
 !!! warning "AMR is not available on split GMSH meshes"
-    As noted [above](#gmsh), this construction path does not build a non-conforming mesh, regardless of `enable_nc_mesh` / `allow_nc_simplices`. AMR is therefore not usable on a mesh read this way.
+    As noted [above](#gmsh), to use AMR on meshes read from pre-partitioned `GMSH` files, they must be converted to non-conforming mode, regardless of `enable_nc_mesh` / `allow_nc_simplices`.
