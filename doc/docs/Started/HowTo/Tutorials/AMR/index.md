@@ -62,7 +62,7 @@ SlothErrorEstimators estimator(ErrorEstimatorType::KELLY, &amr_integ);
 
 !!! note "Available error estimators"
 
-    `SLOTH` currently provides two error estimators: `ErrorEstimatorType::KELLY` (shown above) and `ErrorEstimatorType::L2_ZIENKIEWICZ_ZHU` (Zienkiewicz–Zhu). More estimators may be added in the future. See the [Adaptive Mesh Refinement](../../../../Documentation/User/AMR/index.md) page of the User Manual for a complete description of each estimator and how to configure it.
+    `SLOTH` currently provides two error estimators built on top of `MFEM`: `ErrorEstimatorType::KELLY` (shown above) and `ErrorEstimatorType::L2_ZIENKIEWICZ_ZHU` (Zienkiewicz–Zhu). More estimators may be added in the future. See the [Adaptive Mesh Refinement](../../../../Documentation/User/AMR/index.md) page of the User Manual for a complete description of each estimator and how to configure it.
 
 ## 3. Configuring the AMR Driver
 
@@ -120,3 +120,11 @@ Enabling AMR on a `SLOTH` simulation consists of:
 A complete working example is available in the SLOTH repository:
 
 - **2D spinodal decomposition (Cahn-Hilliard) with AMR:** <https://github.com/Collab4Sloth/SLOTH/blob/master/tests/CahnHilliard/2D/test2/main_amr.cpp>
+
+The figure 1 shows the evolution of the spinodal decomposition with AMR (until a final simulation time set to $`50000`$). 
+
+<figure markdown="span">
+    ![AMRSpinodalDecomposition](img/amr_spinodal.gif){width=400px}
+    <figcaption>Figure 1 : spinodal decomposition with AMR
+    </figcaption>
+</figure>

@@ -5,13 +5,15 @@
 ### __Files__ 
 
 - Comprehensive test file: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test2/main.cpp)
+- Comprehensive test file with Adaptive Mesh Refinement (AMR): [main_amr.cpp](https://github.com/Collab4Sloth/SLOTH/blob/master/tests/CahnHilliard/2D/test2/main_amr.cpp)
 - Reference results for comparison: [time_specialized.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test2/ref/time_specialized.csv)
 
 
 
 ### __Statement of the problem__ 
 
-This test corresponds to the 2D simulation of spinodal decomposition proposed on [PFhub](https://pages.nist.gov/pfhub/benchmarks/benchmark1.ipynb/)
+This test corresponds to the 2D simulation of spinodal decomposition proposed on [PFhub](https://pages.nist.gov/pfhub/benchmarks/benchmark1.ipynb/). 
+For a version of the test using AMR, see the [dedicated tutorial](../../../../Started/HowTo/Tutorials/AMR/index.md).
 
 The domain $`\Omega`$ is a square $`[0,200]\times[0,200]`$
 
