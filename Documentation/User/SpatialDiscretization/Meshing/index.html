@@ -3730,8 +3730,8 @@ Setting <code>enable_nc_mesh</code> to <code>true</code> builds the mesh in non-
 </div>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">AMR is not available on split GMSH meshes</p>
-<p>Meshes read from pre-partitioned <code>GMSH</code> files (see <a href="#gmsh-split-meshes">GMSH Split Meshes</a> below) are <strong>not</strong> converted to non-conforming mode, regardless of <code>enable_nc_mesh</code> / <code>allow_nc_simplices</code>. AMR is therefore currently not usable on a mesh built this way.</p>
+<p class="admonition-title">AMR on split GMSH meshes</p>
+<p>To use AMR on meshes read from pre-partitioned <code>GMSH</code> files (see <a href="#gmsh-split-meshes">GMSH Split Meshes</a> below), they must be converted to non-conforming mode, regardless of <code>enable_nc_mesh</code> / <code>allow_nc_simplices</code>.</p>
 </div>
 <h2 id="mfem"><strong>Build a mesh from <code>MFEM</code> meshing functionalities</strong><a class="headerlink" href="#mfem" title="Permanent link">&para;</a></h2>
 <p><code>SLOTH</code> can build a mesh using the meshing functionalities provided by <code>MFEM</code>.</p>
@@ -3939,7 +3939,7 @@ Note that, with periodicity, the translations vector is a mandatory 5th argument
 </div>
 <div class="admonition warning">
 <p class="admonition-title">AMR is not available on split GMSH meshes</p>
-<p>As noted <a href="#gmsh">above</a>, this construction path does not build a non-conforming mesh, regardless of <code>enable_nc_mesh</code> / <code>allow_nc_simplices</code>. AMR is therefore not usable on a mesh read this way.</p>
+<p>As noted <a href="#gmsh">above</a>, to use AMR on meshes read from pre-partitioned <code>GMSH</code> files, they must be converted to non-conforming mode, regardless of <code>enable_nc_mesh</code> / <code>allow_nc_simplices</code>.</p>
 </div>
 
 
