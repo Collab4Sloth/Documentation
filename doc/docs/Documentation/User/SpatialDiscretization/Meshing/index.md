@@ -22,7 +22,7 @@ Without loss of generality, the alias `SPA` is used in this page in order to sim
     Every constructor below (except the [shared-mesh](#shared-mesh) one) accepts two optional, trailing boolean flags, always in this order:
 
     - `enable_nc_mesh` *(default `false`)* — builds the mesh in non-conforming mode. It **must** be set to `true` to later use [Adaptive Mesh Refinement (AMR)](../../AMR/index.md): a conforming mesh cannot be converted afterwards.
-    - `allow_nc_simplices` *(default `false`)* — additionally allows non-conforming refinement on **simplex** (triangle/tetrahedron) elements specifically. It has no effect on quadrilateral/hexahedral meshes, which natively support non-conforming refinement regardless of this flag. Its value is what `is_nc_simplices()` returns afterwards.
+    - `allow_nc_simplices` *(default `false`)* — additionally allows non-conforming refinement on **triangle/tetrahedron** elements specifically. It has no effect on quadrilateral/hexahedral meshes, which natively support non-conforming refinement regardless of this flag. Its value is what `is_nc_simplices()` returns afterwards.
 
     Both are illustrated as "With AMR" variants in the examples below. See the [AMR tutorial](../../../../Started/HowTo/Tutorials/AMR/index.md) for the complete workflow.
 
@@ -260,8 +260,8 @@ This constructor is useful in two situations:
 !!! warning "Requirement for AMR"
     When the shared mesh is meant to be refined with AMR, it must first be built in non-conforming mode (see the `enable_nc_mesh` / `allow_nc_simplices` arguments in the [GMSH](#gmsh) and [MFEM](#mfem) sections above). These flags do not need to be passed again when building `spatial_mu`: this lighter constructor doesn't take them, since non-conforming support is a property of the shared mesh itself.
 
-!!! warning "Mesh ownership"
-    An `SPA` object built this way does **not** take ownership of the mesh: it will never delete it. The `SPA` object that originally created the mesh (`spatial_phi` here) must therefore outlive every `SPA` object built from it.
+<!-- !!! warning "Mesh ownership"
+    An `SPA` object built this way does **not** take ownership of the mesh: it will never delete it. The `SPA` object that originally created the mesh (`spatial_phi` here) must therefore outlive every `SPA` object built from it. -->
 
 ## __GMSH Split Meshes__ {#gmsh-split-meshes}
 
