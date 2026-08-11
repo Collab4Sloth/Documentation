@@ -5,7 +5,7 @@
 ### __Files__ 
 
 - Comprehensive test file: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test2/main.cpp)
-- Comprehensive test file with Adaptive Mesh Refinement (AMR): [main_amr.cpp](https://github.com/Collab4Sloth/SLOTH/blob/master/tests/CahnHilliard/2D/test2/main_amr.cpp)
+- Comprehensive test file with Adaptive Mesh Refinement (AMR): [main_amr.cpp](https://github.com/Collab4Sloth/SLOTH/blob/master/tests/CahnHilliard/2D/test2_amr/main.cpp)
 - Reference results for comparison: [time_specialized.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test2/ref/time_specialized.csv)
 
 

@@ -119,7 +119,7 @@ Enabling AMR on a `SLOTH` simulation consists of:
 
 A complete working example is available in the SLOTH repository:
 
-- **2D spinodal decomposition (Cahn-Hilliard) with AMR:** <https://github.com/Collab4Sloth/SLOTH/blob/master/tests/CahnHilliard/2D/test2/main_amr.cpp>
+- **2D spinodal decomposition (Cahn-Hilliard) with AMR:** <https://github.com/Collab4Sloth/SLOTH/blob/master/tests/CahnHilliard/2D/test2_amr/main.cpp>
 
 The figure 1 shows the evolution of the spinodal decomposition with AMR (until a final simulation time set to $`50000`$). 
 
