@@ -3585,7 +3585,11 @@
 <p>This page describes how to define error estimator objects and use them to perform <code>SLOTH</code> simulations with adaptive mesh refinement (AMR).</p>
 <div class="admonition note">
 <p class="admonition-title">Prerequisite</p>
-<p>AMR requires the mesh to be built in non-conforming mode first, via the <code>enable_nc_mesh</code> / <code>allow_nc_simplices</code> arguments of the <code>SpatialDiscretization</code> constructors — see the <a href="../SpatialDiscretization/Meshing/index.html">Meshing</a> page. For a complete, step-by-step worked example, see the <a href="../../../Started/HowTo/Tutorials/AMR/index.html">AMR tutorial</a>.</p>
+<ul>
+<li>AMR requires the mesh to be built in non-conforming mode first, via the <code>enable_nc_mesh</code> / <code>allow_nc_simplices</code> arguments of the <code>SpatialDiscretization</code> constructors - see the <a href="../SpatialDiscretization/Meshing/index.html">Meshing</a> page. </li>
+<li>For more details about non-conforming mesh and AMR, see the <a href="https://mfem.org/howto/ncmesh/">dedicated page on the MFEM website</a>.</li>
+<li>For a complete, step-by-step worked example, see the <a href="../../../Started/HowTo/Tutorials/AMR/index.html">AMR tutorial</a>.</li>
+</ul>
 </div>
 <h2 id="error-estimators"><strong>Error Estimators</strong><a class="headerlink" href="#error-estimators" title="Permanent link">&para;</a></h2>
 <p>Refinement decisions are driven by an error estimator, wrapped into a <code>SlothErrorEstimators</code> object. It is built once from an <code>ErrorEstimatorType</code> value and, for the types currently available, a pointer to an <code>MFEM</code> bilinear form integrator:</p>
@@ -3608,13 +3612,13 @@
 <tbody>
 <tr>
 <td><code>KELLY</code></td>
-<td><code>mfem::KellyErrorEstimator</code></td>
+<td><a href="https://docs.mfem.org/html/classmfem_1_1KellyErrorEstimator.html#details"><code>mfem::KellyErrorEstimator</code></a></td>
 <td>One <code>L2</code> flux space, matching the variable's order and the mesh dimension.</td>
 </tr>
 <tr>
 <td><code>L2_ZIENKIEWICZ_ZHU</code></td>
-<td><code>mfem::L2ZienkiewiczZhuEstimator</code></td>
-<td>An <code>L2</code> flux space, plus a smoothed <code>RT</code> (Raviart-Thomas) flux space of order <code>p-1</code>.</td>
+<td><a href="https://docs.mfem.org/html/classmfem_1_1L2ZienkiewiczZhuEstimator.html"><code>mfem::L2ZienkiewiczZhuEstimator</code></a></td>
+<td>An <code>L2</code> flux space, plus a smoothed flux space.</td>
 </tr>
 </tbody>
 </table>
@@ -3658,7 +3662,7 @@
 <tr>
 <td><code>amr_max_level</code></td>
 <td><code>int</code></td>
-<td>Maximum refinement depth allowed for any element. Since each refinement pass only refines an element once, this prevents an element from being refined indefinitely, one extra level per time step, with no upper bound. <code>0</code> (default) means no limit.</td>
+<td>Maximum refinement depth allowed for any element. Since each refinement pass only refines an element once, this prevents an element from being refined indefinitely, one extra level per time step, with no upper bound. <code>0</code> (default) or negative means no limit.</td>
 </tr>
 <tr>
 <td><code>nc_limit</code></td>
@@ -3668,7 +3672,7 @@
 <tr>
 <td><code>max_preref_cycles</code></td>
 <td><code>int</code></td>
-<td>Maximum number of refinement cycles applied to the <strong>initial condition</strong>, before the time-stepping loop starts (see <code>InitialRefine()</code> below).</td>
+<td>Maximum number of refinement cycles applied to the <strong>initial condition</strong>, before the time-stepping loop starts (see <code>InitialRefine()</code> below).  Must be strictly positive to enable refinement cycles.</td>
 </tr>
 </tbody>
 </table>
