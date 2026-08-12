@@ -3,7 +3,9 @@
 This page describes how to define error estimator objects and use them to perform `SLOTH` simulations with adaptive mesh refinement (AMR).
 
 !!! note "Prerequisite"
-    AMR requires the mesh to be built in non-conforming mode first, via the `enable_nc_mesh` / `allow_nc_simplices` arguments of the `SpatialDiscretization` constructors — see the [Meshing](../SpatialDiscretization/Meshing/index.md) page. For a complete, step-by-step worked example, see the [AMR tutorial](../../../Started/HowTo/Tutorials/AMR/index.md).
+    - AMR requires the mesh to be built in non-conforming mode first, via the `enable_nc_mesh` / `allow_nc_simplices` arguments of the `SpatialDiscretization` constructors - see the [Meshing](../SpatialDiscretization/Meshing/index.md) page. 
+    - For more details about non-conforming mesh and AMR, see the [dedicated page on the MFEM website](https://mfem.org/howto/ncmesh/).
+    - For a complete, step-by-step worked example, see the [AMR tutorial](../../../Started/HowTo/Tutorials/AMR/index.md).
 
 ## __Error Estimators__ {#error-estimators}
 
@@ -20,8 +22,8 @@ Refinement decisions are driven by an error estimator, wrapped into a `SlothErro
 
 | `ErrorEstimatorType` | Underlying `MFEM` estimator | Flux space(s) built internally |
 |---|---|---|
-| `KELLY` | `mfem::KellyErrorEstimator` | One `L2` flux space, matching the variable's order and the mesh dimension. |
-| `L2_ZIENKIEWICZ_ZHU` | `mfem::L2ZienkiewiczZhuEstimator` | An `L2` flux space, plus a smoothed `RT` (Raviart-Thomas) flux space of order `p-1`. |
+| `KELLY` | [`mfem::KellyErrorEstimator`](https://docs.mfem.org/html/classmfem_1_1KellyErrorEstimator.html#details) | One `L2` flux space, matching the variable's order and the mesh dimension. |
+| `L2_ZIENKIEWICZ_ZHU` | [`mfem::L2ZienkiewiczZhuEstimator`](https://docs.mfem.org/html/classmfem_1_1L2ZienkiewiczZhuEstimator.html) | An `L2` flux space, plus a smoothed flux space. |
 
 Both types currently require a `BilinearFormIntegrator` (an `mfem::DiffusionIntegrator` is used throughout the [AMR tutorial](../../../Started/HowTo/Tutorials/AMR/index.md)); `SlothErrorEstimators` also has a single-argument constructor, `SlothErrorEstimators(ErrorEstimatorType value)`, reserved for future estimator types that would not need one — it is not usable with `KELLY` or `L2_ZIENKIEWICZ_ZHU` today.
 
@@ -53,9 +55,9 @@ amr.SetCriteria(/*estimator*/ &estimator, /*max_elem_error*/ 1e-4, /*amr_max_lev
 |---|---|---|
 | `estimator` | `SlothErrorEstimators*` | The error estimator defined [above](#error-estimators). |
 | `max_elem_error` | `double` | Local error threshold above which an element is marked for refinement. The derefinement threshold is derived internally as `0.25 * max_elem_error`, so that derefinement is more conservative than refinement (hysteresis, avoiding oscillating refine/derefine cycles on the same elements, as demonstrated in the [MFEM's example 15](https://github.com/mfem/mfem/blob/master/examples/ex15.cpp)). |
-| `amr_max_level` | `int` | Maximum refinement depth allowed for any element. Since each refinement pass only refines an element once, this prevents an element from being refined indefinitely, one extra level per time step, with no upper bound. `0` (default) means no limit. |
+| `amr_max_level` | `int` | Maximum refinement depth allowed for any element. Since each refinement pass only refines an element once, this prevents an element from being refined indefinitely, one extra level per time step, with no upper bound. `0` (default) or negative means no limit. |
 | `nc_limit` | `int` | Maximum allowed refinement-level difference between neighboring elements. `0` means unlimited. |
-| `max_preref_cycles` | `int` | Maximum number of refinement cycles applied to the **initial condition**, before the time-stepping loop starts (see `InitialRefine()` below). |
+| `max_preref_cycles` | `int` | Maximum number of refinement cycles applied to the **initial condition**, before the time-stepping loop starts (see `InitialRefine()` below).  Must be strictly positive to enable refinement cycles.|
 
 !!! warning "Calling `SetCriteria` is mandatory"
     Every refinement/derefinement attempt starts by verifying that `SetCriteria()` was already called; `SLOTH` aborts with a clear error message otherwise.
