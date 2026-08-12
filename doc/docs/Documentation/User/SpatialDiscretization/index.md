@@ -4,7 +4,7 @@
 
 On this page, the users can find instructions 
 
-- for [building a finite element mesh](Meshing/index.md) on the basis of [MFEM features](https://mfem.org/features/),
+- for [building a finite element mesh](Meshing/index.md) on the basis of [MFEM features](https://mfem.org/features/), 
 - for [prescribing boundary conditions](BoundaryConditions/index.md). 
 
 !!! info "On the future use of `MEROPE` to generate microstructure meshes"

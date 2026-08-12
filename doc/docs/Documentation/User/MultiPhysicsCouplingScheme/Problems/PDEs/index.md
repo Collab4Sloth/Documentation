@@ -487,7 +487,7 @@ The `PDE` problem must be defined by:
     Coefficients coef_phase_field(double_well, capillary, mobility, grad_energy);
 
     // Problem (pst is PostProcessing object not detailed here)
-    PDE phase_filed_pb(phasefield_ope, vars, {coef_phase_field, coef_phase_field}, pst);
+    PDE phase_field_pb(phasefield_ope, vars, {coef_phase_field, coef_phase_field}, pst);
 
     ```
 
@@ -521,19 +521,18 @@ The `PDE` problem must be defined by:
 
     This example has no parameters or auxiliary variables.
 
+#### __How to perform simulations on axisymmetric geometries?__ {#axi}
+    
+To enable simulations on axisymmetric geometries, the current definition of the `Problem` class needs to be enhanced. The proposed modification is as follows:
 
-!!! note "Axisymmetric geometry support"
-        
-    To enable simulations on axisymmetric geometries, the current definition of the `Problem` class needs to be enhanced. The proposed modification is as follows:
+```c++
 
-    ```c++
+    PDE phase_field_pb(phasefield_ope, vars, {coef_phase_field, coef_phase_field}, pst);
+    phase_field_pb.setGeometry(Geometry::Axisymmetric);
 
-        PDE phase_filed_pb(phasefield_ope, vars, {coef_phase_field, coef_phase_field}, pst);
-        phase_filed_pb.setGeometry(Geometry::Axisymmetric);
+```
 
-    ```
-
-    By default, the geometry will be set to `Geometry::Cartesian` if no specific geometry is defined.
+By default, the geometry will be set to `Geometry::Cartesian` if no specific geometry is defined.
 
 
 !!! warning "Defining source terms on axisymmetric geometries"
@@ -541,3 +540,26 @@ The `PDE` problem must be defined by:
     When defining a source term on an [`Operator`](#operators), ensure that it is multiplied by the radius. This multiplication is automatically handled by all integrators. However, source terms defined in the input datafile will not be automatically adjusted and must be manually multiplied by the radius.
 
 
+#### __How to use Adaptive Mesh Refinement (AMR)?__ {#amr}
+ 
+Once a `Problem` is fully defined, an AMR driver can be attached to it so that `SLOTH` locally refines/coarsens the mesh — and every finite element space and variable (primary + auxiliary) built on it — as the simulation progresses. This assumes the [spatial discretization](../../../SpatialDiscretization/Meshing/index.md) used by the problem was built with `enable_nc_mesh = true`.
+ 
+!!! example "Attaching AMR to the Cahn-Hilliard problem defined above"
+    ```c++
+        mfem::ConstantCoefficient amr_coef{1.0};
+        mfem::DiffusionIntegrator amr_integ{amr_coef};
+        SlothErrorEstimators estimator(ErrorEstimatorType::KELLY, &amr_integ);
+    
+        SingleVariableAMR<VARS> amr(*spatial.get_mesh(), spatial.is_nc_simplices(), 0);
+        amr.SetCriteria(/*estimator*/ &estimator, /*max_elem_error*/ 1e-4, /*amr_max_level*/ 4,
+                        /*nc_limit*/ 0, /*max_preref_cycles*/ 4);
+    
+        phase_field_pb.set_amr(&amr);
+    ```
+    An error estimator is first built from an `MFEM` integrator and wrapped into a `SlothErrorEstimators` object, then used to configure a `SingleVariableAMR` driver — here based on `phi` (index `0` in `vars`). The driver is finally attached to the problem with `set_amr()`, exactly as `setGeometry()` is used above for axisymmetric geometries.
+ 
+!!! note "Full AMR workflow"
+    This page only shows how to attach an already-configured AMR driver to a `Problem`. 
+
+    - For the complete step-by-step workflow, see the [AMR tutorial](../../../../../Started/HowTo/Tutorials/AMR/index.md);
+    - For the full reference on error estimators (`ErrorEstimatorType::KELLY`, `ErrorEstimatorType::ZZ`) and AMR drivers (`SingleVariableAMR`, `MultiVariableMaxAMR`), see the [Adaptive Mesh Refinement](../../../AMR/index.md) page of the User Manual.
