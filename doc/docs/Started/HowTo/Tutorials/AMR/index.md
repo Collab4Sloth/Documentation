@@ -87,11 +87,13 @@ Its arguments are:
 ### Step 2 – Set the refinement criteria
 
 ```cpp
-amr.SetCriteria(/*estimator*/ &estimator, /*max_elem_error*/ 1e-4, /*amr_max_level*/ 4,
-                /*nc_limit*/ 0, /*max_preref_cycles*/ 4);
+
+auto amr_params = Parameters(Parameter("max_elem_error", 1.e-4), Parameter("amr_max_level", 4),
+                               Parameter("nc_limit", 0), Parameter("max_preref_cycles", 4));
+amr.SetCriteria(/*estimator*/ &estimator, amr_params);
 ```
 
-| Argument | Type | Description |
+| Argument/Parameter | Type | Description |
 |---|---|---|
 | `estimator` | `SlothErrorEstimators*` | The error estimator defined in [Section 2](#2-defining-an-error-estimator). |
 | `max_elem_error` | `double` | Error threshold above which an element is flagged for refinement. |

@@ -39,7 +39,7 @@ An AMR driver owns the refinement/derefinement logic for a shared, non-conformin
 
 ### __Common behavior__ {#amr-base}
 
-Every AMR driver is a template class instantiated with one parameter: the [`Variables`](../Variables/index.md) container type of the coupling (`VARS`). Its constructor always takes the shared mesh **by reference** (dereference the `mfem::ParMesh*` returned by `get_mesh()`) and the `is_nc_simplices` flag of that mesh:
+<!-- Every AMR driver is a template class instantiated with one parameter: the [`Variables`](../Variables/index.md) container type of the coupling (`VARS`). Its constructor always takes the shared mesh **by reference** (dereference the `mfem::ParMesh*` returned by `get_mesh()`) and the `is_nc_simplices` flag of that mesh: -->
 
 <!-- !!! warning "Mesh lifetime"
     An AMR driver only keeps a reference to the mesh; it does not own it. The `SpatialDiscretization` object that owns the mesh must outlive the AMR driver. -->
@@ -47,25 +47,27 @@ Every AMR driver is a template class instantiated with one parameter: the [`Vari
 Refinement criteria are configured once with `SetCriteria`, which must be called before the driver is attached to a problem:
 
 ```c++
-amr.SetCriteria(/*estimator*/ &estimator, /*max_elem_error*/ 1e-4, /*amr_max_level*/ 4,
-                /*nc_limit*/ 0, /*max_preref_cycles*/ 4);
+auto amr_params = Parameters(Parameter("max_elem_error", 1.e-4), Parameter("amr_max_level", 4),
+                               Parameter("nc_limit", 0), Parameter("max_preref_cycles", 4));
+amr.SetCriteria(/*estimator*/ &estimator, amr_params);
 ```
 
-| Argument | Type | Description |
-|---|---|---|
-| `estimator` | `SlothErrorEstimators*` | The error estimator defined [above](#error-estimators). |
-| `max_elem_error` | `double` | Local error threshold above which an element is marked for refinement. The derefinement threshold is derived internally as `0.25 * max_elem_error`, so that derefinement is more conservative than refinement (hysteresis, avoiding oscillating refine/derefine cycles on the same elements, as demonstrated in the [MFEM's example 15](https://github.com/mfem/mfem/blob/master/examples/ex15.cpp)). |
-| `amr_max_level` | `int` | Maximum refinement depth allowed for any element. Since each refinement pass only refines an element once, this prevents an element from being refined indefinitely, one extra level per time step, with no upper bound. `0` (default) or negative means no limit. |
-| `nc_limit` | `int` | Maximum allowed refinement-level difference between neighboring elements. `0` means unlimited. |
-| `max_preref_cycles` | `int` | Maximum number of refinement cycles applied to the **initial condition**, before the time-stepping loop starts (see `InitialRefine()` below).  Must be strictly positive to enable refinement cycles.|
+| Argument/Parameter | Type| Default | Description |
+|---|---|---|---|
+| `estimator` | `SlothErrorEstimators*` |  (mandatory) |The error estimator defined [above](#error-estimators). |
+| `max_elem_error` | `double` | (mandatory) |Local error threshold above which an element is marked for refinement. The derefinement threshold is derived internally as `scale_down_factor * max_elem_error`, so that derefinement is more conservative than refinement (hysteresis, avoiding oscillating refine/derefine cycles on the same elements, as demonstrated in the [MFEM's example 15](https://github.com/mfem/mfem/blob/master/examples/ex15.cpp)). |
+| `amr_max_level` | `int` | 0 (optional) | Maximum refinement depth allowed for any element. Since each refinement pass only refines an element once, this prevents an element from being refined indefinitely, one extra level per time step, with no upper bound. `0` (default) or negative means no limit. |
+| `nc_limit` | `int` |0 (optional) | Maximum allowed refinement-level difference between neighboring elements. `0` means unlimited. |
+| `max_preref_cycles` | `int` |1 (optional) | Maximum number of refinement cycles applied to the **initial condition**, before the time-stepping loop starts (see `InitialRefine()` below).  Must be strictly positive to enable refinement cycles.
+| `scale_down_factor` | `double` | 0.25 (optional) | threshold scaled down relative to `max_elem_error` used for refinement, to provide hysteresis and avoid oscillating refine/derefine cycles on the same elements.|
 
 !!! warning "Calling `SetCriteria` is mandatory"
     Every refinement/derefinement attempt starts by verifying that `SetCriteria()` was already called; `SLOTH` aborts with a clear error message otherwise.
-
+<!-- 
 Internally, an AMR driver exposes three orchestration methods, called automatically once it is [attached to a `Problem`](#attach-amr) — they are documented here for reference, not meant to be called directly in typical usage:
 
 - `InitialRefine(vars, auxvars)` — applied once, before time-stepping starts: repeatedly refines the mesh around the **initial condition** (re-applying `setInitialCondition()` after each refinement) for up to `max_preref_cycles` passes, so the mesh is already well resolved at `t = 0`.
-- `StepRefine(vars, auxvars)` / `StepDerefine(vars, auxvars)` — applied once per time-step, at the end of the post-processing stage, (derefine, then refine, freeing up space before increasing the resolution where necessary). Each call performs at most **one** refinement or derefinement pass; every primary and auxiliary variables is resynchronized with `UpdateAndRebalance()` afterwards, even if it did not drive the decision, since they all share the same mesh. 
+- `StepRefine(vars, auxvars)` / `StepDerefine(vars, auxvars)` — applied once per time-step, at the end of the post-processing stage, (derefine, then refine, freeing up space before increasing the resolution where necessary). Each call performs at most **one** refinement or derefinement pass; every primary and auxiliary variables is resynchronized with `UpdateAndRebalance()` afterwards, even if it did not drive the decision, since they all share the same mesh.  -->
 
 ### __SingleVariableAMR__ {#single-variable-amr}
 
