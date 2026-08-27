@@ -3530,13 +3530,13 @@
 </span></code></pre></div>
 <p>You can instrument each of your functions using section timers. It's important to remember that adding chronos can add extra cost, negligible for "big" functions but very costly for functions called in each element.</p>
 <p>To time a function, place this instruction at the start of your function, the timer will stop at the end of the scope (the second time point is hidden in the timer destructor).</p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">Catch_Time_Section</span><span class="p">(</span><span class="s">&quot;NameOfYourFunction&quot;</span><span class="p">);</span>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">Catch_Time_Section</span><span class="p">(</span><span class="s">"NameOfYourFunction"</span><span class="p">);</span>
 </span></code></pre></div>
 <p>To add a second timer to the same scope, you can use:</p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">Catch_Nested_Time_Section</span><span class="p">(</span><span class="s">&quot;NameOfYourNestedSection&quot;</span><span class="p">);</span>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">Catch_Nested_Time_Section</span><span class="p">(</span><span class="s">"NameOfYourNestedSection"</span><span class="p">);</span>
 </span></code></pre></div>
 <p>To capture a specific section:</p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">add_capture_chrono_section</span><span class="p">(</span><span class="s">&quot;NameOfYourSection&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="p">]</span><span class="w"> </span><span class="p">{</span>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">add_capture_chrono_section</span><span class="p">(</span><span class="s">"NameOfYourSection"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="p">]</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="n">your_code</span><span class="w"> </span><span class="p">...</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">});</span>
 </span></code></pre></div>

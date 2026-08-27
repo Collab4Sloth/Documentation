@@ -2924,6 +2924,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Post-Processing
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="index.html" class="md-nav__link md-nav__link--active">
         
   
@@ -2940,6 +2958,69 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#optional-post-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional post-processing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shared-post-processing-for-multiphysics-simulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shared post-processing for multiphysics simulations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paraview-output-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ParaView output parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specialized-post-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specialized post-processing
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3374,6 +3455,58 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#optional-post-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional post-processing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shared-post-processing-for-multiphysics-simulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shared post-processing for multiphysics simulations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paraview-output-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ParaView output parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specialized-post-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specialized post-processing
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3393,39 +3526,79 @@
 
 
 <h1 id="post-processing">Post-Processing<a class="headerlink" href="#post-processing" title="Permanent link">&para;</a></h1>
-<p>This page presents all Post-processing features and describes all parameters with default values.</p>
+<p>This page presents all Post-processing features and describes all parameters with their default values.</p>
 <p>Definition of a post-processing for <code>SLOTH</code> is made with a C++ object of type <code>PostProcessing</code>.</p>
-<p><code>PostProcessing</code> is a template class instantiated with three template parameters: first, the kind of finite element, second the data format for saving results, and third, the spatial dimension.</p>
+<p><code>PostProcessing</code> is a template class instantiated with three template parameters: first, the kind of finite element; second, the data format for saving results; and third, the spatial dimension.</p>
 <p>The kind of finite element refers to a C++ class that inherits from the <code>mfem::FiniteElementCollection</code>. This class manages all collections of finite elements provided by <code>MFEM</code>.
-Currently, the most commonly used finite element collection in <code>SLOTH</code> is <code>mfem::H1_FECollection</code>, which corresponds to arbitrary order H1-conforming continuous finite elements.</p>
+Currently, the most commonly used finite element collection in <code>SLOTH</code> is <code>mfem::H1_FECollection</code>, which corresponds to arbitrary-order H1-conforming continuous finite elements.</p>
 <p>The dimension is simply an integer that can be 1, 2, or 3.</p>
-<p>The data format refers to a C++ class that inherits from the <code>mfem::DataCollection</code>.  This class manages all collections of data provided by <code>MFEM</code>.
+<p>The data format refers to a C++ class that inherits from the <code>mfem::DataCollection</code>. This class manages all collections of data provided by <code>MFEM</code>.
 The development team primarily uses <a href="https://www.paraview.org"><code>ParaView</code></a> to visualize results, which corresponds to the <code>mfem::ParaviewDataCollection</code> C++ class.</p>
 <div class="admonition notes">
 <p class="admonition-title">Use of alternative software for visualizing results</p>
-<p>Users are free to employ alternative visualization software such as <code>Visit</code>.
+<p>Users are free to employ alternative visualization software such as <code>VisIt</code>.
 In that case, please contact the development team so that an interface to the <code>mfem::VisitDataCollection</code> class can be provided.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Alias declaration for <code>PostProcessing</code> class template</p>
 <p><div class="language-c++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">using</span><span class="w"> </span><span class="n">PST</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PostProcessing</span><span class="o">&lt;</span><span class="n">mfem</span><span class="o">::</span><span class="n">H1_FECollection</span><span class="p">,</span><span class="w"> </span><span class="n">mfem</span><span class="o">::</span><span class="n">ParaviewDataCollection</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="p">;</span>
 </span></code></pre></div>
-This example show how to define a convenient alias for the <code>PostProcessing</code> class template instantiated with <code>mfem::H1_FECollection</code> and <code>mfem::ParaviewDataCollection</code> in dimension 2. </p>
+This example shows how to define a convenient alias for the <code>PostProcessing</code> class template instantiated with <code>mfem::H1_FECollection</code> and <code>mfem::ParaviewDataCollection</code> in dimension 2.</p>
 </div>
 <p>Without loss of generality, the alias <code>PST</code> is used in this page in order to simplify each code snippet.</p>
 <p>The <code>PST</code> object must be defined by:</p>
 <ul>
-<li>the spatial discretisation (see <a href="../SpatialDiscretization/Meshing/index.html">Meshing</a>), </li>
+<li>the spatial discretisation (see <a href="../SpatialDiscretization/Meshing/index.html">Meshing</a>);</li>
 <li>a set of parameters (see <a href="../Parameters/index.html">Parameters</a>).</li>
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Declaration of a <code>PostProcessing</code> object</p>
 <p><div class="language-c++ highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">auto</span><span class="w"> </span><span class="n">post_processing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PST</span><span class="p">(</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="n">pst_parameters</span><span class="p">);</span>
 </span></code></pre></div>
-This example show how to declare an object <code>PST</code> with the spatial discretisation <code>spatial</code> and the paramters <code>pst_parameters</code>. </p>
+This example shows how to declare a <code>PST</code> object with the spatial discretisation <code>spatial</code> and the parameters <code>pst_parameters</code>.</p>
 </div>
-<p>Each <code>PST</code> object is associated with a <a href="../MultiPhysicsCouplingScheme/Problems/index.html"><code>Problem</code></a> and its <a href="../Variables/index.html"><code>Variables</code></a> are saved in <code>Paraview</code> file.</p>
-<p>The parameters allowed with <code>PostProcessing</code> for visualizing data with <code>Paraview</code> are summarized in table 1.</p>
+<h2 id="optional-post-processing">Optional post-processing<a class="headerlink" href="#optional-post-processing" title="Permanent link">&para;</a></h2>
+<p><code>PST</code> objects are optional when defining a <code>Problem</code>.</p>
+<p>A <code>Problem</code> can therefore be defined either with or without an associated <code>PST</code> object.</p>
+<div class="admonition example">
+<p class="admonition-title">Problem definition with post-processing</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">auto</span><span class="w"> </span><span class="n">ch_pst</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PST</span><span class="p">(</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="n">pst_parameters</span><span class="p">);</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">PB</span><span class="w"> </span><span class="n">ch_pb</span><span class="p">(</span><span class="s">"CahnHilliard"</span><span class="p">,</span><span class="w"> </span><span class="n">ch_oper</span><span class="p">,</span><span class="w"> </span><span class="n">ch_vars</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">ch_coef</span><span class="p">,</span><span class="w"> </span><span class="n">ch_coef</span><span class="p">},</span><span class="w"> </span><span class="n">ch_pst</span><span class="p">,</span><span class="w"> </span><span class="n">ac_vars</span><span class="p">);</span>
+</span></code></pre></div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Problem definition without post-processing</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">PB</span><span class="w"> </span><span class="n">ch_pb</span><span class="p">(</span><span class="s">"CahnHilliard"</span><span class="p">,</span><span class="w"> </span><span class="n">ch_oper</span><span class="p">,</span><span class="w"> </span><span class="n">ch_vars</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">ch_coef</span><span class="p">,</span><span class="w"> </span><span class="n">ch_coef</span><span class="p">},</span><span class="w"> </span><span class="n">ac_vars</span><span class="p">);</span>
+</span></code></pre></div>
+</div>
+<p>When no <code>PST</code> object is provided, no ParaView output or specialized post-processing output is associated with the <code>Problem</code>.</p>
+<h2 id="shared-post-processing-for-multiphysics-simulations">Shared post-processing for multiphysics simulations<a class="headerlink" href="#shared-post-processing-for-multiphysics-simulations" title="Permanent link">&para;</a></h2>
+<p>A single <code>PST</code> object can be shared by several <code>Problem</code> objects. This makes it possible to save the variables of several coupled problems in a common ParaView file and to use a common post-processing directory.</p>
+<div class="admonition example">
+<p class="admonition-title">Two problems with separate post-processing objects</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">auto</span><span class="w"> </span><span class="n">ch_pst</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PST</span><span class="p">(</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="n">pst_parameters</span><span class="p">);</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">PB</span><span class="w"> </span><span class="n">ch_pb</span><span class="p">(</span><span class="s">"CahnHilliard"</span><span class="p">,</span><span class="w"> </span><span class="n">ch_oper</span><span class="p">,</span><span class="w"> </span><span class="n">ch_vars</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">ch_coef</span><span class="p">,</span><span class="w"> </span><span class="n">ch_coef</span><span class="p">},</span><span class="w"> </span><span class="n">ch_pst</span><span class="p">,</span><span class="w"> </span><span class="n">ac_vars</span><span class="p">);</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">auto</span><span class="w"> </span><span class="n">ac_pst</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PST</span><span class="p">(</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="n">pst_parameters</span><span class="p">);</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">PB</span><span class="w"> </span><span class="n">ac_pb</span><span class="p">(</span><span class="s">"AllenCahn"</span><span class="p">,</span><span class="w"> </span><span class="n">ac_oper</span><span class="p">,</span><span class="w"> </span><span class="n">ac_vars</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">ac_coef</span><span class="p">,</span><span class="w"> </span><span class="n">ac_coef</span><span class="p">},</span><span class="w"> </span><span class="n">ac_pst</span><span class="p">,</span><span class="w"> </span><span class="n">ch_vars</span><span class="p">);</span>
+</span></code></pre></div>
+<p>In this case, the variables for the Cahn-Hilliard and Allen-Cahn problems are saved in two separate VTK files.</p>
+<p>If specialized post-processing is enabled, the global specialized file <code>time_specialized.csv</code> is generated separately in each problem's post-processing directory.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Two problems sharing a common post-processing object</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">auto</span><span class="w"> </span><span class="n">common_pst</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PST</span><span class="p">(</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="n">pst_parameters</span><span class="p">);</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">PB</span><span class="w"> </span><span class="n">ch_pb</span><span class="p">(</span><span class="s">"CahnHilliard"</span><span class="p">,</span><span class="w"> </span><span class="n">ch_oper</span><span class="p">,</span><span class="w"> </span><span class="n">ch_vars</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">ch_coef</span><span class="p">,</span><span class="w"> </span><span class="n">ch_coef</span><span class="p">},</span><span class="w"> </span><span class="n">common_pst</span><span class="p">,</span><span class="w"> </span><span class="n">ac_vars</span><span class="p">);</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">PB</span><span class="w"> </span><span class="n">ac_pb</span><span class="p">(</span><span class="s">"AllenCahn"</span><span class="p">,</span><span class="w"> </span><span class="n">ac_oper</span><span class="p">,</span><span class="w"> </span><span class="n">ac_vars</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">ac_coef</span><span class="p">,</span><span class="w"> </span><span class="n">ac_coef</span><span class="p">},</span><span class="w"> </span><span class="n">common_pst</span><span class="p">,</span><span class="w"> </span><span class="n">ch_vars</span><span class="p">);</span>
+</span></code></pre></div>
+<p>In this case, the variables for both the Cahn-Hilliard and Allen-Cahn problems are saved in the same VTK file.</p>
+<p>If specialized post-processing is enabled, the specialized files for both problems are generated in the common post-processing directory.</p>
+<p>To avoid naming conflicts and duplicated files, generated specialized files are automatically prefixed with the name of the corresponding <code>Problem</code> and, when applicable, with the name of the coupling.</p>
+</div>
+<p>Each <code>PST</code> object is associated with one or more <a href="../MultiPhysicsCouplingScheme/Problems/index.html"><code>Problem</code></a> objects, and the <a href="../Variables/index.html"><code>Variables</code></a> associated with these problems are saved in the corresponding <code>ParaView</code> file.</p>
+<h2 id="paraview-output-parameters">ParaView output parameters<a class="headerlink" href="#paraview-output-parameters" title="Permanent link">&para;</a></h2>
+<p>The parameters allowed with <code>PostProcessing</code> for visualizing data with <code>ParaView</code> are summarized in Table 1.</p>
 <table>
 <thead>
 <tr>
@@ -3440,52 +3613,53 @@ This example show how to declare an object <code>PST</code> with the spatial dis
 <td><code>"main_folder_path"</code></td>
 <td><code>std::string</code></td>
 <td></td>
-<td>root directory for saving all results</td>
+<td>Root directory for saving all results</td>
 </tr>
 <tr>
 <td><code>"calculation_path"</code></td>
 <td><code>std::string</code></td>
 <td></td>
-<td>directory for saving results of the problem</td>
+<td>Directory for saving the results of the problem</td>
 </tr>
 <tr>
 <td><code>"force_clean_output_dir"</code></td>
 <td><code>bool</code></td>
 <td><code>false</code></td>
-<td>flag to force cleaning of the root directory</td>
+<td>Flag to force cleaning of the root directory</td>
 </tr>
 <tr>
 <td><code>"frequency"</code></td>
 <td><code>int</code></td>
 <td></td>
-<td>data output frequency</td>
+<td>Data output frequency</td>
 </tr>
 <tr>
 <td><code>"iterations_list"</code></td>
 <td><code>std::vector&lt;int&gt;</code></td>
 <td></td>
-<td>Iteration indices for data output. Only if frequency is not provided.</td>
+<td>Iteration indices for data output. Used only if <code>"frequency"</code> is not provided</td>
 </tr>
 <tr>
 <td><code>"times_list"</code></td>
 <td><code>std::vector&lt;double&gt;</code></td>
 <td></td>
-<td>Times for data output. Only if <code>"frequency"</code> is not provided. Can be combined with <code>"iterations_list"</code></td>
+<td>Times for data output. Used only if <code>"frequency"</code> is not provided. Can be combined with <code>"iterations_list"</code></td>
 </tr>
 </tbody>
 </table>
 <dl>
-<dd>Table 1 - parameters allowed with <code>PostProcessing</code> for visualizing data with <code>Paraview</code></dd>
+<dd>Table 1 - Parameters allowed with <code>PostProcessing</code> for visualizing data with <code>ParaView</code></dd>
 </dl>
-<p>In addition to visualizing <code>Variables</code> with <code>ParaView</code>, some results can also be exported in <code>CSV</code> files format.  </p>
+<h2 id="specialized-post-processing">Specialized post-processing<a class="headerlink" href="#specialized-post-processing" title="Permanent link">&para;</a></h2>
+<p>In addition to visualizing <a href="../Variables/index.html"><code>Variables</code></a> with <code>ParaView</code>, some results can also be exported in <code>CSV</code> format.</p>
 <p>The <code>time_specialized.csv</code> file contains:</p>
 <ul>
-<li>The L<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> and L<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mi mathvariant="normal">∞</mi></msup></mrow><annotation encoding="application/x-tex">^\infty</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6644em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">∞</span></span></span></span></span></span></span></span></span></span></span> norms of the error for each variable with an analytical solution,</li>
-<li>The energy density of the problem,</li>
-<li>The surface tension of the problem (for phase-field problems), </li>
-<li>The spatial average of the variable over the computational domain (if requested with the <code>integral_to_compute</code> parameter).</li>
+<li>The <span class="arithmatex">\(L^2\)</span> and <span class="arithmatex">\(L^\infty\)</span> norms of the error for each variable with an analytical solution;</li>
+<li>The energy density of the problem;</li>
+<li>The surface tension of the problem (for phase-field problems);</li>
+<li>The spatial average of the variable over the computational domain, if requested with the <code>"integral_to_compute"</code> parameter.</li>
 </ul>
-<p>The parameters allowed with <code>PostProcessing</code> for exporting specialized values in the <code>time_specialized.csv</code> file are summarized in table 2.</p>
+<p>The parameters allowed with <code>PostProcessing</code> for exporting specialized values in the <code>time_specialized.csv</code> file are summarized in Table 2.</p>
 <table>
 <thead>
 <tr>
@@ -3499,51 +3673,48 @@ This example show how to declare an object <code>PST</code> with the spatial dis
 <tr>
 <td><code>"enable_save_specialized_at_iter"</code></td>
 <td><code>bool</code></td>
-<td>false</td>
-<td>By default, specialized values are written at end of the simulation. This flag enables to write the values at each time-step.</td>
+<td><code>false</code></td>
+<td>By default, specialized values are written at the end of the simulation. This flag enables writing the values at each time step</td>
 </tr>
 <tr>
 <td><code>"iso_val_to_compute"</code></td>
 <td><code>MapStringDouble</code></td>
 <td></td>
-<td>Map of isovalue for each variable. The key must match with the name of a <code>Variable</code>.</td>
+<td>Map of isovalues for each variable. The key must match the name of a <code>Variable</code></td>
 </tr>
 <tr>
 <td><code>"integral_to_compute"</code></td>
 <td><code>MapString2Double</code></td>
 <td></td>
-<td>Map of lower and upper bounds used to compute the average value of each variable. The key must match with the name of a <code>Variable</code>.</td>
+<td>Map of lower and upper bounds used to compute the average value of each variable. The key must match the name of a <code>Variable</code></td>
 </tr>
 <tr>
 <td><code>"enable_compute_energies"</code></td>
 <td><code>bool</code></td>
-<td>true</td>
-<td>Indicates if energies are calculated.</td>
+<td><code>true</code></td>
+<td>Indicates whether energies are calculated</td>
 </tr>
 <tr>
 <td><code>"iterations_list_save_gf"</code></td>
 <td><code>std::vector&lt;int&gt;</code></td>
 <td></td>
-<td>Iterations at which variables are saved as MFEM <code>GridFunction</code> files..</td>
+<td>Iterations at which variables are saved as MFEM <code>GridFunction</code> files</td>
 </tr>
 </tbody>
 </table>
 <dl>
-<dd>Table 2 - parameters allowed with <code>PostProcessing</code> to save specialized values in the <code>time_specialized.csv</code> file.</dd>
+<dd>Table 2 - Parameters allowed with <code>PostProcessing</code> to save specialized values in the <code>time_specialized.csv</code> file</dd>
 </dl>
 <p>The <code>iterations_list_save_gf</code> parameter specifies the iterations at which variables are saved as MFEM <code>GridFunction</code> files.
-By default, the files are written to a directory named <code>GF</code>. This location can be customized using the <code>gf_folder_path</code> parameter (type <code>std::string</code>). 
-Each file follows the naming convention <code>&lt;variable_name&gt;_&lt;iteration&gt;.gf.&lt;MPI_rank&gt;</code>. 
-For example,  <code>eta_2.gf.000010</code> corresponds to the variable <code>eta</code> saved at iteration <code>2</code> on MPI rank <code>10</code>.</p>
-<p>Isovalues are not stored in the <code>time_specialized.csv</code> file.
-Instead, the parameter <code>"iso_val_to_compute"</code> generates separate <code>CSV</code> files, one for each variable.</p>
+By default, the files are written to a directory named <code>GF</code>. This location can be customized using the <code>gf_folder_path</code> parameter (type <code>std::string</code>). Each file follows the naming convention <code>&lt;variable_name&gt;_&lt;iteration&gt;.gf.&lt;MPI_rank&gt;</code>. For example, <code>eta_2.gf.000010</code> corresponds to the variable <code>eta</code> saved at iteration <code>2</code> on MPI rank <code>10</code>.</p>
+<p>Isovalues are not stored in the <code>time_specialized.csv</code> file. Instead, the parameter <code>"iso_val_to_compute"</code> generates separate <code>CSV</code> files, one for each variable.</p>
 <div class="admonition warning">
-<p class="admonition-title">On the dimension of <code>"iso_val_to_compute"</code> and <code>"integral_to_compute"</code> </p>
-<p>Parameters <code>"iso_val_to_compute"</code> and <code>"integral_to_compute"</code> must have exactly the dimension equal to the  number of variables.</p>
+<p class="admonition-title">On the dimension of <code>iso_val_to_compute</code> and <code>integral_to_compute</code></p>
+<p>The parameters <code>"iso_val_to_compute"</code> and <code>"integral_to_compute"</code> must have exactly the same number of entries as the number of variables.</p>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">On the lower and upper bounds used with <code>"integral_to_compute"</code> </p>
-<p>Lower and upper bounds are used to limit the calculation of the integral to specific values of the variables. For example, it can be usefull to compute the volume of a bubble that corresponds to a phase indicator lower than <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.5</mn></mrow><annotation encoding="application/x-tex">0.5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0.5</span></span></span></span>. </p>
+<p class="admonition-title">On the lower and upper bounds used with <code>integral_to_compute</code></p>
+<p>Lower and upper bounds are used to limit the calculation of the integral to specific values of the variables. For example, it can be useful to compute the volume of a bubble corresponding to a phase indicator lower than <span class="arithmatex">\(0.5\)</span>.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">On the calculation of energies for phase-field problems</p>
@@ -3552,22 +3723,25 @@ Instead, the parameter <code>"iso_val_to_compute"</code> generates separate <cod
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example of <code>PostProcessing</code> with parameters</p>
-<p>The following example assume the existence of a <code>Variable</code> named <code>"phi"</code> for Cahn-Hilliard equations. </p>
-<p>The results are saved in the <code>Saves/CahnHilliard</code> directory, at each time-step (see <code>frequency</code>).  </p>
-<p>Specialized values are also written at each time-step with the average value of <code>"phi"</code>.</p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">main_folder_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Saves&quot;</span><span class="p">;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">calculation_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;CahnHilliard&quot;</span><span class="p">;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">frequency</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">map_threshold_integral</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;phi&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mf">-1.1</span><span class="p">,</span><span class="w"> </span><span class="mf">1.1</span><span class="p">}}</span><span class="w"> </span><span class="p">};</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">save_specialized_at_iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">pst_parameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parameters</span><span class="p">(</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;main_folder_path&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">main_folder_path</span><span class="p">),</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;calculation_path&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">calculation_path</span><span class="p">),</span><span class="w"> </span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;frequency&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">frequency</span><span class="p">),</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">        </span><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;integral_to_compute&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">map_threshold_integral</span><span class="p">),</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">        </span><span class="n">Parameter</span><span class="p">(</span><span class="s">&quot;enable_save_specialized_at_iter&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">save_specialized_at_iter</span><span class="p">));</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">post_processing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PST</span><span class="p">(</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="n">pst_parameters</span><span class="p">);</span>
+<p>The following example assumes the existence of a <code>Variable</code> named <code>"phi"</code> for Cahn-Hilliard equations.</p>
+<p>The results are saved in the <code>Saves/CahnHilliard</code> directory at each time step (see <code>"frequency"</code>).</p>
+<p>Specialized values are also written at each time step, including the average value of <code>"phi"</code>.</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">main_folder_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Saves"</span><span class="p">;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">calculation_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"CahnHilliard"</span><span class="p">;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">frequency</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">map_threshold_integral</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="p">{</span><span class="s">"phi"</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mf">-1.1</span><span class="p">,</span><span class="w"> </span><span class="mf">1.1</span><span class="p">}}</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p">};</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="kt">bool</span><span class="w"> </span><span class="n">save_specialized_at_iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="k">auto</span><span class="w"> </span><span class="n">pst_parameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parameters</span><span class="p">(</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"main_folder_path"</span><span class="p">,</span><span class="w"> </span><span class="n">main_folder_path</span><span class="p">),</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"calculation_path"</span><span class="p">,</span><span class="w"> </span><span class="n">calculation_path</span><span class="p">),</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"frequency"</span><span class="p">,</span><span class="w"> </span><span class="n">frequency</span><span class="p">),</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"integral_to_compute"</span><span class="p">,</span><span class="w"> </span><span class="n">map_threshold_integral</span><span class="p">),</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">    </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"enable_save_specialized_at_iter"</span><span class="p">,</span><span class="w"> </span><span class="n">save_specialized_at_iter</span><span class="p">));</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="k">auto</span><span class="w"> </span><span class="n">post_processing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PST</span><span class="p">(</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="n">pst_parameters</span><span class="p">);</span>
 </span></code></pre></div>
 </div>
 
