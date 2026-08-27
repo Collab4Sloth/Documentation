@@ -1,127 +1,170 @@
 # Post-Processing
 
-This page presents all Post-processing features and describes all parameters with default values.
+This page presents all Post-processing features and describes all parameters with their default values.
 
 Definition of a post-processing for `SLOTH` is made with a C++ object of type `PostProcessing`.
 
-
-`PostProcessing` is a template class instantiated with three template parameters: first, the kind of finite element, second the data format for saving results, and third, the spatial dimension.
+`PostProcessing` is a template class instantiated with three template parameters: first, the kind of finite element; second, the data format for saving results; and third, the spatial dimension.
 
 The kind of finite element refers to a C++ class that inherits from the `mfem::FiniteElementCollection`. This class manages all collections of finite elements provided by `MFEM`.
-Currently, the most commonly used finite element collection in `SLOTH` is `mfem::H1_FECollection`, which corresponds to arbitrary order H1-conforming continuous finite elements.
+Currently, the most commonly used finite element collection in `SLOTH` is `mfem::H1_FECollection`, which corresponds to arbitrary-order H1-conforming continuous finite elements.
 
 The dimension is simply an integer that can be 1, 2, or 3.
- 
-The data format refers to a C++ class that inherits from the `mfem::DataCollection`.  This class manages all collections of data provided by `MFEM`.
+
+The data format refers to a C++ class that inherits from the `mfem::DataCollection`. This class manages all collections of data provided by `MFEM`.
 The development team primarily uses [`ParaView`](https://www.paraview.org) to visualize results, which corresponds to the `mfem::ParaviewDataCollection` C++ class.
 
-!!! notes "Use of alternative software for visualizing results" 
-    Users are free to employ alternative visualization software such as `Visit`.
+!!! notes "Use of alternative software for visualizing results"
+    Users are free to employ alternative visualization software such as `VisIt`.
     In that case, please contact the development team so that an interface to the `mfem::VisitDataCollection` class can be provided.
-
 
 !!! example "Alias declaration for `PostProcessing` class template"
     ```c++
     using PST = PostProcessing<mfem::H1_FECollection, mfem::ParaviewDataCollection, 2>;
     ```
-    This example show how to define a convenient alias for the `PostProcessing` class template instantiated with `mfem::H1_FECollection` and `mfem::ParaviewDataCollection` in dimension 2. 
+    This example shows how to define a convenient alias for the `PostProcessing` class template instantiated with `mfem::H1_FECollection` and `mfem::ParaviewDataCollection` in dimension 2.
 
 Without loss of generality, the alias `PST` is used in this page in order to simplify each code snippet.
 
-
 The `PST` object must be defined by:
 
-- the spatial discretisation (see [Meshing](../SpatialDiscretization/Meshing/index.md)), 
+- the spatial discretisation (see [Meshing](../SpatialDiscretization/Meshing/index.md));
 - a set of parameters (see [Parameters](../Parameters/index.md)).
 
 !!! example "Declaration of a `PostProcessing` object"
     ```c++
     auto post_processing = PST(&spatial, pst_parameters);
     ```
-    This example show how to declare an object `PST` with the spatial discretisation `spatial` and the paramters `pst_parameters`. 
+    This example shows how to declare a `PST` object with the spatial discretisation `spatial` and the parameters `pst_parameters`.
 
-Each `PST` object is associated with a [`Problem`](../MultiPhysicsCouplingScheme/Problems/index.md) and its [`Variables`](../Variables/index.md) are saved in `Paraview` file.
+## Optional post-processing
 
-The parameters allowed with `PostProcessing` for visualizing data with `Paraview` are summarized in table 1.
+`PST` objects are optional when defining a `Problem`.
+
+A `Problem` can therefore be defined either with or without an associated `PST` object.
+
+!!! example "Problem definition with post-processing"
+    ```c++
+    auto ch_pst = PST(&spatial, pst_parameters);
+    PB ch_pb("CahnHilliard", ch_oper, ch_vars, {ch_coef, ch_coef}, ch_pst, ac_vars);
+    ```
+
+!!! example "Problem definition without post-processing"
+    ```c++
+    PB ch_pb("CahnHilliard", ch_oper, ch_vars, {ch_coef, ch_coef}, ac_vars);
+    ```
+
+When no `PST` object is provided, no ParaView output or specialized post-processing output is associated with the `Problem`.
+
+## Shared post-processing for multiphysics simulations
+
+A single `PST` object can be shared by several `Problem` objects. This makes it possible to save the variables of several coupled problems in a common ParaView file and to use a common post-processing directory.
+
+!!! example "Two problems with separate post-processing objects"
+    ```c++
+    auto ch_pst = PST(&spatial, pst_parameters);
+    PB ch_pb("CahnHilliard", ch_oper, ch_vars, {ch_coef, ch_coef}, ch_pst, ac_vars);
+
+    auto ac_pst = PST(&spatial, pst_parameters);
+    PB ac_pb("AllenCahn", ac_oper, ac_vars, {ac_coef, ac_coef}, ac_pst, ch_vars);
+    ```
+
+    In this case, the variables for the Cahn-Hilliard and Allen-Cahn problems are saved in two separate VTK files.
+
+    If specialized post-processing is enabled, the global specialized file `time_specialized.csv` is generated separately in each problem's post-processing directory.
+
+!!! example "Two problems sharing a common post-processing object"
+    ```c++
+    auto common_pst = PST(&spatial, pst_parameters);
+
+    PB ch_pb("CahnHilliard", ch_oper, ch_vars, {ch_coef, ch_coef}, common_pst, ac_vars);
+    PB ac_pb("AllenCahn", ac_oper, ac_vars, {ac_coef, ac_coef}, common_pst, ch_vars);
+    ```
+
+    In this case, the variables for both the Cahn-Hilliard and Allen-Cahn problems are saved in the same VTK file.
+
+    If specialized post-processing is enabled, the specialized files for both problems are generated in the common post-processing directory.
+
+    To avoid naming conflicts and duplicated files, generated specialized files are automatically prefixed with the name of the corresponding `Problem` and, when applicable, with the name of the coupling.
+
+Each `PST` object is associated with one or more [`Problem`](../MultiPhysicsCouplingScheme/Problems/index.md) objects, and the [`Variables`](../Variables/index.md) associated with these problems are saved in the corresponding `ParaView` file.
+
+## ParaView output parameters
+
+The parameters allowed with `PostProcessing` for visualizing data with `ParaView` are summarized in Table 1.
 
 | Parameter Name | Type | Default Value | Description |
-|----------------|------|---------------|---------------|
-|  `"main_folder_path"` | `std::string` | | root directory for saving all results |
-|  `"calculation_path"` | `std::string` | | directory for saving results of the problem|
-|  `"force_clean_output_dir"` | `bool` | `false` | flag to force cleaning of the root directory |
-|  `"frequency"` | `int` ||  data output frequency |
-|  `"iterations_list"` | `std::vector<int>` | | Iteration indices for data output. Only if frequency is not provided. || 
-|  `"times_list"` | `std::vector<double>` | | Times for data output. Only if `"frequency"` is not provided. Can be combined with `"iterations_list"`|
+|----------------|------|---------------|-------------|
+| `"main_folder_path"` | `std::string` | | Root directory for saving all results |
+| `"calculation_path"` | `std::string` | | Directory for saving the results of the problem |
+| `"force_clean_output_dir"` | `bool` | `false` | Flag to force cleaning of the root directory |
+| `"frequency"` | `int` | | Data output frequency |
+| `"iterations_list"` | `std::vector<int>` | | Iteration indices for data output. Used only if `"frequency"` is not provided |
+| `"times_list"` | `std::vector<double>` | | Times for data output. Used only if `"frequency"` is not provided. Can be combined with `"iterations_list"` |
 
-: Table 1 - parameters allowed with `PostProcessing` for visualizing data with `Paraview`
+: Table 1 - Parameters allowed with `PostProcessing` for visualizing data with `ParaView`
 
+## Specialized post-processing
 
-In addition to visualizing `Variables` with `ParaView`, some results can also be exported in `CSV` files format.  
+In addition to visualizing [`Variables`](../Variables/index.md) with `ParaView`, some results can also be exported in `CSV` format.
 
 The `time_specialized.csv` file contains:
 
-- The L$`^2`$ and L$`^\infty`$ norms of the error for each variable with an analytical solution,
-- The energy density of the problem,
-- The surface tension of the problem (for phase-field problems), 
-- The spatial average of the variable over the computational domain (if requested with the `integral_to_compute` parameter).
+- The $L^2$ and $L^\infty$ norms of the error for each variable with an analytical solution;
+- The energy density of the problem;
+- The surface tension of the problem (for phase-field problems);
+- The spatial average of the variable over the computational domain, if requested with the `"integral_to_compute"` parameter.
 
-The parameters allowed with `PostProcessing` for exporting specialized values in the `time_specialized.csv` file are summarized in table 2.
+The parameters allowed with `PostProcessing` for exporting specialized values in the `time_specialized.csv` file are summarized in Table 2.
 
 | Parameter Name | Type | Default Value | Description |
-|----------------|------|---------------|---------------|
-| `"enable_save_specialized_at_iter"` | `bool` |false|By default, specialized values are written at end of the simulation. This flag enables to write the values at each time-step.|
- | `"iso_val_to_compute"` | `MapStringDouble` ||Map of isovalue for each variable. The key must match with the name of a `Variable`.|
- | `"integral_to_compute"` | `MapString2Double` ||Map of lower and upper bounds used to compute the average value of each variable. The key must match with the name of a `Variable`.|
- | `"enable_compute_energies"` | `bool` |true|Indicates if energies are calculated. |
- | `"iterations_list_save_gf"` | `std::vector<int>` ||Iterations at which variables are saved as MFEM `GridFunction` files..|
+|----------------|------|---------------|-------------|
+| `"enable_save_specialized_at_iter"` | `bool` | `false` | By default, specialized values are written at the end of the simulation. This flag enables writing the values at each time step |
+| `"iso_val_to_compute"` | `MapStringDouble` | | Map of isovalues for each variable. The key must match the name of a `Variable` |
+| `"integral_to_compute"` | `MapString2Double` | | Map of lower and upper bounds used to compute the average value of each variable. The key must match the name of a `Variable` |
+| `"enable_compute_energies"` | `bool` | `true` | Indicates whether energies are calculated |
+| `"iterations_list_save_gf"` | `std::vector<int>` | | Iterations at which variables are saved as MFEM `GridFunction` files |
 
-: Table 2 - parameters allowed with `PostProcessing` to save specialized values in the `time_specialized.csv` file.
-
+: Table 2 - Parameters allowed with `PostProcessing` to save specialized values in the `time_specialized.csv` file
 
 The `iterations_list_save_gf` parameter specifies the iterations at which variables are saved as MFEM `GridFunction` files.
-By default, the files are written to a directory named `GF`. This location can be customized using the `gf_folder_path` parameter (type `std::string`). 
-Each file follows the naming convention ` <variable_name>_<iteration>.gf.<MPI_rank>`. 
-For example,  `eta_2.gf.000010` corresponds to the variable `eta` saved at iteration `2` on MPI rank `10`.
+By default, the files are written to a directory named `GF`. This location can be customized using the `gf_folder_path` parameter (type `std::string`). Each file follows the naming convention `<variable_name>_<iteration>.gf.<MPI_rank>`. For example, `eta_2.gf.000010` corresponds to the variable `eta` saved at iteration `2` on MPI rank `10`.
 
+Isovalues are not stored in the `time_specialized.csv` file. Instead, the parameter `"iso_val_to_compute"` generates separate `CSV` files, one for each variable.
 
-Isovalues are not stored in the `time_specialized.csv` file.
-Instead, the parameter `"iso_val_to_compute"` generates separate `CSV` files, one for each variable.
+!!! warning "On the dimension of `iso_val_to_compute` and `integral_to_compute`"
+    The parameters `"iso_val_to_compute"` and `"integral_to_compute"` must have exactly the same number of entries as the number of variables.
 
-!!! warning "On the dimension of `"iso_val_to_compute"` and `"integral_to_compute"` "
-    Parameters `"iso_val_to_compute"` and `"integral_to_compute"` must have exactly the dimension equal to the  number of variables.
-
-
-!!! warning "On the lower and upper bounds used with `"integral_to_compute"` "
-    Lower and upper bounds are used to limit the calculation of the integral to specific values of the variables. For example, it can be usefull to compute the volume of a bubble that corresponds to a phase indicator lower than $`0.5`$. 
-
+!!! warning "On the lower and upper bounds used with `integral_to_compute`"
+    Lower and upper bounds are used to limit the calculation of the integral to specific values of the variables. For example, it can be useful to compute the volume of a bubble corresponding to a phase indicator lower than $0.5$.
 
 !!! warning "On the calculation of energies for phase-field problems"
     By default, energies are calculated. For phase-field problems, if `"enable_compute_energies"` is set to `true`, a `SLOTH` coefficient of type `Glossary::GradEnergy` **must** be defined in the vector of coefficients passed to the `SLOTH` problem. Otherwise, an exception is raised.
 
     See the dedicated page of the user manual for more details about the definition of `SLOTH` [coefficients](../Coefficients/index.md).
 
-
 !!! example "Example of `PostProcessing` with parameters"
-    The following example assume the existence of a `Variable` named `"phi"` for Cahn-Hilliard equations. 
+    The following example assumes the existence of a `Variable` named `"phi"` for Cahn-Hilliard equations.
 
-    The results are saved in the `Saves/CahnHilliard` directory, at each time-step (see `frequency`).  
+    The results are saved in the `Saves/CahnHilliard` directory at each time step (see `"frequency"`).
 
-    Specialized values are also written at each time-step with the average value of `"phi"`.
+    Specialized values are also written at each time step, including the average value of `"phi"`.
 
     ```c++
-        const std::string& main_folder_path = "Saves";
-        const std::string& calculation_path = "CahnHilliard";
-        const int frequency = 1;
-        std::map<std::string, std::tuple<double, double>> map_threshold_integral = { {"phi", {-1.1, 1.1}} };
-        bool save_specialized_at_iter = true;
-        auto pst_parameters = Parameters(
-            Parameter("main_folder_path", main_folder_path),
-            Parameter("calculation_path", calculation_path), 
-            Parameter("frequency", frequency),
-            Parameter("integral_to_compute", map_threshold_integral),
-            Parameter("enable_save_specialized_at_iter", save_specialized_at_iter));
+    const std::string& main_folder_path = "Saves";
+    const std::string& calculation_path = "CahnHilliard";
+    const int frequency = 1;
+    std::map<std::string, std::tuple<double, double>> map_threshold_integral = {
+        {"phi", {-1.1, 1.1}}
+    };
+    bool save_specialized_at_iter = true;
 
-        auto post_processing = PST(&spatial, pst_parameters);
+    auto pst_parameters = Parameters(
+        Parameter("main_folder_path", main_folder_path),
+        Parameter("calculation_path", calculation_path),
+        Parameter("frequency", frequency),
+        Parameter("integral_to_compute", map_threshold_integral),
+        Parameter("enable_save_specialized_at_iter", save_specialized_at_iter));
+
+    auto post_processing = PST(&spatial, pst_parameters);
     ```
-
-
