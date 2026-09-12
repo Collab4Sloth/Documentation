@@ -123,3 +123,21 @@ The user can define as many boundary conditions as there are variables.
 
 !!! warning "Consistency of the indices of the boundaries"
     `MFEM v4.7` provides new features for referring to boundary attribute numbers. Such an improvement is not yet implemented in `SLOTH`. Consequently, users must take care to the consistency of the indices used in the test file with the indices defined when building the mesh with `GMSH`.
+
+
+## __Build N boundary conditions from a vector of spatial discretizations__ {#factory}
+
+When `N` spatial discretizations share the same boundary layout - typically the `SPAS` vector built by the [spatial discretization factory](../Meshing/index.md#factory) — building each `BCS` object one by one is repetitive. `setBoundaryConditions` builds `N` of them in a single call, from a `spatials` vector and a single, shared list of `Boundary` objects.
+
+!!! example "Building boundary conditions for 30 spatial discretizations"
+    ```c++
+    using namespace Sloth2D;
+
+    auto boundaries = {Boundary("lower", 0, "Periodic"), Boundary("right", 1, "Periodic"),
+                       Boundary("upper", 2, "Periodic"), Boundary("left", 3, "Periodic")};
+    auto bcs = setBoundaryConditions(30, spatials, boundaries);
+    ```
+    `spatials` is a `SPAS` object (e.g. built with [`setPeriodicSpatialDiscretization`](../Meshing/index.md#factory)), and `bcs[i]` is the `BCS` object associated with `spatials[i]`, equivalent to `BCS(spatials[i], boundaries)`.
+
+!!! warning "Number of spatial discretizations"
+    `spatials` must contain exactly `N` elements — one `Boundary` list is shared across every spatial discretization, but each still gets its own `BoundaryConditions` object.
