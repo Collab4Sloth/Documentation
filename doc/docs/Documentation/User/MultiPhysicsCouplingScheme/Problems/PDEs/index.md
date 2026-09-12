@@ -565,3 +565,31 @@ Once a `Problem` is fully defined, an AMR driver can be attached to it so that `
 
     - For the complete step-by-step workflow, see the [AMR tutorial](../../../../../Started/HowTo/Tutorials/AMR/index.md);
     - For the full reference on error estimators (`ErrorEstimatorType::KELLY`, `ErrorEstimatorType::ZZ`) and AMR drivers (`SingleVariableAMR`, `MultiVariableMaxAMR`), see the [Adaptive Mesh Refinement](../../../AMR/index.md) page of the User Manual.
+
+
+#### __How to set auxiliary variables after construction?__ {#set-auxvariables}
+
+Auxiliary variables (see [Variables](../../../Variables/index.md)) can be set afterwards with `set_auxvariables`, exactly as `set_amr` is used above to attach an AMR driver:
+
+!!! example "Setting auxiliary variables after construction"
+    ```c++
+    std::vector<VARS*> aux_vect = {&aux_vars_1, &aux_vars_2};
+    phase_field_pb.set_auxvariables(aux_vect);
+    ```
+    `aux_vect` is a `std::vector<VARS*>`. This is particularly convenient in partitioned multiphase-field simulations, where each `Problem` needs the other `Variables` as auxiliary variables.
+
+
+#### __How to export a `Coefficient` in VTK output?__ {#set-vtk-coefficients}
+
+In addition to the primary [Variables](../../../Variables/index.md), quantities computed from a [`Coefficient`](../../../Coefficients/index.md) — not resolved by the system, but useful for visualization or diagnostics - can be exported to VTK output. The coefficient must first be given a name, then registered on the `Problem` with `set_vtk_coefficients`:
+
+!!! example "Registering a Coefficient for VTK output"
+    In this example, the `Coefficient` named Squares is exported to VTK output.
+
+    ```c++
+    Coefficient squares(Glossary::PhaseField, Scheme::Implicit, Squares());
+    squares.set_name("Squares");
+
+    phase_field_pb.set_vtk_coefficients({squares});
+    ```
+    `set_vtk_coefficients` takes a `std::vector<Coefficient>`, so several coefficients can be registered at once. Each is projected onto a grid function and saved alongside the usual `Variables`, using its name (`"Squares"` here) as the field name in the VTK output.
