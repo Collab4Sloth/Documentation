@@ -556,10 +556,10 @@ Auxiliary variables (see [Variables](../../../Variables/index.md)) can be set af
 
 !!! example "Setting auxiliary variables after construction"
     ```c++
-    SPAS aux_vect = {&aux_vars_1, &aux_vars_2};
+    std::vector<VARS*> aux_vect = {&aux_vars_1, &aux_vars_2};
     phase_field_pb.set_auxvariables(aux_vect);
     ```
-    `aux_vect` is a `std::vector<VARS*>` (see the alias `SPAS`provided by a [`SLOTH` namespace](../../../Aliases/index.md)). This is particularly convenient in partitioned multiphase-field simulations, where each `Problem` needs the other `Variables` as auxiliary variables.
+    `aux_vect` is a `std::vector<VARS*>`. This is particularly convenient in partitioned multiphase-field simulations, where each `Problem` needs the other `Variables` as auxiliary variables.
 
 
 #### __How to export a `Coefficient` in VTK output?__ {#set-vtk-coefficients}

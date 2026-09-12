@@ -10,19 +10,19 @@ That's it — no need to write out `FECollection`, `VARS`, `SPA`, etc. by hand a
 
 ## What you get with `using namespace SlothND`
 
-| Alias | Description | Typical use |
-|---|---|---|
-| `DIM` | Spatial dimension | Passed to many objects... |
-| `FECollection` | Finite element collection (`mfem::H1_FECollection`) | Passed to `SPA`/`BCS` if you need it explicitly |
-| `VARS` | Collection of variables | `VARS vars(var1, var2, ...)` |
-| `VAR` | A single variable | `VAR phi(&spatial, bcs, "phi", ...)` |
-| `PST` | Post-processing object | `PST pst(&spatial, pst_parameters)` |
-| `SPA` | Spatial discretization | `SPA spatial(mesh_type, ...)` |
-| `SPAS` | `std::vector<SPA*>` | Returned by the [SpatialDiscretization factories](../SpatialDiscretization/Meshing/index.md#factory) |
-| `BCS` | Boundary conditions | `BCS bcs(&spatial, boundaries)` |
-| `PB_MPI` | `MPI_Problem<VARS, PST>` | 0D / lumped-parameter problems |
-| `PB_CALPHAD<CALPHAD>` | `Calphad_Problem<CALPHAD, VARS, PST>` | Calphad-driven problems |
-| `PB_PROPERTY<PROPERTY>` | `Property_problem<PROPERTY, VARS, PST>` | Property-driven problems |
+| Alias                   | Description                                         | Typical use                                                                                          |
+| ----------------------- | --------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `DIM`                   | Spatial dimension                                   | Passed to many objects...                                                                            |
+| `FECollection`          | Finite element collection (`mfem::H1_FECollection`) | Passed to `SPA`/`BCS` if you need it explicitly                                                      |
+| `VARS`                  | Collection of variables                             | `VARS vars(var1, var2, ...)`                                                                         |
+| `VAR`                   | A single variable                                   | `VAR phi(&spatial, bcs, "phi", ...)`                                                                 |
+| `PST`                   | Post-processing object                              | `PST pst(&spatial, pst_parameters)`                                                                  |
+| `SPA`                   | Spatial discretization                              | `SPA spatial(mesh_type, ...)`                                                                        |
+| `SPAS`                  | `std::vector<SPA*>`                                 | Returned by the [SpatialDiscretization factories](../SpatialDiscretization/Meshing/index.md#factory) |
+| `BCS`                   | Boundary conditions                                 | `BCS bcs(&spatial, boundaries)`                                                                      |
+| `PB_MPI`                | `MPI_Problem<VARS, PST>`                            | 0D / lumped-parameter problems                                                                       |
+| `PB_CALPHAD<CALPHAD>`   | `Calphad_Problem<CALPHAD, VARS, PST>`               | Calphad-driven problems                                                                              |
+| `PB_PROPERTY<PROPERTY>` | `Property_problem<PROPERTY, VARS, PST>`             | Property-driven problems                                                                             |
 
 None of these depend on whether the problem is transient or steady — that's why one `using namespace` is enough to get all of them, regardless of the scheme used.
 
@@ -34,12 +34,12 @@ To also get the usual PDE-type aliases, add the scheme-specific namespace:
 using namespace Sloth2D;
 ```
 
-| Alias | Description |
-|---|---|
-| `TransientOPE` | The operator (`TransientOperator<...>`) |
-| `SteadyOPE` | The operator (`SteadyOperator<...>`) |
-| `TransientPB` | The transient problem (`Problem<TransientOPE, VARS, PST>`) |
-| `SteadyPB` | The steady problem (`Problem<SteadyOPE, VARS, PST>`) |
+| Alias          | Description                                                |
+| -------------- | ---------------------------------------------------------- |
+| `TransientOPE` | The operator (`TransientOperator<...>`)                    |
+| `SteadyOPE`    | The operator (`SteadyOperator<...>`)                       |
+| `TransientPB`  | The transient problem (`Problem<TransientOPE, VARS, PST>`) |
+| `SteadyPB`     | The steady problem (`Problem<SteadyOPE, VARS, PST>`)       |
 
 
 

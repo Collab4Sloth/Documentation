@@ -145,6 +145,7 @@ The main aliases involved by the namespace `Sloth1D` are:
 | `VARS`         | Collection of variables        |
 | `PST`          | Post-processing object         |
 | `SPA`          | Spatial discretization         |
+| `SPAS`          | `std::vector<SPA*>`        |
 | `BCS`          | Boundary conditions            |
 | `TransientOPE` | Operator for transient problem |
 | `TransientPB`  | Transient problem              |
@@ -374,12 +375,11 @@ where $`\alpha`$ is a constant enthalpy of melting.
 
 !!! example "Extract of the test file with a transient Operator"
 
-    ```c++ hl_lines="6"
-        std::vector<SPA*> spatials{&spatial};
+    ```c++ hl_lines="5"
+        SPAS spatials{&spatial};
         const auto& alpha(7.e3);
         auto params = Parameters(Parameter("melting_factor", alpha));
 
-        std::vector<SPA*> spatials{&spatial};
         TransientOPE oper(spatials, {"AllenCahn", "MeltingConstant"}, params, TimeScheme::EulerImplicit, "TimeDerivative");
     ```
     

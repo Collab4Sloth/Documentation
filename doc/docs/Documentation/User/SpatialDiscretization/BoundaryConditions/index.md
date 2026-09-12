@@ -61,7 +61,7 @@ A `Boundary` object is defined by
 
         Here, `Boundary("right", 1, "Dirichlet")` and `Boundary("left", 3, "Dirichlet")` use the three-argument constructor overload (no constant value), since the actual boundary value is provided by the associated `Coefficient` instead.
 
-        In this example, `DirichletCoefficient()` is built from a following JSON file
+        In this example, `DirichletCoefficient()` is built from the following JSON file
 
         ```json
                 [

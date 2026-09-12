@@ -25,27 +25,7 @@ Without loss of generality, the alias `SPA` is used in this page in order to sim
     - `allow_nc_simplices` *(default `false`)* — additionally allows non-conforming refinement on **triangle/tetrahedron** elements specifically. It has no effect on quadrilateral/hexahedral meshes, which natively support non-conforming refinement regardless of this flag. Its value is what `is_nc_simplices()` returns afterwards.
 
     Both are illustrated as "With AMR" variants in the examples below. See the [AMR tutorial](../../../../Started/HowTo/Tutorials/AMR/index.md) for the complete workflow.
-## __Build N spatial discretizations sharing a mesh__ {#factory}
-
-For problems with many unknowns sharing the same mesh — typically a multiphase-field simulation with one primary variable per grain — building each `SPA` object [by hand from an existing mesh](#shared-mesh) becomes repetitive. The factory functions `setSpatialDiscretization` and `setPeriodicSpatialDiscretization` build `N` such objects in a single call.
-
-!!! example "Building 30 spatial discretizations sharing a periodic mesh"
-    ```c++
-    using namespace Sloth2D;
-
-    SPAS spatials =
-        setPeriodicSpatialDiscretization(30, "InlineSquareWithQuadrangles", 1, refinement_level,
-                                         std::make_tuple(NN, NN, L, L), translations, true);
-    ```
-    This builds the same mesh as any of the [MFEM meshing examples](#mfem) above and 30 `SPA` objects sharing it, equivalent to writing the first one, then 29 more from its `get_mesh()`. `SPAS` (defined by `using namespace SlothND`, see the [Basic features](../../../../Started/HowTo/Simple/index.md) page) is an alias for `std::vector<SPA*>`, ready to use wherever a vector of spatial discretizations is expected (variables, operators, boundary conditions).
-
-The first argument is `N`, the number of objects to build; the remaining arguments are forwarded verbatim to whichever `SPA` constructor they match — any of the constructors described [above](#gmsh) (`GMSH`), [above](#mfem) (`MFEM` inline meshes, periodic or not). The first object builds the mesh; the following `N - 1` share it, exactly as in the [manual pattern](#shared-mesh).
-
-- `setSpatialDiscretization(N, args...)` builds `N` objects sharing a **non-periodic** mesh.
-- `setPeriodicSpatialDiscretization(N, args...)` builds `N` objects sharing a **periodic** mesh.
-
-!!! note "Ownership"
-    The returned `SPAS` does not own the underlying `SpatialDiscretization` objects by itself — they must be released with `deleteSpatialDiscretization(spatials)` once no longer needed (typically at the end of `main`), which deletes them in the correct order (mesh-owning object last) to avoid a use-after-free on the shared mesh.
+    
 
 ## __Build a mesh from `GMSH` file__ {#gmsh}
 
