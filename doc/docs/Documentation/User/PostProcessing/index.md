@@ -37,6 +37,7 @@ The `PST` object must be defined by:
     ```
     This example shows how to declare a `PST` object with the spatial discretisation `spatial` and the parameters `pst_parameters`.
 
+
 ## Optional post-processing
 
 `PST` objects are optional when defining a `Problem`.
@@ -168,3 +169,21 @@ Isovalues are not stored in the `time_specialized.csv` file. Instead, the parame
 
     auto post_processing = PST(&spatial, pst_parameters);
     ```
+## Post-processing Coefficients in VTK output {#coefficients}
+
+In addition to `Variables`, a `PST` object can also export named [`Coefficient`](../Coefficients/index.md) objects — quantities computed from the solved variables, not resolved by the system, but useful for visualization or diagnostics (e.g. an interpolation function, an order-parameter norm used to check the multiphase-field normalization constraint, ...).
+
+A coefficient must be given a name and registered on a [`Problem`](../MultiPhysicsCouplingScheme/Problems/index.md) with `set_vtk_coefficients`:
+
+!!! example "Registering a Coefficient for VTK output"
+    ```c++
+    Coefficient squares(Glossary::PhaseField, Scheme::Implicit, Squares());
+    squares.set_name("Squares");
+
+    phase_field_pb.set_vtk_coefficients({squares});
+    ```
+
+At each post-processing step, every registered coefficient is projected onto a grid function and saved to the VTK output under its name, alongside the usual `Variables`.
+
+!!! note "Storage and unified/non-unified output"
+    This feature is compatible with both unified and non-unified VTK post-processing (see [Shared post-processing for multiphysics simulations](#shared-post-processing-for-multiphysics-simulations)).
