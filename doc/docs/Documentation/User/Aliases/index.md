@@ -12,6 +12,7 @@ That's it — no need to write out `FECollection`, `VARS`, `SPA`, etc. by hand a
 
 | Alias | Description | Typical use |
 |---|---|---|
+| `DIM` | Spatial dimension | Passed to many objects... |
 | `FECollection` | Finite element collection (`mfem::H1_FECollection`) | Passed to `SPA`/`BCS` if you need it explicitly |
 | `VARS` | Collection of variables | `VARS vars(var1, var2, ...)` |
 | `VAR` | A single variable | `VAR phi(&spatial, bcs, "phi", ...)` |

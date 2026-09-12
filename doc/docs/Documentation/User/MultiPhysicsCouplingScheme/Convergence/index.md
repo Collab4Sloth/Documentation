@@ -29,7 +29,7 @@ The `PhysicalConvergence` objects are defined by:
 
     auto conv_criteria = Convergence(phi_cvg, mu_cvg);
 
-    Problem<OPE, VARS, PST> my_problem(my_operator, my_variables, my_post_processing, conv_criteria);
+    TransientPB my_problem(my_operator, my_variables, my_post_processing, conv_criteria);
     ```
 
 !!! note "On the use of `Convergence` objects"

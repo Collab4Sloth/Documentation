@@ -19,11 +19,8 @@ The development team primarily uses [`ParaView`](https://www.paraview.org) to vi
     In that case, please contact the development team so that an interface to the `mfem::VisitDataCollection` class can be provided.
 
 !!! example "Alias declaration for `PostProcessing` class template"
-    ```c++
-    using PST = PostProcessing<mfem::H1_FECollection, mfem::ParaviewDataCollection, 2>;
-    ```
-    This example shows how to define a convenient alias for the `PostProcessing` class template instantiated with `mfem::H1_FECollection` and `mfem::ParaviewDataCollection` in dimension 2.
-
+    The alias `PST` is provided by `SLOTH` namespaces (see the [Aliases page](../../../Aliases/index.md)) for `PostProcessing` class template.
+        
 Without loss of generality, the alias `PST` is used in this page in order to simplify each code snippet.
 
 The `PST` object must be defined by:

@@ -43,11 +43,11 @@ On this page, the users can find the most important parts of a `SLOTH` input dat
         For this test, the following parameters are considered:
 
         | Parameter                          | Symbol       | Value                          |
-        |------------------------------------|--------------|--------------------------------|
+        | ---------------------------------- | ------------ | ------------------------------ |
         | mobility coefficient               | $`M_\phi`$   | $`10^{-5}`$                    |
         | energy gradient coefficient        | $`\lambda`$  | $`\frac{3}{2}\sigma\epsilon`$  |
         | surface tension                    | $`\sigma`$   | $`0.06`$                       |
-        | interface \epsilon                | $`\epsilon`$ | $`5\times10^{-4}`$             |
+        | interface \epsilon                 | $`\epsilon`$ | $`5\times10^{-4}`$             |
         | depth of the double-well potential | $`\omega`$   | $`12\frac{\sigma}/{\epsilon}`$ |
 
 
@@ -72,7 +72,7 @@ Each `SLOTH` test is actually defined as a `main.cpp` file, which consists of fo
     //---------------------------------------
     int main(int argc, char* argv[]) {
         //---------------------------------------
-        // 1/ Aliases / Parallelism
+        // 1/ Namespace / Parallelism
         //---------------------------------------
 
         //---------------------------------------
@@ -89,9 +89,9 @@ Each `SLOTH` test is actually defined as a `main.cpp` file, which consists of fo
     }
     ```
 
-### __Headers, Aliases & Parallelism__  {#common}
+### __Headers, Namespace & Parallelism__  {#common}
 
-Headers, aliases and parallelism features are the most general information that can be find in all test files. 
+Headers, naamespace and parallelism features are the most general information that can be find in all test files. 
 
 There are 3 main headers. 
 
@@ -105,69 +105,64 @@ There are 3 main headers.
     //---------------------------------------
     // Headers
     //---------------------------------------
-    #include "kernel/sloth.hpp"
+    #include "Sloth/sloth.hpp"
     #include "mfem.hpp"  // NOLINT [no include the directory when naming mfem include file]
-    #include "tests/tests.hpp"
+    #include "Sloth/tests.hpp"
 
     int main(int argc, char* argv[]) {
         
     }
     ```
 
+There are three namespaces, `Sloth1D`, `Sloth2D` and `Sloth3D`, for 1D, 2D, 3D simulations, respectively. 
+They involved aliases that facilitate the use of complex C++ types by providing a more concise alternative and pertain to all tests. 
+They are detailed in the [Aliases page](../../../Documentation/User/Aliases/index.md). 
 
-Aliases facilitate the use of complex C++ types by providing a more concise alternative. 
-It should be noted that users may define additional aliases. However, those specified in this page pertain to all tests. 
 
-Each alias employ a template structure for space dimension dependence (see `DIM` in the example).
-
-!!! example "Test file with headers and common aliases"
+!!! example "Test file with headers and namespace "
 
     ```c++ hl_lines="12-19"
     //---------------------------------------
     // Headers
     //---------------------------------------
-    #include "kernel/sloth.hpp"
+    #include "Sloth/sloth.hpp"
     #include "mfem.hpp"  // NOLINT [no include the directory when naming mfem include file]
-    #include "tests/tests.hpp"
+    #include "Sloth/tests.hpp"
 
     int main(int argc, char* argv[]) {
         //---------------------------------------
-        // Common aliases
+        // Namespace
         //---------------------------------------
-        const int DIM=1;
-        using FECollection = Test<DIM>::FECollection;
-        using VARS = Test<DIM>::VARS;
-        using VAR = Test<DIM>::VAR;
-        using PST = Test<DIM>::PST;
-        using SPA = Test<DIM>::SPA;
-        using BCS = Test<DIM>::BCS;    
+        using namespace Sloth1D;
     }
     ```
-These aliases both refer to MFEM or `SLOTH` types used many times in the test file:
+The main aliases involved by the namespace `Sloth1D` are:
 
-| **Alias**       | **Type**                   | **Description**                                            |
-|-----------------|----------------------------|------------------------------------------------------------|
-| `FECollection`  | `Test<DIM>::FECollection`  | Finite Element Space. $`\cal{H}^1`$ by default (MFEM type) |
-| `VARS`          | `Test<DIM>::VARS`          | Collection of Variable objects (SLOTH type)                |
-| `VAR`           | `Test<DIM>::VAR`           | Variable object  (SLOTH type)                              |
-| `PST`           | `Test<DIM>::PST`           | PostProcessing (SLOTH type)                                |
-| `SPA`           | `Test<DIM>::SPA`           | Spatial Discretization (SLOTH type)                        |
-| `BCS`           | `Test<DIM>::BCS`           | Boundary Conditions (SLOTH type)                           |
+| Alias          | Description                    |
+| -------------- | ------------------------------ |
+| `DIM`          | Spatial dimension              |
+| `VAR`          | A single variable              |
+| `VARS`         | Collection of variables        |
+| `PST`          | Post-processing object         |
+| `SPA`          | Spatial discretization         |
+| `BCS`          | Boundary conditions            |
+| `TransientOPE` | Operator for transient problem |
+| `TransientPB`  | Transient problem              |
 
 SLOTH's ambition is to be able to perform massively parallel computations 
 while logically retaining the ability to perform sequential computations.
 
-Only three lines of code must be defined in each test file for the MPI and HYPRE libraries.
+Only three lines of code must be defined in each test file for the MPI and HYPRE libraries, and two lines for the profiling.
 
 !!! example "Test file with headers, common aliases and parallelism features"
 
-    ```c++ hl_lines="12 13 30"
+    ```c++ hl_lines="12 13 23"
     //---------------------------------------
     // Headers
     //---------------------------------------
-    #include "kernel/sloth.hpp"
+    #include "Sloth/sloth.hpp"
     #include "mfem.hpp"  // NOLINT [no include the directory when naming `MFEM` include file]
-    #include "tests/tests.hpp"
+    #include "Sloth/tests.hpp"
 
     int main(int argc, char* argv[]) {
         //---------------------------------------
@@ -176,21 +171,24 @@ Only three lines of code must be defined in each test file for the MPI and HYPRE
         mfem::Mpi::Init(argc, argv);
         mfem::Hypre::Init();
         //---------------------------------------
-        // Common aliases
+        // Profiling
         //---------------------------------------
-        const int DIM=1;
-        using FECollection = Test<DIM>::FECollection;
-        using VARS = Test<DIM>::VARS;
-        using VAR = Test<DIM>::VAR;
-        using PST = Test<DIM>::PST;
-        using SPA = Test<DIM>::SPA;
-        using BCS = Test<DIM>::BCS;
+        Profiling::getInstance().enable();
+        //---------------------------------------
+        // Namespace
+        //---------------------------------------
+        using namespace Sloth1D;
 
-    
+
+        //---------------------------------------
+        // Profiling stop
+        //---------------------------------------
+        Profiling::getInstance().print();
         //---------------------------------------
         // Finalize MPI
         //---------------------------------------
         mfem::Mpi::Finalize();
+        return 0;
     }
     ```
 
@@ -230,7 +228,7 @@ A `Boundary` object is defined by
  - a name (C++ type `std::string'),
  - an index (C++ type `int`),
  - a type (C++ type `std::string') among "Dirichlet", "Neumann", "Periodic",
- - a value (C++ type `double`), equal to zero by default.
+ - a value (C++ type `double`), only for uniform Dirichlet boundar condition.
 
 !!! example "Extract of the test file with the mesh and its associated Neumann boundary conditions"
 
@@ -244,10 +242,10 @@ A `Boundary` object is defined by
         auto nb_fe = 30;
         SPA spatial("InlineLineWithSegments", fe_order, refinement_level, std::make_tuple(nb_fe, length));
 
-        auto boundaries = {Boundary("left", 0, "Neumann", 0.), Boundary("right", 1, "Neumann", 0.)};
+        auto boundaries = {Boundary("left", 0, "Neumann"), Boundary("right", 1, "Neumann")};
         auto bcs = BCS(&spatial, boundaries);
     ```
-    This example consider Neumann boundary conditions both on the left and on the right of the domain.
+    This example consider homogeneous Neumann boundary conditions both on the left and on the right of the domain.
 
 Different type of boundary conditions can be mixed as detailed in the [Boundary Conditions section of the user manual](../../../Documentation/User/SpatialDiscretization/BoundaryConditions/index.md). 
 
@@ -257,13 +255,13 @@ Different type of boundary conditions can be mixed as detailed in the [Boundary 
 
 !!! example "Test file with the mesh and the boundary conditions"
 
-    ```c++ hl_lines="28-34"
+    ```c++ hl_lines="22-28"
     //---------------------------------------
     // Headers
     //---------------------------------------
-    #include "kernel/sloth.hpp"
+    #include "Sloth/sloth.hpp"
     #include "mfem.hpp"  // NOLINT [no include the directory when naming mfem include file]
-    #include "tests/tests.hpp"
+    #include "Sloth/tests.hpp"
 
     int main(int argc, char* argv[]) {
         //---------------------------------------
@@ -272,15 +270,14 @@ Different type of boundary conditions can be mixed as detailed in the [Boundary 
         mfem::Mpi::Init(argc, argv);
         mfem::Hypre::Init();
         //---------------------------------------
-        // Common aliases
+        // Profiling
         //---------------------------------------
-        const int DIM=1;
-        using FECollection = Test<DIM>::FECollection;
-        using VARS = Test<DIM>::VARS;
-        using VAR = Test<DIM>::VAR;
-        using PST = Test<DIM>::PST;
-        using SPA = Test<DIM>::SPA;
-        using BCS = Test<DIM>::BCS;
+        Profiling::getInstance().enable();
+        //---------------------------------------
+        // Namespace
+        //---------------------------------------
+        using namespace Sloth1D;
+
         //---------------------------------------
         // Meshing & Boundary Conditions
         //---------------------------------------
@@ -289,12 +286,13 @@ Different type of boundary conditions can be mixed as detailed in the [Boundary 
         auto length = 1.e-3;
         auto nb_fe = 30;
         SPA spatial("InlineLineWithSegments", fe_order, refinement_level, std::make_tuple(nb_fe, length));
-        auto boundaries = {Boundary("left", 0, "Neumann", 0.), Boundary("right", 1, "Neumann", 0.)};
+        auto boundaries = {Boundary("left", 0, "Neumann"), Boundary("right", 1, "Neumann")};
         auto bcs = BCS(&spatial, boundaries);
         //---------------------------------------
         // Finalize MPI
         //---------------------------------------
         mfem::Mpi::Finalize();
+        return 0;
     }
     ```
 
@@ -335,7 +333,7 @@ If the mathematical expression is not yet available, the users can define it wit
 
 !!! example "Extract of the test file with Variables"
 
-    ```c++ hl_lines="15"
+    ```c++ hl_lines="15-17"
 
         //---------------------------------------
         // Multiphysics coupling scheme
@@ -348,7 +346,7 @@ If the mathematical expression is not yet available, the users can define it wit
         const auto& radius = 5.e-4;
 
         std::string variable_name = "phi";
-        GlossaryQuantities variable_type = Glossary::Phi;
+        GlossaryQuantity variable_type = Glossary::PhaseField;
         int level_of_storage= 2;
 
         auto initial_condition = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, 2.*thickness, radius);
@@ -358,7 +356,7 @@ If the mathematical expression is not yet available, the users can define it wit
     This example defines a single primary variable, named "phi" with two levels of storage. 
     The initial condition and the analytical solution are of the hyperbolic tangent type.
     
-Other major C++ objects for `SLOTH` is `SteadyOperator` and `TransientOperator`, which enables to solve the steady and unsteady algebraic system resulting from the discretization of the (non-linear) equations. This is detailed in the [`Partial Differential Equations` page of the user manual](../../../Documentation/User/MultiPhysicsCouplingScheme/Problems/PDEs/index.md).  
+Other major C++ objects for `SLOTH` is `SteadyOperator` and `TransientOperator`, which enables to solve the steady and unsteady algebraic system resulting from the discretization of the (non-linear) equations. This is detailed in the [`Partial Differential Equations` page of the user manual](../../../Documentation/User/MultiPhysicsCouplingScheme/Problems/PDEs/index.md). Specifically for tests, `SteadyOperator` and `TransientOperator` are accessible by using the aliases `SteadyOPE` and `TransientOPE`.
 
 Although the input arguments provided to these objects are of interest, the focus is rather on the definition of the C++ object itself, which requires the input of the variational formulation of the equations. 
 This specificity is implemented using objects of `BlockNonLinearFormIntegrators`, also detailed in the user manual in the [`Partial Differential Equations`](../../../Documentation/User/MultiPhysicsCouplingScheme/Problems/PDEs/index.md) page. 
@@ -374,7 +372,7 @@ In the present example, the variational formulation is defined by combining the 
 ```
 where $`\alpha`$ is a constant enthalpy of melting.
 
-!!! example "Extract of the test file with a TransientOperator"
+!!! example "Extract of the test file with a transient Operator"
 
     ```c++ hl_lines="6"
         std::vector<SPA*> spatials{&spatial};
@@ -382,7 +380,7 @@ where $`\alpha`$ is a constant enthalpy of melting.
         auto params = Parameters(Parameter("melting_factor", alpha));
 
         std::vector<SPA*> spatials{&spatial};
-        TransientOperator<FECollection, DIM> oper(spatials, {"AllenCahn", "MeltingConstant"}, params, TimeScheme::EulerImplicit, "TimeDerivative");
+        TransientOPE oper(spatials, {"AllenCahn", "MeltingConstant"}, params, TimeScheme::EulerImplicit, "TimeDerivative");
     ```
     
 
@@ -408,18 +406,19 @@ By default, all primary variables associated with a `SLOTH` `Problem` are saved.
     ```
     In this example, the results will be saved in the `Saves/AllenCahn` directory (see `Parameter("main_folder_path", main_folder_path)` and  `Parameter("calculation_path", calculation_path)`), at each time-step (see `Parameter("frequency", frequency)`).
 
-At this stage,  the `SLOTH` `Problem` can be defined and, as previously explained, collected in a `Coupling` object. 
-This is illustrated in the following example (see `Problem<OPE, VARS, PST> ac_problem` and  `Coupling("Main coupling", ac_problem)`). 
+At this stage,  the `SLOTH` `Problem` can be defined and, as previously explained, collected in a `Coupling` object. Specially for tests, steady and unsteady problems are accessible using the `SteadyPB` and `TransientPB`, respectively.
+
+This is illustrated in the following example (see `TransientPB` and  `Coupling("Main coupling", ac_problem)`). 
 
 !!! example "Test file with Variables, Operators and Integrators and Post-Processing"
 
-    ```c++ hl_lines="62-76 88"
+    ```c++ hl_lines="45 52 69-73 78"
     //---------------------------------------
     // Headers
     //---------------------------------------
-    #include "kernel/sloth.hpp"
+    #include "Sloth/sloth.hpp"
     #include "mfem.hpp"  // NOLINT [no include the directory when naming mfem include file]
-    #include "tests/tests.hpp"
+    #include "Sloth/tests.hpp"
 
     int main(int argc, char* argv[]) {
         //---------------------------------------
@@ -428,15 +427,13 @@ This is illustrated in the following example (see `Problem<OPE, VARS, PST> ac_pr
         mfem::Mpi::Init(argc, argv);
         mfem::Hypre::Init();
         //---------------------------------------
-        // Common aliases
+        // Profiling
         //---------------------------------------
-        const int DIM=1;
-        using FECollection = Test<DIM>::FECollection;
-        using VARS = Test<DIM>::VARS;
-        using VAR = Test<DIM>::VAR;
-        using PST = Test<DIM>::PST;
-        using SPA = Test<DIM>::SPA;
-        using BCS = Test<DIM>::BCS;
+        Profiling::getInstance().enable();
+        //---------------------------------------
+        // Namespace
+        //---------------------------------------        
+        using namespace Sloth1D;
         //---------------------------------------
         // Meshing & Boundary Conditions
         //---------------------------------------
@@ -445,7 +442,7 @@ This is illustrated in the following example (see `Problem<OPE, VARS, PST> ac_pr
         auto length = 1.e-3;
         auto nb_fe = 30;
         SPA spatial("InlineLineWithSegments", fe_order, refinement_level, std::make_tuple(nb_fe, length));
-        auto boundaries = {Boundary("left", 0, "Neumann", 0.), Boundary("right", 1, "Neumann", 0.)};
+        auto boundaries = {Boundary("left", 0, "Neumann"), Boundary("right", 1, "Neumann")};
         auto bcs = BCS(&spatial, boundaries);
 
         //---------------------------------------
@@ -459,22 +456,19 @@ This is illustrated in the following example (see `Problem<OPE, VARS, PST> ac_pr
         const auto& radius = 5.e-4;
 
         std::string variable_name = "phi";
-        GlossaryQuantities variable_type = Glossary::Phi;
+        GlossaryQuantity variable_type = Glossary::PhaseField;
         int level_of_storage= 2;
 
         auto initial_condition = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, 2.*thickness, radius);
         auto analytical_solution = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, thickness, radius);
         auto vars = VARS(VAR(&spatial, bcs, variable_name, variable_type, level_of_storage, initial_condition, analytical_solution));
 
-        //--- Integrator : alias definition for the sake of clarity
-        using NLFI = AllenCahnNLFormIntegrator<VARS, ThermodynamicsPotentialDiscretization::Implicit, ThermodynamicsPotentials::W, Mobility::Constant>;
-
         //--- Operator definition
-        std::vector<SPA*> spatials{&spatial};
+        SPAS spatials{&spatial};
         const auto& alpha(7.e3);
         auto params = Parameters(Parameter("melting_factor", alpha));
 
-        TransientOperator<FECollection, DIM> oper(spatials, {"AllenCahn", "MeltingConstant"}, params, TimeScheme::EulerImplicit, "TimeDerivative");
+        TransientOPE oper(spatials, {"AllenCahn", "MeltingConstant"}, params, TimeScheme::EulerImplicit, "TimeDerivative");
 
         //--- Coefficients
         // Interfacial energy
@@ -500,7 +494,7 @@ This is illustrated in the following example (see `Problem<OPE, VARS, PST> ac_pr
         //-----------------------
         // Problem
         //-----------------------
-        Problem<TransientOperator<FECollection, DIM>, VARS, PST> ac_problem(oper, vars, {coef_ac}, pst);
+        TransientPB ac_problem(oper, vars, {coef_ac}, pst);
 
         //-----------------------
         // Coupling
@@ -508,9 +502,14 @@ This is illustrated in the following example (see `Problem<OPE, VARS, PST> ac_pr
         auto main_coupling = Coupling("Main coupling", ac_problem);
 
         //---------------------------------------
+        // Profiling stop
+        //---------------------------------------
+        Profiling::getInstance().print();
+        //---------------------------------------
         // Finalize MPI
         //---------------------------------------
         mfem::Mpi::Finalize();
+        return 0;
     }
     ```
     In this example, a coupling, labelled `Main coupling`, is defined with only one `SLOTH` `Problem` associated with the solution of Allen-Cahn equation.
@@ -552,9 +551,9 @@ This is detailed in the [`Time` page of the user manual](../../../Documentation/
     //---------------------------------------
     // Headers
     //---------------------------------------
-    #include "kernel/sloth.hpp"
+    #include "Sloth/sloth.hpp"
     #include "mfem.hpp"  // NOLINT [no include the directory when naming mfem include file]
-    #include "tests/tests.hpp"
+    #include "Sloth/tests.hpp"
 
     int main(int argc, char* argv[]) {
         //---------------------------------------
@@ -563,15 +562,13 @@ This is detailed in the [`Time` page of the user manual](../../../Documentation/
         mfem::Mpi::Init(argc, argv);
         mfem::Hypre::Init();
         //---------------------------------------
-        // Common aliases
+        // Profiling
         //---------------------------------------
-        const int DIM=1;
-        using FECollection = Test<DIM>::FECollection;
-        using VARS = Test<DIM>::VARS;
-        using VAR = Test<DIM>::VAR;
-        using PST = Test<DIM>::PST;
-        using SPA = Test<DIM>::SPA;
-        using BCS = Test<DIM>::BCS;
+        Profiling::getInstance().enable();
+        //---------------------------------------
+        // Namespace
+        //---------------------------------------
+        using namespace Sloth1D;
         //---------------------------------------
         // Meshing & Boundary Conditions
         //---------------------------------------
@@ -580,7 +577,7 @@ This is detailed in the [`Time` page of the user manual](../../../Documentation/
         auto length = 1.e-3;
         auto nb_fe = 30;
         SPA spatial("InlineLineWithSegments", fe_order, refinement_level, std::make_tuple(nb_fe, length));
-        auto boundaries = {Boundary("left", 0, "Neumann", 0.), Boundary("right", 1, "Neumann", 0.)};
+        auto boundaries = {Boundary("left", 0, "Neumann"), Boundary("right", 1, "Neumann")};
         auto bcs = BCS(&spatial, boundaries);
 
         //---------------------------------------
@@ -594,22 +591,19 @@ This is detailed in the [`Time` page of the user manual](../../../Documentation/
         const auto& radius = 5.e-4;
 
         std::string variable_name = "phi";
-        GlossaryQuantities variable_type = Glossary::Phi;
+        GlossaryQuantity variable_type = Glossary::PhaseField;
         int level_of_storage= 2;
 
         auto initial_condition = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, 2.*thickness, radius);
         auto analytical_solution = AnalyticalFunctions<DIM>(AnalyticalFunctionsType::from("HyperbolicTangent"), center_x, a_x, thickness, radius);
         auto vars = VARS(VAR(&spatial, bcs, variable_name, variable_type, level_of_storage, initial_condition, analytical_solution));
 
-        //--- Integrator : alias definition for the sake of clarity
-        using NLFI = AllenCahnNLFormIntegrator<VARS, ThermodynamicsPotentialDiscretization::Implicit, ThermodynamicsPotentials::W, Mobility::Constant>;
-
         //--- Operator definition
-        std::vector<SPA*> spatials{&spatial};
+        SPAS spatials{&spatial};
         const auto& alpha(7.e3);
         auto params = Parameters(Parameter("melting_factor", alpha));
 
-        TransientOperator<FECollection, DIM> oper(spatials, {"AllenCahn", "MeltingConstant"}, params, TimeScheme::EulerImplicit, "TimeDerivative");
+        TransientOPE oper(spatials, {"AllenCahn", "MeltingConstant"}, params, TimeScheme::EulerImplicit, "TimeDerivative");
 
         //--- Coefficients
         // Interfacial energy
@@ -635,7 +629,7 @@ This is detailed in the [`Time` page of the user manual](../../../Documentation/
         //-----------------------
         // Problem
         //-----------------------
-        Problem<TransientOperator<FECollection, DIM>, VARS, PST> ac_problem(oper, vars, {coef_ac}, pst);
+        TransientPB ac_problem(oper, vars, {coef_ac}, pst);
 
         //-----------------------
         // Coupling
@@ -654,8 +648,13 @@ This is detailed in the [`Time` page of the user manual](../../../Documentation/
         time.solve();
 
         //---------------------------------------
+        // Profiling stop
+        //---------------------------------------
+        Profiling::getInstance().print();
+        //---------------------------------------
         // Finalize MPI
         //---------------------------------------
         mfem::Mpi::Finalize();
+        return 0;
     }
     ```
