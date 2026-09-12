@@ -26,9 +26,9 @@ That's it — no need to write out `FECollection`, `VARS`, `SPA`, etc. by hand a
 
 None of these depend on whether the problem is transient or steady — that's why one `using namespace` is enough to get all of them, regardless of the scheme used.
 
-## Adding the PDE aliases
+## PDE aliases
 
-To also get the usual PDE-type aliases, add the scheme-specific namespace:
+`TransientOPE`/`TransientPB`/`SteadyOPE`/`SteadyPB` are already included in the single `using namespace Sloth2D;` shown above — no extra namespace is required:
 
 ```c++
 using namespace Sloth2D;
