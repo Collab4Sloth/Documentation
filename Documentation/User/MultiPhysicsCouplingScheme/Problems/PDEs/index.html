@@ -2238,6 +2238,8 @@
       
         
       
+        
+      
     
     
     
@@ -2293,6 +2295,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Aliases/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aliases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -2435,7 +2465,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -2457,14 +2487,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2574,7 +2604,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -2596,14 +2626,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2703,7 +2733,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8_4" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -2725,14 +2755,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_7_4" id="__nav_3_7_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3_8_4" id="__nav_3_8_4_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_7_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_7_4">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_8_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2770,7 +2800,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7_4_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8_4_2" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -2793,8 +2823,8 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_7_4_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_7_4_2">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_8_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_8_4_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3455,6 +3485,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#set-auxvariables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to set auxiliary variables after construction?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-vtk-coefficients" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to export a Coefficient in VTK output?
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3509,11 +3561,6 @@ F(U(x,t))&amp;=G(U(x,t))
 <p>The use of a Newton solver represents a pragmatic choice. Nevertheless, the code has been structured in such a way that alternative algorithms can be incorporated in the future.</p>
 </div>
 <p>Definition of PDEs for <code>SLOTH</code> is made with a C++ object of type <code>Problem</code>, which is a template class instantiated with three template parameters: first, an <code>OPERATOR</code> object, second, a <a href="../../../Variables/index.html">Variables</a> object (see <code>VARS</code> in the example), and third, a <a href="../../../PostProcessing/index.html">PostProcessing</a> object (see <code>PST</code> in the example).</p>
-<div class="admonition example">
-<p class="admonition-title">Alias declaration for <code>Problem</code> class template</p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">using</span><span class="w"> </span><span class="n">PDE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Problem</span><span class="o">&lt;</span><span class="n">OPERATOR</span><span class="p">,</span><span class="w"> </span><span class="n">VARS</span><span class="p">,</span><span class="w"> </span><span class="n">PST</span><span class="o">&gt;</span><span class="p">;</span>
-</span></code></pre></div>
-</div>
 <p>The <code>OPERATOR</code> object in <code>Problem</code> refers to an object that inherits from base classes responsible for solving the nonlinear system (1). 
 These classes are illustrated in the figure 2: <code>OperatorBase</code> is a base class with two derived classes:</p>
 <ul>
@@ -3554,8 +3601,8 @@ In the figure 3, the integrators are gathered in two grouped:</p>
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.3574em;vertical-align:-0.9287em;"></span><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.4287em;"><span style="top:-3.4287em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">t</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">φ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9287em;"><span></span></span></span></span></span></span></span><span class="tag"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.4287em;"><span style="top:-3.4287em;"><span class="pstrut" style="height:3.3714em;"></span><span class="eqn-num"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9287em;"><span></span></span></span></span></span></span></span></span></p>
 <p>For explicit time-discretization, two <code>SLOTH</code> coefficients of type <code>GlossaryType::ExplicitTime_A</code> and <code>GlossaryType::ExplicitTime_B</code> can be defined, respectively. 
 By default, these coefficients are set to one. </p>
-<div class="language-C++ highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">Coefficient</span><span class="w"> </span><span class="nf">explicit_time_A</span><span class="p">(</span><span class="n">Glossary</span><span class="o">::</span><span class="n">ExplicitTime_A</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">Coefficient</span><span class="w"> </span><span class="nf">explicit_time_B</span><span class="p">(</span><span class="n">Glossary</span><span class="o">::</span><span class="n">ExplicitTime_B</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
+<div class="language-C++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Coefficient</span><span class="w"> </span><span class="nf">explicit_time_A</span><span class="p">(</span><span class="n">Glossary</span><span class="o">::</span><span class="n">ExplicitTime_A</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">Coefficient</span><span class="w"> </span><span class="nf">explicit_time_B</span><span class="p">(</span><span class="n">Glossary</span><span class="o">::</span><span class="n">ExplicitTime_B</span><span class="p">,</span><span class="w"> </span><span class="mf">1.0</span><span class="p">);</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
@@ -3851,11 +3898,9 @@ where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.
 <p><code>TransientOperator</code> is a template class instantiated with two template parameters: first, the kind of finite element and second, the spatial dimension.</p>
 <div class="admonition example">
 <p class="admonition-title">Alias declaration for <code>TransientOperator</code> class template</p>
-<p>This example show how to define a convenient alias for the <code>TransientOperator</code> class template instantiated with <code>mfem::H1_FECollection</code> in dimension 3.  </p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">using</span><span class="w"> </span><span class="n">OPERATOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TransientOperator</span><span class="o">&lt;</span><span class="n">mfem</span><span class="o">::</span><span class="n">H1_FECollection</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="p">;</span>
-</span></code></pre></div>
+<p>The alias <code>TransientOPE</code> is provided by <code>SLOTH</code> namespaces (see the <a href="../../../Aliases/index.html">Aliases page</a>) for operator used in unsteady problems</p>
 </div>
-<p>The <code>OPERATOR</code> operator must be defined by:</p>
+<p>The <code>TransientOPE</code> operator must be defined by:</p>
 <ul>
 <li>a vector of spatial discretisation objects (see <a href="../../../SpatialDiscretization/Meshing/index.html">Meshing</a>) [required], </li>
 <li>a vector of strings specifying the integrators used to model spatial differential operators [required],</li>
@@ -3882,18 +3927,16 @@ where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.
 <div class="admonition example">
 <p class="admonition-title">Definition of a transient operator</p>
 <p>This example assume a Cahn-Hilliard problem with two unknowns (<code>phi</code> and <code>mu</code>). 
-The <code>OPERATOR</code> object, denoted by <code>phasefield_ope</code>, is well declared with a vector of two <a href="../../../SpatialDiscretization/index.html">spatial discretization</a> objects, the <code>CahnHilliard</code> and <code>SplitTimeDerivative</code> integrators and an Euler Implicit time-stepping method.</p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">using</span><span class="w"> </span><span class="n">OPERATOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TransientOperator</span><span class="o">&lt;</span><span class="n">mfem</span><span class="o">::</span><span class="n">H1_FECollection</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">SPA</span><span class="o">*&gt;</span><span class="w"> </span><span class="n">spatials</span><span class="p">{</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">};</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">OPERATOR</span><span class="w"> </span><span class="n">phasefield_ope</span><span class="p">(</span><span class="n">spatials</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">"CahnHilliard"</span><span class="p">},</span><span class="w"> </span><span class="n">TimeScheme</span><span class="o">::</span><span class="n">EulerImplicit</span><span class="p">,</span><span class="w"> </span><span class="s">"SplitTimeDerivative"</span><span class="p">);</span>
+The <code>OPERATOR</code> object, denoted by <code>phasefield_ope</code>, is well declared with a vector of two <a href="../../../SpatialDiscretization/index.html">spatial discretization</a> objects (see the alias <code>SPAS</code> provided by a <a href="../../../Aliases/index.html"><code>SLOTH</code> namespace</a>), the <code>CahnHilliard</code> and <code>SplitTimeDerivative</code> integrators and an Euler Implicit time-stepping method.</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">SPAS</span><span class="w"> </span><span class="n">spatials</span><span class="p">{</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">};</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">TransientOPE</span><span class="w"> </span><span class="n">phasefield_ope</span><span class="p">(</span><span class="n">spatials</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">"CahnHilliard"</span><span class="p">},</span><span class="w"> </span><span class="n">TimeScheme</span><span class="o">::</span><span class="n">EulerImplicit</span><span class="p">,</span><span class="w"> </span><span class="s">"SplitTimeDerivative"</span><span class="p">);</span>
 </span></code></pre></div>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Definition of a transient operator with a combination of integrators</p>
 <p>The integrators for the differential operators can be combined. </p>
-<p><div class="language-c++ highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">using</span><span class="w"> </span><span class="n">OPERATOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TransientOperator</span><span class="o">&lt;</span><span class="n">mfem</span><span class="o">::</span><span class="n">H1_FECollection</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">SPA</span><span class="o">*&gt;</span><span class="w"> </span><span class="n">spatials</span><span class="p">{</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">};</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">OPERATOR</span><span class="w"> </span><span class="n">phasefield_ope</span><span class="p">(</span><span class="n">spatials</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">"AllenCahn"</span><span class="p">,</span><span class="w"> </span><span class="s">"MeltingConstant"</span><span class="p">},</span><span class="w"> </span><span class="n">TimeScheme</span><span class="o">::</span><span class="n">EulerImplicit</span><span class="p">,</span><span class="w"> </span><span class="s">"TimeDerivative"</span><span class="p">);</span>
+<p><div class="language-c++ highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">SPAS</span><span class="w"> </span><span class="n">spatials</span><span class="p">{</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">};</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">TransientOPE</span><span class="w"> </span><span class="n">phasefield_ope</span><span class="p">(</span><span class="n">spatials</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">"AllenCahn"</span><span class="p">,</span><span class="w"> </span><span class="s">"MeltingConstant"</span><span class="p">},</span><span class="w"> </span><span class="n">TimeScheme</span><span class="o">::</span><span class="n">EulerImplicit</span><span class="p">,</span><span class="w"> </span><span class="s">"TimeDerivative"</span><span class="p">);</span>
 </span></code></pre></div>
 In the following example, the operator enables to solve the following equation:</p>
 <p><p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.25em" columnalign="right" columnspacing=""><mtr><mtd class ="mtr-glue"></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>φ</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>M</mi><mrow><mo fence="true">(</mo><mi mathvariant="normal">∇</mi><mo>⋅</mo><mrow><mo fence="true">[</mo><mi>λ</mi><mi mathvariant="normal">∇</mi><mi>φ</mi><mo fence="true">]</mo></mrow><mo>−</mo><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>F</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>φ</mi></mrow></mfrac></mstyle><mo fence="true">)</mo></mrow><mo>+</mo><mi>M</mi><mi>α</mi><msup><mi>p</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">(</mo><mi>φ</mi><mo stretchy="false">)</mo></mrow></mstyle></mtd><mtd class ="mtr-glue"></mtd><mtd class ="mml-eqn-num"></mtd></mtr></mtable><annotation encoding="application/x-tex">
@@ -3910,11 +3953,9 @@ where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.
 <p><code>SteadyOperator</code> is a template class instantiated with two template parameters: first, the kind of finite element and second, the spatial dimension.</p>
 <div class="admonition example">
 <p class="admonition-title">Alias declaration for <code>SteadyOperator</code> class template</p>
-<p>This example show how to define a convenient alias for the <code>SteadyOperator</code> class template instantiated with <code>mfem::H1_FECollection</code> in dimension 3.  </p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">using</span><span class="w"> </span><span class="n">OPERATOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SteadyOperator</span><span class="o">&lt;</span><span class="n">mfem</span><span class="o">::</span><span class="n">H1_FECollection</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="p">;</span>
-</span></code></pre></div>
+<p>The alias <code>SteadyOPE</code> is provided by <code>SLOTH</code> namespaces (see the <a href="../../../Aliases/index.html">Aliases page</a>) for operator used in steady problems</p>
 </div>
-<p>The <code>OPERATOR</code> operator must be defined by:</p>
+<p>The <code>SteadyOPE</code> operator must be defined by:</p>
 <ul>
 <li>a vector of spatial discretisation objects (see <a href="../../../SpatialDiscretization/Meshing/index.html">Meshing</a>) [required], </li>
 <li>a vector of strings specifying the integrators used to model spatial differential operators [required],</li>
@@ -3929,9 +3970,8 @@ where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.
 <p class="admonition-title">Definition of a steady operator</p>
 <p>This example assume an Allen-Cahn problem with one unknowns (<code>phi</code>). 
 The <code>OPERATOR</code> object, denoted by <code>phasefield_ope</code>, is well declared with a vector of one <a href="../../../SpatialDiscretization/index.html">spatial discretization</a> object and the <code>AllenCahn</code>  integrator.</p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">using</span><span class="w"> </span><span class="n">OPERATOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SteadyOperator</span><span class="o">&lt;</span><span class="n">mfem</span><span class="o">::</span><span class="n">H1_FECollection</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">SPA</span><span class="o">*&gt;</span><span class="w"> </span><span class="n">spatials</span><span class="p">{</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">};</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">OPERATOR</span><span class="w"> </span><span class="n">phasefield_ope</span><span class="p">(</span><span class="n">spatials</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">"AllenCahn"</span><span class="p">});</span>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">SPAS</span><span class="w"> </span><span class="n">spatials</span><span class="p">{</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">};</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">SteadyOPE</span><span class="w"> </span><span class="n">phasefield_ope</span><span class="p">(</span><span class="n">spatials</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">"AllenCahn"</span><span class="p">});</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -3941,16 +3981,15 @@ The <code>OPERATOR</code> object, denoted by <code>phasefield_ope</code>, is wel
 <p>As already mentioned, <code>Problem</code> for <code>SLOTH</code> is a template class instantiated with three template parameters: first, an <code>OPERATOR</code> object, second, a <a href="../../../Variables/index.html">Variables</a> object, and third, a <a href="../../../PostProcessing/index.html">PostProcessing</a> object.</p>
 <div class="admonition example">
 <p class="admonition-title">Alias declaration for <code>Problem</code> class template</p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">using</span><span class="w"> </span><span class="n">PDE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Problem</span><span class="o">&lt;</span><span class="n">OPERATOR</span><span class="p">,</span><span class="w"> </span><span class="n">VARS</span><span class="p">,</span><span class="w"> </span><span class="n">PST</span><span class="o">&gt;</span><span class="p">;</span>
-</span></code></pre></div>
+<p>The aliases <code>SteadyPB</code> and <code>TransientPB</code> are provided by <code>SLOTH</code> namespaces (see the <a href="../../../Aliases/index.html">Aliases page</a>) for steady and unsteady problems, respectively.</p>
 </div>
-<p>The <code>PDE</code> problem must be defined by:</p>
+<p>The <code>SteadyPB</code> and <code>TransientPB</code> problems must be defined by:</p>
 <ul>
-<li>an <a href="#operators">Operator</a> [required], </li>
+<li>a <a href="#operators"><code>TransientOPE/SteadyOPE</code></a> [required], </li>
 <li>primary <a href="../../../Variables/index.html">Variables</a> [required],</li>
 <li>a vector of <a href="../../../Coefficients/index.html">Coefficients</a> [required],</li>
 <li>a set of parameters (see <a href="../../../Parameters/index.html">Parameters</a>) [optional],</li>
-<li>an <a href="../../../PostProcessing/index.html">PostProcessing</a> object [required], </li>
+<li>an <a href="../../../PostProcessing/index.html">PostProcessing</a> object [optional], </li>
 <li>a set of <a href="../../../Variables/index.html">auxiliary Variables</a> [optional].</li>
 </ul>
 <div class="admonition warning">
@@ -3963,33 +4002,32 @@ The <code>OPERATOR</code> object, denoted by <code>phasefield_ope</code>, is wel
 </div>
 <div class="admonition example">
 <p class="admonition-title">Definition of a Cahn-Hilliard problem</p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">using</span><span class="w"> </span><span class="n">OPERATOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SteadyOperator</span><span class="o">&lt;</span><span class="n">mfem</span><span class="o">::</span><span class="n">H1_FECollection</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="p">;</span><span class="w"> </span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">SPA</span><span class="o">*&gt;</span><span class="w"> </span><span class="n">spatials</span><span class="p">{</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">};</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1">// Variables: phi, mu</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="k">auto</span><span class="w"> </span><span class="n">phi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">VAR</span><span class="p">(</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="n">bcs_phi</span><span class="p">,</span><span class="w"> </span><span class="s">"phi"</span><span class="p">,</span><span class="w"> </span><span class="n">Glossary</span><span class="o">::</span><span class="n">PhaseField</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">phi_initial_condition</span><span class="p">);</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="k">auto</span><span class="w"> </span><span class="n">mu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">VAR</span><span class="p">(</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="n">bcs_mu</span><span class="p">,</span><span class="w"> </span><span class="s">"mu"</span><span class="p">,</span><span class="w"> </span><span class="n">Glossary</span><span class="o">::</span><span class="n">ChemicalPotential</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">mu_initial_condition</span><span class="p">);</span>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="k">auto</span><span class="w"> </span><span class="n">vars</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">VARS</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span><span class="w"> </span><span class="n">mu</span><span class="p">);</span>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="c1">// Operator</span>
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="n">OPE</span><span class="w"> </span><span class="n">phasefield_ope</span><span class="p">(</span><span class="n">spatials</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">"CahnHilliard"</span><span class="p">},</span><span class="w"> </span><span class="n">TimeScheme</span><span class="o">::</span><span class="n">EulerImplicit</span><span class="p">,</span><span class="w"> </span><span class="s">"SplitTimeDerivative"</span><span class="p">);</span>
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
-</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="c1">// Coefficients</span>
-</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="c1">//  Interface thickness</span>
-</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">epsilon</span><span class="p">(</span><span class="mf">0.02</span><span class="p">);</span>
-</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="c1">// Two-phase mobility</span>
-</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">mob</span><span class="p">(</span><span class="mf">1.</span><span class="p">);</span>
-</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="c1">// Gradient coefficient</span>
-</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">lambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">epsilon</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">epsilon</span><span class="p">);</span>
-</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="n">Coefficient</span><span class="w"> </span><span class="nf">grad_energy</span><span class="p">(</span><span class="n">Glossary</span><span class="o">::</span><span class="n">GradEnergy</span><span class="p">,</span><span class="w"> </span><span class="n">Scheme</span><span class="o">::</span><span class="n">Implicit</span><span class="p">,</span><span class="w"> </span><span class="n">GradientEnergy</span><span class="p">(</span><span class="n">lambda</span><span class="p">));</span>
-</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="n">Coefficient</span><span class="w"> </span><span class="nf">double_well</span><span class="p">(</span><span class="n">Glossary</span><span class="o">::</span><span class="n">FreeEnergy</span><span class="p">,</span><span class="w"> </span><span class="n">Scheme</span><span class="o">::</span><span class="n">Implicit</span><span class="p">,</span><span class="w"> </span><span class="n">W</span><span class="p">(</span><span class="n">omega</span><span class="p">));</span>
-</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="n">Coefficient</span><span class="w"> </span><span class="nf">capillary</span><span class="p">(</span><span class="n">Glossary</span><span class="o">::</span><span class="n">Capillary</span><span class="p">,</span><span class="w"> </span><span class="n">lambda</span><span class="p">);</span>
-</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="n">Coefficient</span><span class="w"> </span><span class="nf">mobility</span><span class="p">(</span><span class="n">Glossary</span><span class="o">::</span><span class="n">Mobility</span><span class="p">,</span><span class="w"> </span><span class="n">mob</span><span class="p">);</span>
-</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>
-</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="n">Coefficients</span><span class="w"> </span><span class="nf">coef_phase_field</span><span class="p">(</span><span class="n">double_well</span><span class="p">,</span><span class="w"> </span><span class="n">capillary</span><span class="p">,</span><span class="w"> </span><span class="n">mobility</span><span class="p">,</span><span class="w"> </span><span class="n">grad_energy</span><span class="p">);</span>
-</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>
-</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="c1">// Problem (pst is PostProcessing object not detailed here)</span>
-</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="n">PDE</span><span class="w"> </span><span class="nf">phase_field_pb</span><span class="p">(</span><span class="n">phasefield_ope</span><span class="p">,</span><span class="w"> </span><span class="n">vars</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">coef_phase_field</span><span class="p">,</span><span class="w"> </span><span class="n">coef_phase_field</span><span class="p">},</span><span class="w"> </span><span class="n">pst</span><span class="p">);</span>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">SPAS</span><span class="w"> </span><span class="n">spatials</span><span class="p">{</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">};</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1">// Variables: phi, mu</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">auto</span><span class="w"> </span><span class="n">phi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">VAR</span><span class="p">(</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="n">bcs_phi</span><span class="p">,</span><span class="w"> </span><span class="s">"phi"</span><span class="p">,</span><span class="w"> </span><span class="n">Glossary</span><span class="o">::</span><span class="n">PhaseField</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">phi_initial_condition</span><span class="p">);</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">auto</span><span class="w"> </span><span class="n">mu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">VAR</span><span class="p">(</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="n">bcs_mu</span><span class="p">,</span><span class="w"> </span><span class="s">"mu"</span><span class="p">,</span><span class="w"> </span><span class="n">Glossary</span><span class="o">::</span><span class="n">ChemicalPotential</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">mu_initial_condition</span><span class="p">);</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">auto</span><span class="w"> </span><span class="n">vars</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">VARS</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span><span class="w"> </span><span class="n">mu</span><span class="p">);</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="c1">// Operator</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">TransientOPE</span><span class="w"> </span><span class="n">phasefield_ope</span><span class="p">(</span><span class="n">spatials</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">"CahnHilliard"</span><span class="p">},</span><span class="w"> </span><span class="n">TimeScheme</span><span class="o">::</span><span class="n">EulerImplicit</span><span class="p">,</span><span class="w"> </span><span class="s">"SplitTimeDerivative"</span><span class="p">);</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="c1">// Coefficients</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="c1">//  Interface thickness</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">epsilon</span><span class="p">(</span><span class="mf">0.02</span><span class="p">);</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="c1">// Two-phase mobility</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">mob</span><span class="p">(</span><span class="mf">1.</span><span class="p">);</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="c1">// Gradient coefficient</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">lambda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">epsilon</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">epsilon</span><span class="p">);</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="n">Coefficient</span><span class="w"> </span><span class="nf">grad_energy</span><span class="p">(</span><span class="n">Glossary</span><span class="o">::</span><span class="n">GradEnergy</span><span class="p">,</span><span class="w"> </span><span class="n">Scheme</span><span class="o">::</span><span class="n">Implicit</span><span class="p">,</span><span class="w"> </span><span class="n">GradientEnergy</span><span class="p">(</span><span class="n">lambda</span><span class="p">));</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="n">Coefficient</span><span class="w"> </span><span class="nf">double_well</span><span class="p">(</span><span class="n">Glossary</span><span class="o">::</span><span class="n">FreeEnergy</span><span class="p">,</span><span class="w"> </span><span class="n">Scheme</span><span class="o">::</span><span class="n">Implicit</span><span class="p">,</span><span class="w"> </span><span class="n">W</span><span class="p">(</span><span class="n">omega</span><span class="p">));</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="n">Coefficient</span><span class="w"> </span><span class="nf">capillary</span><span class="p">(</span><span class="n">Glossary</span><span class="o">::</span><span class="n">Capillary</span><span class="p">,</span><span class="w"> </span><span class="n">lambda</span><span class="p">);</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="n">Coefficient</span><span class="w"> </span><span class="nf">mobility</span><span class="p">(</span><span class="n">Glossary</span><span class="o">::</span><span class="n">Mobility</span><span class="p">,</span><span class="w"> </span><span class="n">mob</span><span class="p">);</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="n">Coefficients</span><span class="w"> </span><span class="nf">coef_phase_field</span><span class="p">(</span><span class="n">double_well</span><span class="p">,</span><span class="w"> </span><span class="n">capillary</span><span class="p">,</span><span class="w"> </span><span class="n">mobility</span><span class="p">,</span><span class="w"> </span><span class="n">grad_energy</span><span class="p">);</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="c1">// Problem (pst is PostProcessing object not detailed here)</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="n">TransientPB</span><span class="w"> </span><span class="nf">phase_field_pb</span><span class="p">(</span><span class="n">phasefield_ope</span><span class="p">,</span><span class="w"> </span><span class="n">vars</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">coef_phase_field</span><span class="p">,</span><span class="w"> </span><span class="n">coef_phase_field</span><span class="p">},</span><span class="w"> </span><span class="n">pst</span><span class="p">);</span>
 </span></code></pre></div>
 <p>This example assume an two-phase problem solved by Cahn-Hilliard equations with two unknowns (<code>phi</code> and <code>mu</code>). </p>
 <p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mrow><mo fence="true">(</mo><mtable rowspacing="0.16em" columnalign="center" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>φ</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>t</mi></mrow></mfrac></mstyle></mstyle></mtd></mtr></mtable><mo fence="true">)</mo></mrow><mo>=</mo><mrow><mo fence="true">(</mo><mtable rowspacing="0.16em" columnalign="center" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>μ</mi><mo>−</mo><mi mathvariant="normal">∇</mi><mo>⋅</mo><mrow><mo fence="true">(</mo><mi>λ</mi><mi mathvariant="normal">∇</mi><mi>φ</mi><mo fence="true">)</mo></mrow><mo>+</mo><mstyle displaystyle="true" scriptlevel="0"><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>F</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>φ</mi></mrow></mfrac></mstyle></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi mathvariant="normal">∇</mi><mo>⋅</mo><mrow><mo fence="true">(</mo><mi>M</mi><mi mathvariant="normal">∇</mi><mi>μ</mi><mo fence="true">)</mo></mrow></mrow></mstyle></mtd></mtr></mtable><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">
@@ -4010,7 +4048,7 @@ The <code>OPERATOR</code> object, denoted by <code>phasefield_ope</code>, is wel
 \end{pmatrix}
 
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:3.2574em;vertical-align:-1.3787em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">(</span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.8787em;"><span style="top:-4.4102em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-2.6787em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">t</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">φ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.3787em;"><span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size4">)</span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:3.6em;vertical-align:-1.55em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-2.25em;"><span class="pstrut" style="height:3.155em;"></span><span class="delimsizinginner delim-size4"><span>⎝</span></span></span><span style="top:-3.397em;"><span class="pstrut" style="height:3.155em;"></span><span style="height:0.016em;width:0.875em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.875em' height='0.016em' style='width:0.875em' viewBox='0 0 875 16' preserveAspectRatio='xMinYMin'><path d='M291 0 H417 V16 H291z M291 0 H417 V16 H291z'/></svg></span></span><span style="top:-4.05em;"><span class="pstrut" style="height:3.155em;"></span><span class="delimsizinginner delim-size4"><span>⎛</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.9759em;"><span style="top:-3.9759em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"><span class="mord mathnormal">μ</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">∇</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathnormal">λ</span><span class="mord">∇</span><span class="mord mathnormal">φ</span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal">φ</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord" style="margin-right:0.05556em;">∂</span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span style="top:-2.2555em;"><span class="pstrut" style="height:3.3714em;"></span><span class="mord"><span class="mord">∇</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord">∇</span><span class="mord mathnormal">μ</span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.4759em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-2.25em;"><span class="pstrut" style="height:3.155em;"></span><span class="delimsizinginner delim-size4"><span>⎠</span></span></span><span style="top:-3.397em;"><span class="pstrut" style="height:3.155em;"></span><span style="height:0.016em;width:0.875em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.875em' height='0.016em' style='width:0.875em' viewBox='0 0 875 16' preserveAspectRatio='xMinYMin'><path d='M457 0 H583 V16 H457z M457 0 H583 V16 H457z'/></svg></span></span><span style="top:-4.05em;"><span class="pstrut" style="height:3.155em;"></span><span class="delimsizinginner delim-size4"><span>⎞</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
-<p>The <code>OPERATOR</code> object, denoted by <code>phasefield_ope</code>, is well declared with a vector of two <a href="../../../SpatialDiscretization/index.html">spatial discretization</a> objects, the <code>CahnHilliard</code>  integrator for the right-hand-side of PDEs and the <code>SplitTimeDerivative</code> for the left-hand-side. </p>
+<p>The <code>TransientOPE</code> object, denoted by <code>phasefield_ope</code>, is well declared with a vector of two <a href="../../../SpatialDiscretization/index.html">spatial discretization</a> objects (see the alias <code>SPAS</code> provided by a <a href="../../../Aliases/index.html"><code>SLOTH</code> namespace</a>), the <code>CahnHilliard</code>  integrator for the right-hand-side of PDEs and the <code>SplitTimeDerivative</code> for the left-hand-side. </p>
 <p>For this example, the Backward Euler method is considered (see <code>TimeScheme::EulerImplicit</code>).</p>
 <p>For this problem, a vector of two <a href="../../../Coefficients/index.html">Coefficients</a> is considered for <code>phi</code> and <code>mu</code>, respectively. Here, the same <code>Coefficients</code> are used for both variables accordingly with the <code>CahnHilliard</code> integrator. 
 As expected by this integrator, coefficients of type <code>Glossary::FreeEnergy</code>, <code>Glossary::Capillary</code> and <code>Glossary::Mobility</code> are defined. The coefficient of type <code>Glossary::GradEnergy</code> is only used to compute the gradient terms in the output of the density of energy. </p>
@@ -4018,8 +4056,8 @@ As expected by this integrator, coefficients of type <code>Glossary::FreeEnergy<
 </div>
 <h4 id="axi"><strong>How to perform simulations on axisymmetric geometries?</strong><a class="headerlink" href="#axi" title="Permanent link">&para;</a></h4>
 <p>To enable simulations on axisymmetric geometries, the current definition of the <code>Problem</code> class needs to be enhanced. The proposed modification is as follows:</p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">    </span><span class="n">PDE</span><span class="w"> </span><span class="nf">phase_field_pb</span><span class="p">(</span><span class="n">phasefield_ope</span><span class="p">,</span><span class="w"> </span><span class="n">vars</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">coef_phase_field</span><span class="p">,</span><span class="w"> </span><span class="n">coef_phase_field</span><span class="p">},</span><span class="w"> </span><span class="n">pst</span><span class="p">);</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="n">phase_field_pb</span><span class="p">.</span><span class="n">setGeometry</span><span class="p">(</span><span class="n">Geometry</span><span class="o">::</span><span class="n">Axisymmetric</span><span class="p">);</span>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="w">    </span><span class="n">TransientPB</span><span class="w"> </span><span class="nf">phase_field_pb</span><span class="p">(</span><span class="n">phasefield_ope</span><span class="p">,</span><span class="w"> </span><span class="n">vars</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">coef_phase_field</span><span class="p">,</span><span class="w"> </span><span class="n">coef_phase_field</span><span class="p">},</span><span class="w"> </span><span class="n">pst</span><span class="p">);</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="n">phase_field_pb</span><span class="p">.</span><span class="n">setGeometry</span><span class="p">(</span><span class="n">Geometry</span><span class="o">::</span><span class="n">Axisymmetric</span><span class="p">);</span>
 </span></code></pre></div>
 <p>By default, the geometry will be set to <code>Geometry::Cartesian</code> if no specific geometry is defined.</p>
 <div class="admonition warning">
@@ -4030,17 +4068,17 @@ As expected by this integrator, coefficients of type <code>Glossary::FreeEnergy<
 <p>Once a <code>Problem</code> is fully defined, an AMR driver can be attached to it so that <code>SLOTH</code> locally refines/coarsens the mesh — and every finite element space and variable (primary + auxiliary) built on it — as the simulation progresses. This assumes the <a href="../../../SpatialDiscretization/Meshing/index.html">spatial discretization</a> used by the problem was built with <code>enable_nc_mesh = true</code>.</p>
 <div class="admonition example">
 <p class="admonition-title">Attaching AMR to the Cahn-Hilliard problem defined above</p>
-<p><div class="language-c++ highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="w">    </span><span class="n">mfem</span><span class="o">::</span><span class="n">ConstantCoefficient</span><span class="w"> </span><span class="n">amr_coef</span><span class="p">{</span><span class="mf">1.0</span><span class="p">};</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="n">mfem</span><span class="o">::</span><span class="n">DiffusionIntegrator</span><span class="w"> </span><span class="n">amr_integ</span><span class="p">{</span><span class="n">amr_coef</span><span class="p">};</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="n">SlothErrorEstimators</span><span class="w"> </span><span class="nf">estimator</span><span class="p">(</span><span class="n">ErrorEstimatorType</span><span class="o">::</span><span class="n">KELLY</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amr_integ</span><span class="p">);</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="n">SingleVariableAMR</span><span class="o">&lt;</span><span class="n">VARS</span><span class="o">&gt;</span><span class="w"> </span><span class="n">amr</span><span class="p">(</span><span class="o">*</span><span class="n">spatial</span><span class="p">.</span><span class="n">get_mesh</span><span class="p">(),</span><span class="w"> </span><span class="n">spatial</span><span class="p">.</span><span class="n">is_nc_simplices</span><span class="p">(),</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">amr_params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parameters</span><span class="p">(</span><span class="n">Parameter</span><span class="p">(</span><span class="s">"max_elem_error"</span><span class="p">,</span><span class="w"> </span><span class="mf">1.</span><span class="n">e</span><span class="mi">-4</span><span class="p">),</span><span class="w"> </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"amr_max_level"</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">),</span>
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">                           </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"nc_limit"</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"max_preref_cycles"</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">));</span>
-</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">    </span><span class="n">amr</span><span class="p">.</span><span class="n">SetCriteria</span><span class="p">(</span><span class="cm">/*estimator*/</span><span class="w"> </span><span class="o">&amp;</span><span class="n">estimator</span><span class="p">,</span><span class="w"> </span><span class="n">amr_params</span><span class="p">);</span>
-</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
-</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">    </span><span class="n">phase_field_pb</span><span class="p">.</span><span class="n">set_amr</span><span class="p">(</span><span class="o">&amp;</span><span class="n">amr</span><span class="p">);</span>
+<p><div class="language-c++ highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">    </span><span class="n">mfem</span><span class="o">::</span><span class="n">ConstantCoefficient</span><span class="w"> </span><span class="n">amr_coef</span><span class="p">{</span><span class="mf">1.0</span><span class="p">};</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="n">mfem</span><span class="o">::</span><span class="n">DiffusionIntegrator</span><span class="w"> </span><span class="n">amr_integ</span><span class="p">{</span><span class="n">amr_coef</span><span class="p">};</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="n">SlothErrorEstimators</span><span class="w"> </span><span class="nf">estimator</span><span class="p">(</span><span class="n">ErrorEstimatorType</span><span class="o">::</span><span class="n">KELLY</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">amr_integ</span><span class="p">);</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="n">SingleVariableAMR</span><span class="o">&lt;</span><span class="n">VARS</span><span class="o">&gt;</span><span class="w"> </span><span class="n">amr</span><span class="p">(</span><span class="o">*</span><span class="n">spatial</span><span class="p">.</span><span class="n">get_mesh</span><span class="p">(),</span><span class="w"> </span><span class="n">spatial</span><span class="p">.</span><span class="n">is_nc_simplices</span><span class="p">(),</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">amr_params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parameters</span><span class="p">(</span><span class="n">Parameter</span><span class="p">(</span><span class="s">"max_elem_error"</span><span class="p">,</span><span class="w"> </span><span class="mf">1.</span><span class="n">e</span><span class="mi">-4</span><span class="p">),</span><span class="w"> </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"amr_max_level"</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">),</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">                           </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"nc_limit"</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"max_preref_cycles"</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">));</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="n">amr</span><span class="p">.</span><span class="n">SetCriteria</span><span class="p">(</span><span class="cm">/*estimator*/</span><span class="w"> </span><span class="o">&amp;</span><span class="n">estimator</span><span class="p">,</span><span class="w"> </span><span class="n">amr_params</span><span class="p">);</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="n">phase_field_pb</span><span class="p">.</span><span class="n">set_amr</span><span class="p">(</span><span class="o">&amp;</span><span class="n">amr</span><span class="p">);</span>
 </span></code></pre></div>
 An error estimator is first built from an <code>MFEM</code> integrator and wrapped into a <code>SlothErrorEstimators</code> object, then used to configure a <code>SingleVariableAMR</code> driver — here based on <code>phi</code> (index <code>0</code> in <code>vars</code>). The driver is finally attached to the problem with <code>set_amr()</code>, exactly as <code>setGeometry()</code> is used above for axisymmetric geometries.</p>
 </div>
@@ -4051,6 +4089,27 @@ An error estimator is first built from an <code>MFEM</code> integrator and wrapp
 <li>For the complete step-by-step workflow, see the <a href="../../../../../Started/HowTo/Tutorials/AMR/index.html">AMR tutorial</a>;</li>
 <li>For the full reference on error estimators (<code>ErrorEstimatorType::KELLY</code>, <code>ErrorEstimatorType::ZZ</code>) and AMR drivers (<code>SingleVariableAMR</code>, <code>MultiVariableMaxAMR</code>), see the <a href="../../../AMR/index.html">Adaptive Mesh Refinement</a> page of the User Manual.</li>
 </ul>
+</div>
+<h4 id="set-auxvariables"><strong>How to set auxiliary variables after construction?</strong><a class="headerlink" href="#set-auxvariables" title="Permanent link">&para;</a></h4>
+<p>Auxiliary variables (see <a href="../../../Variables/index.html">Variables</a>) can be set afterwards with <code>set_auxvariables</code>, exactly as <code>set_amr</code> is used above to attach an AMR driver:</p>
+<div class="admonition example">
+<p class="admonition-title">Setting auxiliary variables after construction</p>
+<p><div class="language-c++ highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">VARS</span><span class="o">*&gt;</span><span class="w"> </span><span class="n">aux_vect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="o">&amp;</span><span class="n">aux_vars_1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">aux_vars_2</span><span class="p">};</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">phase_field_pb</span><span class="p">.</span><span class="n">set_auxvariables</span><span class="p">(</span><span class="n">aux_vect</span><span class="p">);</span>
+</span></code></pre></div>
+<code>aux_vect</code> is a <code>std::vector&lt;VARS*&gt;</code>. This is particularly convenient in partitioned multiphase-field simulations, where each <code>Problem</code> needs the other <code>Variables</code> as auxiliary variables.</p>
+</div>
+<h4 id="set-vtk-coefficients"><strong>How to export a <code>Coefficient</code> in VTK output?</strong><a class="headerlink" href="#set-vtk-coefficients" title="Permanent link">&para;</a></h4>
+<p>In addition to the primary <a href="../../../Variables/index.html">Variables</a>, quantities computed from a <a href="../../../Coefficients/index.html"><code>Coefficient</code></a> — not resolved by the system, but useful for visualization or diagnostics - can be exported to VTK output. The coefficient must first be given a name, then registered on the <code>Problem</code> with <code>set_vtk_coefficients</code>:</p>
+<div class="admonition example">
+<p class="admonition-title">Registering a Coefficient for VTK output</p>
+<p>In this example, the <code>Coefficient</code> named Squares is exported to VTK output.</p>
+<p><div class="language-c++ highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">Coefficient</span><span class="w"> </span><span class="nf">squares</span><span class="p">(</span><span class="n">Glossary</span><span class="o">::</span><span class="n">PhaseField</span><span class="p">,</span><span class="w"> </span><span class="n">Scheme</span><span class="o">::</span><span class="n">Implicit</span><span class="p">,</span><span class="w"> </span><span class="n">Squares</span><span class="p">());</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">squares</span><span class="p">.</span><span class="n">set_name</span><span class="p">(</span><span class="s">"Squares"</span><span class="p">);</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">phase_field_pb</span><span class="p">.</span><span class="n">set_vtk_coefficients</span><span class="p">({</span><span class="n">squares</span><span class="p">});</span>
+</span></code></pre></div>
+<code>set_vtk_coefficients</code> takes a <code>std::vector&lt;Coefficient&gt;</code>, so several coefficients can be registered at once. Each is projected onto a grid function and saved alongside the usual <code>Variables</code>, using its name (<code>"Squares"</code> here) as the field name in the VTK output.</p>
 </div>
 <div class="footnote">
 <hr />
