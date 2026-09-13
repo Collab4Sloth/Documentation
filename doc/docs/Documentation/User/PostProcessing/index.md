@@ -19,11 +19,8 @@ The development team primarily uses [`ParaView`](https://www.paraview.org) to vi
     In that case, please contact the development team so that an interface to the `mfem::VisitDataCollection` class can be provided.
 
 !!! example "Alias declaration for `PostProcessing` class template"
-    ```c++
-    using PST = PostProcessing<mfem::H1_FECollection, mfem::ParaviewDataCollection, 2>;
-    ```
-    This example shows how to define a convenient alias for the `PostProcessing` class template instantiated with `mfem::H1_FECollection` and `mfem::ParaviewDataCollection` in dimension 2.
-
+    The alias `PST` is provided by `SLOTH` namespaces (see the [Aliases page](../../../Aliases/index.md)) for `PostProcessing` class template.
+        
 Without loss of generality, the alias `PST` is used in this page in order to simplify each code snippet.
 
 The `PST` object must be defined by:
@@ -36,6 +33,7 @@ The `PST` object must be defined by:
     auto post_processing = PST(&spatial, pst_parameters);
     ```
     This example shows how to declare a `PST` object with the spatial discretisation `spatial` and the parameters `pst_parameters`.
+
 
 ## Optional post-processing
 
@@ -168,3 +166,21 @@ Isovalues are not stored in the `time_specialized.csv` file. Instead, the parame
 
     auto post_processing = PST(&spatial, pst_parameters);
     ```
+## Post-processing Coefficients in VTK output {#coefficients}
+
+In addition to `Variables`, a `PST` object can also export named [`Coefficient`](../Coefficients/index.md) objects — quantities computed from the solved variables, not resolved by the system, but useful for visualization or diagnostics (e.g. an interpolation function, an order-parameter norm used to check the multiphase-field normalization constraint, ...).
+
+A coefficient must be given a name and registered on a [`Problem`](../MultiPhysicsCouplingScheme/Problems/index.md) with `set_vtk_coefficients`:
+
+!!! example "Registering a Coefficient for VTK output"
+    ```c++
+    Coefficient squares(Glossary::PhaseField, Scheme::Implicit, Squares());
+    squares.set_name("Squares");
+
+    phase_field_pb.set_vtk_coefficients({squares});
+    ```
+
+At each post-processing step, every registered coefficient is projected onto a grid function and saved to the VTK output under its name, alongside the usual `Variables`.
+
+!!! note "Storage and unified/non-unified output"
+    This feature is compatible with both unified and non-unified VTK post-processing (see [Shared post-processing for multiphysics simulations](#shared-post-processing-for-multiphysics-simulations)).

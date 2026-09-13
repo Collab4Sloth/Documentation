@@ -2,6 +2,9 @@
 
 This page described the definition and the use of boundary conditions in `SLOTH`.
 
+## Build boundary conditions {#bcs}
+
+
 Definition of boundary conditions for `SLOTH` is made with a C++ object of type `BoundaryConditions`. As for the object `SpatialDiscretization` (see [Meshing](../Meshing/index.md)), `BoundaryConditions` is a template class instantiated with two template parameters: first, the kind of finite element, and second, the spatial dimension. 
 
 Currently, the most commonly used finite element collection in `SLOTH` is `mfem::H1_FECollection`, which corresponds to arbitrary order H1-conforming continuous finite elements.
@@ -33,14 +36,50 @@ A `Boundary` object is defined by
     In the code snippets, it is referred to as a `spatial` object.
 
     These examples show how to define `Dirichlet`, homogeneous `Neumann` and `Periodic` boundary conditions in a square.
-
+    
     === "Dirichlet"
         
         ```c++
-        auto list_boundaries_2 =  {Boundary("left", 0, "Dirichlet", 0.), Boundary("bottom", 1, "Neumann"), Boundary("right", 2, "Dirichlet", 1.), Boundary("top", 3, "Neumann")};
-        auto bcs_2 = BCS(&spatial, list_boundaries_2);
+                auto list_boundaries_2 =  {Boundary("left", 0, "Dirichlet", 0.), Boundary("bottom", 1, "Neumann"), Boundary("right", 2, "Dirichlet", 1.), Boundary("top", 3, "Neumann")};
+                auto bcs_2 = BCS(&spatial, list_boundaries_2);
         ```
         The fourth argument in the definition of a Boundary object is only required for Dirichlet boundary conditions.
+
+        To define space- and/or time-dependent Dirichlet boundary conditions, a `Coefficient` object of type `Glossary::Dirichlet` must be defined and associated with a set of `Boundary` objects, exactly as for non-homogeneous Neumann or Robin boundary conditions.
+        The following example prescribes a different `DirichletCoefficient` on the right boundary (`1`) and on the left boundary (`3`).
+
+        ```c++
+                auto boundaries = {Boundary("lower", 0, "Neumann"), Boundary("right", 1, "Dirichlet"),
+                                Boundary("upper", 2, "Neumann"), Boundary("left", 3, "Dirichlet")};
+                auto bcs = BCS(&spatial, boundaries);
+
+                Coefficient dirichlet_left(Glossary::Dirichlet, Scheme::Implicit, DirichletCoefficient());
+                Coefficient dirichlet_right(Glossary::Dirichlet, Scheme::Implicit, DirichletCoefficient(-1));
+                dirichlet_left.set_bdr_index_coef(std::vector<int>{3});
+                dirichlet_right.set_bdr_index_coef(std::vector<int>{1});
+        ```
+
+        Here, `Boundary("right", 1, "Dirichlet")` and `Boundary("left", 3, "Dirichlet")` use the three-argument constructor overload (no constant value), since the actual boundary value is provided by the associated `Coefficient` instead.
+
+        In this example, `DirichletCoefficient()` is built from the following JSON file
+
+        ```json
+                [
+                    {
+                    "expression":"t*sin(pi*y)",
+                    "variables":"phi",
+                    "auxiliary_variables":"x,y",
+                    "constants":"(t:T)",
+                    "class_name":"DirichletCoefficient",
+                    "outputfile":"Coefficient"
+                    }
+                ]
+        ```
+
+        `phi` is declared as the coefficient's own variable, even though it is not used in the expression. 
+        `x` and `y` are the spatial coordinates, provided as auxiliary variables. 
+        `t` is mapped to the current simulation time. 
+        The prefactor passed to `DirichletCoefficient(-1)` flips the sign of the whole expression for the left boundary.
 
     === "Neumann"
 
@@ -54,7 +93,7 @@ A `Boundary` object is defined by
         The following example prescribes the `heat_flux` coefficient on the left boundary (`0`) and on the top boundary (`3`).
 
         ```c++
-        Coefficient neumann(Glossary::Neumann, heat_flux);
+        Coefficient neumann(Glossary::Neumann, Scheme::Implicit, heat_flux());
         neumann.set_bdr_index_coef(std::vector<int>{0,3});
         ```  
 
@@ -123,3 +162,21 @@ The user can define as many boundary conditions as there are variables.
 
 !!! warning "Consistency of the indices of the boundaries"
     `MFEM v4.7` provides new features for referring to boundary attribute numbers. Such an improvement is not yet implemented in `SLOTH`. Consequently, users must take care to the consistency of the indices used in the test file with the indices defined when building the mesh with `GMSH`.
+
+
+## Build N boundary conditions from a vector of spatial discretizations {#factory}
+
+When `N` spatial discretizations share the same boundary layout - typically the `SPAS` vector built by the [spatial discretization factory](../Meshing/index.md#factory) — building each `BCS` object one by one is repetitive. `setBoundaryConditions` builds `N` of them in a single call, from a `spatials` vector and a single, shared list of `Boundary` objects.
+
+!!! example "Building boundary conditions for 30 spatial discretizations"
+    ```c++
+    using namespace Sloth2D;
+
+    auto boundaries = {Boundary("lower", 0, "Periodic"), Boundary("right", 1, "Periodic"),
+                       Boundary("upper", 2, "Periodic"), Boundary("left", 3, "Periodic")};
+    auto bcs = setBoundaryConditions(30, spatials, boundaries);
+    ```
+    `spatials` is a `SPAS` object (e.g. built with [`setPeriodicSpatialDiscretization`](../Meshing/index.md#factory)), and `bcs[i]` is the `BCS` object associated with `spatials[i]`, equivalent to `BCS(spatials[i], boundaries)`.
+
+!!! warning "Number of spatial discretizations"
+    `spatials` must contain exactly `N` elements — one `Boundary` list is shared across every spatial discretization, but each still gets its own `BoundaryConditions` object.

@@ -30,11 +30,6 @@ For `SLOTH`, all PDEs are solved using a unified nonlinear algorithm based on th
 
 Definition of PDEs for `SLOTH` is made with a C++ object of type `Problem`, which is a template class instantiated with three template parameters: first, an `OPERATOR` object, second, a [Variables](../../../Variables/index.md) object (see `VARS` in the example), and third, a [PostProcessing](../../../PostProcessing/index.md) object (see `PST` in the example).
 
-!!! example "Alias declaration for `Problem` class template"
-    ```c++
-    using PDE = Problem<OPERATOR, VARS, PST>;
-    ```
-
 
 The `OPERATOR` object in `Problem` refers to an object that inherits from base classes responsible for solving the nonlinear system (1). 
 These classes are illustrated in the figure 2: `OperatorBase` is a base class with two derived classes:
@@ -340,13 +335,9 @@ In the figure 3, the integrators are gathered in two grouped:
     `TransientOperator` is a template class instantiated with two template parameters: first, the kind of finite element and second, the spatial dimension.
 
     !!! example "Alias declaration for `TransientOperator` class template"
-        This example show how to define a convenient alias for the `TransientOperator` class template instantiated with `mfem::H1_FECollection` in dimension 3.  
-        
-        ```c++
-        using OPERATOR = TransientOperator<mfem::H1_FECollection, 3>;
-        ```
-    
-    The `OPERATOR` operator must be defined by:
+        The alias `TransientOPE` is provided by `SLOTH` namespaces (see the [Aliases page](../../../Aliases/index.md)) for operator used in unsteady problems
+
+    The `TransientOPE` operator must be defined by:
 
     - a vector of spatial discretisation objects (see [Meshing](../../../SpatialDiscretization/Meshing/index.md)) [required], 
     - a vector of strings specifying the integrators used to model spatial differential operators [required],
@@ -371,21 +362,19 @@ In the figure 3, the integrators are gathered in two grouped:
 
     !!! example "Definition of a transient operator"
         This example assume a Cahn-Hilliard problem with two unknowns (`phi` and `mu`). 
-        The `OPERATOR` object, denoted by `phasefield_ope`, is well declared with a vector of two [spatial discretization](../../../SpatialDiscretization/index.md) objects, the `CahnHilliard` and `SplitTimeDerivative` integrators and an Euler Implicit time-stepping method.
+        The `OPERATOR` object, denoted by `phasefield_ope`, is well declared with a vector of two [spatial discretization](../../../SpatialDiscretization/index.md) objects (see the alias `SPAS` provided by a [`SLOTH` namespace](../../../Aliases/index.md)), the `CahnHilliard` and `SplitTimeDerivative` integrators and an Euler Implicit time-stepping method.
 
         ```c++                                
-        using OPERATOR = TransientOperator<mfem::H1_FECollection, 3>; 
-        std::vector<SPA*> spatials{&spatial, &spatial};
-        OPERATOR phasefield_ope(spatials, {"CahnHilliard"}, TimeScheme::EulerImplicit, "SplitTimeDerivative");
+        SPAS spatials{&spatial, &spatial};
+        TransientOPE phasefield_ope(spatials, {"CahnHilliard"}, TimeScheme::EulerImplicit, "SplitTimeDerivative");
         ```
 
     !!! example "Definition of a transient operator with a combination of integrators"
         The integrators for the differential operators can be combined. 
 
         ```c++                                
-        using OPERATOR = TransientOperator<mfem::H1_FECollection, 3>; 
-        std::vector<SPA*> spatials{&spatial};
-        OPERATOR phasefield_ope(spatials, {"AllenCahn", "MeltingConstant"}, TimeScheme::EulerImplicit, "TimeDerivative");
+        SPAS spatials{&spatial};
+        TransientOPE phasefield_ope(spatials, {"AllenCahn", "MeltingConstant"}, TimeScheme::EulerImplicit, "TimeDerivative");
         ```
         In the following example, the operator enables to solve the following equation:
         
@@ -404,13 +393,9 @@ In the figure 3, the integrators are gathered in two grouped:
     `SteadyOperator` is a template class instantiated with two template parameters: first, the kind of finite element and second, the spatial dimension.
 
     !!! example "Alias declaration for `SteadyOperator` class template"
-        This example show how to define a convenient alias for the `SteadyOperator` class template instantiated with `mfem::H1_FECollection` in dimension 3.  
-        
-        ```c++
-        using OPERATOR = SteadyOperator<mfem::H1_FECollection, 3>;
-        ```
+        The alias `SteadyOPE` is provided by `SLOTH` namespaces (see the [Aliases page](../../../Aliases/index.md)) for operator used in steady problems
     
-    The `OPERATOR` operator must be defined by:
+    The `SteadyOPE` operator must be defined by:
 
     - a vector of spatial discretisation objects (see [Meshing](../../../SpatialDiscretization/Meshing/index.md)) [required], 
     - a vector of strings specifying the integrators used to model spatial differential operators [required],
@@ -426,27 +411,26 @@ In the figure 3, the integrators are gathered in two grouped:
         The `OPERATOR` object, denoted by `phasefield_ope`, is well declared with a vector of one [spatial discretization](../../../SpatialDiscretization/index.md) object and the `AllenCahn`  integrator.
 
         ```c++                                
-        using OPERATOR = SteadyOperator<mfem::H1_FECollection, 3>; 
-        std::vector<SPA*> spatials{&spatial, &spatial};
-        OPERATOR phasefield_ope(spatials, {"AllenCahn"});
+        SPAS spatials{&spatial, &spatial};
+        SteadyOPE phasefield_ope(spatials, {"AllenCahn"});
         ```
     
 
 ### __Problems__ {#problems}
 As already mentioned, `Problem` for `SLOTH` is a template class instantiated with three template parameters: first, an `OPERATOR` object, second, a [Variables](../../../Variables/index.md) object, and third, a [PostProcessing](../../../PostProcessing/index.md) object.
 
+
 !!! example "Alias declaration for `Problem` class template"
-    ```c++
-    using PDE = Problem<OPERATOR, VARS, PST>;
-    ```
+    The aliases `SteadyPB` and `TransientPB` are provided by `SLOTH` namespaces (see the [Aliases page](../../../Aliases/index.md)) for steady and unsteady problems, respectively.
 
-The `PDE` problem must be defined by:
 
-  - an [Operator](#operators) [required], 
+The `SteadyPB` and `TransientPB` problems must be defined by:
+
+  - a [`TransientOPE/SteadyOPE`](#operators) [required], 
   - primary [Variables](../../../Variables/index.md) [required],
   - a vector of [Coefficients](../../../Coefficients/index.md) [required],
   - a set of parameters (see [Parameters](../../../Parameters/index.md)) [optional],
-  - an [PostProcessing](../../../PostProcessing/index.md) object [required], 
+  - an [PostProcessing](../../../PostProcessing/index.md) object [optional], 
   - a set of [auxiliary Variables](../../../Variables/index.md) [optional].
 
 
@@ -461,8 +445,7 @@ The `PDE` problem must be defined by:
 !!! example "Definition of a Cahn-Hilliard problem"
 
     ```c++                                
-    using OPERATOR = SteadyOperator<mfem::H1_FECollection, 3>; 
-    std::vector<SPA*> spatials{&spatial, &spatial};
+    SPAS spatials{&spatial, &spatial};
 
     // Variables: phi, mu
     auto phi = VAR(&spatial, bcs_phi, "phi", Glossary::PhaseField, 2, phi_initial_condition);
@@ -470,7 +453,7 @@ The `PDE` problem must be defined by:
     auto vars = VARS(phi, mu);
     
     // Operator
-    OPE phasefield_ope(spatials, {"CahnHilliard"}, TimeScheme::EulerImplicit, "SplitTimeDerivative");
+    TransientOPE phasefield_ope(spatials, {"CahnHilliard"}, TimeScheme::EulerImplicit, "SplitTimeDerivative");
 
     // Coefficients
     //  Interface thickness
@@ -487,7 +470,7 @@ The `PDE` problem must be defined by:
     Coefficients coef_phase_field(double_well, capillary, mobility, grad_energy);
 
     // Problem (pst is PostProcessing object not detailed here)
-    PDE phase_field_pb(phasefield_ope, vars, {coef_phase_field, coef_phase_field}, pst);
+    TransientPB phase_field_pb(phasefield_ope, vars, {coef_phase_field, coef_phase_field}, pst);
 
     ```
 
@@ -512,7 +495,7 @@ The `PDE` problem must be defined by:
 
     ```
 
-    The `OPERATOR` object, denoted by `phasefield_ope`, is well declared with a vector of two [spatial discretization](../../../SpatialDiscretization/index.md) objects, the `CahnHilliard`  integrator for the right-hand-side of PDEs and the `SplitTimeDerivative` for the left-hand-side. 
+    The `TransientOPE` object, denoted by `phasefield_ope`, is well declared with a vector of two [spatial discretization](../../../SpatialDiscretization/index.md) objects (see the alias `SPAS` provided by a [`SLOTH` namespace](../../../Aliases/index.md)), the `CahnHilliard`  integrator for the right-hand-side of PDEs and the `SplitTimeDerivative` for the left-hand-side. 
 
     For this example, the Backward Euler method is considered (see `TimeScheme::EulerImplicit`).
 
@@ -527,7 +510,7 @@ To enable simulations on axisymmetric geometries, the current definition of the 
 
 ```c++
 
-    PDE phase_field_pb(phasefield_ope, vars, {coef_phase_field, coef_phase_field}, pst);
+    TransientPB phase_field_pb(phasefield_ope, vars, {coef_phase_field, coef_phase_field}, pst);
     phase_field_pb.setGeometry(Geometry::Axisymmetric);
 
 ```
@@ -565,3 +548,31 @@ Once a `Problem` is fully defined, an AMR driver can be attached to it so that `
 
     - For the complete step-by-step workflow, see the [AMR tutorial](../../../../../Started/HowTo/Tutorials/AMR/index.md);
     - For the full reference on error estimators (`ErrorEstimatorType::KELLY`, `ErrorEstimatorType::ZZ`) and AMR drivers (`SingleVariableAMR`, `MultiVariableMaxAMR`), see the [Adaptive Mesh Refinement](../../../AMR/index.md) page of the User Manual.
+
+
+#### __How to set auxiliary variables after construction?__ {#set-auxvariables}
+
+Auxiliary variables (see [Variables](../../../Variables/index.md)) can be set afterwards with `set_auxvariables`, exactly as `set_amr` is used above to attach an AMR driver:
+
+!!! example "Setting auxiliary variables after construction"
+    ```c++
+    std::vector<VARS*> aux_vect = {&aux_vars_1, &aux_vars_2};
+    phase_field_pb.set_auxvariables(aux_vect);
+    ```
+    `aux_vect` is a `std::vector<VARS*>`. This is particularly convenient in partitioned multiphase-field simulations, where each `Problem` needs the other `Variables` as auxiliary variables.
+
+
+#### __How to export a `Coefficient` in VTK output?__ {#set-vtk-coefficients}
+
+In addition to the primary [Variables](../../../Variables/index.md), quantities computed from a [`Coefficient`](../../../Coefficients/index.md) — not resolved by the system, but useful for visualization or diagnostics - can be exported to VTK output. The coefficient must first be given a name, then registered on the `Problem` with `set_vtk_coefficients`:
+
+!!! example "Registering a Coefficient for VTK output"
+    In this example, the `Coefficient` named Squares is exported to VTK output.
+
+    ```c++
+    Coefficient squares(Glossary::PhaseField, Scheme::Implicit, Squares());
+    squares.set_name("Squares");
+
+    phase_field_pb.set_vtk_coefficients({squares});
+    ```
+    `set_vtk_coefficients` takes a `std::vector<Coefficient>`, so several coefficients can be registered at once. Each is projected onto a grid function and saved alongside the usual `Variables`, using its name (`"Squares"` here) as the field name in the VTK output.

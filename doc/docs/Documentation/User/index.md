@@ -24,8 +24,11 @@ This page focuses on the kernel of `SLOTH`, providing all the essential informat
 - [Profiling](Profiling/index.md)
 - [Adaptive Mesh Refinement](AMR/index.md)
 
+!!! tip "On the use of aliases"
+    To simplify the definition of `SLOTH` tests, a set of aliases (finite element collection, variables, post-processing, mesh, boundary conditions...) plus a couple of factory functions are provided to the users. The development team recommends visiting the [Aliases page](./Aliases/index.md).
+
 !!! tip "On the use of tutorials"
-    Development team recommend visiting the [tutorials page](../../Started/HowTo/Tutorials/index.md) to discover tips and tricks for specific `SLOTH` features
+    The development team recommends visiting the [tutorials page](../../Started/HowTo/Tutorials/index.md) to discover tips and tricks for specific `SLOTH` features
 
 !!! note "`MFEM` documentation"
     For further details regarding dependencies, advanced numerical methods, and massively parallel features, users are referred to the [MFEM website](https://mfem.org).

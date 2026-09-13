@@ -9,10 +9,8 @@ Definition of CALPHAD problems for `SLOTH` is made with a C++ object of type `Ca
 `Calphad_Problem` is a template class instantiated with three template parameters: first, a CALPHAD object, second, the `Variables` object, and third, the `Postprocessing` object.
 
 !!! example "Alias declaration for `Calphad_Problem` class template"
-    ```c++
-    using CalphadProblem = Calphad_Problem<CALPHAD, VARS, PST>;
-    ```
-
+    The alias `PB_CALPHAD<CALPHAD>` is provided by `SLOTH` namespaces (see the [Aliases page](../../../Aliases/index.md)). 
+    In this alias, `CALPHAD` refers to a Calphad-type model. 
 
 `Calphad_Problem` objects are defined by
 
@@ -123,7 +121,7 @@ where $`R`$ is the  molar gas constant, $`T`$ the temperature and $`x`$ the mola
     In this example, a fictitious `Calphad_Problem` based on `AnalyticalIdealSolution<mfem::Vector>` is defined with `Parameters` (see `calphad_parameters`), outputs (primary `Variables`) and inputs (auxiliary `Variables`, here T, P, composition)
     
     ```c++
-    Calphad_Problem<AnalyticalIdealSolution<mfem::Vector>, VARS, PST>  my_calphad_problem = CalphadProblem(calphad_parameters, outputs, calphad_pst, T, P, composition);
+    PB_CALPHAD<AnalyticalIdealSolution<mfem::Vector>>  my_calphad_problem = CalphadProblem(calphad_parameters, outputs, calphad_pst, T, P, composition);
     
     ```
 
@@ -216,6 +214,6 @@ The parameters associated with `CalphadInformedNeuralNetwork<mfem::Vector>` are 
                                         own_mobility_model, input_composition_order, 
                                         element_removed_from_nn_inputs) 
 
-    Calphad_Problem<CalphadInformedNeuralNetwork<mfem::Vector>, VARS, PST>  my_calphad_problem = CalphadProblem(calphad_parameters, outputs, calphad_pst, T, P, composition);
+    PB_CALPHAD<CalphadInformedNeuralNetwork<mfem::Vector>>  my_calphad_problem = CalphadProblem(calphad_parameters, outputs, calphad_pst, T, P, composition);
     
     ```
