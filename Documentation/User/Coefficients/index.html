@@ -2592,6 +2592,67 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#coef_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File interface
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coef_file_format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSV file format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coef_file_interpolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interpolation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coef_file_definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definition of a file-based coefficient
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coef_file_use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use of file-based coefficients
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3719,6 +3780,67 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#coef_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File interface
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#coef_file_format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSV file format
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coef_file_interpolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interpolation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coef_file_definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definition of a file-based coefficient
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coef_file_use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use of file-based coefficients
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4183,16 +4305,97 @@ Both are subsequently used to define the <code>Coefficient</code> objects <code>
 </span><span id="__span-18-17"><a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="w">  </span><span class="n">Coefficient</span><span class="w"> </span><span class="n">coeffA</span><span class="p">(</span><span class="n">Glossary</span><span class="o">::</span><span class="n">Temperature</span><span class="p">,</span><span class="w"> </span><span class="n">Scheme</span><span class="o">::</span><span class="n">Implicit</span><span class="p">,</span><span class="w"> </span><span class="n">hess_functions</span><span class="p">,</span><span class="w"> </span><span class="n">grad_functions</span><span class="p">,</span><span class="w"> </span><span class="n">function</span><span class="p">,</span><span class="w"> </span><span class="s">"x"</span><span class="p">,</span><span class="w"> </span><span class="s">"y"</span><span class="p">,</span><span class="s">"z"</span><span class="p">);</span>
 </span></code></pre></div>
 </div>
+<h3 id="coef_file"><strong>File interface</strong><a class="headerlink" href="#coef_file" title="Permanent link">&para;</a></h3>
+<p>A <code>Coefficient</code> can also be defined from values tabulated in a CSV file, for instance a temperature profile or a heat flux computed by another code. The corresponding <code>FunctionCoefficient</code>-type object is <code>FileCoefficient</code>.</p>
+<p>Unlike the <code>Sympy</code> and <code>ExprTk</code> interfaces, a <code>FileCoefficient</code> does not depend on the unknowns of the problem: it depends only on time and on the position of the evaluation point in the mesh.</p>
+<h4 id="coef_file_format">CSV file format<a class="headerlink" href="#coef_file_format" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The first line is a header. It is skipped and its content is not checked.</li>
+<li>Each following line contains comma-separated values <code>t, x1, ..., xN, F</code>, where <code>t</code> is the time, <code>x1, ..., xN</code> are the spatial coordinates (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>N</mi><mo>≤</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">1 \le N \le 3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span></span></span></span>) and <code>F</code> is the value of the coefficient.</li>
+<li>The points must form a complete structured grid in <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>t</mi><mo separator="true">,</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>N</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(t, x_1, \dots, x_N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>: every combination of the time levels and of the coordinates along each axis must appear exactly once. The lines can be given in any order. Spacing along each axis can be non-uniform.</li>
+<li>A file with a single time level defines a coefficient that is constant in time.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">CSV file defining a 2D field at two time levels</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>    t,x,y,F
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    0,0,0,0
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>    0,0,1,0
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    0,1,0,0
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>    0,1,1,0
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>    1,0,0,1
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>    1,0,1,2
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>    1,1,0,3
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>    1,1,1,4
+</span></code></pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Errors in the CSV file</p>
+<p>The execution stops with an error message if the file cannot be opened, contains no data line, has lines with a different number of columns, does not describe a complete structured grid, or contains the same grid point twice.</p>
+</div>
+<h4 id="coef_file_interpolation">Interpolation<a class="headerlink" href="#coef_file_interpolation" title="Permanent link">&para;</a></h4>
+<p>The value of the coefficient at time <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span></span></span></span> and at a point <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">x</mi></mrow><annotation encoding="application/x-tex">\mathbf{x}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4444em;"></span><span class="mord mathbf">x</span></span></span></span> is computed by multilinear interpolation: linear in time and multilinear in space (bilinear in 2D, trilinear in 3D).</p>
+<p>Outside the grid, in time or in space, the value at the nearest boundary of the grid is used (constant extrapolation).</p>
+<h4 id="coef_file_definition">Definition of a file-based coefficient<a class="headerlink" href="#coef_file_definition" title="Permanent link">&para;</a></h4>
+<p>No <code>Scheme</code> is given: it is automatically set to <code>Scheme::File</code>.</p>
+<div class="admonition example">
+<p class="admonition-title">Definition of a <code>Coefficient</code> from a CSV file</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">Coefficient</span><span class="w"> </span><span class="n">neumann</span><span class="p">(</span><span class="n">Glossary</span><span class="o">::</span><span class="n">Neumann</span><span class="p">,</span><span class="w"> </span><span class="n">FileCoefficient</span><span class="p">(</span><span class="s">"neumann.csv"</span><span class="p">));</span>
+</span></code></pre></div>
+<p>If no <code>GlossaryQuantity</code> is given, <code>Glossary::Default</code> is used:</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">Coefficient</span><span class="w"> </span><span class="n">coeff</span><span class="p">{</span><span class="n">FileCoefficient</span><span class="p">(</span><span class="s">"field.csv"</span><span class="p">)};</span>
+</span></code></pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Axisymmetric fields</p>
+<p>A field depending only on the distance to an axis can be defined by setting the geometry to <code>Geometry::Axisymmetric</code>. The CSV file is then <code>t, r, F</code> or <code>t, r, z, F</code>, and each mesh point is mapped to <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><msqrt><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><msub><mi>x</mi><mi>c</mi></msub><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>+</mo><mo stretchy="false">(</mo><mi>y</mi><mo>−</mo><msub><mi>y</mi><mi>c</mi></msub><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow></msqrt></mrow><annotation encoding="application/x-tex">r=\sqrt{(x-x_c)^2+(y-y_c)^2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.24em;vertical-align:-0.305em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.935em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7401em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7401em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-2.895em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg xmlns="http://www.w3.org/2000/svg" width='400em' height='1.28em' viewBox='0 0 400000 1296' preserveAspectRatio='xMinYMin slice'><path d='M263,681c0.7,0,18,39.7,52,119
+c34,79.3,68.167,158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120
+c340,-704.7,510.7,-1060.3,512,-1067
+l0 -0
+c4.7,-7.3,11,-11,19,-11
+H40000v40H1012.3
+s-271.3,567,-271.3,567c-38.7,80.7,-84,175,-136,283c-52,108,-89.167,185.3,-111.5,232
+c-22.3,46.7,-33.8,70.3,-34.5,71c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1
+s-109,-253,-109,-253c-72.7,-168,-109.3,-252,-110,-252c-10.7,8,-22,16.7,-34,26
+c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26s76,-59,76,-59s76,-60,76,-60z
+M1001 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.305em;"><span></span></span></span></span></span></span></span></span>, where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>c</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>c</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(x_c, y_c)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> is the position of the axis (default: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(0, 0)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mclose">)</span></span></span></span>). For a <code>t, r, z, F</code> file, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.04398em;">z</span></span></span></span> is the third coordinate of the mesh point.</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">Coefficient</span><span class="w"> </span><span class="n">power</span><span class="p">(</span><span class="n">Glossary</span><span class="o">::</span><span class="n">Default</span><span class="p">,</span><span class="w"> </span><span class="n">FileCoefficient</span><span class="p">(</span><span class="s">"profile.csv"</span><span class="p">,</span><span class="w"> </span><span class="n">Geometry</span><span class="o">::</span><span class="n">Axisymmetric</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">}));</span>
+</span></code></pre></div>
+</div>
+<h4 id="coef_file_use">Use of file-based coefficients<a class="headerlink" href="#coef_file_use" title="Permanent link">&para;</a></h4>
+<p>A file-based coefficient can be used:</p>
+<ul>
+<li>as a Dirichlet or Neumann boundary condition, like any other boundary coefficient,</li>
+<li>as an initial condition, by passing it to the <code>Variable</code> constructor,</li>
+<li>in the integrators, as any other <code>Coefficient</code>.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">File-based boundary and initial conditions</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">Coefficient</span><span class="w"> </span><span class="n">neumann</span><span class="p">(</span><span class="n">Glossary</span><span class="o">::</span><span class="n">Neumann</span><span class="p">,</span><span class="w"> </span><span class="n">FileCoefficient</span><span class="p">(</span><span class="s">"neumann.csv"</span><span class="p">));</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="n">Coefficient</span><span class="w"> </span><span class="n">dirichlet</span><span class="p">(</span><span class="n">Glossary</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">,</span><span class="w"> </span><span class="n">FileCoefficient</span><span class="p">(</span><span class="s">"dirichlet.csv"</span><span class="p">));</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="n">neumann</span><span class="p">.</span><span class="n">set_bdr_index_coef</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">});</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="n">dirichlet</span><span class="p">.</span><span class="n">set_bdr_index_coef</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">});</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="n">Coefficient</span><span class="w"> </span><span class="n">T0</span><span class="p">(</span><span class="n">Glossary</span><span class="o">::</span><span class="n">Temperature</span><span class="p">,</span><span class="w"> </span><span class="n">FileCoefficient</span><span class="p">(</span><span class="s">"T0.csv"</span><span class="p">));</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="k">auto</span><span class="w"> </span><span class="n">heat_vars</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">VARS</span><span class="p">(</span><span class="n">VAR</span><span class="p">(</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="n">bcs</span><span class="p">,</span><span class="w"> </span><span class="s">"T"</span><span class="p">,</span><span class="w"> </span><span class="n">Glossary</span><span class="o">::</span><span class="n">Temperature</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">T0</span><span class="p">));</span>
+</span></code></pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Time and derivatives</p>
+<ul>
+<li>Time is updated automatically by <code>SLOTH</code>: when solving a time step, the coefficient is evaluated at the end of the step <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>t</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">t^{n+1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></span>; in post-processing, it is evaluated at the time of the output.</li>
+<li>Since the coefficient does not depend on the unknowns, its first and second-order derivatives with respect to the unknowns are zero in the integrators.</li>
+</ul>
+</div>
 <h2 id="coefficients"><strong>Coefficients</strong><a class="headerlink" href="#coefficients" title="Permanent link">&para;</a></h2>
 <p>The C++ class <code>Coefficients</code> allows to define a collection of <a href="#coefficient"><code>Coefficient</code> objects</a>. </p>
 <!-- Each `SLOTH` problem (see [Problems](../MultiPhysicsCouplingScheme/Problems/index.md) for more details) requires a `Coefficients` object as input argument. -->
 
 <div class="admonition example">
 <p class="admonition-title">Example of <code>Coefficients</code> definition</p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">Coefficient</span><span class="w"> </span><span class="n">coeffA</span><span class="p">(</span><span class="n">Glossary</span><span class="o">::</span><span class="n">Temperature</span><span class="p">,</span><span class="w"> </span><span class="n">Scheme</span><span class="o">::</span><span class="n">Implicit</span><span class="p">,</span><span class="w"> </span><span class="s">"2*x+30*y+0.1*z"</span><span class="p">,</span><span class="w"> </span><span class="s">"x"</span><span class="p">,</span><span class="w"> </span><span class="s">"y"</span><span class="p">,</span><span class="w"> </span><span class="s">"z"</span><span class="p">);</span>
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="n">Coefficient</span><span class="w"> </span><span class="nf">coeffB</span><span class="p">(</span><span class="n">Glossary</span><span class="o">::</span><span class="n">Temperature</span><span class="p">,</span><span class="w"> </span><span class="n">Scheme</span><span class="o">::</span><span class="n">Implicit</span><span class="p">,</span><span class="w"> </span><span class="n">FunctionB</span><span class="p">());</span>
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
-</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="n">Coefficients</span><span class="w"> </span><span class="n">coeffAB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Coefficients</span><span class="p">(</span><span class="n">coeffA</span><span class="p">,</span><span class="w"> </span><span class="n">coeffB</span><span class="p">);</span>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">Coefficient</span><span class="w"> </span><span class="n">coeffA</span><span class="p">(</span><span class="n">Glossary</span><span class="o">::</span><span class="n">Temperature</span><span class="p">,</span><span class="w"> </span><span class="n">Scheme</span><span class="o">::</span><span class="n">Implicit</span><span class="p">,</span><span class="w"> </span><span class="s">"2*x+30*y+0.1*z"</span><span class="p">,</span><span class="w"> </span><span class="s">"x"</span><span class="p">,</span><span class="w"> </span><span class="s">"y"</span><span class="p">,</span><span class="w"> </span><span class="s">"z"</span><span class="p">);</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="n">Coefficient</span><span class="w"> </span><span class="nf">coeffB</span><span class="p">(</span><span class="n">Glossary</span><span class="o">::</span><span class="n">Temperature</span><span class="p">,</span><span class="w"> </span><span class="n">Scheme</span><span class="o">::</span><span class="n">Implicit</span><span class="p">,</span><span class="w"> </span><span class="n">FunctionB</span><span class="p">());</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="n">Coefficients</span><span class="w"> </span><span class="n">coeffAB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Coefficients</span><span class="p">(</span><span class="n">coeffA</span><span class="p">,</span><span class="w"> </span><span class="n">coeffB</span><span class="p">);</span>
 </span></code></pre></div>
 <p>This example shows the definition of two coefficients gathered within a <code>Coefficients</code> object.
 The first coefficient is defined from the <code>ExprTk</code> interface and the second coefficient from the <code>Sympy</code> interface.</p>
