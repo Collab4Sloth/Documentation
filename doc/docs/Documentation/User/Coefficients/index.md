@@ -465,6 +465,88 @@ To use this interface, the user can define a `Coefficient` by passing the litera
 
       Coefficient coeffA(Glossary::Temperature, Scheme::Implicit, hess_functions, grad_functions, function, "x", "y","z");
     ```
+### __File interface__ {#coef_file}
+
+A `Coefficient` can also be defined from values tabulated in a CSV file, for instance a temperature profile or a heat flux computed by another code. The corresponding `FunctionCoefficient`-type object is `FileCoefficient`.
+
+Unlike the `Sympy` and `ExprTk` interfaces, a `FileCoefficient` does not depend on the unknowns of the problem: it depends only on time and on the position of the evaluation point in the mesh.
+
+#### CSV file format {#coef_file_format}
+
+- The first line is a header. It is skipped and its content is not checked.
+- Each following line contains comma-separated values `t, x1, ..., xN, F`, where `t` is the time, `x1, ..., xN` are the spatial coordinates ($`1 \le N \le 3`$) and `F` is the value of the coefficient.
+- The points must form a complete structured grid in $`(t, x_1, \dots, x_N)`$: every combination of the time levels and of the coordinates along each axis must appear exactly once. The lines can be given in any order. Spacing along each axis can be non-uniform.
+- A file with a single time level defines a coefficient that is constant in time.
+
+!!! example "CSV file defining a 2D field at two time levels"
+
+    ```
+        t,x,y,F
+        0,0,0,0
+        0,0,1,0
+        0,1,0,0
+        0,1,1,0
+        1,0,0,1
+        1,0,1,2
+        1,1,0,3
+        1,1,1,4
+    ```
+
+!!! warning "Errors in the CSV file"
+    The execution stops with an error message if the file cannot be opened, contains no data line, has lines with a different number of columns, does not describe a complete structured grid, or contains the same grid point twice.
+
+#### Interpolation {#coef_file_interpolation}
+
+The value of the coefficient at time $`t`$ and at a point $`\mathbf{x}`$ is computed by multilinear interpolation: linear in time and multilinear in space (bilinear in 2D, trilinear in 3D).
+
+Outside the grid, in time or in space, the value at the nearest boundary of the grid is used (constant extrapolation).
+
+#### Definition of a file-based coefficient {#coef_file_definition}
+
+No `Scheme` is given: it is automatically set to `Scheme::File`.
+
+!!! example "Definition of a `Coefficient` from a CSV file"
+
+    ```c++
+    Coefficient neumann(Glossary::Neumann, FileCoefficient("neumann.csv"));
+    ```
+
+    If no `GlossaryQuantity` is given, `Glossary::Default` is used:
+
+    ```c++
+    Coefficient coeff{FileCoefficient("field.csv")};
+    ```
+
+!!! note "Axisymmetric fields"
+    A field depending only on the distance to an axis can be defined by setting the geometry to `Geometry::Axisymmetric`. The CSV file is then `t, r, F` or `t, r, z, F`, and each mesh point is mapped to $`r=\sqrt{(x-x_c)^2+(y-y_c)^2}`$, where $`(x_c, y_c)`$ is the position of the axis (default: $`(0, 0)`$). For a `t, r, z, F` file, $`z`$ is the third coordinate of the mesh point.
+
+    ```c++
+    Coefficient power(Glossary::Default, FileCoefficient("profile.csv", Geometry::Axisymmetric, {0.0, 0.0}));
+    ```
+
+#### Use of file-based coefficients {#coef_file_use}
+
+A file-based coefficient can be used:
+
+- as a Dirichlet or Neumann boundary condition, like any other boundary coefficient,
+- as an initial condition, by passing it to the `Variable` constructor,
+- in the integrators, as any other `Coefficient`.
+
+!!! example "File-based boundary and initial conditions"
+
+    ```c++
+    Coefficient neumann(Glossary::Neumann, FileCoefficient("neumann.csv"));
+    Coefficient dirichlet(Glossary::Dirichlet, FileCoefficient("dirichlet.csv"));
+    neumann.set_bdr_index_coef(std::vector<int>{0, 2});
+    dirichlet.set_bdr_index_coef(std::vector<int>{1, 3});
+
+    Coefficient T0(Glossary::Temperature, FileCoefficient("T0.csv"));
+    auto heat_vars = VARS(VAR(&spatial, bcs, "T", Glossary::Temperature, 2, T0));
+    ```
+
+!!! note "Time and derivatives"
+    - Time is updated automatically by `SLOTH`: when solving a time step, the coefficient is evaluated at the end of the step $`t^{n+1}`$; in post-processing, it is evaluated at the time of the output.
+    - Since the coefficient does not depend on the unknowns, its first and second-order derivatives with respect to the unknowns are zero in the integrators.
 
 
 ## __Coefficients__ {#coefficients}
