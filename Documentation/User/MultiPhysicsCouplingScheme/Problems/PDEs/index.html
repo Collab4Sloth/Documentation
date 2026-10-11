@@ -2240,6 +2240,8 @@
       
         
       
+        
+      
     
     
     
@@ -2951,6 +2953,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../Solvers/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solvers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../PostProcessing/index.html" class="md-nav__link">
         
   
@@ -3555,10 +3585,10 @@ F(U(x,t))&amp;=G(U(x,t))
 <figcaption>Figure 1 : Schematic description of one time-step for `SLOTH` simulations with a focus on PDEs.
 </figcaption>
 </figure>
-<p>For <code>SLOTH</code>, all PDEs are solved using a unified nonlinear algorithm based on the Newton solver. This approach is adopted to maximize the generality of the implementation, although it may incur a minor computational overhead for linear PDEs.</p>
+<p>For <code>SLOTH</code>, PDEs solved with an implicit time-scheme (and steady PDEs) rely on a unified nonlinear algorithm, based by default on the Newton solver. This approach is adopted to maximize the generality of the implementation, although it may incur a minor computational overhead for linear PDEs. With explicit time-schemes, no nonlinear algorithm is required: only the mass matrix is inverted at each stage.</p>
 <div class="admonition note">
-<p class="admonition-title">On the use of a Newton Solver</p>
-<p>The use of a Newton solver represents a pragmatic choice. Nevertheless, the code has been structured in such a way that alternative algorithms can be incorporated in the future.</p>
+<p class="admonition-title">On the choice of solvers</p>
+<p>The use of a Newton solver by default represents a pragmatic choice. The nonlinear solver (Newton or L-BFGS), the linear solver and its preconditioner, as well as the solver used to invert the mass matrix, can be overloaded: see the <a href="../../../Solvers/index.html">Solvers</a> page.</p>
 </div>
 <p>Definition of PDEs for <code>SLOTH</code> is made with a C++ object of type <code>Problem</code>, which is a template class instantiated with three template parameters: first, an <code>OPERATOR</code> object, second, a <a href="../../../Variables/index.html">Variables</a> object (see <code>VARS</code> in the example), and third, a <a href="../../../PostProcessing/index.html">PostProcessing</a> object (see <code>PST</code> in the example).</p>
 <p>The <code>OPERATOR</code> object in <code>Problem</code> refers to an object that inherits from base classes responsible for solving the nonlinear system (1). 
@@ -3913,16 +3943,24 @@ where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.
 <p>In <code>SLOTH</code>, each operator is designed to solve a system of PDEs with a monolithic algorithm.
 <strong>The size of the vector of spatial discretisation objects must be equal to the number of unknowns</strong>.</p>
 </div>
-<p>Regarding the time stepping, three ODE solvers have been integrated in <code>SLOTH</code> among those provided by <code>MFEM</code>:</p>
+<p>Regarding the time stepping, five ODE solvers have been integrated in <code>SLOTH</code> among those provided by <code>MFEM</code>:</p>
 <ul>
+<li>implicit methods (solved with the nonlinear algorithm):<ul>
 <li>The backward Euler method  (<code>SLOTH</code> object <code>TimeScheme::EulerImplicit</code>),</li>
+<li>The two-stage, third-order singly diagonal implicit Runge-Kutta method  (<code>SLOTH</code> object <code>TimeScheme::SDIRK23</code>),</li>
+<li>The three-stage, third-order singly diagonal implicit Runge-Kutta method  (<code>SLOTH</code> object <code>TimeScheme::SDIRK33</code>),</li>
+</ul>
+</li>
+<li>explicit methods (only the mass matrix is inverted):<ul>
 <li>The forward Euler method  (<code>SLOTH</code> object <code>TimeScheme::EulerExplicit</code>),</li>
 <li>The Runge-Kutta 4 method (<code>SLOTH</code> object <code>TimeScheme::RungeKutta4</code>).</li>
 </ul>
+</li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Extension of the list of ODE solver in <code>SLOTH</code></p>
-<p><code>MFEM</code> provides several ODE solvers. To begin, <code>SLOTH</code>development team integrates the most common methods, namely Euler and Runge-Kutta 4 methods. </p>
-<p>In the future, this list could be extended to account for high order methods.</p>
+<p><code>MFEM</code> provides several other ODE solvers. <code>SLOTH</code> development team integrates the most common methods, namely Euler, SDIRK and Runge-Kutta 4 methods. </p>
+<p>In the future, this list could be extended to account for other high order methods.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Definition of a transient operator</p>
