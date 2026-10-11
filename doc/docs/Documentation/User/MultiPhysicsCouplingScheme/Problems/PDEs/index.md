@@ -22,10 +22,10 @@ where $`U(x,t)`$ is the vector of unknowns expressed as a function of the time $
 </figcaption>
 </figure>
 
-For `SLOTH`, all PDEs are solved using a unified nonlinear algorithm based on the Newton solver. This approach is adopted to maximize the generality of the implementation, although it may incur a minor computational overhead for linear PDEs.
+For `SLOTH`, PDEs solved with an implicit time-scheme (and steady PDEs) rely on a unified nonlinear algorithm, based by default on the Newton solver. This approach is adopted to maximize the generality of the implementation, although it may incur a minor computational overhead for linear PDEs. With explicit time-schemes, no nonlinear algorithm is required: only the mass matrix is inverted at each stage.
 
-!!! note "On the use of a Newton Solver"
-    The use of a Newton solver represents a pragmatic choice. Nevertheless, the code has been structured in such a way that alternative algorithms can be incorporated in the future.
+!!! note "On the choice of solvers"
+    The use of a Newton solver by default represents a pragmatic choice. The nonlinear solver (Newton or L-BFGS), the linear solver and its preconditioner, as well as the solver used to invert the mass matrix, can be overloaded: see the [Solvers](../../../Solvers/index.md) page.
 
 
 Definition of PDEs for `SLOTH` is made with a C++ object of type `Problem`, which is a template class instantiated with three template parameters: first, an `OPERATOR` object, second, a [Variables](../../../Variables/index.md) object (see `VARS` in the example), and third, a [PostProcessing](../../../PostProcessing/index.md) object (see `PST` in the example).
@@ -349,16 +349,20 @@ In the figure 3, the integrators are gathered in two grouped:
         In `SLOTH`, each operator is designed to solve a system of PDEs with a monolithic algorithm.
         **The size of the vector of spatial discretisation objects must be equal to the number of unknowns**.
 
-    Regarding the time stepping, three ODE solvers have been integrated in `SLOTH` among those provided by `MFEM`:
+    Regarding the time stepping, five ODE solvers have been integrated in `SLOTH` among those provided by `MFEM`:
 
-    -  The backward Euler method  (`SLOTH` object `TimeScheme::EulerImplicit`),
-    -  The forward Euler method  (`SLOTH` object `TimeScheme::EulerExplicit`),
-    -  The Runge-Kutta 4 method (`SLOTH` object `TimeScheme::RungeKutta4`).
+    - implicit methods (solved with the nonlinear algorithm):
+        -  The backward Euler method  (`SLOTH` object `TimeScheme::EulerImplicit`),
+        -  The two-stage, third-order singly diagonal implicit Runge-Kutta method  (`SLOTH` object `TimeScheme::SDIRK23`),
+        -  The three-stage, third-order singly diagonal implicit Runge-Kutta method  (`SLOTH` object `TimeScheme::SDIRK33`),
+    - explicit methods (only the mass matrix is inverted):
+        -  The forward Euler method  (`SLOTH` object `TimeScheme::EulerExplicit`),
+        -  The Runge-Kutta 4 method (`SLOTH` object `TimeScheme::RungeKutta4`).
   
     !!! note "Extension of the list of ODE solver in `SLOTH`"
-        `MFEM` provides several ODE solvers. To begin, `SLOTH`development team integrates the most common methods, namely Euler and Runge-Kutta 4 methods. 
+        `MFEM` provides several other ODE solvers. `SLOTH` development team integrates the most common methods, namely Euler, SDIRK and Runge-Kutta 4 methods. 
 
-        In the future, this list could be extended to account for high order methods.
+        In the future, this list could be extended to account for other high order methods.
 
     !!! example "Definition of a transient operator"
         This example assume a Cahn-Hilliard problem with two unknowns (`phi` and `mu`). 
