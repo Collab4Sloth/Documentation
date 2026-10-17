@@ -29,24 +29,26 @@ bash ../envSloth.sh [OPTIONS] --libtorch=$LIBTORCH_PATH
 
 where `LIBTORCH_PATH` is an environment variable containing the path toward the `libtorch` folder previously uncompressed and [OPTIONS] are:
 ```bash
-    --release        Build with Release compiler options
+Build type (default: --release):
+  --release          Release, with -march=native
+  --portable         Release without -march=native (generic x86-64 target on x86)
+  --debug | --coverage | --optim | --minsizerel | --relwithdebinfo
 
-    --optim          Build with Optim compiler options
-        
-    --debug          Build with Debug compiler options
-        
-    --coverage       Build with Coverage compiler options
-        
-    --minsizerel     Build with MinSizeRel compiler options
-        
-    --relwithdebinfo Build with RelWithDebInfo compiler options
+Dependencies:
+  --mfem=DIR         local MFEM build (instead of spack on Linux / Homebrew on macOS)
+  --exprtk=DIR       ExprTk (directory containing exprtk.hpp)
+  --voro=DIR         Voro++ installation prefix
+  --libtorch=DIR     LibTorch installation prefix
+  --external=EXT_LIBDIR,EXT_LIBNAME
+                     link Sloth with an external library
 
-    --external       Build SLOTH with an external package
+Other options:
+  --shared           build Sloth as a shared library
+  --install=DIR      installation directory (default: ../SlothInstall)
+  --np=N             number of parallel compilation jobs (default: 4)
+  -h | --help        print this help
 
-    --shared         Build a shared library for Sloth
-
-    --install        Specify the installation path for Sloth 
-                     (default: a "SlothInstallation" directory at the same level as the repository)
-
-    --np             Specify the number of CPUs to use for compilation (default: 4)
+Everything after "--" is passed unchanged to CMake, e.g.:
+  bash ../envSloth.sh --np=8 -- -DMATOOLS_VERBOSITY_LEVEL_1=ON
 ```
+The up-to-date list is printed by `bash ../envSloth.sh --help`.

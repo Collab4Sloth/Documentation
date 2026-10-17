@@ -60,27 +60,29 @@ bash ../envSloth.sh [OPTIONS]
 ```
 where [OPTIONS] are:
 ```bash
-    --release        Build with Release compiler options
+Build type (default: --release):
+  --release          Release, with -march=native
+  --portable         Release without -march=native (generic x86-64 target on x86)
+  --debug | --coverage | --optim | --minsizerel | --relwithdebinfo
 
-    --optim          Build with Optim compiler options
-        
-    --debug          Build with Debug compiler options
-        
-    --coverage       Build with Coverage compiler options
-        
-    --minsizerel     Build with MinSizeRel compiler options
-        
-    --relwithdebinfo Build with RelWithDebInfo compiler options
+Dependencies:
+  --mfem=DIR         local MFEM build (instead of spack on Linux / Homebrew on macOS)
+  --exprtk=DIR       ExprTk (directory containing exprtk.hpp)
+  --voro=DIR         Voro++ installation prefix
+  --libtorch=DIR     LibTorch installation prefix
+  --external=EXT_LIBDIR,EXT_LIBNAME
+                     link Sloth with an external library
 
-    --external       Build SLOTH with an external package
+Other options:
+  --shared           build Sloth as a shared library
+  --install=DIR      installation directory (default: ../SlothInstall)
+  --np=N             number of parallel compilation jobs (default: 4)
+  -h | --help        print this help
 
-    --shared         Build a shared library for Sloth
-
-    --install        Specify the installation path for Sloth 
-                     (default: a "SlothInstallation" directory at the same level as the repository)
-
-    --np             Specify the number of CPUs to use for compilation (default: 4)
+Everything after "--" is passed unchanged to CMake, e.g.:
+  bash ../envSloth.sh --np=8 -- -DMATOOLS_VERBOSITY_LEVEL_1=ON
 ```
+The up-to-date list is printed by `bash ../envSloth.sh --help`.
 
 By default, this command builds a static library of SLOTH with release compiler options.
 
@@ -103,7 +105,7 @@ Once the tests are compiled, users can verify the build by running all tests wit
 ctest -j N 
 ```
 
-Finally, users can install the SLOTH library, headers, and scripts into the `SlothInstallation` directory by running:
+Finally, users can install the SLOTH library, headers, and scripts into the `SlothInstall` directory by running:
 
 ```bash
 make install
@@ -111,6 +113,11 @@ make install
 
 
 !!! note "Installing SLOTH in user-defined repository"
-    By default, SLOTH is installed in a `SlothInstallation` directory at the same level as the repository. 
+    By default, SLOTH is installed in a `SlothInstall` directory at the same level as the repository. 
 
     Users can be specify another directory with the `--install` option of the `envSloth.sh` script.
+
+
+!!! tip "Using the installed SLOTH"
+    To build your own programs with the installed SLOTH (`find_package(Sloth)`) and try the
+    example provided with the installation, see [Using an installed SLOTH in your own project](use_installed.md).

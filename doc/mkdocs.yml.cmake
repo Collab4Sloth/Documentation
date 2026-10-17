@@ -92,6 +92,7 @@ nav:
       - Started/Installation/cluster_source.md
       - Started/Installation/libtorch.md
       - Started/Installation/exprtk_sympy.md
+      - Started/Installation/use_installed.md
     - HowTo: 
       - Started/HowTo/index.md
       - Basic features:
