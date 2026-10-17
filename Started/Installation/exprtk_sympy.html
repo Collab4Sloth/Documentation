@@ -12,7 +12,7 @@
         <link rel="prev" href="libtorch.html">
       
       
-        <link rel="next" href="../HowTo/index.html">
+        <link rel="next" href="use_installed.html">
       
       
         
@@ -561,6 +561,8 @@
       
         
       
+        
+      
     
     
     
@@ -917,6 +919,36 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="use_installed.html" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18s-.41-.06-.57-.18l-7.9-4.44A.99.99 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18s.41.06.57.18l7.9 4.44c.32.17.53.5.53.88zM12 4.15l-1.89 1.07L16 8.61l1.96-1.11zM6.04 7.5 12 10.85l1.96-1.1-5.88-3.4zM5 15.91l6 3.38v-6.71L5 9.21zm14 0v-6.7l-6 3.37v6.71z"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+    Using an installed SLOTH in your own project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -3621,27 +3653,29 @@ Please ensure that <a href="https://docs.sympy.org/latest/index.html">Sympy</a> 
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>bash<span class="w"> </span>../envSloth.sh<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>--exprtk<span class="o">=</span><span class="nv">$EXPRTK_PATH</span>
 </span></code></pre></div>
 <p>where <code>EXPRTK_PATH</code> is an environment variable setting the path toward the <code>exprtk</code> folder containing the file <code>exprtk.hpp</code> and [OPTIONS] are:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">    </span>--release<span class="w">        </span>Build<span class="w"> </span>with<span class="w"> </span>Release<span class="w"> </span>compiler<span class="w"> </span>options
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span>--optim<span class="w">          </span>Build<span class="w"> </span>with<span class="w"> </span>Optim<span class="w"> </span>compiler<span class="w"> </span>options
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span>--debug<span class="w">          </span>Build<span class="w"> </span>with<span class="w"> </span>Debug<span class="w"> </span>compiler<span class="w"> </span>options
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span>--coverage<span class="w">       </span>Build<span class="w"> </span>with<span class="w"> </span>Coverage<span class="w"> </span>compiler<span class="w"> </span>options
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span>--minsizerel<span class="w">     </span>Build<span class="w"> </span>with<span class="w"> </span>MinSizeRel<span class="w"> </span>compiler<span class="w"> </span>options
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span>--relwithdebinfo<span class="w"> </span>Build<span class="w"> </span>with<span class="w"> </span>RelWithDebInfo<span class="w"> </span>compiler<span class="w"> </span>options
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span>--external<span class="w">       </span>Build<span class="w"> </span>SLOTH<span class="w"> </span>with<span class="w"> </span>an<span class="w"> </span>external<span class="w"> </span>package
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span>--shared<span class="w">         </span>Build<span class="w"> </span>a<span class="w"> </span>shared<span class="w"> </span>library<span class="w"> </span><span class="k">for</span><span class="w"> </span>Sloth
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span>--install<span class="w">        </span>Specify<span class="w"> </span>the<span class="w"> </span>installation<span class="w"> </span>path<span class="w"> </span><span class="k">for</span><span class="w"> </span>Sloth<span class="w"> </span>
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">                     </span><span class="o">(</span>default:<span class="w"> </span>a<span class="w"> </span><span class="s2">"SlothInstallation"</span><span class="w"> </span>directory<span class="w"> </span>at<span class="w"> </span>the<span class="w"> </span>same<span class="w"> </span>level<span class="w"> </span>as<span class="w"> </span>the<span class="w"> </span>repository<span class="o">)</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Build<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="o">(</span>default:<span class="w"> </span>--release<span class="o">)</span>:
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span>--release<span class="w">          </span>Release,<span class="w"> </span>with<span class="w"> </span>-march<span class="o">=</span>native
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span>--portable<span class="w">         </span>Release<span class="w"> </span>without<span class="w"> </span>-march<span class="o">=</span>native<span class="w"> </span><span class="o">(</span>generic<span class="w"> </span>x86-64<span class="w"> </span>target<span class="w"> </span>on<span class="w"> </span>x86<span class="o">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span>--debug<span class="w"> </span><span class="p">|</span><span class="w"> </span>--coverage<span class="w"> </span><span class="p">|</span><span class="w"> </span>--optim<span class="w"> </span><span class="p">|</span><span class="w"> </span>--minsizerel<span class="w"> </span><span class="p">|</span><span class="w"> </span>--relwithdebinfo
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>Dependencies:
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span>--mfem<span class="o">=</span>DIR<span class="w">         </span><span class="nb">local</span><span class="w"> </span>MFEM<span class="w"> </span>build<span class="w"> </span><span class="o">(</span>instead<span class="w"> </span>of<span class="w"> </span>spack<span class="w"> </span>on<span class="w"> </span>Linux<span class="w"> </span>/<span class="w"> </span>Homebrew<span class="w"> </span>on<span class="w"> </span>macOS<span class="o">)</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span>--exprtk<span class="o">=</span>DIR<span class="w">       </span>ExprTk<span class="w"> </span><span class="o">(</span>directory<span class="w"> </span>containing<span class="w"> </span>exprtk.hpp<span class="o">)</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span>--voro<span class="o">=</span>DIR<span class="w">         </span>Voro++<span class="w"> </span>installation<span class="w"> </span>prefix
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span>--libtorch<span class="o">=</span>DIR<span class="w">     </span>LibTorch<span class="w"> </span>installation<span class="w"> </span>prefix
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span>--external<span class="o">=</span>EXT_LIBDIR,EXT_LIBNAME
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">                     </span>link<span class="w"> </span>Sloth<span class="w"> </span>with<span class="w"> </span>an<span class="w"> </span>external<span class="w"> </span>library
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>Other<span class="w"> </span>options:
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">  </span>--shared<span class="w">           </span>build<span class="w"> </span>Sloth<span class="w"> </span>as<span class="w"> </span>a<span class="w"> </span>shared<span class="w"> </span>library
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">  </span>--install<span class="o">=</span>DIR<span class="w">      </span>installation<span class="w"> </span>directory<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span>../SlothInstall<span class="o">)</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">  </span>--np<span class="o">=</span>N<span class="w">             </span>number<span class="w"> </span>of<span class="w"> </span>parallel<span class="w"> </span>compilation<span class="w"> </span><span class="nb">jobs</span><span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="m">4</span><span class="o">)</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">  </span>-h<span class="w"> </span><span class="p">|</span><span class="w"> </span>--help<span class="w">        </span>print<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span>
 </span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span>--np<span class="w">             </span>Specify<span class="w"> </span>the<span class="w"> </span>number<span class="w"> </span>of<span class="w"> </span>CPUs<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span><span class="k">for</span><span class="w"> </span>compilation<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="m">4</span><span class="o">)</span>
-</span></code></pre></div></p>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>Everything<span class="w"> </span>after<span class="w"> </span><span class="s2">"--"</span><span class="w"> </span>is<span class="w"> </span>passed<span class="w"> </span>unchanged<span class="w"> </span>to<span class="w"> </span>CMake,<span class="w"> </span>e.g.:
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">  </span>bash<span class="w"> </span>../envSloth.sh<span class="w"> </span>--np<span class="o">=</span><span class="m">8</span><span class="w"> </span>--<span class="w"> </span>-DMATOOLS_VERBOSITY_LEVEL_1<span class="o">=</span>ON
+</span></code></pre></div>
+The up-to-date list is printed by <code>bash ../envSloth.sh --help</code>. </p>
 <p>With <code>spack</code>, this environment variable can be defined as:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">EXPRTK_PATH</span><span class="o">=</span><span class="k">$(</span>spack<span class="w"> </span>location<span class="w"> </span>-i<span class="w"> </span>exprtk<span class="k">)</span>/include/exprtk
 </span></code></pre></div>
