@@ -15,6 +15,10 @@ __MFEM__
 Installing `SLOTH` therefore consists of first installing `MFEM` and compiling `SLOTH`. 
 The basic procedure is then provided for the [Linux platforms using spack](linux.md), the [Linux platforms from source files](sources.md) and the [MacOs platforms](mac.md), but also for [supercomputers](cluster.md) where `SLOTH` is intended to be used.
 
+On Linux, `SLOTH` itself can also be installed with `spack` (see [Using an installed SLOTH](use_installed.md)).
+
+Once installed, `SLOTH` is used in your own projects through `find_package(Sloth)`: see [Using an installed SLOTH in your own project](use_installed.md), which also provides a ready-to-build example.
+
 __Sympy__
  
 `SLOTH` provides an advanced interface based on [Sympy](https://docs.sympy.org/latest/index.html) to manage physical properties. The basic procedure also includes [instructions for installing `SLOTH` with this dependency](exprtk_sympy.md). 
