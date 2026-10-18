@@ -84,6 +84,20 @@ Here, these quantities are grouped by physical problems.
     | DrivingForce      | ThermodynamicPotential | J                                 | Driving force in J                   |
     
 
+=== "Source and advection quantities"
+
+    The following quantities are dedicated to source terms and to the advection of a variable by an imposed velocity field (see the [`SourceTerm`, `Advection` and `SplitAdvection` integrators](../MultiPhysicsCouplingScheme/Problems/PDEs/index.md#integrators)).
+
+    | Quantity   | Type       | Unit | Description                                                         |
+    | ---------- | ---------- | ---- | ------------------------------------------------------------------- |
+    | SourceTerm | SourceTerm | -    | Source term of an equation                                          |
+    | Velocity_X | Velocity   | -    | Advection velocity, x (or r) component (ID 0)                       |
+    | Velocity_Y | Velocity   | -    | Advection velocity, y (or z) component (ID 1)                       |
+    | Velocity_Z | Velocity   | -    | Advection velocity, z component (ID 2)                              |
+    | Inflow     | Inflow     | -    | Value of the advected variable entering the domain (open boundaries) |
+
+    The three velocity quantities share the type `GlossaryType::Velocity` and are distinguished by their ID, which is the index of the component.
+
 === "System quantities"
 
     The following quantities are dedicated to miscalleneous problems.

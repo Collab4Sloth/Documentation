@@ -30,6 +30,8 @@ A `Boundary` object is defined by
 - a type (C++ type `std::string`) among "Dirichlet", "Neumann", "Robin", "Periodic",
 - a value (C++ type `double`) in case of "Dirichlet" boundary conditions only.
 
+Inflow/outflow conditions for advection problems are not a boundary type: they are activated by a `Coefficient` of type `Glossary::Inflow` attached to the open boundaries (see the "Inflow / outflow" tab below).
+
 !!! example "Defining boundary conditions"
     
     The following examples assume that the spatial discretisation is defined. 
@@ -68,7 +70,7 @@ A `Boundary` object is defined by
                     {
                     "expression":"t*sin(pi*y)",
                     "variables":"phi",
-                    "auxiliary_variables":"x,y",
+                    "coordinates":"x,y",
                     "constants":"(t:T)",
                     "class_name":"DirichletCoefficient",
                     "outputfile":"Coefficient"
@@ -77,7 +79,7 @@ A `Boundary` object is defined by
         ```
 
         `phi` is declared as the coefficient's own variable, even though it is not used in the expression. 
-        `x` and `y` are the spatial coordinates, provided as auxiliary variables. 
+        `x` and `y` are the spatial coordinates (see [Coefficients](../../Coefficients/index.md)). 
         `t` is mapped to the current simulation time. 
         The prefactor passed to `DirichletCoefficient(-1)` flips the sign of the whole expression for the left boundary.
 
@@ -146,6 +148,42 @@ A `Boundary` object is defined by
         ]
         ``` 
 
+
+    === "Inflow / outflow"
+
+        For problems with an [`Advection` or `SplitAdvection`](../../MultiPhysicsCouplingScheme/Problems/PDEs/index.md#integrators) integrator, the advective flux through the boundary is prescribed by an upwind boundary term:
+
+        ```math
+        \int_{\Gamma} \left[\left(\mathbf{v}\cdot\mathbf{n}\right)^{+} u + \left(\mathbf{v}\cdot\mathbf{n}\right)^{-} u_{in}\right] \psi \, d\Gamma
+        ```
+
+        where $`(a)^{+}=\max(a,0)`$ and $`(a)^{-}=\min(a,0)`$:
+
+        - outflow ($`\mathbf{v}\cdot\mathbf{n} > 0`$): the interior value $`u`$ leaves the domain freely,
+        - inflow ($`\mathbf{v}\cdot\mathbf{n} < 0`$): the incoming flux $`(\mathbf{v}\cdot\mathbf{n})\,u_{in}`$ is imposed.
+
+        $`u_{in}`$ is given by a `Coefficient` of type `Glossary::Inflow`, attached to the open boundaries with `set_bdr_index_coef`. 
+        The switch between inflow and outflow is made at each integration point according to the sign of $`\mathbf{v}\cdot\mathbf{n}`$, so the `Inflow` coefficient can be attached to all the open boundaries, whatever the direction of the flow. 
+        It can depend on the spatial coordinates and on the time, not on the unknowns.
+
+        ```c++
+        auto boundaries = {Boundary("lower", 0, "Neumann"), Boundary("right", 1, "Neumann"),
+                           Boundary("upper", 2, "Neumann"), Boundary("left", 3, "Neumann")};
+        auto bcs = BCS(&spatial, boundaries);
+
+        Coefficient inflow(Glossary::Inflow, Scheme::Explicit, InflowCoefficient());
+        inflow.set_bdr_index_coef(std::vector<int>{0, 1, 2, 3});
+        ```
+
+        The corresponding boundary integrator (`AdvectionBoundary`, or `AdvectionBoundaryCH` with `SplitAdvection`) is added automatically: there is no boundary type to declare. 
+        The `Inflow` term is independent of the boundary type and is added to it (homogeneous Neumann in the example above for the diffusive flux).
+
+        !!! note "Boundaries without `Inflow` coefficient"
+            On a boundary without `Inflow` coefficient, the advective flux vanishes ($`u\,\mathbf{v}\cdot\mathbf{n}=0`$ in the weak sense): the boundary behaves as a wall. This is the expected behavior for closed domains, where the integral of the advected variable is conserved.
+
+        !!! warning "Consistency checks"
+            - An `Inflow` coefficient without `Advection` or `SplitAdvection` integrator in the operator stops the simulation with an error message.
+            - With `SplitAdvection`, the `Inflow` coefficient must be given in the `Coefficients` of the phase-field variable (first unknown), together with the velocity coefficients.
 
     === "Periodic"
 
