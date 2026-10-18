@@ -5,6 +5,9 @@ This description is based on a very simple example, but the data structure shown
 
 On this page, the users can find the most important parts of a `SLOTH` input dataset and go to the pages of the [User Manual](../../../Documentation/User/index.md) that give all the options and the instructions for using them.
 
+!!! tip "General structure of an input file"
+    For an overview of the structure shared by all `SLOTH` input files, including multiphase and multiphysics cases, see the tutorial [SLOTH Input Files in a Nutshell](../Tutorials/InputFile/index.md).
+
 !!! Abstract "Statement of the problem"
     The current description is based on a simple example code that solves the Allen-Cahn equation in a 1D domain $`\Omega=[0,R]`$ with $`R=10^{-3}`$. 
 

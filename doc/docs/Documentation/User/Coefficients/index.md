@@ -8,7 +8,7 @@ Definition of coefficients for `SLOTH` is made with a C++ object of type `Coeffi
 
 For SLOTH, a `Coefficient` is a C++ object defined by:
 
-- a [`GlobalQuantity`](../Glossary/index.md,)
+- a [`GlobalQuantity`](../Glossary/index.md)
 - a `SLOTH` C++ enum type `Scheme` (except for constant coefficients) : available values for users are `Scheme::Implicit`, `Scheme::Explicit`, `Scheme::SemiImplicit`. These values are directly linked to the definition of coefficients and their use in `SLOTH` integrators.
 - a `SLOTH` C++ type `FunctionCoefficient`.
 
@@ -406,7 +406,7 @@ The script `GenerateCoefficient.py` allows users to handle range conditions in t
 
     ```math
     \begin{align*}
-    \displaystyle\sum_{i=1}^{3} \left( \frac{1}{4} x_i^4 - \frac{1}{2} x_i^2 \right) \quad \text{if}\quad   0\lt x_1 \lt 0.75
+    \displaystyle\sum_{i=1}^{3} \left( \frac{1}{4} x_i^4 - \frac{1}{2} x_i^2 \right) \quad \text{if}\quad   0\le x_1 \le 0.75
     \\
     \displaystyle\sum_{i=1}^{3} \left( \frac{1}{4} x_i^4 - \frac{1}{4} x_i^2 \right) \quad \text{otherwise}
     \end{align*}
@@ -416,10 +416,10 @@ The script `GenerateCoefficient.py` allows users to handle range conditions in t
 
 - At least one expression with a range
 - The range is defined by lower and upper bounds:  
-    - `lower` means $`\le`$, 
-    - `lower_strict` means $`\lt`$, 
-    - `upper` means $`\ge`$, 
-    - `upper_strict`means $`\gt`$ 
+    - `lower` means $`\text{lower} \le x`$, 
+    - `lower_strict` means $`\text{lower} \lt x`$, 
+    - `upper` means $`x \le \text{upper}`$, 
+    - `upper_strict` means $`x \lt \text{upper}`$ 
 - One default expression without range (see `default`)
 - The 'lower' or 'lower_strict' bounds must be defined, not the two attributes
 - The 'upper' or 'upper_strict' bounds must be defined not the two attributess
@@ -460,7 +460,7 @@ The script `GenerateCoefficient.py` allows users to define semi-implicit coeffic
     where $`x^n`$ variables are taken at the previous time-step.
 
 !!! warning "On the use of a semi-implicit coefficient"
-    Users must ensure they explicitly specify `Scheme::Implicit` when using a semi-implicit coefficient.
+    Users must ensure they explicitly specify `Scheme::SemiImplicit` when using a semi-implicit coefficient.
 
     ```c++
     Coefficient energy_semi_imp(Glossary::FreeEnergy, Scheme::SemiImplicit, Gw());
