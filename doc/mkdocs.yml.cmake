@@ -113,6 +113,8 @@ nav:
           - Started/Examples/CahnHilliard/example4/index.md
         - Example 5:
           - Started/Examples/CahnHilliard/example5/index.md
+        - Example 6:
+          - Started/Examples/CahnHilliard/example6/index.md
       - Allen-Cahn:
         - Started/Examples/AllenCahn/index.md
       - Allen-Cahn + Cahn Hilliard:

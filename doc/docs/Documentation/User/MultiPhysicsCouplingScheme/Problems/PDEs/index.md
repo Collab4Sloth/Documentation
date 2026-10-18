@@ -109,7 +109,7 @@ In the figure 3, the integrators are gathered in two grouped:
         where $`\rho`$ and $`C_p`$ are two `SLOTH` coefficients of type `GlossaryType::Concentration` and `GlossaryType::HeatCapacity`, respectively. 
         By default, coefficients are set to one. 
 
-- Differential Operators  (see $`G`$ in the equation (1)): `Fick`, `Fourier`, `MassFlux`, `AllenCahn`, `SplitAllenCahn`, `CahnHilliard`, `MeltingCalphad`, `MeltingConstant`, `MeltingTemperature`, `LatentHeat`. **They can be combined as for example, `AllenCahn` and  `MeltingTemperature`**.
+- Differential Operators  (see $`G`$ in the equation (1)): `Fick`, `Fourier`, `MassFlux`, `AllenCahn`, `SplitAllenCahn`, `CahnHilliard`, `MeltingCalphad`, `MeltingConstant`, `MeltingTemperature`, `LatentHeat`, `SourceTerm`, `Advection`, `SplitAdvection`. **They can be combined as for example, `AllenCahn` and  `MeltingTemperature`**.
   
     === "Fick"
         This integrator concerns the following mathematical expression:
@@ -322,6 +322,92 @@ In the figure 3, the integrators are gathered in two grouped:
 
         This integrator can be only associated with the `Fourier` integrator to solve heat transfer equation for two-phase problems. 
 
+    === "SourceTerm"
+        This integrator concerns the following vectorial expression:
+        
+        ```math
+
+        \begin{align}
+        {\left(f_i\right)}_i
+        \end{align}
+
+        ```
+        where $`f_i`$ is a **mandatory** `SLOTH` coefficient of type `GlossaryType::SourceTerm` (`Glossary::SourceTerm`), defined for **every** unknown $`i`$ of the problem (use a zero constant for an equation without source term).
+
+        $`f_i`$ can be a constant, a function of the unknowns, of the auxiliary variables, of the time (`"constants": "(t:T)"`) and of the spatial coordinates (`"coordinates"`), or read from a file (see [Coefficients](../../../Coefficients/index.md)). 
+        The Jacobian $`\partial f_i/\partial u_j`$ is only assembled for source terms that can depend on the current solution (neither constant, explicit nor file-based). 
+        In axisymmetric geometry, the radial weight is applied by the integrator.
+
+        ```c++
+        Coefficient no_source(Glossary::SourceTerm, 0.);
+        Coefficient source(Glossary::SourceTerm, Scheme::Explicit, SourceCoefficient());
+        Coefficients coef_pb0(double_well, capillary, mobility, grad_energy, no_source);
+        Coefficients coef_pb1(double_well, capillary, mobility, grad_energy, source);
+        TransientOPE oper(spatials, {"CahnHilliard", "SourceTerm"}, params, TimeScheme::EulerImplicit, "SplitTimeDerivative");
+        ```
+
+        This integrator can be combined with any other differential operator. It replaces the former definition of source terms on the [`Operator`](#operators).
+
+    === "Advection"
+        This integrator concerns the following mathematical expression (conservative form):
+        
+        ```math
+
+        \begin{align}
+        -\nabla\cdot\left(\varphi\,\mathbf{v}\right)
+        \end{align}
+
+        ```
+        where $`\mathbf{v}`$ is an **imposed** velocity field (not necessarily divergence-free), given by the `SLOTH` coefficients of type `GlossaryType::Velocity`: `Glossary::Velocity_X`, `Glossary::Velocity_Y` and `Glossary::Velocity_Z` (all the components of the space dimension are required). 
+        The velocity can depend on the spatial coordinates, the time and the auxiliary variables, **not on the unknowns** (no $`\partial \mathbf{v}/\partial \varphi`$ in the Jacobian).
+
+        Each unknown holding the velocity coefficients is advected. The weak form reads:
+
+        ```math
+
+        \begin{align}
+        -\int_\Omega \nabla\cdot\left(\varphi\,\mathbf{v}\right)\psi\, d\Omega = \int_\Omega \varphi\,\mathbf{v}\cdot\nabla\psi\, d\Omega - \int_{\partial\Omega} \left(\mathbf{v}\cdot\mathbf{n}\right)\varphi\,\psi\, d\Gamma
+        \end{align}
+
+        ```
+
+        The boundary term is handled by the `AdvectionBoundary` integrator, added **automatically** on each boundary holding an `Inflow` coefficient (see [Boundary conditions](../../../SpatialDiscretization/BoundaryConditions/index.md)). 
+        On boundaries without `Inflow` coefficient, the advective flux vanishes (wall), which ensures mass conservation in a closed domain.
+
+        ```c++
+        Coefficient velocity_x(Glossary::Velocity_X, Scheme::Explicit, VelocityX());
+        Coefficient velocity_y(Glossary::Velocity_Y, Scheme::Explicit, VelocityY());
+        Coefficients coef_pb(density, heat_capacity, conductivity, velocity_x, velocity_y);
+        TransientOPE oper(spatials, {"Fourier", "Advection"}, params, TimeScheme::EulerImplicit, "HeatTimeDerivative");
+        ```
+
+    === "SplitAdvection"
+        This integrator concerns the following vectorial expression:
+        
+        ```math
+
+        \begin{pmatrix}
+        0
+        \\
+        -\nabla\cdot\left(\varphi\,\mathbf{v}\right)
+        \end{pmatrix}
+
+        ```
+        It is the counterpart of `Advection` for the split $`(\varphi, \mu)`$ Cahn-Hilliard formulation: the advection of $`\varphi`$ (first unknown) is added to the second equation, which holds $`\partial\varphi/\partial t`$. 
+        The velocity coefficients (`Glossary::Velocity_X`, `Glossary::Velocity_Y`, `Glossary::Velocity_Z`) must be given in the `Coefficients` of $`\varphi`$.
+
+        This integrator must be associated with the `CahnHilliard` and `SplitTimeDerivative` integrators. 
+        On open boundaries, the `AdvectionBoundaryCH` integrator is added **automatically** on each boundary holding an `Inflow` coefficient (also given in the `Coefficients` of $`\varphi`$).
+
+        ```c++
+        Coefficient velocity_x(Glossary::Velocity_X, 0.);
+        Coefficient velocity_y(Glossary::Velocity_Y, Scheme::Explicit, PoiseuilleVelocity());
+        Coefficients coef_phi(double_well, capillary, mobility, grad_energy, velocity_x, velocity_y);
+        Coefficients coef_mu(double_well, capillary, mobility, grad_energy);
+        TransientOPE oper(spatials, {"CahnHilliard", "SplitAdvection"}, params, TimeScheme::EulerImplicit, "SplitTimeDerivative");
+        ```
+        See the [Cahn-Hilliard example 6](../../../../../Started/Examples/CahnHilliard/example6/index.md) (rising bubble in an imposed flow).
+
 !!! note "On the inheritance from `BlockNonlinearFormIntegrator` instead of `NonlinearFormIntegrator`"
     For `SLOTH` integrators, inheriting from `BlockNonlinearFormIntegrator` maximizes the generality of the implementation, as it allows solving both single-unknown problems and problems with several unknowns. 
  
@@ -524,7 +610,7 @@ By default, the geometry will be set to `Geometry::Cartesian` if no specific geo
 
 !!! warning "Defining source terms on axisymmetric geometries"
 
-    When defining a source term on an [`Operator`](#operators), ensure that it is multiplied by the radius. This multiplication is automatically handled by all integrators. However, source terms defined in the input datafile will not be automatically adjusted and must be manually multiplied by the radius.
+    Source terms are defined with the [`SourceTerm`](#integrators) integrator, which applies the radial weight automatically, as all the other integrators. The source term coefficient must therefore **not** be multiplied by the radius.
 
 
 #### __How to use Adaptive Mesh Refinement (AMR)?__ {#amr}
