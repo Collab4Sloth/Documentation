@@ -1169,6 +1169,8 @@
       
         
       
+        
+      
     
     
     
@@ -1546,6 +1548,74 @@
             
   
     Example 5
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Started/Examples/CahnHilliard/example6/index.html" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example 6
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Example 6
   
 
           </label>
@@ -3500,7 +3570,7 @@
 </div>
 <p>Users can access to a predefined list of quantities in the namespace <code>Glossary</code>, where a quantity <code>Q</code> is simply defined as <code>Glossary::Q</code>. 
 Here, these quantities are grouped by physical problems. </p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Phase-field quantities</label><label for="__tabbed_1_2">Thermal quantities</label><label for="__tabbed_1_3">Mass diffusion quantities</label><label for="__tabbed_1_4">CALPHAD quantities</label><label for="__tabbed_1_5">System quantities</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Phase-field quantities</label><label for="__tabbed_1_2">Thermal quantities</label><label for="__tabbed_1_3">Mass diffusion quantities</label><label for="__tabbed_1_4">CALPHAD quantities</label><label for="__tabbed_1_5">Source and advection quantities</label><label for="__tabbed_1_6">System quantities</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>The following quantities are dedicated to phase-field equations. </p>
@@ -3747,6 +3817,52 @@ Here, these quantities are grouped by physical problems. </p>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="tabbed-block">
+<p>The following quantities are dedicated to source terms and to the advection of a variable by an imposed velocity field (see the <a href="../MultiPhysicsCouplingScheme/Problems/PDEs/index.html#integrators"><code>SourceTerm</code>, <code>Advection</code> and <code>SplitAdvection</code> integrators</a>).</p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Type</th>
+<th>Unit</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SourceTerm</td>
+<td>SourceTerm</td>
+<td>-</td>
+<td>Source term of an equation</td>
+</tr>
+<tr>
+<td>Velocity_X</td>
+<td>Velocity</td>
+<td>-</td>
+<td>Advection velocity, x (or r) component (ID 0)</td>
+</tr>
+<tr>
+<td>Velocity_Y</td>
+<td>Velocity</td>
+<td>-</td>
+<td>Advection velocity, y (or z) component (ID 1)</td>
+</tr>
+<tr>
+<td>Velocity_Z</td>
+<td>Velocity</td>
+<td>-</td>
+<td>Advection velocity, z component (ID 2)</td>
+</tr>
+<tr>
+<td>Inflow</td>
+<td>Inflow</td>
+<td>-</td>
+<td>Value of the advected variable entering the domain (open boundaries)</td>
+</tr>
+</tbody>
+</table>
+<p>The three velocity quantities share the type <code>GlossaryType::Velocity</code> and are distinguished by their ID, which is the index of the component.</p>
 </div>
 <div class="tabbed-block">
 <p>The following quantities are dedicated to miscalleneous problems.</p>
