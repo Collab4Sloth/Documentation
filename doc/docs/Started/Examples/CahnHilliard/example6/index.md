@@ -3,8 +3,8 @@
 
 ### __Files__ 
 
-- 2D test file: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test6_amr/main.cpp)
-- 3D test file: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/3D/test7/main.cpp)
+- 2D test file: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test6/main.cpp)
+- 3D test file: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/3D/test1/main.cpp)
 - Velocity field: `coefficient.json` in each test directory
 
 ### __Statement of the problem__ 

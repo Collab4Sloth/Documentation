@@ -94,6 +94,7 @@ Here, these quantities are grouped by physical problems.
     | Velocity_X | Velocity   | -    | Advection velocity, x (or r) component (ID 0)                       |
     | Velocity_Y | Velocity   | -    | Advection velocity, y (or z) component (ID 1)                       |
     | Velocity_Z | Velocity   | -    | Advection velocity, z component (ID 2)                              |
+    | VelocityPrefactor | VelocityPrefactor | - | Prefactor $`\alpha`$ of a gradient velocity $`\mathbf{v} = \alpha\nabla a`$ |
     | Inflow     | Inflow     | -    | Value of the advected variable entering the domain (open boundaries) |
 
     The three velocity quantities share the type `GlossaryType::Velocity` and are distinguished by their ID, which is the index of the component.
