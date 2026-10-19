@@ -358,8 +358,12 @@ In the figure 3, the integrators are gathered in two grouped:
         \end{align}
 
         ```
-        where $`\mathbf{v}`$ is an **imposed** velocity field (not necessarily divergence-free), given by the `SLOTH` coefficients of type `GlossaryType::Velocity`: `Glossary::Velocity_X`, `Glossary::Velocity_Y` and `Glossary::Velocity_Z` (all the components of the space dimension are required). 
-        The velocity can depend on the spatial coordinates, the time and the auxiliary variables, **not on the unknowns** (no $`\partial \mathbf{v}/\partial \varphi`$ in the Jacobian).
+        where $`\mathbf{v}`$ is an **imposed** velocity field (not necessarily divergence-free), defined in one of the two following ways:
+
+        - **velocity components**: `SLOTH` coefficients of type `GlossaryType::Velocity`: `Glossary::Velocity_X`, `Glossary::Velocity_Y` and `Glossary::Velocity_Z` (all the components of the space dimension are required),
+        - **gradient of an auxiliary variable** $`\mathbf{v} = \alpha\,\nabla a`$: a `SLOTH` coefficient of type `GlossaryType::VelocityPrefactor` (`Glossary::VelocityPrefactor`) for $`\alpha`$, and the parameter `velocity_gradient` giving the symbol of the auxiliary variable $`a`$ (set with `set_additional_information`).
+
+        The velocity can depend on the spatial coordinates, the time and the auxiliary variables, **not on the unknowns** (no $`\partial \mathbf{v}/\partial \varphi`$ in the Jacobian). In the gradient mode, $`\alpha`$ and $`a`$ are frozen in the Jacobian (staggered coupling).
 
         Each unknown holding the velocity coefficients is advected. The weak form reads:
 
@@ -374,12 +378,32 @@ In the figure 3, the integrators are gathered in two grouped:
         The boundary term is handled by the `AdvectionBoundary` integrator, added **automatically** on each boundary holding an `Inflow` coefficient (see [Boundary conditions](../../../SpatialDiscretization/BoundaryConditions/index.md)). 
         On boundaries without `Inflow` coefficient, the advective flux vanishes (wall), which ensures mass conservation in a closed domain.
 
-        ```c++
-        Coefficient velocity_x(Glossary::Velocity_X, Scheme::Explicit, VelocityX());
-        Coefficient velocity_y(Glossary::Velocity_Y, Scheme::Explicit, VelocityY());
-        Coefficients coef_pb(density, heat_capacity, conductivity, velocity_x, velocity_y);
-        TransientOPE oper(spatials, {"Fourier", "Advection"}, params, TimeScheme::EulerImplicit, "HeatTimeDerivative");
-        ```
+        === "Velocity components"
+
+            ```c++
+            Coefficient velocity_x(Glossary::Velocity_X, Scheme::Explicit, VelocityX());
+            Coefficient velocity_y(Glossary::Velocity_Y, Scheme::Explicit, VelocityY());
+            Coefficients coef_pb(density, heat_capacity, conductivity, velocity_x, velocity_y);
+            TransientOPE oper(spatials, {"Fourier", "Advection"}, params, TimeScheme::EulerImplicit, "HeatTimeDerivative");
+            ```
+
+        === "Gradient of an auxiliary variable"
+
+            ```c++
+            // v = alpha grad(a), a being an auxiliary variable of the problem
+            auto a_var = VAR(&spatial, bcs, "a", Glossary::Temperature, 2, a_initial_condition);
+            a_var.set_additional_information("a");
+            auto aux_vars = VARS(a_var);
+
+            Coefficient alpha(Glossary::VelocityPrefactor, 1.);
+            auto params = Parameters(Parameter("velocity_gradient", "a"));
+            Coefficients coef_pb(density, heat_capacity, conductivity, alpha);
+            TransientOPE oper(spatials, {"Fourier", "Advection"}, params, TimeScheme::EulerImplicit, "HeatTimeDerivative");
+            TransientPB heat_pb("Heat", oper, heat_vars, {coef_pb}, pst, aux_vars);
+            ```
+
+            The gradient is the gradient of the finite element field $`a_h`$: it is piecewise constant with $`\mathcal{Q}_1`$ elements, which limits the accuracy of the advection to order 1. 
+            A $`\mathcal{Q}_2`$ discretization of $`a`$ is recommended when the accuracy of the velocity matters (see `tests/HeatTransfer/2D/test9`).
 
     === "SplitAdvection"
         This integrator concerns the following vectorial expression:
@@ -394,7 +418,7 @@ In the figure 3, the integrators are gathered in two grouped:
 
         ```
         It is the counterpart of `Advection` for the split $`(\varphi, \mu)`$ Cahn-Hilliard formulation: the advection of $`\varphi`$ (first unknown) is added to the second equation, which holds $`\partial\varphi/\partial t`$. 
-        The velocity coefficients (`Glossary::Velocity_X`, `Glossary::Velocity_Y`, `Glossary::Velocity_Z`) must be given in the `Coefficients` of $`\varphi`$.
+        The velocity coefficients (`Glossary::Velocity_X`, `Glossary::Velocity_Y`, `Glossary::Velocity_Z`, or `Glossary::VelocityPrefactor` with the parameter `velocity_gradient`, as for `Advection`) must be given in the `Coefficients` of $`\varphi`$.
 
         This integrator must be associated with the `CahnHilliard` and `SplitTimeDerivative` integrators. 
         On open boundaries, the `AdvectionBoundaryCH` integrator is added **automatically** on each boundary holding an `Inflow` coefficient (also given in the `Coefficients` of $`\varphi`$).
@@ -578,7 +602,6 @@ The `SteadyPB` and `TransientPB` problems must be defined by:
 
     \begin{pmatrix}
     \mu - \nabla \cdot \left(\lambda \nabla \varphi\right)
-    + \dfrac{\partial F}{\partial \varphi}
     \\[1ex]
     \nabla \cdot \left(M \nabla \mu\right)
     \end{pmatrix}
