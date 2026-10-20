@@ -294,7 +294,7 @@ In the sintering energy, the sums over the grains are written as `Sum(eta[i]*eta
 ]
 ```
 
-With `"gradient": true`, each variable stands for the **gradient** of the field: `dot(x,x)` is $`\nabla x\cdot\nabla x`$ and `sdot(eta(1..2))` is $`\sum_i \nabla\eta_i\cdot\nabla\eta_i`$. This entry defines the gradient energy of the Cahn-Hilliard problem of the sintering test,
+With `"gradient": true`, each variable stands for the **gradient** of the field: `dot(x,x)` is $`\nabla x\cdot\nabla x`$ and `sdot(eta(1..2))` is $`\sum_i \nabla\eta_i\cdot\nabla\eta_i`$ (a factor in front of `sdot`, numeric or constant, multiplies the whole sum). This entry defines the gradient energy of the Cahn-Hilliard problem of the sintering test,
 
 ```math
 \tfrac{5}{2}\,\nabla c\cdot\nabla c + \sum_{i=1}^{2}\nabla\eta_i\cdot\nabla\eta_i
