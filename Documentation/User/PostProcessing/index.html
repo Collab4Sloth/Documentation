@@ -3178,6 +3178,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Specialized post-processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specialized-frequency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frequency of specialized values
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3676,6 +3693,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Specialized post-processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specialized-frequency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frequency of specialized values
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3836,7 +3870,7 @@ This example shows how to declare a <code>PST</code> object with the spatial dis
 <p>In addition to visualizing <a href="../Variables/index.html"><code>Variables</code></a> with <code>ParaView</code>, some results can also be exported in <code>CSV</code> format.</p>
 <p>The <code>time_specialized.csv</code> file contains:</p>
 <ul>
-<li>The <span class="arithmatex">\(L^2\)</span> and <span class="arithmatex">\(L^\infty\)</span> norms of the error for each variable with an analytical solution;</li>
+<li>The <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>L</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">L^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathnormal">L</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>L</mi><mi mathvariant="normal">∞</mi></msup></mrow><annotation encoding="application/x-tex">L^\infty</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord"><span class="mord mathnormal">L</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">∞</span></span></span></span></span></span></span></span></span></span></span> norms of the error for each variable with an analytical solution;</li>
 <li>The energy density of the problem;</li>
 <li>The surface tension of the problem (for phase-field problems);</li>
 <li>The spatial average of the variable over the computational domain, if requested with the <code>"integral_to_compute"</code> parameter.</li>
@@ -3855,8 +3889,14 @@ This example shows how to declare a <code>PST</code> object with the spatial dis
 <tr>
 <td><code>"enable_save_specialized_at_iter"</code></td>
 <td><code>bool</code></td>
-<td><code>false</code></td>
-<td>By default, specialized values are written at the end of the simulation. This flag enables writing the values at each time step</td>
+<td><code>true</code></td>
+<td>By default, specialized values are written to the <code>CSV</code> files as soon as they are computed. If <code>false</code>, they are kept in memory and written at the end of the simulation</td>
+</tr>
+<tr>
+<td><code>"specialized_frequency"</code></td>
+<td><code>int</code></td>
+<td><code>1</code></td>
+<td>Frequency, in iterations, at which specialized values are computed: they are computed at iterations that are multiples of <code>"specialized_frequency"</code> (<code>1</code>: every iteration)</td>
 </tr>
 <tr>
 <td><code>"iso_val_to_compute"</code></td>
@@ -3889,6 +3929,53 @@ This example shows how to declare a <code>PST</code> object with the spatial dis
 </dl>
 <p>The <code>iterations_list_save_gf</code> parameter specifies the iterations at which variables are saved as MFEM <code>GridFunction</code> files.
 By default, the files are written to a directory named <code>GF</code>. This location can be customized using the <code>gf_folder_path</code> parameter (type <code>std::string</code>). Each file follows the naming convention <code>&lt;variable_name&gt;_&lt;iteration&gt;.gf.&lt;MPI_rank&gt;</code>. For example, <code>eta_2.gf.000010</code> corresponds to the variable <code>eta</code> saved at iteration <code>2</code> on MPI rank <code>10</code>.</p>
+<h3 id="specialized-frequency">Frequency of specialized values<a class="headerlink" href="#specialized-frequency" title="Permanent link">&para;</a></h3>
+<p>Specialized values (errors, isovalues, integrals and energies) are computed every <code>"specialized_frequency"</code> iterations, independently of the <code>"frequency"</code> used for <code>ParaView</code> outputs. By default (<code>1</code>), they are computed at every iteration.</p>
+<p>Computing energies can be expensive, in particular for problems with many variables or for partitioned schemes where each <code>Problem</code> computes its own energy. In that case, a larger <code>"specialized_frequency"</code> can significantly reduce the cost of the post-processing.</p>
+<p><code>"specialized_frequency"</code> controls <strong>when</strong> specialized values are computed, while <code>"enable_save_specialized_at_iter"</code> controls <strong>when</strong> they are written:</p>
+<table>
+<thead>
+<tr>
+<th><code>"enable_save_specialized_at_iter"</code></th>
+<th><code>"specialized_frequency"</code></th>
+<th>Behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>true</code> (default)</td>
+<td><code>1</code> (default)</td>
+<td>Computed and written at every iteration</td>
+</tr>
+<tr>
+<td><code>true</code></td>
+<td><code>N</code></td>
+<td>Computed and written every <code>N</code> iterations</td>
+</tr>
+<tr>
+<td><code>false</code></td>
+<td><code>1</code></td>
+<td>Computed at every iteration, written at the end of the simulation</td>
+</tr>
+<tr>
+<td><code>false</code></td>
+<td><code>N</code></td>
+<td>Computed every <code>N</code> iterations, written at the end of the simulation</td>
+</tr>
+</tbody>
+</table>
+<dl>
+<dd>Table 3 - Combination of <code>"enable_save_specialized_at_iter"</code> and <code>"specialized_frequency"</code></dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Reading <code>CSV</code> files written with <code>specialized_frequency</code> greater than 1</p>
+<p>Each line of a <code>CSV</code> file contains its own iteration (<code>Iter[-]</code>), time step (<code>Dt[s]</code>) and time (<code>Time[s]</code>). When <code>"specialized_frequency"</code> is greater than 1, consecutive lines no longer correspond to consecutive iterations: post-processing scripts must rely on these columns, not on line numbers.</p>
+<p>The last iteration of the simulation is written only if it is a multiple of <code>"specialized_frequency"</code>.</p>
+</div>
+<div class="admonition notes">
+<p class="admonition-title">Specialized values of <code>Calphad</code> problems</p>
+<p><code>"specialized_frequency"</code> applies to the specialized values computed by PDE problems. Specialized values of <code>Calphad</code> problems (<code>calphad.csv</code>) are produced during their own resolution and follow only <code>"enable_save_specialized_at_iter"</code>.</p>
+</div>
 <p>Isovalues are not stored in the <code>time_specialized.csv</code> file. Instead, the parameter <code>"iso_val_to_compute"</code> generates separate <code>CSV</code> files, one for each variable.</p>
 <div class="admonition warning">
 <p class="admonition-title">On the dimension of <code>iso_val_to_compute</code> and <code>integral_to_compute</code></p>
@@ -3926,15 +4013,26 @@ By default, the files are written to a directory named <code>GF</code>. This loc
 </span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="k">auto</span><span class="w"> </span><span class="n">post_processing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PST</span><span class="p">(</span><span class="o">&amp;</span><span class="n">spatial</span><span class="p">,</span><span class="w"> </span><span class="n">pst_parameters</span><span class="p">);</span>
 </span></code></pre></div>
 </div>
+<div class="admonition example">
+<p class="admonition-title">Computing specialized values every 10 iterations</p>
+<p>For long simulations, specialized values can be computed less often than every iteration, here every 10 iterations, while <code>ParaView</code> outputs are saved every 100 iterations:</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">auto</span><span class="w"> </span><span class="n">pst_parameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parameters</span><span class="p">(</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"main_folder_path"</span><span class="p">,</span><span class="w"> </span><span class="n">main_folder_path</span><span class="p">),</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"calculation_path"</span><span class="p">,</span><span class="w"> </span><span class="n">calculation_path</span><span class="p">),</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"frequency"</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">),</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"specialized_frequency"</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">),</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"integral_to_compute"</span><span class="p">,</span><span class="w"> </span><span class="n">map_threshold_integral</span><span class="p">));</span>
+</span></code></pre></div>
+</div>
 <h2 id="coefficients">Post-processing Coefficients in VTK output<a class="headerlink" href="#coefficients" title="Permanent link">&para;</a></h2>
 <p>In addition to <code>Variables</code>, a <code>PST</code> object can also export named <a href="../Coefficients/index.html"><code>Coefficient</code></a> objects — quantities computed from the solved variables, not resolved by the system, but useful for visualization or diagnostics (e.g. an interpolation function, an order-parameter norm used to check the multiphase-field normalization constraint, ...).</p>
 <p>A coefficient must be given a name and registered on a <a href="../MultiPhysicsCouplingScheme/Problems/index.html"><code>Problem</code></a> with <code>set_vtk_coefficients</code>:</p>
 <div class="admonition example">
 <p class="admonition-title">Registering a Coefficient for VTK output</p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">Coefficient</span><span class="w"> </span><span class="nf">squares</span><span class="p">(</span><span class="n">Glossary</span><span class="o">::</span><span class="n">PhaseField</span><span class="p">,</span><span class="w"> </span><span class="n">Scheme</span><span class="o">::</span><span class="n">Implicit</span><span class="p">,</span><span class="w"> </span><span class="n">Squares</span><span class="p">());</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">squares</span><span class="p">.</span><span class="n">set_name</span><span class="p">(</span><span class="s">"Squares"</span><span class="p">);</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">phase_field_pb</span><span class="p">.</span><span class="n">set_vtk_coefficients</span><span class="p">({</span><span class="n">squares</span><span class="p">});</span>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">Coefficient</span><span class="w"> </span><span class="nf">squares</span><span class="p">(</span><span class="n">Glossary</span><span class="o">::</span><span class="n">PhaseField</span><span class="p">,</span><span class="w"> </span><span class="n">Scheme</span><span class="o">::</span><span class="n">Implicit</span><span class="p">,</span><span class="w"> </span><span class="n">Squares</span><span class="p">());</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">squares</span><span class="p">.</span><span class="n">set_name</span><span class="p">(</span><span class="s">"Squares"</span><span class="p">);</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">phase_field_pb</span><span class="p">.</span><span class="n">set_vtk_coefficients</span><span class="p">({</span><span class="n">squares</span><span class="p">});</span>
 </span></code></pre></div>
 </div>
 <p>At each post-processing step, every registered coefficient is projected onto a grid function and saved to the VTK output under its name, alongside the usual <code>Variables</code>.</p>
