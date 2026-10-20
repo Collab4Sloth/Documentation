@@ -108,7 +108,7 @@ In addition to visualizing [`Variables`](../Variables/index.md) with `ParaView`,
 
 The `time_specialized.csv` file contains:
 
-- The $L^2$ and $L^\infty$ norms of the error for each variable with an analytical solution;
+- The $`L^2`$ and $`L^\infty`$ norms of the error for each variable with an analytical solution;
 - The energy density of the problem;
 - The surface tension of the problem (for phase-field problems);
 - The spatial average of the variable over the computational domain, if requested with the `"integral_to_compute"` parameter.
@@ -117,7 +117,8 @@ The parameters allowed with `PostProcessing` for exporting specialized values in
 
 | Parameter Name | Type | Default Value | Description |
 |----------------|------|---------------|-------------|
-| `"enable_save_specialized_at_iter"` | `bool` | `false` | By default, specialized values are written at the end of the simulation. This flag enables writing the values at each time step |
+| `"enable_save_specialized_at_iter"` | `bool` | `true` | By default, specialized values are written to the `CSV` files as soon as they are computed. If `false`, they are kept in memory and written at the end of the simulation |
+| `"specialized_frequency"` | `int` | `1` | Frequency, in iterations, at which specialized values are computed: they are computed at iterations that are multiples of `"specialized_frequency"` (`1`: every iteration) |
 | `"iso_val_to_compute"` | `MapStringDouble` | | Map of isovalues for each variable. The key must match the name of a `Variable` |
 | `"integral_to_compute"` | `MapString2Double` | | Map of lower and upper bounds used to compute the average value of each variable. The key must match the name of a `Variable` |
 | `"enable_compute_energies"` | `bool` | `true` | Indicates whether energies are calculated |
@@ -127,6 +128,31 @@ The parameters allowed with `PostProcessing` for exporting specialized values in
 
 The `iterations_list_save_gf` parameter specifies the iterations at which variables are saved as MFEM `GridFunction` files.
 By default, the files are written to a directory named `GF`. This location can be customized using the `gf_folder_path` parameter (type `std::string`). Each file follows the naming convention `<variable_name>_<iteration>.gf.<MPI_rank>`. For example, `eta_2.gf.000010` corresponds to the variable `eta` saved at iteration `2` on MPI rank `10`.
+
+### Frequency of specialized values {#specialized-frequency}
+
+Specialized values (errors, isovalues, integrals and energies) are computed every `"specialized_frequency"` iterations, independently of the `"frequency"` used for `ParaView` outputs. By default (`1`), they are computed at every iteration.
+
+Computing energies can be expensive, in particular for problems with many variables or for partitioned schemes where each `Problem` computes its own energy. In that case, a larger `"specialized_frequency"` can significantly reduce the cost of the post-processing.
+
+`"specialized_frequency"` controls **when** specialized values are computed, while `"enable_save_specialized_at_iter"` controls **when** they are written:
+
+| `"enable_save_specialized_at_iter"` | `"specialized_frequency"` | Behaviour |
+|----------------|------|-------------|
+| `true` (default) | `1` (default) | Computed and written at every iteration |
+| `true` | `N` | Computed and written every `N` iterations |
+| `false` | `1` | Computed at every iteration, written at the end of the simulation |
+| `false` | `N` | Computed every `N` iterations, written at the end of the simulation |
+
+: Table 3 - Combination of `"enable_save_specialized_at_iter"` and `"specialized_frequency"`
+
+!!! warning "Reading `CSV` files written with `specialized_frequency` greater than 1"
+    Each line of a `CSV` file contains its own iteration (`Iter[-]`), time step (`Dt[s]`) and time (`Time[s]`). When `"specialized_frequency"` is greater than 1, consecutive lines no longer correspond to consecutive iterations: post-processing scripts must rely on these columns, not on line numbers.
+
+    The last iteration of the simulation is written only if it is a multiple of `"specialized_frequency"`.
+
+!!! notes "Specialized values of `Calphad` problems"
+    `"specialized_frequency"` applies to the specialized values computed by PDE problems. Specialized values of `Calphad` problems (`calphad.csv`) are produced during their own resolution and follow only `"enable_save_specialized_at_iter"`.
 
 Isovalues are not stored in the `time_specialized.csv` file. Instead, the parameter `"iso_val_to_compute"` generates separate `CSV` files, one for each variable.
 
@@ -165,6 +191,18 @@ Isovalues are not stored in the `time_specialized.csv` file. Instead, the parame
         Parameter("enable_save_specialized_at_iter", save_specialized_at_iter));
 
     auto post_processing = PST(&spatial, pst_parameters);
+    ```
+
+!!! example "Computing specialized values every 10 iterations"
+    For long simulations, specialized values can be computed less often than every iteration, here every 10 iterations, while `ParaView` outputs are saved every 100 iterations:
+
+    ```c++
+    auto pst_parameters = Parameters(
+        Parameter("main_folder_path", main_folder_path),
+        Parameter("calculation_path", calculation_path),
+        Parameter("frequency", 100),
+        Parameter("specialized_frequency", 10),
+        Parameter("integral_to_compute", map_threshold_integral));
     ```
 ## Post-processing Coefficients in VTK output {#coefficients}
 

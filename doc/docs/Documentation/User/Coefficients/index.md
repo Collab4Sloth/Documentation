@@ -319,6 +319,8 @@ To enable this feature, the JSON file must include the key "gradient", which is 
 
 In `SLOTH` integrators, each variable of such coefficients is viewed as a gradient.
 
+A factor written in front of `sdot`, either a number or a constant declared in `"constants"`, multiplies the whole sum: `kappa*sdot(x(1..30))` stands for $`\kappa \sum_{i=1}^{30} \nabla x_i\cdot\nabla x_i`$.
+
 !!! example "Example of coefficient defined with a sum of scalar products"
 
     ```json
