@@ -27,7 +27,7 @@ Consequently, the CEA is developing **SLOTH**, a **multiphase-field multicompone
 <div style="display: flex; justify-content: space-around; align-items: center;">
 
   <div style="text-align: center;">
-    <img src="img/fig2.png" alt="Figure 2" style="width: 300px;">
+    <img src="img/fig2.png" alt="Figure 2" style="width: 750px;">
     <p><em>[Polycristalline microstructure with 30 grains](https://github.com/Collab4Sloth/Gallery)</em></p>
   </div>
 

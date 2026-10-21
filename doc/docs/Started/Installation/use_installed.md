@@ -28,15 +28,23 @@ whichever way SLOTH was installed:
 
 === "Spack (Linux)"
 
-    SLOTH provides its own Spack package (directory `spack_repo` of the repository):
+    SLOTH is available in Spack's builtin repository (Spack 1.0 or later):
 
     ```bash
-    spack repo add /path/to/SLOTH/spack_repo
     spack install sloth
     spack load sloth
     ```
 
     `spack info sloth` lists the versions and variants (`+shared`, `+mumps`, `+petsc`, `+native`).
+
+    To build the development version from a local clone instead, use the package
+    shipped with the sources (directory `spack_repo`):
+
+    ```bash
+    spack repo add /path/to/SLOTH/spack_repo
+    spack install sloth@master
+    spack load sloth
+    ```
 
 The installation contains the static (or shared) library, the headers, the CMake
 package files (`lib/cmake/Sloth`), the coefficient generator (`scripts/GenerateCoefficient.py`)
