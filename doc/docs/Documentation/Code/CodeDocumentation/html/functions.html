@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -72,9 +72,30 @@ $(function() {
 <li>ABSOLUTE_MAX
 : <a class="el" href="structConvergenceType.html#aa13c6cb18fa906fb291a48956ec6d831a1363a66e415fefdb2bb50fd708fc5238">ConvergenceType</a>
 </li>
+<li>active()
+: <a class="el" href="classVelocityField.html#a412a9f1fc891fdfe0238c2a2a1e9886d">VelocityField</a>
+</li>
 <li>add()
 : <a class="el" href="classCoefficients.html#ae979a062c1019b4ced674570e357bedf">Coefficients</a>
 , <a class="el" href="classVariables.html#a27e62c655731650bb57e70fc656a5040">Variables&lt; T, DIM &gt;</a>
+</li>
+<li>Advection
+: <a class="el" href="structIntegrators.html#a2b9da6dcbb0d390cf08308d150f795f3a5be9dcf7b5fe955f860a3128f48ff8d6">Integrators</a>
+</li>
+<li>AdvectionBoundary
+: <a class="el" href="structIntegrators.html#a2b9da6dcbb0d390cf08308d150f795f3a53c8e73f3b545965fadd4dd7fe528b1a">Integrators</a>
+</li>
+<li>AdvectionBoundaryCH
+: <a class="el" href="structIntegrators.html#a2b9da6dcbb0d390cf08308d150f795f3a1210656b5a827c8c1884a2278b2042d1">Integrators</a>
+</li>
+<li>AdvectionBoundaryCHNLFormIntegrator()
+: <a class="el" href="classAdvectionBoundaryCHNLFormIntegrator.html#a97fbf826b6ee34f340792a1d2d9fa10e">AdvectionBoundaryCHNLFormIntegrator&lt; VARS &gt;</a>
+</li>
+<li>AdvectionBoundaryNLFormIntegrator()
+: <a class="el" href="classAdvectionBoundaryNLFormIntegrator.html#aad17bdc7287df25613b97246b0530eb2">AdvectionBoundaryNLFormIntegrator&lt; VARS &gt;</a>
+</li>
+<li>AdvectionNLFormIntegrator()
+: <a class="el" href="classAdvectionNLFormIntegrator.html#afd95c0ab1ffc1f9e5222d50a2967611e">AdvectionNLFormIntegrator&lt; VARS &gt;</a>
 </li>
 <li>AllenCahn
 : <a class="el" href="structIntegrators.html#a2b9da6dcbb0d390cf08308d150f795f3ac8b940513de42e8c0b5a1f632c68b7a2">Integrators</a>
@@ -82,6 +103,30 @@ $(function() {
 </li>
 <li>AllenCahnNLFormIntegrator()
 : <a class="el" href="classAllenCahnNLFormIntegrator.html#aa1eac1688677ed1420ca53cdc70cbe60">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>
+</li>
+<li>amr_
+: <a class="el" href="classProblemBase.html#ab21e3136f25079c45f86a1a2b0c36f1b">ProblemBase&lt; VAR, PST &gt;</a>
+</li>
+<li>amr_estimator_
+: <a class="el" href="classAMRBase.html#a7f6245ec3303b5ee55ca772dcf2f0080">AMRBase&lt; VAR &gt;</a>
+</li>
+<li>amr_max_elem_error_
+: <a class="el" href="classAMRBase.html#a3507421e5b969e9690818fe3b38628dd">AMRBase&lt; VAR &gt;</a>
+</li>
+<li>amr_max_level_
+: <a class="el" href="classAMRBase.html#a729dedcfb46e86611a9c361c635e6153">AMRBase&lt; VAR &gt;</a>
+</li>
+<li>amr_max_preref_cycles_
+: <a class="el" href="classAMRBase.html#aaaf56068331ff545f7a2f54dc405cb53">AMRBase&lt; VAR &gt;</a>
+</li>
+<li>amr_nc_limit_
+: <a class="el" href="classAMRBase.html#aa5016a87a20dc39e3ccc759db2df3dee">AMRBase&lt; VAR &gt;</a>
+</li>
+<li>amr_scale_down_factor_
+: <a class="el" href="classAMRBase.html#ad6cc9529fee22fe86e7abf5a294f5c59">AMRBase&lt; VAR &gt;</a>
+</li>
+<li>AMRBase()
+: <a class="el" href="classAMRBase.html#a1205f008294fdc01c4ab4eca10e94dc6">AMRBase&lt; VAR &gt;</a>
 </li>
 <li>analytical_function_
 : <a class="el" href="classAnalyticalFunctions.html#a7c66dd5842373bf8a640ff49a5ecfdf8">AnalyticalFunctions&lt; DIM &gt;</a>
@@ -91,6 +136,9 @@ $(function() {
 </li>
 <li>AnalyticalIdealSolution()
 : <a class="el" href="classAnalyticalIdealSolution.html#a9401722422b269f076357392f4919f92">AnalyticalIdealSolution&lt; T &gt;</a>
+</li>
+<li>any_derivative_
+: <a class="el" href="classSourceTermNLFormIntegrator.html#a5d7c7551115d13ee80e4925076022133">SourceTermNLFormIntegrator&lt; VARS &gt;</a>
 </li>
 <li>apply_uniform_refinement()
 : <a class="el" href="classSpatialDiscretization.html#a3463c09a77a0c6563a353d97cf56dfa4">SpatialDiscretization&lt; T, DIM &gt;</a>
@@ -103,7 +151,9 @@ $(function() {
 , <a class="el" href="structtemperature__sort__method.html#ac9be78aeed58bba6ff59673d454d65aba494d861916d0822955f68b40bd1e7db4">temperature_sort_method</a>
 </li>
 <li>AssembleElementGrad()
-: <a class="el" href="classAllenCahnNLFormIntegrator.html#abf8463d23097850b6172f16a204bc6b0">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>
+: <a class="el" href="classAdvectionBoundaryNLFormIntegrator.html#aaef88a21acc7f2cd20500910d0717266">AdvectionBoundaryNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classAdvectionNLFormIntegrator.html#a273c5b4be6d2c8ed866dfe76916ca10a">AdvectionNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classAllenCahnNLFormIntegrator.html#abf8463d23097850b6172f16a204bc6b0">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classBlockAllenCahnNLFormIntegrator.html#abe87b3966b73dad6226cf934bf8b1350">BlockAllenCahnNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classCahnHilliardNLFormIntegrator.html#a6fbd33145250fad4f027be41a7705338">CahnHilliardNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classDiffusionFluxNLFormIntegrator.html#a3d17603ee113763a68076bd5f41ecc99">DiffusionFluxNLFormIntegrator&lt; VARS &gt;</a>
@@ -112,11 +162,14 @@ $(function() {
 , <a class="el" href="classMeltingBaseNLFormIntegrator.html#a48d3db4533465bff96de77a747c3fa3e">MeltingBaseNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classRobinNLFormIntegrator.html#a453640c32db165367a8646a9ba417025">RobinNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classSlothNLFormIntegrator.html#a6e61d615ff5c4371333d8cc4afb96e1d">SlothNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classSourceTermNLFormIntegrator.html#a131f346fb9419fc6a4e3e9d750d99902">SourceTermNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classTimeCHNLFormIntegrator.html#a086e09611e6c9d08ea0192bb156f134b">TimeCHNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classTimeNLFormIntegrator.html#a66da28ec80d506cfd00cee2b93f5778c">TimeNLFormIntegrator&lt; VARS &gt;</a>
 </li>
 <li>AssembleElementVector()
-: <a class="el" href="classAllenCahnNLFormIntegrator.html#ace2daaf8ea82b18786cdfa6d8194ad43">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>
+: <a class="el" href="classAdvectionBoundaryNLFormIntegrator.html#a4bfa8f67b08c0315094be8b8e4c3177a">AdvectionBoundaryNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classAdvectionNLFormIntegrator.html#abae44744660c9fc2dd3829889bfd9029">AdvectionNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classAllenCahnNLFormIntegrator.html#ace2daaf8ea82b18786cdfa6d8194ad43">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classBlockAllenCahnNLFormIntegrator.html#a8ed62c868323f728994b0cd6c7369119">BlockAllenCahnNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classCahnHilliardNLFormIntegrator.html#a66011858f6d07fbd76182b3df929e0fa">CahnHilliardNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classDiffusionFluxNLFormIntegrator.html#add41308abf2f920f6d3fa6a11ddefae6">DiffusionFluxNLFormIntegrator&lt; VARS &gt;</a>
@@ -125,8 +178,12 @@ $(function() {
 , <a class="el" href="classMeltingBaseNLFormIntegrator.html#a15361822fe21889dba30b304cf29b801">MeltingBaseNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classRobinNLFormIntegrator.html#a860c82e8797f439118fb003026b43ca0">RobinNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classSlothNLFormIntegrator.html#abc81cb91fb56722f9ca6b986b55c0680">SlothNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classSourceTermNLFormIntegrator.html#a86471ed3d7cfe961bc9e40b2174ec18f">SourceTermNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classTimeCHNLFormIntegrator.html#abf68e9118f68f2cc1e74ecb5cd774150">TimeCHNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classTimeNLFormIntegrator.html#a0291671b310ab18e948e0fee8de8ec25">TimeNLFormIntegrator&lt; VARS &gt;</a>
+</li>
+<li>aux
+: <a class="el" href="structSlothNLFormIntegrator_1_1IpValues.html#a5114614423b8c0efa696ecd63b39f564">SlothNLFormIntegrator&lt; VARS &gt;::IpValues</a>
 </li>
 <li>aux_gf_
 : <a class="el" href="classSlothNLFormIntegrator.html#a12cff5a7745edf7611bbcbbd3e4ccf44">SlothNLFormIntegrator&lt; VARS &gt;</a>
@@ -145,11 +202,14 @@ $(function() {
 <li>AxiCylindricalCoefficient()
 : <a class="el" href="classAxiCylindricalCoefficient.html#a6a77b923f70f8e0123d170459e25305d">AxiCylindricalCoefficient</a>
 </li>
+<li>axis_center()
+: <a class="el" href="classFileCoefficient.html#a43a298cb2ca1f65e8b6f9a56acf9cb6b">FileCoefficient</a>
+</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:17 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:03 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -148,6 +148,13 @@ Enumerations</h2></td></tr>
 , <a class="el" href="Glossary_8hpp.html#a1204ef61577dbf022e130de662bc755aa992c3f83c85ffc94d54c3970b8435b4b">RobinA</a>
 , <a class="el" href="Glossary_8hpp.html#a1204ef61577dbf022e130de662bc755aad0cfc8659ed24f26bd82302bd83f9d62">RobinB</a>
 , <a class="el" href="Glossary_8hpp.html#a1204ef61577dbf022e130de662bc755aaac2c722e8a17da1c64361bf19ecf1ea2">ExplicitTime</a>
+, <br />
+&#160;&#160;<a class="el" href="Glossary_8hpp.html#a1204ef61577dbf022e130de662bc755aabac152b762896edff34ed668ae1a546f">Dirichlet</a>
+, <a class="el" href="Glossary_8hpp.html#a1204ef61577dbf022e130de662bc755aacbe3423f086c821befdfd472e53c584c">SourceTerm</a>
+, <a class="el" href="Glossary_8hpp.html#a1204ef61577dbf022e130de662bc755aa88156d46910a2d733443c339a9231d12">Velocity</a>
+, <a class="el" href="Glossary_8hpp.html#a1204ef61577dbf022e130de662bc755aa5b76523958b51a9e7f7921f30cffa41a">VelocityPrefactor</a>
+, <br />
+&#160;&#160;<a class="el" href="Glossary_8hpp.html#a1204ef61577dbf022e130de662bc755aa11e445a9e1615c1f795ef6b13068bb01">Inflow</a>
 <br />
  }</td></tr>
 <tr class="memdesc:a1204ef61577dbf022e130de662bc755a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration of type of variables and properties used in SLOTH.  <a href="Glossary_8hpp.html#a1204ef61577dbf022e130de662bc755a">More...</a><br /></td></tr>
@@ -216,6 +223,9 @@ Variables</h2></td></tr>
 <tr class="memitem:afbdced5b2de5b2c4c21d5dd9b427ad1e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGlossary.html#afbdced5b2de5b2c4c21d5dd9b427ad1e">Glossary::Diffusivity</a></td></tr>
 <tr class="memdesc:afbdced5b2de5b2c4c21d5dd9b427ad1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quantity associated with mass diffusion coefficient.  <a href="namespaceGlossary.html#afbdced5b2de5b2c4c21d5dd9b427ad1e">More...</a><br /></td></tr>
 <tr class="separator:afbdced5b2de5b2c4c21d5dd9b427ad1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a7e0fd68417c7c6ba2b6f33f9f1c362"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGlossary.html#a7a7e0fd68417c7c6ba2b6f33f9f1c362">Glossary::Dirichlet</a></td></tr>
+<tr class="memdesc:a7a7e0fd68417c7c6ba2b6f33f9f1c362"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quantity associated with the Dirichlet boundary condition.  <a href="namespaceGlossary.html#a7a7e0fd68417c7c6ba2b6f33f9f1c362">More...</a><br /></td></tr>
+<tr class="separator:a7a7e0fd68417c7c6ba2b6f33f9f1c362"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36ef0c4cf4c3158e2f0064840f307c6f"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGlossary.html#a36ef0c4cf4c3158e2f0064840f307c6f">Glossary::DrivingForce</a></td></tr>
 <tr class="memdesc:a36ef0c4cf4c3158e2f0064840f307c6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quantity associated with the driving force.  <a href="namespaceGlossary.html#a36ef0c4cf4c3158e2f0064840f307c6f">More...</a><br /></td></tr>
 <tr class="separator:a36ef0c4cf4c3158e2f0064840f307c6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -239,6 +249,9 @@ Variables</h2></td></tr>
 <tr class="separator:a91a2baf3cfee7a60e1b8a338eedcede1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a608ec1e328380c7332879677d0c68f1f"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGlossary.html#a608ec1e328380c7332879677d0c68f1f">Glossary::GradEnergy</a></td></tr>
 <tr class="separator:a608ec1e328380c7332879677d0c68f1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a065fcf2ec4f2c85399cf080155ad535f"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGlossary.html#a065fcf2ec4f2c85399cf080155ad535f">Glossary::Inflow</a></td></tr>
+<tr class="memdesc:a065fcf2ec4f2c85399cf080155ad535f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quantity associated with the value of the advected variable entering the domain through an open boundary (AdvectionBoundary integrators). Attached to boundaries.  <a href="namespaceGlossary.html#a065fcf2ec4f2c85399cf080155ad535f">More...</a><br /></td></tr>
+<tr class="separator:a065fcf2ec4f2c85399cf080155ad535f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a62949159ad3252b15a3efd16c0f12a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGlossary.html#a9a62949159ad3252b15a3efd16c0f12a">Glossary::InterDiffusionMobility</a></td></tr>
 <tr class="memdesc:a9a62949159ad3252b15a3efd16c0f12a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quantity associated with inter-diffusion mobility coefficients.  <a href="namespaceGlossary.html#a9a62949159ad3252b15a3efd16c0f12a">More...</a><br /></td></tr>
 <tr class="separator:a9a62949159ad3252b15a3efd16c0f12a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -284,6 +297,9 @@ Variables</h2></td></tr>
 <tr class="memitem:a331a946dd026bf280cc200aafbd7eaba"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGlossary.html#a331a946dd026bf280cc200aafbd7eaba">Glossary::SiteFraction</a></td></tr>
 <tr class="memdesc:a331a946dd026bf280cc200aafbd7eaba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quantity associated with site fraction variables.  <a href="namespaceGlossary.html#a331a946dd026bf280cc200aafbd7eaba">More...</a><br /></td></tr>
 <tr class="separator:a331a946dd026bf280cc200aafbd7eaba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b01f1b402c823a8fa8e3fa6bb4c10d0"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGlossary.html#a7b01f1b402c823a8fa8e3fa6bb4c10d0">Glossary::SourceTerm</a></td></tr>
+<tr class="memdesc:a7b01f1b402c823a8fa8e3fa6bb4c10d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quantity associated with a user-defined source term (SourceTerm integrator)  <a href="namespaceGlossary.html#a7b01f1b402c823a8fa8e3fa6bb4c10d0">More...</a><br /></td></tr>
+<tr class="separator:a7b01f1b402c823a8fa8e3fa6bb4c10d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a4d4b3b5ba2e0ba8345250c50d9e227"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGlossary.html#a4a4d4b3b5ba2e0ba8345250c50d9e227">Glossary::SurfaceTension</a></td></tr>
 <tr class="memdesc:a4a4d4b3b5ba2e0ba8345250c50d9e227"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quantity associated with surface tension property.  <a href="namespaceGlossary.html#a4a4d4b3b5ba2e0ba8345250c50d9e227">More...</a><br /></td></tr>
 <tr class="separator:a4a4d4b3b5ba2e0ba8345250c50d9e227"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -293,6 +309,16 @@ Variables</h2></td></tr>
 <tr class="memitem:aede43048a90a800845489e87a0f161c4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGlossary.html#aede43048a90a800845489e87a0f161c4">Glossary::Thickness</a></td></tr>
 <tr class="memdesc:aede43048a90a800845489e87a0f161c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quantity associated with phase-field mobility coefficients.  <a href="namespaceGlossary.html#aede43048a90a800845489e87a0f161c4">More...</a><br /></td></tr>
 <tr class="separator:aede43048a90a800845489e87a0f161c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2725922b94de37838da4f0d77e2bbc16"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGlossary.html#a2725922b94de37838da4f0d77e2bbc16">Glossary::Velocity_X</a></td></tr>
+<tr class="memdesc:a2725922b94de37838da4f0d77e2bbc16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quantities associated with the components of an imposed advection velocity (Advection integrators). The ID of the quantity is the index of the component.  <a href="namespaceGlossary.html#a2725922b94de37838da4f0d77e2bbc16">More...</a><br /></td></tr>
+<tr class="separator:a2725922b94de37838da4f0d77e2bbc16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bdd98500cde3afd6e539ae7c7bcdd26"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGlossary.html#a5bdd98500cde3afd6e539ae7c7bcdd26">Glossary::Velocity_Y</a></td></tr>
+<tr class="separator:a5bdd98500cde3afd6e539ae7c7bcdd26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a204f3a307e408bdb9bb5ac6b44b671"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGlossary.html#a7a204f3a307e408bdb9bb5ac6b44b671">Glossary::Velocity_Z</a></td></tr>
+<tr class="separator:a7a204f3a307e408bdb9bb5ac6b44b671"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5ee7d761997398d5f78a0fa2a482206"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structGlossaryQuantity.html">GlossaryQuantity</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGlossary.html#ad5ee7d761997398d5f78a0fa2a482206">Glossary::VelocityPrefactor</a></td></tr>
+<tr class="memdesc:ad5ee7d761997398d5f78a0fa2a482206"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quantity associated with the prefactor alpha of a gradient advection velocity v = alpha grad(a), a being an auxiliary variable (parameter "velocity_gradient").  <a href="namespaceGlossary.html#ad5ee7d761997398d5f78a0fa2a482206">More...</a><br /></td></tr>
+<tr class="separator:ad5ee7d761997398d5f78a0fa2a482206"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="namespaceGlossary.html" title="Namespace for pre-defined GlossaryQuantity.">Glossary</a> used to defined variables and properties in SLOTH. </p>
@@ -353,6 +379,11 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a1204ef61577dbf022e130de662bc755aa992c3f83c85ffc94d54c3970b8435b4b"></a>RobinA&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a1204ef61577dbf022e130de662bc755aad0cfc8659ed24f26bd82302bd83f9d62"></a>RobinB&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a1204ef61577dbf022e130de662bc755aaac2c722e8a17da1c64361bf19ecf1ea2"></a>ExplicitTime&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1204ef61577dbf022e130de662bc755aabac152b762896edff34ed668ae1a546f"></a>Dirichlet&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1204ef61577dbf022e130de662bc755aacbe3423f086c821befdfd472e53c584c"></a>SourceTerm&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1204ef61577dbf022e130de662bc755aa88156d46910a2d733443c339a9231d12"></a>Velocity&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1204ef61577dbf022e130de662bc755aa5b76523958b51a9e7f7921f30cffa41a"></a>VelocityPrefactor&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1204ef61577dbf022e130de662bc755aa11e445a9e1615c1f795ef6b13068bb01"></a>Inflow&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="Glossary_8hpp_source.html#l00099">99</a> of file <a class="el" href="Glossary_8hpp_source.html">Glossary.hpp</a>.</p>
@@ -515,7 +546,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:02 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

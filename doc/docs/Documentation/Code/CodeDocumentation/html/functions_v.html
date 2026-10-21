@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -75,6 +75,7 @@ $(function() {
 , <a class="el" href="structcalphad__nodes__strategies.html#a432a1ed4e50b3407f82480aec5cc1d3e">calphad_nodes_strategies</a>
 , <a class="el" href="structcalphad__outputs.html#a3b9ee0f8fee1d86f37ad937912c864fe">calphad_outputs</a>
 , <a class="el" href="structConvergenceType.html#aa13c6cb18fa906fb291a48956ec6d831">ConvergenceType</a>
+, <a class="el" href="classFileCoefficient.html#a45f9cc17cdc9049738a1e815258f2ff4">FileCoefficient</a>
 , <a class="el" href="structIntegrators.html#a2b9da6dcbb0d390cf08308d150f795f3">Integrators</a>
 , <a class="el" href="structKKS__nucleation__strategy.html#af736ec54bf6e10d0ff2d3cde5ef4b4e5">KKS_nucleation_strategy</a>
 , <a class="el" href="structMeshes.html#a17ce7cdf7c4aef0633ce80f5e526b706">Meshes</a>
@@ -86,11 +87,20 @@ $(function() {
 <li>value_
 : <a class="el" href="classConstantCoefficient.html#ae4a7360a5f44fa03648265907fb5ae9a">ConstantCoefficient</a>
 </li>
+<li>values_at_ip()
+: <a class="el" href="classSlothNLFormIntegrator.html#ac88c06450b6b288e42a6f9f3907286f6">SlothNLFormIntegrator&lt; VARS &gt;</a>
+</li>
+<li>var
+: <a class="el" href="structAdvectionNLFormIntegrator_1_1AdvectionTerm.html#a395ddbb0e30b7cf5165d41a91297c0e6">AdvectionNLFormIntegrator&lt; VARS &gt;::AdvectionTerm</a>
+</li>
 <li>VAR
 : <a class="el" href="structTest.html#a1734fd45bef004bbe51e36a88f86da9b">Test&lt; DIM &gt;</a>
 , <a class="el" href="structTest_3_011_01_4.html#a0b5d3a8ecfd77c3c501f72c31beb1f4e">Test&lt; 1 &gt;</a>
 , <a class="el" href="structTest_3_012_01_4.html#a9abf58be1a52531b26ade0b1d03718a3">Test&lt; 2 &gt;</a>
 , <a class="el" href="structTest_3_013_01_4.html#ab2e95f73811252cd8823247b1b5f3fd0">Test&lt; 3 &gt;</a>
+</li>
+<li>var_blk_
+: <a class="el" href="classAdvectionBoundaryNLFormIntegrator.html#a3698059289939a2b583ab4e272b93728">AdvectionBoundaryNLFormIntegrator&lt; VARS &gt;</a>
 </li>
 <li>var_convergence_
 : <a class="el" href="classProblemBase.html#a2d7f8245e5bda60144d4c5f470f9e46c">ProblemBase&lt; VAR, PST &gt;</a>
@@ -110,8 +120,14 @@ $(function() {
 , <a class="el" href="structTest_3_012_01_4.html#a87fc7b482f838aea733051bdf6cbc063">Test&lt; 2 &gt;</a>
 , <a class="el" href="structTest_3_013_01_4.html#a4415bc6824a18c24c063795507c26f4b">Test&lt; 3 &gt;</a>
 </li>
+<li>VarType
+: <a class="el" href="classCoupling.html#a72b2af68a1bf3c1a92650652feaa6d27">Coupling&lt; Args &gt;</a>
+, <a class="el" href="classProblemBase.html#a9ebdea532b1927af323bc2a97e4eadd4">ProblemBase&lt; VAR, PST &gt;</a>
+</li>
 <li>vaux_gf_
-: <a class="el" href="classAllenCahnNLFormIntegrator.html#af71f9f496260198a21031497f540bb31">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>
+: <a class="el" href="classAdvectionBoundaryNLFormIntegrator.html#abaa1b48041ed69165d2b1532f8619772">AdvectionBoundaryNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classAdvectionNLFormIntegrator.html#abb6580930a891f674fb95d11c2ee32f5">AdvectionNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classAllenCahnNLFormIntegrator.html#af71f9f496260198a21031497f540bb31">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classBlockAllenCahnNLFormIntegrator.html#aca50837fa2294802daa0b53b0b6b9e02">BlockAllenCahnNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classCahnHilliardNLFormIntegrator.html#a1b4724f1fe645eb7262876cc489a3fb2">CahnHilliardNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classDiffusionFluxNLFormIntegrator.html#a8b85a2da0b293c8f7584dd819c70a431">DiffusionFluxNLFormIntegrator&lt; VARS &gt;</a>
@@ -119,11 +135,25 @@ $(function() {
 , <a class="el" href="classLatentHeatNLFormIntegrator.html#a96c70ebd374954b5c92b710763b7b49a">LatentHeatNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classMeltingBaseNLFormIntegrator.html#ae59a4b5012ed98c13ed979a624866178">MeltingBaseNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classRobinNLFormIntegrator.html#a6c1893058b7a30e0d379c41ffdecbfcf">RobinNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classSourceTermNLFormIntegrator.html#a68544d274cbaf186aad6e1251d3a3a38">SourceTermNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classTimeCHNLFormIntegrator.html#aa0263698309314160e03ca1ec984901a">TimeCHNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classTimeNLFormIntegrator.html#a16423f098323f96e1d99ac9a442f802c">TimeNLFormIntegrator&lt; VARS &gt;</a>
 </li>
-<li>vaux_old_gf_
-: <a class="el" href="classLatentHeatNLFormIntegrator.html#a71a8d34fccf4fcbee3708a6d0001a941">LatentHeatNLFormIntegrator&lt; VARS &gt;</a>
+<li>vect_vtk_coefficient_
+: <a class="el" href="classProblemBase.html#a54a73ac5ba6acad9ec43bbbfc5c3e430">ProblemBase&lt; VAR, PST &gt;</a>
+</li>
+<li>vel
+: <a class="el" href="structAdvectionNLFormIntegrator_1_1AdvectionTerm.html#a5bf6d5016adb6f81f8aec29394dbfa35">AdvectionNLFormIntegrator&lt; VARS &gt;::AdvectionTerm</a>
+</li>
+<li>vel_blk_
+: <a class="el" href="classAdvectionBoundaryNLFormIntegrator.html#a5fde9e69be5fae8fc528758615a44aa0">AdvectionBoundaryNLFormIntegrator&lt; VARS &gt;</a>
+</li>
+<li>velocity_
+: <a class="el" href="classAdvectionBoundaryNLFormIntegrator.html#a424941678dccc3980ee376b493275166">AdvectionBoundaryNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classAdvectionNLFormIntegrator.html#af53acf5b3f2af7df203783fcad906808">AdvectionNLFormIntegrator&lt; VARS &gt;</a>
+</li>
+<li>VelocityField()
+: <a class="el" href="classVelocityField.html#a49739f1b77de49b8ba0e09012ad975c1">VelocityField</a>
 </li>
 <li>verbose()
 : <a class="el" href="classSlothInfo.html#ad6fa3fa2789f2c6779ba9c6ec2712c31">SlothInfo</a>
@@ -132,7 +162,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:17 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:03 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

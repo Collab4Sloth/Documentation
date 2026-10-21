@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 2489;
+var viewWidth = 3066;
 var viewHeight = 319;
 var sectionId = 'dynsection-0';
 </script>
@@ -58,8 +58,8 @@ var sectionId = 'dynsection-0';
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="1084.5,-291.5 1084.5,-310.5 1241.5,-310.5 1241.5,-291.5 1084.5,-291.5"/>
-<text text-anchor="middle" x="1163" y="-298.5" font-family="serif" font-size="10.00">SlothNLFormIntegrator.tpp</text>
+<polygon fill="#bfbfbf" stroke="black" points="1358,-291.5 1358,-310.5 1515,-310.5 1515,-291.5 1358,-291.5"/>
+<text text-anchor="middle" x="1436.5" y="-298.5" font-family="serif" font-size="10.00">SlothNLFormIntegrator.tpp</text>
 </a>
 </g>
 </g>
@@ -67,509 +67,615 @@ var sectionId = 'dynsection-0';
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="SlothNLFormIntegrator_8hpp.html" target="_top" xlink:title="Class prodiving common methods to all NLFormIntegrators.">
-<polygon fill="none" stroke="black" points="1083,-235.5 1083,-254.5 1243,-254.5 1243,-235.5 1083,-235.5"/>
-<text text-anchor="middle" x="1163" y="-242.5" font-family="serif" font-size="10.00">SlothNLFormIntegrator.hpp</text>
+<polygon fill="none" stroke="black" points="1356.5,-235.5 1356.5,-254.5 1516.5,-254.5 1516.5,-235.5 1356.5,-235.5"/>
+<text text-anchor="middle" x="1436.5" y="-242.5" font-family="serif" font-size="10.00">SlothNLFormIntegrator.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M1163,-280.8C1163,-271.91 1163,-261.78 1163,-254.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1159.5,-281.08 1163,-291.08 1166.5,-281.08 1159.5,-281.08"/>
+<path fill="none" stroke="midnightblue" d="M1436.5,-280.8C1436.5,-271.91 1436.5,-261.78 1436.5,-254.75"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1433,-281.08 1436.5,-291.08 1440,-281.08 1433,-281.08"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="AllenCahnNLFormIntegrator_8hpp.html" target="_top" xlink:title="VF of the Allen Cahn equation.">
-<polygon fill="none" stroke="black" points="1248.5,-118 1248.5,-137 1435.5,-137 1435.5,-118 1248.5,-118"/>
-<text text-anchor="middle" x="1342" y="-125" font-family="serif" font-size="10.00">AllenCahnNLFormIntegrator.hpp</text>
+<g id="a_node3"><a xlink:href="AdvectionBoundaryNLFormIntegrator_8hpp.html" target="_top" xlink:title="Inflow/outflow boundary term of the conservative advection operator div(v u)">
+<polygon fill="none" stroke="black" points="926,-179.5 926,-198.5 1161,-198.5 1161,-179.5 926,-179.5"/>
+<text text-anchor="middle" x="1043.5" y="-186.5" font-family="serif" font-size="10.00">AdvectionBoundaryNLFormIntegrator.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node2&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M1185.5,-230.13C1199.74,-221.3 1218.51,-209.58 1235,-199 1269.26,-177.01 1309.22,-150.43 1329.22,-137.06"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1183.53,-227.23 1176.86,-235.47 1187.21,-233.19 1183.53,-227.23"/>
-</g>
-<!-- Node4 -->
-<g id="node4" class="node">
-<title>Node4</title>
-<g id="a_node4"><a xlink:href="ListIntegrators_8hpp.html" target="_top" xlink:title="List of header files contained in the Integrators directory.">
-<polygon fill="none" stroke="black" points="1065,-56.5 1065,-75.5 1181,-75.5 1181,-56.5 1065,-56.5"/>
-<text text-anchor="middle" x="1123" y="-63.5" font-family="serif" font-size="10.00">ListIntegrators.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node2&#45;&gt;Node4 -->
-<g id="edge22" class="edge">
-<title>Node2&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M1181.58,-228.32C1189.48,-220.44 1197.83,-210.19 1202,-199 1205.11,-190.67 1203.34,-187.79 1202,-179 1197.28,-148.15 1198.81,-137.63 1181,-112 1170.02,-96.2 1151.81,-83.38 1138.72,-75.53"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1178.94,-226 1173.99,-235.37 1183.7,-231.13 1178.94,-226"/>
+<path fill="none" stroke="midnightblue" d="M1364.03,-234.04C1289.8,-223.84 1175.64,-208.16 1105.48,-198.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1363.84,-237.55 1374.23,-235.44 1364.8,-230.61 1363.84,-237.55"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="BlockAllenCahnNLFormIntegrator_8hpp.html" target="_top" xlink:title="VF of the AllenCahn equations (splitted form)">
-<polygon fill="none" stroke="black" points="1287.5,-179.5 1287.5,-198.5 1502.5,-198.5 1502.5,-179.5 1287.5,-179.5"/>
-<text text-anchor="middle" x="1395" y="-186.5" font-family="serif" font-size="10.00">BlockAllenCahnNLFormIntegrator.hpp</text>
+<g id="a_node5"><a xlink:href="ListIntegrators_8hpp.html" target="_top" xlink:title="List of header files contained in the Integrators directory.">
+<polygon fill="none" stroke="black" points="1530.5,-56.5 1530.5,-75.5 1646.5,-75.5 1646.5,-56.5 1530.5,-56.5"/>
+<text text-anchor="middle" x="1588.5" y="-63.5" font-family="serif" font-size="10.00">ListIntegrators.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node5 -->
-<g id="edge4" class="edge">
+<g id="edge30" class="edge">
 <title>Node2&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M1209.6,-233.15C1253.44,-222.95 1318.18,-207.88 1358.41,-198.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1208.71,-229.77 1199.76,-235.44 1210.29,-236.59 1208.71,-229.77"/>
+<path fill="none" stroke="midnightblue" d="M1526.63,-242.59C1742.3,-238.79 2272.24,-226.67 2298.5,-199 2304.62,-192.55 2303.2,-186.55 2298.5,-179 2289.6,-164.7 2178.74,-116.46 2162.5,-112 2066.59,-85.66 1772.94,-73.08 1646.93,-68.78"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1526.53,-239.1 1516.6,-242.77 1526.66,-246.09 1526.53,-239.1"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="CahnHilliardNLFormIntegrator_8hpp.html" target="_top" xlink:title="VF of the CahnHilliard equations.">
-<polygon fill="none" stroke="black" points="1795.5,-179.5 1795.5,-198.5 1994.5,-198.5 1994.5,-179.5 1795.5,-179.5"/>
-<text text-anchor="middle" x="1895" y="-186.5" font-family="serif" font-size="10.00">CahnHilliardNLFormIntegrator.hpp</text>
+<g id="a_node6"><a xlink:href="AdvectionNLFormIntegrator_8hpp.html" target="_top" xlink:title="VF of the conservative advection term div(v u)">
+<polygon fill="none" stroke="black" points="2345,-179.5 2345,-198.5 2530,-198.5 2530,-179.5 2345,-179.5"/>
+<text text-anchor="middle" x="2437.5" y="-186.5" font-family="serif" font-size="10.00">AdvectionNLFormIntegrator.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node6 -->
 <g id="edge6" class="edge">
 <title>Node2&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M1253.28,-237.6C1373.66,-229.02 1593.39,-213.24 1781,-199 1785.65,-198.65 1790.41,-198.28 1795.22,-197.91"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1252.74,-234.13 1243.01,-238.33 1253.23,-241.11 1252.74,-234.13"/>
-</g>
-<!-- Node7 -->
-<g id="node7" class="node">
-<title>Node7</title>
-<g id="a_node7"><a xlink:href="DiffusionFluxNLFormIntegrator_8hpp.html" target="_top" xlink:title="inter&#45;diffusion integrator">
-<polygon fill="none" stroke="black" points="2013,-179.5 2013,-198.5 2215,-198.5 2215,-179.5 2013,-179.5"/>
-<text text-anchor="middle" x="2114" y="-186.5" font-family="serif" font-size="10.00">DiffusionFluxNLFormIntegrator.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node2&#45;&gt;Node7 -->
-<g id="edge8" class="edge">
-<title>Node2&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M1253.6,-239.96C1407.64,-232.91 1730.41,-217.35 2003,-199 2006.28,-198.78 2009.61,-198.55 2012.98,-198.31"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1253.08,-236.48 1243.25,-240.43 1253.4,-243.47 1253.08,-236.48"/>
-</g>
-<!-- Node9 -->
-<g id="node9" class="node">
-<title>Node9</title>
-<g id="a_node9"><a xlink:href="DiffusionNLFormIntegrator_8hpp.html" target="_top" xlink:title="Nonlinear form integrator for diffusion&#45;type problems.">
-<polygon fill="none" stroke="black" points="1559.5,-179.5 1559.5,-198.5 1738.5,-198.5 1738.5,-179.5 1559.5,-179.5"/>
-<text text-anchor="middle" x="1649" y="-186.5" font-family="serif" font-size="10.00">DiffusionNLFormIntegrator.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node2&#45;&gt;Node9 -->
-<g id="edge11" class="edge">
-<title>Node2&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M1249.83,-234.35C1341.49,-224.17 1484.6,-208.27 1572.26,-198.53"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1249.29,-230.89 1239.74,-235.47 1250.07,-237.85 1249.29,-230.89"/>
-</g>
-<!-- Node10 -->
-<g id="node10" class="node">
-<title>Node10</title>
-<g id="a_node10"><a xlink:href="FickNLFormIntegrator_8hpp.html" target="_top" xlink:title="FV for the mass diffusion equation.">
-<polygon fill="none" stroke="black" points="1680.5,-118 1680.5,-137 1835.5,-137 1835.5,-118 1680.5,-118"/>
-<text text-anchor="middle" x="1758" y="-125" font-family="serif" font-size="10.00">FickNLFormIntegrator.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node2&#45;&gt;Node10 -->
-<g id="edge16" class="edge">
-<title>Node2&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M1253.54,-243.09C1408.56,-240.66 1711.63,-231.72 1747,-199 1764.1,-183.19 1762.01,-152.58 1759.7,-137.43"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1253.04,-239.6 1243.09,-243.25 1253.14,-246.6 1253.04,-239.6"/>
-</g>
-<!-- Node11 -->
-<g id="node11" class="node">
-<title>Node11</title>
-<g id="a_node11"><a xlink:href="FourierNLFormIntegrator_8hpp.html" target="_top" xlink:title="FV for the heat transfer equation.">
-<polygon fill="none" stroke="black" points="1491.5,-118 1491.5,-137 1662.5,-137 1662.5,-118 1491.5,-118"/>
-<text text-anchor="middle" x="1577" y="-125" font-family="serif" font-size="10.00">FourierNLFormIntegrator.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node2&#45;&gt;Node11 -->
-<g id="edge17" class="edge">
-<title>Node2&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M1253.37,-239.23C1341.15,-233.38 1467.39,-221.34 1511,-199 1539.35,-184.47 1561.97,-152.68 1571.75,-137.25"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1252.88,-235.76 1243.13,-239.9 1253.33,-242.74 1252.88,-235.76"/>
-</g>
-<!-- Node12 -->
-<g id="node12" class="node">
-<title>Node12</title>
-<g id="a_node12"><a xlink:href="HeatTimeNLFormIntegrator_8hpp.html" target="_top" xlink:title="VF of the time derivative.">
-<polygon fill="none" stroke="black" points="0,-118 0,-137 184,-137 184,-118 0,-118"/>
-<text text-anchor="middle" x="92" y="-125" font-family="serif" font-size="10.00">HeatTimeNLFormIntegrator.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node2&#45;&gt;Node12 -->
-<g id="edge18" class="edge">
-<title>Node2&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M1072.68,-243.07C824.14,-240.14 145.93,-229.38 109,-199 90.53,-183.8 90.11,-152.33 91.12,-137.11"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1072.73,-246.58 1082.77,-243.19 1072.81,-239.58 1072.73,-246.58"/>
-</g>
-<!-- Node13 -->
-<g id="node13" class="node">
-<title>Node13</title>
-<g id="a_node13"><a xlink:href="LatentHeatNLFormIntegrator_8hpp.html" target="_top" xlink:title="Latent heat contribution for heat transfer equation.">
-<polygon fill="none" stroke="black" points="295.5,-179.5 295.5,-198.5 486.5,-198.5 486.5,-179.5 295.5,-179.5"/>
-<text text-anchor="middle" x="391" y="-186.5" font-family="serif" font-size="10.00">LatentHeatNLFormIntegrator.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node2&#45;&gt;Node13 -->
-<g id="edge20" class="edge">
-<title>Node2&#45;&gt;Node13</title>
-<path fill="none" stroke="midnightblue" d="M1072.88,-238.27C945.47,-230.08 705.4,-214.31 501,-199 496.32,-198.65 491.53,-198.28 486.69,-197.91"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1072.78,-241.77 1082.98,-238.92 1073.23,-234.78 1072.78,-241.77"/>
-</g>
-<!-- Node14 -->
-<g id="node14" class="node">
-<title>Node14</title>
-<g id="a_node14"><a xlink:href="MeltingBaseNLFormIntegrator_8hpp.html" target="_top" xlink:title="Base class for melting integrators.">
-<polygon fill="none" stroke="black" points="543,-179.5 543,-198.5 741,-198.5 741,-179.5 543,-179.5"/>
-<text text-anchor="middle" x="642" y="-186.5" font-family="serif" font-size="10.00">MeltingBaseNLFormIntegrator.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node2&#45;&gt;Node14 -->
-<g id="edge23" class="edge">
-<title>Node2&#45;&gt;Node14</title>
-<path fill="none" stroke="midnightblue" d="M1072.53,-234.62C974.32,-224.44 818.86,-208.33 724.08,-198.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1072.43,-238.13 1082.74,-235.68 1073.15,-231.17 1072.43,-238.13"/>
-</g>
-<!-- Node15 -->
-<g id="node15" class="node">
-<title>Node15</title>
-<g id="a_node15"><a xlink:href="MeltingCalphadNLFormIntegrator_8hpp.html" target="_top" xlink:title="NonlinearFormIntegrator for ad&#45;hoc melting term based on temperature.">
-<polygon fill="none" stroke="black" points="278,-118 278,-137 494,-137 494,-118 278,-118"/>
-<text text-anchor="middle" x="386" y="-125" font-family="serif" font-size="10.00">MeltingCalphadNLFormIntegrator.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node2&#45;&gt;Node15 -->
-<g id="edge30" class="edge">
-<title>Node2&#45;&gt;Node15</title>
-<path fill="none" stroke="midnightblue" d="M1072.8,-241.98C923.76,-237.91 632.75,-226.61 534,-199 515.24,-193.75 512.51,-187.54 495,-179 463.7,-163.73 426.85,-146.89 405.01,-137.03"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1072.75,-245.48 1082.84,-242.25 1072.94,-238.49 1072.75,-245.48"/>
-</g>
-<!-- Node16 -->
-<g id="node16" class="node">
-<title>Node16</title>
-<g id="a_node16"><a xlink:href="MeltingConstantNLFormIntegrator_8hpp.html" target="_top" xlink:title="NonlinearFormIntegrator for ad&#45;hoc constant melting term.">
-<polygon fill="none" stroke="black" points="512.5,-118 512.5,-137 731.5,-137 731.5,-118 512.5,-118"/>
-<text text-anchor="middle" x="622" y="-125" font-family="serif" font-size="10.00">MeltingConstantNLFormIntegrator.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node2&#45;&gt;Node16 -->
-<g id="edge31" class="edge">
-<title>Node2&#45;&gt;Node16</title>
-<path fill="none" stroke="midnightblue" d="M1072.72,-237.85C1001.88,-231.7 901.16,-220.03 815,-199 781.12,-190.73 686.43,-153.98 643.57,-137.07"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1072.69,-241.36 1082.95,-238.71 1073.29,-234.38 1072.69,-241.36"/>
-</g>
-<!-- Node17 -->
-<g id="node17" class="node">
-<title>Node17</title>
-<g id="a_node17"><a xlink:href="MeltingTemperatureNLFormIntegrator_8hpp.html" target="_top" xlink:title="NonlinearFormIntegrator for ad&#45;hoc melting term based on temperature.">
-<polygon fill="none" stroke="black" points="749.5,-112.5 749.5,-142.5 914.5,-142.5 914.5,-112.5 749.5,-112.5"/>
-<text text-anchor="start" x="757.5" y="-130.5" font-family="serif" font-size="10.00">MeltingTemperatureNLForm</text>
-<text text-anchor="middle" x="832" y="-119.5" font-family="serif" font-size="10.00">Integrator.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node2&#45;&gt;Node17 -->
-<g id="edge32" class="edge">
-<title>Node2&#45;&gt;Node17</title>
-<path fill="none" stroke="midnightblue" d="M1072.82,-238.02C978.57,-230.83 842.11,-217.4 826,-199 812.49,-183.56 819.16,-158.27 825.43,-142.54"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1072.71,-241.52 1082.95,-238.78 1073.24,-234.54 1072.71,-241.52"/>
-</g>
-<!-- Node18 -->
-<g id="node18" class="node">
-<title>Node18</title>
-<g id="a_node18"><a xlink:href="RobinNLFormIntegrator_8hpp.html" target="_top" xlink:title="Robin integrator.">
-<polygon fill="none" stroke="black" points="835,-179.5 835,-198.5 999,-198.5 999,-179.5 835,-179.5"/>
-<text text-anchor="middle" x="917" y="-186.5" font-family="serif" font-size="10.00">RobinNLFormIntegrator.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node2&#45;&gt;Node18 -->
-<g id="edge33" class="edge">
-<title>Node2&#45;&gt;Node18</title>
-<path fill="none" stroke="midnightblue" d="M1114.17,-233.28C1067.68,-223.08 998.64,-207.92 955.8,-198.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1113.5,-236.72 1124.02,-235.44 1115,-229.88 1113.5,-236.72"/>
-</g>
-<!-- Node20 -->
-<g id="node20" class="node">
-<title>Node20</title>
-<g id="a_node20"><a xlink:href="TimeCHNLFormIntegrator_8hpp.html" target="_top" xlink:title="VF of the time derivative for CH equations.">
-<polygon fill="none" stroke="black" points="1017,-179.5 1017,-198.5 1193,-198.5 1193,-179.5 1017,-179.5"/>
-<text text-anchor="middle" x="1105" y="-186.5" font-family="serif" font-size="10.00">TimeCHNLFormIntegrator.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node2&#45;&gt;Node20 -->
-<g id="edge37" class="edge">
-<title>Node2&#45;&gt;Node20</title>
-<path fill="none" stroke="midnightblue" d="M1146.09,-228.25C1135.8,-218.67 1123.03,-206.79 1114.49,-198.83"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1143.98,-231.07 1153.68,-235.32 1148.75,-225.95 1143.98,-231.07"/>
-</g>
-<!-- Node21 -->
-<g id="node21" class="node">
-<title>Node21</title>
-<g id="a_node21"><a xlink:href="TimeNLFormIntegrator_8hpp.html" target="_top" xlink:title="VF of the time derivative.">
-<polygon fill="none" stroke="black" points="118.5,-179.5 118.5,-198.5 277.5,-198.5 277.5,-179.5 118.5,-179.5"/>
-<text text-anchor="middle" x="198" y="-186.5" font-family="serif" font-size="10.00">TimeNLFormIntegrator.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node2&#45;&gt;Node21 -->
-<g id="edge39" class="edge">
-<title>Node2&#45;&gt;Node21</title>
-<path fill="none" stroke="midnightblue" d="M1072.59,-240.87C913.43,-235.03 572.89,-221.02 286,-199 283.24,-198.79 280.44,-198.56 277.61,-198.32"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1072.68,-244.38 1082.81,-241.25 1072.94,-237.38 1072.68,-244.38"/>
-</g>
-<!-- Node22 -->
-<g id="node22" class="node">
-<title>Node22</title>
-<g id="a_node22"><a xlink:href="OperatorBase_8hpp.html" target="_top" xlink:title="Base class for building Steady and TimeDependent PhaseFieldOperators.">
-<polygon fill="none" stroke="black" points="2233,-179.5 2233,-198.5 2343,-198.5 2343,-179.5 2233,-179.5"/>
-<text text-anchor="middle" x="2288" y="-186.5" font-family="serif" font-size="10.00">OperatorBase.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node2&#45;&gt;Node22 -->
-<g id="edge42" class="edge">
-<title>Node2&#45;&gt;Node22</title>
-<path fill="none" stroke="midnightblue" d="M1253.16,-243.13C1436.42,-240.72 1865.41,-231.74 2224,-199 2226.91,-198.73 2229.88,-198.43 2232.88,-198.1"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1252.99,-239.63 1243.04,-243.26 1253.08,-246.63 1252.99,-239.63"/>
-</g>
-<!-- Node3&#45;&gt;Node4 -->
-<g id="edge3" class="edge">
-<title>Node3&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M1300.86,-115.32C1258.32,-103.76 1192.83,-85.97 1154.32,-75.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1300.05,-118.73 1310.62,-117.98 1301.89,-111.98 1300.05,-118.73"/>
-</g>
-<!-- Node5&#45;&gt;Node4 -->
-<g id="edge5" class="edge">
-<title>Node5&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M1415.8,-173.28C1435.88,-157.31 1460.95,-131.49 1444,-112 1410.63,-73.62 1264.36,-67.01 1181.25,-66.43"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1413.49,-170.64 1407.63,-179.48 1417.72,-176.22 1413.49,-170.64"/>
-</g>
-<!-- Node6&#45;&gt;Node4 -->
-<g id="edge7" class="edge">
-<title>Node6&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M1888.48,-170.03C1880.85,-151.9 1866.35,-124.83 1844,-112 1787.17,-79.38 1342.57,-70.03 1181.24,-67.69"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1885.27,-171.45 1892.18,-179.49 1891.79,-168.9 1885.27,-171.45"/>
+<path fill="none" stroke="midnightblue" d="M1527.16,-240.48C1688.85,-233.96 2037.59,-218.86 2331.5,-199 2335.83,-198.71 2340.26,-198.39 2344.73,-198.06"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1526.63,-236.99 1516.78,-240.89 1526.91,-243.99 1526.63,-236.99"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="MassDiffusionFluxNLFormIntegrator_8hpp.html" target="_top" xlink:title="Class dedicated to the VF of diffusion flux (gradient of chemical potential) used in mass balance equ...">
-<polygon fill="none" stroke="black" points="1943.5,-118 1943.5,-137 2172.5,-137 2172.5,-118 1943.5,-118"/>
-<text text-anchor="middle" x="2058" y="-125" font-family="serif" font-size="10.00">MassDiffusionFluxNLFormIntegrator.hpp</text>
+<g id="a_node8"><a xlink:href="AllenCahnNLFormIntegrator_8hpp.html" target="_top" xlink:title="VF of the Allen Cahn equation.">
+<polygon fill="none" stroke="black" points="2517,-118 2517,-137 2704,-137 2704,-118 2517,-118"/>
+<text text-anchor="middle" x="2610.5" y="-125" font-family="serif" font-size="10.00">AllenCahnNLFormIntegrator.hpp</text>
 </a>
 </g>
 </g>
-<!-- Node7&#45;&gt;Node8 -->
-<g id="edge9" class="edge">
-<title>Node7&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M2098.94,-172C2088.34,-160.74 2074.57,-146.1 2066.01,-137.01"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2096.57,-174.59 2105.98,-179.48 2101.67,-169.79 2096.57,-174.59"/>
-</g>
-<!-- Node8&#45;&gt;Node4 -->
+<!-- Node2&#45;&gt;Node8 -->
 <g id="edge10" class="edge">
-<title>Node8&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M1956.23,-117.09C1935.32,-115.28 1913.46,-113.5 1893,-112 1627.57,-92.58 1310.17,-76.19 1181.48,-69.83"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1956.13,-120.59 1966.4,-117.97 1956.74,-113.62 1956.13,-120.59"/>
+<title>Node2&#45;&gt;Node8</title>
+<path fill="none" stroke="midnightblue" d="M1526.83,-244.02C1773.6,-243.54 2446.88,-238.58 2538.5,-199 2569.33,-185.68 2594.42,-152.68 2605.03,-137.02"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1526.81,-240.52 1516.82,-244.03 1526.82,-247.52 1526.81,-240.52"/>
 </g>
-<!-- Node9&#45;&gt;Node10 -->
+<!-- Node9 -->
+<g id="node9" class="node">
+<title>Node9</title>
+<g id="a_node9"><a xlink:href="BlockAllenCahnNLFormIntegrator_8hpp.html" target="_top" xlink:title="VF of the AllenCahn equations (splitted form)">
+<polygon fill="none" stroke="black" points="2586,-179.5 2586,-198.5 2801,-198.5 2801,-179.5 2586,-179.5"/>
+<text text-anchor="middle" x="2693.5" y="-186.5" font-family="serif" font-size="10.00">BlockAllenCahnNLFormIntegrator.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node2&#45;&gt;Node9 -->
 <g id="edge12" class="edge">
-<title>Node9&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M1673.63,-174.56C1694.72,-163.04 1724.46,-146.81 1742.41,-137.01"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1671.72,-171.61 1664.62,-179.48 1675.07,-177.76 1671.72,-171.61"/>
+<title>Node2&#45;&gt;Node9</title>
+<path fill="none" stroke="midnightblue" d="M1526.76,-241.46C1718.98,-235.84 2182.95,-221.03 2571.5,-199 2576.16,-198.74 2580.93,-198.45 2585.74,-198.15"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1526.6,-237.97 1516.7,-241.76 1526.8,-244.96 1526.6,-237.97"/>
 </g>
-<!-- Node9&#45;&gt;Node11 -->
+<!-- Node10 -->
+<g id="node10" class="node">
+<title>Node10</title>
+<g id="a_node10"><a xlink:href="CahnHilliardNLFormIntegrator_8hpp.html" target="_top" xlink:title="VF of the CahnHilliard equations.">
+<polygon fill="none" stroke="black" points="0,-179.5 0,-198.5 199,-198.5 199,-179.5 0,-179.5"/>
+<text text-anchor="middle" x="99.5" y="-186.5" font-family="serif" font-size="10.00">CahnHilliardNLFormIntegrator.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node2&#45;&gt;Node10 -->
 <g id="edge14" class="edge">
-<title>Node9&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M1630.82,-172.97C1617.04,-161.59 1598.62,-146.37 1587.3,-137.01"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1628.75,-175.8 1638.68,-179.48 1633.21,-170.41 1628.75,-175.8"/>
+<title>Node2&#45;&gt;Node10</title>
+<path fill="none" stroke="midnightblue" d="M1346.31,-242.11C1143.09,-237.53 633.89,-224.34 208.5,-199 205.47,-198.82 202.39,-198.63 199.28,-198.42"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1346.27,-245.61 1356.34,-242.33 1346.42,-238.61 1346.27,-245.61"/>
 </g>
-<!-- Node10&#45;&gt;Node4 -->
-<g id="edge13" class="edge">
-<title>Node10&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M1701.24,-116.34C1691.19,-114.74 1680.8,-113.22 1671,-112 1493.14,-89.91 1281.41,-76.02 1181.16,-70.18"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1700.71,-119.8 1711.15,-117.96 1701.84,-112.89 1700.71,-119.8"/>
+<!-- Node11 -->
+<g id="node11" class="node">
+<title>Node11</title>
+<g id="a_node11"><a xlink:href="DiffusionFluxNLFormIntegrator_8hpp.html" target="_top" xlink:title="inter&#45;diffusion integrator">
+<polygon fill="none" stroke="black" points="217.5,-179.5 217.5,-198.5 419.5,-198.5 419.5,-179.5 217.5,-179.5"/>
+<text text-anchor="middle" x="318.5" y="-186.5" font-family="serif" font-size="10.00">DiffusionFluxNLFormIntegrator.hpp</text>
+</a>
 </g>
-<!-- Node11&#45;&gt;Node4 -->
-<g id="edge15" class="edge">
-<title>Node11&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M1509.17,-116.5C1498.41,-114.96 1487.41,-113.42 1477,-112 1372.95,-97.84 1251.49,-82.71 1181.3,-74.09"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1508.99,-120.01 1519.39,-117.97 1509.99,-113.08 1508.99,-120.01"/>
 </g>
-<!-- Node12&#45;&gt;Node4 -->
+<!-- Node2&#45;&gt;Node11 -->
+<g id="edge16" class="edge">
+<title>Node2&#45;&gt;Node11</title>
+<path fill="none" stroke="midnightblue" d="M1346.26,-240.96C1170.49,-234.81 769.97,-219.71 433.5,-199 429,-198.72 424.41,-198.43 419.77,-198.11"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1346.38,-244.46 1356.49,-241.31 1346.62,-237.47 1346.38,-244.46"/>
+</g>
+<!-- Node13 -->
+<g id="node13" class="node">
+<title>Node13</title>
+<g id="a_node13"><a xlink:href="DiffusionNLFormIntegrator_8hpp.html" target="_top" xlink:title="Nonlinear form integrator for diffusion&#45;type problems.">
+<polygon fill="none" stroke="black" points="476,-179.5 476,-198.5 655,-198.5 655,-179.5 476,-179.5"/>
+<text text-anchor="middle" x="565.5" y="-186.5" font-family="serif" font-size="10.00">DiffusionNLFormIntegrator.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node2&#45;&gt;Node13 -->
 <g id="edge19" class="edge">
-<title>Node12&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M157.53,-116.63C170.9,-114.87 184.88,-113.21 198,-112 525,-81.74 919.03,-71.12 1064.97,-68.06"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="156.9,-113.18 147.46,-117.98 157.84,-120.12 156.9,-113.18"/>
+<title>Node2&#45;&gt;Node13</title>
+<path fill="none" stroke="midnightblue" d="M1346.33,-239.52C1202.92,-232.22 914.08,-216.75 669.5,-199 664.8,-198.66 659.98,-198.29 655.12,-197.91"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1346.23,-243.02 1356.4,-240.03 1346.59,-236.03 1346.23,-243.02"/>
 </g>
-<!-- Node13&#45;&gt;Node4 -->
-<g id="edge21" class="edge">
-<title>Node13&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M316.83,-176.29C298.21,-169.64 280.32,-159.24 269,-143 261.12,-131.7 259.52,-122 269,-112 296.38,-83.14 876.77,-71.06 1064.78,-67.89"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="316.01,-179.7 326.6,-179.43 318.16,-173.04 316.01,-179.7"/>
+<!-- Node14 -->
+<g id="node14" class="node">
+<title>Node14</title>
+<g id="a_node14"><a xlink:href="FickNLFormIntegrator_8hpp.html" target="_top" xlink:title="FV for the mass diffusion equation.">
+<polygon fill="none" stroke="black" points="372,-118 372,-137 527,-137 527,-118 372,-118"/>
+<text text-anchor="middle" x="449.5" y="-125" font-family="serif" font-size="10.00">FickNLFormIntegrator.hpp</text>
+</a>
 </g>
-<!-- Node14&#45;&gt;Node15 -->
+</g>
+<!-- Node2&#45;&gt;Node14 -->
 <g id="edge24" class="edge">
-<title>Node14&#45;&gt;Node15</title>
-<path fill="none" stroke="midnightblue" d="M595.47,-177.19C545.8,-165.64 468.11,-147.58 422.61,-137.01"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="594.79,-180.62 605.32,-179.48 596.37,-173.8 594.79,-180.62"/>
+<title>Node2&#45;&gt;Node14</title>
+<path fill="none" stroke="midnightblue" d="M1346.09,-242.72C1111.67,-239.02 500.08,-226.73 466.5,-199 448.05,-183.77 447.62,-152.31 448.63,-137.1"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1346.24,-246.22 1356.3,-242.88 1346.35,-239.22 1346.24,-246.22"/>
 </g>
-<!-- Node14&#45;&gt;Node16 -->
-<g id="edge26" class="edge">
-<title>Node14&#45;&gt;Node16</title>
-<path fill="none" stroke="midnightblue" d="M635.83,-169.66C632.18,-158.77 627.71,-145.49 624.86,-137.01"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="632.63,-171.11 639.13,-179.48 639.27,-168.88 632.63,-171.11"/>
+<!-- Node15 -->
+<g id="node15" class="node">
+<title>Node15</title>
+<g id="a_node15"><a xlink:href="FourierNLFormIntegrator_8hpp.html" target="_top" xlink:title="FV for the heat transfer equation.">
+<polygon fill="none" stroke="black" points="545,-118 545,-137 716,-137 716,-118 545,-118"/>
+<text text-anchor="middle" x="630.5" y="-125" font-family="serif" font-size="10.00">FourierNLFormIntegrator.hpp</text>
+</a>
 </g>
-<!-- Node14&#45;&gt;Node17 -->
-<g id="edge28" class="edge">
-<title>Node14&#45;&gt;Node17</title>
-<path fill="none" stroke="midnightblue" d="M678.78,-176.48C709.75,-166.78 754.18,-152.87 787.22,-142.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="677.72,-173.15 669.22,-179.48 679.81,-179.83 677.72,-173.15"/>
 </g>
-<!-- Node15&#45;&gt;Node4 -->
+<!-- Node2&#45;&gt;Node15 -->
 <g id="edge25" class="edge">
-<title>Node15&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M460.21,-116.73C474.4,-115.02 489.15,-113.36 503,-112 709.22,-91.75 954.86,-76.56 1064.79,-70.23"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="459.5,-113.29 450,-117.97 460.35,-120.24 459.5,-113.29"/>
+<title>Node2&#45;&gt;Node15</title>
+<path fill="none" stroke="midnightblue" d="M1346.21,-244.38C1181.88,-244.05 840.61,-238.45 729.5,-199 691.52,-185.51 655.11,-152.91 639.06,-137.22"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1346.3,-247.88 1356.3,-244.39 1346.31,-240.88 1346.3,-247.88"/>
 </g>
-<!-- Node16&#45;&gt;Node4 -->
-<g id="edge27" class="edge">
-<title>Node16&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M701.24,-116.7C714.19,-115.12 727.47,-113.51 740,-112 855.16,-98.16 989.87,-82.44 1064.92,-73.73"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="700.44,-113.28 690.94,-117.97 701.29,-120.22 700.44,-113.28"/>
+<!-- Node16 -->
+<g id="node16" class="node">
+<title>Node16</title>
+<g id="a_node16"><a xlink:href="HeatTimeNLFormIntegrator_8hpp.html" target="_top" xlink:title="VF of the time derivative.">
+<polygon fill="none" stroke="black" points="734.5,-118 734.5,-137 918.5,-137 918.5,-118 734.5,-118"/>
+<text text-anchor="middle" x="826.5" y="-125" font-family="serif" font-size="10.00">HeatTimeNLFormIntegrator.hpp</text>
+</a>
 </g>
-<!-- Node17&#45;&gt;Node4 -->
-<g id="edge29" class="edge">
-<title>Node17&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M910.67,-110.41C965.7,-99.16 1037.02,-84.58 1081.4,-75.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="909.69,-107.04 900.59,-112.47 911.09,-113.9 909.69,-107.04"/>
 </g>
-<!-- Node18&#45;&gt;Node4 -->
-<g id="edge34" class="edge">
-<title>Node18&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M922.91,-169.92C929.5,-152.56 941.83,-126.83 961,-112 990.78,-88.96 1031.68,-77.71 1064.94,-72.22"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="919.56,-168.89 919.53,-179.48 926.16,-171.22 919.56,-168.89"/>
+<!-- Node2&#45;&gt;Node16 -->
+<g id="edge26" class="edge">
+<title>Node2&#45;&gt;Node16</title>
+<path fill="none" stroke="midnightblue" d="M1346.13,-244.89C1166.91,-245.69 780.13,-242.33 739.5,-199 715.77,-173.68 767.43,-149.4 800.88,-137.01"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1346.35,-248.39 1356.33,-244.84 1346.32,-241.39 1346.35,-248.39"/>
+</g>
+<!-- Node17 -->
+<g id="node17" class="node">
+<title>Node17</title>
+<g id="a_node17"><a xlink:href="LatentHeatNLFormIntegrator_8hpp.html" target="_top" xlink:title="Latent heat contribution for heat transfer equation.">
+<polygon fill="none" stroke="black" points="1179,-179.5 1179,-198.5 1370,-198.5 1370,-179.5 1179,-179.5"/>
+<text text-anchor="middle" x="1274.5" y="-186.5" font-family="serif" font-size="10.00">LatentHeatNLFormIntegrator.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node2&#45;&gt;Node17 -->
+<g id="edge28" class="edge">
+<title>Node2&#45;&gt;Node17</title>
+<path fill="none" stroke="midnightblue" d="M1401.02,-232.17C1370.51,-222 1327.26,-207.59 1300.05,-198.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1400.24,-235.6 1410.83,-235.44 1402.45,-228.96 1400.24,-235.6"/>
+</g>
+<!-- Node18 -->
+<g id="node18" class="node">
+<title>Node18</title>
+<g id="a_node18"><a xlink:href="MeltingBaseNLFormIntegrator_8hpp.html" target="_top" xlink:title="Base class for melting integrators.">
+<polygon fill="none" stroke="black" points="1464.5,-179.5 1464.5,-198.5 1662.5,-198.5 1662.5,-179.5 1464.5,-179.5"/>
+<text text-anchor="middle" x="1563.5" y="-186.5" font-family="serif" font-size="10.00">MeltingBaseNLFormIntegrator.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node2&#45;&gt;Node18 -->
+<g id="edge31" class="edge">
+<title>Node2&#45;&gt;Node18</title>
+<path fill="none" stroke="midnightblue" d="M1465.89,-231.5C1489.7,-221.38 1522.61,-207.39 1543.47,-198.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1464.46,-228.31 1456.62,-235.44 1467.2,-234.75 1464.46,-228.31"/>
 </g>
 <!-- Node19 -->
 <g id="node19" class="node">
 <title>Node19</title>
-<g id="a_node19"><a xlink:href="NeumannNLFormIntegrator_8hpp.html" target="_top" xlink:title="Neumann integrator.">
-<polygon fill="none" stroke="black" points="970.5,-118 970.5,-137 1155.5,-137 1155.5,-118 970.5,-118"/>
-<text text-anchor="middle" x="1063" y="-125" font-family="serif" font-size="10.00">NeumannNLFormIntegrator.hpp</text>
+<g id="a_node19"><a xlink:href="MeltingCalphadNLFormIntegrator_8hpp.html" target="_top" xlink:title="NonlinearFormIntegrator for ad&#45;hoc melting term based on temperature.">
+<polygon fill="none" stroke="black" points="1244.5,-118 1244.5,-137 1460.5,-137 1460.5,-118 1244.5,-118"/>
+<text text-anchor="middle" x="1352.5" y="-125" font-family="serif" font-size="10.00">MeltingCalphadNLFormIntegrator.hpp</text>
 </a>
 </g>
 </g>
-<!-- Node18&#45;&gt;Node19 -->
-<g id="edge35" class="edge">
-<title>Node18&#45;&gt;Node19</title>
-<path fill="none" stroke="midnightblue" d="M947.35,-175.63C975.71,-164.07 1017.31,-147.12 1042.12,-137.01"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="945.86,-172.46 937.92,-179.48 948.5,-178.94 945.86,-172.46"/>
-</g>
-<!-- Node19&#45;&gt;Node4 -->
-<g id="edge36" class="edge">
-<title>Node19&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M1078.81,-110.82C1090.21,-99.52 1105.16,-84.69 1114.42,-75.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1076.23,-108.45 1071.6,-117.98 1081.16,-113.42 1076.23,-108.45"/>
-</g>
-<!-- Node20&#45;&gt;Node4 -->
+<!-- Node2&#45;&gt;Node19 -->
 <g id="edge38" class="edge">
-<title>Node20&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M1132.83,-174.27C1144.74,-166.81 1157.4,-156.34 1164,-143 1170.11,-130.65 1168.98,-124.85 1164,-112 1158.12,-96.82 1144.48,-83.62 1134.54,-75.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1130.88,-171.36 1123.98,-179.4 1134.39,-177.41 1130.88,-171.36"/>
+<title>Node2&#45;&gt;Node19</title>
+<path fill="none" stroke="midnightblue" d="M1424.26,-227.17C1406.14,-202.26 1372.82,-156.44 1358.89,-137.28"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1421.47,-229.29 1430.19,-235.32 1427.14,-225.17 1421.47,-229.29"/>
 </g>
-<!-- Node21&#45;&gt;Node4 -->
-<g id="edge41" class="edge">
-<title>Node21&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M206.46,-170.4C216.28,-152.17 234.35,-124.62 259,-112 330.28,-75.5 882.34,-68.58 1064.73,-67.29"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="203.29,-168.92 201.86,-179.42 209.52,-172.1 203.29,-168.92"/>
+<!-- Node20 -->
+<g id="node20" class="node">
+<title>Node20</title>
+<g id="a_node20"><a xlink:href="MeltingConstantNLFormIntegrator_8hpp.html" target="_top" xlink:title="NonlinearFormIntegrator for ad&#45;hoc constant melting term.">
+<polygon fill="none" stroke="black" points="1479,-118 1479,-137 1698,-137 1698,-118 1479,-118"/>
+<text text-anchor="middle" x="1588.5" y="-125" font-family="serif" font-size="10.00">MeltingConstantNLFormIntegrator.hpp</text>
+</a>
 </g>
-<!-- Node21&#45;&gt;Node12 -->
+</g>
+<!-- Node2&#45;&gt;Node20 -->
+<g id="edge39" class="edge">
+<title>Node2&#45;&gt;Node20</title>
+<path fill="none" stroke="midnightblue" d="M1437.58,-225.05C1439.36,-210.76 1443.91,-191.53 1455.5,-179 1476.21,-156.6 1507.89,-144.06 1535.14,-137.08"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1434.08,-224.97 1436.68,-235.24 1441.05,-225.59 1434.08,-224.97"/>
+</g>
+<!-- Node21 -->
+<g id="node21" class="node">
+<title>Node21</title>
+<g id="a_node21"><a xlink:href="MeltingTemperatureNLFormIntegrator_8hpp.html" target="_top" xlink:title="NonlinearFormIntegrator for ad&#45;hoc melting term based on temperature.">
+<polygon fill="none" stroke="black" points="1716,-112.5 1716,-142.5 1881,-142.5 1881,-112.5 1716,-112.5"/>
+<text text-anchor="start" x="1724" y="-130.5" font-family="serif" font-size="10.00">MeltingTemperatureNLForm</text>
+<text text-anchor="middle" x="1798.5" y="-119.5" font-family="serif" font-size="10.00">Integrator.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node2&#45;&gt;Node21 -->
 <g id="edge40" class="edge">
-<title>Node21&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M174.05,-174.56C153.54,-163.04 124.62,-146.81 107.16,-137.01"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="172.38,-177.63 182.81,-179.48 175.81,-171.53 172.38,-177.63"/>
+<title>Node2&#45;&gt;Node21</title>
+<path fill="none" stroke="midnightblue" d="M1523.85,-234.01C1568.87,-227.19 1624.12,-216.19 1671.5,-199 1676.86,-197.05 1738.13,-162.62 1773.57,-142.61"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1523.2,-230.57 1513.82,-235.49 1524.22,-237.49 1523.2,-230.57"/>
+</g>
+<!-- Node22 -->
+<g id="node22" class="node">
+<title>Node22</title>
+<g id="a_node22"><a xlink:href="RobinNLFormIntegrator_8hpp.html" target="_top" xlink:title="Robin integrator.">
+<polygon fill="none" stroke="black" points="1718.5,-179.5 1718.5,-198.5 1882.5,-198.5 1882.5,-179.5 1718.5,-179.5"/>
+<text text-anchor="middle" x="1800.5" y="-186.5" font-family="serif" font-size="10.00">RobinNLFormIntegrator.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node2&#45;&gt;Node22 -->
+<g id="edge41" class="edge">
+<title>Node2&#45;&gt;Node22</title>
+<path fill="none" stroke="midnightblue" d="M1504.47,-233.92C1573.24,-223.71 1678.37,-208.12 1743.09,-198.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1503.55,-230.51 1494.18,-235.44 1504.58,-237.44 1503.55,-230.51"/>
+</g>
+<!-- Node24 -->
+<g id="node24" class="node">
+<title>Node24</title>
+<g id="a_node24"><a xlink:href="SourceTermNLFormIntegrator_8hpp.html" target="_top" xlink:title="VF of a user&#45;defined source term.">
+<polygon fill="none" stroke="black" points="1901,-179.5 1901,-198.5 2096,-198.5 2096,-179.5 1901,-179.5"/>
+<text text-anchor="middle" x="1998.5" y="-186.5" font-family="serif" font-size="10.00">SourceTermNLFormIntegrator.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node2&#45;&gt;Node24 -->
+<g id="edge45" class="edge">
+<title>Node2&#45;&gt;Node24</title>
+<path fill="none" stroke="midnightblue" d="M1526.7,-235.33C1631.98,-225.22 1804.99,-208.59 1909.68,-198.53"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1526.34,-231.85 1516.72,-236.29 1527.01,-238.82 1526.34,-231.85"/>
+</g>
+<!-- Node25 -->
+<g id="node25" class="node">
+<title>Node25</title>
+<g id="a_node25"><a xlink:href="TimeCHNLFormIntegrator_8hpp.html" target="_top" xlink:title="VF of the time derivative for CH equations.">
+<polygon fill="none" stroke="black" points="2113.5,-179.5 2113.5,-198.5 2289.5,-198.5 2289.5,-179.5 2113.5,-179.5"/>
+<text text-anchor="middle" x="2201.5" y="-186.5" font-family="serif" font-size="10.00">TimeCHNLFormIntegrator.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node2&#45;&gt;Node25 -->
+<g id="edge47" class="edge">
+<title>Node2&#45;&gt;Node25</title>
+<path fill="none" stroke="midnightblue" d="M1526.93,-238.63C1655.4,-230.85 1898.06,-215.53 2104.5,-199 2107.45,-198.76 2110.45,-198.52 2113.48,-198.26"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1526.52,-235.15 1516.75,-239.25 1526.94,-242.14 1526.52,-235.15"/>
+</g>
+<!-- Node26 -->
+<g id="node26" class="node">
+<title>Node26</title>
+<g id="a_node26"><a xlink:href="TimeNLFormIntegrator_8hpp.html" target="_top" xlink:title="VF of the time derivative.">
+<polygon fill="none" stroke="black" points="749,-179.5 749,-198.5 908,-198.5 908,-179.5 749,-179.5"/>
+<text text-anchor="middle" x="828.5" y="-186.5" font-family="serif" font-size="10.00">TimeNLFormIntegrator.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node2&#45;&gt;Node26 -->
+<g id="edge49" class="edge">
+<title>Node2&#45;&gt;Node26</title>
+<path fill="none" stroke="midnightblue" d="M1346.17,-236.61C1242.42,-228.03 1067.1,-213.22 916.5,-199 913.75,-198.74 910.95,-198.47 908.12,-198.2"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1346.04,-240.11 1356.29,-237.45 1346.61,-233.14 1346.04,-240.11"/>
+</g>
+<!-- Node27 -->
+<g id="node27" class="node">
+<title>Node27</title>
+<g id="a_node27"><a xlink:href="OperatorBase_8hpp.html" target="_top" xlink:title="Base class for building Steady and TimeDependent PhaseFieldOperators.">
+<polygon fill="none" stroke="black" points="2819.5,-179.5 2819.5,-198.5 2929.5,-198.5 2929.5,-179.5 2819.5,-179.5"/>
+<text text-anchor="middle" x="2874.5" y="-186.5" font-family="serif" font-size="10.00">OperatorBase.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node2&#45;&gt;Node27 -->
+<g id="edge52" class="edge">
+<title>Node2&#45;&gt;Node27</title>
+<path fill="none" stroke="midnightblue" d="M1526.96,-244.31C1746.97,-244.35 2327.34,-240.17 2809.5,-199 2812.68,-198.73 2815.94,-198.41 2819.23,-198.05"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1526.76,-240.81 1516.76,-244.3 1526.76,-247.81 1526.76,-240.81"/>
+</g>
+<!-- Node4 -->
+<g id="node4" class="node">
+<title>Node4</title>
+<g id="a_node4"><a xlink:href="AdvectionBoundaryCHNLFormIntegrator_8hpp.html" target="_top" xlink:title="Inflow/outflow advection boundary term for the split Cahn&#45;Hilliard equations.">
+<polygon fill="none" stroke="black" points="1012,-112.5 1012,-142.5 1189,-142.5 1189,-112.5 1012,-112.5"/>
+<text text-anchor="start" x="1020" y="-130.5" font-family="serif" font-size="10.00">AdvectionBoundaryCHNLForm</text>
+<text text-anchor="middle" x="1100.5" y="-119.5" font-family="serif" font-size="10.00">Integrator.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node3&#45;&gt;Node4 -->
+<g id="edge3" class="edge">
+<title>Node3&#45;&gt;Node4</title>
+<path fill="none" stroke="midnightblue" d="M1058.74,-172.09C1067.56,-162.88 1078.57,-151.39 1087.07,-142.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1056.06,-169.83 1051.67,-179.48 1061.11,-174.68 1056.06,-169.83"/>
+</g>
+<!-- Node3&#45;&gt;Node5 -->
+<g id="edge5" class="edge">
+<title>Node3&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M1024.91,-172.57C1007.29,-156.12 985.8,-130.03 1002.5,-112 1037.88,-73.8 1389.41,-67.91 1530.42,-67.09"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1022.79,-175.36 1032.59,-179.38 1027.43,-170.12 1022.79,-175.36"/>
+</g>
+<!-- Node4&#45;&gt;Node5 -->
+<g id="edge4" class="edge">
+<title>Node4&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M1199.22,-112.43C1200.32,-112.28 1201.41,-112.14 1202.5,-112 1318.59,-96.98 1454.62,-81.65 1530.24,-73.33"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1198.67,-108.97 1189.21,-113.75 1199.59,-115.91 1198.67,-108.97"/>
+</g>
+<!-- Node6&#45;&gt;Node5 -->
+<g id="edge7" class="edge">
+<title>Node6&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M2453.72,-172.01C2468.8,-155.25 2486.68,-129.03 2470.5,-112 2442.1,-82.11 1838.6,-70.68 1646.6,-67.79"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2451.05,-169.74 2446.7,-179.4 2456.13,-174.56 2451.05,-169.74"/>
+</g>
+<!-- Node7 -->
+<g id="node7" class="node">
+<title>Node7</title>
+<g id="a_node7"><a xlink:href="SplitAdvectionNLFormIntegrator_8hpp.html" target="_top" xlink:title="VF of the advection term in the split Cahn&#45;Hilliard equations.">
+<polygon fill="none" stroke="black" points="2253.5,-118 2253.5,-137 2461.5,-137 2461.5,-118 2253.5,-118"/>
+<text text-anchor="middle" x="2357.5" y="-125" font-family="serif" font-size="10.00">SplitAdvectionNLFormIntegrator.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node6&#45;&gt;Node7 -->
+<g id="edge8" class="edge">
+<title>Node6&#45;&gt;Node7</title>
+<path fill="none" stroke="midnightblue" d="M2417.73,-173.29C2402.38,-161.88 2381.64,-146.46 2368.94,-137.01"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2415.93,-176.32 2426.04,-179.48 2420.1,-170.7 2415.93,-176.32"/>
+</g>
+<!-- Node7&#45;&gt;Node5 -->
+<g id="edge9" class="edge">
+<title>Node7&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M2283.33,-116.77C2268.81,-115.04 2253.69,-113.36 2239.5,-112 2021.28,-91.07 1761.02,-76.07 1646.94,-69.99"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2282.92,-120.25 2293.26,-117.98 2283.76,-113.3 2282.92,-120.25"/>
+</g>
+<!-- Node8&#45;&gt;Node5 -->
+<g id="edge11" class="edge">
+<title>Node8&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M2544.35,-116.64C2530.85,-114.88 2516.74,-113.22 2503.5,-112 2180.61,-82.24 1791.69,-71.34 1646.7,-68.14"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2544.14,-120.14 2554.52,-117.99 2545.07,-113.2 2544.14,-120.14"/>
+</g>
+<!-- Node9&#45;&gt;Node5 -->
+<g id="edge13" class="edge">
+<title>Node9&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M2705.64,-170.94C2716.22,-153.83 2727.69,-127.81 2712.5,-112 2675.29,-73.27 1871.93,-67.87 1646.72,-67.12"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2702.64,-169.14 2700.03,-179.41 2708.47,-173.01 2702.64,-169.14"/>
+</g>
+<!-- Node10&#45;&gt;Node5 -->
+<g id="edge15" class="edge">
+<title>Node10&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M97.56,-169.21C96.89,-151.5 99.14,-125.7 115.5,-112 170.62,-65.86 1264.29,-66.05 1530.47,-66.79"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="94.07,-169.52 98.28,-179.24 101.05,-169.02 94.07,-169.52"/>
+</g>
+<!-- Node12 -->
+<g id="node12" class="node">
+<title>Node12</title>
+<g id="a_node12"><a xlink:href="MassDiffusionFluxNLFormIntegrator_8hpp.html" target="_top" xlink:title="Class dedicated to the VF of diffusion flux (gradient of chemical potential) used in mass balance equ...">
+<polygon fill="none" stroke="black" points="125,-118 125,-137 354,-137 354,-118 125,-118"/>
+<text text-anchor="middle" x="239.5" y="-125" font-family="serif" font-size="10.00">MassDiffusionFluxNLFormIntegrator.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node11&#45;&gt;Node12 -->
+<g id="edge17" class="edge">
+<title>Node11&#45;&gt;Node12</title>
+<path fill="none" stroke="midnightblue" d="M298.97,-173.29C283.82,-161.88 263.34,-146.46 250.8,-137.01"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="297.09,-176.25 307.18,-179.48 301.3,-170.66 297.09,-176.25"/>
+</g>
+<!-- Node12&#45;&gt;Node5 -->
+<g id="edge18" class="edge">
+<title>Node12&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M313.21,-116.83C329.42,-114.98 346.52,-113.23 362.5,-112 811.11,-77.38 1354.18,-69.25 1530.33,-67.47"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="312.77,-113.36 303.24,-117.99 313.58,-120.31 312.77,-113.36"/>
+</g>
+<!-- Node13&#45;&gt;Node14 -->
+<g id="edge20" class="edge">
+<title>Node13&#45;&gt;Node14</title>
+<path fill="none" stroke="midnightblue" d="M539.9,-174.87C517.41,-163.33 485.37,-146.9 466.09,-137.01"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="538.38,-178.03 548.88,-179.48 541.58,-171.8 538.38,-178.03"/>
+</g>
+<!-- Node13&#45;&gt;Node15 -->
+<g id="edge22" class="edge">
+<title>Node13&#45;&gt;Node15</title>
+<path fill="none" stroke="midnightblue" d="M582.27,-172.65C594.66,-161.31 611.08,-146.28 621.2,-137.01"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="579.83,-170.14 574.81,-179.48 584.55,-175.3 579.83,-170.14"/>
+</g>
+<!-- Node14&#45;&gt;Node5 -->
+<g id="edge21" class="edge">
+<title>Node14&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M503.51,-116.34C514.09,-114.65 525.12,-113.09 535.5,-112 913.32,-72.23 1370.93,-67.37 1530.38,-66.95"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="502.84,-112.9 493.55,-117.99 503.99,-119.81 502.84,-112.9"/>
+</g>
+<!-- Node15&#45;&gt;Node5 -->
+<g id="edge23" class="edge">
+<title>Node15&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M690.27,-116.45C701.93,-114.75 714.07,-113.17 725.5,-112 1027.37,-81.17 1390.91,-70.97 1530.27,-68.04"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="689.55,-113.02 680.18,-117.97 690.59,-119.94 689.55,-113.02"/>
+</g>
+<!-- Node16&#45;&gt;Node5 -->
+<g id="edge27" class="edge">
+<title>Node16&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M893.79,-116.6C906.62,-114.91 919.96,-113.29 932.5,-112 1152.81,-89.4 1415.94,-75.21 1530.47,-69.66"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="893.07,-113.16 883.63,-117.97 894,-120.1 893.07,-113.16"/>
+</g>
+<!-- Node17&#45;&gt;Node5 -->
+<g id="edge29" class="edge">
+<title>Node17&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M1256.29,-172.21C1239.56,-155.81 1219.58,-130.08 1235.5,-112 1254.64,-90.27 1435.11,-76.23 1530.31,-70.27"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1254.37,-175.19 1264.08,-179.43 1259.13,-170.06 1254.37,-175.19"/>
+</g>
+<!-- Node18&#45;&gt;Node19 -->
+<g id="edge32" class="edge">
+<title>Node18&#45;&gt;Node19</title>
+<path fill="none" stroke="midnightblue" d="M1523.6,-176.75C1482.61,-165.19 1419.7,-147.45 1382.68,-137.01"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1522.69,-180.13 1533.27,-179.48 1524.59,-173.39 1522.69,-180.13"/>
+</g>
+<!-- Node18&#45;&gt;Node20 -->
+<g id="edge34" class="edge">
+<title>Node18&#45;&gt;Node20</title>
+<path fill="none" stroke="midnightblue" d="M1571.06,-170C1575.66,-159.05 1581.33,-145.57 1584.92,-137.01"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1567.73,-168.9 1567.08,-179.48 1574.18,-171.61 1567.73,-168.9"/>
+</g>
+<!-- Node18&#45;&gt;Node21 -->
+<g id="edge36" class="edge">
+<title>Node18&#45;&gt;Node21</title>
+<path fill="none" stroke="midnightblue" d="M1607.01,-176.98C1645.39,-167.27 1701.54,-153.05 1743.12,-142.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1606,-173.63 1597.17,-179.48 1607.72,-180.41 1606,-173.63"/>
+</g>
+<!-- Node19&#45;&gt;Node5 -->
+<g id="edge33" class="edge">
+<title>Node19&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M1396.26,-115.47C1442.08,-103.91 1513.07,-86.02 1554.75,-75.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1395.15,-112.14 1386.31,-117.98 1396.87,-118.92 1395.15,-112.14"/>
+</g>
+<!-- Node20&#45;&gt;Node5 -->
+<g id="edge35" class="edge">
+<title>Node20&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M1588.5,-107.82C1588.5,-97 1588.5,-83.9 1588.5,-75.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1585,-107.98 1588.5,-117.98 1592,-107.98 1585,-107.98"/>
+</g>
+<!-- Node21&#45;&gt;Node5 -->
+<g id="edge37" class="edge">
+<title>Node21&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M1739.24,-109.71C1699.89,-98.56 1649.88,-84.39 1618.52,-75.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1738.42,-113.12 1749,-112.47 1740.33,-106.38 1738.42,-113.12"/>
+</g>
+<!-- Node22&#45;&gt;Node5 -->
+<g id="edge42" class="edge">
+<title>Node22&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M1880.82,-178.22C1964.85,-167.6 2085.57,-151.08 2092.5,-143 2101.47,-132.54 2101.8,-122.17 2092.5,-112 2062.89,-79.63 1772.64,-70.38 1646.52,-67.87"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1880.25,-174.77 1870.77,-179.49 1881.13,-181.71 1880.25,-174.77"/>
 </g>
 <!-- Node23 -->
 <g id="node23" class="node">
 <title>Node23</title>
-<g id="a_node23"><a xlink:href="SteadyOperator_8hpp.html" target="_top" xlink:title="Steady Operator.">
-<polygon fill="none" stroke="black" points="2209,-118 2209,-137 2329,-137 2329,-118 2209,-118"/>
-<text text-anchor="middle" x="2269" y="-125" font-family="serif" font-size="10.00">SteadyOperator.hpp</text>
+<g id="a_node23"><a xlink:href="NeumannNLFormIntegrator_8hpp.html" target="_top" xlink:title="Neumann integrator.">
+<polygon fill="none" stroke="black" points="1899,-118 1899,-137 2084,-137 2084,-118 1899,-118"/>
+<text text-anchor="middle" x="1991.5" y="-125" font-family="serif" font-size="10.00">NeumannNLFormIntegrator.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node22&#45;&gt;Node23 -->
 <g id="edge43" class="edge">
 <title>Node22&#45;&gt;Node23</title>
-<path fill="none" stroke="midnightblue" d="M2282.14,-169.66C2278.67,-158.77 2274.42,-145.49 2271.72,-137.01"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2278.9,-171.01 2285.28,-179.48 2285.57,-168.88 2278.9,-171.01"/>
+<path fill="none" stroke="midnightblue" d="M1837.8,-176.38C1874.93,-164.82 1931.02,-147.34 1964.19,-137.01"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1836.37,-173.16 1827.87,-179.48 1838.45,-179.84 1836.37,-173.16"/>
 </g>
-<!-- Node26 -->
-<g id="node26" class="node">
-<title>Node26</title>
-<g id="a_node26"><a xlink:href="TransientOperator_8hpp.html" target="_top" xlink:title="Transient Operator.">
-<polygon fill="none" stroke="black" points="2347,-118 2347,-137 2481,-137 2481,-118 2347,-118"/>
-<text text-anchor="middle" x="2414" y="-125" font-family="serif" font-size="10.00">TransientOperator.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node22&#45;&gt;Node26 -->
-<g id="edge46" class="edge">
-<title>Node22&#45;&gt;Node26</title>
-<path fill="none" stroke="midnightblue" d="M2315.16,-175.17C2339.61,-163.63 2374.85,-146.99 2395.98,-137.01"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2313.6,-172.04 2306.05,-179.48 2316.59,-178.37 2313.6,-172.04"/>
-</g>
-<!-- Node24 -->
-<g id="node24" class="node">
-<title>Node24</title>
-<g id="a_node24"><a xlink:href="ListOperators_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="none" stroke="black" points="2286,-56.5 2286,-75.5 2396,-75.5 2396,-56.5 2286,-56.5"/>
-<text text-anchor="middle" x="2341" y="-63.5" font-family="serif" font-size="10.00">ListOperators.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node23&#45;&gt;Node24 -->
+<!-- Node23&#45;&gt;Node5 -->
 <g id="edge44" class="edge">
-<title>Node23&#45;&gt;Node24</title>
-<path fill="none" stroke="midnightblue" d="M2287.18,-111.47C2300.96,-100.09 2319.38,-84.87 2330.7,-75.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2284.79,-108.91 2279.32,-117.98 2289.25,-114.3 2284.79,-108.91"/>
+<title>Node23&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M1923.57,-116.47C1845.7,-104.97 1719.4,-86.33 1646.13,-75.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1923.36,-119.98 1933.76,-117.98 1924.38,-113.05 1923.36,-119.98"/>
 </g>
-<!-- Node25 -->
-<g id="node25" class="node">
-<title>Node25</title>
-<g id="a_node25"><a xlink:href="sloth_8hpp.html" target="_top" xlink:title="List of SLOTH header files.">
-<polygon fill="none" stroke="black" points="2308.5,-0.5 2308.5,-19.5 2373.5,-19.5 2373.5,-0.5 2308.5,-0.5"/>
-<text text-anchor="middle" x="2341" y="-7.5" font-family="serif" font-size="10.00">sloth.hpp</text>
+<!-- Node24&#45;&gt;Node5 -->
+<g id="edge46" class="edge">
+<title>Node24&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M2063.23,-176.28C2081.56,-169.65 2099.51,-159.26 2110.5,-143 2118.22,-131.59 2119.81,-122.15 2110.5,-112 2079.64,-78.36 1776.18,-69.81 1646.63,-67.68"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2062.05,-172.98 2053.64,-179.42 2064.23,-179.64 2062.05,-172.98"/>
+</g>
+<!-- Node25&#45;&gt;Node5 -->
+<g id="edge48" class="edge">
+<title>Node25&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M2190.76,-171C2178.26,-152.87 2155.79,-124.99 2128.5,-112 2044.52,-72.02 1768.06,-66.95 1646.61,-66.72"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2187.93,-173.06 2196.37,-179.47 2193.77,-169.2 2187.93,-173.06"/>
+</g>
+<!-- Node26&#45;&gt;Node5 -->
+<g id="edge51" class="edge">
+<title>Node26&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M856.9,-175.26C876.73,-166.32 903.78,-154.05 927.5,-143 956.51,-129.49 961.57,-120.23 992.5,-112 1092.9,-85.27 1400.91,-72.82 1530.3,-68.67"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="855.21,-172.18 847.53,-179.48 858.08,-178.56 855.21,-172.18"/>
+</g>
+<!-- Node26&#45;&gt;Node16 -->
+<g id="edge50" class="edge">
+<title>Node26&#45;&gt;Node16</title>
+<path fill="none" stroke="midnightblue" d="M827.87,-169.32C827.51,-158.5 827.07,-145.4 826.79,-137.01"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="824.38,-169.6 828.21,-179.48 831.38,-169.36 824.38,-169.6"/>
+</g>
+<!-- Node28 -->
+<g id="node28" class="node">
+<title>Node28</title>
+<g id="a_node28"><a xlink:href="SteadyOperator_8hpp.html" target="_top" xlink:title="Steady Operator.">
+<polygon fill="none" stroke="black" points="2785.5,-118 2785.5,-137 2905.5,-137 2905.5,-118 2785.5,-118"/>
+<text text-anchor="middle" x="2845.5" y="-125" font-family="serif" font-size="10.00">SteadyOperator.hpp</text>
 </a>
 </g>
 </g>
-<!-- Node24&#45;&gt;Node25 -->
-<g id="edge45" class="edge">
-<title>Node24&#45;&gt;Node25</title>
-<path fill="none" stroke="midnightblue" d="M2341,-45.8C2341,-36.91 2341,-26.78 2341,-19.75"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2337.5,-46.08 2341,-56.08 2344.5,-46.08 2337.5,-46.08"/>
+<!-- Node27&#45;&gt;Node28 -->
+<g id="edge53" class="edge">
+<title>Node27&#45;&gt;Node28</title>
+<path fill="none" stroke="midnightblue" d="M2865.89,-170.33C2860.53,-159.33 2853.87,-145.66 2849.65,-137.01"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2862.82,-172.02 2870.35,-179.48 2869.11,-168.95 2862.82,-172.02"/>
 </g>
-<!-- Node26&#45;&gt;Node24 -->
-<g id="edge47" class="edge">
-<title>Node26&#45;&gt;Node24</title>
-<path fill="none" stroke="midnightblue" d="M2395.56,-111.47C2381.6,-100.09 2362.92,-84.87 2351.44,-75.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2393.58,-114.37 2403.54,-117.98 2398,-108.94 2393.58,-114.37"/>
+<!-- Node31 -->
+<g id="node31" class="node">
+<title>Node31</title>
+<g id="a_node31"><a xlink:href="TransientOperator_8hpp.html" target="_top" xlink:title="Transient Operator.">
+<polygon fill="none" stroke="black" points="2923.5,-118 2923.5,-137 3057.5,-137 3057.5,-118 2923.5,-118"/>
+<text text-anchor="middle" x="2990.5" y="-125" font-family="serif" font-size="10.00">TransientOperator.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node27&#45;&gt;Node31 -->
+<g id="edge56" class="edge">
+<title>Node27&#45;&gt;Node31</title>
+<path fill="none" stroke="midnightblue" d="M2900.1,-174.87C2922.59,-163.33 2954.63,-146.9 2973.91,-137.01"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2898.42,-171.8 2891.12,-179.48 2901.62,-178.03 2898.42,-171.8"/>
+</g>
+<!-- Node29 -->
+<g id="node29" class="node">
+<title>Node29</title>
+<g id="a_node29"><a xlink:href="ListOperators_8hpp.html" target="_top" xlink:title=" ">
+<polygon fill="none" stroke="black" points="2862.5,-56.5 2862.5,-75.5 2972.5,-75.5 2972.5,-56.5 2862.5,-56.5"/>
+<text text-anchor="middle" x="2917.5" y="-63.5" font-family="serif" font-size="10.00">ListOperators.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node28&#45;&gt;Node29 -->
+<g id="edge54" class="edge">
+<title>Node28&#45;&gt;Node29</title>
+<path fill="none" stroke="midnightblue" d="M2863.68,-111.47C2877.46,-100.09 2895.88,-84.87 2907.2,-75.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2861.29,-108.91 2855.82,-117.98 2865.75,-114.3 2861.29,-108.91"/>
+</g>
+<!-- Node30 -->
+<g id="node30" class="node">
+<title>Node30</title>
+<g id="a_node30"><a xlink:href="sloth_8hpp.html" target="_top" xlink:title="List of SLOTH header files.">
+<polygon fill="none" stroke="black" points="2885,-0.5 2885,-19.5 2950,-19.5 2950,-0.5 2885,-0.5"/>
+<text text-anchor="middle" x="2917.5" y="-7.5" font-family="serif" font-size="10.00">sloth.hpp</text>
+</a>
+</g>
+</g>
+<!-- Node29&#45;&gt;Node30 -->
+<g id="edge55" class="edge">
+<title>Node29&#45;&gt;Node30</title>
+<path fill="none" stroke="midnightblue" d="M2917.5,-45.8C2917.5,-36.91 2917.5,-26.78 2917.5,-19.75"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2914,-46.08 2917.5,-56.08 2921,-46.08 2914,-46.08"/>
+</g>
+<!-- Node31&#45;&gt;Node29 -->
+<g id="edge57" class="edge">
+<title>Node31&#45;&gt;Node29</title>
+<path fill="none" stroke="midnightblue" d="M2972.06,-111.47C2958.1,-100.09 2939.42,-84.87 2927.94,-75.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2970.08,-114.37 2980.04,-117.98 2974.5,-108.94 2970.08,-114.37"/>
 </g>
 </g>
 </svg>

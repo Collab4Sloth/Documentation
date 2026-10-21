@@ -1,0 +1,6 @@
+<map id="SplitAdvectionNLFormIntegrator&lt; VARS &gt;" name="SplitAdvectionNLFormIntegrator&lt; VARS &gt;">
+<area shape="rect" id="node1" title="Advection term for the split (phi, mu) Cahn&#45;Hilliard formulation." alt="" coords="5,276,252,317"/>
+<area shape="rect" id="node2" href="$classAdvectionNLFormIntegrator.html" title="Volume part of the conservative advection term div(v u_c), integrated by parts." alt="" coords="21,185,237,227"/>
+<area shape="rect" id="node3" href="$classSlothNLFormIntegrator.html" title="Class prodiving common methods to all NLFormIntegrators." alt="" coords="37,95,220,136"/>
+<area shape="rect" id="node4" href="$classParameters.html" title=" " alt="" coords="79,5,178,32"/>
+</map>

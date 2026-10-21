@@ -1,27 +1,32 @@
 <map id="SlothNLFormIntegrator.hpp" name="SlothNLFormIntegrator.hpp">
-<area shape="rect" id="node1" title="Class prodiving common methods to all NLFormIntegrators." alt="" coords="1449,5,1663,32"/>
-<area shape="rect" id="node2" href="$AllenCahnNLFormIntegrator_8hpp.html" title="VF of the Allen Cahn equation." alt="" coords="1670,162,1919,189"/>
-<area shape="rect" id="node3" href="$ListIntegrators_8hpp.html" title="List of header files contained in the Integrators directory." alt="" coords="1425,244,1580,271"/>
-<area shape="rect" id="node4" href="$BlockAllenCahnNLFormIntegrator_8hpp.html" title="VF of the AllenCahn equations (splitted form)" alt="" coords="1722,80,2009,107"/>
-<area shape="rect" id="node5" href="$CahnHilliardNLFormIntegrator_8hpp.html" title="VF of the CahnHilliard equations." alt="" coords="2399,80,2665,107"/>
-<area shape="rect" id="node6" href="$DiffusionFluxNLFormIntegrator_8hpp.html" title="inter&#45;diffusion integrator" alt="" coords="2689,80,2959,107"/>
-<area shape="rect" id="node8" href="$DiffusionNLFormIntegrator_8hpp.html" title="Nonlinear form integrator for diffusion&#45;type problems." alt="" coords="2085,80,2323,107"/>
-<area shape="rect" id="node9" href="$FickNLFormIntegrator_8hpp.html" title="FV for the mass diffusion equation." alt="" coords="2246,162,2453,189"/>
-<area shape="rect" id="node10" href="$FourierNLFormIntegrator_8hpp.html" title="FV for the heat transfer equation." alt="" coords="1994,162,2222,189"/>
-<area shape="rect" id="node11" href="$HeatTimeNLFormIntegrator_8hpp.html" title="VF of the time derivative." alt="" coords="5,162,251,189"/>
-<area shape="rect" id="node12" href="$LatentHeatNLFormIntegrator_8hpp.html" title="Latent heat contribution for heat transfer equation." alt="" coords="399,80,654,107"/>
-<area shape="rect" id="node13" href="$MeltingBaseNLFormIntegrator_8hpp.html" title="Base class for melting integrators." alt="" coords="729,80,993,107"/>
-<area shape="rect" id="node14" href="$MeltingCalphadNLFormIntegrator_8hpp.html" title="NonlinearFormIntegrator for ad&#45;hoc melting term based on temperature." alt="" coords="376,162,664,189"/>
-<area shape="rect" id="node15" href="$MeltingConstantNLFormIntegrator_8hpp.html" title="NonlinearFormIntegrator for ad&#45;hoc constant melting term." alt="" coords="689,162,981,189"/>
-<area shape="rect" id="node16" href="$MeltingTemperatureNLFormIntegrator_8hpp.html" title="NonlinearFormIntegrator for ad&#45;hoc melting term based on temperature." alt="" coords="1005,155,1225,196"/>
-<area shape="rect" id="node17" href="$RobinNLFormIntegrator_8hpp.html" title="Robin integrator." alt="" coords="1119,80,1337,107"/>
-<area shape="rect" id="node19" href="$TimeCHNLFormIntegrator_8hpp.html" title="VF of the time derivative for CH equations." alt="" coords="1361,80,1596,107"/>
-<area shape="rect" id="node20" href="$TimeNLFormIntegrator_8hpp.html" title="VF of the time derivative." alt="" coords="163,80,375,107"/>
-<area shape="rect" id="node21" href="$OperatorBase_8hpp.html" title="Base class for building Steady and TimeDependent PhaseFieldOperators." alt="" coords="2983,80,3129,107"/>
-<area shape="rect" id="node7" href="$MassDiffusionFluxNLFormIntegrator_8hpp.html" title="Class dedicated to the VF of diffusion flux (gradient of chemical potential) used in mass balance equ..." alt="" coords="2597,162,2902,189"/>
-<area shape="rect" id="node18" href="$NeumannNLFormIntegrator_8hpp.html" title="Neumann integrator." alt="" coords="1299,162,1546,189"/>
-<area shape="rect" id="node22" href="$SteadyOperator_8hpp.html" title="Steady Operator." alt="" coords="2951,162,3111,189"/>
-<area shape="rect" id="node25" href="$TransientOperator_8hpp.html" title="Transient Operator." alt="" coords="3135,162,3313,189"/>
-<area shape="rect" id="node23" href="$ListOperators_8hpp.html" title=" " alt="" coords="3053,244,3200,271"/>
-<area shape="rect" id="node24" href="$sloth_8hpp.html" title="List of SLOTH header files." alt="" coords="3083,319,3170,345"/>
+<area shape="rect" id="node1" title="Class prodiving common methods to all NLFormIntegrators." alt="" coords="1814,5,2027,32"/>
+<area shape="rect" id="node2" href="$AdvectionBoundaryNLFormIntegrator_8hpp.html" title="Inflow/outflow boundary term of the conservative advection operator div(v u)" alt="" coords="1240,80,1553,107"/>
+<area shape="rect" id="node4" href="$ListIntegrators_8hpp.html" title="List of header files contained in the Integrators directory." alt="" coords="2046,244,2201,271"/>
+<area shape="rect" id="node5" href="$AdvectionNLFormIntegrator_8hpp.html" title="VF of the conservative advection term div(v u)" alt="" coords="3132,80,3379,107"/>
+<area shape="rect" id="node7" href="$AllenCahnNLFormIntegrator_8hpp.html" title="VF of the Allen Cahn equation." alt="" coords="3361,162,3611,189"/>
+<area shape="rect" id="node8" href="$BlockAllenCahnNLFormIntegrator_8hpp.html" title="VF of the AllenCahn equations (splitted form)" alt="" coords="3453,80,3740,107"/>
+<area shape="rect" id="node9" href="$CahnHilliardNLFormIntegrator_8hpp.html" title="VF of the CahnHilliard equations." alt="" coords="5,80,271,107"/>
+<area shape="rect" id="node10" href="$DiffusionFluxNLFormIntegrator_8hpp.html" title="inter&#45;diffusion integrator" alt="" coords="295,80,565,107"/>
+<area shape="rect" id="node12" href="$DiffusionNLFormIntegrator_8hpp.html" title="Nonlinear form integrator for diffusion&#45;type problems." alt="" coords="640,80,879,107"/>
+<area shape="rect" id="node13" href="$FickNLFormIntegrator_8hpp.html" title="FV for the mass diffusion equation." alt="" coords="501,162,708,189"/>
+<area shape="rect" id="node14" href="$FourierNLFormIntegrator_8hpp.html" title="FV for the heat transfer equation." alt="" coords="732,162,960,189"/>
+<area shape="rect" id="node15" href="$HeatTimeNLFormIntegrator_8hpp.html" title="VF of the time derivative." alt="" coords="985,162,1230,189"/>
+<area shape="rect" id="node16" href="$LatentHeatNLFormIntegrator_8hpp.html" title="Latent heat contribution for heat transfer equation." alt="" coords="1577,80,1832,107"/>
+<area shape="rect" id="node17" href="$MeltingBaseNLFormIntegrator_8hpp.html" title="Base class for melting integrators." alt="" coords="1958,80,2222,107"/>
+<area shape="rect" id="node18" href="$MeltingCalphadNLFormIntegrator_8hpp.html" title="NonlinearFormIntegrator for ad&#45;hoc melting term based on temperature." alt="" coords="1665,162,1953,189"/>
+<area shape="rect" id="node19" href="$MeltingConstantNLFormIntegrator_8hpp.html" title="NonlinearFormIntegrator for ad&#45;hoc constant melting term." alt="" coords="1977,162,2269,189"/>
+<area shape="rect" id="node20" href="$MeltingTemperatureNLFormIntegrator_8hpp.html" title="NonlinearFormIntegrator for ad&#45;hoc melting term based on temperature." alt="" coords="2293,155,2513,196"/>
+<area shape="rect" id="node21" href="$RobinNLFormIntegrator_8hpp.html" title="Robin integrator." alt="" coords="2297,80,2515,107"/>
+<area shape="rect" id="node23" href="$SourceTermNLFormIntegrator_8hpp.html" title="VF of a user&#45;defined source term." alt="" coords="2540,80,2800,107"/>
+<area shape="rect" id="node24" href="$TimeCHNLFormIntegrator_8hpp.html" title="VF of the time derivative for CH equations." alt="" coords="2823,80,3058,107"/>
+<area shape="rect" id="node25" href="$TimeNLFormIntegrator_8hpp.html" title="VF of the time derivative." alt="" coords="1004,80,1216,107"/>
+<area shape="rect" id="node26" href="$OperatorBase_8hpp.html" title="Base class for building Steady and TimeDependent PhaseFieldOperators." alt="" coords="3765,80,3911,107"/>
+<area shape="rect" id="node3" href="$AdvectionBoundaryCHNLFormIntegrator_8hpp.html" title="Inflow/outflow advection boundary term for the split Cahn&#45;Hilliard equations." alt="" coords="1355,155,1591,196"/>
+<area shape="rect" id="node6" href="$SplitAdvectionNLFormIntegrator_8hpp.html" title="VF of the advection term in the split Cahn&#45;Hilliard equations." alt="" coords="3010,162,3287,189"/>
+<area shape="rect" id="node11" href="$MassDiffusionFluxNLFormIntegrator_8hpp.html" title="Class dedicated to the VF of diffusion flux (gradient of chemical potential) used in mass balance equ..." alt="" coords="172,162,477,189"/>
+<area shape="rect" id="node22" href="$NeumannNLFormIntegrator_8hpp.html" title="Neumann integrator." alt="" coords="2537,162,2784,189"/>
+<area shape="rect" id="node27" href="$SteadyOperator_8hpp.html" title="Steady Operator." alt="" coords="3719,162,3879,189"/>
+<area shape="rect" id="node30" href="$TransientOperator_8hpp.html" title="Transient Operator." alt="" coords="3903,162,4082,189"/>
+<area shape="rect" id="node28" href="$ListOperators_8hpp.html" title=" " alt="" coords="3822,244,3969,271"/>
+<area shape="rect" id="node29" href="$sloth_8hpp.html" title="List of SLOTH header files." alt="" coords="3852,319,3939,345"/>
 </map>

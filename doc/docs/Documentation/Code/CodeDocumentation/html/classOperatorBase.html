@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -115,8 +115,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a57da61393153838547e98b29a97f0f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0ecac0e6917de9a36dbe56fb52131ba"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#aa0ecac0e6917de9a36dbe56fb52131ba">get_description</a> ()</td></tr>
 <tr class="separator:aa0ecac0e6917de9a36dbe56fb52131ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c5a20697e839d42d2301858f8b99795"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a5c5a20697e839d42d2301858f8b99795">get_source_term</a> (const int id_block, const std::function&lt; double(const mfem::Vector &amp;, double)&gt; &amp;src_func, mfem::Vector &amp;source_term, mfem::ParLinearForm *RHHS) const</td></tr>
-<tr class="separator:a5c5a20697e839d42d2301858f8b99795"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48021f01776f78be3dc5c5303e7dad76"><td class="memItemLeft" align="right" valign="top">const std::map&lt; std::string, std::multimap&lt; <a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a48021f01776f78be3dc5c5303e7dad76">get_time_iso_specialized</a> () const</td></tr>
 <tr class="separator:a48021f01776f78be3dc5c5303e7dad76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cfc35f92ec6ce5ac63f2a8c9592e6d1"><td class="memItemLeft" align="right" valign="top">const std::multimap&lt; <a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a7cfc35f92ec6ce5ac63f2a8c9592e6d1">get_time_specialized</a> () const</td></tr>
@@ -127,10 +125,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a90a7252811544f72984c1931eb02f64e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b974ec3fb7865895a4e24cc33d1ae08"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a8b974ec3fb7865895a4e24cc33d1ae08">OperatorBase</a> (const std::vector&lt; std::string &gt; &amp;integrators, std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt; spatials, const <a class="el" href="classParameters.html">Parameters</a> &amp;params)</td></tr>
 <tr class="separator:a8b974ec3fb7865895a4e24cc33d1ae08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfc8bb102ac9214d934f6fec3ea51d63"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#adfc8bb102ac9214d934f6fec3ea51d63">OperatorBase</a> (const std::vector&lt; std::string &gt; &amp;integrators, std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt; spatials, const <a class="el" href="classParameters.html">Parameters</a> &amp;params, const std::vector&lt; <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt;&gt; &amp;source_term_name)</td></tr>
-<tr class="separator:adfc8bb102ac9214d934f6fec3ea51d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab14e4838819a32993d9babb9d7707d74"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ab14e4838819a32993d9babb9d7707d74">OperatorBase</a> (const std::vector&lt; std::string &gt; &amp;integrators, std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt; spatials, const std::vector&lt; <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt;&gt; &amp;source_term_name)</td></tr>
-<tr class="separator:ab14e4838819a32993d9babb9d7707d74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb5d83adf63a0ed63f518d5ae0830f7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#aeb5d83adf63a0ed63f518d5ae0830f7a">overload_nl_solver</a> (<a class="el" href="SolversOptions_8hpp.html#a765a4007c12a84454a77f1a29ad04b4a">NLSolverType</a> NLSOLVER)</td></tr>
 <tr class="separator:aeb5d83adf63a0ed63f518d5ae0830f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab58055482c046a548e06a41a72b0236c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ab58055482c046a548e06a41a72b0236c">overload_nl_solver</a> (<a class="el" href="SolversOptions_8hpp.html#a765a4007c12a84454a77f1a29ad04b4a">NLSolverType</a> NLSOLVER, const <a class="el" href="classParameters.html">Parameters</a> &amp;nl_params)</td></tr>
@@ -157,6 +151,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a388dac99562a653686d9ea601815b35e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24dfec9f30ad357293d6a7e3c1d65184"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a24dfec9f30ad357293d6a7e3c1d65184">solve</a> (std::vector&lt; std::unique_ptr&lt; mfem::Vector &gt;&gt; &amp;vect_unk, double &amp;next_time, const double &amp;current_time, double current_time_step, const int iter)=0</td></tr>
 <tr class="separator:a24dfec9f30ad357293d6a7e3c1d65184"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63181be737e7d04d78da6d40e8ee4183"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a63181be737e7d04d78da6d40e8ee4183">UpdateAfterMeshChange</a> ()</td></tr>
+<tr class="separator:a63181be737e7d04d78da6d40e8ee4183"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70016b4c81b71e8408da86756df944d1"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a70016b4c81b71e8408da86756df944d1">~OperatorBase</a> ()=default</td></tr>
 <tr class="separator:a70016b4c81b71e8408da86756df944d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -172,6 +168,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a3d0415a3bcd9bc692ef82bbf4d2f7b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3d2e9b7e28be1195e87d4a567707edb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#af3d2e9b7e28be1195e87d4a567707edb">get_rhs_integrator</a> (const double dt, const std::string integrator, const std::vector&lt; mfem::ParGridFunction &gt; &amp;vun, const std::vector&lt; mfem::ParGridFunction &gt; &amp;vauxn, const <a class="el" href="classParameters.html">Parameters</a> &amp;all_params)</td></tr>
 <tr class="separator:af3d2e9b7e28be1195e87d4a567707edb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fad9a09499fb5c4aec0ab25f41ca515"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a7fad9a09499fb5c4aec0ab25f41ca515">mesh_has_changed</a> () const</td></tr>
+<tr class="separator:a7fad9a09499fb5c4aec0ab25f41ca515"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa02640e175dcab45ffae198e944bd4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#afa02640e175dcab45ffae198e944bd4e">record_fes_sequence</a> ()</td></tr>
+<tr class="separator:afa02640e175dcab45ffae198e944bd4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40af76d9b521a9a7e82779e2d24db958"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a40af76d9b521a9a7e82779e2d24db958">SetNewtonAlgorithm</a> (mfem::Operator *oper)</td></tr>
 <tr class="separator:a40af76d9b521a9a7e82779e2d24db958"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -198,6 +198,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a2dcc73c1c4b0c61a88dca73f762daf46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaae764fd7084462712dcedd00538acab"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#aaae764fd7084462712dcedd00538acab">description_</a> {&quot;UNKNOWN OPERATOR&quot;}</td></tr>
 <tr class="separator:aaae764fd7084462712dcedd00538acab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ab1af72ce20c873641252f7fa1a60a8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a0ab1af72ce20c873641252f7fa1a60a8">enable_amr_</a> {true}</td></tr>
+<tr class="separator:a0ab1af72ce20c873641252f7fa1a60a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04b4998ce31bd733bc3dfd174630bd2e"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classCoefficient.html">Coefficient</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a04b4998ce31bd733bc3dfd174630bd2e">energy_coefficient_</a></td></tr>
 <tr class="separator:a04b4998ce31bd733bc3dfd174630bd2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf3bcd0d2da25e5d17f838571a3911ae"><td class="memItemLeft" align="right" valign="top">std::vector&lt; mfem::Array&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#abf3bcd0d2da25e5d17f838571a3911ae">ess_tdof_list_</a></td></tr>
@@ -205,6 +207,9 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:ac1616446fe2fbf2c3e4df6cf0059c672"><td class="memItemLeft" align="right" valign="top">mfem::Array&lt; mfem::ParFiniteElementSpace * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ac1616446fe2fbf2c3e4df6cf0059c672">fes_</a></td></tr>
 <tr class="memdesc:ac1616446fe2fbf2c3e4df6cf0059c672"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finite Element Space and BCs.  <a href="classOperatorBase.html#ac1616446fe2fbf2c3e4df6cf0059c672">More...</a><br /></td></tr>
 <tr class="separator:ac1616446fe2fbf2c3e4df6cf0059c672"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0d9177eddb2799b29303a5b587e1c4a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; long &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#aa0d9177eddb2799b29303a5b587e1c4a">fes_sequence_</a></td></tr>
+<tr class="memdesc:aa0d9177eddb2799b29303a5b587e1c4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mesh change detection (AMR): FE space sequence numbers at last synchronization.  <a href="classOperatorBase.html#aa0d9177eddb2799b29303a5b587e1c4a">More...</a><br /></td></tr>
+<tr class="separator:aa0d9177eddb2799b29303a5b587e1c4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35a8795b1b7330c6ab1a88442b8f0211"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ProblemsOptions_8hpp.html#a5047b3c22ba65d974596c2729dcf1409">Geometry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a35a8795b1b7330c6ab1a88442b8f0211">geometry_</a> = <a class="el" href="ProblemsOptions_8hpp.html#a5047b3c22ba65d974596c2729dcf1409ac62cd6a7dfc8d04ae078b2b3d6293b9c">Geometry::Cartesian</a></td></tr>
 <tr class="separator:a35a8795b1b7330c6ab1a88442b8f0211"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a373040051c3fdf52ead07edc6b3d4079"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classCoefficient.html">Coefficient</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a373040051c3fdf52ead07edc6b3d4079">grad_energy_coefficient_</a></td></tr>
@@ -215,8 +220,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:ad5c9f5f88e5105b4756147ffb94fa898"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9f23d78c4887a7b8096d916bc1c937c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classParameters.html">Parameters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ac9f23d78c4887a7b8096d916bc1c937c">nl_solver_params_</a></td></tr>
 <tr class="separator:ac9f23d78c4887a7b8096d916bc1c937c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9304e7a5d72d0b0886457094b4d4df7c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classParameters.html">Parameters</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a9304e7a5d72d0b0886457094b4d4df7c">params_</a></td></tr>
-<tr class="separator:a9304e7a5d72d0b0886457094b4d4df7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f64e1a54f1775432f406385966562a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classParameters.html">Parameters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a5f64e1a54f1775432f406385966562a9">params_</a></td></tr>
+<tr class="separator:a5f64e1a54f1775432f406385966562a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fe5c3dda18a79b22e39b32300555a41"><td class="memItemLeft" align="right" valign="top">mfem::ParBlockNonlinearForm *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a6fe5c3dda18a79b22e39b32300555a41">RHS</a></td></tr>
 <tr class="memdesc:a6fe5c3dda18a79b22e39b32300555a41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Right-Hand-Side.  <a href="classOperatorBase.html#a6fe5c3dda18a79b22e39b32300555a41">More...</a><br /></td></tr>
 <tr class="separator:a6fe5c3dda18a79b22e39b32300555a41"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -224,8 +229,6 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a4db66d54873c6aeffb83677acdf8473f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad47902d896f6e1122a2ea3ead37b7f6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classNLSolver.html">NLSolver</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#ad47902d896f6e1122a2ea3ead37b7f6e">rhs_solver_</a></td></tr>
 <tr class="separator:ad47902d896f6e1122a2ea3ead37b7f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97a41de0f26f20ed856841877bb79dab"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::function&lt; double(const mfem::Vector &amp;, double)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a97a41de0f26f20ed856841877bb79dab">src_func_</a></td></tr>
-<tr class="separator:a97a41de0f26f20ed856841877bb79dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1748183af3da8d66eafce75028599f29"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::multimap&lt; <a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a1748183af3da8d66eafce75028599f29">time_iso_specialized_</a></td></tr>
 <tr class="separator:a1748183af3da8d66eafce75028599f29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23c10fec01b5c02ddfdc78da5128c83e"><td class="memItemLeft" align="right" valign="top">std::multimap&lt; <a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOperatorBase.html#a23c10fec01b5c02ddfdc78da5128c83e">time_specialized_</a></td></tr>
@@ -250,7 +253,7 @@ class OperatorBase&lt; T, DIM &gt;</h3>
 <p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00060">60</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a90a7252811544f72984c1931eb02f64e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90a7252811544f72984c1931eb02f64e">&#9670;&nbsp;</a></span>OperatorBase() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a90a7252811544f72984c1931eb02f64e">&#9670;&nbsp;</a></span>OperatorBase() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -279,44 +282,8 @@ template&lt;class T , int DIM&gt; </div>
 
 </div>
 </div>
-<a id="ab14e4838819a32993d9babb9d7707d74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab14e4838819a32993d9babb9d7707d74">&#9670;&nbsp;</a></span>OperatorBase() <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T , int DIM&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::<a class="el" href="classOperatorBase.html">OperatorBase</a> </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
-          <td class="paramname"><em>integrators</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt;&#160;</td>
-          <td class="paramname"><em>spatials</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt;&gt; &amp;&#160;</td>
-          <td class="paramname"><em>source_term_name</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a8b974ec3fb7865895a4e24cc33d1ae08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b974ec3fb7865895a4e24cc33d1ae08">&#9670;&nbsp;</a></span>OperatorBase() <span class="overload">[3/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b974ec3fb7865895a4e24cc33d1ae08">&#9670;&nbsp;</a></span>OperatorBase() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -340,48 +307,6 @@ template&lt;class T , int DIM&gt; </div>
           <td></td>
           <td class="paramtype">const <a class="el" href="classParameters.html">Parameters</a> &amp;&#160;</td>
           <td class="paramname"><em>params</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="adfc8bb102ac9214d934f6fec3ea51d63"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfc8bb102ac9214d934f6fec3ea51d63">&#9670;&nbsp;</a></span>OperatorBase() <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T , int DIM&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::<a class="el" href="classOperatorBase.html">OperatorBase</a> </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
-          <td class="paramname"><em>integrators</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; * &gt;&#160;</td>
-          <td class="paramname"><em>spatials</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classParameters.html">Parameters</a> &amp;&#160;</td>
-          <td class="paramname"><em>params</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="classAnalyticalFunctions.html">AnalyticalFunctions</a>&lt; DIM &gt;&gt; &amp;&#160;</td>
-          <td class="paramname"><em>source_term_name</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -874,9 +799,9 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00139">139</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00136">136</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="OperatorBase_8hpp_source.html#l00102">OperatorBase&lt; T, DIM &gt;::current_dt_</a>.</p>
+<p class="reference">References <a class="el" href="OperatorBase_8hpp_source.html#l00101">OperatorBase&lt; T, DIM &gt;::current_dt_</a>.</p>
 
 </div>
 </div>
@@ -905,9 +830,9 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00165">165</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00159">159</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="OperatorBase_8hpp_source.html#l00078">OperatorBase&lt; T, DIM &gt;::description_</a>.</p>
+<p class="reference">References <a class="el" href="OperatorBase_8hpp_source.html#l00079">OperatorBase&lt; T, DIM &gt;::description_</a>.</p>
 
 </div>
 </div>
@@ -963,48 +888,6 @@ template&lt;class T , int DIM&gt; </div>
 <span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5c5a20697e839d42d2301858f8b99795"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c5a20697e839d42d2301858f8b99795">&#9670;&nbsp;</a></span>get_source_term()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T , int DIM&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::get_source_term </td>
-          <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>id_block</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::function&lt; double(const mfem::Vector &amp;, double)&gt; &amp;&#160;</td>
-          <td class="paramname"><em>src_func</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">mfem::Vector &amp;&#160;</td>
-          <td class="paramname"><em>source_term</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">mfem::ParLinearForm *&#160;</td>
-          <td class="paramname"><em>RHHS</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
 </div><div class="memdoc">
 
 </div>
@@ -1096,6 +979,33 @@ template&lt;class T , int DIM&gt; </div>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="classTransientOperator.html#a7902b17123b3681f63aaba51336dcc5b">TransientOperator&lt; T, DIM &gt;</a>, and <a class="el" href="classSteadyOperator.html#a8734dcb1cbb96ab3e5bb71df3c6a7f30">SteadyOperator&lt; T, DIM &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a7fad9a09499fb5c4aec0ab25f41ca515"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fad9a09499fb5c4aec0ab25f41ca515">&#9670;&nbsp;</a></span>mesh_has_changed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::mesh_has_changed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -1245,6 +1155,33 @@ template&lt;class T , int DIM&gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afa02640e175dcab45ffae198e944bd4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa02640e175dcab45ffae198e944bd4e">&#9670;&nbsp;</a></span>record_fes_sequence()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::record_fes_sequence </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -1529,6 +1466,25 @@ template&lt;class T , int DIM&gt; </div>
 
 </div>
 </div>
+<a id="a63181be737e7d04d78da6d40e8ee4183"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63181be737e7d04d78da6d40e8ee4183">&#9670;&nbsp;</a></span>UpdateAfterMeshChange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::UpdateAfterMeshChange </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a26da719e47eb3b9d7353d02cc2f3ac19"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a26da719e47eb3b9d7353d02cc2f3ac19">&#9670;&nbsp;</a></span>array_bdr_</h2>
@@ -1552,7 +1508,7 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00098">98</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00099">99</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -1578,7 +1534,7 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00077">77</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00078">78</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -1606,7 +1562,7 @@ template&lt;class T , int DIM&gt; </div>
 
 <p><a class="el" href="classBoundary.html" title="Class for defining a boundary with a name, an index, a type and, if needed, a value.">Boundary</a> conditions. </p>
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00097">97</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00098">98</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -1632,7 +1588,7 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00088">88</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00089">89</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -1658,7 +1614,7 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00076">76</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00077">77</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -1684,9 +1640,9 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00102">102</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00101">101</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="OperatorBase_8hpp_source.html#l00139">OperatorBase&lt; T, DIM &gt;::get_current_time_step()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="OperatorBase_8hpp_source.html#l00136">OperatorBase&lt; T, DIM &gt;::get_current_time_step()</a>.</p>
 
 </div>
 </div>
@@ -1712,7 +1668,7 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00103">103</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00102">102</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -1738,7 +1694,7 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00079">79</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00080">80</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -1764,7 +1720,7 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00080">80</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00081">81</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -1790,9 +1746,35 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00078">78</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00079">79</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="OperatorBase_8hpp_source.html#l00165">OperatorBase&lt; T, DIM &gt;::get_description()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="OperatorBase_8hpp_source.html#l00159">OperatorBase&lt; T, DIM &gt;::get_description()</a>.</p>
+
+</div>
+</div>
+<a id="a0ab1af72ce20c873641252f7fa1a60a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ab1af72ce20c873641252f7fa1a60a8">&#9670;&nbsp;</a></span>enable_amr_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::enable_amr_ {true}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00072">72</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -1818,7 +1800,7 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00074">74</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00075">75</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -1844,7 +1826,7 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00087">87</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00088">88</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -1872,7 +1854,35 @@ template&lt;class T , int DIM&gt; </div>
 
 <p>Finite Element Space and BCs. </p>
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00086">86</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00087">87</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa0d9177eddb2799b29303a5b587e1c4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0d9177eddb2799b29303a5b587e1c4a">&#9670;&nbsp;</a></span>fes_sequence_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;long&gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::fes_sequence_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mesh change detection (AMR): FE space sequence numbers at last synchronization. </p>
+
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00109">109</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -1898,7 +1908,7 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00072">72</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00073">73</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -1924,7 +1934,7 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00075">75</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00076">76</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -1950,7 +1960,7 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00104">104</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00103">103</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -1976,7 +1986,7 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00094">94</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00095">95</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -2002,12 +2012,12 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00073">73</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00074">74</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a9304e7a5d72d0b0886457094b4d4df7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9304e7a5d72d0b0886457094b4d4df7c">&#9670;&nbsp;</a></span>params_</h2>
+<a id="a5f64e1a54f1775432f406385966562a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f64e1a54f1775432f406385966562a9">&#9670;&nbsp;</a></span>params_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2018,7 +2028,7 @@ template&lt;class T , int DIM&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classParameters.html">Parameters</a>&amp; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::params_</td>
+          <td class="memname"><a class="el" href="classParameters.html">Parameters</a> <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::params_</td>
         </tr>
       </table>
   </td>
@@ -2028,7 +2038,7 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00081">81</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00082">82</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -2056,7 +2066,7 @@ template&lt;class T , int DIM&gt; </div>
 
 <p>Right-Hand-Side. </p>
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00091">91</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00092">92</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -2082,7 +2092,7 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00107">107</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00106">106</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -2108,33 +2118,7 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00093">93</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a97a41de0f26f20ed856841877bb79dab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97a41de0f26f20ed856841877bb79dab">&#9670;&nbsp;</a></span>src_func_</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T , int DIM&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;std::function&lt;double(const mfem::Vector&amp;, double)&gt; &gt; <a class="el" href="classOperatorBase.html">OperatorBase</a>&lt; T, DIM &gt;::src_func_</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00100">100</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00094">94</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -2160,7 +2144,7 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00084">84</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00085">85</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -2188,7 +2172,7 @@ template&lt;class T , int DIM&gt; </div>
 
 <p>Time integral results. </p>
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00083">83</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00084">84</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -2214,7 +2198,7 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00105">105</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="OperatorBase_8hpp_source.html#l00104">104</a> of file <a class="el" href="OperatorBase_8hpp_source.html">OperatorBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -2224,7 +2208,7 @@ template&lt;class T , int DIM&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:03 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

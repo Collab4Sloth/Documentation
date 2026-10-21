@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -88,8 +88,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a392691b59c192225a5a1a92e3279f5f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dfb9365cb6ce2c8ceb6802d174b3f82"><td class="memItemLeft" align="right" valign="top">mfem::Array&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBoundaryConditions.html#a2dfb9365cb6ce2c8ceb6802d174b3f82">GetEssentialDofs</a> ()</td></tr>
 <tr class="separator:a2dfb9365cb6ce2c8ceb6802d174b3f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23f5cf33a22290a61bb2dcba457f086d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBoundaryConditions.html#a23f5cf33a22290a61bb2dcba457f086d">SetBoundaryConditions</a> (mfem::Vector &amp;u)</td></tr>
-<tr class="separator:a23f5cf33a22290a61bb2dcba457f086d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca9ce8d545f1c8a78e4e8774cb001023"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBoundaryConditions.html#aca9ce8d545f1c8a78e4e8774cb001023">SetDirichletBoundaryConditions</a> (mfem::Vector &amp;u, <a class="el" href="classCoefficients.html">Coefficients</a> &amp;coefficients, std::vector&lt; mfem::Vector &gt; auxvars_unk)</td></tr>
+<tr class="separator:aca9ce8d545f1c8a78e4e8774cb001023"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50d3971dff965883752e17c05b468756"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBoundaryConditions.html#a50d3971dff965883752e17c05b468756">~BoundaryConditions</a> ()</td></tr>
 <tr class="separator:a50d3971dff965883752e17c05b468756"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -99,7 +99,7 @@ class BoundaryConditions&lt; T, DIM &gt;</h3>
 
 <p>Class used to manage boundary conditions. </p>
 
-<p class="definition">Definition at line <a class="el" href="BoundaryConditions_8hpp_source.html#l00046">46</a> of file <a class="el" href="BoundaryConditions_8hpp_source.html">BoundaryConditions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="BoundaryConditions_8hpp_source.html#l00047">47</a> of file <a class="el" href="BoundaryConditions_8hpp_source.html">BoundaryConditions.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aac17dc96feda7fc3c08c0f0308493693"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aac17dc96feda7fc3c08c0f0308493693">&#9670;&nbsp;</a></span>BoundaryConditions()</h2>
@@ -192,8 +192,8 @@ template&lt;class T , int DIM&gt; </div>
 
 </div>
 </div>
-<a id="a23f5cf33a22290a61bb2dcba457f086d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23f5cf33a22290a61bb2dcba457f086d">&#9670;&nbsp;</a></span>SetBoundaryConditions()</h2>
+<a id="aca9ce8d545f1c8a78e4e8774cb001023"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca9ce8d545f1c8a78e4e8774cb001023">&#9670;&nbsp;</a></span>SetDirichletBoundaryConditions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -201,11 +201,27 @@ template&lt;class T , int DIM&gt; </div>
 template&lt;class T , int DIM&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt;::SetBoundaryConditions </td>
+          <td class="memname">void <a class="el" href="classBoundaryConditions.html">BoundaryConditions</a>&lt; T, DIM &gt;::SetDirichletBoundaryConditions </td>
           <td>(</td>
           <td class="paramtype">mfem::Vector &amp;&#160;</td>
-          <td class="paramname"><em>u</em></td><td>)</td>
+          <td class="paramname"><em>u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="classCoefficients.html">Coefficients</a> &amp;&#160;</td>
+          <td class="paramname"><em>coefficients</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; mfem::Vector &gt;&#160;</td>
+          <td class="paramname"><em>auxvars_unk</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -218,7 +234,7 @@ template&lt;class T , int DIM&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:03 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

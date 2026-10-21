@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -98,6 +98,12 @@ Public Types</h2></td></tr>
 &#160;&#160;<a class="el" href="structIntegrators.html#a2b9da6dcbb0d390cf08308d150f795f3a271d4192027f01803e30a5d894fe9736">LatentHeat</a>
 , <a class="el" href="structIntegrators.html#a2b9da6dcbb0d390cf08308d150f795f3a202325a7cd6ed5d2f6d43520546a1780">Neumann</a>
 , <a class="el" href="structIntegrators.html#a2b9da6dcbb0d390cf08308d150f795f3aabf512654d6d814443164d84aa080040">Robin</a>
+, <a class="el" href="structIntegrators.html#a2b9da6dcbb0d390cf08308d150f795f3a0e69b5e38651107cd81ff05ca0a74d7c">SourceTerm</a>
+, <br />
+&#160;&#160;<a class="el" href="structIntegrators.html#a2b9da6dcbb0d390cf08308d150f795f3a5be9dcf7b5fe955f860a3128f48ff8d6">Advection</a>
+, <a class="el" href="structIntegrators.html#a2b9da6dcbb0d390cf08308d150f795f3acd0afeb69d9734980d4c9773c94cef8d">SplitAdvection</a>
+, <a class="el" href="structIntegrators.html#a2b9da6dcbb0d390cf08308d150f795f3a53c8e73f3b545965fadd4dd7fe528b1a">AdvectionBoundary</a>
+, <a class="el" href="structIntegrators.html#a2b9da6dcbb0d390cf08308d150f795f3a1210656b5a827c8c1884a2278b2042d1">AdvectionBoundaryCH</a>
 <br />
  }</td></tr>
 <tr class="separator:a2b9da6dcbb0d390cf08308d150f795f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,6 +144,11 @@ Static Public Member Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a2b9da6dcbb0d390cf08308d150f795f3a271d4192027f01803e30a5d894fe9736"></a>LatentHeat&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a2b9da6dcbb0d390cf08308d150f795f3a202325a7cd6ed5d2f6d43520546a1780"></a>Neumann&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a2b9da6dcbb0d390cf08308d150f795f3aabf512654d6d814443164d84aa080040"></a>Robin&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2b9da6dcbb0d390cf08308d150f795f3a0e69b5e38651107cd81ff05ca0a74d7c"></a>SourceTerm&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2b9da6dcbb0d390cf08308d150f795f3a5be9dcf7b5fe955f860a3128f48ff8d6"></a>Advection&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2b9da6dcbb0d390cf08308d150f795f3acd0afeb69d9734980d4c9773c94cef8d"></a>SplitAdvection&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2b9da6dcbb0d390cf08308d150f795f3a53c8e73f3b545965fadd4dd7fe528b1a"></a>AdvectionBoundary&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2b9da6dcbb0d390cf08308d150f795f3a1210656b5a827c8c1884a2278b2042d1"></a>AdvectionBoundaryCH&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="IntegratorsOptions_8hpp_source.html#l00037">37</a> of file <a class="el" href="IntegratorsOptions_8hpp_source.html">IntegratorsOptions.hpp</a>.</p>
@@ -171,7 +182,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="IntegratorsOptions_8cpp_source.html#l00036">36</a> of file <a class="el" href="IntegratorsOptions_8cpp_source.html">IntegratorsOptions.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="IntegratorsOptions_8hpp_source.html#l00041">AllenCahn</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00040">CahnHilliard</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00038">Fick</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00039">Fourier</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00043">HeatTimeDerivative</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00050">LatentHeat</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00049">MassFlux</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00047">MeltingCalphad</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00048">MeltingConstant</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00046">MeltingTemperature</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00051">Neumann</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00052">Robin</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00045">SplitAllenCahn</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00044">SplitTimeDerivative</a>, and <a class="el" href="IntegratorsOptions_8hpp_source.html#l00042">TimeDerivative</a>.</p>
+<p class="reference">References <a class="el" href="IntegratorsOptions_8hpp_source.html#l00054">Advection</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00056">AdvectionBoundary</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00057">AdvectionBoundaryCH</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00041">AllenCahn</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00040">CahnHilliard</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00038">Fick</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00039">Fourier</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00043">HeatTimeDerivative</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00050">LatentHeat</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00049">MassFlux</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00047">MeltingCalphad</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00048">MeltingConstant</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00046">MeltingTemperature</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00051">Neumann</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00052">Robin</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00053">SourceTerm</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00055">SplitAdvection</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00045">SplitAllenCahn</a>, <a class="el" href="IntegratorsOptions_8hpp_source.html#l00044">SplitTimeDerivative</a>, and <a class="el" href="IntegratorsOptions_8hpp_source.html#l00042">TimeDerivative</a>.</p>
 
 </div>
 </div>
@@ -182,7 +193,7 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:03 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

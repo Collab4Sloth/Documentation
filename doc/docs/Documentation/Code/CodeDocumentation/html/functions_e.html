@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -75,15 +75,33 @@ $(function() {
 <li>elem_mole_fraction_by_phase_
 : <a class="el" href="classCalphadBase.html#a0966a137a20b8cbf43a7f357de844020">CalphadBase&lt; T &gt;</a>
 </li>
+<li>element_gradient()
+: <a class="el" href="classSlothNLFormIntegrator.html#a5cb0f2156389213fd16746d52e264a54">SlothNLFormIntegrator&lt; VARS &gt;</a>
+</li>
 <li>element_removed_from_ic_
 : <a class="el" href="classCalphadBase.html#ab3fbaf3fbe7509fc67cde1a23a4ba5a4">CalphadBase&lt; T &gt;</a>
 , <a class="el" href="classKKS.html#afd844e42d718bc3fef379cc72f61c2d9">KKS&lt; T &gt;</a>
+</li>
+<li>enable_amr_
+: <a class="el" href="classOperatorBase.html#a0ab1af72ce20c873641252f7fa1a60a8">OperatorBase&lt; T, DIM &gt;</a>
+</li>
+<li>enable_nc_mesh_
+: <a class="el" href="classSpatialDiscretization.html#afa8d8d5c181895831674fdb1bbea83aa">SpatialDiscretization&lt; T, DIM &gt;</a>
+</li>
+<li>enable_time_specialized_
+: <a class="el" href="classProblemBase.html#ab88e5d9e3ac4c642ac2e85f1aa3e5ec3">ProblemBase&lt; VAR, PST &gt;</a>
 </li>
 <li>energies_of_phases_
 : <a class="el" href="classCalphadBase.html#a465074d012f80b51f7421062910c57d4">CalphadBase&lt; T &gt;</a>
 </li>
 <li>energy_coefficient_
 : <a class="el" href="classOperatorBase.html#a04b4998ce31bd733bc3dfd174630bd2e">OperatorBase&lt; T, DIM &gt;</a>
+</li>
+<li>EnsureCriteriaSet()
+: <a class="el" href="classAMRBase.html#aff074c329a64a620ed982f280bf8eac8">AMRBase&lt; VAR &gt;</a>
+</li>
+<li>EnsureNCMeshIfNeeded()
+: <a class="el" href="classAMRBase.html#ac8bc76caef80cfa6b9c71240672d2a1f">AMRBase&lt; VAR &gt;</a>
 </li>
 <li>error
 : <a class="el" href="structcalphad__outputs.html#a3b9ee0f8fee1d86f37ad937912c864fea392ec81639cd179ecd33517aa22e4110">calphad_outputs</a>
@@ -104,15 +122,31 @@ $(function() {
 <li>Eval()
 : <a class="el" href="classAxiCylindricalCoefficient.html#a61c1ad95b8e81ab86526df04b7ae4276">AxiCylindricalCoefficient</a>
 , <a class="el" href="classMfemCoefficient.html#a0695e279d0091182416dd999ee5e6db8">MfemCoefficient</a>
+, <a class="el" href="classMfemFileCoefficient.html#a1706118da82a52255fc44c3378f58fbe">MfemFileCoefficient</a>
+</li>
+<li>eval()
+: <a class="el" href="classVelocityField.html#afe89f44aff923c9166d9c1967864b63e">VelocityField</a>
+</li>
+<li>eval_coefficient()
+: <a class="el" href="classSlothNLFormIntegrator.html#a7b5c493544140c827a8a85deaf89e904">SlothNLFormIntegrator&lt; VARS &gt;</a>
 </li>
 <li>eval_f()
-: <a class="el" href="classFunctionCoefficient.html#a912b0ea030e2829299d84c26077c8c50">FunctionCoefficient</a>
+: <a class="el" href="classFunctionCoefficient.html#a29c08f734bf288b5e068c26c0fa01968">FunctionCoefficient</a>
 </li>
 <li>eval_gradient()
 : <a class="el" href="classFunctionCoefficient.html#a77e2c2be8d574b80bef17a0546749a7c">FunctionCoefficient</a>
 </li>
+<li>eval_gradient_coefficient()
+: <a class="el" href="classSlothNLFormIntegrator.html#a954e57b6df52ab6bd4e190c983b05bf8">SlothNLFormIntegrator&lt; VARS &gt;</a>
+</li>
+<li>eval_gradient_energy_coefficient()
+: <a class="el" href="classSlothNLFormIntegrator.html#a45333ae451e50e31811d3c107c2e60be">SlothNLFormIntegrator&lt; VARS &gt;</a>
+</li>
 <li>eval_hessian()
 : <a class="el" href="classFunctionCoefficient.html#a93de1944b1ed994f7bc58d7849199c68">FunctionCoefficient</a>
+</li>
+<li>eval_hessian_coefficient()
+: <a class="el" href="classSlothNLFormIntegrator.html#a81880db2bbed1d2930072c9e9c2cfa5a">SlothNLFormIntegrator&lt; VARS &gt;</a>
 </li>
 <li>execute()
 : <a class="el" href="classAnalyticalIdealSolution.html#a27020c57a0f7e0f859f7c78a303defc8">AnalyticalIdealSolution&lt; T &gt;</a>
@@ -134,7 +168,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:17 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:03 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

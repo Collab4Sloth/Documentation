@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -85,7 +85,7 @@ $(function() {
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classFunctionCoefficient__inherit__graph.svg" width="368" height="443"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classFunctionCoefficient__inherit__graph.svg" width="368" height="494"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -121,9 +121,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af2e0ca5907426edd5d25b374bf1c9b17"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunctionCoefficient.html#af2e0ca5907426edd5d25b374bf1c9b17">FunctionCoefficient</a> ()</td></tr>
 <tr class="memdesc:af2e0ca5907426edd5d25b374bf1c9b17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classFunctionCoefficient.html#af2e0ca5907426edd5d25b374bf1c9b17" title="Construct a new FunctionCoefficient::FunctionCoefficient object.">FunctionCoefficient::FunctionCoefficient</a> object.  <a href="classFunctionCoefficient.html#af2e0ca5907426edd5d25b374bf1c9b17">More...</a><br /></td></tr>
 <tr class="separator:af2e0ca5907426edd5d25b374bf1c9b17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af43aaa9e59d06213558757be3ff18c6e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunctionCoefficient.html#af43aaa9e59d06213558757be3ff18c6e">get_time</a> () const</td></tr>
+<tr class="memdesc:af43aaa9e59d06213558757be3ff18c6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the time associated with the coefficient.  <a href="classFunctionCoefficient.html#af43aaa9e59d06213558757be3ff18c6e">More...</a><br /></td></tr>
+<tr class="separator:af43aaa9e59d06213558757be3ff18c6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5e33a8f9680bbc1e690b907f87a5079"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunctionCoefficient.html#ae5e33a8f9680bbc1e690b907f87a5079">set_coordinates</a> (std::span&lt; const double &gt; x)</td></tr>
+<tr class="memdesc:ae5e33a8f9680bbc1e690b907f87a5079"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the physical coordinates of the point where the coefficient is evaluated.  <a href="classFunctionCoefficient.html#ae5e33a8f9680bbc1e690b907f87a5079">More...</a><br /></td></tr>
+<tr class="separator:ae5e33a8f9680bbc1e690b907f87a5079"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6af464880b5c26e61b32b80ddbd8071"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunctionCoefficient.html#ab6af464880b5c26e61b32b80ddbd8071">set_time</a> (double time)</td></tr>
 <tr class="memdesc:ab6af464880b5c26e61b32b80ddbd8071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the time associated with the coefficient.  <a href="classFunctionCoefficient.html#ab6af464880b5c26e61b32b80ddbd8071">More...</a><br /></td></tr>
 <tr class="separator:ab6af464880b5c26e61b32b80ddbd8071"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05e49a77a3c42a7875c4c33779154321"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunctionCoefficient.html#a05e49a77a3c42a7875c4c33779154321">uses_coordinates</a> () const</td></tr>
+<tr class="memdesc:a05e49a77a3c42a7875c4c33779154321"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the expression depends on the spatial coordinates ("coordinates" in the JSON file)  <a href="classFunctionCoefficient.html#a05e49a77a3c42a7875c4c33779154321">More...</a><br /></td></tr>
+<tr class="separator:a05e49a77a3c42a7875c4c33779154321"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf3dabb37244442a7193a036c2ee0010"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunctionCoefficient.html#adf3dabb37244442a7193a036c2ee0010">~FunctionCoefficient</a> ()=default</td></tr>
 <tr class="separator:adf3dabb37244442a7193a036c2ee0010"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -138,6 +147,9 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr class="memitem:a9109b2fef9b83a3688cf916f9ba1c56d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunctionCoefficient.html#a9109b2fef9b83a3688cf916f9ba1c56d">coordinates_</a></td></tr>
+<tr class="memdesc:a9109b2fef9b83a3688cf916f9ba1c56d"><td class="mdescLeft">&#160;</td><td class="mdescRight">physical point of the current evaluation (if used)  <a href="classFunctionCoefficient.html#a9109b2fef9b83a3688cf916f9ba1c56d">More...</a><br /></td></tr>
+<tr class="separator:a9109b2fef9b83a3688cf916f9ba1c56d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a712d838bf5aab6ac6582a824107837d6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunctionCoefficient.html#a712d838bf5aab6ac6582a824107837d6">time_</a></td></tr>
 <tr class="separator:a712d838bf5aab6ac6582a824107837d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -804,7 +816,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classSumCoefficient.html#a3c76f614a73291a7f6ada1ebd9fdcedd">SumCoefficient</a>, <a class="el" href="classProductCoefficient.html#a575b982fe1d52faee392d51f5bb2cc43">ProductCoefficient</a>, <a class="el" href="classExprTkCoefficient.html#ab9e0e1e1c6994559a6e8b08393091e41">ExprTkCoefficient</a>, <a class="el" href="classConstantCoefficient.html#ab417b258ebc82c14efd50c971c7fe759">ConstantCoefficient</a>, <a class="el" href="classGradientEnergy.html#a70fd3bf2b1ab9f67c81b5ecfa3e7d9c8">GradientEnergy</a>, <a class="el" href="classLog.html#a329089bbeb1f371728586419b23a880d">Log</a>, <a class="el" href="classH.html#aab5ca08f3fd76b725b19495d87189968">H</a>, <a class="el" href="classFw.html#ab9f4b246f84dfc5f4e948f788a8b767e">Fw</a>, and <a class="el" href="classW.html#a7f5875687c8118b447345e397f659f89">W</a>.</p>
+<p>Implemented in <a class="el" href="classSumCoefficient.html#a3c76f614a73291a7f6ada1ebd9fdcedd">SumCoefficient</a>, <a class="el" href="classProductCoefficient.html#a575b982fe1d52faee392d51f5bb2cc43">ProductCoefficient</a>, <a class="el" href="classFileCoefficient.html#aca650de0601ba6461526f8a24cfe31e1">FileCoefficient</a>, <a class="el" href="classExprTkCoefficient.html#ab9e0e1e1c6994559a6e8b08393091e41">ExprTkCoefficient</a>, <a class="el" href="classConstantCoefficient.html#ab417b258ebc82c14efd50c971c7fe759">ConstantCoefficient</a>, <a class="el" href="classGradientEnergy.html#a70fd3bf2b1ab9f67c81b5ecfa3e7d9c8">GradientEnergy</a>, <a class="el" href="classLog.html#a329089bbeb1f371728586419b23a880d">Log</a>, <a class="el" href="classH.html#aab5ca08f3fd76b725b19495d87189968">H</a>, <a class="el" href="classFw.html#ab9f4b246f84dfc5f4e948f788a8b767e">Fw</a>, and <a class="el" href="classW.html#a7f5875687c8118b447345e397f659f89">W</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FunctionCoefficient_8cpp_source.html#l00059">eval_f()</a>.</p>
 <div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -815,6 +827,29 @@ Protected Attributes</h2></td></tr>
 <div class="center"><iframe scrolling="no" frameborder="0" src="classFunctionCoefficient_aecc7a698843a1977a0fd2e7291dc1b47_icgraph.svg" width="384" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
+
+</div>
+</div>
+<a id="af43aaa9e59d06213558757be3ff18c6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af43aaa9e59d06213558757be3ff18c6e">&#9670;&nbsp;</a></span>get_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double FunctionCoefficient::get_time </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the time associated with the coefficient. </p>
+
+<p class="definition">Definition at line <a class="el" href="FunctionCoefficient_8cpp_source.html#l00258">258</a> of file <a class="el" href="FunctionCoefficient_8cpp_source.html">FunctionCoefficient.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="FunctionCoefficient_8hpp_source.html#l00047">time_</a>.</p>
 
 </div>
 </div>
@@ -841,7 +876,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classSumCoefficient.html#a79c388cc2efd637415b49d38203c0c60">SumCoefficient</a>, <a class="el" href="classProductCoefficient.html#a4f52838ace9637e6156246aa881610d1">ProductCoefficient</a>, <a class="el" href="classExprTkCoefficient.html#aec3d4f3c5daaa7bbe8f9284786c961e0">ExprTkCoefficient</a>, <a class="el" href="classConstantCoefficient.html#aa3bad442a1b5fe818ef74adbca737b79">ConstantCoefficient</a>, <a class="el" href="classGradientEnergy.html#ae0630f3891e1efe26a710ce0d09e77c5">GradientEnergy</a>, <a class="el" href="classLog.html#aa11a114a9808e744cfd96a2ee3173b45">Log</a>, <a class="el" href="classH.html#a58e17ce4781e741ab175ee5436b15aac">H</a>, <a class="el" href="classFw.html#a664cb7fd98aa5a4dd778897462571210">Fw</a>, and <a class="el" href="classW.html#a933b5104767bd77eb0926a9cbe3cee64">W</a>.</p>
+<p>Implemented in <a class="el" href="classSumCoefficient.html#a79c388cc2efd637415b49d38203c0c60">SumCoefficient</a>, <a class="el" href="classProductCoefficient.html#a4f52838ace9637e6156246aa881610d1">ProductCoefficient</a>, <a class="el" href="classFileCoefficient.html#ad6b62f7122385965c2fca43499f0aa03">FileCoefficient</a>, <a class="el" href="classExprTkCoefficient.html#aec3d4f3c5daaa7bbe8f9284786c961e0">ExprTkCoefficient</a>, <a class="el" href="classConstantCoefficient.html#aa3bad442a1b5fe818ef74adbca737b79">ConstantCoefficient</a>, <a class="el" href="classGradientEnergy.html#ae0630f3891e1efe26a710ce0d09e77c5">GradientEnergy</a>, <a class="el" href="classLog.html#aa11a114a9808e744cfd96a2ee3173b45">Log</a>, <a class="el" href="classH.html#a58e17ce4781e741ab175ee5436b15aac">H</a>, <a class="el" href="classFw.html#a664cb7fd98aa5a4dd778897462571210">Fw</a>, and <a class="el" href="classW.html#a933b5104767bd77eb0926a9cbe3cee64">W</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FunctionCoefficient_8cpp_source.html#l00120">eval_gradient()</a>.</p>
 <div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -878,7 +913,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classSumCoefficient.html#aa807d986a43cf4713c9c15fedd1cd0fa">SumCoefficient</a>, <a class="el" href="classProductCoefficient.html#a43c7046575666085a23e46ac8d3b5c37">ProductCoefficient</a>, <a class="el" href="classExprTkCoefficient.html#aded0626ff47dd6bb2f96352a7d8f3379">ExprTkCoefficient</a>, <a class="el" href="classConstantCoefficient.html#aaacc682ab192689a819d3c716d6dc7d8">ConstantCoefficient</a>, <a class="el" href="classGradientEnergy.html#a12aac0ed60cbcc97a6554ef7c6d8a7ea">GradientEnergy</a>, <a class="el" href="classLog.html#adb67a1f34165dff2e0036f72d71eb115">Log</a>, <a class="el" href="classH.html#a7ae76d5dcbb3150b38e6181836c9da81">H</a>, <a class="el" href="classFw.html#a6a426a5ca34f61c9977348901d032472">Fw</a>, and <a class="el" href="classW.html#ad00176c5d9f15a780e71f7846f4a2365">W</a>.</p>
+<p>Implemented in <a class="el" href="classSumCoefficient.html#aa807d986a43cf4713c9c15fedd1cd0fa">SumCoefficient</a>, <a class="el" href="classProductCoefficient.html#a43c7046575666085a23e46ac8d3b5c37">ProductCoefficient</a>, <a class="el" href="classFileCoefficient.html#aa7c8ce5fd6e1ccd85cf95a445e563673">FileCoefficient</a>, <a class="el" href="classExprTkCoefficient.html#aded0626ff47dd6bb2f96352a7d8f3379">ExprTkCoefficient</a>, <a class="el" href="classConstantCoefficient.html#aaacc682ab192689a819d3c716d6dc7d8">ConstantCoefficient</a>, <a class="el" href="classGradientEnergy.html#a12aac0ed60cbcc97a6554ef7c6d8a7ea">GradientEnergy</a>, <a class="el" href="classLog.html#adb67a1f34165dff2e0036f72d71eb115">Log</a>, <a class="el" href="classH.html#a7ae76d5dcbb3150b38e6181836c9da81">H</a>, <a class="el" href="classFw.html#a6a426a5ca34f61c9977348901d032472">Fw</a>, and <a class="el" href="classW.html#ad00176c5d9f15a780e71f7846f4a2365">W</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FunctionCoefficient_8cpp_source.html#l00185">eval_hessian()</a>.</p>
 <div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -889,6 +924,47 @@ Protected Attributes</h2></td></tr>
 <div class="center"><iframe scrolling="no" frameborder="0" src="classFunctionCoefficient_a2b60c1364e8b31bb3b78804e5fecf223_icgraph.svg" width="368" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
+
+</div>
+</div>
+<a id="ae5e33a8f9680bbc1e690b907f87a5079"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5e33a8f9680bbc1e690b907f87a5079">&#9670;&nbsp;</a></span>set_coordinates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FunctionCoefficient::set_coordinates </td>
+          <td>(</td>
+          <td class="paramtype">std::span&lt; const double &gt;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the physical coordinates of the point where the coefficient is evaluated. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>Only used by coefficients depending on the spatial coordinates (see <a class="el" href="classFunctionCoefficient.html#a05e49a77a3c42a7875c4c33779154321" title="True if the expression depends on the spatial coordinates (&quot;coordinates&quot; in the JSON file)">uses_coordinates()</a>). No reallocation after the first call.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td><a class="el" href="namespacePhysical.html">Physical</a> coordinates </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="classSumCoefficient.html#a45d2c9ea9852e376ad2365b7ecfc449e">SumCoefficient</a>, and <a class="el" href="classProductCoefficient.html#aad63e6e992ecfe93edfc0bcced2c4728">ProductCoefficient</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="FunctionCoefficient_8cpp_source.html#l00268">268</a> of file <a class="el" href="FunctionCoefficient_8cpp_source.html">FunctionCoefficient.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="FunctionCoefficient_8hpp_source.html#l00048">coordinates_</a>.</p>
 
 </div>
 </div>
@@ -918,7 +994,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Update the time associated with the coefficient. </p>
 
-<p>Reimplemented in <a class="el" href="classSumCoefficient.html#a640cb1be0df809afa9a84ebba3afba40">SumCoefficient</a>, and <a class="el" href="classProductCoefficient.html#af9fe6721013b032b48c706015e327a0d">ProductCoefficient</a>.</p>
+<p>Reimplemented in <a class="el" href="classSumCoefficient.html#a640cb1be0df809afa9a84ebba3afba40">SumCoefficient</a>, <a class="el" href="classProductCoefficient.html#af9fe6721013b032b48c706015e327a0d">ProductCoefficient</a>, and <a class="el" href="classFileCoefficient.html#a3c1b14b602435236d08ac1b88b1c7b39">FileCoefficient</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="FunctionCoefficient_8cpp_source.html#l00252">252</a> of file <a class="el" href="FunctionCoefficient_8cpp_source.html">FunctionCoefficient.cpp</a>.</p>
 
@@ -926,7 +1002,66 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a05e49a77a3c42a7875c4c33779154321"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05e49a77a3c42a7875c4c33779154321">&#9670;&nbsp;</a></span>uses_coordinates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool FunctionCoefficient::uses_coordinates </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>True if the expression depends on the spatial coordinates ("coordinates" in the JSON file) </p>
+
+<p>Reimplemented in <a class="el" href="classSumCoefficient.html#a37422b34742e94c1de1b6ceb9ff7a9ff">SumCoefficient</a>, and <a class="el" href="classProductCoefficient.html#a5eb39537e4acee030111cdafe28fc8a8">ProductCoefficient</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="FunctionCoefficient_8hpp_source.html#l00104">104</a> of file <a class="el" href="FunctionCoefficient_8hpp_source.html">FunctionCoefficient.hpp</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a9109b2fef9b83a3688cf916f9ba1c56d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9109b2fef9b83a3688cf916f9ba1c56d">&#9670;&nbsp;</a></span>coordinates_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;double&gt; FunctionCoefficient::coordinates_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>physical point of the current evaluation (if used) </p>
+
+<p class="definition">Definition at line <a class="el" href="FunctionCoefficient_8hpp_source.html#l00048">48</a> of file <a class="el" href="FunctionCoefficient_8hpp_source.html">FunctionCoefficient.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="FunctionCoefficient_8cpp_source.html#l00268">set_coordinates()</a>, <a class="el" href="ProductFunctionCoefficients_8cpp_source.html#l00189">ProductCoefficient::set_coordinates()</a>, and <a class="el" href="SumFunctionCoefficients_8cpp_source.html#l00163">SumCoefficient::set_coordinates()</a>.</p>
+
+</div>
+</div>
 <a id="a712d838bf5aab6ac6582a824107837d6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a712d838bf5aab6ac6582a824107837d6">&#9670;&nbsp;</a></span>time_</h2>
 
@@ -949,7 +1084,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="FunctionCoefficient_8hpp_source.html#l00047">47</a> of file <a class="el" href="FunctionCoefficient_8hpp_source.html">FunctionCoefficient.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FunctionCoefficient_8cpp_source.html#l00252">set_time()</a>, <a class="el" href="ProductFunctionCoefficients_8cpp_source.html#l00166">ProductCoefficient::set_time()</a>, and <a class="el" href="SumFunctionCoefficients_8cpp_source.html#l00140">SumCoefficient::set_time()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FileCoefficient_8cpp_source.html#l00100">FileCoefficient::F()</a>, <a class="el" href="FunctionCoefficient_8cpp_source.html#l00258">get_time()</a>, <a class="el" href="FunctionCoefficient_8cpp_source.html#l00252">set_time()</a>, <a class="el" href="FileCoefficient_8cpp_source.html#l00150">FileCoefficient::set_time()</a>, <a class="el" href="ProductFunctionCoefficients_8cpp_source.html#l00166">ProductCoefficient::set_time()</a>, and <a class="el" href="SumFunctionCoefficients_8cpp_source.html#l00140">SumCoefficient::set_time()</a>.</p>
 
 </div>
 </div>
@@ -960,7 +1095,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:03 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

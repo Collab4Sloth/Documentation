@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -73,7 +73,9 @@ $(function() {
 : <a class="el" href="classTransientOperator.html#a740e7e3c0e1799c06d4604d386fc334e">TransientOperator&lt; T, DIM &gt;</a>
 </li>
 <li>init()
-: <a class="el" href="classAllenCahnNLFormIntegrator.html#a49e62c612719b5c6e2049a6a16790347">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>
+: <a class="el" href="classAdvectionBoundaryNLFormIntegrator.html#a86e07043a676c63358a2901464ad1e44">AdvectionBoundaryNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classAdvectionNLFormIntegrator.html#ab76d8ec53ce94b04a92aed0dfef51748">AdvectionNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classAllenCahnNLFormIntegrator.html#a49e62c612719b5c6e2049a6a16790347">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classBlockAllenCahnNLFormIntegrator.html#a65d517ef4d9212f7153497a0d992cf50">BlockAllenCahnNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classCahnHilliardNLFormIntegrator.html#a514a1edeacb1613446173443e5a55c62">CahnHilliardNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classDiffusionFluxNLFormIntegrator.html#a47c3eddefb36bb76c7ae523e31dd0656">DiffusionFluxNLFormIntegrator&lt; VARS &gt;</a>
@@ -82,6 +84,7 @@ $(function() {
 , <a class="el" href="classMeltingBaseNLFormIntegrator.html#a7b8ffc05cd6358be205f38c8760dad0c">MeltingBaseNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classRobinNLFormIntegrator.html#af43d2497a223149e13d44f81df4fd2a4">RobinNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classSlothNLFormIntegrator.html#ad2d86746433da87c39a821ebb0e4e3d9">SlothNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classSourceTermNLFormIntegrator.html#ac8b1ccd7299f5cb0f24f2c57a81089e2">SourceTermNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classTimeCHNLFormIntegrator.html#a4e6e3c86526218dda0474309311a739c">TimeCHNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classTimeNLFormIntegrator.html#a261f6aa569c20d8018ad97b00e095f58">TimeNLFormIntegrator&lt; VARS &gt;</a>
 </li>
@@ -90,7 +93,7 @@ $(function() {
 , <a class="el" href="classCalphad__Problem.html#a9fc30e6a89a6944ea60ef10bfe5e1ea1">Calphad_Problem&lt; CALPHAD, VAR, PST &gt;</a>
 , <a class="el" href="classCalphadBase.html#a4264ca0e77c9d9f8a5f2d9fc62800966">CalphadBase&lt; T &gt;</a>
 , <a class="el" href="classCalphadInformedNeuralNetwork.html#ab06f17b3e62dc920518fc54ce90b6aaf">CalphadInformedNeuralNetwork&lt; T &gt;</a>
-, <a class="el" href="classCoupling.html#a1013895d3182ce71eaaf22866c824236">Coupling&lt; Args &gt;</a>
+, <a class="el" href="classCoupling.html#a20bfa3d63ef4ae18ff7ee4fef348a8ab">Coupling&lt; Args &gt;</a>
 , <a class="el" href="classOperatorBase.html#a30966f1edc6335eb16e7adb1064bbaaa">OperatorBase&lt; T, DIM &gt;</a>
 , <a class="el" href="classProblem.html#a651db32fe98611402ab32f7ad771a5ad">Problem&lt; OPE, VAR, PST &gt;</a>
 , <a class="el" href="classProblemBase.html#ae12e47d17dfae85179eae7003ff228d8">ProblemBase&lt; VAR, PST &gt;</a>
@@ -98,14 +101,33 @@ $(function() {
 , <a class="el" href="classSteadyOperator.html#a8734dcb1cbb96ab3e5bb71df3c6a7f30">SteadyOperator&lt; T, DIM &gt;</a>
 , <a class="el" href="classTransientOperator.html#a7902b17123b3681f63aaba51336dcc5b">TransientOperator&lt; T, DIM &gt;</a>
 </li>
+<li>initialize_amr()
+: <a class="el" href="classProblemBase.html#ac257f266cdc4a399fc529fd458bf365c">ProblemBase&lt; VAR, PST &gt;</a>
+</li>
+<li>InitialRefine()
+: <a class="el" href="classAMRBase.html#a06fdc3cdcdf9c8c39043ff8d607c0cbd">AMRBase&lt; VAR &gt;</a>
+</li>
+<li>input_dim()
+: <a class="el" href="classFileCoefficient.html#aec2222872fc0dd42d91f766674e38239">FileCoefficient</a>
+, <a class="el" href="classTabulatedFunction.html#aa18b5a988c1a96a93769e64ae5044321">TabulatedFunction</a>
+</li>
 <li>InterDiffusionCoefficient()
 : <a class="el" href="classInterDiffusionCoefficient.html#a9539e97cca32bd9d570872eef5f43983">InterDiffusionCoefficient</a>
+</li>
+<li>interpolate()
+: <a class="el" href="classTabulatedFunction.html#a03c04c5fe5f0ca630bc016985ea38c47">TabulatedFunction</a>
 </li>
 <li>is_explicit()
 : <a class="el" href="classSlothBaseCoefficient.html#a56da3e5453a6ab338fc8f3fceeea604a">SlothBaseCoefficient</a>
 </li>
+<li>is_file()
+: <a class="el" href="classSlothBaseCoefficient.html#a5c99fee8be45e1dba5c4a9bc17495055">SlothBaseCoefficient</a>
+</li>
 <li>is_implicit()
 : <a class="el" href="classSlothBaseCoefficient.html#a4e3f81f49c4fdf2d4e093d5cafba4a10">SlothBaseCoefficient</a>
+</li>
+<li>is_nc_simplices()
+: <a class="el" href="classSpatialDiscretization.html#a321ff9cb5669e9667ad6f3039454063f">SpatialDiscretization&lt; T, DIM &gt;</a>
 </li>
 <li>is_periodic()
 : <a class="el" href="classSpatialDiscretization.html#a503f95d7a41ea96afcc31413320995e6">SpatialDiscretization&lt; T, DIM &gt;</a>
@@ -129,7 +151,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:17 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:03 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

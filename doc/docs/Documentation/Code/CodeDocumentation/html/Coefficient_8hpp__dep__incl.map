@@ -1,43 +1,63 @@
 <map id="Coefficient.hpp" name="Coefficient.hpp">
-<area shape="rect" id="node1" title="Base class definining a coefficient from an analytical formula." alt="" coords="2073,5,2199,32"/>
-<area shape="rect" id="node2" href="$KKS_8hpp.html" title="All needed for Calphad calculation including KKS model." alt="" coords="840,80,923,107"/>
-<area shape="rect" id="node4" href="$Coefficients_8hpp.html" title="Coefficients class used to build and manage a collection of Coefficient." alt="" coords="1386,80,1518,107"/>
-<area shape="rect" id="node9" href="$SlothNLFormIntegrator_8hpp.html" title="Class prodiving common methods to all NLFormIntegrators." alt="" coords="2260,155,2473,181"/>
-<area shape="rect" id="node40" href="$Coefficients_8cpp.html" title="Coefficients class used to build and manage a collection of Coefficient." alt="" coords="2497,155,2628,181"/>
-<area shape="rect" id="node41" href="$Coefficient_8cpp.html" title="Base class definining a coefficient from an analytical formula." alt="" coords="2224,80,2347,107"/>
-<area shape="rect" id="node3" href="$sloth_8hpp.html" title="List of SLOTH header files." alt="" coords="558,468,645,495"/>
-<area shape="rect" id="node5" href="$AxiCylindricalCoefficient_8hpp.html" title="Built a MFEM Coefficient for AxiCylindricalCoefficient." alt="" coords="638,155,858,181"/>
-<area shape="rect" id="node8" href="$MfemCoefficient_8hpp.html" title="Built a MFEM Coefficient from a SLOTH Coefficient." alt="" coords="1369,155,1535,181"/>
-<area shape="rect" id="node29" href="$OperatorBase_8hpp.html" title="Base class for building Steady and TimeDependent PhaseFieldOperators." alt="" coords="793,229,940,256"/>
-<area shape="rect" id="node33" href="$ProblemBase_8hpp.html" title="Base class for building Problems." alt="" coords="325,229,467,256"/>
-<area shape="rect" id="node6" href="$ListCoefficients_8hpp.html" title="List of header files contained in the Coefficients directory." alt="" coords="669,393,827,420"/>
-<area shape="rect" id="node7" href="$AxiCylindricalCoefficient_8cpp.html" title="Built a MFEM Coefficient for AxiCylindricalCoefficient." alt="" coords="492,229,711,256"/>
-<area shape="rect" id="node10" href="$AllenCahnNLFormIntegrator_8hpp.html" title="VF of the Allen Cahn equation." alt="" coords="1273,229,1522,256"/>
-<area shape="rect" id="node11" href="$ListIntegrators_8hpp.html" title="List of header files contained in the Integrators directory." alt="" coords="2664,393,2819,420"/>
-<area shape="rect" id="node12" href="$BlockAllenCahnNLFormIntegrator_8hpp.html" title="VF of the AllenCahn equations (splitted form)" alt="" coords="1546,229,1833,256"/>
-<area shape="rect" id="node13" href="$CahnHilliardNLFormIntegrator_8hpp.html" title="VF of the CahnHilliard equations." alt="" coords="1857,229,2122,256"/>
-<area shape="rect" id="node14" href="$DiffusionFluxNLFormIntegrator_8hpp.html" title="inter&#45;diffusion integrator" alt="" coords="2147,229,2416,256"/>
-<area shape="rect" id="node16" href="$DiffusionNLFormIntegrator_8hpp.html" title="Nonlinear form integrator for diffusion&#45;type problems." alt="" coords="2491,229,2730,256"/>
-<area shape="rect" id="node17" href="$FickNLFormIntegrator_8hpp.html" title="FV for the mass diffusion equation." alt="" coords="2266,311,2473,338"/>
-<area shape="rect" id="node18" href="$FourierNLFormIntegrator_8hpp.html" title="FV for the heat transfer equation." alt="" coords="2497,311,2725,338"/>
-<area shape="rect" id="node19" href="$HeatTimeNLFormIntegrator_8hpp.html" title="VF of the time derivative." alt="" coords="2749,311,2995,338"/>
-<area shape="rect" id="node20" href="$LatentHeatNLFormIntegrator_8hpp.html" title="Latent heat contribution for heat transfer equation." alt="" coords="3091,229,3346,256"/>
-<area shape="rect" id="node21" href="$MeltingBaseNLFormIntegrator_8hpp.html" title="Base class for melting integrators." alt="" coords="3421,229,3685,256"/>
-<area shape="rect" id="node22" href="$MeltingCalphadNLFormIntegrator_8hpp.html" title="NonlinearFormIntegrator for ad&#45;hoc melting term based on temperature." alt="" coords="3120,311,3408,338"/>
-<area shape="rect" id="node23" href="$MeltingConstantNLFormIntegrator_8hpp.html" title="NonlinearFormIntegrator for ad&#45;hoc constant melting term." alt="" coords="3433,311,3725,338"/>
-<area shape="rect" id="node24" href="$MeltingTemperatureNLFormIntegrator_8hpp.html" title="NonlinearFormIntegrator for ad&#45;hoc melting term based on temperature." alt="" coords="3749,304,3969,345"/>
-<area shape="rect" id="node25" href="$RobinNLFormIntegrator_8hpp.html" title="Robin integrator." alt="" coords="3897,229,4116,256"/>
-<area shape="rect" id="node27" href="$TimeCHNLFormIntegrator_8hpp.html" title="VF of the time derivative for CH equations." alt="" coords="964,229,1199,256"/>
-<area shape="rect" id="node28" href="$TimeNLFormIntegrator_8hpp.html" title="VF of the time derivative." alt="" coords="2855,229,3067,256"/>
-<area shape="rect" id="node15" href="$MassDiffusionFluxNLFormIntegrator_8hpp.html" title="Class dedicated to the VF of diffusion flux (gradient of chemical potential) used in mass balance equ..." alt="" coords="1937,311,2242,338"/>
-<area shape="rect" id="node26" href="$NeumannNLFormIntegrator_8hpp.html" title="Neumann integrator." alt="" coords="4043,311,4290,338"/>
-<area shape="rect" id="node30" href="$SteadyOperator_8hpp.html" title="Steady Operator." alt="" coords="785,311,945,338"/>
-<area shape="rect" id="node32" href="$TransientOperator_8hpp.html" title="Transient Operator." alt="" coords="969,311,1148,338"/>
-<area shape="rect" id="node31" href="$ListOperators_8hpp.html" title=" " alt="" coords="851,393,997,420"/>
-<area shape="rect" id="node34" href="$Calphad__problem_8hpp.html" title="Class used to defined a Calphad_Problem objet." alt="" coords="43,311,218,338"/>
-<area shape="rect" id="node36" href="$MPIProblem_8hpp.html" title="Class used to defined a MPI_Problem objet." alt="" coords="243,311,381,338"/>
-<area shape="rect" id="node37" href="$Problem_8hpp.html" title="Class used to defined a PDE Problem." alt="" coords="599,311,710,338"/>
-<area shape="rect" id="node39" href="$PropertyProblem_8hpp.html" title="Class used to compute primary variables as a function of auxialiary variables." alt="" coords="406,311,575,338"/>
-<area shape="rect" id="node35" href="$ListProblems_8hpp.html" title=" " alt="" coords="391,393,534,420"/>
-<area shape="rect" id="node38" href="$Time_8hpp.html" title="Main time loop." alt="" coords="558,393,645,420"/>
+<area shape="rect" id="node1" title="Base class definining a coefficient from an analytical formula." alt="" coords="2109,5,2235,32"/>
+<area shape="rect" id="node2" href="$KKS_8hpp.html" title="All needed for Calphad calculation including KKS model." alt="" coords="17,617,100,644"/>
+<area shape="rect" id="node4" href="$Coefficients_8hpp.html" title="Coefficients class used to build and manage a collection of Coefficient." alt="" coords="1711,80,1843,107"/>
+<area shape="rect" id="node13" href="$Variable_8hpp.html" title="Variable class used to build and manage variables of model." alt="" coords="647,229,755,256"/>
+<area shape="rect" id="node30" href="$MfemCoefficient_8hpp.html" title="Built a MFEM Coefficient from a SLOTH Coefficient." alt="" coords="1815,155,1980,181"/>
+<area shape="rect" id="node31" href="$MfemCoefficient_8cpp.html" title="Built a MFEM Coefficient from a SLOTH Coefficient." alt="" coords="1880,229,2043,256"/>
+<area shape="rect" id="node32" href="$SlothNLFormIntegrator_8hpp.html" title="Class prodiving common methods to all NLFormIntegrators." alt="" coords="3133,155,3347,181"/>
+<area shape="rect" id="node57" href="$Coefficients_8cpp.html" title="Coefficients class used to build and manage a collection of Coefficient." alt="" coords="2004,155,2135,181"/>
+<area shape="rect" id="node58" href="$MfemFileCoefficient_8hpp.html" title="Wraps a FileCoefficient as an mfem::Coefficient evaluated at physical points." alt="" coords="2077,80,2267,107"/>
+<area shape="rect" id="node59" href="$MfemFileCoefficient_8cpp.html" title="Wraps a FileCoefficient as an mfem::Coefficient evaluated at physical points." alt="" coords="3371,155,3559,181"/>
+<area shape="rect" id="node60" href="$VelocityField_8hpp.html" title="Imposed advection velocity shared by the advection integrators." alt="" coords="5171,155,5309,181"/>
+<area shape="rect" id="node61" href="$Coefficient_8cpp.html" title="Base class definining a coefficient from an analytical formula." alt="" coords="2495,80,2617,107"/>
+<area shape="rect" id="node3" href="$sloth_8hpp.html" title="List of SLOTH header files." alt="" coords="915,692,1002,719"/>
+<area shape="rect" id="node5" href="$BoundaryConditions_8hpp.html" title="BoundaryConditions class used to build and manage boundary conditions." alt="" coords="921,155,1114,181"/>
+<area shape="rect" id="node9" href="$OperatorBase_8hpp.html" title="Base class for building Steady and TimeDependent PhaseFieldOperators." alt="" coords="1173,393,1320,420"/>
+<area shape="rect" id="node18" href="$ProblemBase_8hpp.html" title="Base class for building Problems." alt="" coords="481,468,623,495"/>
+<area shape="rect" id="node27" href="$AxiCylindricalCoefficient_8hpp.html" title="Built a MFEM Coefficient for AxiCylindricalCoefficient." alt="" coords="1519,155,1739,181"/>
+<area shape="rect" id="node6" href="$BoundaryConditionsFactory_8hpp.html" title="BoundaryConditions factory to manage boundary conditions." alt="" coords="1190,229,1431,256"/>
+<area shape="rect" id="node7" href="$ListFactory_8hpp.html" title="List of Factory used to simplify tests setup." alt="" coords="1613,311,1739,338"/>
+<area shape="rect" id="node8" href="$tests_8hpp.html" title="Usefull aliases for tests depending on the dimension of space." alt="" coords="1553,393,1639,420"/>
+<area shape="rect" id="node10" href="$SteadyOperator_8hpp.html" title="Steady Operator." alt="" coords="1072,468,1232,495"/>
+<area shape="rect" id="node12" href="$TransientOperator_8hpp.html" title="Transient Operator." alt="" coords="1256,468,1435,495"/>
+<area shape="rect" id="node11" href="$ListOperators_8hpp.html" title=" " alt="" coords="1079,543,1225,569"/>
+<area shape="rect" id="node14" href="$AMRBase_8hpp.html" title="Base class orchestrating adaptive mesh refinement (AMR): defines the common criteria (error estimator..." alt="" coords="329,311,449,338"/>
+<area shape="rect" id="node16" href="$MultiVariableMaxAMR_8hpp.html" title="AMR strategy combining several variables into a single, shared mesh mutation: for each element,..." alt="" coords="93,393,301,420"/>
+<area shape="rect" id="node17" href="$SingleVariableAMR_8hpp.html" title="AMR strategy driven by a single, designated variable: error estimation, refinement and derefinement d..." alt="" coords="427,393,613,420"/>
+<area shape="rect" id="node21" href="$MPIProblem_8hpp.html" title="Class used to defined a MPI_Problem objet." alt="" coords="621,543,760,569"/>
+<area shape="rect" id="node22" href="$Problem_8hpp.html" title="Class used to defined a PDE Problem." alt="" coords="785,543,895,569"/>
+<area shape="rect" id="node25" href="$postprocessing_8hpp.html" title="Post&#45;processing features." alt="" coords="790,393,946,420"/>
+<area shape="rect" id="node26" href="$Variables_8hpp.html" title="Variables class used to build and manage variables." alt="" coords="949,311,1064,338"/>
+<area shape="rect" id="node15" href="$ListAMR_8hpp.html" title="List of header files contained in the AMR directory." alt="" coords="212,468,324,495"/>
+<area shape="rect" id="node19" href="$Calphad__problem_8hpp.html" title="Class used to defined a Calphad_Problem objet." alt="" coords="229,543,403,569"/>
+<area shape="rect" id="node24" href="$PropertyProblem_8hpp.html" title="Class used to compute primary variables as a function of auxialiary variables." alt="" coords="427,543,597,569"/>
+<area shape="rect" id="node20" href="$ListProblems_8hpp.html" title=" " alt="" coords="619,617,762,644"/>
+<area shape="rect" id="node23" href="$Time_8hpp.html" title="Main time loop." alt="" coords="802,617,889,644"/>
+<area shape="rect" id="node28" href="$ListCoefficients_8hpp.html" title="List of header files contained in the Coefficients directory." alt="" coords="1699,229,1856,256"/>
+<area shape="rect" id="node29" href="$AxiCylindricalCoefficient_8cpp.html" title="Built a MFEM Coefficient for AxiCylindricalCoefficient." alt="" coords="1456,229,1675,256"/>
+<area shape="rect" id="node33" href="$AdvectionBoundaryNLFormIntegrator_8hpp.html" title="Inflow/outflow boundary term of the conservative advection operator div(v u)" alt="" coords="5083,229,5397,256"/>
+<area shape="rect" id="node35" href="$ListIntegrators_8hpp.html" title="List of header files contained in the Integrators directory." alt="" coords="3589,393,3744,420"/>
+<area shape="rect" id="node36" href="$AdvectionNLFormIntegrator_8hpp.html" title="VF of the conservative advection term div(v u)" alt="" coords="5421,229,5667,256"/>
+<area shape="rect" id="node38" href="$AllenCahnNLFormIntegrator_8hpp.html" title="VF of the Allen Cahn equation." alt="" coords="2290,311,2539,338"/>
+<area shape="rect" id="node39" href="$BlockAllenCahnNLFormIntegrator_8hpp.html" title="VF of the AllenCahn equations (splitted form)" alt="" coords="2563,311,2850,338"/>
+<area shape="rect" id="node40" href="$CahnHilliardNLFormIntegrator_8hpp.html" title="VF of the CahnHilliard equations." alt="" coords="2874,311,3139,338"/>
+<area shape="rect" id="node41" href="$DiffusionFluxNLFormIntegrator_8hpp.html" title="inter&#45;diffusion integrator" alt="" coords="3105,229,3375,256"/>
+<area shape="rect" id="node43" href="$DiffusionNLFormIntegrator_8hpp.html" title="Nonlinear form integrator for diffusion&#45;type problems." alt="" coords="4017,229,4255,256"/>
+<area shape="rect" id="node44" href="$FickNLFormIntegrator_8hpp.html" title="FV for the mass diffusion equation." alt="" coords="4117,311,4323,338"/>
+<area shape="rect" id="node45" href="$FourierNLFormIntegrator_8hpp.html" title="FV for the heat transfer equation." alt="" coords="3865,311,4093,338"/>
+<area shape="rect" id="node46" href="$HeatTimeNLFormIntegrator_8hpp.html" title="VF of the time derivative." alt="" coords="3544,311,3789,338"/>
+<area shape="rect" id="node47" href="$LatentHeatNLFormIntegrator_8hpp.html" title="Latent heat contribution for heat transfer equation." alt="" coords="3686,229,3941,256"/>
+<area shape="rect" id="node48" href="$MeltingBaseNLFormIntegrator_8hpp.html" title="Base class for melting integrators." alt="" coords="4401,229,4665,256"/>
+<area shape="rect" id="node49" href="$MeltingCalphadNLFormIntegrator_8hpp.html" title="NonlinearFormIntegrator for ad&#45;hoc melting term based on temperature." alt="" coords="4592,311,4880,338"/>
+<area shape="rect" id="node50" href="$MeltingConstantNLFormIntegrator_8hpp.html" title="NonlinearFormIntegrator for ad&#45;hoc constant melting term." alt="" coords="4905,311,5197,338"/>
+<area shape="rect" id="node51" href="$MeltingTemperatureNLFormIntegrator_8hpp.html" title="NonlinearFormIntegrator for ad&#45;hoc melting term based on temperature." alt="" coords="4347,304,4567,345"/>
+<area shape="rect" id="node52" href="$RobinNLFormIntegrator_8hpp.html" title="Robin integrator." alt="" coords="2117,229,2336,256"/>
+<area shape="rect" id="node54" href="$SourceTermNLFormIntegrator_8hpp.html" title="VF of a user&#45;defined source term." alt="" coords="2361,229,2621,256"/>
+<area shape="rect" id="node55" href="$TimeCHNLFormIntegrator_8hpp.html" title="VF of the time derivative for CH equations." alt="" coords="2644,229,2879,256"/>
+<area shape="rect" id="node56" href="$TimeNLFormIntegrator_8hpp.html" title="VF of the time derivative." alt="" coords="3399,229,3611,256"/>
+<area shape="rect" id="node34" href="$AdvectionBoundaryCHNLFormIntegrator_8hpp.html" title="Inflow/outflow advection boundary term for the split Cahn&#45;Hilliard equations." alt="" coords="5221,304,5457,345"/>
+<area shape="rect" id="node37" href="$SplitAdvectionNLFormIntegrator_8hpp.html" title="VF of the advection term in the split Cahn&#45;Hilliard equations." alt="" coords="5581,311,5859,338"/>
+<area shape="rect" id="node42" href="$MassDiffusionFluxNLFormIntegrator_8hpp.html" title="Class dedicated to the VF of diffusion flux (gradient of chemical potential) used in mass balance equ..." alt="" coords="3163,311,3469,338"/>
+<area shape="rect" id="node53" href="$NeumannNLFormIntegrator_8hpp.html" title="Neumann integrator." alt="" coords="1818,311,2065,338"/>
 </map>

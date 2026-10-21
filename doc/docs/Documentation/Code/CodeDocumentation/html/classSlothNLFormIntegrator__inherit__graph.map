@@ -1,22 +1,27 @@
 <map id="SlothNLFormIntegrator&lt; VARS &gt;" name="SlothNLFormIntegrator&lt; VARS &gt;">
-<area shape="rect" id="node1" title="Class prodiving common methods to all NLFormIntegrators." alt="" coords="5,300,188,341"/>
-<area shape="rect" id="node2" href="$classAllenCahnNLFormIntegrator.html" title="Class dedicated to the VF of the RHS of the AllenCahn equation (see TimeDerivative integrator for the..." alt="" coords="255,5,473,47"/>
-<area shape="rect" id="node3" href="$classBlockAllenCahnNLFormIntegrator.html" title="Class dedicated to the VF of the AllenCahn equation (splitted form)" alt="" coords="236,71,492,112"/>
-<area shape="rect" id="node4" href="$classCahnHilliardNLFormIntegrator.html" title="Class dedicated to the VF of the RHS of the Cahn&#45;Hilliard equation (splitted form) (see SplitTimeDeri..." alt="" coords="247,136,481,177"/>
-<area shape="rect" id="node5" href="$classDiffusionFluxNLFormIntegrator.html" title="Class dedicated to the VF of an inter&#45;diffusion equation." alt="" coords="245,201,483,243"/>
-<area shape="rect" id="node8" href="$classDiffusionNLFormIntegrator.html" title="Nonlinear form integrator for diffusion&#45;type problems." alt="" coords="259,267,469,308"/>
-<area shape="rect" id="node11" href="$classLatentHeatNLFormIntegrator.html" title="Latent heat contribution for heat transfer equations." alt="" coords="251,332,477,373"/>
-<area shape="rect" id="node12" href="$classMeltingBaseNLFormIntegrator.html" title="Base class for melting integrators." alt="" coords="247,397,481,439"/>
-<area shape="rect" id="node16" href="$classRobinNLFormIntegrator.html" title="Class dedicated to the Robin boundary condition integrator." alt="" coords="270,463,458,504"/>
-<area shape="rect" id="node18" href="$classTimeCHNLFormIntegrator.html" title="Class dedicated to the VF of the time&#45;derivative (eg. LHS of Cahn&#45;Hilliard and Allen&#45;Cahn equations u..." alt="" coords="262,528,466,569"/>
-<area shape="rect" id="node19" href="$classTimeNLFormIntegrator.html" title="Class dedicated to the VF of the time&#45;derivative (eg. LHS of Allen&#45;Cahn equation)" alt="" coords="273,593,455,635"/>
-<area shape="rect" id="node6" href="$classMassDiffusionFluxNLFormIntegrator.html" title="Class dedicated to the VF of diffusion flux (gradient of chemical potential) used in mass balance equ..." alt="" coords="540,71,815,112"/>
-<area shape="rect" id="node7" href="$classThermalDiffusionFluxNLFormIntegrator.html" title="Class dedicated to the VF of thermal diffusion flux used in energy balance equation." alt="" coords="564,136,791,177"/>
-<area shape="rect" id="node9" href="$classFickNLFormIntegrator.html" title="Nonlinear form integrator for the right&#45;hand side of the mass diffusion equation (Fick&#39;s law)." alt="" coords="589,201,765,243"/>
-<area shape="rect" id="node10" href="$classFourierNLFormIntegrator.html" title="Nonlinear form integrator for the right&#45;hand side of the heat transfer equation (Fourier&#39;s law)." alt="" coords="578,267,777,308"/>
-<area shape="rect" id="node13" href="$classMeltingCalphadNLFormIntegrator.html" title="Class dedicated to the VF of Calphad melting contribution found in Allen&#45;Cahn&#45;type equations." alt="" coords="548,332,807,373"/>
-<area shape="rect" id="node14" href="$classMeltingConstantNLFormIntegrator.html" title="Class dedicated to the VF of an ad&#45;hoc constant melting contribution found in Allen&#45;Cahn&#45;type equatio..." alt="" coords="546,397,809,439"/>
-<area shape="rect" id="node15" href="$classMeltingTemperatureNLFormIntegrator.html" title="Class dedicated to the VF of an ad&#45;hoc temperature melting contribution found in Allen&#45;Cahn&#45;type equa..." alt="" coords="567,463,787,504"/>
-<area shape="rect" id="node17" href="$classNeumannNLFormIntegrator.html" title="Class dedicated to the Neumann boundary condiiton integrator." alt="" coords="569,528,785,569"/>
-<area shape="rect" id="node20" href="$classHeatTimeNLFormIntegrator.html" title="Class dedicated to the VF of the time&#45;derivativefor heat transfer equation." alt="" coords="570,593,785,635"/>
+<area shape="rect" id="node1" title="Class prodiving common methods to all NLFormIntegrators." alt="" coords="5,397,188,439"/>
+<area shape="rect" id="node2" href="$classAdvectionBoundaryNLFormIntegrator.html" title="Upwinded boundary term of the advection operator on boundary bdr_id:" alt="" coords="236,5,519,47"/>
+<area shape="rect" id="node4" href="$classAdvectionNLFormIntegrator.html" title="Volume part of the conservative advection term div(v u_c), integrated by parts." alt="" coords="269,71,485,112"/>
+<area shape="rect" id="node6" href="$classAllenCahnNLFormIntegrator.html" title="Class dedicated to the VF of the RHS of the AllenCahn equation (see TimeDerivative integrator for the..." alt="" coords="268,136,487,177"/>
+<area shape="rect" id="node7" href="$classBlockAllenCahnNLFormIntegrator.html" title="Class dedicated to the VF of the AllenCahn equation (splitted form)" alt="" coords="249,201,505,243"/>
+<area shape="rect" id="node8" href="$classCahnHilliardNLFormIntegrator.html" title="Class dedicated to the VF of the RHS of the Cahn&#45;Hilliard equation (splitted form) (see SplitTimeDeri..." alt="" coords="260,267,495,308"/>
+<area shape="rect" id="node9" href="$classDiffusionFluxNLFormIntegrator.html" title="Class dedicated to the VF of an inter&#45;diffusion equation." alt="" coords="258,332,497,373"/>
+<area shape="rect" id="node12" href="$classDiffusionNLFormIntegrator.html" title="Nonlinear form integrator for diffusion&#45;type problems." alt="" coords="273,397,482,439"/>
+<area shape="rect" id="node15" href="$classLatentHeatNLFormIntegrator.html" title="Latent heat contribution for heat transfer equations." alt="" coords="265,463,490,504"/>
+<area shape="rect" id="node16" href="$classMeltingBaseNLFormIntegrator.html" title="Base class for melting integrators." alt="" coords="260,528,495,569"/>
+<area shape="rect" id="node20" href="$classRobinNLFormIntegrator.html" title="Class dedicated to the Robin boundary condition integrator." alt="" coords="283,593,471,635"/>
+<area shape="rect" id="node22" href="$classSourceTermNLFormIntegrator.html" title="Class dedicated to user&#45;defined source terms." alt="" coords="262,659,493,700"/>
+<area shape="rect" id="node23" href="$classTimeCHNLFormIntegrator.html" title="Class dedicated to the VF of the time&#45;derivative (eg. LHS of Cahn&#45;Hilliard and Allen&#45;Cahn equations u..." alt="" coords="275,724,479,765"/>
+<area shape="rect" id="node24" href="$classTimeNLFormIntegrator.html" title="Class dedicated to the VF of the time&#45;derivative (eg. LHS of Allen&#45;Cahn equation)" alt="" coords="286,789,469,831"/>
+<area shape="rect" id="node3" href="$classAdvectionBoundaryCHNLFormIntegrator.html" title="Inflow/outflow boundary term of the advection operator for the split (phi, mu) Cahn&#45;Hilliard formulat..." alt="" coords="586,5,822,47"/>
+<area shape="rect" id="node5" href="$classSplitAdvectionNLFormIntegrator.html" title="Advection term for the split (phi, mu) Cahn&#45;Hilliard formulation." alt="" coords="581,71,827,112"/>
+<area shape="rect" id="node10" href="$classMassDiffusionFluxNLFormIntegrator.html" title="Class dedicated to the VF of diffusion flux (gradient of chemical potential) used in mass balance equ..." alt="" coords="567,235,841,276"/>
+<area shape="rect" id="node11" href="$classThermalDiffusionFluxNLFormIntegrator.html" title="Class dedicated to the VF of thermal diffusion flux used in energy balance equation." alt="" coords="591,300,817,341"/>
+<area shape="rect" id="node13" href="$classFickNLFormIntegrator.html" title="Nonlinear form integrator for the right&#45;hand side of the mass diffusion equation (Fick&#39;s law)." alt="" coords="616,365,792,407"/>
+<area shape="rect" id="node14" href="$classFourierNLFormIntegrator.html" title="Nonlinear form integrator for the right&#45;hand side of the heat transfer equation (Fourier&#39;s law)." alt="" coords="605,431,803,472"/>
+<area shape="rect" id="node17" href="$classMeltingCalphadNLFormIntegrator.html" title="Class dedicated to the VF of Calphad melting contribution found in Allen&#45;Cahn&#45;type equations." alt="" coords="575,496,833,537"/>
+<area shape="rect" id="node18" href="$classMeltingConstantNLFormIntegrator.html" title="Class dedicated to the VF of an ad&#45;hoc constant melting contribution found in Allen&#45;Cahn&#45;type equatio..." alt="" coords="573,561,835,603"/>
+<area shape="rect" id="node19" href="$classMeltingTemperatureNLFormIntegrator.html" title="Class dedicated to the VF of an ad&#45;hoc temperature melting contribution found in Allen&#45;Cahn&#45;type equa..." alt="" coords="594,627,814,668"/>
+<area shape="rect" id="node21" href="$classNeumannNLFormIntegrator.html" title="Class dedicated to the Neumann boundary condiiton integrator." alt="" coords="596,692,812,733"/>
+<area shape="rect" id="node25" href="$classHeatTimeNLFormIntegrator.html" title="Class dedicated to the VF of the time&#45;derivativefor heat transfer equation." alt="" coords="597,789,811,831"/>
 </map>

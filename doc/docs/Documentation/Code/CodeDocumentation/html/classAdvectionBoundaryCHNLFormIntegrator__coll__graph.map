@@ -1,0 +1,9 @@
+<map id="AdvectionBoundaryCHNLFormIntegrator&lt; VARS &gt;" name="AdvectionBoundaryCHNLFormIntegrator&lt; VARS &gt;">
+<area shape="rect" id="node1" title="Inflow/outflow boundary term of the advection operator for the split (phi, mu) Cahn&#45;Hilliard formulat..." alt="" coords="141,289,377,331"/>
+<area shape="rect" id="node2" href="$classAdvectionBoundaryNLFormIntegrator.html" title="Upwinded boundary term of the advection operator on boundary bdr_id:" alt="" coords="118,199,401,240"/>
+<area shape="rect" id="node3" href="$classSlothNLFormIntegrator.html" title="Class prodiving common methods to all NLFormIntegrators." alt="" coords="5,95,188,136"/>
+<area shape="rect" id="node4" href="$classParameters.html" title=" " alt="" coords="47,5,146,32"/>
+<area shape="rect" id="node5" href="$classCoefficient.html" title="Base class definining a coefficient from an analytical formula." alt="" coords="212,102,307,129"/>
+<area shape="rect" id="node6" href="$classSlothBaseCoefficient.html" title="Base class defining a coefficient from an analytical formula." alt="" coords="178,5,341,32"/>
+<area shape="rect" id="node7" href="$classVelocityField.html" title="Imposed advection velocity of a block, used by the volume (Advection, SplitAdvection) and boundary (A..." alt="" coords="331,102,439,129"/>
+</map>

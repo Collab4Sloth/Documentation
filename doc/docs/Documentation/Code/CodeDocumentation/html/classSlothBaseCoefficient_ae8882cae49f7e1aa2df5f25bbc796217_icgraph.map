@@ -1,0 +1,4 @@
+<map id="SlothBaseCoefficient::is_semi_implicit" name="SlothBaseCoefficient::is_semi_implicit">
+<area shape="rect" id="node1" title="Indicates whether the coefficient is discretized with a semi&#45;implicit scheme." alt="" coords="225,5,388,47"/>
+<area shape="rect" id="node2" href="$classMfemCoefficient.html#a0695e279d0091182416dd999ee5e6db8" title="Evaluate the wrapped coefficient at an integration point." alt="" coords="5,13,177,39"/>
+</map>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['heatcapacity_1893',['HeatCapacity',['../PhysicalPropertiesOptions_8hpp.html#a811f6f1ae7ce6013ea242b5e1faeae2c',1,'PhysicalPropertiesOptions.hpp']]],
-  ['hyprepreconditionertype_1894',['HyprePreconditionerType',['../SolversOptions_8hpp.html#ac6c5f8024503cbd3fb378e7a7ad3be8d',1,'SolversOptions.hpp']]],
-  ['hypresolvertype_1895',['HypreSolverType',['../SolversOptions_8hpp.html#a4aa268ed6c4ccc82594b8746025d5bcb',1,'SolversOptions.hpp']]]
+  ['geometry_2326',['Geometry',['../ProblemsOptions_8hpp.html#a5047b3c22ba65d974596c2729dcf1409',1,'ProblemsOptions.hpp']]],
+  ['glossarytype_2327',['GlossaryType',['../Glossary_8hpp.html#a1204ef61577dbf022e130de662bc755a',1,'Glossary.hpp']]],
+  ['glossaryunit_2328',['GlossaryUnit',['../Glossary_8hpp.html#ae4e6889bac3239fb4cb51ebc1e9579ed',1,'Glossary.hpp']]]
 ];

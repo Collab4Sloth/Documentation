@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -67,8 +67,10 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classSlothNLFormIntegrator-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -97,6 +99,12 @@ $(function() {
 </div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSlothNLFormIntegrator_1_1IpValues.html">IpValues</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Values returned by <a class="el" href="classSlothNLFormIntegrator.html#ac88c06450b6b288e42a6f9f3907286f6">values_at_ip()</a>  <a href="structSlothNLFormIntegrator_1_1IpValues.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad2d86746433da87c39a821ebb0e4e3d9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#ad2d86746433da87c39a821ebb0e4e3d9">init</a> ()=0</td></tr>
@@ -122,6 +130,16 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a09eca46fb4ea0c609908d909f16a01cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a223e286bfa63f83a5a0d12ebe73b872c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a223e286bfa63f83a5a0d12ebe73b872c">compute_hessian_coefficient</a> (<a class="el" href="classCoefficient.html">Coefficient</a> coef, const int iblk, const int jblk, const std::span&lt; const double &gt; &amp;values, const std::span&lt; const double &gt; &amp;aux_values)</td></tr>
 <tr class="separator:a223e286bfa63f83a5a0d12ebe73b872c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cb0f2156389213fd16746d52e264a54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a5cb0f2156389213fd16746d52e264a54">element_gradient</a> (const mfem::ParGridFunction &amp;gf, const mfem::ElementTransformation &amp;Tr, const mfem::DenseMatrix &amp;gradPsi, mfem::Vector &amp;grad)</td></tr>
+<tr class="separator:a5cb0f2156389213fd16746d52e264a54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b5c493544140c827a8a85deaf89e904"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a7b5c493544140c827a8a85deaf89e904">eval_coefficient</a> (<a class="el" href="classCoefficient.html">Coefficient</a> &amp;coef, const std::span&lt; const double &gt; &amp;values, const std::span&lt; const double &gt; &amp;aux_values)</td></tr>
+<tr class="separator:a7b5c493544140c827a8a85deaf89e904"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a954e57b6df52ab6bd4e190c983b05bf8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a954e57b6df52ab6bd4e190c983b05bf8">eval_gradient_coefficient</a> (<a class="el" href="classCoefficient.html">Coefficient</a> &amp;coef, const int blk, const std::span&lt; const double &gt; &amp;values, const std::span&lt; const double &gt; &amp;aux_values)</td></tr>
+<tr class="separator:a954e57b6df52ab6bd4e190c983b05bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45333ae451e50e31811d3c107c2e60be"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a45333ae451e50e31811d3c107c2e60be">eval_gradient_energy_coefficient</a> (<a class="el" href="classCoefficient.html">Coefficient</a> &amp;coef, const int blk, const std::span&lt; const double &gt; &amp;values, const std::span&lt; const double &gt; &amp;aux_values)</td></tr>
+<tr class="separator:a45333ae451e50e31811d3c107c2e60be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81880db2bbed1d2930072c9e9c2cfa5a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a81880db2bbed1d2930072c9e9c2cfa5a">eval_hessian_coefficient</a> (<a class="el" href="classCoefficient.html">Coefficient</a> &amp;coef, const int iblk, const int jblk, const std::span&lt; const double &gt; &amp;values, const std::span&lt; const double &gt; &amp;aux_values)</td></tr>
+<tr class="separator:a81880db2bbed1d2930072c9e9c2cfa5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6a7fae0e0cc9b09ef54f4b6673c1439"><td class="memItemLeft" align="right" valign="top">std::vector&lt; mfem::ParGridFunction &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#ae6a7fae0e0cc9b09ef54f4b6673c1439">get_aux_gf</a> ()</td></tr>
 <tr class="separator:ae6a7fae0e0cc9b09ef54f4b6673c1439"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b1405fedb8b06f25a4f99ff8fd43a8f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; std::string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a6b1405fedb8b06f25a4f99ff8fd43a8f">get_aux_infos</a> ()</td></tr>
@@ -130,8 +148,23 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:abd6cc4c7a0a02435c1c157bfeb655a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9074a960dd8e8af4175d2c1e0dfdbafd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a9074a960dd8e8af4175d2c1e0dfdbafd">get_coefficients</a> ()=0</td></tr>
 <tr class="separator:a9074a960dd8e8af4175d2c1e0dfdbafd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41190cd33ae592bafa9c12900b24789f"><td class="memItemLeft" align="right" valign="top">std::span&lt; const double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a41190cd33ae592bafa9c12900b24789f">get_physical_point</a> ()</td></tr>
+<tr class="separator:a41190cd33ae592bafa9c12900b24789f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeaf6192dceafd68dd4edf95f4d16c4da"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#aeaf6192dceafd68dd4edf95f4d16c4da">isAxisymmetric</a> () const noexcept</td></tr>
 <tr class="separator:aeaf6192dceafd68dd4edf95f4d16c4da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bb1272764e1f8fff34038a28fb60f1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a9bb1272764e1f8fff34038a28fb60f1b">prepare_element_values</a> (const mfem::Array&lt; const mfem::FiniteElement * &gt; &amp;el, mfem::ElementTransformation &amp;Tr, const mfem::Array&lt; const mfem::Vector * &gt; &amp;elfun, const std::vector&lt; mfem::ParGridFunction &gt; &amp;aux_gf, const mfem::IntegrationRule &amp;ir)</td></tr>
+<tr class="separator:a9bb1272764e1f8fff34038a28fb60f1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ed4c0fa8d4f5e82c26edf9c323725a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a3ed4c0fa8d4f5e82c26edf9c323725a7">set_int_point</a> (mfem::ElementTransformation &amp;Tr, const mfem::IntegrationPoint &amp;ip)</td></tr>
+<tr class="separator:a3ed4c0fa8d4f5e82c26edf9c323725a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac88c06450b6b288e42a6f9f3907286f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSlothNLFormIntegrator_1_1IpValues.html">IpValues</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#ac88c06450b6b288e42a6f9f3907286f6">values_at_ip</a> (const mfem::IntegrationRule &amp;ir, const int i, const mfem::Vector &amp;Psi, const mfem::Array&lt; const mfem::Vector * &gt; &amp;elfun, const std::vector&lt; mfem::ParGridFunction &gt; &amp;aux_gf, mfem::ElementTransformation &amp;Tr)</td></tr>
+<tr class="separator:ac88c06450b6b288e42a6f9f3907286f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a9aed3d8d61c0856665544282a518dfec"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a9aed3d8d61c0856665544282a518dfec">same_finite_element</a> (const mfem::FiniteElement &amp;a, const mfem::FiniteElement &amp;b)</td></tr>
+<tr class="separator:a9aed3d8d61c0856665544282a518dfec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a658200c858bbee670e7341cfe7e74d1e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a658200c858bbee670e7341cfe7e74d1e">same_finite_elements</a> (const mfem::Array&lt; const mfem::FiniteElement * &gt; &amp;el)</td></tr>
+<tr class="separator:a658200c858bbee670e7341cfe7e74d1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -145,6 +178,9 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a2c77ea694c8462fb42362e0e5fa1bdca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfe04714eaa948c0eb0a9eb009d6c516"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classCoefficients.html">Coefficients</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#acfe04714eaa948c0eb0a9eb009d6c516">coefficients_</a></td></tr>
 <tr class="separator:acfe04714eaa948c0eb0a9eb009d6c516"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f7ac1c557e52b41d19c9ce0188101ba"><td class="memItemLeft" align="right" valign="top">mfem::ElementTransformation *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a7f7ac1c557e52b41d19c9ce0188101ba">current_tr_</a> = nullptr</td></tr>
+<tr class="memdesc:a7f7ac1c557e52b41d19c9ce0188101ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transformation of the current element.  <a href="classSlothNLFormIntegrator.html#a7f7ac1c557e52b41d19c9ce0188101ba">More...</a><br /></td></tr>
+<tr class="separator:a7f7ac1c557e52b41d19c9ce0188101ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5292fff0fe4cbcc4965c492588e11f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ProblemsOptions_8hpp.html#a5047b3c22ba65d974596c2729dcf1409">Geometry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#ac5292fff0fe4cbcc4965c492588e11f2">geometry_</a> = <a class="el" href="ProblemsOptions_8hpp.html#a5047b3c22ba65d974596c2729dcf1409ac62cd6a7dfc8d04ae078b2b3d6293b9c">Geometry::Cartesian</a></td></tr>
 <tr class="separator:ac5292fff0fe4cbcc4965c492588e11f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8723abe42a5e62f51f0ac7a9fa66742"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#af8723abe42a5e62f51f0ac7a9fa66742">integrator_name_</a> = &quot;&quot;</td></tr>
@@ -159,6 +195,12 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:ab7b583ba1876b3f343a41e887eb1b27b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd5a49c6bb8ac06c4172c37d6702b39d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; mfem::ParGridFunction &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#abd5a49c6bb8ac06c4172c37d6702b39d">u_old_</a></td></tr>
 <tr class="separator:abd5a49c6bb8ac06c4172c37d6702b39d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02e86a6359f900d7bd3b4bf708e9bd5d"><td class="memItemLeft" align="right" valign="top">mfem::Vector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a02e86a6359f900d7bd3b4bf708e9bd5d">x_ip_</a></td></tr>
+<tr class="memdesc:a02e86a6359f900d7bd3b4bf708e9bd5d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespacePhysical.html">Physical</a> coordinates of the current integration point.  <a href="classSlothNLFormIntegrator.html#a02e86a6359f900d7bd3b4bf708e9bd5d">More...</a><br /></td></tr>
+<tr class="separator:a02e86a6359f900d7bd3b4bf708e9bd5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12f13e508f874d5b32c534a4306ffffb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothNLFormIntegrator.html#a12f13e508f874d5b32c534a4306ffffb">x_ip_valid_</a> = false</td></tr>
+<tr class="memdesc:a12f13e508f874d5b32c534a4306ffffb"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if x_ip_ matches the current integration point.  <a href="classSlothNLFormIntegrator.html#a12f13e508f874d5b32c534a4306ffffb">More...</a><br /></td></tr>
+<tr class="separator:a12f13e508f874d5b32c534a4306ffffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class VARS&gt;<br />
@@ -166,7 +208,7 @@ class SlothNLFormIntegrator&lt; VARS &gt;</h3>
 
 <p>Class prodiving common methods to all NLFormIntegrators. </p>
 
-<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00052">52</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00054">54</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3271eeccc85bd1d61f2cf9f9776e3fda"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3271eeccc85bd1d61f2cf9f9776e3fda">&#9670;&nbsp;</a></span>SlothNLFormIntegrator()</h2>
@@ -304,7 +346,7 @@ template&lt;class VARS &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classTimeNLFormIntegrator.html#a66da28ec80d506cfd00cee2b93f5778c">TimeNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classTimeCHNLFormIntegrator.html#a086e09611e6c9d08ea0192bb156f134b">TimeCHNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classRobinNLFormIntegrator.html#a453640c32db165367a8646a9ba417025">RobinNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classMeltingBaseNLFormIntegrator.html#a48d3db4533465bff96de77a747c3fa3e">MeltingBaseNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classLatentHeatNLFormIntegrator.html#af44e125015cf156cba86bc10dc6e1afd">LatentHeatNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classCahnHilliardNLFormIntegrator.html#a6fbd33145250fad4f027be41a7705338">CahnHilliardNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classBlockAllenCahnNLFormIntegrator.html#abe87b3966b73dad6226cf934bf8b1350">BlockAllenCahnNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classAllenCahnNLFormIntegrator.html#abf8463d23097850b6172f16a204bc6b0">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classDiffusionNLFormIntegrator.html#ae7d60046c3a9e917e04aca5aa36db921">DiffusionNLFormIntegrator&lt; VARS &gt;</a>, and <a class="el" href="classDiffusionFluxNLFormIntegrator.html#a3d17603ee113763a68076bd5f41ecc99">DiffusionFluxNLFormIntegrator&lt; VARS &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classTimeNLFormIntegrator.html#a66da28ec80d506cfd00cee2b93f5778c">TimeNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classTimeCHNLFormIntegrator.html#a086e09611e6c9d08ea0192bb156f134b">TimeCHNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classSourceTermNLFormIntegrator.html#a131f346fb9419fc6a4e3e9d750d99902">SourceTermNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classRobinNLFormIntegrator.html#a453640c32db165367a8646a9ba417025">RobinNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classMeltingBaseNLFormIntegrator.html#a48d3db4533465bff96de77a747c3fa3e">MeltingBaseNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classLatentHeatNLFormIntegrator.html#af44e125015cf156cba86bc10dc6e1afd">LatentHeatNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classCahnHilliardNLFormIntegrator.html#a6fbd33145250fad4f027be41a7705338">CahnHilliardNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classBlockAllenCahnNLFormIntegrator.html#abe87b3966b73dad6226cf934bf8b1350">BlockAllenCahnNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classAllenCahnNLFormIntegrator.html#abf8463d23097850b6172f16a204bc6b0">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classAdvectionNLFormIntegrator.html#a273c5b4be6d2c8ed866dfe76916ca10a">AdvectionNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classAdvectionBoundaryNLFormIntegrator.html#aaef88a21acc7f2cd20500910d0717266">AdvectionBoundaryNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classDiffusionNLFormIntegrator.html#ae7d60046c3a9e917e04aca5aa36db921">DiffusionNLFormIntegrator&lt; VARS &gt;</a>, and <a class="el" href="classDiffusionFluxNLFormIntegrator.html#a3d17603ee113763a68076bd5f41ecc99">DiffusionFluxNLFormIntegrator&lt; VARS &gt;</a>.</p>
 
 </div>
 </div>
@@ -356,7 +398,7 @@ template&lt;class VARS &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classDiffusionNLFormIntegrator.html#a6db8a77e42ae73b0c24ea6b97c4b701b">DiffusionNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classDiffusionFluxNLFormIntegrator.html#add41308abf2f920f6d3fa6a11ddefae6">DiffusionFluxNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classTimeNLFormIntegrator.html#a0291671b310ab18e948e0fee8de8ec25">TimeNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classTimeCHNLFormIntegrator.html#abf68e9118f68f2cc1e74ecb5cd774150">TimeCHNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classRobinNLFormIntegrator.html#a860c82e8797f439118fb003026b43ca0">RobinNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classMeltingBaseNLFormIntegrator.html#a15361822fe21889dba30b304cf29b801">MeltingBaseNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classLatentHeatNLFormIntegrator.html#adc2c8cb1abdf1ba4b897f729b0d169dc">LatentHeatNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classCahnHilliardNLFormIntegrator.html#a66011858f6d07fbd76182b3df929e0fa">CahnHilliardNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classBlockAllenCahnNLFormIntegrator.html#a8ed62c868323f728994b0cd6c7369119">BlockAllenCahnNLFormIntegrator&lt; VARS &gt;</a>, and <a class="el" href="classAllenCahnNLFormIntegrator.html#ace2daaf8ea82b18786cdfa6d8194ad43">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classDiffusionNLFormIntegrator.html#a6db8a77e42ae73b0c24ea6b97c4b701b">DiffusionNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classDiffusionFluxNLFormIntegrator.html#add41308abf2f920f6d3fa6a11ddefae6">DiffusionFluxNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classTimeNLFormIntegrator.html#a0291671b310ab18e948e0fee8de8ec25">TimeNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classTimeCHNLFormIntegrator.html#abf68e9118f68f2cc1e74ecb5cd774150">TimeCHNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classSourceTermNLFormIntegrator.html#a86471ed3d7cfe961bc9e40b2174ec18f">SourceTermNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classRobinNLFormIntegrator.html#a860c82e8797f439118fb003026b43ca0">RobinNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classMeltingBaseNLFormIntegrator.html#a15361822fe21889dba30b304cf29b801">MeltingBaseNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classLatentHeatNLFormIntegrator.html#adc2c8cb1abdf1ba4b897f729b0d169dc">LatentHeatNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classCahnHilliardNLFormIntegrator.html#a66011858f6d07fbd76182b3df929e0fa">CahnHilliardNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classBlockAllenCahnNLFormIntegrator.html#a8ed62c868323f728994b0cd6c7369119">BlockAllenCahnNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classAllenCahnNLFormIntegrator.html#ace2daaf8ea82b18786cdfa6d8194ad43">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classAdvectionNLFormIntegrator.html#abae44744660c9fc2dd3829889bfd9029">AdvectionNLFormIntegrator&lt; VARS &gt;</a>, and <a class="el" href="classAdvectionBoundaryNLFormIntegrator.html#a4bfa8f67b08c0315094be8b8e4c3177a">AdvectionBoundaryNLFormIntegrator&lt; VARS &gt;</a>.</p>
 
 </div>
 </div>
@@ -588,6 +630,256 @@ template&lt;class VARS &gt; </div>
 
 </div>
 </div>
+<a id="a5cb0f2156389213fd16746d52e264a54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cb0f2156389213fd16746d52e264a54">&#9670;&nbsp;</a></span>element_gradient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::element_gradient </td>
+          <td>(</td>
+          <td class="paramtype">const mfem::ParGridFunction &amp;&#160;</td>
+          <td class="paramname"><em>gf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mfem::ElementTransformation &amp;&#160;</td>
+          <td class="paramname"><em>Tr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mfem::DenseMatrix &amp;&#160;</td>
+          <td class="paramname"><em>gradPsi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mfem::Vector &amp;&#160;</td>
+          <td class="paramname"><em>grad</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7b5c493544140c827a8a85deaf89e904"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b5c493544140c827a8a85deaf89e904">&#9670;&nbsp;</a></span>eval_coefficient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::eval_coefficient </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classCoefficient.html">Coefficient</a> &amp;&#160;</td>
+          <td class="paramname"><em>coef</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::span&lt; const double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>values</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::span&lt; const double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>aux_values</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a954e57b6df52ab6bd4e190c983b05bf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a954e57b6df52ab6bd4e190c983b05bf8">&#9670;&nbsp;</a></span>eval_gradient_coefficient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::eval_gradient_coefficient </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classCoefficient.html">Coefficient</a> &amp;&#160;</td>
+          <td class="paramname"><em>coef</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>blk</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::span&lt; const double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>values</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::span&lt; const double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>aux_values</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a45333ae451e50e31811d3c107c2e60be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45333ae451e50e31811d3c107c2e60be">&#9670;&nbsp;</a></span>eval_gradient_energy_coefficient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::eval_gradient_energy_coefficient </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classCoefficient.html">Coefficient</a> &amp;&#160;</td>
+          <td class="paramname"><em>coef</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>blk</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::span&lt; const double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>values</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::span&lt; const double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>aux_values</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a81880db2bbed1d2930072c9e9c2cfa5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81880db2bbed1d2930072c9e9c2cfa5a">&#9670;&nbsp;</a></span>eval_hessian_coefficient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::eval_hessian_coefficient </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classCoefficient.html">Coefficient</a> &amp;&#160;</td>
+          <td class="paramname"><em>coef</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>iblk</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>jblk</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::span&lt; const double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>values</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::span&lt; const double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>aux_values</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ae6a7fae0e0cc9b09ef54f4b6673c1439"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae6a7fae0e0cc9b09ef54f4b6673c1439">&#9670;&nbsp;</a></span>get_aux_gf()</h2>
 
@@ -717,7 +1009,34 @@ template&lt;class VARS &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classDiffusionNLFormIntegrator.html#aa46b8fb6609282da485554494fa0de92">DiffusionNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classTimeNLFormIntegrator.html#a540cfdf1b186168bdc3308ff3da69b6f">TimeNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classTimeCHNLFormIntegrator.html#ae4a553f4965b002c5653e6a65a0aa064">TimeCHNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classRobinNLFormIntegrator.html#acc307518ab52f3742ab33bb2459423ed">RobinNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classNeumannNLFormIntegrator.html#a71919030313b94bf6ea5ee6573aeae63">NeumannNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classMeltingBaseNLFormIntegrator.html#a5e12e476d1423f160d007ca977a78442">MeltingBaseNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classLatentHeatNLFormIntegrator.html#a074afc19a6717754dd347809d160b154">LatentHeatNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classHeatTimeNLFormIntegrator.html#aa99af04fa85f8f05fbf1815ea739fce4">HeatTimeNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classFourierNLFormIntegrator.html#a77ef0aea0e49c34b77141ed38889b8ed">FourierNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classFickNLFormIntegrator.html#a4d2f5982836b27b0a5c5c7560ce865ec">FickNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classDiffusionFluxNLFormIntegrator.html#aec79b94d096d7f4cf762780f897805a1">DiffusionFluxNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classCahnHilliardNLFormIntegrator.html#a7b5e9d32a258c56d61fff413231705e2">CahnHilliardNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classBlockAllenCahnNLFormIntegrator.html#a36febf76e26164c1096d35bfbf389b48">BlockAllenCahnNLFormIntegrator&lt; VARS &gt;</a>, and <a class="el" href="classAllenCahnNLFormIntegrator.html#add6c732fbc7414b62294fc3dbb5b9602">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classDiffusionNLFormIntegrator.html#aa46b8fb6609282da485554494fa0de92">DiffusionNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classTimeNLFormIntegrator.html#a540cfdf1b186168bdc3308ff3da69b6f">TimeNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classTimeCHNLFormIntegrator.html#ae4a553f4965b002c5653e6a65a0aa064">TimeCHNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classSourceTermNLFormIntegrator.html#a594eee5ff18d0dd5925bc36ac28c944f">SourceTermNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classRobinNLFormIntegrator.html#acc307518ab52f3742ab33bb2459423ed">RobinNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classNeumannNLFormIntegrator.html#a71919030313b94bf6ea5ee6573aeae63">NeumannNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classMeltingBaseNLFormIntegrator.html#a5e12e476d1423f160d007ca977a78442">MeltingBaseNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classLatentHeatNLFormIntegrator.html#a074afc19a6717754dd347809d160b154">LatentHeatNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classHeatTimeNLFormIntegrator.html#aa99af04fa85f8f05fbf1815ea739fce4">HeatTimeNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classFourierNLFormIntegrator.html#a77ef0aea0e49c34b77141ed38889b8ed">FourierNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classFickNLFormIntegrator.html#a4d2f5982836b27b0a5c5c7560ce865ec">FickNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classDiffusionFluxNLFormIntegrator.html#aec79b94d096d7f4cf762780f897805a1">DiffusionFluxNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classCahnHilliardNLFormIntegrator.html#a7b5e9d32a258c56d61fff413231705e2">CahnHilliardNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classBlockAllenCahnNLFormIntegrator.html#a36febf76e26164c1096d35bfbf389b48">BlockAllenCahnNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classAllenCahnNLFormIntegrator.html#add6c732fbc7414b62294fc3dbb5b9602">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classAdvectionNLFormIntegrator.html#a8557c5de4ce2e6ca2c8236fbce52c68c">AdvectionNLFormIntegrator&lt; VARS &gt;</a>, and <a class="el" href="classAdvectionBoundaryNLFormIntegrator.html#a73eb0f15e5e3c5784cdec991fdbcaf6e">AdvectionBoundaryNLFormIntegrator&lt; VARS &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a41190cd33ae592bafa9c12900b24789f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41190cd33ae592bafa9c12900b24789f">&#9670;&nbsp;</a></span>get_physical_point()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::span&lt;const double&gt; <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::get_physical_point </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -746,7 +1065,7 @@ template&lt;class VARS &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classTimeNLFormIntegrator.html#a261f6aa569c20d8018ad97b00e095f58">TimeNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classTimeCHNLFormIntegrator.html#a4e6e3c86526218dda0474309311a739c">TimeCHNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classRobinNLFormIntegrator.html#af43d2497a223149e13d44f81df4fd2a4">RobinNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classMeltingBaseNLFormIntegrator.html#a7b8ffc05cd6358be205f38c8760dad0c">MeltingBaseNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classLatentHeatNLFormIntegrator.html#aa462a48bfb9b2b31257edb3db76dd1a1">LatentHeatNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classDiffusionNLFormIntegrator.html#a3d2e5cfe47fdef53aef222c72ef4e416">DiffusionNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classDiffusionFluxNLFormIntegrator.html#a47c3eddefb36bb76c7ae523e31dd0656">DiffusionFluxNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classCahnHilliardNLFormIntegrator.html#a514a1edeacb1613446173443e5a55c62">CahnHilliardNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classBlockAllenCahnNLFormIntegrator.html#a65d517ef4d9212f7153497a0d992cf50">BlockAllenCahnNLFormIntegrator&lt; VARS &gt;</a>, and <a class="el" href="classAllenCahnNLFormIntegrator.html#a49e62c612719b5c6e2049a6a16790347">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classTimeNLFormIntegrator.html#a261f6aa569c20d8018ad97b00e095f58">TimeNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classTimeCHNLFormIntegrator.html#a4e6e3c86526218dda0474309311a739c">TimeCHNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classSourceTermNLFormIntegrator.html#ac8b1ccd7299f5cb0f24f2c57a81089e2">SourceTermNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classRobinNLFormIntegrator.html#af43d2497a223149e13d44f81df4fd2a4">RobinNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classMeltingBaseNLFormIntegrator.html#a7b8ffc05cd6358be205f38c8760dad0c">MeltingBaseNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classLatentHeatNLFormIntegrator.html#aa462a48bfb9b2b31257edb3db76dd1a1">LatentHeatNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classDiffusionNLFormIntegrator.html#a3d2e5cfe47fdef53aef222c72ef4e416">DiffusionNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classDiffusionFluxNLFormIntegrator.html#a47c3eddefb36bb76c7ae523e31dd0656">DiffusionFluxNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classCahnHilliardNLFormIntegrator.html#a514a1edeacb1613446173443e5a55c62">CahnHilliardNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classBlockAllenCahnNLFormIntegrator.html#a65d517ef4d9212f7153497a0d992cf50">BlockAllenCahnNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classAllenCahnNLFormIntegrator.html#a49e62c612719b5c6e2049a6a16790347">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>, <a class="el" href="classAdvectionNLFormIntegrator.html#ab76d8ec53ce94b04a92aed0dfef51748">AdvectionNLFormIntegrator&lt; VARS &gt;</a>, and <a class="el" href="classAdvectionBoundaryNLFormIntegrator.html#a86e07043a676c63358a2901464ad1e44">AdvectionBoundaryNLFormIntegrator&lt; VARS &gt;</a>.</p>
 
 </div>
 </div>
@@ -777,6 +1096,228 @@ template&lt;class VARS &gt; </div>
 
 </div>
 </div>
+<a id="a9bb1272764e1f8fff34038a28fb60f1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bb1272764e1f8fff34038a28fb60f1b">&#9670;&nbsp;</a></span>prepare_element_values()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::prepare_element_values </td>
+          <td>(</td>
+          <td class="paramtype">const mfem::Array&lt; const mfem::FiniteElement * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>el</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mfem::ElementTransformation &amp;&#160;</td>
+          <td class="paramname"><em>Tr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mfem::Array&lt; const mfem::Vector * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>elfun</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; mfem::ParGridFunction &gt; &amp;&#160;</td>
+          <td class="paramname"><em>aux_gf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mfem::IntegrationRule &amp;&#160;</td>
+          <td class="paramname"><em>ir</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9aed3d8d61c0856665544282a518dfec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9aed3d8d61c0856665544282a518dfec">&#9670;&nbsp;</a></span>same_finite_element()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::same_finite_element </td>
+          <td>(</td>
+          <td class="paramtype">const mfem::FiniteElement &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mfem::FiniteElement &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a658200c858bbee670e7341cfe7e74d1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a658200c858bbee670e7341cfe7e74d1e">&#9670;&nbsp;</a></span>same_finite_elements()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::same_finite_elements </td>
+          <td>(</td>
+          <td class="paramtype">const mfem::Array&lt; const mfem::FiniteElement * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>el</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3ed4c0fa8d4f5e82c26edf9c323725a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ed4c0fa8d4f5e82c26edf9c323725a7">&#9670;&nbsp;</a></span>set_int_point()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::set_int_point </td>
+          <td>(</td>
+          <td class="paramtype">mfem::ElementTransformation &amp;&#160;</td>
+          <td class="paramname"><em>Tr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mfem::IntegrationPoint &amp;&#160;</td>
+          <td class="paramname"><em>ip</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac88c06450b6b288e42a6f9f3907286f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac88c06450b6b288e42a6f9f3907286f6">&#9670;&nbsp;</a></span>values_at_ip()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structSlothNLFormIntegrator_1_1IpValues.html">IpValues</a> <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::values_at_ip </td>
+          <td>(</td>
+          <td class="paramtype">const mfem::IntegrationRule &amp;&#160;</td>
+          <td class="paramname"><em>ir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mfem::Vector &amp;&#160;</td>
+          <td class="paramname"><em>Psi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mfem::Array&lt; const mfem::Vector * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>elfun</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; mfem::ParGridFunction &gt; &amp;&#160;</td>
+          <td class="paramname"><em>aux_gf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mfem::ElementTransformation &amp;&#160;</td>
+          <td class="paramname"><em>Tr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a12cff5a7745edf7611bbcbbd3e4ccf44"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a12cff5a7745edf7611bbcbbd3e4ccf44">&#9670;&nbsp;</a></span>aux_gf_</h2>
@@ -800,7 +1341,7 @@ template&lt;class VARS &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00075">75</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00086">86</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
 
 </div>
 </div>
@@ -826,7 +1367,7 @@ template&lt;class VARS &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00077">77</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00088">88</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
 
 </div>
 </div>
@@ -852,7 +1393,7 @@ template&lt;class VARS &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00076">76</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00087">87</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
 
 </div>
 </div>
@@ -878,7 +1419,7 @@ template&lt;class VARS &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00079">79</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00090">90</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
 
 </div>
 </div>
@@ -904,7 +1445,35 @@ template&lt;class VARS &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00081">81</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00092">92</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a7f7ac1c557e52b41d19c9ce0188101ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f7ac1c557e52b41d19c9ce0188101ba">&#9670;&nbsp;</a></span>current_tr_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mfem::ElementTransformation* <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::current_tr_ = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Transformation of the current element. </p>
+
+<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00067">67</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
 
 </div>
 </div>
@@ -930,7 +1499,7 @@ template&lt;class VARS &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00060">60</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00062">62</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
 
 </div>
 </div>
@@ -956,7 +1525,7 @@ template&lt;class VARS &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00062">62</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00064">64</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
 
 </div>
 </div>
@@ -982,7 +1551,7 @@ template&lt;class VARS &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00082">82</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00093">93</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
 
 </div>
 </div>
@@ -1008,7 +1577,7 @@ template&lt;class VARS &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00083">83</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00094">94</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
 
 </div>
 </div>
@@ -1034,7 +1603,7 @@ template&lt;class VARS &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00080">80</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00091">91</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
 
 </div>
 </div>
@@ -1060,7 +1629,7 @@ template&lt;class VARS &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00061">61</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00063">63</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
 
 </div>
 </div>
@@ -1086,7 +1655,63 @@ template&lt;class VARS &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00074">74</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00085">85</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a02e86a6359f900d7bd3b4bf708e9bd5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02e86a6359f900d7bd3b4bf708e9bd5d">&#9670;&nbsp;</a></span>x_ip_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mfem::Vector <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::x_ip_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="namespacePhysical.html">Physical</a> coordinates of the current integration point. </p>
+
+<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00068">68</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a12f13e508f874d5b32c534a4306ffffb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12f13e508f874d5b32c534a4306ffffb">&#9670;&nbsp;</a></span>x_ip_valid_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VARS &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classSlothNLFormIntegrator.html">SlothNLFormIntegrator</a>&lt; VARS &gt;::x_ip_valid_ = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>True if x_ip_ matches the current integration point. </p>
+
+<p class="definition">Definition at line <a class="el" href="SlothNLFormIntegrator_8hpp_source.html#l00069">69</a> of file <a class="el" href="SlothNLFormIntegrator_8hpp_source.html">SlothNLFormIntegrator.hpp</a>.</p>
 
 </div>
 </div>
@@ -1096,7 +1721,7 @@ template&lt;class VARS &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:03 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

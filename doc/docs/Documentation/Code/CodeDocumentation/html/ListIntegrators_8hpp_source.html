@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -77,22 +77,30 @@ $(function() {
 <a href="ListIntegrators_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="AllenCahnNLFormIntegrator_8hpp.html">Integrators/AllenCahnNLFormIntegrator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="BlockAllenCahnNLFormIntegrator_8hpp.html">Integrators/BlockAllenCahnNLFormIntegrator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="CahnHilliardNLFormIntegrator_8hpp.html">Integrators/CahnHilliardNLFormIntegrator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="FickNLFormIntegrator_8hpp.html">Integrators/FickNLFormIntegrator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="FourierNLFormIntegrator_8hpp.html">Integrators/FourierNLFormIntegrator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="HeatTimeNLFormIntegrator_8hpp.html">Integrators/HeatTimeNLFormIntegrator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="LatentHeatNLFormIntegrator_8hpp.html">Integrators/LatentHeatNLFormIntegrator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MassDiffusionFluxNLFormIntegrator_8hpp.html">Integrators/MassDiffusionFluxNLFormIntegrator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MeltingCalphadNLFormIntegrator_8hpp.html">Integrators/MeltingCalphadNLFormIntegrator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MeltingConstantNLFormIntegrator_8hpp.html">Integrators/MeltingConstantNLFormIntegrator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MeltingTemperatureNLFormIntegrator_8hpp.html">Integrators/MeltingTemperatureNLFormIntegrator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="NeumannNLFormIntegrator_8hpp.html">Integrators/NeumannNLFormIntegrator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="RobinNLFormIntegrator_8hpp.html">Integrators/RobinNLFormIntegrator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="SlothNLFormIntegrator_8hpp.html">Integrators/SlothNLFormIntegrator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TimeCHNLFormIntegrator_8hpp.html">Integrators/TimeCHNLFormIntegrator.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TimeNLFormIntegrator_8hpp.html">Integrators/TimeNLFormIntegrator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="AdvectionBoundaryCHNLFormIntegrator_8hpp.html">Integrators/AdvectionBoundaryCHNLFormIntegrator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="AdvectionBoundaryNLFormIntegrator_8hpp.html">Integrators/AdvectionBoundaryNLFormIntegrator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="AdvectionNLFormIntegrator_8hpp.html">Integrators/AdvectionNLFormIntegrator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="AllenCahnNLFormIntegrator_8hpp.html">Integrators/AllenCahnNLFormIntegrator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="BlockAllenCahnNLFormIntegrator_8hpp.html">Integrators/BlockAllenCahnNLFormIntegrator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="CahnHilliardNLFormIntegrator_8hpp.html">Integrators/CahnHilliardNLFormIntegrator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="FickNLFormIntegrator_8hpp.html">Integrators/FickNLFormIntegrator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="FourierNLFormIntegrator_8hpp.html">Integrators/FourierNLFormIntegrator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="HeatTimeNLFormIntegrator_8hpp.html">Integrators/HeatTimeNLFormIntegrator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="LatentHeatNLFormIntegrator_8hpp.html">Integrators/LatentHeatNLFormIntegrator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MassDiffusionFluxNLFormIntegrator_8hpp.html">Integrators/MassDiffusionFluxNLFormIntegrator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MeltingCalphadNLFormIntegrator_8hpp.html">Integrators/MeltingCalphadNLFormIntegrator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MeltingConstantNLFormIntegrator_8hpp.html">Integrators/MeltingConstantNLFormIntegrator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="MeltingTemperatureNLFormIntegrator_8hpp.html">Integrators/MeltingTemperatureNLFormIntegrator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="NeumannNLFormIntegrator_8hpp.html">Integrators/NeumannNLFormIntegrator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="RobinNLFormIntegrator_8hpp.html">Integrators/RobinNLFormIntegrator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="SlothNLFormIntegrator_8hpp.html">Integrators/SlothNLFormIntegrator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="SourceTermNLFormIntegrator_8hpp.html">Integrators/SourceTermNLFormIntegrator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="SplitAdvectionNLFormIntegrator_8hpp.html">Integrators/SplitAdvectionNLFormIntegrator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TimeCHNLFormIntegrator_8hpp.html">Integrators/TimeCHNLFormIntegrator.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TimeNLFormIntegrator_8hpp.html">Integrators/TimeNLFormIntegrator.hpp</a>&quot;</span></div>
+<div class="ttc" id="aAdvectionBoundaryCHNLFormIntegrator_8hpp_html"><div class="ttname"><a href="AdvectionBoundaryCHNLFormIntegrator_8hpp.html">AdvectionBoundaryCHNLFormIntegrator.hpp</a></div><div class="ttdoc">Inflow/outflow advection boundary term for the split Cahn-Hilliard equations.</div></div>
+<div class="ttc" id="aAdvectionBoundaryNLFormIntegrator_8hpp_html"><div class="ttname"><a href="AdvectionBoundaryNLFormIntegrator_8hpp.html">AdvectionBoundaryNLFormIntegrator.hpp</a></div><div class="ttdoc">Inflow/outflow boundary term of the conservative advection operator div(v u)</div></div>
+<div class="ttc" id="aAdvectionNLFormIntegrator_8hpp_html"><div class="ttname"><a href="AdvectionNLFormIntegrator_8hpp.html">AdvectionNLFormIntegrator.hpp</a></div><div class="ttdoc">VF of the conservative advection term div(v u)</div></div>
 <div class="ttc" id="aAllenCahnNLFormIntegrator_8hpp_html"><div class="ttname"><a href="AllenCahnNLFormIntegrator_8hpp.html">AllenCahnNLFormIntegrator.hpp</a></div><div class="ttdoc">VF of the Allen Cahn equation.</div></div>
 <div class="ttc" id="aBlockAllenCahnNLFormIntegrator_8hpp_html"><div class="ttname"><a href="BlockAllenCahnNLFormIntegrator_8hpp.html">BlockAllenCahnNLFormIntegrator.hpp</a></div><div class="ttdoc">VF of the AllenCahn equations (splitted form)</div></div>
 <div class="ttc" id="aCahnHilliardNLFormIntegrator_8hpp_html"><div class="ttname"><a href="CahnHilliardNLFormIntegrator_8hpp.html">CahnHilliardNLFormIntegrator.hpp</a></div><div class="ttdoc">VF of the CahnHilliard equations.</div></div>
@@ -107,12 +115,14 @@ $(function() {
 <div class="ttc" id="aNeumannNLFormIntegrator_8hpp_html"><div class="ttname"><a href="NeumannNLFormIntegrator_8hpp.html">NeumannNLFormIntegrator.hpp</a></div><div class="ttdoc">Neumann integrator.</div></div>
 <div class="ttc" id="aRobinNLFormIntegrator_8hpp_html"><div class="ttname"><a href="RobinNLFormIntegrator_8hpp.html">RobinNLFormIntegrator.hpp</a></div><div class="ttdoc">Robin integrator.</div></div>
 <div class="ttc" id="aSlothNLFormIntegrator_8hpp_html"><div class="ttname"><a href="SlothNLFormIntegrator_8hpp.html">SlothNLFormIntegrator.hpp</a></div><div class="ttdoc">Class prodiving common methods to all NLFormIntegrators.</div></div>
+<div class="ttc" id="aSourceTermNLFormIntegrator_8hpp_html"><div class="ttname"><a href="SourceTermNLFormIntegrator_8hpp.html">SourceTermNLFormIntegrator.hpp</a></div><div class="ttdoc">VF of a user-defined source term.</div></div>
+<div class="ttc" id="aSplitAdvectionNLFormIntegrator_8hpp_html"><div class="ttname"><a href="SplitAdvectionNLFormIntegrator_8hpp.html">SplitAdvectionNLFormIntegrator.hpp</a></div><div class="ttdoc">VF of the advection term in the split Cahn-Hilliard equations.</div></div>
 <div class="ttc" id="aTimeCHNLFormIntegrator_8hpp_html"><div class="ttname"><a href="TimeCHNLFormIntegrator_8hpp.html">TimeCHNLFormIntegrator.hpp</a></div><div class="ttdoc">VF of the time derivative for CH equations.</div></div>
 <div class="ttc" id="aTimeNLFormIntegrator_8hpp_html"><div class="ttname"><a href="TimeNLFormIntegrator_8hpp.html">TimeNLFormIntegrator.hpp</a></div><div class="ttdoc">VF of the time derivative.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:15 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:02 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

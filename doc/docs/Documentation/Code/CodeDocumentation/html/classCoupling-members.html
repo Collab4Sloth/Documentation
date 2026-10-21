@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -73,20 +73,29 @@ $(function() {
 
 <p>This is the complete list of members for <a class="el" href="classCoupling.html">Coupling&lt; Args &gt;</a>, including all inherited members.</p>
 <table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="classCoupling.html#a820ce0a1dc9cd856679c4a29f5e88c0b">check_duplicate_post_processing_directory</a>(std::size_t nb_couplings, const std::map&lt; std::string, int &gt; &amp;directory_count)</td><td class="entry"><a class="el" href="classCoupling.html">Coupling&lt; Args &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classCoupling.html#a223bf80894a0db0a325dcd415cb1dea7">collect_vtk_coefficients</a>(std::map&lt; std::string, mfem::ParGridFunction * &gt; &amp;all_coefficients, const double current_time)</td><td class="entry"><a class="el" href="classCoupling.html">Coupling&lt; Args &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classCoupling.html#a3eb06a7a333a3e14e90b859c1f3e43eb">collect_vtk_fields</a>(std::map&lt; std::string, mfem::ParGridFunction * &gt; &amp;all_fields)</td><td class="entry"><a class="el" href="classCoupling.html">Coupling&lt; Args &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classCoupling.html#a2ee36fe15c76df331a494704e0613986">CollectAllVariables</a>()</td><td class="entry"><a class="el" href="classCoupling.html">Coupling&lt; Args &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classCoupling.html#a58a48fd5421070659f49572b3795c873">Coupling</a>(const std::string &amp;name, Args... problems)</td><td class="entry"><a class="el" href="classCoupling.html">Coupling&lt; Args &gt;</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
   <tr><td class="entry"><a class="el" href="classCoupling.html#a5cb62986cc60f8503d9e8c8e34191a32">execute</a>(const int &amp;iter, double &amp;next_time, const double &amp;current_time, const double &amp;current_time_step)</td><td class="entry"><a class="el" href="classCoupling.html">Coupling&lt; Args &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classCoupling.html#ab7a760d27b2e221318e14afcfe990564">finalize</a>()</td><td class="entry"><a class="el" href="classCoupling.html">Coupling&lt; Args &gt;</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classCoupling.html#ac4c7039952d2ed0a430e7d542a02496e">get_convergence</a>()</td><td class="entry"><a class="el" href="classCoupling.html">Coupling&lt; Args &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classCoupling.html#a55f778276392a16fae6c1ae05cecea05">get_name</a>()</td><td class="entry"><a class="el" href="classCoupling.html">Coupling&lt; Args &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classCoupling.html#a5143e54a40b7de7dd139da0d3f6bc19d">get_post_processing_directory_count</a>(std::map&lt; std::string, int &gt; &amp;directory_count)</td><td class="entry"><a class="el" href="classCoupling.html">Coupling&lt; Args &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classCoupling.html#a6577b671e86db143896c2067378f957c">get_shared_dc</a>()</td><td class="entry"><a class="el" href="classCoupling.html">Coupling&lt; Args &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr><td class="entry"><a class="el" href="classCoupling.html#a87f0f74fff4c34b98aa8885908db73f0">get_tree</a>()</td><td class="entry"><a class="el" href="classCoupling.html">Coupling&lt; Args &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classCoupling.html#a1013895d3182ce71eaaf22866c824236">initialize</a>(const int &amp;iter, const double &amp;initial_time, const double time_step)</td><td class="entry"><a class="el" href="classCoupling.html">Coupling&lt; Args &gt;</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classCoupling.html#a857decf34488b0be47c6e5d7f8366e5e">post_processing</a>(const int &amp;iter, const double &amp;current_time)</td><td class="entry"><a class="el" href="classCoupling.html">Coupling&lt; Args &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classCoupling.html#a20bfa3d63ef4ae18ff7ee4fef348a8ab">initialize</a>(const int &amp;iter, const double &amp;initial_time, const double time_step, bool vtk_unified, std::vector&lt; VAR * &gt; all_vars)</td><td class="entry"><a class="el" href="classCoupling.html">Coupling&lt; Args &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classCoupling.html#a2149a37853f46ed56d810f888dd9f510">need_to_be_saved</a>(const int iteration, const double time)</td><td class="entry"><a class="el" href="classCoupling.html">Coupling&lt; Args &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classCoupling.html#ab2ed50d09e0d1575a49fb716471b6ed8">post_processing</a>(const int &amp;iter, const double &amp;current_time, bool vtk_unified, std::vector&lt; VAR * &gt; all_vars)</td><td class="entry"><a class="el" href="classCoupling.html">Coupling&lt; Args &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classCoupling.html#a13659b09ba9f8a8790310b0d1a53e2e1">set_name</a>(const std::string &amp;new_name)</td><td class="entry"><a class="el" href="classCoupling.html">Coupling&lt; Args &gt;</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classCoupling.html#ad08acffd204d8a23e4de280981d7a53f">update</a>()</td><td class="entry"><a class="el" href="classCoupling.html">Coupling&lt; Args &gt;</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classCoupling.html#a8932116e9eff35ad00772bdb42f1ba75">~Coupling</a>()</td><td class="entry"><a class="el" href="classCoupling.html">Coupling&lt; Args &gt;</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classCoupling.html#a72b2af68a1bf3c1a92650652feaa6d27">VarType</a> typedef</td><td class="entry"><a class="el" href="classCoupling.html">Coupling&lt; Args &gt;</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classCoupling.html#a8932116e9eff35ad00772bdb42f1ba75">~Coupling</a>()</td><td class="entry"><a class="el" href="classCoupling.html">Coupling&lt; Args &gt;</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:03 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

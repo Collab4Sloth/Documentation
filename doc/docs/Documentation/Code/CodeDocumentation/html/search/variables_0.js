@@ -1,11 +1,20 @@
 var searchData=
 [
-  ['abs_5ftol_1650',['abs_tol',['../namespaceNewtonDefaultConstant.html#ac1eef27763caad41ca330703399e1225',1,'NewtonDefaultConstant::abs_tol()'],['../namespaceLBFGSDefaultConstant.html#a77da042e172c433100e9b5e2128fac4c',1,'LBFGSDefaultConstant::abs_tol()'],['../namespaceBICGSTABDefaultConstant.html#a4aa9e77a101c313c45e1f9071c9c0b02',1,'BICGSTABDefaultConstant::abs_tol()'],['../namespaceCGDefaultConstant.html#adfa92df3838b1db99e8e3c39f8a49c71',1,'CGDefaultConstant::abs_tol()'],['../namespaceMINRESDefaultConstant.html#a51be378380f456184ea14f3ebe1af756',1,'MINRESDefaultConstant::abs_tol()'],['../namespaceGMRESDefaultConstant.html#a63b66e4476d66c517a6a7547302c5a5a',1,'GMRESDefaultConstant::abs_tol()']]],
-  ['always_5ffalse_1651',['always_false',['../CalphadUtils_8hpp.html#a92b52772010dec87f8867320a8b03dfc',1,'CalphadUtils.hpp']]],
-  ['analytical_5ffunction_5f_1652',['analytical_function_',['../classAnalyticalFunctions.html#a7c66dd5842373bf8a640ff49a5ecfdf8',1,'AnalyticalFunctions']]],
-  ['array_5fbdr_5f_1653',['array_bdr_',['../classOperatorBase.html#a26da719e47eb3b9d7353d02cc2f3ac19',1,'OperatorBase']]],
-  ['aux_5fgf_5f_1654',['aux_gf_',['../classSlothNLFormIntegrator.html#a12cff5a7745edf7611bbcbbd3e4ccf44',1,'SlothNLFormIntegrator']]],
-  ['aux_5finfos_5f_1655',['aux_infos_',['../classSlothNLFormIntegrator.html#a828c57f4004006c8bbb2cd979378e0a6',1,'SlothNLFormIntegrator']]],
-  ['aux_5fold_5fgf_5f_1656',['aux_old_gf_',['../classSlothNLFormIntegrator.html#adaf6b8e1a193e3afb9718f7af373efa5',1,'SlothNLFormIntegrator']]],
-  ['auxvariables_5f_1657',['auxvariables_',['../classSlothNLFormIntegrator.html#a2c77ea694c8462fb42362e0e5fa1bdca',1,'SlothNLFormIntegrator::auxvariables_()'],['../classOperatorBase.html#ac4e42d59a151f6654d7d87508d6a081d',1,'OperatorBase::auxvariables_()'],['../classProblemBase.html#aecdf50803c4218ca5e191ee0ef81a547',1,'ProblemBase::auxvariables_()']]]
+  ['abs_5ftol_2024',['abs_tol',['../namespaceGMRESDefaultConstant.html#a63b66e4476d66c517a6a7547302c5a5a',1,'GMRESDefaultConstant::abs_tol()'],['../namespaceMINRESDefaultConstant.html#a51be378380f456184ea14f3ebe1af756',1,'MINRESDefaultConstant::abs_tol()'],['../namespaceCGDefaultConstant.html#adfa92df3838b1db99e8e3c39f8a49c71',1,'CGDefaultConstant::abs_tol()'],['../namespaceBICGSTABDefaultConstant.html#a4aa9e77a101c313c45e1f9071c9c0b02',1,'BICGSTABDefaultConstant::abs_tol()'],['../namespaceLBFGSDefaultConstant.html#a77da042e172c433100e9b5e2128fac4c',1,'LBFGSDefaultConstant::abs_tol()'],['../namespaceNewtonDefaultConstant.html#ac1eef27763caad41ca330703399e1225',1,'NewtonDefaultConstant::abs_tol()']]],
+  ['always_5ffalse_2025',['always_false',['../CalphadUtils_8hpp.html#a92b52772010dec87f8867320a8b03dfc',1,'CalphadUtils.hpp']]],
+  ['amr_5f_2026',['amr_',['../classProblemBase.html#ab21e3136f25079c45f86a1a2b0c36f1b',1,'ProblemBase']]],
+  ['amr_5festimator_5f_2027',['amr_estimator_',['../classAMRBase.html#a7f6245ec3303b5ee55ca772dcf2f0080',1,'AMRBase']]],
+  ['amr_5fmax_5felem_5ferror_5f_2028',['amr_max_elem_error_',['../classAMRBase.html#a3507421e5b969e9690818fe3b38628dd',1,'AMRBase']]],
+  ['amr_5fmax_5flevel_5f_2029',['amr_max_level_',['../classAMRBase.html#a729dedcfb46e86611a9c361c635e6153',1,'AMRBase']]],
+  ['amr_5fmax_5fpreref_5fcycles_5f_2030',['amr_max_preref_cycles_',['../classAMRBase.html#aaaf56068331ff545f7a2f54dc405cb53',1,'AMRBase']]],
+  ['amr_5fnc_5flimit_5f_2031',['amr_nc_limit_',['../classAMRBase.html#aa5016a87a20dc39e3ccc759db2df3dee',1,'AMRBase']]],
+  ['amr_5fscale_5fdown_5ffactor_5f_2032',['amr_scale_down_factor_',['../classAMRBase.html#ad6cc9529fee22fe86e7abf5a294f5c59',1,'AMRBase']]],
+  ['analytical_5ffunction_5f_2033',['analytical_function_',['../classAnalyticalFunctions.html#a7c66dd5842373bf8a640ff49a5ecfdf8',1,'AnalyticalFunctions']]],
+  ['any_5fderivative_5f_2034',['any_derivative_',['../classSourceTermNLFormIntegrator.html#a5d7c7551115d13ee80e4925076022133',1,'SourceTermNLFormIntegrator']]],
+  ['array_5fbdr_5f_2035',['array_bdr_',['../classOperatorBase.html#a26da719e47eb3b9d7353d02cc2f3ac19',1,'OperatorBase']]],
+  ['aux_2036',['aux',['../structSlothNLFormIntegrator_1_1IpValues.html#a5114614423b8c0efa696ecd63b39f564',1,'SlothNLFormIntegrator::IpValues']]],
+  ['aux_5fgf_5f_2037',['aux_gf_',['../classSlothNLFormIntegrator.html#a12cff5a7745edf7611bbcbbd3e4ccf44',1,'SlothNLFormIntegrator']]],
+  ['aux_5finfos_5f_2038',['aux_infos_',['../classSlothNLFormIntegrator.html#a828c57f4004006c8bbb2cd979378e0a6',1,'SlothNLFormIntegrator']]],
+  ['aux_5fold_5fgf_5f_2039',['aux_old_gf_',['../classSlothNLFormIntegrator.html#adaf6b8e1a193e3afb9718f7af373efa5',1,'SlothNLFormIntegrator']]],
+  ['auxvariables_5f_2040',['auxvariables_',['../classSlothNLFormIntegrator.html#a2c77ea694c8462fb42362e0e5fa1bdca',1,'SlothNLFormIntegrator::auxvariables_()'],['../classOperatorBase.html#ac4e42d59a151f6654d7d87508d6a081d',1,'OperatorBase::auxvariables_()'],['../classProblemBase.html#aecdf50803c4218ca5e191ee0ef81a547',1,'ProblemBase::auxvariables_()']]]
 ];

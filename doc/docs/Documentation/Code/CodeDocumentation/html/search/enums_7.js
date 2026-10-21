@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['nlsolvertype_1899',['NLSolverType',['../SolversOptions_8hpp.html#a765a4007c12a84454a77f1a29ad04b4a',1,'SolversOptions.hpp']]]
+  ['mobility_2334',['Mobility',['../PhysicalPropertiesOptions_8hpp.html#aadc92032268cd667897160dab9916ad1',1,'PhysicalPropertiesOptions.hpp']]],
+  ['mode_2335',['Mode',['../classVelocityField.html#a233782353e37fd070ea010705cfeed74',1,'VelocityField']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['thermodynamicspotentialdiscretization_1905',['ThermodynamicsPotentialDiscretization',['../PhaseFieldOptions_8hpp.html#a046448df02547260d7d04c8fdb4ed713',1,'PhaseFieldOptions.hpp']]],
-  ['thermodynamicspotentials_1906',['ThermodynamicsPotentials',['../PhaseFieldOptions_8hpp.html#ada0d4ce732f91afe18119f725a6da825',1,'PhaseFieldOptions.hpp']]]
+  ['scheme_2341',['Scheme',['../TimeOptions_8hpp.html#a5c5181a54a4f46149d9c9662b2694167',1,'TimeOptions.hpp']]]
 ];

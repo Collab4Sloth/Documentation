@@ -66,7 +66,7 @@ var sectionId = 'dynsection-0';
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="structspecialized__spatial__constructor_3_01T_00_011_01_4.html#ad9287439f1ff6f197b292f62549a75ad" target="_top" xlink:title="Build a one&#45;dimensional mesh by using MFEM inline methods.">
+<g id="a_node2"><a xlink:href="structspecialized__spatial__constructor_3_01T_00_011_01_4.html#a0f6beaf0e509aa4f32c14a2d0bde719c" target="_top" xlink:title="Build a one&#45;dimensional mesh by using MFEM inline methods.">
 <polygon fill="none" stroke="black" points="4.5,-480.5 4.5,-521.5 123.5,-521.5 123.5,-480.5 4.5,-480.5"/>
 <text text-anchor="start" x="12.5" y="-509.5" font-family="serif" font-size="10.00">specialized_spatial</text>
 <text text-anchor="start" x="12.5" y="-498.5" font-family="serif" font-size="10.00">_constructor&lt; T, 1 &gt;</text>
@@ -83,7 +83,7 @@ var sectionId = 'dynsection-0';
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="structspecialized__spatial__constructor_3_01T_00_012_01_4.html#a005fb02e74a9ce0b54581b6f0db5f5c7" target="_top" xlink:title="Build a two&#45;dimensional mesh by using MFEM inline methods.">
+<g id="a_node3"><a xlink:href="structspecialized__spatial__constructor_3_01T_00_012_01_4.html#a77d91e941542bd86f6d5217f492edfc0" target="_top" xlink:title="Build a two&#45;dimensional mesh by using MFEM inline methods.">
 <polygon fill="none" stroke="black" points="4.5,-420.5 4.5,-461.5 123.5,-461.5 123.5,-420.5 4.5,-420.5"/>
 <text text-anchor="start" x="12.5" y="-449.5" font-family="serif" font-size="10.00">specialized_spatial</text>
 <text text-anchor="start" x="12.5" y="-438.5" font-family="serif" font-size="10.00">_constructor&lt; T, 2 &gt;</text>
@@ -100,7 +100,7 @@ var sectionId = 'dynsection-0';
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="structspecialized__spatial__constructor_3_01T_00_013_01_4.html#a8014c724d751df65257185c4cc4ea106" target="_top" xlink:title="Build a three&#45;dimensional mesh by using MFEM inline methods.">
+<g id="a_node4"><a xlink:href="structspecialized__spatial__constructor_3_01T_00_013_01_4.html#afd17da382ae449afd05fd27fdadeb35f" target="_top" xlink:title="Build a three&#45;dimensional mesh by using MFEM inline methods.">
 <polygon fill="none" stroke="black" points="4.5,-360.5 4.5,-401.5 123.5,-401.5 123.5,-360.5 4.5,-360.5"/>
 <text text-anchor="start" x="12.5" y="-389.5" font-family="serif" font-size="10.00">specialized_spatial</text>
 <text text-anchor="start" x="12.5" y="-378.5" font-family="serif" font-size="10.00">_constructor&lt; T, 3 &gt;</text>
@@ -117,7 +117,7 @@ var sectionId = 'dynsection-0';
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="structspecialized__spatial__constructor_3_01T_00_011_01_4.html#acc009540b0294c236332a5179c51d854" target="_top" xlink:title="Build a periodic one&#45;dimensional mesh by using MFEM inline methods.">
+<g id="a_node5"><a xlink:href="structspecialized__spatial__constructor_3_01T_00_011_01_4.html#a8f4b2c4f08159de8b171c3bdf1b42baf" target="_top" xlink:title="Build a periodic one&#45;dimensional mesh by using MFEM inline methods.">
 <polygon fill="none" stroke="black" points="0,-300.5 0,-341.5 128,-341.5 128,-300.5 0,-300.5"/>
 <text text-anchor="start" x="8" y="-329.5" font-family="serif" font-size="10.00">specialized_spatial</text>
 <text text-anchor="start" x="8" y="-318.5" font-family="serif" font-size="10.00">_constructor&lt; T, 1 &gt;</text>
@@ -134,7 +134,7 @@ var sectionId = 'dynsection-0';
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="structspecialized__spatial__constructor_3_01T_00_012_01_4.html#abe1d650198fb88c3210101569b22a6a3" target="_top" xlink:title="Build a periodic two&#45;dimensional mesh by using MFEM inline methods.">
+<g id="a_node6"><a xlink:href="structspecialized__spatial__constructor_3_01T_00_012_01_4.html#ad3325953d0cc8653545afc6cd2e86289" target="_top" xlink:title="Build a periodic two&#45;dimensional mesh by using MFEM inline methods.">
 <polygon fill="none" stroke="black" points="0,-240.5 0,-281.5 128,-281.5 128,-240.5 0,-240.5"/>
 <text text-anchor="start" x="8" y="-269.5" font-family="serif" font-size="10.00">specialized_spatial</text>
 <text text-anchor="start" x="8" y="-258.5" font-family="serif" font-size="10.00">_constructor&lt; T, 2 &gt;</text>
@@ -151,7 +151,7 @@ var sectionId = 'dynsection-0';
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="structspecialized__spatial__constructor_3_01T_00_013_01_4.html#a67870a398304104983d23b5886a4844d" target="_top" xlink:title="Build a periodic two&#45;dimensional mesh by using MFEM inline methods.">
+<g id="a_node7"><a xlink:href="structspecialized__spatial__constructor_3_01T_00_013_01_4.html#a664c1b450ef4a0caf1630a49f30a7a3d" target="_top" xlink:title="Build a periodic two&#45;dimensional mesh by using MFEM inline methods.">
 <polygon fill="none" stroke="black" points="0,-180.5 0,-221.5 128,-221.5 128,-180.5 0,-180.5"/>
 <text text-anchor="start" x="8" y="-209.5" font-family="serif" font-size="10.00">specialized_spatial</text>
 <text text-anchor="start" x="8" y="-198.5" font-family="serif" font-size="10.00">_constructor&lt; T, 3 &gt;</text>
@@ -168,7 +168,7 @@ var sectionId = 'dynsection-0';
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="structspecialized__spatial__constructor_3_01T_00_011_01_4.html#a9d28d9d2735b1b9d2ca88de45cfda15b" target="_top" xlink:title="operator() specialized for a mesh built from GMSH file">
+<g id="a_node8"><a xlink:href="structspecialized__spatial__constructor_3_01T_00_011_01_4.html#a3e4c25ea53097f7c2269e44d79d1fb43" target="_top" xlink:title="operator() specialized for a mesh built from GMSH file">
 <polygon fill="none" stroke="black" points="4.5,-120.5 4.5,-161.5 123.5,-161.5 123.5,-120.5 4.5,-120.5"/>
 <text text-anchor="start" x="12.5" y="-149.5" font-family="serif" font-size="10.00">specialized_spatial</text>
 <text text-anchor="start" x="12.5" y="-138.5" font-family="serif" font-size="10.00">_constructor&lt; T, 1 &gt;</text>
@@ -185,7 +185,7 @@ var sectionId = 'dynsection-0';
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="structspecialized__spatial__constructor_3_01T_00_012_01_4.html#a367e7535f528d675144feb9ec420a28b" target="_top" xlink:title="operator() specialized for a mesh built from GMSH file">
+<g id="a_node9"><a xlink:href="structspecialized__spatial__constructor_3_01T_00_012_01_4.html#a6d5f1ce0d3af7c34d92465ca380772d8" target="_top" xlink:title="operator() specialized for a mesh built from GMSH file">
 <polygon fill="none" stroke="black" points="4.5,-60.5 4.5,-101.5 123.5,-101.5 123.5,-60.5 4.5,-60.5"/>
 <text text-anchor="start" x="12.5" y="-89.5" font-family="serif" font-size="10.00">specialized_spatial</text>
 <text text-anchor="start" x="12.5" y="-78.5" font-family="serif" font-size="10.00">_constructor&lt; T, 2 &gt;</text>
@@ -202,7 +202,7 @@ var sectionId = 'dynsection-0';
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="structspecialized__spatial__constructor_3_01T_00_013_01_4.html#ac2e4126ca21896e53bd7800cf989d462" target="_top" xlink:title="operator() specialized for a mesh built from GMSH file">
+<g id="a_node10"><a xlink:href="structspecialized__spatial__constructor_3_01T_00_013_01_4.html#ac821ddb96346f53e756891aa81aec2bd" target="_top" xlink:title="operator() specialized for a mesh built from GMSH file">
 <polygon fill="none" stroke="black" points="4.5,-0.5 4.5,-41.5 123.5,-41.5 123.5,-0.5 4.5,-0.5"/>
 <text text-anchor="start" x="12.5" y="-29.5" font-family="serif" font-size="10.00">specialized_spatial</text>
 <text text-anchor="start" x="12.5" y="-18.5" font-family="serif" font-size="10.00">_constructor&lt; T, 3 &gt;</text>
