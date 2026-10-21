@@ -35,6 +35,9 @@ whichever way SLOTH was installed:
     spack load sloth
     ```
 
+    If `spack info sloth` finds no package (Spack older than 1.0, or SLOTH not yet in your
+    copy of the builtin repository), use the package shipped with the sources (see below).
+
     `spack info sloth` lists the versions and variants (`+shared`, `+mumps`, `+voro`,
     `+bigint`, `+native`). For instance, to enable Voro++ (Voronoi tessellations):
 
