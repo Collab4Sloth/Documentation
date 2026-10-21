@@ -7,9 +7,9 @@ icon: simple/linux
 A straightforward way to install MFEM is to use [spack](https://spack.readthedocs.io/en/latest/getting_started.html).
 
 !!! info "Installing spack"
-    To install spack on Linux, the first step consists in cloning and loading it into a `$SPACK` directory (see [spack](https://spack.readthedocs.io/en/latest/getting_started.html) for more details.)
+    To install spack on Linux, the first step consists in cloning and loading it into a `$SPACK` directory (see [spack](https://spack.readthedocs.io/en/latest/getting_started.html) for more details).
 
-Assuming `spack` well installed into the `$SPACK` directory, the following command enables to install MFEM with right additional packages:
+Assuming `spack` is well installed into the `$SPACK` directory, the following command installs MFEM with the right additional packages:
 
 ```bash
 source $SPACK/share/spack/setup-env.sh
@@ -17,10 +17,13 @@ source $SPACK/share/spack/setup-env.sh
 spack install mfem+mpi+suite-sparse+sundials+superlu-dist+miniapps
 ```
 !!! note "Installing a given version of MFEM"
-    The user is free to install different version of MFEM. 
-    By default, the last released is considered. otherwise, "@version" must be added at the end of the `spack` command.
+    The user is free to install a different version of MFEM.
+    By default, the latest release is installed. Otherwise, `@version` must be added to the spec, e.g.:
+    ```bash
+    spack install mfem@4.9+mpi+suite-sparse+sundials+superlu-dist+miniapps
+    ```
 
-Once MFEM is installed, SLOTH can be built using the `envSloth.sh` shell script. 
+Once MFEM is installed, SLOTH can be built using the `envSloth.sh` shell script.
 This script loads MFEM, defines several environment variables, and compiles SLOTH.
 
 !!! note "Build SLOTH using the `envSloth.sh` shell script"
@@ -31,13 +34,19 @@ This script loads MFEM, defines several environment variables, and compiles SLOT
     Please ensure that [Sympy](https://docs.sympy.org/latest/index.html) is installed.
     Sympy is a mandatory prerequisite to build SLOTH as it is used to handle physical properties.
 
-Once, MFEM and Sympy are installed, please run the following command to build SLOTH:
+    If the system Python cannot be modified, Sympy can also be installed with Spack:
+    ```bash
+    spack install py-sympy
+    spack load py-sympy
+    ```
+
+Once MFEM and Sympy are installed, please run the following commands to build SLOTH:
 
 ```bash
-mkdir build 
+mkdir build
 cd build
 
-bash ../envSloth.sh [OPTIONS] 
+bash ../envSloth.sh [OPTIONS]
 ```
 where [OPTIONS] are:
 ```bash
@@ -70,25 +79,25 @@ By default, this command builds a static library of SLOTH with release compiler 
 
 !!! tip "Building a shared library of SLOTH"
     The `--shared` option enables building a shared library of SLOTH.
-    However, the user must ensure that the library type used for `MFEM` is compatible. Certain combinations of static and shared libraries may require specific compiler options, such as `-fPIC`. 
+    However, the user must ensure that the library type used for `MFEM` is compatible. Certain combinations of static and shared libraries may require specific compiler options, such as `-fPIC`.
 
-    `spack` builds static library of MFEM unless the users enable shared ones (see `+shared` in the `spack` command):
+    `spack` builds a static library of MFEM unless the user enables shared ones (see `+shared` in the `spack` command):
     ```shell
     spack install mfem+shared+mpi+suite-sparse+sundials+superlu-dist+miniapps
     ```
-    
+
 The `make` command within the `envSloth.sh` script does not compile the tests. To compile tests after SLOTH has been built, run the following command:
 
 ```bash
-make tests -j N 
+make tests -j N
 ```
 
-where `N` is a number of CPUs to use for building the tests in parallel. 
+where `N` is a number of CPUs to use for building the tests in parallel.
 
 Once the tests are compiled, users can verify the build by running all tests with `ctest`:
 
 ```bash
-ctest -j N 
+ctest -j N
 ```
 
 Finally, users can install the SLOTH library, headers, and scripts into the `SlothInstall` directory by running:
@@ -99,10 +108,12 @@ make install
 
 
 !!! note "Installing SLOTH in user-defined repository"
-    By default, SLOTH is installed in a `SlothInstall` directory at the same level as the repository. 
+    By default, SLOTH is installed in a `SlothInstall` directory at the same level as the repository.
 
-    Users can be specify another directory with the `--install` option of the `envSloth.sh` script.
+    Users can specify another directory with the `--install` option of the `envSloth.sh` script.
 
+!!! warning "Reinstalling after a dependency change"
+    The installed CMake files (`SlothInstall/lib/cmake/Sloth/SlothTargets.cmake`) keep the link flags of MFEM at the time SLOTH was built. If MFEM is reinstalled or updated with Spack, SLOTH must be rebuilt and reinstalled from an empty `build` directory.
 
 !!! tip "Using the installed SLOTH"
     To build your own programs with the installed SLOTH (`find_package(Sloth)`) and try the
