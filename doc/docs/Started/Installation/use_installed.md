@@ -35,7 +35,12 @@ whichever way SLOTH was installed:
     spack load sloth
     ```
 
-    `spack info sloth` lists the versions and variants (`+shared`, `+mumps`, `+petsc`, `+native`).
+    `spack info sloth` lists the versions and variants (`+shared`, `+mumps`, `+petsc`,
+    `+voro`, `+native`). For instance, to enable Voro++ (Voronoi tessellations):
+
+    ```bash
+    spack install sloth +voro
+    ```
 
     To build the development version from a local clone instead, use the package
     shipped with the sources (directory `spack_repo`):
