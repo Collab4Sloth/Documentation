@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -72,6 +72,9 @@ $(function() {
 <li>g
 : <a class="el" href="structcalphad__outputs.html#a3b9ee0f8fee1d86f37ad937912c864fea10cf86861b30fe51b9dc863a14759092">calphad_outputs</a>
 </li>
+<li>geometry()
+: <a class="el" href="classFileCoefficient.html#af49c9558c2d8e8493ddd1220604af8bd">FileCoefficient</a>
+</li>
 <li>geometry_
 : <a class="el" href="classOperatorBase.html#a35a8795b1b7330c6ab1a88442b8f0211">OperatorBase&lt; T, DIM &gt;</a>
 , <a class="el" href="classProblemBase.html#a923b1c0b8b1836049094c2e556656227">ProblemBase&lt; VAR, PST &gt;</a>
@@ -117,7 +120,9 @@ $(function() {
 : <a class="el" href="classSlothNLFormIntegrator.html#abd6cc4c7a0a02435c1c157bfeb655a8f">SlothNLFormIntegrator&lt; VARS &gt;</a>
 </li>
 <li>get_coefficients()
-: <a class="el" href="classAllenCahnNLFormIntegrator.html#add6c732fbc7414b62294fc3dbb5b9602">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>
+: <a class="el" href="classAdvectionBoundaryNLFormIntegrator.html#a73eb0f15e5e3c5784cdec991fdbcaf6e">AdvectionBoundaryNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classAdvectionNLFormIntegrator.html#a8557c5de4ce2e6ca2c8236fbce52c68c">AdvectionNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classAllenCahnNLFormIntegrator.html#add6c732fbc7414b62294fc3dbb5b9602">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classBlockAllenCahnNLFormIntegrator.html#a36febf76e26164c1096d35bfbf389b48">BlockAllenCahnNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classCahnHilliardNLFormIntegrator.html#a7b5e9d32a258c56d61fff413231705e2">CahnHilliardNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classDiffusionFluxNLFormIntegrator.html#aec79b94d096d7f4cf762780f897805a1">DiffusionFluxNLFormIntegrator&lt; VARS &gt;</a>
@@ -130,6 +135,7 @@ $(function() {
 , <a class="el" href="classNeumannNLFormIntegrator.html#a71919030313b94bf6ea5ee6573aeae63">NeumannNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classRobinNLFormIntegrator.html#acc307518ab52f3742ab33bb2459423ed">RobinNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classSlothNLFormIntegrator.html#a9074a960dd8e8af4175d2c1e0dfdbafd">SlothNLFormIntegrator&lt; VARS &gt;</a>
+, <a class="el" href="classSourceTermNLFormIntegrator.html#a594eee5ff18d0dd5925bc36ac28c944f">SourceTermNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classTimeCHNLFormIntegrator.html#ae4a553f4965b002c5653e6a65a0aa064">TimeCHNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classTimeNLFormIntegrator.html#a540cfdf1b186168bdc3308ff3da69b6f">TimeNLFormIntegrator&lt; VARS &gt;</a>
 </li>
@@ -204,7 +210,7 @@ $(function() {
 : <a class="el" href="classKKS.html#aff05920ea97aab8e9b80c5f912d60456">KKS&lt; T &gt;</a>
 </li>
 <li>get_map_gridfunction()
-: <a class="el" href="classVariables.html#a38d3f9df896ed022618d6aadb6257ad6">Variables&lt; T, DIM &gt;</a>
+: <a class="el" href="classVariables.html#a0968efaf8f2e157f9101d9fd41081c06">Variables&lt; T, DIM &gt;</a>
 </li>
 <li>get_map_unknown()
 : <a class="el" href="classVariable.html#a49e34090b8d80a6a2568522f170c8ff6">Variable&lt; T, DIM &gt;</a>
@@ -230,6 +236,7 @@ $(function() {
 : <a class="el" href="classCoupling.html#a55f778276392a16fae6c1ae05cecea05">Coupling&lt; Args &gt;</a>
 , <a class="el" href="classParameter.html#af60811a241c71f2e9eb9e05972464e19">Parameter</a>
 , <a class="el" href="classProblemBase.html#ae07a98b0fcc4692d14cb62e7756f3b43">ProblemBase&lt; VAR, PST &gt;</a>
+, <a class="el" href="classSlothBaseCoefficient.html#aab2efc2e58c4f4e57b43d8af97fb80e2">SlothBaseCoefficient</a>
 </li>
 <li>get_nl_solver()
 : <a class="el" href="classNLSolver.html#af272ee9ef43ff8ae809759e7345457e2">NLSolver</a>
@@ -258,18 +265,39 @@ $(function() {
 , <a class="el" href="classMeltingConstantNLFormIntegrator.html#a7459e4b87d9f03c6c3fd7bdf34f3b5e2">MeltingConstantNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classMeltingTemperatureNLFormIntegrator.html#a23da3aae98e1308ffe7b4b343c2764aa">MeltingTemperatureNLFormIntegrator&lt; VARS &gt;</a>
 </li>
+<li>get_physical_point()
+: <a class="el" href="classSlothNLFormIntegrator.html#a41190cd33ae592bafa9c12900b24789f">SlothNLFormIntegrator&lt; VARS &gt;</a>
+</li>
 <li>get_post_processing_directory()
 : <a class="el" href="classPostProcessing.html#a8ea68c26f94b3f354cf1719c2a980b44">PostProcessing&lt; T, DC, DIM &gt;</a>
 </li>
+<li>get_post_processing_directory_count()
+: <a class="el" href="classCoupling.html#a5143e54a40b7de7dd139da0d3f6bc19d">Coupling&lt; Args &gt;</a>
+</li>
+<li>get_problem_post_processing_directory()
+: <a class="el" href="classProblemBase.html#afdded694137197716777dee9141bd977">ProblemBase&lt; VAR, PST &gt;</a>
+</li>
 <li>get_problem_variables()
-: <a class="el" href="classProblemBase.html#ae63324d4b2152faac1b7aef134bab890">ProblemBase&lt; VAR, PST &gt;</a>
+: <a class="el" href="classProblemBase.html#a47c49c6b59f093b04ba1a36d03f06ef9">ProblemBase&lt; VAR, PST &gt;</a>
 </li>
 <li>get_property()
 : <a class="el" href="classInterDiffusionCoefficient.html#a68099636d767d6ad4e4bba774c203d41">InterDiffusionCoefficient</a>
 , <a class="el" href="classPropertyBase.html#a40e6ad497420c68660474b6f5553a273">PropertyBase</a>
 </li>
+<li>get_pst()
+: <a class="el" href="classProblemBase.html#afaedd3579f7573d8e412e571c568fd10">ProblemBase&lt; VAR, PST &gt;</a>
+</li>
 <li>get_quantity()
 : <a class="el" href="classSlothBaseCoefficient.html#a3924e4859a9ad005c5144901908b9cac">SlothBaseCoefficient</a>
+</li>
+<li>get_ref_finite_element_space()
+: <a class="el" href="classSpatialDiscretization.html#a0b81b92fc3622f5e124b1ce40a7736e7">SpatialDiscretization&lt; T, DIM &gt;</a>
+</li>
+<li>get_ref_gf()
+: <a class="el" href="classVariable.html#a3353ac1fa2d1a7fd7ea79fd1de0a12ad">Variable&lt; T, DIM &gt;</a>
+</li>
+<li>get_ref_unknown()
+: <a class="el" href="classVariable.html#a21aef086d152ea9faeb598d5a0225bd3">Variable&lt; T, DIM &gt;</a>
 </li>
 <li>get_rhs_integrator()
 : <a class="el" href="classOperatorBase.html#af3d2e9b7e28be1195e87d4a567707edb">OperatorBase&lt; T, DIM &gt;</a>
@@ -281,6 +309,11 @@ $(function() {
 : <a class="el" href="classMeltingBaseNLFormIntegrator.html#a8c7a48766ae02dc86c119f773cf64752">MeltingBaseNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classMeltingCalphadNLFormIntegrator.html#ad8b714d8c69839aa20b80a3ed93b346e">MeltingCalphadNLFormIntegrator&lt; VARS &gt;</a>
 </li>
+<li>get_shared_dc()
+: <a class="el" href="classCoupling.html#a6577b671e86db143896c2067378f957c">Coupling&lt; Args &gt;</a>
+, <a class="el" href="classPostProcessing.html#a16d2898909a473147467af17031c97cc">PostProcessing&lt; T, DC, DIM &gt;</a>
+, <a class="el" href="classProblemBase.html#a4e23d5842f32c19b33c31f7907da7c0a">ProblemBase&lt; VAR, PST &gt;</a>
+</li>
 <li>get_size()
 : <a class="el" href="classCalphadUtils.html#ab53e10756c99b94061ed8e78a375ce60">CalphadUtils&lt; T &gt;</a>
 , <a class="el" href="classParameters.html#afa76ba89e589858ec888bf252cd53017">Parameters</a>
@@ -288,8 +321,11 @@ $(function() {
 <li>get_solver()
 : <a class="el" href="classLSolver.html#a159fdc31354a84c35bc068523fdb2f35">LSolver</a>
 </li>
-<li>get_source_term()
-: <a class="el" href="classOperatorBase.html#a5c5a20697e839d42d2301858f8b99795">OperatorBase&lt; T, DIM &gt;</a>
+<li>get_specialized_frequency()
+: <a class="el" href="classPostProcessing.html#a12b0fc319d1503dbe69c9afb07e7b33d">PostProcessing&lt; T, DC, DIM &gt;</a>
+</li>
+<li>get_time()
+: <a class="el" href="classFunctionCoefficient.html#af43aaa9e59d06213558757be3ff18c6e">FunctionCoefficient</a>
 </li>
 <li>get_time_iso_specialized()
 : <a class="el" href="classOperatorBase.html#a48021f01776f78be3dc5c5303e7dad76">OperatorBase&lt; T, DIM &gt;</a>
@@ -314,6 +350,7 @@ $(function() {
 </li>
 <li>get_value()
 : <a class="el" href="classParameter.html#a7874e1270fe62aecf3063a4f9edecb47">Parameter</a>
+, <a class="el" href="classSlothErrorEstimators.html#a35d3499b43b7329393d1d0c1507dc7df">SlothErrorEstimators</a>
 , <a class="el" href="classSlothSolver.html#aa9c78d816c02f2d4ab70af64cb3f7791">SlothSolver</a>
 </li>
 <li>get_variable()
@@ -392,7 +429,7 @@ $(function() {
 : <a class="el" href="classCalphadBase.html#a455e82eb47e99b485bacba19fe36ca84">CalphadBase&lt; T &gt;</a>
 </li>
 <li>GlossaryQuantity()
-: <a class="el" href="structGlossaryQuantity.html#a2bab5a45cdb0fe8d40295bd3ac7e3d07">GlossaryQuantity</a>
+: <a class="el" href="structGlossaryQuantity.html#a228ffb7e6ec9dd7668713e907bb8e5bf">GlossaryQuantity</a>
 </li>
 <li>gm
 : <a class="el" href="structcalphad__outputs.html#a3b9ee0f8fee1d86f37ad937912c864fea31ed50d9f860eb7c9d0f2154565a07b9">calphad_outputs</a>
@@ -401,10 +438,13 @@ $(function() {
 : <a class="el" href="structMeshes.html#a17ce7cdf7c4aef0633ce80f5e526b706a70efa49375d60bfa8df948c284390922">Meshes</a>
 </li>
 <li>GMSHReaderSplitFiles()
-: <a class="el" href="classSpatialDiscretization.html#a60e42688ee029c0c0f622912b1ea66f4">SpatialDiscretization&lt; T, DIM &gt;</a>
+: <a class="el" href="classSpatialDiscretization.html#ac02700b79f87fea97df0417440afadf5">SpatialDiscretization&lt; T, DIM &gt;</a>
 </li>
 <li>grad_energy_coefficient_
 : <a class="el" href="classOperatorBase.html#a373040051c3fdf52ead07edc6b3d4079">OperatorBase&lt; T, DIM &gt;</a>
+</li>
+<li>grad_symbol_
+: <a class="el" href="classAdvectionNLFormIntegrator.html#adfb1cfd4e1ec152501bb2643cbcfb0a4">AdvectionNLFormIntegrator&lt; VARS &gt;</a>
 </li>
 <li>GradientEnergy()
 : <a class="el" href="classGradientEnergy.html#a9c2329e8da618e000ffb4c4da5eeeb40">GradientEnergy</a>
@@ -412,6 +452,7 @@ $(function() {
 <li>GradientF()
 : <a class="el" href="classConstantCoefficient.html#aa3bad442a1b5fe818ef74adbca737b79">ConstantCoefficient</a>
 , <a class="el" href="classExprTkCoefficient.html#aec3d4f3c5daaa7bbe8f9284786c961e0">ExprTkCoefficient</a>
+, <a class="el" href="classFileCoefficient.html#ad6b62f7122385965c2fca43499f0aa03">FileCoefficient</a>
 , <a class="el" href="classFunctionCoefficient.html#a23fcb3cce394d328f394a758ebf690a6">FunctionCoefficient</a>
 , <a class="el" href="classFw.html#a664cb7fd98aa5a4dd778897462571210">Fw</a>
 , <a class="el" href="classGradientEnergy.html#ae0630f3891e1efe26a710ce0d09e77c5">GradientEnergy</a>
@@ -428,7 +469,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:17 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:03 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

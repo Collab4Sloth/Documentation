@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -361,80 +361,76 @@ $(function() {
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  mfem::Vector grad_mu;</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  grad_mu.SetSize(dim);</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  for (const auto&amp; [component, dmu_gf] : this-&gt;dmu_gf_) {</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    auto dmu = SlothGridFunction(dmu_gf);</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    dmu.GetGradient(Tr, this-&gt;gradPsi, grad_mu);</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    if (this-&gt;scale_variables_by_temperature_) {</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;      this-&gt;get_cross_thermal_flux(grad_mu, dmu, Tr, nElement, ip, dim);</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    }</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    gradient.emplace_back(grad_mu);</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;  }</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;  return gradient;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;}</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;/**</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; * @brief The diffusion flux calculated with chemical potentials (mu)</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; *</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; * @tparam VARS Template parameter defining the variables used in the integrator.</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; *</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; * @param Tr Element transformation.</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; * @param nElement number of the element</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; * @param ip Integration point</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; * @param dim Spatial dimension</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; *</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; * @return The diffusion flux calculated with chemical potentials at integration point</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; */</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;template &lt;class VARS&gt;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;std::vector&lt;mfem::Vector&gt; MassDiffusionFluxNLFormIntegrator&lt;VARS&gt;::get_flux_gradient_mu(</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    mfem::ElementTransformation&amp; Tr, const int nElement, const mfem::IntegrationPoint&amp; ip,</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    const int dim) {</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  std::vector&lt;mfem::Vector&gt; gradient;</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  gradient.reserve(this-&gt;mu_gf_.size());</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  mfem::Vector grad_mu;</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  grad_mu.SetSize(dim);</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;  for (const auto&amp; [component, mu_gf] : this-&gt;mu_gf_) {</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    auto mu = SlothGridFunction(mu_gf);</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    mu.GetGradient(Tr, this-&gt;gradPsi, grad_mu);</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    if (this-&gt;scale_variables_by_temperature_) {</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;      this-&gt;get_cross_thermal_flux(grad_mu, mu, Tr, nElement, ip, dim);</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    }</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    gradient.emplace_back(grad_mu);</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  }</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  return gradient;</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;}</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;/**</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; * @brief The thermal diffusion flux at the integration point</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; *</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; * @tparam VARS Template parameter defining the variables used in the integrator.</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; *</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; * @param Tr Element transformation.</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; * @param nElement number of the element</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; * @param ip Integration point</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; * @param dim Spatial dimension</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; *</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160; * @return The thermal diffusion flux at the integration point</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; */</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;template &lt;class VARS&gt;</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;void MassDiffusionFluxNLFormIntegrator&lt;VARS&gt;::get_cross_thermal_flux(</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    mfem::Vector&amp; grad_pot, const mfem::ParGridFunction&amp; potential, mfem::ElementTransformation&amp; Tr,</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    const int nElement, const mfem::IntegrationPoint&amp; ip, const int dim) {</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;  mfem::Vector gradT;</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;  gradT.SetSize(dim);</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;  auto temp = SlothGridFunction(this-&gt;temp_gf_[0]);</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;  const auto pot_at_ip = potential.GetValue(nElement, ip);</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;  const auto temp_at_ip = this-&gt;temp_gf_[0].GetValue(nElement, ip);</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;  const auto dmu_over_square_temp_at_ip = pot_at_ip / (temp_at_ip * temp_at_ip);</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;  temp.GetGradient(Tr, this-&gt;gradPsi, gradT);</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;  gradT *= dmu_over_square_temp_at_ip;</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;  grad_pot /= temp_at_ip;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;  grad_pot -= gradT;</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;}</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    this-&gt;element_gradient(dmu_gf, Tr, this-&gt;gradPsi, grad_mu);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    if (this-&gt;scale_variables_by_temperature_) {</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;      this-&gt;get_cross_thermal_flux(grad_mu, dmu_gf, Tr, nElement, ip, dim);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    }</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    gradient.emplace_back(grad_mu);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;  }</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;  return gradient;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;}</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;/**</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; * @brief The diffusion flux calculated with chemical potentials (mu)</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; *</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; * @tparam VARS Template parameter defining the variables used in the integrator.</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; *</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; * @param Tr Element transformation.</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; * @param nElement number of the element</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; * @param ip Integration point</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; * @param dim Spatial dimension</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; *</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; * @return The diffusion flux calculated with chemical potentials at integration point</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; */</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;template &lt;class VARS&gt;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;std::vector&lt;mfem::Vector&gt; MassDiffusionFluxNLFormIntegrator&lt;VARS&gt;::get_flux_gradient_mu(</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    mfem::ElementTransformation&amp; Tr, const int nElement, const mfem::IntegrationPoint&amp; ip,</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    const int dim) {</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  std::vector&lt;mfem::Vector&gt; gradient;</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  gradient.reserve(this-&gt;mu_gf_.size());</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  mfem::Vector grad_mu;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  grad_mu.SetSize(dim);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  for (const auto&amp; [component, mu_gf] : this-&gt;mu_gf_) {</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    this-&gt;element_gradient(mu_gf, Tr, this-&gt;gradPsi, grad_mu);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    if (this-&gt;scale_variables_by_temperature_) {</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;      this-&gt;get_cross_thermal_flux(grad_mu, mu_gf, Tr, nElement, ip, dim);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    }</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    gradient.emplace_back(grad_mu);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;  }</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  return gradient;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;}</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;/**</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; * @brief The thermal diffusion flux at the integration point</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; *</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; * @tparam VARS Template parameter defining the variables used in the integrator.</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; *</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; * @param Tr Element transformation.</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; * @param nElement number of the element</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; * @param ip Integration point</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; * @param dim Spatial dimension</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; *</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; * @return The thermal diffusion flux at the integration point</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; */</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;template &lt;class VARS&gt;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;void MassDiffusionFluxNLFormIntegrator&lt;VARS&gt;::get_cross_thermal_flux(</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    mfem::Vector&amp; grad_pot, const mfem::ParGridFunction&amp; potential, mfem::ElementTransformation&amp; Tr,</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    const int nElement, const mfem::IntegrationPoint&amp; ip, const int dim) {</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  mfem::Vector gradT;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;  gradT.SetSize(dim);</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;  const auto pot_at_ip = potential.GetValue(nElement, ip);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;  const auto temp_at_ip = this-&gt;temp_gf_[0].GetValue(nElement, ip);</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;  const auto dmu_over_square_temp_at_ip = pot_at_ip / (temp_at_ip * temp_at_ip);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;  this-&gt;element_gradient(this-&gt;temp_gf_[0], Tr, this-&gt;gradPsi, gradT);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;  gradT *= dmu_over_square_temp_at_ip;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;  grad_pot /= temp_at_ip;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;  grad_pot -= gradT;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:02 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

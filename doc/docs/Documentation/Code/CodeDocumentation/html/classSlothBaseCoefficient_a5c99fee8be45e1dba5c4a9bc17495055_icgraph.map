@@ -1,0 +1,4 @@
+<map id="SlothBaseCoefficient::is_file" name="SlothBaseCoefficient::is_file">
+<area shape="rect" id="node1" title="Indicates whether the coefficient comes from a file." alt="" coords="220,5,383,47"/>
+<area shape="rect" id="node2" href="$classMfemFileCoefficient.html#ade39cf8aa4e485cbc6c6434315221481" title="Construct from an existing file&#45;based Coefficient, without grid functions." alt="" coords="5,5,172,47"/>
+</map>

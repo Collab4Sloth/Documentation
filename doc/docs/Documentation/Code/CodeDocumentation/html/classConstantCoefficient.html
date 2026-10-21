@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -134,9 +134,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af2e0ca5907426edd5d25b374bf1c9b17 inherit pub_methods_classFunctionCoefficient"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunctionCoefficient.html#af2e0ca5907426edd5d25b374bf1c9b17">FunctionCoefficient</a> ()</td></tr>
 <tr class="memdesc:af2e0ca5907426edd5d25b374bf1c9b17 inherit pub_methods_classFunctionCoefficient"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classFunctionCoefficient.html#af2e0ca5907426edd5d25b374bf1c9b17" title="Construct a new FunctionCoefficient::FunctionCoefficient object.">FunctionCoefficient::FunctionCoefficient</a> object.  <a href="classFunctionCoefficient.html#af2e0ca5907426edd5d25b374bf1c9b17">More...</a><br /></td></tr>
 <tr class="separator:af2e0ca5907426edd5d25b374bf1c9b17 inherit pub_methods_classFunctionCoefficient"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af43aaa9e59d06213558757be3ff18c6e inherit pub_methods_classFunctionCoefficient"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunctionCoefficient.html#af43aaa9e59d06213558757be3ff18c6e">get_time</a> () const</td></tr>
+<tr class="memdesc:af43aaa9e59d06213558757be3ff18c6e inherit pub_methods_classFunctionCoefficient"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the time associated with the coefficient.  <a href="classFunctionCoefficient.html#af43aaa9e59d06213558757be3ff18c6e">More...</a><br /></td></tr>
+<tr class="separator:af43aaa9e59d06213558757be3ff18c6e inherit pub_methods_classFunctionCoefficient"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5e33a8f9680bbc1e690b907f87a5079 inherit pub_methods_classFunctionCoefficient"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunctionCoefficient.html#ae5e33a8f9680bbc1e690b907f87a5079">set_coordinates</a> (std::span&lt; const double &gt; x)</td></tr>
+<tr class="memdesc:ae5e33a8f9680bbc1e690b907f87a5079 inherit pub_methods_classFunctionCoefficient"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the physical coordinates of the point where the coefficient is evaluated.  <a href="classFunctionCoefficient.html#ae5e33a8f9680bbc1e690b907f87a5079">More...</a><br /></td></tr>
+<tr class="separator:ae5e33a8f9680bbc1e690b907f87a5079 inherit pub_methods_classFunctionCoefficient"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6af464880b5c26e61b32b80ddbd8071 inherit pub_methods_classFunctionCoefficient"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunctionCoefficient.html#ab6af464880b5c26e61b32b80ddbd8071">set_time</a> (double time)</td></tr>
 <tr class="memdesc:ab6af464880b5c26e61b32b80ddbd8071 inherit pub_methods_classFunctionCoefficient"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the time associated with the coefficient.  <a href="classFunctionCoefficient.html#ab6af464880b5c26e61b32b80ddbd8071">More...</a><br /></td></tr>
 <tr class="separator:ab6af464880b5c26e61b32b80ddbd8071 inherit pub_methods_classFunctionCoefficient"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05e49a77a3c42a7875c4c33779154321 inherit pub_methods_classFunctionCoefficient"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunctionCoefficient.html#a05e49a77a3c42a7875c4c33779154321">uses_coordinates</a> () const</td></tr>
+<tr class="memdesc:a05e49a77a3c42a7875c4c33779154321 inherit pub_methods_classFunctionCoefficient"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the expression depends on the spatial coordinates ("coordinates" in the JSON file)  <a href="classFunctionCoefficient.html#a05e49a77a3c42a7875c4c33779154321">More...</a><br /></td></tr>
+<tr class="separator:a05e49a77a3c42a7875c4c33779154321 inherit pub_methods_classFunctionCoefficient"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf3dabb37244442a7193a036c2ee0010 inherit pub_methods_classFunctionCoefficient"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunctionCoefficient.html#adf3dabb37244442a7193a036c2ee0010">~FunctionCoefficient</a> ()=default</td></tr>
 <tr class="separator:adf3dabb37244442a7193a036c2ee0010 inherit pub_methods_classFunctionCoefficient"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -160,6 +169,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classFunctionCoefficient"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classFunctionCoefficient')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classFunctionCoefficient.html">FunctionCoefficient</a></td></tr>
+<tr class="memitem:a9109b2fef9b83a3688cf916f9ba1c56d inherit pro_attribs_classFunctionCoefficient"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunctionCoefficient.html#a9109b2fef9b83a3688cf916f9ba1c56d">coordinates_</a></td></tr>
+<tr class="memdesc:a9109b2fef9b83a3688cf916f9ba1c56d inherit pro_attribs_classFunctionCoefficient"><td class="mdescLeft">&#160;</td><td class="mdescRight">physical point of the current evaluation (if used)  <a href="classFunctionCoefficient.html#a9109b2fef9b83a3688cf916f9ba1c56d">More...</a><br /></td></tr>
+<tr class="separator:a9109b2fef9b83a3688cf916f9ba1c56d inherit pro_attribs_classFunctionCoefficient"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a712d838bf5aab6ac6582a824107837d6 inherit pro_attribs_classFunctionCoefficient"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFunctionCoefficient.html#a712d838bf5aab6ac6582a824107837d6">time_</a></td></tr>
 <tr class="separator:a712d838bf5aab6ac6582a824107837d6 inherit pro_attribs_classFunctionCoefficient"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -376,7 +388,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:03 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

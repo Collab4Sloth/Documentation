@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -103,11 +103,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aae9bdf27b697b58cfe7e34e0f103bcc7"><td class="memItemLeft" align="right" valign="top">mfem::ParMesh *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpatialDiscretization.html#aae9bdf27b697b58cfe7e34e0f103bcc7">get_mesh</a> ()</td></tr>
 <tr class="memdesc:aae9bdf27b697b58cfe7e34e0f103bcc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">return a pointer of Mesh  <a href="classSpatialDiscretization.html#aae9bdf27b697b58cfe7e34e0f103bcc7">More...</a><br /></td></tr>
 <tr class="separator:aae9bdf27b697b58cfe7e34e0f103bcc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b81b92fc3622f5e124b1ce40a7736e7"><td class="memItemLeft" align="right" valign="top">mfem::ParFiniteElementSpace &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpatialDiscretization.html#a0b81b92fc3622f5e124b1ce40a7736e7">get_ref_finite_element_space</a> ()</td></tr>
+<tr class="memdesc:a0b81b92fc3622f5e124b1ce40a7736e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">return a reference of the finite element space  <a href="classSpatialDiscretization.html#a0b81b92fc3622f5e124b1ce40a7736e7">More...</a><br /></td></tr>
+<tr class="separator:a0b81b92fc3622f5e124b1ce40a7736e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80e862659e9d3e2db9c43a702c27c17a"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpatialDiscretization.html#a80e862659e9d3e2db9c43a702c27c17a">getSize</a> () const</td></tr>
 <tr class="memdesc:a80e862659e9d3e2db9c43a702c27c17a"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the size of the Finite Element Space  <a href="classSpatialDiscretization.html#a80e862659e9d3e2db9c43a702c27c17a">More...</a><br /></td></tr>
 <tr class="separator:a80e862659e9d3e2db9c43a702c27c17a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60e42688ee029c0c0f622912b1ea66f4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpatialDiscretization.html#a60e42688ee029c0c0f622912b1ea66f4">GMSHReaderSplitFiles</a> (const std::string mesh_file)</td></tr>
-<tr class="separator:a60e42688ee029c0c0f622912b1ea66f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac02700b79f87fea97df0417440afadf5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpatialDiscretization.html#ac02700b79f87fea97df0417440afadf5">GMSHReaderSplitFiles</a> (const std::string mesh_file, bool enable_nc_mesh=false, bool allow_nc_simplices=false)</td></tr>
+<tr class="memdesc:ac02700b79f87fea97df0417440afadf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the parallel mesh by reading pre-split per-rank GMSH files.  <a href="classSpatialDiscretization.html#ac02700b79f87fea97df0417440afadf5">More...</a><br /></td></tr>
+<tr class="separator:ac02700b79f87fea97df0417440afadf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a321ff9cb5669e9667ad6f3039454063f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpatialDiscretization.html#a321ff9cb5669e9667ad6f3039454063f">is_nc_simplices</a> () const</td></tr>
+<tr class="memdesc:a321ff9cb5669e9667ad6f3039454063f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return whether nonconforming refinement is allowed on simplex (triangle/tetrahedron) elements of this mesh. It has no effect for quadrilateral/hexahedral meshes, which natively support nonconforming refinement.  <a href="classSpatialDiscretization.html#a321ff9cb5669e9667ad6f3039454063f">More...</a><br /></td></tr>
+<tr class="separator:a321ff9cb5669e9667ad6f3039454063f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a503f95d7a41ea96afcc31413320995e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpatialDiscretization.html#a503f95d7a41ea96afcc31413320995e6">is_periodic</a> ()</td></tr>
 <tr class="memdesc:a503f95d7a41ea96afcc31413320995e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the flag to know whether the mesh is periodic or not.  <a href="classSpatialDiscretization.html#a503f95d7a41ea96afcc31413320995e6">More...</a><br /></td></tr>
 <tr class="separator:a503f95d7a41ea96afcc31413320995e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,14 +124,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a667d7d008e0e692dac951d5f52132ee3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpatialDiscretization.html#a667d7d008e0e692dac951d5f52132ee3">set_mesh_attributes_from_file</a> ()</td></tr>
 <tr class="memdesc:a667d7d008e0e692dac951d5f52132ee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the mesh attributes find in a mesh file.  <a href="classSpatialDiscretization.html#a667d7d008e0e692dac951d5f52132ee3">More...</a><br /></td></tr>
 <tr class="separator:a667d7d008e0e692dac951d5f52132ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b3c5888bf57dce17ec373743dd6b026"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpatialDiscretization.html#a3b3c5888bf57dce17ec373743dd6b026">SpatialDiscretization</a> (const std::string &amp;mesh_type, const int &amp;fe_order, const int &amp;ref_level, const std::string &amp;mesh_file, bool periodic_mesh=false)</td></tr>
-<tr class="separator:a3b3c5888bf57dce17ec373743dd6b026"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d24146e6bae57baf36f5a6de498fb97"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
-<tr class="memitem:a4d24146e6bae57baf36f5a6de498fb97"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classSpatialDiscretization.html#a4d24146e6bae57baf36f5a6de498fb97">SpatialDiscretization</a> (const std::string &amp;mesh_type, const int &amp;fe_order, const int &amp;ref_level, std::tuple&lt; Args... &gt; tup_args)</td></tr>
-<tr class="separator:a4d24146e6bae57baf36f5a6de498fb97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acedb4435f2a339fee79bcebee64e5985"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
-<tr class="memitem:acedb4435f2a339fee79bcebee64e5985"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classSpatialDiscretization.html#acedb4435f2a339fee79bcebee64e5985">SpatialDiscretization</a> (const std::string &amp;mesh_type, const int &amp;fe_order, const int &amp;ref_level, std::tuple&lt; Args... &gt; tup_args, std::vector&lt; mfem::Vector &gt; translations)</td></tr>
-<tr class="separator:acedb4435f2a339fee79bcebee64e5985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad93e14e9b083b1ad87fae98b914e06e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpatialDiscretization.html#aad93e14e9b083b1ad87fae98b914e06e">SpatialDiscretization</a> (const std::string &amp;mesh_type, const int fe_order, const int ref_level, const std::string &amp;mesh_file, bool periodic_mesh=false, bool enable_nc_mesh=false, bool allow_nc_simplices=false)</td></tr>
+<tr class="memdesc:aad93e14e9b083b1ad87fae98b914e06e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classSpatialDiscretization.html" title="Class for defining the spatial discretization with a mesh coming from a GMSH file or built by using d...">SpatialDiscretization</a> object from a mesh file (e.g. GMSH), or using a dedicated MFEM mesh generation method identified by <code>mesh_type</code>.  <a href="classSpatialDiscretization.html#aad93e14e9b083b1ad87fae98b914e06e">More...</a><br /></td></tr>
+<tr class="separator:aad93e14e9b083b1ad87fae98b914e06e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4b9a2de2e195a793528a9c67f71c3a1"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
+<tr class="memitem:af4b9a2de2e195a793528a9c67f71c3a1"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classSpatialDiscretization.html#af4b9a2de2e195a793528a9c67f71c3a1">SpatialDiscretization</a> (const std::string &amp;mesh_type, const int fe_order, const int ref_level, std::tuple&lt; Args... &gt; tup_args, bool enable_nc_mesh=false, bool allow_nc_simplices=false)</td></tr>
+<tr class="memdesc:af4b9a2de2e195a793528a9c67f71c3a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classSpatialDiscretization.html" title="Class for defining the spatial discretization with a mesh coming from a GMSH file or built by using d...">SpatialDiscretization</a> object.  <a href="classSpatialDiscretization.html#af4b9a2de2e195a793528a9c67f71c3a1">More...</a><br /></td></tr>
+<tr class="separator:af4b9a2de2e195a793528a9c67f71c3a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4866c055ad521c0cdfb8ec85cdea29c"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
+<tr class="memitem:ac4866c055ad521c0cdfb8ec85cdea29c"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classSpatialDiscretization.html#ac4866c055ad521c0cdfb8ec85cdea29c">SpatialDiscretization</a> (const std::string &amp;mesh_type, const int fe_order, const int ref_level, std::tuple&lt; Args... &gt; tup_args, const std::vector&lt; mfem::Vector &gt; &amp;translations, bool enable_nc_mesh=false, bool allow_nc_simplices=false)</td></tr>
+<tr class="memdesc:ac4866c055ad521c0cdfb8ec85cdea29c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classSpatialDiscretization.html" title="Class for defining the spatial discretization with a mesh coming from a GMSH file or built by using d...">SpatialDiscretization</a> object on a periodic mesh built with explicit translation vectors.  <a href="classSpatialDiscretization.html#ac4866c055ad521c0cdfb8ec85cdea29c">More...</a><br /></td></tr>
+<tr class="separator:ac4866c055ad521c0cdfb8ec85cdea29c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f4c2160625fcd8182d0e152dfb8aeae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpatialDiscretization.html#a7f4c2160625fcd8182d0e152dfb8aeae">SpatialDiscretization</a> (mfem::ParMesh *existing_mesh, const int fe_order, bool is_periodic_mesh=false)</td></tr>
+<tr class="memdesc:a7f4c2160625fcd8182d0e152dfb8aeae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classSpatialDiscretization.html" title="Class for defining the spatial discretization with a mesh coming from a GMSH file or built by using d...">SpatialDiscretization</a> object that shares an already-existing parallel mesh, but builds its own independent finite element space on top of it.  <a href="classSpatialDiscretization.html#a7f4c2160625fcd8182d0e152dfb8aeae">More...</a><br /></td></tr>
+<tr class="separator:a7f4c2160625fcd8182d0e152dfb8aeae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67d6d572cea0c15e063386b7bf0e8149"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpatialDiscretization.html#a67d6d572cea0c15e063386b7bf0e8149">~SpatialDiscretization</a> ()</td></tr>
 <tr class="memdesc:a67d6d572cea0c15e063386b7bf0e8149"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the Spatial Discretization&lt; T&gt;:: Spatial Discretization object.  <a href="classSpatialDiscretization.html#a67d6d572cea0c15e063386b7bf0e8149">More...</a><br /></td></tr>
 <tr class="separator:a67d6d572cea0c15e063386b7bf0e8149"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,8 +150,12 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a0e7531dafb21802dae022cbb71533ecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0963be616e6f297398c0b5ba7ac67f81"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; mfem::AttributeSets &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpatialDiscretization.html#a0963be616e6f297398c0b5ba7ac67f81">elem_attr_sets_</a></td></tr>
 <tr class="separator:a0963be616e6f297398c0b5ba7ac67f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa8d8d5c181895831674fdb1bbea83aa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpatialDiscretization.html#afa8d8d5c181895831674fdb1bbea83aa">enable_nc_mesh_</a> = {false}</td></tr>
+<tr class="separator:afa8d8d5c181895831674fdb1bbea83aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66ab29632eebb06fb2948c86a218e5cf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpatialDiscretization.html#a66ab29632eebb06fb2948c86a218e5cf">fe_order_</a></td></tr>
 <tr class="separator:a66ab29632eebb06fb2948c86a218e5cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97a0fcb6d9251acbcd7b9a449a2f9bad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpatialDiscretization.html#a97a0fcb6d9251acbcd7b9a449a2f9bad">is_nc_simplices_</a> = {false}</td></tr>
+<tr class="separator:a97a0fcb6d9251acbcd7b9a449a2f9bad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa13f34933d977fc735db06adfce769c4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpatialDiscretization.html#aa13f34933d977fc735db06adfce769c4">is_periodic_mesh_</a> = {false}</td></tr>
 <tr class="separator:aa13f34933d977fc735db06adfce769c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb82222b7099fe5a8966582c36c42820"><td class="memItemLeft" align="right" valign="top">mfem::ParMesh *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpatialDiscretization.html#acb82222b7099fe5a8966582c36c42820">mesh_</a></td></tr>
@@ -161,8 +178,8 @@ class SpatialDiscretization&lt; T, DIM &gt;</h3>
 
 <p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00105">105</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a3b3c5888bf57dce17ec373743dd6b026"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b3c5888bf57dce17ec373743dd6b026">&#9670;&nbsp;</a></span>SpatialDiscretization() <span class="overload">[1/3]</span></h2>
+<a id="aad93e14e9b083b1ad87fae98b914e06e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad93e14e9b083b1ad87fae98b914e06e">&#9670;&nbsp;</a></span>SpatialDiscretization() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -181,13 +198,13 @@ template&lt;class T , int DIM&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>fe_order</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>ref_level</em>, </td>
         </tr>
         <tr>
@@ -200,7 +217,19 @@ template&lt;class T , int DIM&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>periodic_mesh</em> = <code>false</code>&#160;</td>
+          <td class="paramname"><em>periodic_mesh</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable_nc_mesh</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>allow_nc_simplices</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -215,76 +244,43 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00113">113</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+<p>Construct a new <a class="el" href="classSpatialDiscretization.html" title="Class for defining the spatial discretization with a mesh coming from a GMSH file or built by using d...">SpatialDiscretization</a> object from a mesh file (e.g. GMSH), or using a dedicated MFEM mesh generation method identified by <code>mesh_type</code>. </p>
+<p>Delegates the actual mesh construction to <code><a class="el" href="structspecialized__spatial__constructor.html" title="specialized_spatial_constructor">specialized_spatial_constructor</a>&lt;T, DIM&gt;</code>, which reads/builds the underlying serial mesh according to <code>mesh_type</code> and <code>mesh_file</code>, calls <code>EnsureNCMesh(is_nc_simplices_)</code> before finalizing it, and converts it to a distributed <code>mfem::ParMesh</code>. Mesh attributes (element/boundary attribute sets) found in the file are then loaded via <code><a class="el" href="classSpatialDiscretization.html#a667d7d008e0e692dac951d5f52132ee3" title="Set the mesh attributes find in a mesh file.">set_mesh_attributes_from_file()</a></code>.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Finite element collection type. </td></tr>
+    <tr><td class="paramname">DIM</td><td>Spatial dimension.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mesh_type</td><td>Identifier of the mesh source/generation strategy (e.g. a GMSH file type, or a dedicated MFEM inline mesh builder). </td></tr>
+    <tr><td class="paramname">fe_order</td><td>Finite element order used to build the finite element collection and space. </td></tr>
+    <tr><td class="paramname">ref_level</td><td>Number of uniform refinement levels applied at construction time, before any AMR. </td></tr>
+    <tr><td class="paramname">mesh_file</td><td>Path (or naming pattern) of the mesh file to read. </td></tr>
+    <tr><td class="paramname">periodic_mesh</td><td>Whether the mesh should be treated as periodic. </td></tr>
+    <tr><td class="paramname">allow_nc_simplices</td><td>Whether nonconforming refinement is allowed on simplex elements (see <code><a class="el" href="classSpatialDiscretization.html#a321ff9cb5669e9667ad6f3039454063f" title="Return whether nonconforming refinement is allowed on simplex (triangle/tetrahedron) elements of this...">is_nc_simplices()</a></code>). Must be set correctly here since the underlying <code>ParMesh</code> cannot be converted to nonconforming after construction. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00876">SpatialDiscretization&lt; T, DIM &gt;::set_mesh_attributes_from_file()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00145">145</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00354">SpatialDiscretization&lt; T, DIM &gt;::enable_nc_mesh_</a>, <a class="el" href="Spatial_8hpp_source.html#l00353">SpatialDiscretization&lt; T, DIM &gt;::is_nc_simplices_</a>, and <a class="el" href="Spatial_8hpp_source.html#l01105">SpatialDiscretization&lt; T, DIM &gt;::set_mesh_attributes_from_file()</a>.</p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classSpatialDiscretization_a3b3c5888bf57dce17ec373743dd6b026_cgraph.svg" width="396" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classSpatialDiscretization_aad93e14e9b083b1ad87fae98b914e06e_cgraph.svg" width="396" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="a4d24146e6bae57baf36f5a6de498fb97"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d24146e6bae57baf36f5a6de498fb97">&#9670;&nbsp;</a></span>SpatialDiscretization() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T , int DIM&gt; </div>
-<div class="memtemplate">
-template&lt;class... Args&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt;::<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a> </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>mesh_type</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>fe_order</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>ref_level</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::tuple&lt; Args... &gt;&#160;</td>
-          <td class="paramname"><em>tup_args</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00121">121</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
-
-</div>
-</div>
-<a id="acedb4435f2a339fee79bcebee64e5985"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acedb4435f2a339fee79bcebee64e5985">&#9670;&nbsp;</a></span>SpatialDiscretization() <span class="overload">[3/3]</span></h2>
+<a id="af4b9a2de2e195a793528a9c67f71c3a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4b9a2de2e195a793528a9c67f71c3a1">&#9670;&nbsp;</a></span>SpatialDiscretization() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -305,13 +301,13 @@ template&lt;class... Args&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>fe_order</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>ref_level</em>, </td>
         </tr>
         <tr>
@@ -323,8 +319,14 @@ template&lt;class... Args&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; mfem::Vector &gt;&#160;</td>
-          <td class="paramname"><em>translations</em>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable_nc_mesh</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>allow_nc_simplices</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -339,7 +341,200 @@ template&lt;class... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00128">128</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+<p>Construct a new <a class="el" href="classSpatialDiscretization.html" title="Class for defining the spatial discretization with a mesh coming from a GMSH file or built by using d...">SpatialDiscretization</a> object. </p>
+<p>Delegates the actual mesh construction to <code><a class="el" href="structspecialized__spatial__constructor.html" title="specialized_spatial_constructor">specialized_spatial_constructor</a>&lt;T, DIM&gt;</code>, which dispatches on <code>mesh_type</code> to build the underlying serial mesh, call <code>EnsureNCMesh(is_nc_simplices_)</code> before finalizing it, and convert it to a distributed <code>mfem::ParMesh</code>.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Args</td><td>Types of the extra arguments forwarded to the specialized constructor (mesh dimensions, lengths, etc.), packed in <code>tup_args</code>. </td></tr>
+    <tr><td class="paramname">T</td><td>Finite element collection type. </td></tr>
+    <tr><td class="paramname">DIM</td><td>Spatial dimension.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mesh_type</td><td>Identifier of the mesh generation strategy to use (e.g. "InlineSquareWithQuadrangles"). </td></tr>
+    <tr><td class="paramname">fe_order</td><td>Finite element order used to build the finite element collection and space. </td></tr>
+    <tr><td class="paramname">ref_level</td><td>Number of uniform refinement levels applied at construction time, before any AMR. </td></tr>
+    <tr><td class="paramname">tup_args</td><td>Tuple of extra parameters specific to <code>mesh_type</code> (e.g. number of elements and physical extents per direction). </td></tr>
+    <tr><td class="paramname">allow_nc_simplices</td><td>Whether nonconforming refinement is allowed on simplex elements (see <code><a class="el" href="classSpatialDiscretization.html#a321ff9cb5669e9667ad6f3039454063f" title="Return whether nonconforming refinement is allowed on simplex (triangle/tetrahedron) elements of this...">is_nc_simplices()</a></code>). Must be set correctly here since the underlying <code>ParMesh</code> cannot be converted to nonconforming after construction. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00186">186</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00354">SpatialDiscretization&lt; T, DIM &gt;::enable_nc_mesh_</a>, and <a class="el" href="Spatial_8hpp_source.html#l00353">SpatialDiscretization&lt; T, DIM &gt;::is_nc_simplices_</a>.</p>
+
+</div>
+</div>
+<a id="ac4866c055ad521c0cdfb8ec85cdea29c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4866c055ad521c0cdfb8ec85cdea29c">&#9670;&nbsp;</a></span>SpatialDiscretization() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+<div class="memtemplate">
+template&lt;class... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt;::<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a> </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>mesh_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>fe_order</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>ref_level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::tuple&lt; Args... &gt;&#160;</td>
+          <td class="paramname"><em>tup_args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; mfem::Vector &gt; &amp;&#160;</td>
+          <td class="paramname"><em>translations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable_nc_mesh</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>allow_nc_simplices</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classSpatialDiscretization.html" title="Class for defining the spatial discretization with a mesh coming from a GMSH file or built by using d...">SpatialDiscretization</a> object on a periodic mesh built with explicit translation vectors. </p>
+<p>Delegates the actual mesh construction to <code><a class="el" href="structspecialized__spatial__constructor.html" title="specialized_spatial_constructor">specialized_spatial_constructor</a>&lt;T, DIM&gt;</code>, which dispatches on <code>mesh_type</code> to build the underlying serial mesh, apply the given periodic <code>translations</code>, call <code>EnsureNCMesh(is_nc_simplices_)</code> before finalizing it, and convert it to a distributed <code>mfem::ParMesh</code>. See the non-periodic overload for the equivalent construction without translations.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Args</td><td>Types of the extra arguments forwarded to the specialized constructor (mesh dimensions, lengths, etc.), packed in <code>tup_args</code>. </td></tr>
+    <tr><td class="paramname">T</td><td>Finite element collection type. </td></tr>
+    <tr><td class="paramname">DIM</td><td>Spatial dimension.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mesh_type</td><td>Identifier of the mesh generation strategy to use (e.g. "InlineSquareWithQuadrangles"). </td></tr>
+    <tr><td class="paramname">fe_order</td><td>Finite element order used to build the finite element collection and space. </td></tr>
+    <tr><td class="paramname">ref_level</td><td>Number of uniform refinement levels applied at construction time, before any AMR. </td></tr>
+    <tr><td class="paramname">tup_args</td><td>Tuple of extra parameters specific to <code>mesh_type</code> (e.g. number of elements and physical extents per direction). </td></tr>
+    <tr><td class="paramname">translations</td><td>Periodic translation vectors defining the periodicity of the mesh. </td></tr>
+    <tr><td class="paramname">allow_nc_simplices</td><td>Whether nonconforming refinement is allowed on simplex elements (see <code><a class="el" href="classSpatialDiscretization.html#a321ff9cb5669e9667ad6f3039454063f" title="Return whether nonconforming refinement is allowed on simplex (triangle/tetrahedron) elements of this...">is_nc_simplices()</a></code>). Must be set correctly here since the underlying <code>ParMesh</code> cannot be converted to nonconforming after construction. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00230">230</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00354">SpatialDiscretization&lt; T, DIM &gt;::enable_nc_mesh_</a>, and <a class="el" href="Spatial_8hpp_source.html#l00353">SpatialDiscretization&lt; T, DIM &gt;::is_nc_simplices_</a>.</p>
+
+</div>
+</div>
+<a id="a7f4c2160625fcd8182d0e152dfb8aeae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f4c2160625fcd8182d0e152dfb8aeae">&#9670;&nbsp;</a></span>SpatialDiscretization() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt;::<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a> </td>
+          <td>(</td>
+          <td class="paramtype">mfem::ParMesh *&#160;</td>
+          <td class="paramname"><em>existing_mesh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>fe_order</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>is_periodic_mesh</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classSpatialDiscretization.html" title="Class for defining the spatial discretization with a mesh coming from a GMSH file or built by using d...">SpatialDiscretization</a> object that shares an already-existing parallel mesh, but builds its own independent finite element space on top of it. </p>
+<p>Use this constructor when several independent fields (e.g. <code>c</code> and <code>mu</code> in a Cahn-Hilliard system) must be discretized on the <em>same</em> mesh (so that mesh operations such as AMR stay consistent across all fields) while still owning distinct <code>mfem::ParFiniteElementSpace</code> objects. This instance does NOT take ownership of <code>existing_mesh</code>: it will never delete it, since that responsibility remains with the <a class="el" href="classSpatialDiscretization.html" title="Class for defining the spatial discretization with a mesh coming from a GMSH file or built by using d...">SpatialDiscretization</a> that originally created the mesh. The caller must ensure that the owning instance outlives this one.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Finite element collection type. </td></tr>
+    <tr><td class="paramname">DIM</td><td>Spatial dimension.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">existing_mesh</td><td>Pointer to an already-built parallel mesh, owned by another <a class="el" href="classSpatialDiscretization.html" title="Class for defining the spatial discretization with a mesh coming from a GMSH file or built by using d...">SpatialDiscretization</a> instance. Not deleted by this instance's destructor. </td></tr>
+    <tr><td class="paramname">fe_order</td><td>Finite element order used to build the finite element collection and space attached to <code>existing_mesh</code>. </td></tr>
+    <tr><td class="paramname">is_periodic_mesh</td><td>Whether the shared mesh is periodic. Should match the value used when <code>existing_mesh</code> was originally built. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00267">267</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00349">SpatialDiscretization&lt; T, DIM &gt;::dimension_</a>, <a class="el" href="Spatial_8hpp_source.html#l00348">SpatialDiscretization&lt; T, DIM &gt;::fe_order_</a>, <a class="el" href="Spatial_8hpp_source.html#l00352">SpatialDiscretization&lt; T, DIM &gt;::is_periodic_mesh_</a>, <a class="el" href="Spatial_8hpp_source.html#l00350">SpatialDiscretization&lt; T, DIM &gt;::mesh_</a>, <a class="el" href="Spatial_8hpp_source.html#l00351">SpatialDiscretization&lt; T, DIM &gt;::mesh_max_bdr_attributes_</a>, and <a class="el" href="Spatial_8hpp_source.html#l01086">SpatialDiscretization&lt; T, DIM &gt;::set_finite_element_space()</a>.</p>
+<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classSpatialDiscretization_a7f4c2160625fcd8182d0e152dfb8aeae_cgraph.svg" width="614" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -360,12 +555,12 @@ template&lt;class T , int DIM&gt; </div>
 <p>Destroy the Spatial Discretization&lt; T&gt;:: Spatial Discretization object. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
+    <tr><td class="paramname">T</td><td>Finite element collection type. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00979">979</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l01241">1241</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
 
 </div>
 </div>
@@ -391,7 +586,8 @@ template&lt;class T , int DIM&gt; </div>
 <p>Apply nb_ref uniform refinement. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
+    <tr><td class="paramname">T</td><td>Finite element collection type. </td></tr>
+    <tr><td class="paramname">DIM</td><td>Spatial dimension. </td></tr>
   </table>
   </dd>
 </dl>
@@ -402,14 +598,14 @@ template&lt;class T , int DIM&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00956">956</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l01202">1202</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Spatial_8hpp_source.html#l00210">specialized_spatial_constructor&lt; T, 1 &gt;::operator()()</a>, <a class="el" href="Spatial_8hpp_source.html#l00419">specialized_spatial_constructor&lt; T, 2 &gt;::operator()()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00634">specialized_spatial_constructor&lt; T, 3 &gt;::operator()()</a>.</p>
-<div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+<p class="reference">Referenced by <a class="el" href="Spatial_8hpp_source.html#l00402">specialized_spatial_constructor&lt; T, 1 &gt;::operator()()</a>, <a class="el" href="Spatial_8hpp_source.html#l00621">specialized_spatial_constructor&lt; T, 2 &gt;::operator()()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00849">specialized_spatial_constructor&lt; T, 3 &gt;::operator()()</a>.</p>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classSpatialDiscretization_a3463c09a77a0c6563a353d97cf56dfa4_icgraph.svg" width="428" height="227"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
@@ -433,14 +629,14 @@ template&lt;class T , int DIM&gt; </div>
 <p>Return the set of attributes associated with the boundaries. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
+    <tr><td class="paramname">T</td><td>Finite element collection type. </td></tr>
+    <tr><td class="paramname">DIM</td><td>Spatial dimension. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::shared_ptr&lt;mfem::AttributeSets&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00901">901</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l01130">1130</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
 
 </div>
 </div>
@@ -461,13 +657,14 @@ template&lt;class T , int DIM&gt; </div>
 <p>get the dimension of the problem </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
+    <tr><td class="paramname">T</td><td>Finite element collection type. </td></tr>
+    <tr><td class="paramname">DIM</td><td>Spatial dimension. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00945">945</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l01190">1190</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
 
 </div>
 </div>
@@ -488,14 +685,14 @@ template&lt;class T , int DIM&gt; </div>
 <p>Return the set of attributes associated with the elements. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
+    <tr><td class="paramname">T</td><td>Finite element collection type. </td></tr>
+    <tr><td class="paramname">DIM</td><td>Spatial dimension. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::shared_ptr&lt;mfem::AttributeSets&gt; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00889">889</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l01118">1118</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
 
 </div>
 </div>
@@ -516,13 +713,14 @@ template&lt;class T , int DIM&gt; </div>
 <p>return a pointer toward the finite element space </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
+    <tr><td class="paramname">T</td><td>Finite element collection type. </td></tr>
+    <tr><td class="paramname">DIM</td><td>Spatial dimension. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>mfem::ParFiniteElementSpace* </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00912">912</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l01142">1142</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
 
 </div>
 </div>
@@ -543,13 +741,14 @@ template&lt;class T , int DIM&gt; </div>
 <p>get the maximum number of boundaries </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
+    <tr><td class="paramname">T</td><td>Finite element collection type. </td></tr>
+    <tr><td class="paramname">DIM</td><td>Spatial dimension. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00934">934</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l01178">1178</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
 
 </div>
 </div>
@@ -570,14 +769,43 @@ template&lt;class T , int DIM&gt; </div>
 <p>return a pointer of Mesh </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
+    <tr><td class="paramname">T</td><td>Finite element collection type. </td></tr>
+    <tr><td class="paramname">DIM</td><td>Spatial dimension. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>mfem::Mesh&amp; </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This method returns a mfem::Mesh instead of a mfem::ParMesh because it is called in the constructor of the <a class="el" href="classPostProcessing.html" title="Class used to manage post-processing of SLOTH simulations.">PostProcessing</a> objet. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00846">846</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l01074">1074</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a0b81b92fc3622f5e124b1ce40a7736e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b81b92fc3622f5e124b1ce40a7736e7">&#9670;&nbsp;</a></span>get_ref_finite_element_space()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">mfem::ParFiniteElementSpace &amp; <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt;::get_ref_finite_element_space</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>return a reference of the finite element space </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Finite element collection type. </td></tr>
+    <tr><td class="paramname">DIM</td><td>Spatial dimension. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>mfem::ParFiniteElementSpace&amp; </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l01154">1154</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
 
 </div>
 </div>
@@ -598,18 +826,19 @@ template&lt;class T , int DIM&gt; </div>
 <p>get the size of the Finite Element Space </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
+    <tr><td class="paramname">T</td><td>Finite element collection type. </td></tr>
+    <tr><td class="paramname">DIM</td><td>Spatial dimension. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00923">923</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l01166">1166</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a60e42688ee029c0c0f622912b1ea66f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60e42688ee029c0c0f622912b1ea66f4">&#9670;&nbsp;</a></span>GMSHReaderSplitFiles()</h2>
+<a id="ac02700b79f87fea97df0417440afadf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac02700b79f87fea97df0417440afadf5">&#9670;&nbsp;</a></span>GMSHReaderSplitFiles()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -623,8 +852,24 @@ template&lt;class T , int DIM&gt; </div>
           <td class="memname">bool <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt;::GMSHReaderSplitFiles </td>
           <td>(</td>
           <td class="paramtype">const std::string&#160;</td>
-          <td class="paramname"><em>mesh_file</em></td><td>)</td>
+          <td class="paramname"><em>mesh_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable_nc_mesh</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>allow_nc_simplices</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -634,19 +879,69 @@ template&lt;class T , int DIM&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00135">135</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+<p>Build the parallel mesh by reading pre-split per-rank GMSH files. </p>
+<p>Expects <code>mesh_file</code> to be a naming prefix ending with a dot (e.g. "mesh."), with one file per MPI rank following MFEM's parallel file naming convention (via <code>mfem::MakeParFilename</code>, e.g. "mesh.000000", "mesh.000001", ...). The number of such files must exactly match the number of MPI processes used to run the simulation. Each rank reads only its own file and builds its local piece of the distributed <code>mfem::ParMesh</code> directly, without going through a serial <code>mfem::Mesh</code> first.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This path does not call <code>EnsureNCMesh()</code> before constructing the <code>ParMesh</code>, unlike the other mesh-construction paths in this class. As established, a conforming <code>ParMesh</code> cannot be converted to nonconforming after construction (in parallel), so nonconforming AMR will not be usable on a mesh built through this function unless the split files themselves already encode NC information, or this function is updated to match the other constructors.</dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Finite element collection type. </td></tr>
+    <tr><td class="paramname">DIM</td><td>Spatial dimension.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mesh_file</td><td>Naming prefix for the per-rank split mesh files; must end with "." (e.g. "mesh."). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true The mesh was successfully read and <code>mesh_</code> was built. </dd>
+<dd>
+false <code>mesh_file</code> does not end with "." (naming convention not respected); no mesh is built and <code>mesh_</code> is left untouched. </dd></dl>
 
-<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00162">SpatialDiscretization&lt; T, DIM &gt;::mesh_</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00309">309</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Spatial_8hpp_source.html#l00210">specialized_spatial_constructor&lt; T, 1 &gt;::operator()()</a>, <a class="el" href="Spatial_8hpp_source.html#l00419">specialized_spatial_constructor&lt; T, 2 &gt;::operator()()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00634">specialized_spatial_constructor&lt; T, 3 &gt;::operator()()</a>.</p>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+<p class="reference">References <a class="el" href="Spatial_8hpp_source.html#l00354">SpatialDiscretization&lt; T, DIM &gt;::enable_nc_mesh_</a>, <a class="el" href="Spatial_8hpp_source.html#l00353">SpatialDiscretization&lt; T, DIM &gt;::is_nc_simplices_</a>, and <a class="el" href="Spatial_8hpp_source.html#l00350">SpatialDiscretization&lt; T, DIM &gt;::mesh_</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Spatial_8hpp_source.html#l00402">specialized_spatial_constructor&lt; T, 1 &gt;::operator()()</a>, <a class="el" href="Spatial_8hpp_source.html#l00621">specialized_spatial_constructor&lt; T, 2 &gt;::operator()()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00849">specialized_spatial_constructor&lt; T, 3 &gt;::operator()()</a>.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classSpatialDiscretization_a60e42688ee029c0c0f622912b1ea66f4_icgraph.svg" width="406" height="227"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classSpatialDiscretization_ac02700b79f87fea97df0417440afadf5_icgraph.svg" width="406" height="227"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
+
+</div>
+</div>
+<a id="a321ff9cb5669e9667ad6f3039454063f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a321ff9cb5669e9667ad6f3039454063f">&#9670;&nbsp;</a></span>is_nc_simplices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt;::is_nc_simplices</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return whether nonconforming refinement is allowed on simplex (triangle/tetrahedron) elements of this mesh. It has no effect for quadrilateral/hexahedral meshes, which natively support nonconforming refinement. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Finite element collection type. </td></tr>
+    <tr><td class="paramname">DIM</td><td>Spatial dimension. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Nonconforming (hanging-node) refinement is allowed on simplices. </dd>
+<dd>
+false Simplices are kept conforming (default MFEM behavior). </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l01231">1231</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
 
 </div>
 </div>
@@ -667,13 +962,13 @@ template&lt;class T , int DIM&gt; </div>
 <p>Return the flag to know whether the mesh is periodic or not. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
+    <tr><td class="paramname">T</td><td>Finite element collection type. </td></tr>
+    <tr><td class="paramname">DIM</td><td>Spatial dimension. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00969">969</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l01215">1215</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
 
 </div>
 </div>
@@ -694,31 +989,32 @@ template&lt;class T , int DIM&gt; </div>
 <p>Set the FE_Collection, the FE_Space and associated size. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
+    <tr><td class="paramname">T</td><td>Finite element collection type. </td></tr>
+    <tr><td class="paramname">DIM</td><td>Spatial dimension. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>mfem::ParFiniteElementSpace* </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00857">857</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l01086">1086</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="UtilsForData_8hpp_source.html#l00219">SlothInfo::debug()</a>.</p>
+<p class="reference">References <a class="el" href="UtilsForData_8hpp_source.html#l00246">SlothInfo::debug()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Spatial_8hpp_source.html#l00210">specialized_spatial_constructor&lt; T, 1 &gt;::operator()()</a>, <a class="el" href="Spatial_8hpp_source.html#l00419">specialized_spatial_constructor&lt; T, 2 &gt;::operator()()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00634">specialized_spatial_constructor&lt; T, 3 &gt;::operator()()</a>.</p>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classSpatialDiscretization_a8400a265a094312b4d57708d44f9d627_cgraph.svg" width="395" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
+<p class="reference">Referenced by <a class="el" href="Spatial_8hpp_source.html#l00402">specialized_spatial_constructor&lt; T, 1 &gt;::operator()()</a>, <a class="el" href="Spatial_8hpp_source.html#l00621">specialized_spatial_constructor&lt; T, 2 &gt;::operator()()</a>, <a class="el" href="Spatial_8hpp_source.html#l00849">specialized_spatial_constructor&lt; T, 3 &gt;::operator()()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00267">SpatialDiscretization&lt; T, DIM &gt;::SpatialDiscretization()</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classSpatialDiscretization_a8400a265a094312b4d57708d44f9d627_icgraph.svg" width="418" height="227"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classSpatialDiscretization_a8400a265a094312b4d57708d44f9d627_cgraph.svg" width="395" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classSpatialDiscretization_a8400a265a094312b4d57708d44f9d627_icgraph.svg" width="430" height="294"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -741,8 +1037,8 @@ template&lt;class T , int DIM&gt; </div>
 <p>Set the mesh attributes find in a mesh file. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">DIM</td><td></td></tr>
+    <tr><td class="paramname">T</td><td>Finite element collection type. </td></tr>
+    <tr><td class="paramname">DIM</td><td>Spatial dimension. </td></tr>
   </table>
   </dd>
 </dl>
@@ -753,14 +1049,14 @@ template&lt;class T , int DIM&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00876">876</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l01105">1105</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Spatial_8hpp_source.html#l00113">SpatialDiscretization&lt; T, DIM &gt;::SpatialDiscretization()</a>.</p>
-<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p class="reference">Referenced by <a class="el" href="Spatial_8hpp_source.html#l00145">SpatialDiscretization&lt; T, DIM &gt;::SpatialDiscretization()</a>.</p>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classSpatialDiscretization_a667d7d008e0e692dac951d5f52132ee3_icgraph.svg" width="396" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
@@ -782,7 +1078,7 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00173">173</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00363">363</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
 
 </div>
 </div>
@@ -800,9 +1096,9 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00161">161</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00349">349</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Spatial_8hpp_source.html#l00305">specialized_spatial_constructor&lt; T, 1 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00512">specialized_spatial_constructor&lt; T, 2 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00726">specialized_spatial_constructor&lt; T, 3 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00349">specialized_spatial_constructor&lt; T, 1 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00562">specialized_spatial_constructor&lt; T, 2 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00779">specialized_spatial_constructor&lt; T, 3 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00210">specialized_spatial_constructor&lt; T, 1 &gt;::operator()()</a>, <a class="el" href="Spatial_8hpp_source.html#l00419">specialized_spatial_constructor&lt; T, 2 &gt;::operator()()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00634">specialized_spatial_constructor&lt; T, 3 &gt;::operator()()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Spatial_8hpp_source.html#l00499">specialized_spatial_constructor&lt; T, 1 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00719">specialized_spatial_constructor&lt; T, 2 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00945">specialized_spatial_constructor&lt; T, 3 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00547">specialized_spatial_constructor&lt; T, 1 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00773">specialized_spatial_constructor&lt; T, 2 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l01002">specialized_spatial_constructor&lt; T, 3 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00402">specialized_spatial_constructor&lt; T, 1 &gt;::operator()()</a>, <a class="el" href="Spatial_8hpp_source.html#l00621">specialized_spatial_constructor&lt; T, 2 &gt;::operator()()</a>, <a class="el" href="Spatial_8hpp_source.html#l00849">specialized_spatial_constructor&lt; T, 3 &gt;::operator()()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00267">SpatialDiscretization&lt; T, DIM &gt;::SpatialDiscretization()</a>.</p>
 
 </div>
 </div>
@@ -820,7 +1116,27 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00172">172</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00362">362</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+
+</div>
+</div>
+<a id="afa8d8d5c181895831674fdb1bbea83aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa8d8d5c181895831674fdb1bbea83aa">&#9670;&nbsp;</a></span>enable_nc_mesh_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt;::enable_nc_mesh_ = {false}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00354">354</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Spatial_8hpp_source.html#l00499">specialized_spatial_constructor&lt; T, 1 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00719">specialized_spatial_constructor&lt; T, 2 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00945">specialized_spatial_constructor&lt; T, 3 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00547">specialized_spatial_constructor&lt; T, 1 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00773">specialized_spatial_constructor&lt; T, 2 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l01002">specialized_spatial_constructor&lt; T, 3 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00309">SpatialDiscretization&lt; T, DIM &gt;::GMSHReaderSplitFiles()</a>, <a class="el" href="Spatial_8hpp_source.html#l00402">specialized_spatial_constructor&lt; T, 1 &gt;::operator()()</a>, <a class="el" href="Spatial_8hpp_source.html#l00621">specialized_spatial_constructor&lt; T, 2 &gt;::operator()()</a>, <a class="el" href="Spatial_8hpp_source.html#l00849">specialized_spatial_constructor&lt; T, 3 &gt;::operator()()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00145">SpatialDiscretization&lt; T, DIM &gt;::SpatialDiscretization()</a>.</p>
 
 </div>
 </div>
@@ -838,9 +1154,29 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00160">160</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00348">348</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Spatial_8hpp_source.html#l00305">specialized_spatial_constructor&lt; T, 1 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00512">specialized_spatial_constructor&lt; T, 2 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00726">specialized_spatial_constructor&lt; T, 3 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00349">specialized_spatial_constructor&lt; T, 1 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00562">specialized_spatial_constructor&lt; T, 2 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00779">specialized_spatial_constructor&lt; T, 3 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00210">specialized_spatial_constructor&lt; T, 1 &gt;::operator()()</a>, <a class="el" href="Spatial_8hpp_source.html#l00419">specialized_spatial_constructor&lt; T, 2 &gt;::operator()()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00634">specialized_spatial_constructor&lt; T, 3 &gt;::operator()()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Spatial_8hpp_source.html#l00499">specialized_spatial_constructor&lt; T, 1 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00719">specialized_spatial_constructor&lt; T, 2 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00945">specialized_spatial_constructor&lt; T, 3 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00547">specialized_spatial_constructor&lt; T, 1 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00773">specialized_spatial_constructor&lt; T, 2 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l01002">specialized_spatial_constructor&lt; T, 3 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00402">specialized_spatial_constructor&lt; T, 1 &gt;::operator()()</a>, <a class="el" href="Spatial_8hpp_source.html#l00621">specialized_spatial_constructor&lt; T, 2 &gt;::operator()()</a>, <a class="el" href="Spatial_8hpp_source.html#l00849">specialized_spatial_constructor&lt; T, 3 &gt;::operator()()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00267">SpatialDiscretization&lt; T, DIM &gt;::SpatialDiscretization()</a>.</p>
+
+</div>
+</div>
+<a id="a97a0fcb6d9251acbcd7b9a449a2f9bad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97a0fcb6d9251acbcd7b9a449a2f9bad">&#9670;&nbsp;</a></span>is_nc_simplices_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , int DIM&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt;::is_nc_simplices_ = {false}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00353">353</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Spatial_8hpp_source.html#l00499">specialized_spatial_constructor&lt; T, 1 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00719">specialized_spatial_constructor&lt; T, 2 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00945">specialized_spatial_constructor&lt; T, 3 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00547">specialized_spatial_constructor&lt; T, 1 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00773">specialized_spatial_constructor&lt; T, 2 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l01002">specialized_spatial_constructor&lt; T, 3 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00309">SpatialDiscretization&lt; T, DIM &gt;::GMSHReaderSplitFiles()</a>, <a class="el" href="Spatial_8hpp_source.html#l00402">specialized_spatial_constructor&lt; T, 1 &gt;::operator()()</a>, <a class="el" href="Spatial_8hpp_source.html#l00621">specialized_spatial_constructor&lt; T, 2 &gt;::operator()()</a>, <a class="el" href="Spatial_8hpp_source.html#l00849">specialized_spatial_constructor&lt; T, 3 &gt;::operator()()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00145">SpatialDiscretization&lt; T, DIM &gt;::SpatialDiscretization()</a>.</p>
 
 </div>
 </div>
@@ -858,9 +1194,9 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00164">164</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00352">352</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Spatial_8hpp_source.html#l00210">specialized_spatial_constructor&lt; T, 1 &gt;::operator()()</a>, <a class="el" href="Spatial_8hpp_source.html#l00419">specialized_spatial_constructor&lt; T, 2 &gt;::operator()()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00634">specialized_spatial_constructor&lt; T, 3 &gt;::operator()()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Spatial_8hpp_source.html#l00402">specialized_spatial_constructor&lt; T, 1 &gt;::operator()()</a>, <a class="el" href="Spatial_8hpp_source.html#l00621">specialized_spatial_constructor&lt; T, 2 &gt;::operator()()</a>, <a class="el" href="Spatial_8hpp_source.html#l00849">specialized_spatial_constructor&lt; T, 3 &gt;::operator()()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00267">SpatialDiscretization&lt; T, DIM &gt;::SpatialDiscretization()</a>.</p>
 
 </div>
 </div>
@@ -878,9 +1214,9 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00162">162</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00350">350</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Spatial_8hpp_source.html#l00305">specialized_spatial_constructor&lt; T, 1 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00512">specialized_spatial_constructor&lt; T, 2 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00726">specialized_spatial_constructor&lt; T, 3 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00349">specialized_spatial_constructor&lt; T, 1 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00562">specialized_spatial_constructor&lt; T, 2 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00779">specialized_spatial_constructor&lt; T, 3 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00135">SpatialDiscretization&lt; T, DIM &gt;::GMSHReaderSplitFiles()</a>, <a class="el" href="Spatial_8hpp_source.html#l00210">specialized_spatial_constructor&lt; T, 1 &gt;::operator()()</a>, <a class="el" href="Spatial_8hpp_source.html#l00419">specialized_spatial_constructor&lt; T, 2 &gt;::operator()()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00634">specialized_spatial_constructor&lt; T, 3 &gt;::operator()()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Spatial_8hpp_source.html#l00499">specialized_spatial_constructor&lt; T, 1 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00719">specialized_spatial_constructor&lt; T, 2 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00945">specialized_spatial_constructor&lt; T, 3 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00547">specialized_spatial_constructor&lt; T, 1 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00773">specialized_spatial_constructor&lt; T, 2 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l01002">specialized_spatial_constructor&lt; T, 3 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00309">SpatialDiscretization&lt; T, DIM &gt;::GMSHReaderSplitFiles()</a>, <a class="el" href="Spatial_8hpp_source.html#l00402">specialized_spatial_constructor&lt; T, 1 &gt;::operator()()</a>, <a class="el" href="Spatial_8hpp_source.html#l00621">specialized_spatial_constructor&lt; T, 2 &gt;::operator()()</a>, <a class="el" href="Spatial_8hpp_source.html#l00849">specialized_spatial_constructor&lt; T, 3 &gt;::operator()()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00267">SpatialDiscretization&lt; T, DIM &gt;::SpatialDiscretization()</a>.</p>
 
 </div>
 </div>
@@ -898,9 +1234,9 @@ template&lt;class T , int DIM&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00163">163</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Spatial_8hpp_source.html#l00351">351</a> of file <a class="el" href="Spatial_8hpp_source.html">Spatial.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Spatial_8hpp_source.html#l00305">specialized_spatial_constructor&lt; T, 1 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00512">specialized_spatial_constructor&lt; T, 2 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00726">specialized_spatial_constructor&lt; T, 3 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00349">specialized_spatial_constructor&lt; T, 1 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00562">specialized_spatial_constructor&lt; T, 2 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00779">specialized_spatial_constructor&lt; T, 3 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00210">specialized_spatial_constructor&lt; T, 1 &gt;::operator()()</a>, <a class="el" href="Spatial_8hpp_source.html#l00419">specialized_spatial_constructor&lt; T, 2 &gt;::operator()()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00634">specialized_spatial_constructor&lt; T, 3 &gt;::operator()()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Spatial_8hpp_source.html#l00499">specialized_spatial_constructor&lt; T, 1 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00719">specialized_spatial_constructor&lt; T, 2 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00945">specialized_spatial_constructor&lt; T, 3 &gt;::build_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00547">specialized_spatial_constructor&lt; T, 1 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00773">specialized_spatial_constructor&lt; T, 2 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l01002">specialized_spatial_constructor&lt; T, 3 &gt;::build_periodic_mesh()</a>, <a class="el" href="Spatial_8hpp_source.html#l00402">specialized_spatial_constructor&lt; T, 1 &gt;::operator()()</a>, <a class="el" href="Spatial_8hpp_source.html#l00621">specialized_spatial_constructor&lt; T, 2 &gt;::operator()()</a>, <a class="el" href="Spatial_8hpp_source.html#l00849">specialized_spatial_constructor&lt; T, 3 &gt;::operator()()</a>, and <a class="el" href="Spatial_8hpp_source.html#l00267">SpatialDiscretization&lt; T, DIM &gt;::SpatialDiscretization()</a>.</p>
 
 </div>
 </div>
@@ -910,7 +1246,7 @@ template&lt;class T , int DIM&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:03 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -1,0 +1,4 @@
+<map id="MfemFileCoefficient::MfemFileCoefficient" name="MfemFileCoefficient::MfemFileCoefficient">
+<area shape="rect" id="node1" title="Construct from an existing file&#45;based Coefficient, without grid functions." alt="" coords="5,5,172,47"/>
+<area shape="rect" id="node2" href="$classSlothBaseCoefficient.html#a5c99fee8be45e1dba5c4a9bc17495055" title="Indicates whether the coefficient comes from a file." alt="" coords="220,5,383,47"/>
+</map>

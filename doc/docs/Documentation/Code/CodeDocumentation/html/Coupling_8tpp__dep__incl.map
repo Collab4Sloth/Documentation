@@ -1,5 +1,8 @@
 <map id="Coupling.tpp" name="Coupling.tpp">
-<area shape="rect" id="node1" title=" " alt="" coords="7,5,118,32"/>
-<area shape="rect" id="node2" href="$Coupling_8hpp.html" title="Class to define a Coupling object." alt="" coords="5,80,120,107"/>
-<area shape="rect" id="node3" href="$sloth_8hpp.html" title="List of SLOTH header files." alt="" coords="19,155,106,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="90,5,201,32"/>
+<area shape="rect" id="node2" href="$Coupling_8hpp.html" title="Class to define a Coupling object." alt="" coords="88,80,203,107"/>
+<area shape="rect" id="node3" href="$CouplingFactory_8hpp.html" title="Helper building Coupling&lt;PB, PB, ..., PB&gt; (N times) from a std::vector&lt;PB&gt;, with N given explicitly a..." alt="" coords="5,155,168,181"/>
+<area shape="rect" id="node5" href="$sloth_8hpp.html" title="List of SLOTH header files." alt="" coords="161,304,247,331"/>
+<area shape="rect" id="node4" href="$ListFactory_8hpp.html" title="List of Factory used to simplify tests setup." alt="" coords="26,229,153,256"/>
+<area shape="rect" id="node6" href="$tests_8hpp.html" title="Usefull aliases for tests depending on the dimension of space." alt="" coords="47,304,132,331"/>
 </map>

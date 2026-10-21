@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -147,11 +147,13 @@ $(function() {
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  // Store the solution into a temporary mfem::Vector that will be used during updating stage,</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  // TODO(cci) : utile? à voir avec le restart de paraview dan mfem et peut etre l&#39;AMR</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  this-&gt;unknown_.emplace_back(unk);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  // Update time</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  next_time = current_time + current_time_step;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:02 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

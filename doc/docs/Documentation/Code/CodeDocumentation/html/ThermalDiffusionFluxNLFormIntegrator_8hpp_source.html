@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -119,7 +119,7 @@ $(function() {
 <div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classThermalDiffusionFluxNLFormIntegrator.html#ad15bd66f58bd67013c63bc12b4810012">  100</a></span>&#160;<a class="code" href="classThermalDiffusionFluxNLFormIntegrator.html#ad15bd66f58bd67013c63bc12b4810012">ThermalDiffusionFluxNLFormIntegrator&lt;VARS&gt;::ThermalDiffusionFluxNLFormIntegrator</a>(</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">const</span> std::vector&lt;mfem::ParGridFunction&gt;&amp; u_old, <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; params,</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    std::vector&lt;VARS*&gt; auxvars, <span class="keyword">const</span> std::vector&lt;Coefficients&gt;&amp; coefficients)</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    : <a class="code" href="classDiffusionFluxNLFormIntegrator.html">DiffusionFluxNLFormIntegrator</a>&lt;VARS&gt;(u_old, params, auxvars, coefficients) {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    : <a class="code" href="classDiffusionFluxNLFormIntegrator.html">DiffusionFluxNLFormIntegrator</a>&lt;<a class="code" href="namespaceSloth1D.html#acb90151137a83d7ae8ea8f343aff64b9">VARS</a>&gt;(u_old, params, auxvars, coefficients) {</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  this-&gt;check_variables_consistency();</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
@@ -204,10 +204,11 @@ $(function() {
 <div class="ttc" id="aclassThermalDiffusionFluxNLFormIntegrator_html_aac617f189c23062672df9b1846491b59"><div class="ttname"><a href="classThermalDiffusionFluxNLFormIntegrator.html#aac617f189c23062672df9b1846491b59">ThermalDiffusionFluxNLFormIntegrator::get_flux_gradient</a></div><div class="ttdeci">std::vector&lt; mfem::Vector &gt; get_flux_gradient(mfem::ElementTransformation &amp;Tr, const int nElement, const mfem::IntegrationPoint &amp;ip, const int dim) final</div><div class="ttdoc">The thermal diffusion flux at integration point.</div><div class="ttdef"><b>Definition:</b> <a href="ThermalDiffusionFluxNLFormIntegrator_8hpp_source.html#l00189">ThermalDiffusionFluxNLFormIntegrator.hpp:189</a></div></div>
 <div class="ttc" id="aclassThermalDiffusionFluxNLFormIntegrator_html_ad15bd66f58bd67013c63bc12b4810012"><div class="ttname"><a href="classThermalDiffusionFluxNLFormIntegrator.html#ad15bd66f58bd67013c63bc12b4810012">ThermalDiffusionFluxNLFormIntegrator::ThermalDiffusionFluxNLFormIntegrator</a></div><div class="ttdeci">ThermalDiffusionFluxNLFormIntegrator(Geometry geometry, const double time_step, const std::vector&lt; mfem::ParGridFunction &gt; &amp;u_old, const Parameters &amp;params, std::vector&lt; VARS * &gt; auxvars, const std::vector&lt; Coefficients &gt; &amp;coefficients)</div><div class="ttdoc">Construct a new ThermalDiffusionFluxNLFormIntegrator object.</div><div class="ttdef"><b>Definition:</b> <a href="ThermalDiffusionFluxNLFormIntegrator_8hpp_source.html#l00100">ThermalDiffusionFluxNLFormIntegrator.hpp:100</a></div></div>
 <div class="ttc" id="aclassThermalDiffusionFluxNLFormIntegrator_html_ae3aa4375b2c17f1d61340966d217236f"><div class="ttname"><a href="classThermalDiffusionFluxNLFormIntegrator.html#ae3aa4375b2c17f1d61340966d217236f">ThermalDiffusionFluxNLFormIntegrator::get_flux_coefficient</a></div><div class="ttdeci">std::vector&lt; double &gt; get_flux_coefficient(const int nElement, const mfem::IntegrationPoint &amp;ip) override</div><div class="ttdoc">Compute the diffusion coefficients at the integration point.</div><div class="ttdef"><b>Definition:</b> <a href="ThermalDiffusionFluxNLFormIntegrator_8hpp_source.html#l00167">ThermalDiffusionFluxNLFormIntegrator.hpp:167</a></div></div>
+<div class="ttc" id="anamespaceSloth1D_html_acb90151137a83d7ae8ea8f343aff64b9"><div class="ttname"><a href="namespaceSloth1D.html#acb90151137a83d7ae8ea8f343aff64b9">Sloth1D::VARS</a></div><div class="ttdeci">Test&lt; DIM &gt;::VARS VARS</div><div class="ttdef"><b>Definition:</b> <a href="tests_8hpp_source.html#l00196">tests.hpp:196</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:02 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

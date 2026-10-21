@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -244,7 +244,7 @@ $(function() {
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        const mfem::IntegrationPoint&amp; ip = ir-&gt;IntPoint(i);</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        el[blk]-&gt;CalcShape(ip, Psi);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        Tr.SetIntPoint(&amp;ip);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        this-&gt;set_int_point(Tr, ip);</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        // Get aux values at ip TODO(cci) (move in method)</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        vaux_gf_at_ip.clear();</div>
@@ -326,7 +326,7 @@ $(function() {
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;          u_values[off_blk + num_blocks] = this-&gt;u_old_[off_blk].GetValue(Tr, ip);</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        }</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        Tr.SetIntPoint(&amp;ip);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        this-&gt;set_int_point(Tr, ip);</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        double weight_coef = ip.weight * Tr.Weight();</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        if (this-&gt;isAxisymmetric()) {</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;          weight_coef *= AxiCylindricalCoefficient().Eval(Tr, ip);</div>
@@ -347,7 +347,7 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:02 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

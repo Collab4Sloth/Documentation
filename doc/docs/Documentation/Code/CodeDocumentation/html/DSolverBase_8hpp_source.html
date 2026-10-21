@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -85,27 +85,26 @@ $(function() {
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Utils_8hpp.html">Utils/Utils.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;mfem.hpp&quot;</span>  <span class="comment">// NOLINT [no include the directory when naming mfem include file]</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classSolverUMFPACK.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSolverUMFPACK.html">SolverUMFPACK</a> : <span class="keyword">public</span> <a class="code" href="classSolverBase.html">SolverBase</a>&lt;mfem::UMFPackSolver, DirectSolverType&gt; {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="classSolverUMFPACK.html#a13f258a0ceccfa2f94f295828b2d0bf2">SolverUMFPACK</a>();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  std::shared_ptr&lt;mfem::UMFPackSolver&gt; <a class="code" href="classSolverUMFPACK.html#a83fe21379896c4df62b1df2947767d2e">create_solver</a>(<span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; params) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="classSolverUMFPACK.html#a8ea079593009c6c4b88026084f4c1619">~SolverUMFPACK</a>();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#ifdef SLOTH_USE_MUMPS</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">class </span>SolverMUMPS : <span class="keyword">public</span> <a class="code" href="classSolverBase.html">SolverBase</a>&lt;mfem::MUMPSSolver, DirectSolverType&gt; {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  SolverMUMPS();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  std::shared_ptr&lt;mfem::MUMPSSolver&gt; <a class="code" href="classSolverBase.html#a271d286d566da45ac41bf03d479a12eb">create_solver</a>(<span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; params) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  ~SolverMUMPS();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aOptions_8hpp_html"><div class="ttname"><a href="Options_8hpp.html">Options.hpp</a></div><div class="ttdoc">List of all Options files.</div></div>
 <div class="ttc" id="aParameters_8hpp_html"><div class="ttname"><a href="Parameters_8hpp.html">Parameters.hpp</a></div><div class="ttdoc">Parameter class used to build and manage calculation parameter.</div></div>
 <div class="ttc" id="aSolverBase_8hpp_html"><div class="ttname"><a href="SolverBase_8hpp.html">SolverBase.hpp</a></div><div class="ttdoc">Base class for Hypre, Iterative, Direct and Non Linear Solvers.</div></div>
 <div class="ttc" id="aUtils_8hpp_html"><div class="ttname"><a href="Utils_8hpp.html">Utils.hpp</a></div><div class="ttdoc">List of all Utils files.</div></div>
 <div class="ttc" id="aclassParameters_html"><div class="ttname"><a href="classParameters.html">Parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8hpp_source.html#l00046">Parameters.hpp:46</a></div></div>
 <div class="ttc" id="aclassSolverBase_html"><div class="ttname"><a href="classSolverBase.html">SolverBase</a></div><div class="ttdef"><b>Definition:</b> <a href="SolverBase_8hpp_source.html#l00040">SolverBase.hpp:40</a></div></div>
-<div class="ttc" id="aclassSolverUMFPACK_html"><div class="ttname"><a href="classSolverUMFPACK.html">SolverUMFPACK</a></div><div class="ttdef"><b>Definition:</b> <a href="DSolverBase_8hpp_source.html#l00036">DSolverBase.hpp:36</a></div></div>
-<div class="ttc" id="aclassSolverUMFPACK_html_a13f258a0ceccfa2f94f295828b2d0bf2"><div class="ttname"><a href="classSolverUMFPACK.html#a13f258a0ceccfa2f94f295828b2d0bf2">SolverUMFPACK::SolverUMFPACK</a></div><div class="ttdeci">SolverUMFPACK()</div><div class="ttdoc">Construct a new SolverUMFPACK::SolverUMFPACK object.</div><div class="ttdef"><b>Definition:</b> <a href="DSolverBase_8cpp_source.html#l00041">DSolverBase.cpp:41</a></div></div>
-<div class="ttc" id="aclassSolverUMFPACK_html_a83fe21379896c4df62b1df2947767d2e"><div class="ttname"><a href="classSolverUMFPACK.html#a83fe21379896c4df62b1df2947767d2e">SolverUMFPACK::create_solver</a></div><div class="ttdeci">std::shared_ptr&lt; mfem::UMFPackSolver &gt; create_solver(const Parameters &amp;params) override</div><div class="ttdoc">Create a direct solver based of the SolverType and a list of Parameters.</div><div class="ttdef"><b>Definition:</b> <a href="DSolverBase_8cpp_source.html#l00050">DSolverBase.cpp:50</a></div></div>
-<div class="ttc" id="aclassSolverUMFPACK_html_a8ea079593009c6c4b88026084f4c1619"><div class="ttname"><a href="classSolverUMFPACK.html#a8ea079593009c6c4b88026084f4c1619">SolverUMFPACK::~SolverUMFPACK</a></div><div class="ttdeci">~SolverUMFPACK()</div><div class="ttdoc">Destroy the SolverUMFPACK::SolverUMFPACK object.</div><div class="ttdef"><b>Definition:</b> <a href="DSolverBase_8cpp_source.html#l00072">DSolverBase.cpp:72</a></div></div>
+<div class="ttc" id="aclassSolverBase_html_a271d286d566da45ac41bf03d479a12eb"><div class="ttname"><a href="classSolverBase.html#a271d286d566da45ac41bf03d479a12eb">SolverBase::create_solver</a></div><div class="ttdeci">virtual std::shared_ptr&lt; T &gt; create_solver(const Parameters &amp;params)=0</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:15 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:02 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

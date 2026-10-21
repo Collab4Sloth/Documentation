@@ -1,0 +1,5 @@
+<map id="SlothBaseCoefficient::compute" name="SlothBaseCoefficient::compute">
+<area shape="rect" id="node1" title="Computes the value of the Coefficient." alt="" coords="225,27,388,69"/>
+<area shape="rect" id="node2" href="$classMfemCoefficient.html#a0695e279d0091182416dd999ee5e6db8" title="Evaluate the wrapped coefficient at an integration point." alt="" coords="5,5,177,32"/>
+<area shape="rect" id="node3" href="$classMfemFileCoefficient.html#a1706118da82a52255fc44c3378f58fbe" title="Evaluate the tabulated field at an integration point." alt="" coords="12,57,171,98"/>
+</map>

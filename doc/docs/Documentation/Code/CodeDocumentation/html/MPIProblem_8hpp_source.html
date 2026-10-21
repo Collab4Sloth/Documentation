@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -90,7 +90,7 @@ $(function() {
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> VAR, <span class="keyword">class</span> PST&gt;</div>
 <div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classMPI__Problem.html">   40</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMPI__Problem.html">MPI_Problem</a> : <span class="keyword">public</span> <a class="code" href="classProblemBase.html">ProblemBase</a>&lt;VAR, PST&gt; {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classMPI__Problem.html#a3eb47c56cfbe5679246cfa0110685b49">   42</a></span>&#160;  <a class="code" href="classMPI__Problem.html#a3eb47c56cfbe5679246cfa0110685b49">MPI_Problem</a>(VAR&amp; variables, PST&amp; pst);</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classMPI__Problem.html#a3eb47c56cfbe5679246cfa0110685b49">   42</a></span>&#160;  <a class="code" href="classMPI__Problem.html#a3eb47c56cfbe5679246cfa0110685b49">MPI_Problem</a>(<a class="code" href="namespaceSloth1D.html#a3350c73fceece64e2680a6f36c0c578a">VAR</a>&amp; variables, <a class="code" href="namespaceSloth1D.html#a50889d101cdc2a60a8c94663a245db2c">PST</a>&amp; pst);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classMPI__Problem.html#a3af1ff9a0a5584f1819f9ce6d4bfcd66">   45</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classMPI__Problem.html#a3af1ff9a0a5584f1819f9ce6d4bfcd66">do_time_step</a>(<span class="keywordtype">double</span>&amp; next_time, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; current_time, <span class="keywordtype">double</span> current_time_step,</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">int</span> iter, std::vector&lt;std::unique_ptr&lt;mfem::Vector&gt;&gt;&amp; unks,</div>
@@ -105,12 +105,14 @@ $(function() {
 <div class="ttc" id="aclassMPI__Problem_html"><div class="ttname"><a href="classMPI__Problem.html">MPI_Problem</a></div><div class="ttdef"><b>Definition:</b> <a href="MPIProblem_8hpp_source.html#l00040">MPIProblem.hpp:40</a></div></div>
 <div class="ttc" id="aclassMPI__Problem_html_a3af1ff9a0a5584f1819f9ce6d4bfcd66"><div class="ttname"><a href="classMPI__Problem.html#a3af1ff9a0a5584f1819f9ce6d4bfcd66">MPI_Problem::do_time_step</a></div><div class="ttdeci">void do_time_step(double &amp;next_time, const double &amp;current_time, double current_time_step, const int iter, std::vector&lt; std::unique_ptr&lt; mfem::Vector &gt;&gt; &amp;unks, const std::vector&lt; std::vector&lt; std::string &gt;&gt; &amp;unks_info) override</div></div>
 <div class="ttc" id="aclassMPI__Problem_html_a3eb47c56cfbe5679246cfa0110685b49"><div class="ttname"><a href="classMPI__Problem.html#a3eb47c56cfbe5679246cfa0110685b49">MPI_Problem::MPI_Problem</a></div><div class="ttdeci">MPI_Problem(VAR &amp;variables, PST &amp;pst)</div></div>
-<div class="ttc" id="aclassProblemBase_html"><div class="ttname"><a href="classProblemBase.html">ProblemBase</a></div><div class="ttdoc">Base class for SLOTH problem.</div><div class="ttdef"><b>Definition:</b> <a href="ProblemBase_8hpp_source.html#l00063">ProblemBase.hpp:63</a></div></div>
+<div class="ttc" id="aclassProblemBase_html"><div class="ttname"><a href="classProblemBase.html">ProblemBase</a></div><div class="ttdoc">Base class for SLOTH problem.</div><div class="ttdef"><b>Definition:</b> <a href="ProblemBase_8hpp_source.html#l00064">ProblemBase.hpp:64</a></div></div>
+<div class="ttc" id="anamespaceSloth1D_html_a3350c73fceece64e2680a6f36c0c578a"><div class="ttname"><a href="namespaceSloth1D.html#a3350c73fceece64e2680a6f36c0c578a">Sloth1D::VAR</a></div><div class="ttdeci">Test&lt; DIM &gt;::VAR VAR</div><div class="ttdef"><b>Definition:</b> <a href="tests_8hpp_source.html#l00196">tests.hpp:196</a></div></div>
+<div class="ttc" id="anamespaceSloth1D_html_a50889d101cdc2a60a8c94663a245db2c"><div class="ttname"><a href="namespaceSloth1D.html#a50889d101cdc2a60a8c94663a245db2c">Sloth1D::PST</a></div><div class="ttdeci">Test&lt; DIM &gt;::PST PST</div><div class="ttdef"><b>Definition:</b> <a href="tests_8hpp_source.html#l00196">tests.hpp:196</a></div></div>
 <div class="ttc" id="apostprocessing_8hpp_html"><div class="ttname"><a href="postprocessing_8hpp.html">postprocessing.hpp</a></div><div class="ttdoc">Post-processing features.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:02 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

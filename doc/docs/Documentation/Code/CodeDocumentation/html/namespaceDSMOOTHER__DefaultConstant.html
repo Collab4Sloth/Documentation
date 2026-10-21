@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -78,16 +78,38 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aae02547c7d9c2203084126005d24f173"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDSMOOTHER__DefaultConstant.html#aae02547c7d9c2203084126005d24f173">positive_diagonal</a> = false</td></tr>
+<tr class="memitem:a35966adbbbf86a56d8adf01c3394e144"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDSMOOTHER__DefaultConstant.html#a35966adbbbf86a56d8adf01c3394e144">iterations</a> = 1</td></tr>
+<tr class="separator:a35966adbbbf86a56d8adf01c3394e144"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae02547c7d9c2203084126005d24f173"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDSMOOTHER__DefaultConstant.html#aae02547c7d9c2203084126005d24f173">positive_diagonal</a> = true</td></tr>
 <tr class="separator:aae02547c7d9c2203084126005d24f173"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe328d26f62063e19a3b46ecb4ab35fd"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDSMOOTHER__DefaultConstant.html#afe328d26f62063e19a3b46ecb4ab35fd">print_level</a> = -1</td></tr>
 <tr class="separator:afe328d26f62063e19a3b46ecb4ab35fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03ef826904ce13be510d4a81efa23d85"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDSMOOTHER__DefaultConstant.html#a03ef826904ce13be510d4a81efa23d85">scale</a> = 1.</td></tr>
+<tr class="separator:a03ef826904ce13be510d4a81efa23d85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac296e61e77fb719a06897f1fe3da9267"><td class="memItemLeft" align="right" valign="top">const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceDSMOOTHER__DefaultConstant.html#ac296e61e77fb719a06897f1fe3da9267">type</a> = 0</td></tr>
 <tr class="separator:ac296e61e77fb719a06897f1fe3da9267"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Default constant used by DSMOOTHER Preconditioner. </p>
 </div><h2 class="groupheader">Variable Documentation</h2>
+<a id="a35966adbbbf86a56d8adf01c3394e144"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35966adbbbf86a56d8adf01c3394e144">&#9670;&nbsp;</a></span>iterations</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto DSMOOTHER_DefaultConstant::iterations = 1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="SolversOptions_8hpp_source.html#l00153">153</a> of file <a class="el" href="SolversOptions_8hpp_source.html">SolversOptions.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="IPrecondBase_8cpp_source.html#l00050">PrecondDSmoother::create_solver()</a>.</p>
+
+</div>
+</div>
 <a id="aae02547c7d9c2203084126005d24f173"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aae02547c7d9c2203084126005d24f173">&#9670;&nbsp;</a></span>positive_diagonal</h2>
 
@@ -95,14 +117,14 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const bool DSMOOTHER_DefaultConstant::positive_diagonal = false</td>
+          <td class="memname">const bool DSMOOTHER_DefaultConstant::positive_diagonal = true</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SolversOptions_8hpp_source.html#l00147">147</a> of file <a class="el" href="SolversOptions_8hpp_source.html">SolversOptions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SolversOptions_8hpp_source.html#l00151">151</a> of file <a class="el" href="SolversOptions_8hpp_source.html">SolversOptions.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HPrecondBase_8cpp_source.html#l00082">PrecondHypreSmoother::create_solver()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HPrecondBase_8cpp_source.html#l00082">PrecondHypreSmoother::create_solver()</a>, and <a class="el" href="IPrecondBase_8cpp_source.html#l00050">PrecondDSmoother::create_solver()</a>.</p>
 
 </div>
 </div>
@@ -118,7 +140,25 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SolversOptions_8hpp_source.html#l00148">148</a> of file <a class="el" href="SolversOptions_8hpp_source.html">SolversOptions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SolversOptions_8hpp_source.html#l00154">154</a> of file <a class="el" href="SolversOptions_8hpp_source.html">SolversOptions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a03ef826904ce13be510d4a81efa23d85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03ef826904ce13be510d4a81efa23d85">&#9670;&nbsp;</a></span>scale</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const auto DSMOOTHER_DefaultConstant::scale = 1.</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="SolversOptions_8hpp_source.html#l00152">152</a> of file <a class="el" href="SolversOptions_8hpp_source.html">SolversOptions.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="IPrecondBase_8cpp_source.html#l00050">PrecondDSmoother::create_solver()</a>.</p>
 
 </div>
 </div>
@@ -134,7 +174,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SolversOptions_8hpp_source.html#l00146">146</a> of file <a class="el" href="SolversOptions_8hpp_source.html">SolversOptions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SolversOptions_8hpp_source.html#l00150">150</a> of file <a class="el" href="SolversOptions_8hpp_source.html">SolversOptions.hpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="HPrecondBase_8cpp_source.html#l00045">PrecondHypreILU::create_solver()</a>, <a class="el" href="HPrecondBase_8cpp_source.html#l00082">PrecondHypreSmoother::create_solver()</a>, and <a class="el" href="IPrecondBase_8cpp_source.html#l00050">PrecondDSmoother::create_solver()</a>.</p>
 
@@ -143,7 +183,7 @@ Variables</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:03 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

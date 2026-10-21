@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -175,6 +175,12 @@ Functions</h2></td></tr>
 <tr class="memitem:aaae11a05b491012cff8e953cafb5fee7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="UtilsForData_8hpp.html#aaae11a05b491012cff8e953cafb5fee7">external_call</a> (<a class="el" href="UtilsForData_8hpp.html#abf3be10d03894afb391f3a2935e3b313">Verbosity</a> verbosity, Func func, Args &amp;&amp;... args)</td></tr>
 <tr class="memdesc:aaae11a05b491012cff8e953cafb5fee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method used to capture the flux coming from an external method and print it depending on the verbosity level.  <a href="UtilsForData_8hpp.html#aaae11a05b491012cff8e953cafb5fee7">More...</a><br /></td></tr>
 <tr class="separator:aaae11a05b491012cff8e953cafb5fee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8566df2e6e0f8916e189acb2430ba94f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UtilsForData_8hpp.html#a8566df2e6e0f8916e189acb2430ba94f">replacePunctuation</a> (std::string str)</td></tr>
+<tr class="memdesc:a8566df2e6e0f8916e189acb2430ba94f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces punctuation characters with underscores.  <a href="UtilsForData_8hpp.html#a8566df2e6e0f8916e189acb2430ba94f">More...</a><br /></td></tr>
+<tr class="separator:a8566df2e6e0f8916e189acb2430ba94f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbffc713ad4f1bc4d36d74230b2a68dd"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UtilsForData_8hpp.html#adbffc713ad4f1bc4d36d74230b2a68dd">replaceSpaces</a> (std::string str)</td></tr>
+<tr class="memdesc:adbffc713ad4f1bc4d36d74230b2a68dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces whitespace characters with underscores.  <a href="UtilsForData_8hpp.html#adbffc713ad4f1bc4d36d74230b2a68dd">More...</a><br /></td></tr>
+<tr class="separator:adbffc713ad4f1bc4d36d74230b2a68dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa81001b8fe8db57d44007921da1b6970"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="UtilsForData_8hpp.html#aa81001b8fe8db57d44007921da1b6970">setVerbosity</a> (<a class="el" href="UtilsForData_8hpp.html#abf3be10d03894afb391f3a2935e3b313">Verbosity</a> verbosity)</td></tr>
 <tr class="memdesc:aa81001b8fe8db57d44007921da1b6970"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the level of verbosity.  <a href="UtilsForData_8hpp.html#aa81001b8fe8db57d44007921da1b6970">More...</a><br /></td></tr>
 <tr class="separator:aa81001b8fe8db57d44007921da1b6970"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -469,7 +475,7 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="abf3be10d03894afb391f3a2935e3b313a902b0d55fddef6f8d651fe1035b7d4bd"></a>Error&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00116">116</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00143">143</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
 </div>
 </div>
@@ -506,7 +512,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00197">197</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00224">224</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
 </div>
 </div>
@@ -569,9 +575,83 @@ template&lt;typename Func , typename... Args&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00149">149</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00176">176</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
 <p class="reference">References <a class="el" href="UtilsForData_8hpp.html#abf3be10d03894afb391f3a2935e3b313ad4a9fa383ab700c5bdd6f31cf7df0faf">Verbose</a>.</p>
+
+</div>
+</div>
+<a id="a8566df2e6e0f8916e189acb2430ba94f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8566df2e6e0f8916e189acb2430ba94f">&#9670;&nbsp;</a></span>replacePunctuation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string replacePunctuation </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Replaces punctuation characters with underscores. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The input string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A copy of the input string with punctuation replaced by <code>_</code> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00129">129</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+
+</div>
+</div>
+<a id="adbffc713ad4f1bc4d36d74230b2a68dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbffc713ad4f1bc4d36d74230b2a68dd">&#9670;&nbsp;</a></span>replaceSpaces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string replaceSpaces </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Replaces whitespace characters with underscores. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The input string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A copy of the input string with whitespace replaced by <code>_</code> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00116">116</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
 </div>
 </div>
@@ -607,9 +687,9 @@ template&lt;typename Func , typename... Args&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00136">136</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00163">163</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="UtilsForData_8hpp_source.html#l00122">verbosityLevel</a>.</p>
+<p class="reference">References <a class="el" href="UtilsForData_8hpp_source.html#l00149">verbosityLevel</a>.</p>
 
 </div>
 </div>
@@ -695,13 +775,13 @@ template&lt;typename Func , typename... Args&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00074">74</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="InterDiffusionCoefficient_8cpp_source.html#l00143">InterDiffusionCoefficient::get_property()</a>, and <a class="el" href="InterDiffusionCoefficient_8cpp_source.html#l00048">InterDiffusionCoefficient::InterDiffusionCoefficient()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VelocityField_8hpp_source.html#l00084">VelocityField::configure()</a>, <a class="el" href="InterDiffusionCoefficient_8cpp_source.html#l00143">InterDiffusionCoefficient::get_property()</a>, and <a class="el" href="InterDiffusionCoefficient_8cpp_source.html#l00048">InterDiffusionCoefficient::InterDiffusionCoefficient()</a>.</p>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="UtilsForData_8hpp_aa504de245b08376b4309366fa40a5815_icgraph.svg" width="366" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="UtilsForData_8hpp_aa504de245b08376b4309366fa40a5815_icgraph.svg" width="366" height="170"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -776,11 +856,11 @@ template&lt;typename Func , typename... Args&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00128">128</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00155">155</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="UtilsForData_8hpp_source.html#l00122">verbosityLevel</a>.</p>
+<p class="reference">References <a class="el" href="UtilsForData_8hpp_source.html#l00149">verbosityLevel</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DSolverBase_8cpp_source.html#l00050">SolverUMFPACK::create_solver()</a>, <a class="el" href="HPrecondBase_8cpp_source.html#l00045">PrecondHypreILU::create_solver()</a>, <a class="el" href="HPrecondBase_8cpp_source.html#l00108">PrecondHypreBoomerAMG::create_solver()</a>, <a class="el" href="HSolverBase_8cpp_source.html#l00051">SolverHyprePCG::create_solver()</a>, <a class="el" href="HSolverBase_8cpp_source.html#l00094">SolverHypreGMRES::create_solver()</a>, <a class="el" href="HSolverBase_8cpp_source.html#l00140">SolverHypreFGMRES::create_solver()</a>, <a class="el" href="ISolverBase_8cpp_source.html#l00045">SolverBICGSTAB::create_solver()</a>, <a class="el" href="ISolverBase_8cpp_source.html#l00073">SolverMINRES::create_solver()</a>, <a class="el" href="ISolverBase_8cpp_source.html#l00101">SolverCG::create_solver()</a>, <a class="el" href="ISolverBase_8cpp_source.html#l00130">SolverGMRES::create_solver()</a>, <a class="el" href="NLSolverBase_8cpp_source.html#l00051">SolverNewton::create_solver()</a>, and <a class="el" href="NLSolverBase_8cpp_source.html#l00096">SolverLBFGS::create_solver()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HPrecondBase_8cpp_source.html#l00045">PrecondHypreILU::create_solver()</a>, <a class="el" href="HPrecondBase_8cpp_source.html#l00108">PrecondHypreBoomerAMG::create_solver()</a>, <a class="el" href="HSolverBase_8cpp_source.html#l00051">SolverHyprePCG::create_solver()</a>, <a class="el" href="HSolverBase_8cpp_source.html#l00094">SolverHypreGMRES::create_solver()</a>, <a class="el" href="HSolverBase_8cpp_source.html#l00140">SolverHypreFGMRES::create_solver()</a>, <a class="el" href="ISolverBase_8cpp_source.html#l00045">SolverBICGSTAB::create_solver()</a>, <a class="el" href="ISolverBase_8cpp_source.html#l00073">SolverMINRES::create_solver()</a>, <a class="el" href="ISolverBase_8cpp_source.html#l00101">SolverCG::create_solver()</a>, <a class="el" href="ISolverBase_8cpp_source.html#l00130">SolverGMRES::create_solver()</a>, <a class="el" href="NLSolverBase_8cpp_source.html#l00051">SolverNewton::create_solver()</a>, and <a class="el" href="NLSolverBase_8cpp_source.html#l00096">SolverLBFGS::create_solver()</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
@@ -816,9 +896,9 @@ template&lt;typename Func , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00129">129</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00156">156</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="UtilsForData_8hpp_source.html#l00122">verbosityLevel</a>.</p>
+<p class="reference">References <a class="el" href="UtilsForData_8hpp_source.html#l00149">verbosityLevel</a>.</p>
 
 </div>
 </div>
@@ -874,16 +954,16 @@ template&lt;typename Func , typename... Args&gt; </div>
 
 <p>The current level of verbosity. </p>
 
-<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00122">122</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UtilsForData_8hpp_source.html#l00149">149</a> of file <a class="el" href="UtilsForData_8hpp_source.html">UtilsForData.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="UtilsForData_8hpp_source.html#l00219">SlothInfo::debug()</a>, <a class="el" href="UtilsForData_8hpp_source.html#l00231">SlothInfo::error()</a>, <a class="el" href="UtilsForData_8hpp_source.html#l00257">SlothInfo::print()</a>, <a class="el" href="UtilsForData_8hpp_source.html#l00136">setVerbosity()</a>, <a class="el" href="UtilsForData_8hpp_source.html#l00244">SlothInfo::verbose()</a>, <a class="el" href="UtilsForData_8hpp_source.html#l00128">verbose_at_least()</a>, and <a class="el" href="UtilsForData_8hpp_source.html#l00129">verbose_is()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="UtilsForData_8hpp_source.html#l00246">SlothInfo::debug()</a>, <a class="el" href="UtilsForData_8hpp_source.html#l00258">SlothInfo::error()</a>, <a class="el" href="UtilsForData_8hpp_source.html#l00284">SlothInfo::print()</a>, <a class="el" href="UtilsForData_8hpp_source.html#l00163">setVerbosity()</a>, <a class="el" href="UtilsForData_8hpp_source.html#l00271">SlothInfo::verbose()</a>, <a class="el" href="UtilsForData_8hpp_source.html#l00155">verbose_at_least()</a>, and <a class="el" href="UtilsForData_8hpp_source.html#l00156">verbose_is()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:03 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -271,140 +271,120 @@ $(function() {
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    const mfem::Array&lt;const mfem::FiniteElement*&gt;&amp; el, mfem::ElementTransformation&amp; Tr,</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    const mfem::Array&lt;const mfem::Vector*&gt;&amp; elfun, const mfem::Array&lt;mfem::Vector*&gt;&amp; elvect) {</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  int num_blocks = el.Size();</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  std::vector&lt;double&gt; u_values(2 * num_blocks);</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  std::vector&lt;double&gt; vaux_gf_at_ip(this-&gt;vaux_gf_.size());</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  for (int blk = 0; blk &lt; num_blocks; ++blk) {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    // Catch_Time_Section(&quot;TimeNLFormIntegrator:AssembleElementVector&quot;);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    int nd = el[blk]-&gt;GetDof();</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    int dim = el[blk]-&gt;GetDim();</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    gradPsi.SetSize(nd, dim);</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    Psi.SetSize(nd);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    gradU.SetSize(dim);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    // elvect.SetSize(nd);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    elvect[blk]-&gt;SetSize(nd);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    *elvect[blk] = 0.;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    const mfem::IntegrationRule* ir =</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        &amp;mfem::IntRules.Get(el[blk]-&gt;GetGeomType(), 2 * el[blk]-&gt;GetOrder() + Tr.OrderW());</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    // elvect = 0.0;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    for (int i = 0; i &lt; ir-&gt;GetNPoints(); i++) {</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;      const mfem::IntegrationPoint&amp; ip = ir-&gt;IntPoint(i);</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;      el[blk]-&gt;CalcShape(ip, Psi);  //</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;      Tr.SetIntPoint(&amp;ip);</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;      const auto&amp; u = *elfun[blk] * Psi;</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;      // Get aux values at ip TODO(cci) (move in method)</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;      for (size_t k = 0; k &lt; vaux_gf_.size(); ++k) {</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        vaux_gf_at_ip[k] = vaux_gf_[k].GetValue(Tr, ip);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;      }</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;      // Get values</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;      for (int off_blk = 0; off_blk &lt; num_blocks; ++off_blk) {</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        u_values[off_blk] = (*elfun[off_blk]) * Psi;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        u_values[off_blk + num_blocks] = this-&gt;u_old_[off_blk].GetValue(Tr, ip);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;      }</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;      double coef_a =</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;          this-&gt;compute_coefficient(this-&gt;coefficient_A[blk], std::span&lt;const double&gt;(u_values),</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                                    std::span&lt;const double&gt;(vaux_gf_at_ip));</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;      double coef_b =</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;          this-&gt;compute_coefficient(this-&gt;coefficient_B[blk], std::span&lt;const double&gt;(u_values),</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                                    std::span&lt;const double&gt;(vaux_gf_at_ip));</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  // {u, u_old} and auxiliary fields at the integration points (same rule as below)</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  this-&gt;prepare_element_values(</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;      el, Tr, elfun, this-&gt;vaux_gf_,</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;      mfem::IntRules.Get(el[0]-&gt;GetGeomType(), 2 * el[0]-&gt;GetOrder() + Tr.OrderW()));</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  for (int blk = 0; blk &lt; num_blocks; ++blk) {</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    // Catch_Time_Section(&quot;TimeNLFormIntegrator:AssembleElementVector&quot;);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    int nd = el[blk]-&gt;GetDof();</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    int dim = el[blk]-&gt;GetDim();</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    gradPsi.SetSize(nd, dim);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    Psi.SetSize(nd);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    gradU.SetSize(dim);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    // elvect.SetSize(nd);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    elvect[blk]-&gt;SetSize(nd);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    *elvect[blk] = 0.;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    const mfem::IntegrationRule* ir =</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        &amp;mfem::IntRules.Get(el[blk]-&gt;GetGeomType(), 2 * el[blk]-&gt;GetOrder() + Tr.OrderW());</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    // elvect = 0.0;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    for (int i = 0; i &lt; ir-&gt;GetNPoints(); i++) {</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;      const mfem::IntegrationPoint&amp; ip = ir-&gt;IntPoint(i);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;      el[blk]-&gt;CalcShape(ip, Psi);  //</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;      this-&gt;set_int_point(Tr, ip);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;      const auto&amp; u = *elfun[blk] * Psi;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;      const auto ipv = this-&gt;values_at_ip(*ir, i, Psi, elfun, this-&gt;vaux_gf_, Tr);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;      double coef_a = this-&gt;eval_coefficient(this-&gt;coefficient_A[blk], ipv.u, ipv.aux);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;      double coef_b = this-&gt;eval_coefficient(this-&gt;coefficient_B[blk], ipv.u, ipv.aux);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;      double weight_coef = ip.weight * Tr.Weight();</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;      if (this-&gt;isAxisymmetric()) {</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        weight_coef *= AxiCylindricalCoefficient().Eval(Tr, ip);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;      }</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;      const double ww = coef_a * coef_b * u * weight_coef;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;      add(*elvect[blk], ww, Psi, *elvect[blk]);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    }</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  }</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;}</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;      double weight_coef = ip.weight * Tr.Weight();</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;      if (this-&gt;isAxisymmetric()) {</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        weight_coef *= AxiCylindricalCoefficient().Eval(Tr, ip);</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;      }</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;      const double ww = coef_a * coef_b * u * weight_coef;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;      add(*elvect[blk], ww, Psi, *elvect[blk]);</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    }</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  }</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;}</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;/**</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; * @brief Assemble the element-level Jacobian matrix for the nonlinear problem.</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;/**</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; * @brief Assemble the element-level Jacobian matrix for the nonlinear problem.</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; *</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; * This method computes the Jacobian matrix by element.</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; *</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; * @tparam VARS Template parameter defining the variables used in the integrator.</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; *</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; * @param el      Array of pointers to finite elements.</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; * @param Tr      Element transformation.</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; * @param elfun   Array of local finite element solution vectors.</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; * @param elmat   Array of dense matrices where the computed element Jacobian contributions</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; *                will be stored.</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; *</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; * This method computes the Jacobian matrix by element.</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; *</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; * @tparam VARS Template parameter defining the variables used in the integrator.</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; *</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; * @param el      Array of pointers to finite elements.</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; * @param Tr      Element transformation.</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; * @param elfun   Array of local finite element solution vectors.</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; * @param elmat   Array of dense matrices where the computed element Jacobian contributions</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; *                will be stored.</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; *</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; * @note Users typically do not call this function directly; it is invoked</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; *       internally during the assembly of the global nonlinear form.</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; */</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;template &lt;class VARS&gt;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;void TimeNLFormIntegrator&lt;VARS&gt;::AssembleElementGrad(</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    const mfem::Array&lt;const mfem::FiniteElement*&gt;&amp; el, mfem::ElementTransformation&amp; Tr,</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    const mfem::Array&lt;const mfem::Vector*&gt;&amp; elfun,</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    const mfem::Array2D&lt;mfem::DenseMatrix*&gt;&amp; elmats) {</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  // Catch_Time_Section(&quot;TimeNLFormIntegrator::AssembleElementGrad&quot;);</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  int num_blocks = el.Size();</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  std::vector&lt;double&gt; u_values(2 * num_blocks);</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  std::vector&lt;double&gt; vaux_gf_at_ip(this-&gt;vaux_gf_.size());</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  for (int blk = 0; blk &lt; num_blocks; ++blk) {</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    // int nd = el.GetDof();</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    // int dim = el.GetDim();</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    int nd = el[blk]-&gt;GetDof();</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    int dim = el[blk]-&gt;GetDim();</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    gradPsi.SetSize(nd, dim);</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    Psi.SetSize(nd);</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    // elmat.SetSize(nd);</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    elmats(blk, blk)-&gt;SetSize(nd);</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    *elmats(blk, blk) = 0.0;</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    const mfem::IntegrationRule* ir =</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        &amp;mfem::IntRules.Get(el[blk]-&gt;GetGeomType(), 2 * el[blk]-&gt;GetOrder() + Tr.OrderW());</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    // elmat = 0.0;</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    for (int i = 0; i &lt; ir-&gt;GetNPoints(); i++) {</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;      const mfem::IntegrationPoint&amp; ip = ir-&gt;IntPoint(i);</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;      el[blk]-&gt;CalcShape(ip, Psi);</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;      Tr.SetIntPoint(&amp;ip);</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;      // Get aux values at ip TODO(cci) (move in method)</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;      for (size_t k = 0; k &lt; vaux_gf_.size(); ++k) {</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        vaux_gf_at_ip[k] = vaux_gf_[k].GetValue(Tr, ip);</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;      }</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;      // Get values</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;      for (int off_blk = 0; off_blk &lt; num_blocks; ++off_blk) {</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        u_values[off_blk] = (*elfun[off_blk]) * Psi;</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        u_values[off_blk + num_blocks] = this-&gt;u_old_[off_blk].GetValue(Tr, ip);</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;      }</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;      double coef_a =</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;          this-&gt;compute_coefficient(this-&gt;coefficient_A[blk], std::span&lt;const double&gt;(u_values),</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                                    std::span&lt;const double&gt;(vaux_gf_at_ip));</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;      double coef_b =</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;          this-&gt;compute_coefficient(this-&gt;coefficient_B[blk], std::span&lt;const double&gt;(u_values),</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                                    std::span&lt;const double&gt;(vaux_gf_at_ip));</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;      double weight_coef = ip.weight * Tr.Weight();</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;      if (this-&gt;isAxisymmetric()) {</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        weight_coef *= AxiCylindricalCoefficient().Eval(Tr, ip);</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;      }</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;      double fun_val = coef_a * coef_b * weight_coef;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;      AddMult_a_VVt(fun_val, Psi, *elmats(blk, blk));</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    }</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  }</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  // Off-diagonal</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  for (int blk = 0; blk &lt; num_blocks; ++blk) {</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    for (int off_blk = 0; off_blk &lt; num_blocks; ++off_blk) {</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;      if (off_blk != blk) {</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        int nd = el[blk]-&gt;GetDof();</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        // elmat.SetSize(nd);</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        elmats(blk, off_blk)-&gt;SetSize(nd);</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        *elmats(blk, off_blk) = 0.0;</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;      }</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    }</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;  }</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;}</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; * @note Users typically do not call this function directly; it is invoked</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; *       internally during the assembly of the global nonlinear form.</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; */</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;template &lt;class VARS&gt;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;void TimeNLFormIntegrator&lt;VARS&gt;::AssembleElementGrad(</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    const mfem::Array&lt;const mfem::FiniteElement*&gt;&amp; el, mfem::ElementTransformation&amp; Tr,</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    const mfem::Array&lt;const mfem::Vector*&gt;&amp; elfun,</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    const mfem::Array2D&lt;mfem::DenseMatrix*&gt;&amp; elmats) {</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  // Catch_Time_Section(&quot;TimeNLFormIntegrator::AssembleElementGrad&quot;);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  int num_blocks = el.Size();</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  // {u, u_old} and auxiliary fields at the integration points (same rule as below)</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  this-&gt;prepare_element_values(</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;      el, Tr, elfun, this-&gt;vaux_gf_,</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;      mfem::IntRules.Get(el[0]-&gt;GetGeomType(), 2 * el[0]-&gt;GetOrder() + Tr.OrderW()));</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  for (int blk = 0; blk &lt; num_blocks; ++blk) {</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    // int nd = el.GetDof();</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    // int dim = el.GetDim();</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    int nd = el[blk]-&gt;GetDof();</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    int dim = el[blk]-&gt;GetDim();</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    gradPsi.SetSize(nd, dim);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    Psi.SetSize(nd);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    // elmat.SetSize(nd);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    elmats(blk, blk)-&gt;SetSize(nd);</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    *elmats(blk, blk) = 0.0;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    const mfem::IntegrationRule* ir =</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        &amp;mfem::IntRules.Get(el[blk]-&gt;GetGeomType(), 2 * el[blk]-&gt;GetOrder() + Tr.OrderW());</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    // elmat = 0.0;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    for (int i = 0; i &lt; ir-&gt;GetNPoints(); i++) {</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;      const mfem::IntegrationPoint&amp; ip = ir-&gt;IntPoint(i);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;      el[blk]-&gt;CalcShape(ip, Psi);</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;      this-&gt;set_int_point(Tr, ip);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;      const auto ipv = this-&gt;values_at_ip(*ir, i, Psi, elfun, this-&gt;vaux_gf_, Tr);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;      double coef_a = this-&gt;eval_coefficient(this-&gt;coefficient_A[blk], ipv.u, ipv.aux);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;      double coef_b = this-&gt;eval_coefficient(this-&gt;coefficient_B[blk], ipv.u, ipv.aux);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;      double weight_coef = ip.weight * Tr.Weight();</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;      if (this-&gt;isAxisymmetric()) {</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        weight_coef *= AxiCylindricalCoefficient().Eval(Tr, ip);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;      }</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;      double fun_val = coef_a * coef_b * weight_coef;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;      AddMult_a_VVt(fun_val, Psi, *elmats(blk, blk));</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    }</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;  }</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;  // Off-diagonal</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;  for (int blk = 0; blk &lt; num_blocks; ++blk) {</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    for (int off_blk = 0; off_blk &lt; num_blocks; ++off_blk) {</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;      if (off_blk != blk) {</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        int nd = el[blk]-&gt;GetDof();</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        // elmat.SetSize(nd);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        elmats(blk, off_blk)-&gt;SetSize(nd);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        *elmats(blk, off_blk) = 0.0;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;      }</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    }</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  }</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:02 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

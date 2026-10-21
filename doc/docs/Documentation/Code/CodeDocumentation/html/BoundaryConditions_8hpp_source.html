@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -84,47 +84,51 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Boundary_8hpp.html">BCs/Boundary.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Spatial_8hpp.html">Spatial/Spatial.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Utils_8hpp.html">Utils/Utils.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;mfem.hpp&quot;</span>  <span class="comment">// NOLINT [no include the directory when naming mfem include file]</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keywordtype">int</span> DIM&gt;</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classBoundaryConditions.html">   46</a></span>&#160;<span class="keyword">class </span><a class="code" href="classBoundaryConditions.html">BoundaryConditions</a> {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  T* fecollection_;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  mfem::ParFiniteElementSpace* fespace_;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  mfem::Array&lt;int&gt; Dirichlet_bdr_;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  mfem::Array&lt;double&gt; Dirichlet_value_;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  mfem::Array&lt;int&gt; Neumann_bdr_;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  mfem::Array&lt;int&gt; Robin_bdr_;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  mfem::Array&lt;int&gt; ess_tdof_list_;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  std::initializer_list&lt;Boundary&gt; boundaries_;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span>... Args&gt;</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classBoundaryConditions.html#aac17dc96feda7fc3c08c0f0308493693">   59</a></span>&#160;  <a class="code" href="classBoundaryConditions.html#aac17dc96feda7fc3c08c0f0308493693">BoundaryConditions</a>(<a class="code" href="classSpatialDiscretization.html">SpatialDiscretization&lt;T, DIM&gt;</a>* spatial, <span class="keyword">const</span> Args&amp;... boundaries);</div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classBoundaryConditions.html#a23f5cf33a22290a61bb2dcba457f086d">   60</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classBoundaryConditions.html#a23f5cf33a22290a61bb2dcba457f086d">SetBoundaryConditions</a>(mfem::Vector&amp; u);</div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classBoundaryConditions.html#a2dfb9365cb6ce2c8ceb6802d174b3f82">   61</a></span>&#160;  mfem::Array&lt;int&gt; <a class="code" href="classBoundaryConditions.html#a2dfb9365cb6ce2c8ceb6802d174b3f82">GetEssentialDofs</a>();</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classBoundaryConditions.html#a50d3971dff965883752e17c05b468756">   62</a></span>&#160;  <a class="code" href="classBoundaryConditions.html#a50d3971dff965883752e17c05b468756">~BoundaryConditions</a>();</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classBoundaryConditions.html#a392691b59c192225a5a1a92e3279f5f9">   63</a></span>&#160;  mfem::Array&lt;int&gt; <a class="code" href="classBoundaryConditions.html#a392691b59c192225a5a1a92e3279f5f9">get_marker_array</a>(<span class="keyword">const</span> std::string&amp; boundary_type);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="BoundaryConditions_8tpp.html">BCs/BoundaryConditions.tpp</a>&quot;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Coefficients_8hpp.html">Coefficients/Coefficients.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Spatial_8hpp.html">Spatial/Spatial.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Utils_8hpp.html">Utils/Utils.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;mfem.hpp&quot;</span>  <span class="comment">// NOLINT [no include the directory when naming mfem include file]</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keywordtype">int</span> DIM&gt;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classBoundaryConditions.html">   47</a></span>&#160;<span class="keyword">class </span><a class="code" href="classBoundaryConditions.html">BoundaryConditions</a> {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  T* fecollection_;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  mfem::ParFiniteElementSpace* fespace_;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  mfem::Array&lt;int&gt; Dirichlet_bdr_;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  mfem::Array&lt;double&gt; Dirichlet_value_;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  mfem::Array&lt;int&gt; Neumann_bdr_;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  mfem::Array&lt;int&gt; Robin_bdr_;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  mfem::Array&lt;int&gt; ess_tdof_list_;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  std::initializer_list&lt;Boundary&gt; boundaries_;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span>... Args&gt;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classBoundaryConditions.html#aac17dc96feda7fc3c08c0f0308493693">   60</a></span>&#160;  <a class="code" href="classBoundaryConditions.html#aac17dc96feda7fc3c08c0f0308493693">BoundaryConditions</a>(<a class="code" href="classSpatialDiscretization.html">SpatialDiscretization&lt;T, DIM&gt;</a>* spatial, <span class="keyword">const</span> Args&amp;... boundaries);</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classBoundaryConditions.html#aca9ce8d545f1c8a78e4e8774cb001023">   61</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classBoundaryConditions.html#aca9ce8d545f1c8a78e4e8774cb001023">SetDirichletBoundaryConditions</a>(mfem::Vector&amp; u, <a class="code" href="classCoefficients.html">Coefficients</a>&amp; coefficients,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                      std::vector&lt;mfem::Vector&gt; auxvars_unk);</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classBoundaryConditions.html#a2dfb9365cb6ce2c8ceb6802d174b3f82">   63</a></span>&#160;  mfem::Array&lt;int&gt; <a class="code" href="classBoundaryConditions.html#a2dfb9365cb6ce2c8ceb6802d174b3f82">GetEssentialDofs</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classBoundaryConditions.html#a50d3971dff965883752e17c05b468756">   64</a></span>&#160;  <a class="code" href="classBoundaryConditions.html#a50d3971dff965883752e17c05b468756">~BoundaryConditions</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classBoundaryConditions.html#a392691b59c192225a5a1a92e3279f5f9">   65</a></span>&#160;  mfem::Array&lt;int&gt; <a class="code" href="classBoundaryConditions.html#a392691b59c192225a5a1a92e3279f5f9">get_marker_array</a>(<span class="keyword">const</span> std::string&amp; boundary_type);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;};</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="BoundaryConditions_8tpp.html">BCs/BoundaryConditions.tpp</a>&quot;</span></div>
 <div class="ttc" id="aBoundaryConditions_8tpp_html"><div class="ttname"><a href="BoundaryConditions_8tpp.html">BoundaryConditions.tpp</a></div></div>
 <div class="ttc" id="aBoundary_8hpp_html"><div class="ttname"><a href="Boundary_8hpp.html">Boundary.hpp</a></div><div class="ttdoc">Boundary class used to build a boundary with a name, an index, a type and, if needed,...</div></div>
+<div class="ttc" id="aCoefficients_8hpp_html"><div class="ttname"><a href="Coefficients_8hpp.html">Coefficients.hpp</a></div><div class="ttdoc">Coefficients class used to build and manage a collection of Coefficient.</div></div>
 <div class="ttc" id="aSpatial_8hpp_html"><div class="ttname"><a href="Spatial_8hpp.html">Spatial.hpp</a></div><div class="ttdoc">Spatial discretization.</div></div>
 <div class="ttc" id="aUtils_8hpp_html"><div class="ttname"><a href="Utils_8hpp.html">Utils.hpp</a></div><div class="ttdoc">List of all Utils files.</div></div>
-<div class="ttc" id="aclassBoundaryConditions_html"><div class="ttname"><a href="classBoundaryConditions.html">BoundaryConditions</a></div><div class="ttdoc">Class used to manage boundary conditions.</div><div class="ttdef"><b>Definition:</b> <a href="BoundaryConditions_8hpp_source.html#l00046">BoundaryConditions.hpp:46</a></div></div>
-<div class="ttc" id="aclassBoundaryConditions_html_a23f5cf33a22290a61bb2dcba457f086d"><div class="ttname"><a href="classBoundaryConditions.html#a23f5cf33a22290a61bb2dcba457f086d">BoundaryConditions::SetBoundaryConditions</a></div><div class="ttdeci">void SetBoundaryConditions(mfem::Vector &amp;u)</div></div>
+<div class="ttc" id="aclassBoundaryConditions_html"><div class="ttname"><a href="classBoundaryConditions.html">BoundaryConditions</a></div><div class="ttdoc">Class used to manage boundary conditions.</div><div class="ttdef"><b>Definition:</b> <a href="BoundaryConditions_8hpp_source.html#l00047">BoundaryConditions.hpp:47</a></div></div>
 <div class="ttc" id="aclassBoundaryConditions_html_a2dfb9365cb6ce2c8ceb6802d174b3f82"><div class="ttname"><a href="classBoundaryConditions.html#a2dfb9365cb6ce2c8ceb6802d174b3f82">BoundaryConditions::GetEssentialDofs</a></div><div class="ttdeci">mfem::Array&lt; int &gt; GetEssentialDofs()</div></div>
 <div class="ttc" id="aclassBoundaryConditions_html_a392691b59c192225a5a1a92e3279f5f9"><div class="ttname"><a href="classBoundaryConditions.html#a392691b59c192225a5a1a92e3279f5f9">BoundaryConditions::get_marker_array</a></div><div class="ttdeci">mfem::Array&lt; int &gt; get_marker_array(const std::string &amp;boundary_type)</div></div>
 <div class="ttc" id="aclassBoundaryConditions_html_a50d3971dff965883752e17c05b468756"><div class="ttname"><a href="classBoundaryConditions.html#a50d3971dff965883752e17c05b468756">BoundaryConditions::~BoundaryConditions</a></div><div class="ttdeci">~BoundaryConditions()</div></div>
 <div class="ttc" id="aclassBoundaryConditions_html_aac17dc96feda7fc3c08c0f0308493693"><div class="ttname"><a href="classBoundaryConditions.html#aac17dc96feda7fc3c08c0f0308493693">BoundaryConditions::BoundaryConditions</a></div><div class="ttdeci">BoundaryConditions(SpatialDiscretization&lt; T, DIM &gt; *spatial, const Args &amp;... boundaries)</div></div>
+<div class="ttc" id="aclassBoundaryConditions_html_aca9ce8d545f1c8a78e4e8774cb001023"><div class="ttname"><a href="classBoundaryConditions.html#aca9ce8d545f1c8a78e4e8774cb001023">BoundaryConditions::SetDirichletBoundaryConditions</a></div><div class="ttdeci">void SetDirichletBoundaryConditions(mfem::Vector &amp;u, Coefficients &amp;coefficients, std::vector&lt; mfem::Vector &gt; auxvars_unk)</div></div>
+<div class="ttc" id="aclassCoefficients_html"><div class="ttname"><a href="classCoefficients.html">Coefficients</a></div><div class="ttdoc">Class used to manage a collection of Coefficient.</div><div class="ttdef"><b>Definition:</b> <a href="Coefficients_8hpp_source.html#l00050">Coefficients.hpp:50</a></div></div>
 <div class="ttc" id="aclassSpatialDiscretization_html"><div class="ttname"><a href="classSpatialDiscretization.html">SpatialDiscretization</a></div><div class="ttdoc">Class for defining the spatial discretization with a mesh coming from a GMSH file or built by using d...</div><div class="ttdef"><b>Definition:</b> <a href="Spatial_8hpp_source.html#l00105">Spatial.hpp:105</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:15 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:02 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
