@@ -9,18 +9,26 @@ A straightforward way to install MFEM is to use [spack](https://spack.readthedoc
 !!! info "Installing spack"
     To install spack on Linux, the first step consists in cloning and loading it into a `$SPACK` directory (see [spack](https://spack.readthedocs.io/en/latest/getting_started.html) for more details).
 
-Assuming `spack` is well installed into the `$SPACK` directory, the following command installs MFEM with the right additional packages:
+Assuming `spack` is well installed into the `$SPACK` directory, the following command installs a parallel MFEM, which is all SLOTH requires:
 
 ```bash
 source $SPACK/share/spack/setup-env.sh
 
-spack install mfem+mpi+suite-sparse+sundials+superlu-dist+miniapps
+spack install mfem+mpi
 ```
+
+!!! tip "Optional MFEM features"
+    - `+mumps` enables the MUMPS direct solver in SLOTH: `spack install mfem+mpi+mumps`.
+    - For problems with more than about 2 billion unknowns, use 64-bit global indices in HYPRE:
+      `spack install mfem+mpi ^hypre+mixedint`.
+
+    Other MFEM options are accepted (SLOTH reads MFEM's configuration) but are not needed.
+
 !!! note "Installing a given version of MFEM"
     The user is free to install a different version of MFEM.
     By default, the latest release is installed. Otherwise, `@version` must be added to the spec, e.g.:
     ```bash
-    spack install mfem@4.9+mpi+suite-sparse+sundials+superlu-dist+miniapps
+    spack install mfem@4.9+mpi
     ```
 
 Once MFEM is installed, SLOTH can be built using the `envSloth.sh` shell script.
@@ -83,7 +91,7 @@ By default, this command builds a static library of SLOTH with release compiler 
 
     `spack` builds a static library of MFEM unless the user enables shared ones (see `+shared` in the `spack` command):
     ```shell
-    spack install mfem+shared+mpi+suite-sparse+sundials+superlu-dist+miniapps
+    spack install mfem+shared+mpi
     ```
 
 The `make` command within the `envSloth.sh` script does not compile the tests. To compile tests after SLOTH has been built, run the following command:

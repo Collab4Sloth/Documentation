@@ -35,8 +35,8 @@ whichever way SLOTH was installed:
     spack load sloth
     ```
 
-    `spack info sloth` lists the versions and variants (`+shared`, `+mumps`, `+petsc`,
-    `+voro`, `+native`). For instance, to enable Voro++ (Voronoi tessellations):
+    `spack info sloth` lists the versions and variants (`+shared`, `+mumps`, `+voro`,
+    `+bigint`, `+native`). For instance, to enable Voro++ (Voronoi tessellations):
 
     ```bash
     spack install sloth +voro
@@ -105,7 +105,7 @@ target_link_libraries(main PRIVATE Sloth::Sloth)
 ```
 
 `Sloth::Sloth` brings everything needed to compile and link: C++20, SLOTH and MFEM headers,
-MFEM and its dependencies (HYPRE, METIS, SuiteSparse, MPI, ...).
+MFEM and its dependencies (HYPRE, METIS, MPI, ...).
 In `main.cpp`, include `Sloth/sloth.hpp` and `Sloth/tests.hpp`
 (the latter defines the `Sloth1D`, `Sloth2D` and `Sloth3D` namespaces).
 
