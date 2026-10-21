@@ -771,6 +771,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#voro-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voro++ (optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -821,6 +832,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#voro-optional_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voro++ (optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -853,6 +875,17 @@
     <span class="md-ellipsis">
       
         SLOTH installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
       
     </span>
   </a>
@@ -3783,6 +3816,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#voro-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voro++ (optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3833,6 +3877,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#voro-optional_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voro++ (optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3871,6 +3926,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3892,12 +3958,24 @@
 
 
 <h1 id="on-linux-from-source-files">On Linux from source files<a class="headerlink" href="#on-linux-from-source-files" title="Permanent link">&para;</a></h1>
-<p>The following installation procedure describes how to install <code>SLOTH</code> from source files. </p>
-<p>It is assumed that the user has a Unix environment with a recent GCC compiler (C++20 compatible) and MPI libraries. Obviously, Git is also needed to clone source files.</p>
-<p>The following procedure is mainly based on the installation procedure of a <a href="https://mfem.org/building/">parallel MPI version of <code>MFEM</code></a>. 
-Only the installation of SuiteSparse will be added.</p>
+<p>The following installation procedure describes how to install <code>SLOTH</code> from source files.</p>
+<p>It is assumed that the user has a Unix environment with a recent GCC compiler (C++20 compatible), MPI libraries, CMake, BLAS/LAPACK and Python 3. Obviously, Git is also needed to clone source files.</p>
+<p>The following procedure is mainly based on the installation procedure of a <a href="https://mfem.org/building/">parallel MPI version of <code>MFEM</code></a>.
+Only the installation of SuiteSparse (and, optionally, Voro++) is added.</p>
+<div class="admonition tip">
+<p class="admonition-title">System packages</p>
+<p>On Ubuntu, most prerequisites can be installed with:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>build-essential<span class="w"> </span>cmake<span class="w"> </span>git<span class="w"> </span>libopenmpi-dev<span class="w"> </span>openmpi-bin<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span>libblas-dev<span class="w"> </span>liblapack-dev<span class="w"> </span>libgmp-dev<span class="w"> </span>libmpfr-dev<span class="w"> </span>python3<span class="w"> </span>python3-sympy
+</span></code></pre></div>
+Package names may differ on other distributions.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Installing on a supercomputer</p>
+<p>For an installation on a supercomputer (modules, no internet access, BLAS provided by OpenBLAS...), see the dedicated procedure <a href="cluster.html">on a cluster from source files</a>.</p>
+</div>
 <h2 id="getting-source-files"><strong>Getting source files</strong><a class="headerlink" href="#getting-source-files" title="Permanent link">&para;</a></h2>
-<p>The first step consists in cloning <code>MFEM</code>, <code>METIS</code>, <code>HYPRE</code> and <code>SuiteSparse</code>.</p>
+<p>The first step consists in cloning <code>MFEM</code>, <code>METIS</code>, <code>HYPRE</code>, <code>SuiteSparse</code> and, optionally, <code>Voro++</code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Clone of the default branch</p>
 <ul>
@@ -3905,75 +3983,125 @@ Only the installation of SuiteSparse will be added.</p>
 <li>Users are free to consider different branches for their installation.</li>
 </ul>
 </div>
-<p>All sources are collected in a global directory called <code>MFEM4SLOTH</code>. </p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>mkdir<span class="w"> </span>MFEM4SLOTH
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">cd</span><span class="w"> </span>MFEM4SLOTH
+<p>All sources are collected in a global directory called <code>MFEM4SLOTH</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MFEM4SLOTH</span><span class="o">=</span><span class="nv">$HOME</span>/MFEM4SLOTH<span class="w">   </span><span class="c1"># absolute path, no trailing slash</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$MFEM4SLOTH</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$MFEM4SLOTH</span>
 </span></code></pre></div>
 <h3 id="mfem">MFEM<a class="headerlink" href="#mfem" title="Permanent link">&para;</a></h3>
 <p>MFEM's source files are obtained by running the following command:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/mfem/mfem.git
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/mfem/mfem.git
 </span></code></pre></div>
 <h3 id="hypre">HYPRE<a class="headerlink" href="#hypre" title="Permanent link">&para;</a></h3>
 <p>HYPRE's source files are obtained by running the following command:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/hypre-space/hypre.git
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/hypre-space/hypre.git
 </span></code></pre></div>
 <h3 id="metis">METIS<a class="headerlink" href="#metis" title="Permanent link">&para;</a></h3>
 <p>METIS's source files are obtained by running the following commands:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/mfem/tpls.git
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>mv<span class="w"> </span>tpls/metis-4.0.3.tar.gz<span class="w"> </span>.
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>tar<span class="w"> </span>-zxvf<span class="w"> </span>metis-4.0.3.tar.gz
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>rm<span class="w"> </span>-fr<span class="w"> </span>metis-4.0.3.tar.gz<span class="w"> </span>tpls
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/mfem/tpls.git
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>mv<span class="w"> </span>tpls/metis-4.0.3.tar.gz<span class="w"> </span>.
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>tar<span class="w"> </span>-zxvf<span class="w"> </span>metis-4.0.3.tar.gz
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>rm<span class="w"> </span>-fr<span class="w"> </span>metis-4.0.3.tar.gz<span class="w"> </span>tpls
 </span></code></pre></div>
 <h3 id="suitesparse">SuiteSparse<a class="headerlink" href="#suitesparse" title="Permanent link">&para;</a></h3>
 <p>SuiteSparse's source files are obtained by running the following command:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/DrTimothyAldenDavis/SuiteSparse.git
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/DrTimothyAldenDavis/SuiteSparse.git
+</span></code></pre></div>
+<h3 id="voro-optional">Voro++ (optional)<a class="headerlink" href="#voro-optional" title="Permanent link">&para;</a></h3>
+<p>Voro++ is only required if SLOTH is built with the <code>--voro</code> option. Its source files are obtained by running the following command:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/chr1shr/voro.git
 </span></code></pre></div>
 <h2 id="building-dependencies"><strong>Building dependencies</strong><a class="headerlink" href="#building-dependencies" title="Permanent link">&para;</a></h2>
-<p>The second step consists in building <code>METIS</code>, <code>HYPRE</code> and <code>SuiteSparse</code>.</p>
+<p>The second step consists in building <code>METIS</code>, <code>HYPRE</code>, <code>SuiteSparse</code> and, optionally, <code>Voro++</code>.</p>
 <h3 id="metis_1">METIS<a class="headerlink" href="#metis_1" title="Permanent link">&para;</a></h3>
-<p>To build <code>METIS</code>, the following command must be run:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">cd</span><span class="w"> </span>metis-4.0.3
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>make<span class="w"> </span><span class="nv">OPTFLAGS</span><span class="o">=</span>-Wno-error<span class="o">=</span>implicit-function-declaration
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">cd</span><span class="w"> </span>..
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>ln<span class="w"> </span>-s<span class="w"> </span>metis-4.0.3<span class="w"> </span>metis-4.0
+<p>To build <code>METIS</code>, the following commands must be run:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$MFEM4SLOTH</span>/metis-4.0.3
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>make<span class="w"> </span><span class="nv">OPTFLAGS</span><span class="o">=</span>-Wno-error<span class="o">=</span>implicit-function-declaration
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nb">cd</span><span class="w"> </span>..
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>ln<span class="w"> </span>-s<span class="w"> </span>metis-4.0.3<span class="w"> </span>metis-4.0
 </span></code></pre></div>
 <h3 id="hypre_1">HYPRE<a class="headerlink" href="#hypre_1" title="Permanent link">&para;</a></h3>
-<p>To build <code>HYPRE</code>, the following command must be run:</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">cd</span><span class="w"> </span>hypre/src
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>./configure<span class="w"> </span>--disable-fortran
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>make<span class="w"> </span>-j<span class="w"> </span>N
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nb">cd</span><span class="w"> </span>../..
+<p>To build <code>HYPRE</code>, the following commands must be run:</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$MFEM4SLOTH</span>/hypre/src
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>./configure<span class="w"> </span>--disable-fortran
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>make<span class="w"> </span>-j<span class="w"> </span>N
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="nb">cd</span><span class="w"> </span>../..
 </span></code></pre></div>
 where <code>N</code> is a user defined number of CPUs.</p>
 <h3 id="suitesparse_1">SuiteSparse<a class="headerlink" href="#suitesparse_1" title="Permanent link">&para;</a></h3>
 <p>To build <code>SuiteSparse</code>, the following commands must be run:</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">cd</span><span class="w"> </span>SuiteSparse/
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>make<span class="w"> </span>-j<span class="w"> </span>N
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>make<span class="w"> </span>install<span class="w"> </span><span class="nv">DESTDIR</span><span class="o">=</span><span class="nv">$PWD</span>/INSTALLDIR
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>mv<span class="w"> </span>INSTALLDIR/usr/local/lib/*<span class="w"> </span>lib/
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>mv<span class="w"> </span>INSTALLDIR/usr/local/include/suitesparse/*<span class="w"> </span>include/
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>mv<span class="w"> </span>INSTALLDIR/usr/local/bin/*<span class="w"> </span>bin/
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="nb">cd</span><span class="w"> </span>..
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$MFEM4SLOTH</span>/SuiteSparse/
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>make<span class="w"> </span>-j<span class="w"> </span>N
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>make<span class="w"> </span>install<span class="w"> </span><span class="nv">DESTDIR</span><span class="o">=</span><span class="nv">$PWD</span>/INSTALLDIR
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>mv<span class="w"> </span>INSTALLDIR/usr/local/lib/*<span class="w"> </span>lib/
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>mv<span class="w"> </span>INSTALLDIR/usr/local/include/suitesparse/*<span class="w"> </span>include/
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>mv<span class="w"> </span>INSTALLDIR/usr/local/bin/*<span class="w"> </span>bin/
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="nb">cd</span><span class="w"> </span>..
 </span></code></pre></div>
 where <code>N</code> is a user defined number of CPUs.</p>
 <div class="admonition warning">
+<p class="admonition-title">Check the SuiteSparse layout</p>
+<p>MFEM expects the SuiteSparse headers directly in <code>SuiteSparse/include</code> and the libraries in <code>SuiteSparse/lib</code>. Before building MFEM, check:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>ls<span class="w"> </span><span class="nv">$MFEM4SLOTH</span>/SuiteSparse/include/umfpack.h
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>ls<span class="w"> </span><span class="nv">$MFEM4SLOTH</span>/SuiteSparse/lib/libumfpack*
+</span></code></pre></div>
+Depending on the system, <code>make install</code> may use <code>lib64</code> instead of <code>lib</code>: adapt the first <code>mv</code> accordingly.
+If <code>umfpack.h</code> is missing, MFEM fails with <code>fatal error: umfpack.h: No such file or directory</code>.</p>
+</div>
+<div class="admonition warning">
 <p class="admonition-title">Possible errors</p>
-<p>Depending the Unix configuration of the user, it is possible to have errors because some dependencies are not found as, for example, <a href="https://www.mpfr.org/mpfr-current/mpfr.html"><code>MFPR</code></a>. In that case, these missing dependencies must be installed. 
-For example, to install <code>MFPR</code> on Ubuntu Jammy, the following command can be run:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libmpfr-dev
+<p>Depending on the Unix configuration of the user, it is possible to have errors because some dependencies are not found as, for example, <a href="https://www.mpfr.org/mpfr-current/mpfr.html"><code>MPFR</code></a>. In that case, these missing dependencies must be installed.
+For example, to install <code>MPFR</code> on Ubuntu Jammy, the following command can be run:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>libmpfr-dev
+</span></code></pre></div></p>
+</div>
+<h3 id="voro-optional_1">Voro++ (optional)<a class="headerlink" href="#voro-optional_1" title="Permanent link">&para;</a></h3>
+<p>To build <code>Voro++</code>, the following commands must be run:</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$MFEM4SLOTH</span>/voro
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>cmake<span class="w"> </span>-S<span class="w"> </span>.<span class="w"> </span>-B<span class="w"> </span>build<span class="w"> </span>-DCMAKE_INSTALL_PREFIX<span class="o">=</span><span class="nv">$PWD</span>/INSTALL
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>cmake<span class="w"> </span>--build<span class="w"> </span>build<span class="w"> </span>-j<span class="w"> </span>N
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>cmake<span class="w"> </span>--install<span class="w"> </span>build
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="nb">cd</span><span class="w"> </span>..
+</span></code></pre></div>
+where <code>N</code> is a user defined number of CPUs.</p>
+<div class="admonition note">
+<p class="admonition-title">Using Voro++ in SLOTH</p>
+<p>Voro++ is not handled by the <code>--mfem</code> option. Its installation prefix must be given explicitly when building SLOTH:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>bash<span class="w"> </span>../envSloth.sh<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>--mfem<span class="o">=</span><span class="nv">$MFEM4SLOTH</span><span class="w"> </span>--voro<span class="o">=</span><span class="nv">$MFEM4SLOTH</span>/voro/INSTALL
 </span></code></pre></div></p>
 </div>
 <h2 id="building-mfem-with-dependencies"><strong>Building MFEM with dependencies</strong><a class="headerlink" href="#building-mfem-with-dependencies" title="Permanent link">&para;</a></h2>
-<p>Here, we assume that all dependencies are well built according to the previous directives. 
+<p>Here, we assume that all dependencies are well built according to the previous directives.
 At this stage, <code>MFEM</code> can be installed by running the following commands:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">cd</span><span class="w"> </span>mfem
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>make<span class="w"> </span>-j<span class="w"> </span>N<span class="w"> </span>parallel<span class="w"> </span><span class="nv">MFEM_USE_SUITESPARSE</span><span class="o">=</span>YES<span class="w"> </span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>make<span class="w"> </span>install<span class="w"> </span><span class="nv">PREFIX</span><span class="o">=</span>INSTALLDIR
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nb">cd</span><span class="w"> </span>..
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$MFEM4SLOTH</span>/mfem
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>make<span class="w"> </span>-j<span class="w"> </span>N<span class="w"> </span>parallel<span class="w"> </span><span class="nv">MFEM_USE_SUITESPARSE</span><span class="o">=</span>YES
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>make<span class="w"> </span>install<span class="w"> </span><span class="nv">PREFIX</span><span class="o">=</span><span class="nv">$PWD</span>/INSTALLDIR
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="nb">cd</span><span class="w"> </span>..
 </span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Checking the MFEM configuration</p>
+<p><code>make parallel</code> configures MFEM with <code>MFEM_USE_MPI=YES</code> and builds the library. The resulting configuration can be checked with:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">"^MFEM_CXX|^MFEM_USE_MPI"</span><span class="w"> </span>config/config.mk
+</span></code></pre></div>
+<code>MFEM_CXX</code> must be <code>mpicxx</code> and <code>MFEM_USE_MPI</code> must be <code>YES</code>.
+If a previous build exists, run <code>make clean</code> before <code>make parallel</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">BLAS/LAPACK</p>
+<p>By default, MFEM links SuiteSparse with <code>-llapack -lblas</code>, which matches the usual Linux packages (<code>liblapack-dev</code>, <code>libblas-dev</code>). If BLAS/LAPACK is provided by another library (OpenBLAS, MKL...), set it explicitly, e.g.:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>make<span class="w"> </span>-j<span class="w"> </span>N<span class="w"> </span>parallel<span class="w"> </span><span class="nv">MFEM_USE_SUITESPARSE</span><span class="o">=</span>YES<span class="w"> </span><span class="nv">LAPACK_LIB</span><span class="o">=</span><span class="s2">"-lopenblas"</span>
+</span></code></pre></div></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Always reinstall after rebuilding MFEM</p>
+<p>SLOTH reads the <strong>installed</strong> configuration (<code>INSTALLDIR/share/mfem/config.mk</code>), not <code>config/config.mk</code>. After any rebuild of MFEM, run <code>make install PREFIX=$PWD/INSTALLDIR</code> again, otherwise SLOTH keeps using the previous flags.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Installation directory</p>
+<p><code>envSloth.sh --mfem=DIR</code> expects MFEM to be installed in <code>DIR/mfem/INSTALLDIR</code> (with <code>DIR/hypre</code>, <code>DIR/metis-4.0</code> and <code>DIR/SuiteSparse</code> next to it). The <code>PREFIX</code> above follows this convention.</p>
+</div>
 <h2 id="sloth-compilation"><strong>SLOTH compilation</strong><a class="headerlink" href="#sloth-compilation" title="Permanent link">&para;</a></h2>
-<p>Once MFEM is installed, SLOTH can be built using the <code>envSloth.sh</code> shell script. 
+<p>Once MFEM is installed, SLOTH can be built using the <code>envSloth.sh</code> shell script.
 This script loads MFEM, defines several environment variables, and compiles SLOTH.</p>
 <div class="admonition note">
 <p class="admonition-title">Build SLOTH using the <code>envSloth.sh</code> shell script</p>
@@ -3985,58 +4113,99 @@ Users must create a separate build directory to compile SLOTH.</p>
 <p>Please ensure that <a href="https://docs.sympy.org/latest/index.html">Sympy</a> is installed.
 Sympy is a mandatory prerequisite to build SLOTH as it is used to handle physical properties.</p>
 </div>
-<p>Once, MFEM and Sympy are installed, please run the following command to build SLOTH:</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>mkdir<span class="w"> </span>build<span class="w"> </span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nb">cd</span><span class="w"> </span>build
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>bash<span class="w"> </span>../envSloth.sh<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w">  </span>--mfem<span class="o">=</span><span class="nv">$MFEM4SLOTH</span>
+<p>Once MFEM and Sympy are installed, please run the following commands to build SLOTH:</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>mkdir<span class="w"> </span>build
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nb">cd</span><span class="w"> </span>build
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>bash<span class="w"> </span>../envSloth.sh<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w">  </span>--mfem<span class="o">=</span><span class="nv">$MFEM4SLOTH</span>
 </span></code></pre></div>
-where <code>$MFEM4SLOTH</code> is a variable associated with the path towards the <code>MFEM</code> installation (<em>ie</em> <code>$HOME/MFEM4SLOTH</code> in the current description) and [OPTIONS] are:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Build<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="o">(</span>default:<span class="w"> </span>--release<span class="o">)</span>:
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span>--release<span class="w">          </span>Release,<span class="w"> </span>with<span class="w"> </span>-march<span class="o">=</span>native
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span>--portable<span class="w">         </span>Release<span class="w"> </span>without<span class="w"> </span>-march<span class="o">=</span>native<span class="w"> </span><span class="o">(</span>generic<span class="w"> </span>x86-64<span class="w"> </span>target<span class="w"> </span>on<span class="w"> </span>x86<span class="o">)</span>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span>--debug<span class="w"> </span><span class="p">|</span><span class="w"> </span>--coverage<span class="w"> </span><span class="p">|</span><span class="w"> </span>--optim<span class="w"> </span><span class="p">|</span><span class="w"> </span>--minsizerel<span class="w"> </span><span class="p">|</span><span class="w"> </span>--relwithdebinfo
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>Dependencies:
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">  </span>--mfem<span class="o">=</span>DIR<span class="w">         </span><span class="nb">local</span><span class="w"> </span>MFEM<span class="w"> </span>build<span class="w"> </span><span class="o">(</span>instead<span class="w"> </span>of<span class="w"> </span>spack<span class="w"> </span>on<span class="w"> </span>Linux<span class="w"> </span>/<span class="w"> </span>Homebrew<span class="w"> </span>on<span class="w"> </span>macOS<span class="o">)</span>
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">  </span>--exprtk<span class="o">=</span>DIR<span class="w">       </span>ExprTk<span class="w"> </span><span class="o">(</span>directory<span class="w"> </span>containing<span class="w"> </span>exprtk.hpp<span class="o">)</span>
-</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">  </span>--voro<span class="o">=</span>DIR<span class="w">         </span>Voro++<span class="w"> </span>installation<span class="w"> </span>prefix
-</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">  </span>--libtorch<span class="o">=</span>DIR<span class="w">     </span>LibTorch<span class="w"> </span>installation<span class="w"> </span>prefix
-</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">  </span>--external<span class="o">=</span>EXT_LIBDIR,EXT_LIBNAME
-</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">                     </span>link<span class="w"> </span>Sloth<span class="w"> </span>with<span class="w"> </span>an<span class="w"> </span>external<span class="w"> </span>library
-</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>
-</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>Other<span class="w"> </span>options:
-</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">  </span>--shared<span class="w">           </span>build<span class="w"> </span>Sloth<span class="w"> </span>as<span class="w"> </span>a<span class="w"> </span>shared<span class="w"> </span>library
-</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">  </span>--install<span class="o">=</span>DIR<span class="w">      </span>installation<span class="w"> </span>directory<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span>../SlothInstall<span class="o">)</span>
-</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">  </span>--np<span class="o">=</span>N<span class="w">             </span>number<span class="w"> </span>of<span class="w"> </span>parallel<span class="w"> </span>compilation<span class="w"> </span><span class="nb">jobs</span><span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="m">4</span><span class="o">)</span>
-</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">  </span>-h<span class="w"> </span><span class="p">|</span><span class="w"> </span>--help<span class="w">        </span>print<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span>
-</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>
-</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>Everything<span class="w"> </span>after<span class="w"> </span><span class="s2">"--"</span><span class="w"> </span>is<span class="w"> </span>passed<span class="w"> </span>unchanged<span class="w"> </span>to<span class="w"> </span>CMake,<span class="w"> </span>e.g.:
-</span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="w">  </span>bash<span class="w"> </span>../envSloth.sh<span class="w"> </span>--np<span class="o">=</span><span class="m">8</span><span class="w"> </span>--<span class="w"> </span>-DMATOOLS_VERBOSITY_LEVEL_1<span class="o">=</span>ON
+where <code>$MFEM4SLOTH</code> is the absolute path of the folder <strong>containing</strong> <code>mfem/</code>, <code>hypre/</code>, <code>metis-4.0/</code> and <code>SuiteSparse/</code> (<em>ie</em> <code>$HOME/MFEM4SLOTH</code> in the current description, not the MFEM installation directory itself). If Voro++ has been built, add <code>--voro=$MFEM4SLOTH/voro/INSTALL</code>. [OPTIONS] are:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>Build<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="o">(</span>default:<span class="w"> </span>--release<span class="o">)</span>:
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span>--release<span class="w">          </span>Release,<span class="w"> </span>with<span class="w"> </span>-march<span class="o">=</span>native
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span>--portable<span class="w">         </span>Release<span class="w"> </span>without<span class="w"> </span>-march<span class="o">=</span>native<span class="w"> </span><span class="o">(</span>generic<span class="w"> </span>x86-64<span class="w"> </span>target<span class="w"> </span>on<span class="w"> </span>x86<span class="o">)</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">  </span>--debug<span class="w"> </span><span class="p">|</span><span class="w"> </span>--coverage<span class="w"> </span><span class="p">|</span><span class="w"> </span>--optim<span class="w"> </span><span class="p">|</span><span class="w"> </span>--minsizerel<span class="w"> </span><span class="p">|</span><span class="w"> </span>--relwithdebinfo
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>Dependencies:
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">  </span>--mfem<span class="o">=</span>DIR<span class="w">         </span><span class="nb">local</span><span class="w"> </span>MFEM<span class="w"> </span>build<span class="w"> </span><span class="o">(</span>instead<span class="w"> </span>of<span class="w"> </span>spack<span class="w"> </span>on<span class="w"> </span>Linux<span class="w"> </span>/<span class="w"> </span>Homebrew<span class="w"> </span>on<span class="w"> </span>macOS<span class="o">)</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">  </span>--exprtk<span class="o">=</span>DIR<span class="w">       </span>ExprTk<span class="w"> </span><span class="o">(</span>directory<span class="w"> </span>containing<span class="w"> </span>exprtk.hpp<span class="o">)</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">  </span>--voro<span class="o">=</span>DIR<span class="w">         </span>Voro++<span class="w"> </span>installation<span class="w"> </span>prefix
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">  </span>--libtorch<span class="o">=</span>DIR<span class="w">     </span>LibTorch<span class="w"> </span>installation<span class="w"> </span>prefix
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">  </span>--external<span class="o">=</span>EXT_LIBDIR,EXT_LIBNAME
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">                     </span>link<span class="w"> </span>Sloth<span class="w"> </span>with<span class="w"> </span>an<span class="w"> </span>external<span class="w"> </span>library
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>
+</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>Other<span class="w"> </span>options:
+</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="w">  </span>--shared<span class="w">           </span>build<span class="w"> </span>Sloth<span class="w"> </span>as<span class="w"> </span>a<span class="w"> </span>shared<span class="w"> </span>library
+</span><span id="__span-18-16"><a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="w">  </span>--install<span class="o">=</span>DIR<span class="w">      </span>installation<span class="w"> </span>directory<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span>../SlothInstall<span class="o">)</span>
+</span><span id="__span-18-17"><a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="w">  </span>--np<span class="o">=</span>N<span class="w">             </span>number<span class="w"> </span>of<span class="w"> </span>parallel<span class="w"> </span>compilation<span class="w"> </span><span class="nb">jobs</span><span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="m">4</span><span class="o">)</span>
+</span><span id="__span-18-18"><a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="w">  </span>-h<span class="w"> </span><span class="p">|</span><span class="w"> </span>--help<span class="w">        </span>print<span class="w"> </span>this<span class="w"> </span><span class="nb">help</span>
+</span><span id="__span-18-19"><a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>
+</span><span id="__span-18-20"><a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a>Everything<span class="w"> </span>after<span class="w"> </span><span class="s2">"--"</span><span class="w"> </span>is<span class="w"> </span>passed<span class="w"> </span>unchanged<span class="w"> </span>to<span class="w"> </span>CMake,<span class="w"> </span>e.g.:
+</span><span id="__span-18-21"><a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a><span class="w">  </span>bash<span class="w"> </span>../envSloth.sh<span class="w"> </span>--np<span class="o">=</span><span class="m">8</span><span class="w"> </span>--<span class="w"> </span>-DMATOOLS_VERBOSITY_LEVEL_1<span class="o">=</span>ON
 </span></code></pre></div>
 The up-to-date list is printed by <code>bash ../envSloth.sh --help</code>.</p>
 <p>By default, this command builds a static library of SLOTH with release compiler options.</p>
 <div class="admonition tip">
 <p class="admonition-title">Building a shared library of SLOTH</p>
 <p>The <code>--shared</code> option enables building a shared library of SLOTH.
-However, the user must ensure that the library type used for <code>MFEM</code> is compatible. Certain combinations of static and shared libraries may require specific compiler options, such as <code>-fPIC</code>. </p>
+However, the user must ensure that the library type used for <code>MFEM</code> is compatible. Certain combinations of static and shared libraries may require specific compiler options, such as <code>-fPIC</code>.</p>
 </div>
 <p>The <code>make</code> command within the <code>envSloth.sh</code> script does not compile the tests. To compile tests after SLOTH has been built, run the following command:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>make<span class="w"> </span>tests<span class="w"> </span>-j<span class="w"> </span>N<span class="w"> </span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>make<span class="w"> </span>tests<span class="w"> </span>-j<span class="w"> </span>N
 </span></code></pre></div>
-<p>where <code>N</code> is a number of CPUs to use for building the tests in parallel. </p>
+<p>where <code>N</code> is a number of CPUs to use for building the tests in parallel.</p>
 <p>Once the tests are compiled, users can verify the build by running all tests with <code>ctest</code>:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>ctest<span class="w"> </span>-j<span class="w"> </span>N<span class="w"> </span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>ctest<span class="w"> </span>-j<span class="w"> </span>N
 </span></code></pre></div>
 <h2 id="sloth-installation"><strong>SLOTH installation</strong><a class="headerlink" href="#sloth-installation" title="Permanent link">&para;</a></h2>
 <p>Users can install the SLOTH library, headers, and scripts into the <code>SlothInstall</code> directory by running:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>make<span class="w"> </span>install
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>make<span class="w"> </span>install
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Installing SLOTH in user-defined repository</p>
-<p>By default, SLOTH is installed in a <code>SlothInstall</code> directory at the same level as the repository. </p>
-<p>Users can be specify another directory with the <code>--install</code> option of the <code>envSloth.sh</code> script.</p>
+<p>By default, SLOTH is installed in a <code>SlothInstall</code> directory at the same level as the repository.</p>
+<p>Users can specify another directory with the <code>--install</code> option of the <code>envSloth.sh</code> script.</p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Reinstalling after a dependency change</p>
+<p>The installed CMake files (<code>SlothInstall/lib/cmake/Sloth/SlothTargets.cmake</code>) keep the link flags of MFEM at the time SLOTH was built. If MFEM is rebuilt, SLOTH must be rebuilt and reinstalled from an empty <code>build</code> directory.</p>
+</div>
+<h2 id="troubleshooting"><strong>Troubleshooting</strong><a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compilation with <code>g++</code> instead of <code>mpicxx</code></td>
+<td>MPI not enabled in MFEM</td>
+<td><code>make clean</code>, then <code>make parallel</code> (not <code>make</code> alone)</td>
+</tr>
+<tr>
+<td><code>umfpack.h: No such file or directory</code></td>
+<td>SuiteSparse headers not in <code>SuiteSparse/include</code></td>
+<td>Check the SuiteSparse step (<code>make install</code> + <code>mv</code>)</td>
+</tr>
+<tr>
+<td><code>MFEM configuration file (share/mfem/config.mk) not found</code></td>
+<td>MFEM not installed, or <code>--mfem</code> points to the wrong folder</td>
+<td><code>make install PREFIX=$PWD/INSTALLDIR</code> in <code>mfem/</code>; <code>--mfem</code> must point to <code>MFEM4SLOTH</code></td>
+</tr>
+<tr>
+<td><code>cannot find -llapack</code> / <code>-lblas</code></td>
+<td>BLAS/LAPACK not installed, or provided under another name</td>
+<td>Install <code>liblapack-dev</code>/<code>libblas-dev</code>, or set <code>LAPACK_LIB</code> (see MFEM step), then reinstall MFEM</td>
+</tr>
+<tr>
+<td><code>cannot find -llapack</code> although <code>config/config.mk</code> is correct</td>
+<td>MFEM rebuilt but not reinstalled</td>
+<td><code>make install PREFIX=$PWD/INSTALLDIR</code> in <code>mfem/</code>, then rebuild SLOTH from an empty <code>build</code></td>
+</tr>
+</tbody>
+</table>
 
 
 
