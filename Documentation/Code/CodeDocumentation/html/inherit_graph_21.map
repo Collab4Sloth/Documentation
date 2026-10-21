@@ -1,3 +1,13 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classKKS.html" title="Linearized KKS problem for two&#45;phase multi&#45;component system." alt="" coords="5,5,96,32"/>
+<area shape="rect" id="node1" href="$classFunctionCoefficient.html" title="Base class defining analytical expression, first and second derivatives of a Coefficient." alt="" coords="5,233,160,260"/>
+<area shape="rect" id="node2" href="$classConstantCoefficient.html" title="Constant&#45;valued coefficient implementation." alt="" coords="208,5,363,32"/>
+<area shape="rect" id="node3" href="$classExprTkCoefficient.html" title="Base class definining a coefficient from an analytical formula." alt="" coords="213,56,357,83"/>
+<area shape="rect" id="node4" href="$classFileCoefficient.html" title="FunctionCoefficient defined by a tabulated function read from a CSV file." alt="" coords="226,107,345,133"/>
+<area shape="rect" id="node5" href="$classFw.html" title="Coefficient based on expression: 0.25 * (x * x &#45; 1.0) * (x * x &#45; 1.0)" alt="" coords="264,157,307,184"/>
+<area shape="rect" id="node6" href="$classGradientEnergy.html" title="Coefficient based on expression: 0.5*dot(x,x)" alt="" coords="219,208,351,235"/>
+<area shape="rect" id="node7" href="$classH.html" title="Coefficient based on expression: x * x * x * (6.0 * x * x &#45; 15.0 * x + 10.0)" alt="" coords="266,259,305,285"/>
+<area shape="rect" id="node8" href="$classLog.html" title="Coefficient based on expression: x * log(x) + (1.0 &#45; x)*log(1.0 &#45; x)" alt="" coords="261,309,309,336"/>
+<area shape="rect" id="node9" href="$classProductCoefficient.html" title="Define a product of FunctionCoefficient objects as a FunctionCoefficient." alt="" coords="212,360,359,387"/>
+<area shape="rect" id="node10" href="$classSumCoefficient.html" title="Define a summation of FunctionCoefficient objects as a FunctionCoefficient." alt="" coords="223,411,348,437"/>
+<area shape="rect" id="node11" href="$classW.html" title="Coefficient based on expression: x*x*(1.0&#45;x) * (1.0&#45;x)" alt="" coords="266,461,305,488"/>
 </map>

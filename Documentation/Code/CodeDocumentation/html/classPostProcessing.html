@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -81,6 +81,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a20327cabf71784b5a5dbdecd95234d3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostProcessing.html#a20327cabf71784b5a5dbdecd95234d3c">collect_vtk_fields</a> (<a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &amp;vars, std::map&lt; std::string, mfem::ParGridFunction * &gt; &amp;all_fields)</td></tr>
+<tr class="separator:a20327cabf71784b5a5dbdecd95234d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad895b2b200fb8450151736ade6f7e3a3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostProcessing.html#ad895b2b200fb8450151736ade6f7e3a3">get_enable_compute_energies</a> ()</td></tr>
 <tr class="separator:ad895b2b200fb8450151736ade6f7e3a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20a05990b151ded1fbb3e315ec5fc4ba"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostProcessing.html#a20a05990b151ded1fbb3e315ec5fc4ba">get_enable_save_specialized_at_iter</a> ()</td></tr>
@@ -93,18 +95,30 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad77178bd8e7f95cc1e23cd2087859738"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ea68c26f94b3f354cf1719c2a980b44"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostProcessing.html#a8ea68c26f94b3f354cf1719c2a980b44">get_post_processing_directory</a> ()</td></tr>
 <tr class="separator:a8ea68c26f94b3f354cf1719c2a980b44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16d2898909a473147467af17031c97cc"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; DC &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostProcessing.html#a16d2898909a473147467af17031c97cc">get_shared_dc</a> ()</td></tr>
+<tr class="separator:a16d2898909a473147467af17031c97cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12b0fc319d1503dbe69c9afb07e7b33d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostProcessing.html#a12b0fc319d1503dbe69c9afb07e7b33d">get_specialized_frequency</a> ()</td></tr>
+<tr class="separator:a12b0fc319d1503dbe69c9afb07e7b33d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af033cb2f644fe582905d7843d0d6f9b7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostProcessing.html#af033cb2f644fe582905d7843d0d6f9b7">need_specialized</a> (const int iteration)</td></tr>
+<tr class="separator:af033cb2f644fe582905d7843d0d6f9b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb2c017ffc9c5fd705b4e188399fb941"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostProcessing.html#adb2c017ffc9c5fd705b4e188399fb941">need_to_be_saved</a> (const int iteration, const double time)</td></tr>
+<tr class="separator:adb2c017ffc9c5fd705b4e188399fb941"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0c65c2178f8892317b0339f1a6207d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPostProcessing.html">PostProcessing</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostProcessing.html#ac0c65c2178f8892317b0339f1a6207d2">operator=</a> (<a class="el" href="classPostProcessing.html">PostProcessing</a> &amp;&amp;)=default</td></tr>
 <tr class="separator:ac0c65c2178f8892317b0339f1a6207d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8702797327c91dd2349f79ac826cb661"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostProcessing.html#a8702797327c91dd2349f79ac826cb661">PostProcessing</a> (<a class="el" href="classPostProcessing.html">PostProcessing</a> &amp;&amp;)=default</td></tr>
 <tr class="separator:a8702797327c91dd2349f79ac826cb661"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad72b77f9b3f7c88a9549ea7bf85a072a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostProcessing.html#ad72b77f9b3f7c88a9549ea7bf85a072a">PostProcessing</a> (<a class="el" href="classSpatialDiscretization.html">SpatialDiscretization</a>&lt; T, DIM &gt; *space, const <a class="el" href="classParameters.html">Parameters</a> &amp;params)</td></tr>
 <tr class="separator:ad72b77f9b3f7c88a9549ea7bf85a072a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cc4012742a452c6f61e500a2dc0a91a"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, mfem::ParGridFunction * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostProcessing.html#a4cc4012742a452c6f61e500a2dc0a91a">project_coefficients</a> (const double current_time, std::vector&lt; <a class="el" href="classCoefficient.html">Coefficient</a> &gt; &amp;coeffs, <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &amp;vars, std::vector&lt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; * &gt; vect_aux_var)</td></tr>
+<tr class="separator:a4cc4012742a452c6f61e500a2dc0a91a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a042a55838fe632082ccedb078c1e0fd2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostProcessing.html#a042a55838fe632082ccedb078c1e0fd2">save_coefficients</a> (std::vector&lt; <a class="el" href="classCoefficient.html">Coefficient</a> &gt; &amp;coefficients, <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &amp;vars, std::vector&lt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; * &gt; vect_aux_var, const int &amp;iter, const double &amp;time)</td></tr>
+<tr class="separator:a042a55838fe632082ccedb078c1e0fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70dfa022fbeb408b483407124c6f6d29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostProcessing.html#a70dfa022fbeb408b483407124c6f6d29">save_iso_specialized</a> (const std::multimap&lt; <a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a> &gt; &amp;mmap_results, std::string filename=&quot;iso.csv&quot;)</td></tr>
 <tr class="separator:a70dfa022fbeb408b483407124c6f6d29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5d9535c432efdfa1235da859c0cf1bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostProcessing.html#af5d9535c432efdfa1235da859c0cf1bd">save_specialized</a> (const std::multimap&lt; <a class="el" href="structIterationKey.html">IterationKey</a>, <a class="el" href="UtilsForData_8hpp.html#aff1686ce5a8f61fb0936858af68b84cc">SpecializedValue</a> &gt; &amp;mmap_results, std::string filename=&quot;time_specialized.csv&quot;)</td></tr>
 <tr class="separator:af5d9535c432efdfa1235da859c0cf1bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5872fc7f3527be648339ec33e9536578"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostProcessing.html#a5872fc7f3527be648339ec33e9536578">save_variables</a> (const <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &amp;vars, const int &amp;iter, const double &amp;time)</td></tr>
-<tr class="separator:a5872fc7f3527be648339ec33e9536578"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af648c23ecdf3c838aa884907d7f5fb14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostProcessing.html#af648c23ecdf3c838aa884907d7f5fb14">save_variables</a> (<a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &amp;vars, const int &amp;iter, const double &amp;time)</td></tr>
+<tr class="separator:af648c23ecdf3c838aa884907d7f5fb14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94ca1911d21fefc03c4812ee247a295b"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPostProcessing.html#a94ca1911d21fefc03c4812ee247a295b">~PostProcessing</a> ()=default</td></tr>
 <tr class="separator:a94ca1911d21fefc03c4812ee247a295b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -210,6 +224,36 @@ template&lt;class T , class DC , int DIM&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a20327cabf71784b5a5dbdecd95234d3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20327cabf71784b5a5dbdecd95234d3c">&#9670;&nbsp;</a></span>collect_vtk_fields()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class DC , int DIM&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classPostProcessing.html">PostProcessing</a>&lt; T, DC, DIM &gt;::collect_vtk_fields </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::map&lt; std::string, mfem::ParGridFunction * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>all_fields</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ad895b2b200fb8450151736ade6f7e3a3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad895b2b200fb8450151736ade6f7e3a3">&#9670;&nbsp;</a></span>get_enable_compute_energies()</h2>
 
@@ -324,6 +368,94 @@ template&lt;class T , class DC , int DIM&gt; </div>
 
 </div>
 </div>
+<a id="a16d2898909a473147467af17031c97cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16d2898909a473147467af17031c97cc">&#9670;&nbsp;</a></span>get_shared_dc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class DC , int DIM&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;DC&gt; <a class="el" href="classPostProcessing.html">PostProcessing</a>&lt; T, DC, DIM &gt;::get_shared_dc </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a12b0fc319d1503dbe69c9afb07e7b33d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12b0fc319d1503dbe69c9afb07e7b33d">&#9670;&nbsp;</a></span>get_specialized_frequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class DC , int DIM&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classPostProcessing.html">PostProcessing</a>&lt; T, DC, DIM &gt;::get_specialized_frequency </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af033cb2f644fe582905d7843d0d6f9b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af033cb2f644fe582905d7843d0d6f9b7">&#9670;&nbsp;</a></span>need_specialized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class DC , int DIM&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classPostProcessing.html">PostProcessing</a>&lt; T, DC, DIM &gt;::need_specialized </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>iteration</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adb2c017ffc9c5fd705b4e188399fb941"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb2c017ffc9c5fd705b4e188399fb941">&#9670;&nbsp;</a></span>need_to_be_saved()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class DC , int DIM&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classPostProcessing.html">PostProcessing</a>&lt; T, DC, DIM &gt;::need_to_be_saved </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>iteration</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>time</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ac0c65c2178f8892317b0339f1a6207d2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac0c65c2178f8892317b0339f1a6207d2">&#9670;&nbsp;</a></span>operator=()</h2>
 
@@ -348,6 +480,96 @@ template&lt;class T , class DC , int DIM&gt; </div>
 <span class="mlabels"><span class="mlabel">default</span></span>  </td>
   </tr>
 </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4cc4012742a452c6f61e500a2dc0a91a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cc4012742a452c6f61e500a2dc0a91a">&#9670;&nbsp;</a></span>project_coefficients()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class DC , int DIM&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string, mfem::ParGridFunction*&gt; <a class="el" href="classPostProcessing.html">PostProcessing</a>&lt; T, DC, DIM &gt;::project_coefficients </td>
+          <td>(</td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>current_time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classCoefficient.html">Coefficient</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>coeffs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; * &gt;&#160;</td>
+          <td class="paramname"><em>vect_aux_var</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a042a55838fe632082ccedb078c1e0fd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a042a55838fe632082ccedb078c1e0fd2">&#9670;&nbsp;</a></span>save_coefficients()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class DC , int DIM&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classPostProcessing.html">PostProcessing</a>&lt; T, DC, DIM &gt;::save_coefficients </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classCoefficient.html">Coefficient</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>coefficients</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; * &gt;&#160;</td>
+          <td class="paramname"><em>vect_aux_var</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>iter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>time</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 </div>
@@ -412,8 +634,8 @@ template&lt;class T , class DC , int DIM&gt; </div>
 
 </div>
 </div>
-<a id="a5872fc7f3527be648339ec33e9536578"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5872fc7f3527be648339ec33e9536578">&#9670;&nbsp;</a></span>save_variables()</h2>
+<a id="af648c23ecdf3c838aa884907d7f5fb14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af648c23ecdf3c838aa884907d7f5fb14">&#9670;&nbsp;</a></span>save_variables()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -423,7 +645,7 @@ template&lt;class T , class DC , int DIM&gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classPostProcessing.html">PostProcessing</a>&lt; T, DC, DIM &gt;::save_variables </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classVariables.html">Variables</a>&lt; T, DIM &gt; &amp;&#160;</td>
           <td class="paramname"><em>vars</em>, </td>
         </tr>
         <tr>
@@ -454,7 +676,7 @@ template&lt;class T , class DC , int DIM&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:03 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

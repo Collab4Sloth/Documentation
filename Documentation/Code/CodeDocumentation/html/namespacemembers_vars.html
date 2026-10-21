@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -115,6 +115,14 @@ $(function() {
 <li>Diffusivity
 : <a class="el" href="namespaceGlossary.html#afbdced5b2de5b2c4c21d5dd9b427ad1e">Glossary</a>
 </li>
+<li>DIM
+: <a class="el" href="namespaceSloth1D.html#a88f1c514d15597c5caee43311b961ee2">Sloth1D</a>
+, <a class="el" href="namespaceSloth2D.html#aef3d312f42f929547c3343d25fa7a5e6">Sloth2D</a>
+, <a class="el" href="namespaceSloth3D.html#ab7c8abe97524601dd9ac208256965d24">Sloth3D</a>
+</li>
+<li>Dirichlet
+: <a class="el" href="namespaceGlossary.html#a7a7e0fd68417c7c6ba2b6f33f9f1c362">Glossary</a>
+</li>
 <li>DrivingForce
 : <a class="el" href="namespaceGlossary.html#a36ef0c4cf4c3158e2f0064840f307c6f">Glossary</a>
 </li>
@@ -168,6 +176,9 @@ $(function() {
 
 
 <h3><a id="index_i"></a>- i -</h3><ul>
+<li>Inflow
+: <a class="el" href="namespaceGlossary.html#a065fcf2ec4f2c85399cf080155ad535f">Glossary</a>
+</li>
 <li>InterDiffusionMobility
 : <a class="el" href="namespaceGlossary.html#a9a62949159ad3252b15a3efd16c0f12a">Glossary</a>
 </li>
@@ -186,6 +197,9 @@ $(function() {
 , <a class="el" href="namespaceLBFGSDefaultConstant.html#a52acf9165cbe76a3f69a6fce58501b09">LBFGSDefaultConstant</a>
 , <a class="el" href="namespaceMINRESDefaultConstant.html#a63ae9a42d533772ba07457f9492e7f96">MINRESDefaultConstant</a>
 , <a class="el" href="namespaceNewtonDefaultConstant.html#a54fd5f536239148e4b6944fc4ca69b68">NewtonDefaultConstant</a>
+</li>
+<li>iterations
+: <a class="el" href="namespaceDSMOOTHER__DefaultConstant.html#a35966adbbbf86a56d8adf01c3394e144">DSMOOTHER_DefaultConstant</a>
 </li>
 <li>iterative_mode
 : <a class="el" href="namespaceBICGSTABDefaultConstant.html#a59b11fd1d442255c70a6279dbd1269af">BICGSTABDefaultConstant</a>
@@ -211,6 +225,9 @@ $(function() {
 
 
 <h3><a id="index_m"></a>- m -</h3><ul>
+<li>mat_type
+: <a class="el" href="namespaceMUMPS__DefaultConstant.html#a1768c18ce4b6223736c0aac6aa8a8b58">MUMPS_DefaultConstant</a>
+</li>
 <li>Mobility
 : <a class="el" href="namespaceGlossary.html#af56e76a559b39813f4ec87e13b272363">Glossary</a>
 </li>
@@ -271,8 +288,8 @@ $(function() {
 , <a class="el" href="namespaceHYPRE__PCG__DefaultConstant.html#ae1965cf2231f074dc1aa3a19eca4e3d5">HYPRE_PCG_DefaultConstant</a>
 , <a class="el" href="namespaceLBFGSDefaultConstant.html#ae73c28f70f6bb9cf5e2e3d533ef81b81">LBFGSDefaultConstant</a>
 , <a class="el" href="namespaceMINRESDefaultConstant.html#a57faae19b8800aa498a12fa26a679b6d">MINRESDefaultConstant</a>
+, <a class="el" href="namespaceMUMPS__DefaultConstant.html#adf43b2557d2e793e6ab9a7a031e15853">MUMPS_DefaultConstant</a>
 , <a class="el" href="namespaceNewtonDefaultConstant.html#a3ed2f048dc8a07bd1ee5b614baeb4a06">NewtonDefaultConstant</a>
-, <a class="el" href="namespaceUMFPACK__DefaultConstant.html#a757dec5688430adda0e8c46ef93b0d93">UMFPACK_DefaultConstant</a>
 </li>
 </ul>
 
@@ -292,6 +309,9 @@ $(function() {
 <li>reorder_type
 : <a class="el" href="namespaceHYPRE__ILU__DefaultConstant.html#a73bd89209ca355f6ada091de1d170a8f">HYPRE_ILU_DefaultConstant</a>
 </li>
+<li>reordering_strategy
+: <a class="el" href="namespaceMUMPS__DefaultConstant.html#afb062d88a0ac643ef9beaed3ed6819df">MUMPS_DefaultConstant</a>
+</li>
 <li>residual_threshold
 : <a class="el" href="namespaceCalphadDefaultConstant.html#a464e5ede0e69f9b3b8dcc32c85a8826f">CalphadDefaultConstant</a>
 </li>
@@ -305,8 +325,14 @@ $(function() {
 
 
 <h3><a id="index_s"></a>- s -</h3><ul>
+<li>scale
+: <a class="el" href="namespaceDSMOOTHER__DefaultConstant.html#a03ef826904ce13be510d4a81efa23d85">DSMOOTHER_DefaultConstant</a>
+</li>
 <li>SiteFraction
 : <a class="el" href="namespaceGlossary.html#a331a946dd026bf280cc200aafbd7eaba">Glossary</a>
+</li>
+<li>SourceTerm
+: <a class="el" href="namespaceGlossary.html#a7b01f1b402c823a8fa8e3fa6bb4c10d0">Glossary</a>
 </li>
 <li>SurfaceTension
 : <a class="el" href="namespaceGlossary.html#a4a4d4b3b5ba2e0ba8345250c50d9e227">Glossary</a>
@@ -337,10 +363,26 @@ $(function() {
 , <a class="el" href="namespaceHYPRE__SMOOTHER__DefaultConstant.html#a06e2071820c205a794d97f9cb69d21d2">HYPRE_SMOOTHER_DefaultConstant</a>
 </li>
 </ul>
+
+
+<h3><a id="index_v"></a>- v -</h3><ul>
+<li>Velocity_X
+: <a class="el" href="namespaceGlossary.html#a2725922b94de37838da4f0d77e2bbc16">Glossary</a>
+</li>
+<li>Velocity_Y
+: <a class="el" href="namespaceGlossary.html#a5bdd98500cde3afd6e539ae7c7bcdd26">Glossary</a>
+</li>
+<li>Velocity_Z
+: <a class="el" href="namespaceGlossary.html#a7a204f3a307e408bdb9bb5ac6b44b671">Glossary</a>
+</li>
+<li>VelocityPrefactor
+: <a class="el" href="namespaceGlossary.html#ad5ee7d761997398d5f78a0fa2a482206">Glossary</a>
+</li>
+</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:17 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:03 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

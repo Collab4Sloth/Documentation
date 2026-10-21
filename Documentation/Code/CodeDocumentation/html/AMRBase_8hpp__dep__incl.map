@@ -1,0 +1,14 @@
+<map id="AMRBase.hpp" name="AMRBase.hpp">
+<area shape="rect" id="node1" title="Base class orchestrating adaptive mesh refinement (AMR): defines the common criteria (error estimator..." alt="" coords="179,5,299,32"/>
+<area shape="rect" id="node2" href="$ListAMR_8hpp.html" title="List of header files contained in the AMR directory." alt="" coords="72,155,184,181"/>
+<area shape="rect" id="node4" href="$MultiVariableMaxAMR_8hpp.html" title="AMR strategy combining several variables into a single, shared mesh mutation: for each element,..." alt="" coords="24,80,232,107"/>
+<area shape="rect" id="node5" href="$SingleVariableAMR_8hpp.html" title="AMR strategy driven by a single, designated variable: error estimation, refinement and derefinement d..." alt="" coords="257,80,442,107"/>
+<area shape="rect" id="node6" href="$ProblemBase_8hpp.html" title="Base class for building Problems." alt="" coords="466,80,609,107"/>
+<area shape="rect" id="node3" href="$sloth_8hpp.html" title="List of SLOTH header files." alt="" coords="485,304,571,331"/>
+<area shape="rect" id="node7" href="$Calphad__problem_8hpp.html" title="Class used to defined a Calphad_Problem objet." alt="" coords="209,155,383,181"/>
+<area shape="rect" id="node9" href="$MPIProblem_8hpp.html" title="Class used to defined a MPI_Problem objet." alt="" coords="408,155,547,181"/>
+<area shape="rect" id="node10" href="$Problem_8hpp.html" title="Class used to defined a PDE Problem." alt="" coords="765,155,875,181"/>
+<area shape="rect" id="node12" href="$PropertyProblem_8hpp.html" title="Class used to compute primary variables as a function of auxialiary variables." alt="" coords="571,155,741,181"/>
+<area shape="rect" id="node8" href="$ListProblems_8hpp.html" title=" " alt="" coords="457,229,599,256"/>
+<area shape="rect" id="node11" href="$Time_8hpp.html" title="Main time loop." alt="" coords="725,229,811,256"/>
+</map>

@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -112,7 +112,9 @@ $(function() {
 <div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classProductCoefficient.html#ad9822f7ad6eae5cf76b5db7c6c21b269">   66</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classProductCoefficient.html#ad9822f7ad6eae5cf76b5db7c6c21b269">~ProductCoefficient</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classProductCoefficient.html#af9fe6721013b032b48c706015e327a0d">set_time</a>(<span class="keywordtype">double</span> time) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;};</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classProductCoefficient.html#a5eb39537e4acee030111cdafe28fc8a8">uses_coordinates</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classProductCoefficient.html#aad63e6e992ecfe93edfc0bcced2c4728">set_coordinates</a>(std::span&lt;const double&gt; x) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
 <div class="ttc" id="aFunctionCoefficient_8hpp_html"><div class="ttname"><a href="FunctionCoefficient_8hpp.html">FunctionCoefficient.hpp</a></div><div class="ttdoc">Base class defining analytical expression, first and second derivatives of a Coefficient.</div></div>
 <div class="ttc" id="aclassFunctionCoefficient_html"><div class="ttname"><a href="classFunctionCoefficient.html">FunctionCoefficient</a></div><div class="ttdoc">Base class defining analytical expression, first and second derivatives of a Coefficient.</div><div class="ttdef"><b>Definition:</b> <a href="FunctionCoefficient_8hpp_source.html#l00045">FunctionCoefficient.hpp:45</a></div></div>
 <div class="ttc" id="aclassProductCoefficient_html"><div class="ttname"><a href="classProductCoefficient.html">ProductCoefficient</a></div><div class="ttdoc">Define a product of FunctionCoefficient objects as a FunctionCoefficient.</div><div class="ttdef"><b>Definition:</b> <a href="ProductFunctionCoefficients_8hpp_source.html#l00047">ProductFunctionCoefficients.hpp:47</a></div></div>
@@ -120,12 +122,14 @@ $(function() {
 <div class="ttc" id="aclassProductCoefficient_html_a4f52838ace9637e6156246aa881610d1"><div class="ttname"><a href="classProductCoefficient.html#a4f52838ace9637e6156246aa881610d1">ProductCoefficient::GradientF</a></div><div class="ttdeci">std::function&lt; std::vector&lt; double &gt;const std::span&lt; const double &gt; &amp;, const std::span&lt; const double &gt; &amp;, const std::span&lt; const double &gt; &amp;, const unsigned int dimension)&gt; GradientF() final</div><div class="ttdoc">Gradient.</div><div class="ttdef"><b>Definition:</b> <a href="ProductFunctionCoefficients_8cpp_source.html#l00084">ProductFunctionCoefficients.cpp:84</a></div></div>
 <div class="ttc" id="aclassProductCoefficient_html_a55e77a4fee86b6e74b1edaf8b5a05c7b"><div class="ttname"><a href="classProductCoefficient.html#a55e77a4fee86b6e74b1edaf8b5a05c7b">ProductCoefficient::ProductCoefficient</a></div><div class="ttdeci">ProductCoefficient()=default</div></div>
 <div class="ttc" id="aclassProductCoefficient_html_a575b982fe1d52faee392d51f5bb2cc43"><div class="ttname"><a href="classProductCoefficient.html#a575b982fe1d52faee392d51f5bb2cc43">ProductCoefficient::F</a></div><div class="ttdeci">std::function&lt; double(const std::span&lt; const double &gt; &amp;, const std::span&lt; const double &gt; &amp;, const std::span&lt; const double &gt; &amp;, const unsigned int dimension)&gt; F() final</div><div class="ttdoc">Compute the value of the coefficient as a summation of the value of coefficients.</div><div class="ttdef"><b>Definition:</b> <a href="ProductFunctionCoefficients_8cpp_source.html#l00060">ProductFunctionCoefficients.cpp:60</a></div></div>
+<div class="ttc" id="aclassProductCoefficient_html_a5eb39537e4acee030111cdafe28fc8a8"><div class="ttname"><a href="classProductCoefficient.html#a5eb39537e4acee030111cdafe28fc8a8">ProductCoefficient::uses_coordinates</a></div><div class="ttdeci">bool uses_coordinates() const override</div><div class="ttdoc">True if at least one FunctionCoefficient depends on the spatial coordinates.</div><div class="ttdef"><b>Definition:</b> <a href="ProductFunctionCoefficients_8cpp_source.html#l00177">ProductFunctionCoefficients.cpp:177</a></div></div>
+<div class="ttc" id="aclassProductCoefficient_html_aad63e6e992ecfe93edfc0bcced2c4728"><div class="ttname"><a href="classProductCoefficient.html#aad63e6e992ecfe93edfc0bcced2c4728">ProductCoefficient::set_coordinates</a></div><div class="ttdeci">void set_coordinates(std::span&lt; const double &gt; x) override</div><div class="ttdoc">Set the spatial coordinates for all FunctionCoefficients.</div><div class="ttdef"><b>Definition:</b> <a href="ProductFunctionCoefficients_8cpp_source.html#l00189">ProductFunctionCoefficients.cpp:189</a></div></div>
 <div class="ttc" id="aclassProductCoefficient_html_ad9822f7ad6eae5cf76b5db7c6c21b269"><div class="ttname"><a href="classProductCoefficient.html#ad9822f7ad6eae5cf76b5db7c6c21b269">ProductCoefficient::~ProductCoefficient</a></div><div class="ttdeci">virtual ~ProductCoefficient()=default</div></div>
 <div class="ttc" id="aclassProductCoefficient_html_af9fe6721013b032b48c706015e327a0d"><div class="ttname"><a href="classProductCoefficient.html#af9fe6721013b032b48c706015e327a0d">ProductCoefficient::set_time</a></div><div class="ttdeci">void set_time(double time) override</div><div class="ttdoc">Set time for all FunctionCoefficients.</div><div class="ttdef"><b>Definition:</b> <a href="ProductFunctionCoefficients_8cpp_source.html#l00166">ProductFunctionCoefficients.cpp:166</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:02 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

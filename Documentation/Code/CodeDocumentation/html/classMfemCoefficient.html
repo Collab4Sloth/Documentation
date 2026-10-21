@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -74,6 +74,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Wraps a SLOTH <a class="el" href="classCoefficient.html" title="Base class definining a coefficient from an analytical formula.">Coefficient</a> as an mfem::Coefficient, so it can be projected onto a grid function or plugged into an mfem integrator.  
+ <a href="classMfemCoefficient.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="MfemCoefficient_8hpp_source.html">MfemCoefficient.hpp</a>&gt;</code></p>
 
 <p>Inherits mfem::Coefficient.</p>
@@ -81,20 +84,27 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0695e279d0091182416dd999ee5e6db8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMfemCoefficient.html#a0695e279d0091182416dd999ee5e6db8">Eval</a> (mfem::ElementTransformation &amp;T, const mfem::IntegrationPoint &amp;ip) override</td></tr>
-<tr class="memdesc:a0695e279d0091182416dd999ee5e6db8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Eval <a class="el" href="classMfemCoefficient.html">MfemCoefficient</a> at the integration point.  <a href="classMfemCoefficient.html#a0695e279d0091182416dd999ee5e6db8">More...</a><br /></td></tr>
+<tr class="memdesc:a0695e279d0091182416dd999ee5e6db8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the wrapped coefficient at an integration point.  <a href="classMfemCoefficient.html#a0695e279d0091182416dd999ee5e6db8">More...</a><br /></td></tr>
 <tr class="separator:a0695e279d0091182416dd999ee5e6db8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4607e8139ba942fbe999e18b2e9e36fd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMfemCoefficient.html#a4607e8139ba942fbe999e18b2e9e36fd">MfemCoefficient</a> (int id, const <a class="el" href="classCoefficients.html">Coefficients</a> &amp;coef, const mfem::ParGridFunction &amp;vun, const std::vector&lt; mfem::ParGridFunction &gt; &amp;vauxn)</td></tr>
-<tr class="memdesc:a4607e8139ba942fbe999e18b2e9e36fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Mfem <a class="el" href="classCoefficient.html" title="Base class definining a coefficient from an analytical formula.">Coefficient</a>:: Mfem <a class="el" href="classCoefficient.html" title="Base class definining a coefficient from an analytical formula.">Coefficient</a> object.  <a href="classMfemCoefficient.html#a4607e8139ba942fbe999e18b2e9e36fd">More...</a><br /></td></tr>
-<tr class="separator:a4607e8139ba942fbe999e18b2e9e36fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2bedeae11602554c433d399d391a6a9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMfemCoefficient.html#ad2bedeae11602554c433d399d391a6a9">MfemCoefficient</a> (::<a class="el" href="classCoefficient.html">Coefficient</a> coef, const std::vector&lt; mfem::ParGridFunction &gt; &amp;vu, const std::vector&lt; mfem::ParGridFunction &gt; &amp;vun, const std::vector&lt; mfem::ParGridFunction &gt; &amp;vauxn)</td></tr>
+<tr class="memdesc:ad2bedeae11602554c433d399d391a6a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classMfemCoefficient.html" title="Wraps a SLOTH Coefficient as an mfem::Coefficient, so it can be projected onto a grid function or plu...">MfemCoefficient</a> object.  <a href="classMfemCoefficient.html#ad2bedeae11602554c433d399d391a6a9">More...</a><br /></td></tr>
+<tr class="separator:ad2bedeae11602554c433d399d391a6a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa092fa50b3f95c3a508620a7dbc6f4be"><td class="memItemLeft" align="right" valign="top">mfem::ParGridFunction&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMfemCoefficient.html#aa092fa50b3f95c3a508620a7dbc6f4be">ProjectToGridFunction</a> ()</td></tr>
+<tr class="memdesc:aa092fa50b3f95c3a508620a7dbc6f4be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Project the coefficient onto a grid function, using the finite element space of the first index in <code>gf_</code> (assumption of homogeneous FESpace)  <a href="classMfemCoefficient.html#aa092fa50b3f95c3a508620a7dbc6f4be">More...</a><br /></td></tr>
+<tr class="separator:aa092fa50b3f95c3a508620a7dbc6f4be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa90af5566e42c65b31acddf3e34882fe"><td class="memItemLeft" align="right" valign="top">mfem::ParGridFunction&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMfemCoefficient.html#aa90af5566e42c65b31acddf3e34882fe">ProjectToGridFunction</a> (mfem::ParFiniteElementSpace &amp;fespace)</td></tr>
+<tr class="memdesc:aa90af5566e42c65b31acddf3e34882fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Project the coefficient onto a grid function on a given space.  <a href="classMfemCoefficient.html#aa90af5566e42c65b31acddf3e34882fe">More...</a><br /></td></tr>
+<tr class="separator:aa90af5566e42c65b31acddf3e34882fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb933ece8fbfbaea175dfcc70bb60018"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMfemCoefficient.html#acb933ece8fbfbaea175dfcc70bb60018">~MfemCoefficient</a> ()=default</td></tr>
 <tr class="separator:acb933ece8fbfbaea175dfcc70bb60018"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="MfemCoefficient_8hpp_source.html#l00033">33</a> of file <a class="el" href="MfemCoefficient_8hpp_source.html">MfemCoefficient.hpp</a>.</p>
+<div class="textblock"><p>Wraps a SLOTH <a class="el" href="classCoefficient.html" title="Base class definining a coefficient from an analytical formula.">Coefficient</a> as an mfem::Coefficient, so it can be projected onto a grid function or plugged into an mfem integrator. </p>
+
+<p class="definition">Definition at line <a class="el" href="MfemCoefficient_8hpp_source.html#l00039">39</a> of file <a class="el" href="MfemCoefficient_8hpp_source.html">MfemCoefficient.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a4607e8139ba942fbe999e18b2e9e36fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4607e8139ba942fbe999e18b2e9e36fd">&#9670;&nbsp;</a></span>MfemCoefficient()</h2>
+<a id="ad2bedeae11602554c433d399d391a6a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2bedeae11602554c433d399d391a6a9">&#9670;&nbsp;</a></span>MfemCoefficient()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -102,19 +112,19 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">MfemCoefficient::MfemCoefficient </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>id</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classCoefficients.html">Coefficients</a> &amp;&#160;</td>
+          <td class="paramtype">::<a class="el" href="classCoefficient.html">Coefficient</a>&#160;</td>
           <td class="paramname"><em>coef</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const mfem::ParGridFunction &amp;&#160;</td>
+          <td class="paramtype">const std::vector&lt; mfem::ParGridFunction &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; mfem::ParGridFunction &gt; &amp;&#160;</td>
           <td class="paramname"><em>vun</em>, </td>
         </tr>
         <tr>
@@ -131,17 +141,18 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new Mfem <a class="el" href="classCoefficient.html" title="Base class definining a coefficient from an analytical formula.">Coefficient</a>:: Mfem <a class="el" href="classCoefficient.html" title="Base class definining a coefficient from an analytical formula.">Coefficient</a> object. </p>
+<p>Construct a new <a class="el" href="classMfemCoefficient.html" title="Wraps a SLOTH Coefficient as an mfem::Coefficient, so it can be projected onto a grid function or plu...">MfemCoefficient</a> object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">coef</td><td></td></tr>
-    <tr><td class="paramname">vun</td><td></td></tr>
-    <tr><td class="paramname">vauxn</td><td></td></tr>
+    <tr><td class="paramname">coef</td><td>SLOTH coefficient to wrap. </td></tr>
+    <tr><td class="paramname">vu</td><td>Current-time vector of grid function for the coefficient's own variable. </td></tr>
+    <tr><td class="paramname">vun</td><td>Previous-time vector of grid function for the coefficient's own variable. </td></tr>
+    <tr><td class="paramname">vauxn</td><td>Grid functions of the auxiliary variables. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="MfemCoefficient_8hpp_source.html#l00056">56</a> of file <a class="el" href="MfemCoefficient_8hpp_source.html">MfemCoefficient.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MfemCoefficient_8cpp_source.html#l00044">44</a> of file <a class="el" href="MfemCoefficient_8cpp_source.html">MfemCoefficient.cpp</a>.</p>
 
 </div>
 </div>
@@ -205,27 +216,90 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Eval <a class="el" href="classMfemCoefficient.html">MfemCoefficient</a> at the integration point. </p>
+<p>Evaluate the wrapped coefficient at an integration point. </p>
+<p>Dispatches on the coefficient's scheme (scalar/semi-implicit/ explicit/implicit) to call the matching <a class="el" href="classSlothBaseCoefficient.html#a13fe2a9ca475820b8a5a5ae7f30c2c65" title="Computes the value of the Coefficient.">Coefficient::compute</a> overload.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">T</td><td></td></tr>
-    <tr><td class="paramname">ip</td><td></td></tr>
+    <tr><td class="paramname">T</td><td>Element transformation at the integration point. </td></tr>
+    <tr><td class="paramname">ip</td><td>Integration point. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>double </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classCoefficient.html" title="Base class definining a coefficient from an analytical formula.">Coefficient</a> value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="MfemCoefficient_8hpp_source.html#l00067">67</a> of file <a class="el" href="MfemCoefficient_8hpp_source.html">MfemCoefficient.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MfemCoefficient_8cpp_source.html#l00063">63</a> of file <a class="el" href="MfemCoefficient_8cpp_source.html">MfemCoefficient.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="SlothBaseCoefficient_8cpp_source.html#l00071">SlothBaseCoefficient::compute()</a>, <a class="el" href="SlothBaseCoefficient_8cpp_source.html#l00326">SlothBaseCoefficient::is_explicit()</a>, <a class="el" href="SlothBaseCoefficient_8cpp_source.html#l00344">SlothBaseCoefficient::is_scalar()</a>, and <a class="el" href="SlothBaseCoefficient_8cpp_source.html#l00334">SlothBaseCoefficient::is_semi_implicit()</a>.</p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classMfemCoefficient_a0695e279d0091182416dd999ee5e6db8_cgraph.svg" width="394" height="248"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a id="aa092fa50b3f95c3a508620a7dbc6f4be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa092fa50b3f95c3a508620a7dbc6f4be">&#9670;&nbsp;</a></span>ProjectToGridFunction() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mfem::ParGridFunction MfemCoefficient::ProjectToGridFunction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Project the coefficient onto a grid function, using the finite element space of the first index in <code>gf_</code> (assumption of homogeneous FESpace) </p>
+<dl class="section return"><dt>Returns</dt><dd>Grid function holding the projected values. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="MfemCoefficient_8cpp_source.html#l00110">110</a> of file <a class="el" href="MfemCoefficient_8cpp_source.html">MfemCoefficient.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa90af5566e42c65b31acddf3e34882fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa90af5566e42c65b31acddf3e34882fe">&#9670;&nbsp;</a></span>ProjectToGridFunction() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mfem::ParGridFunction MfemCoefficient::ProjectToGridFunction </td>
+          <td>(</td>
+          <td class="paramtype">mfem::ParFiniteElementSpace &amp;&#160;</td>
+          <td class="paramname"><em>fespace</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Project the coefficient onto a grid function on a given space. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fespace</td><td>Finite element space to project onto. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Grid function holding the projected values. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="MfemCoefficient_8cpp_source.html#l00098">98</a> of file <a class="el" href="MfemCoefficient_8cpp_source.html">MfemCoefficient.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="MfemCoefficient_8hpp_source.html">MfemCoefficient.hpp</a></li>
+<li><a class="el" href="MfemCoefficient_8cpp_source.html">MfemCoefficient.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:03 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

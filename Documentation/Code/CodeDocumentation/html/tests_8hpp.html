@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -71,7 +71,12 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">tests.hpp File Reference</div>  </div>
 </div><!--header-->
@@ -79,7 +84,17 @@ $(function() {
 
 <p>Usefull aliases for tests depending on the dimension of space.  
 <a href="#details">More...</a></p>
-
+<div class="textblock"><code>#include &lt;vector&gt;</code><br />
+<code>#include &quot;<a class="el" href="ListFactory_8hpp_source.html">Factory/ListFactory.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for tests.hpp:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="tests_8hpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+</div>
 <p><a href="tests_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -93,10 +108,226 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTest_3_013_01_4.html">Test&lt; 3 &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespaceSloth1D"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth1D.html">Sloth1D</a></td></tr>
+<tr class="memdesc:namespaceSloth1D"><td class="mdescLeft">&#160;</td><td class="mdescRight">1D aliases: DIM-common (incl. PB_MPI/PB_CALPHAD/ PB_PROPERTY, each defined once) + both PDE schemes, already prefixed (TransientPB, SteadyPB, ...) - a single <code>using namespace <a class="el" href="namespaceSloth1D.html" title="1D aliases: DIM-common (incl. PB_MPI/PB_CALPHAD/ PB_PROPERTY, each defined once) + both PDE schemes,...">Sloth1D</a></code> brings in everything needed for mixed transient/steady usage. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceSloth2D"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth2D.html">Sloth2D</a></td></tr>
+<tr class="memdesc:namespaceSloth2D"><td class="mdescLeft">&#160;</td><td class="mdescRight">2D aliases: DIM-common (incl. PB_MPI/PB_CALPHAD/ PB_PROPERTY, each defined once) + both PDE schemes, already prefixed (TransientPB, SteadyPB, ...) - a single <code>using namespace <a class="el" href="namespaceSloth2D.html" title="2D aliases: DIM-common (incl. PB_MPI/PB_CALPHAD/ PB_PROPERTY, each defined once) + both PDE schemes,...">Sloth2D</a></code> brings in everything needed for mixed transient/steady usage. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceSloth3D"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth3D.html">Sloth3D</a></td></tr>
+<tr class="memdesc:namespaceSloth3D"><td class="mdescLeft">&#160;</td><td class="mdescRight">3D aliases: DIM-common (incl. PB_MPI/PB_CALPHAD/ PB_PROPERTY, each defined once) + both PDE schemes, already prefixed (TransientPB, SteadyPB, ...) - a single <code>using namespace <a class="el" href="namespaceSloth3D.html" title="3D aliases: DIM-common (incl. PB_MPI/PB_CALPHAD/ PB_PROPERTY, each defined once) + both PDE schemes,...">Sloth3D</a></code> brings in everything needed for mixed transient/steady usage. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceSlothSteady1D"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothSteady1D.html">SlothSteady1D</a></td></tr>
+<tr class="memdesc:namespaceSlothSteady1D"><td class="mdescLeft">&#160;</td><td class="mdescRight">1D steady aliases (OPE, PB, ... unprefixed, plus SteadyOPE, SteadyPB, ... prefixed) for single-scheme usage. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceSlothSteady2D"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothSteady2D.html">SlothSteady2D</a></td></tr>
+<tr class="memdesc:namespaceSlothSteady2D"><td class="mdescLeft">&#160;</td><td class="mdescRight">2D steady aliases (OPE, PB, ... unprefixed, plus SteadyOPE, SteadyPB, ... prefixed) for single-scheme usage. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceSlothSteady3D"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothSteady3D.html">SlothSteady3D</a></td></tr>
+<tr class="memdesc:namespaceSlothSteady3D"><td class="mdescLeft">&#160;</td><td class="mdescRight">3D steady aliases (OPE, PB, ... unprefixed, plus SteadyOPE, SteadyPB, ... prefixed) for single-scheme usage. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceSlothTransient1D"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothTransient1D.html">SlothTransient1D</a></td></tr>
+<tr class="memdesc:namespaceSlothTransient1D"><td class="mdescLeft">&#160;</td><td class="mdescRight">1D transient aliases (OPE, PB, ... unprefixed, plus TransientOPE, TransientPB, ... prefixed) for single-scheme usage. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceSlothTransient2D"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothTransient2D.html">SlothTransient2D</a></td></tr>
+<tr class="memdesc:namespaceSlothTransient2D"><td class="mdescLeft">&#160;</td><td class="mdescRight">2D transient aliases (OPE, PB, ... unprefixed, plus TransientOPE, TransientPB, ... prefixed) for single-scheme usage. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceSlothTransient3D"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothTransient3D.html">SlothTransient3D</a></td></tr>
+<tr class="memdesc:namespaceSlothTransient3D"><td class="mdescLeft">&#160;</td><td class="mdescRight">3D transient aliases (OPE, PB, ... unprefixed, plus TransientOPE, TransientPB, ... prefixed) for single-scheme usage. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a6872caec36a5e24bb36baa2be286930b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tests_8hpp.html#a6872caec36a5e24bb36baa2be286930b">SLOTH_DEFINE_COMMON</a>(DIM_VALUE)</td></tr>
+<tr class="memdesc:a6872caec36a5e24bb36baa2be286930b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define the DIM, FE/mesh/post-processing aliases, the set(Periodic)<a class="el" href="classSpatialDiscretization.html" title="Class for defining the spatial discretization with a mesh coming from a GMSH file or built by using d...">SpatialDiscretization</a> factories, and the scheme-independent problem aliases (PB_MPI, PB_CALPHAD, PB_PROPERTY - none of them depend on OPERATOR_TYPE, so unlike OPE/PB they are defined once here rather than duplicated per scheme) shared by every scheme (Transient/Steady) for one spatial dimension.  <a href="tests_8hpp.html#a6872caec36a5e24bb36baa2be286930b">More...</a><br /></td></tr>
+<tr class="separator:a6872caec36a5e24bb36baa2be286930b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3d449de9c607474001ead94c2d7bbb0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tests_8hpp.html#aa3d449de9c607474001ead94c2d7bbb0">SLOTH_DEFINE_SCHEME</a>(COMMON_NS,  OPERATOR_TYPE,  PREFIX)</td></tr>
+<tr class="memdesc:aa3d449de9c607474001ead94c2d7bbb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Import the DIM-common aliases (including PB_MPI/PB_CALPHAD/ PB_PROPERTY) from COMMON_NS, define the usual unprefixed PDE aliases (OPE, PB) for backward-compatible single-scheme usage, and additionally define their PREFIX-prefixed counterparts via SLOTH_DEFINE_SCHEME_ONLY.  <a href="tests_8hpp.html#aa3d449de9c607474001ead94c2d7bbb0">More...</a><br /></td></tr>
+<tr class="separator:aa3d449de9c607474001ead94c2d7bbb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7dbc00e17298ec7ec1cd250c836d3a5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tests_8hpp.html#ab7dbc00e17298ec7ec1cd250c836d3a5">SLOTH_DEFINE_SCHEME_ONLY</a>(OPERATOR_TYPE,  PREFIX)</td></tr>
+<tr class="memdesc:ab7dbc00e17298ec7ec1cd250c836d3a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define only the PREFIX-prefixed, scheme-specific PDE aliases (TransientOPE/TransientPB or SteadyOPE/SteadyPB) - the only two that actually depend on OPERATOR_TYPE. Does not define the unprefixed OPE/PB names, so it can be invoked more than once in the same namespace (one call per scheme) without any redefinition clash. FECollection/VARS/PST/DIM must already be visible where this macro is invoked.  <a href="tests_8hpp.html#ab7dbc00e17298ec7ec1cd250c836d3a5">More...</a><br /></td></tr>
+<tr class="separator:ab7dbc00e17298ec7ec1cd250c836d3a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a634bd3997e52322b9e8a2acbdff523c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tests_8hpp.html#a634bd3997e52322b9e8a2acbdff523c7">SLOTH_IMPORT_COMMON</a>(COMMON_NS)</td></tr>
+<tr class="memdesc:a634bd3997e52322b9e8a2acbdff523c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Re-import the DIM-common aliases from COMMON_NS into the current namespace, one at a time (using-declarations, not <code>using namespace</code>), so qualified lookups such as SlothTransient2D::DIM stay valid. Each imported name still refers to the same entity as in COMMON_NS, so importing from several namespaces at once is never ambiguous.  <a href="tests_8hpp.html#a634bd3997e52322b9e8a2acbdff523c7">More...</a><br /></td></tr>
+<tr class="separator:a634bd3997e52322b9e8a2acbdff523c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a0d01629b1801ebd032a933724e469714"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth1D.html#a0d01629b1801ebd032a933724e469714">Sloth1D::BCS</a> = <a class="el" href="structTest.html">Test</a>&lt; DIM &gt;::BCS</td></tr>
+<tr class="separator:a0d01629b1801ebd032a933724e469714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a794067fabce11f771322203907939345"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth2D.html#a794067fabce11f771322203907939345">Sloth2D::BCS</a> = <a class="el" href="structTest.html">Test</a>&lt; DIM &gt;::BCS</td></tr>
+<tr class="separator:a794067fabce11f771322203907939345"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a751099ee44cbc59067a8dfa3e5c471c5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth3D.html#a751099ee44cbc59067a8dfa3e5c471c5">Sloth3D::BCS</a> = <a class="el" href="structTest.html">Test</a>&lt; DIM &gt;::BCS</td></tr>
+<tr class="separator:a751099ee44cbc59067a8dfa3e5c471c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b879db2e1f079469264e8cfccb69186"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth1D.html#a9b879db2e1f079469264e8cfccb69186">Sloth1D::FECollection</a> = <a class="el" href="structTest.html">Test</a>&lt; DIM &gt;::FECollection</td></tr>
+<tr class="separator:a9b879db2e1f079469264e8cfccb69186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88abe73b1eaef3f5cdb7d3d8a7901b45"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth2D.html#a88abe73b1eaef3f5cdb7d3d8a7901b45">Sloth2D::FECollection</a> = <a class="el" href="structTest.html">Test</a>&lt; DIM &gt;::FECollection</td></tr>
+<tr class="separator:a88abe73b1eaef3f5cdb7d3d8a7901b45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef8c1d3d27ee8464d4d726f57beb1d74"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth3D.html#aef8c1d3d27ee8464d4d726f57beb1d74">Sloth3D::FECollection</a> = <a class="el" href="structTest.html">Test</a>&lt; DIM &gt;::FECollection</td></tr>
+<tr class="separator:aef8c1d3d27ee8464d4d726f57beb1d74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7deeb0314338eaff2cfe8dc52b0d5c6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothTransient1D.html#ad7deeb0314338eaff2cfe8dc52b0d5c6">SlothTransient1D::OPE</a> = <a class="el" href="classTransientOperator.html">TransientOperator</a>&lt; FECollection, DIM &gt;</td></tr>
+<tr class="separator:ad7deeb0314338eaff2cfe8dc52b0d5c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c0c66c8faaf56c8f1828f8cec47b02f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothTransient2D.html#a2c0c66c8faaf56c8f1828f8cec47b02f">SlothTransient2D::OPE</a> = <a class="el" href="classTransientOperator.html">TransientOperator</a>&lt; FECollection, DIM &gt;</td></tr>
+<tr class="separator:a2c0c66c8faaf56c8f1828f8cec47b02f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25ac708551d5f9a2eaae61af81d729c5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothTransient3D.html#a25ac708551d5f9a2eaae61af81d729c5">SlothTransient3D::OPE</a> = <a class="el" href="classTransientOperator.html">TransientOperator</a>&lt; FECollection, DIM &gt;</td></tr>
+<tr class="separator:a25ac708551d5f9a2eaae61af81d729c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1f90d412a6e5c668bf4769b982d7dce"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothSteady1D.html#ab1f90d412a6e5c668bf4769b982d7dce">SlothSteady1D::OPE</a> = <a class="el" href="classSteadyOperator.html">SteadyOperator</a>&lt; FECollection, DIM &gt;</td></tr>
+<tr class="separator:ab1f90d412a6e5c668bf4769b982d7dce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab755024a05ccb2397c020a8016c25abd"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothSteady2D.html#ab755024a05ccb2397c020a8016c25abd">SlothSteady2D::OPE</a> = <a class="el" href="classSteadyOperator.html">SteadyOperator</a>&lt; FECollection, DIM &gt;</td></tr>
+<tr class="separator:ab755024a05ccb2397c020a8016c25abd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15209c3bb2fd608d76c8b0be3a635a6b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothSteady3D.html#a15209c3bb2fd608d76c8b0be3a635a6b">SlothSteady3D::OPE</a> = <a class="el" href="classSteadyOperator.html">SteadyOperator</a>&lt; FECollection, DIM &gt;</td></tr>
+<tr class="separator:a15209c3bb2fd608d76c8b0be3a635a6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad444c3972c2261acc76b0805839bfa73"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothTransient1D.html#ad444c3972c2261acc76b0805839bfa73">SlothTransient1D::PB</a> = <a class="el" href="classProblem.html">Problem</a>&lt; OPE, VARS, PST &gt;</td></tr>
+<tr class="separator:ad444c3972c2261acc76b0805839bfa73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97920d7102b3c77569666f0c21147a84"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothTransient2D.html#a97920d7102b3c77569666f0c21147a84">SlothTransient2D::PB</a> = <a class="el" href="classProblem.html">Problem</a>&lt; OPE, VARS, PST &gt;</td></tr>
+<tr class="separator:a97920d7102b3c77569666f0c21147a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c037cc2946b42a69327ea95ff14a278"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothTransient3D.html#a0c037cc2946b42a69327ea95ff14a278">SlothTransient3D::PB</a> = <a class="el" href="classProblem.html">Problem</a>&lt; OPE, VARS, PST &gt;</td></tr>
+<tr class="separator:a0c037cc2946b42a69327ea95ff14a278"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada724266b4650aa1ae2aa8e1eabe0849"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothSteady1D.html#ada724266b4650aa1ae2aa8e1eabe0849">SlothSteady1D::PB</a> = <a class="el" href="classProblem.html">Problem</a>&lt; OPE, VARS, PST &gt;</td></tr>
+<tr class="separator:ada724266b4650aa1ae2aa8e1eabe0849"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5806994884b6a9209b6859568d819369"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothSteady2D.html#a5806994884b6a9209b6859568d819369">SlothSteady2D::PB</a> = <a class="el" href="classProblem.html">Problem</a>&lt; OPE, VARS, PST &gt;</td></tr>
+<tr class="separator:a5806994884b6a9209b6859568d819369"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ba180ee2bee54c9a347be27271ab1a3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothSteady3D.html#a6ba180ee2bee54c9a347be27271ab1a3">SlothSteady3D::PB</a> = <a class="el" href="classProblem.html">Problem</a>&lt; OPE, VARS, PST &gt;</td></tr>
+<tr class="separator:a6ba180ee2bee54c9a347be27271ab1a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bcaf720e00eb45fdc08066448d4a77e"><td class="memTemplParams" colspan="2">template&lt;class CALPHAD &gt; </td></tr>
+<tr class="memitem:a1bcaf720e00eb45fdc08066448d4a77e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSloth1D.html#a1bcaf720e00eb45fdc08066448d4a77e">Sloth1D::PB_CALPHAD</a> = <a class="el" href="classCalphad__Problem.html">Calphad_Problem</a>&lt; CALPHAD, VARS, PST &gt;</td></tr>
+<tr class="separator:a1bcaf720e00eb45fdc08066448d4a77e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb6fb3631bbe09da5d4a6bb8ab447eed"><td class="memTemplParams" colspan="2">template&lt;class CALPHAD &gt; </td></tr>
+<tr class="memitem:afb6fb3631bbe09da5d4a6bb8ab447eed"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSloth2D.html#afb6fb3631bbe09da5d4a6bb8ab447eed">Sloth2D::PB_CALPHAD</a> = <a class="el" href="classCalphad__Problem.html">Calphad_Problem</a>&lt; CALPHAD, VARS, PST &gt;</td></tr>
+<tr class="separator:afb6fb3631bbe09da5d4a6bb8ab447eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab647ffead2d597269afa4611099c617c"><td class="memTemplParams" colspan="2">template&lt;class CALPHAD &gt; </td></tr>
+<tr class="memitem:ab647ffead2d597269afa4611099c617c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSloth3D.html#ab647ffead2d597269afa4611099c617c">Sloth3D::PB_CALPHAD</a> = <a class="el" href="classCalphad__Problem.html">Calphad_Problem</a>&lt; CALPHAD, VARS, PST &gt;</td></tr>
+<tr class="separator:ab647ffead2d597269afa4611099c617c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a543cd85423ad9186149cbb99e6963554"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth1D.html#a543cd85423ad9186149cbb99e6963554">Sloth1D::PB_MPI</a> = <a class="el" href="classMPI__Problem.html">MPI_Problem</a>&lt; VARS, PST &gt;</td></tr>
+<tr class="separator:a543cd85423ad9186149cbb99e6963554"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad728ef40bfc211e61a5b843c2cd41bdb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth2D.html#ad728ef40bfc211e61a5b843c2cd41bdb">Sloth2D::PB_MPI</a> = <a class="el" href="classMPI__Problem.html">MPI_Problem</a>&lt; VARS, PST &gt;</td></tr>
+<tr class="separator:ad728ef40bfc211e61a5b843c2cd41bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73e8370a7cb130e336da0b35cf1d03cd"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth3D.html#a73e8370a7cb130e336da0b35cf1d03cd">Sloth3D::PB_MPI</a> = <a class="el" href="classMPI__Problem.html">MPI_Problem</a>&lt; VARS, PST &gt;</td></tr>
+<tr class="separator:a73e8370a7cb130e336da0b35cf1d03cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11c5350432185d62f4c78112e70c7c71"><td class="memTemplParams" colspan="2">template&lt;class PROPERTY &gt; </td></tr>
+<tr class="memitem:a11c5350432185d62f4c78112e70c7c71"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSloth1D.html#a11c5350432185d62f4c78112e70c7c71">Sloth1D::PB_PROPERTY</a> = <a class="el" href="classProperty__problem.html">Property_problem</a>&lt; PROPERTY, VARS, PST &gt;</td></tr>
+<tr class="separator:a11c5350432185d62f4c78112e70c7c71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24c7b88a78741b3763626fd1fa5b98e4"><td class="memTemplParams" colspan="2">template&lt;class PROPERTY &gt; </td></tr>
+<tr class="memitem:a24c7b88a78741b3763626fd1fa5b98e4"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSloth2D.html#a24c7b88a78741b3763626fd1fa5b98e4">Sloth2D::PB_PROPERTY</a> = <a class="el" href="classProperty__problem.html">Property_problem</a>&lt; PROPERTY, VARS, PST &gt;</td></tr>
+<tr class="separator:a24c7b88a78741b3763626fd1fa5b98e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00a4cf7fba52de58a2bdd023b5d2103b"><td class="memTemplParams" colspan="2">template&lt;class PROPERTY &gt; </td></tr>
+<tr class="memitem:a00a4cf7fba52de58a2bdd023b5d2103b"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSloth3D.html#a00a4cf7fba52de58a2bdd023b5d2103b">Sloth3D::PB_PROPERTY</a> = <a class="el" href="classProperty__problem.html">Property_problem</a>&lt; PROPERTY, VARS, PST &gt;</td></tr>
+<tr class="separator:a00a4cf7fba52de58a2bdd023b5d2103b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50889d101cdc2a60a8c94663a245db2c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth1D.html#a50889d101cdc2a60a8c94663a245db2c">Sloth1D::PST</a> = <a class="el" href="structTest.html">Test</a>&lt; DIM &gt;::PST</td></tr>
+<tr class="separator:a50889d101cdc2a60a8c94663a245db2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add9e653f751b99e058f73f9501fe4bf8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth2D.html#add9e653f751b99e058f73f9501fe4bf8">Sloth2D::PST</a> = <a class="el" href="structTest.html">Test</a>&lt; DIM &gt;::PST</td></tr>
+<tr class="separator:add9e653f751b99e058f73f9501fe4bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1df5d73927f0ac0c4fd94945ae87675a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth3D.html#a1df5d73927f0ac0c4fd94945ae87675a">Sloth3D::PST</a> = <a class="el" href="structTest.html">Test</a>&lt; DIM &gt;::PST</td></tr>
+<tr class="separator:a1df5d73927f0ac0c4fd94945ae87675a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d54609e1bc37e5d54aefd6cd663d634"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth1D.html#a1d54609e1bc37e5d54aefd6cd663d634">Sloth1D::SPA</a> = <a class="el" href="structTest.html">Test</a>&lt; DIM &gt;::SPA</td></tr>
+<tr class="separator:a1d54609e1bc37e5d54aefd6cd663d634"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63f5e5278f531ba8455dc33b8933c421"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth2D.html#a63f5e5278f531ba8455dc33b8933c421">Sloth2D::SPA</a> = <a class="el" href="structTest.html">Test</a>&lt; DIM &gt;::SPA</td></tr>
+<tr class="separator:a63f5e5278f531ba8455dc33b8933c421"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad62a827b555922d7af674ecb2764d140"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth3D.html#ad62a827b555922d7af674ecb2764d140">Sloth3D::SPA</a> = <a class="el" href="structTest.html">Test</a>&lt; DIM &gt;::SPA</td></tr>
+<tr class="separator:ad62a827b555922d7af674ecb2764d140"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99f680bfcbaa419c1622f3cc4ade45d0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth1D.html#a99f680bfcbaa419c1622f3cc4ade45d0">Sloth1D::SPAS</a> = std::vector&lt; SPA * &gt;</td></tr>
+<tr class="separator:a99f680bfcbaa419c1622f3cc4ade45d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61a444daded54ec76b407e5d225ecfcd"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth2D.html#a61a444daded54ec76b407e5d225ecfcd">Sloth2D::SPAS</a> = std::vector&lt; SPA * &gt;</td></tr>
+<tr class="separator:a61a444daded54ec76b407e5d225ecfcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23a8f84fefa2da4b474733bfc4403905"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth3D.html#a23a8f84fefa2da4b474733bfc4403905">Sloth3D::SPAS</a> = std::vector&lt; SPA * &gt;</td></tr>
+<tr class="separator:a23a8f84fefa2da4b474733bfc4403905"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81beb050cb39c1b9c2b03ae5a248560d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth1D.html#a81beb050cb39c1b9c2b03ae5a248560d">Sloth1D::SteadyOPE</a> = <a class="el" href="classSteadyOperator.html">SteadyOperator</a>&lt; FECollection, DIM &gt;</td></tr>
+<tr class="separator:a81beb050cb39c1b9c2b03ae5a248560d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaab4ec58aaa0d1b9a7d36ac38c015162"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth2D.html#aaab4ec58aaa0d1b9a7d36ac38c015162">Sloth2D::SteadyOPE</a> = <a class="el" href="classSteadyOperator.html">SteadyOperator</a>&lt; FECollection, DIM &gt;</td></tr>
+<tr class="separator:aaab4ec58aaa0d1b9a7d36ac38c015162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ff3d023efac44d80e1b56f784358de2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth3D.html#a7ff3d023efac44d80e1b56f784358de2">Sloth3D::SteadyOPE</a> = <a class="el" href="classSteadyOperator.html">SteadyOperator</a>&lt; FECollection, DIM &gt;</td></tr>
+<tr class="separator:a7ff3d023efac44d80e1b56f784358de2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bf44947e660808257dff519e8e0e432"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothSteady1D.html#a3bf44947e660808257dff519e8e0e432">SlothSteady1D::SteadyOPE</a> = <a class="el" href="classSteadyOperator.html">SteadyOperator</a>&lt; FECollection, DIM &gt;</td></tr>
+<tr class="separator:a3bf44947e660808257dff519e8e0e432"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad183b44b64500ccfab0f1da4ca6641d0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothSteady2D.html#ad183b44b64500ccfab0f1da4ca6641d0">SlothSteady2D::SteadyOPE</a> = <a class="el" href="classSteadyOperator.html">SteadyOperator</a>&lt; FECollection, DIM &gt;</td></tr>
+<tr class="separator:ad183b44b64500ccfab0f1da4ca6641d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7757fe20d16ef816e588dcc6034862d6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothSteady3D.html#a7757fe20d16ef816e588dcc6034862d6">SlothSteady3D::SteadyOPE</a> = <a class="el" href="classSteadyOperator.html">SteadyOperator</a>&lt; FECollection, DIM &gt;</td></tr>
+<tr class="separator:a7757fe20d16ef816e588dcc6034862d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb76bbeb345e1580ea9d4e546e31a21a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth1D.html#acb76bbeb345e1580ea9d4e546e31a21a">Sloth1D::SteadyPB</a> = <a class="el" href="classProblem.html">Problem</a>&lt; SteadyOPE, VARS, PST &gt;</td></tr>
+<tr class="separator:acb76bbeb345e1580ea9d4e546e31a21a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1cca11a6e4c9050fbf07effe8e51b64"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth2D.html#af1cca11a6e4c9050fbf07effe8e51b64">Sloth2D::SteadyPB</a> = <a class="el" href="classProblem.html">Problem</a>&lt; SteadyOPE, VARS, PST &gt;</td></tr>
+<tr class="separator:af1cca11a6e4c9050fbf07effe8e51b64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1aeb89ad879271efe86f5ac52ccabf5f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth3D.html#a1aeb89ad879271efe86f5ac52ccabf5f">Sloth3D::SteadyPB</a> = <a class="el" href="classProblem.html">Problem</a>&lt; SteadyOPE, VARS, PST &gt;</td></tr>
+<tr class="separator:a1aeb89ad879271efe86f5ac52ccabf5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5116d3f77d3c279d91881080b15de92d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothSteady1D.html#a5116d3f77d3c279d91881080b15de92d">SlothSteady1D::SteadyPB</a> = <a class="el" href="classProblem.html">Problem</a>&lt; SteadyOPE, VARS, PST &gt;</td></tr>
+<tr class="separator:a5116d3f77d3c279d91881080b15de92d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a234a909f69376e51f98296ed2838b06d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothSteady2D.html#a234a909f69376e51f98296ed2838b06d">SlothSteady2D::SteadyPB</a> = <a class="el" href="classProblem.html">Problem</a>&lt; SteadyOPE, VARS, PST &gt;</td></tr>
+<tr class="separator:a234a909f69376e51f98296ed2838b06d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c4794960020662ecb5edb424a1aa540"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothSteady3D.html#a5c4794960020662ecb5edb424a1aa540">SlothSteady3D::SteadyPB</a> = <a class="el" href="classProblem.html">Problem</a>&lt; SteadyOPE, VARS, PST &gt;</td></tr>
+<tr class="separator:a5c4794960020662ecb5edb424a1aa540"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8015e154cb6fce67ac0bc35921e79d1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth1D.html#af8015e154cb6fce67ac0bc35921e79d1">Sloth1D::TransientOPE</a> = <a class="el" href="classTransientOperator.html">TransientOperator</a>&lt; FECollection, DIM &gt;</td></tr>
+<tr class="separator:af8015e154cb6fce67ac0bc35921e79d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac80d5888b488b4b269f5363e6eb8bd7a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth2D.html#ac80d5888b488b4b269f5363e6eb8bd7a">Sloth2D::TransientOPE</a> = <a class="el" href="classTransientOperator.html">TransientOperator</a>&lt; FECollection, DIM &gt;</td></tr>
+<tr class="separator:ac80d5888b488b4b269f5363e6eb8bd7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a219cc0a0a846a539089f40c7c2b8a3bf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth3D.html#a219cc0a0a846a539089f40c7c2b8a3bf">Sloth3D::TransientOPE</a> = <a class="el" href="classTransientOperator.html">TransientOperator</a>&lt; FECollection, DIM &gt;</td></tr>
+<tr class="separator:a219cc0a0a846a539089f40c7c2b8a3bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f6809b07857fa66e38c4162ab4a3850"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothTransient1D.html#a5f6809b07857fa66e38c4162ab4a3850">SlothTransient1D::TransientOPE</a> = <a class="el" href="classTransientOperator.html">TransientOperator</a>&lt; FECollection, DIM &gt;</td></tr>
+<tr class="separator:a5f6809b07857fa66e38c4162ab4a3850"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6bea4ec53e5d0a9aa9372c737014111"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothTransient2D.html#af6bea4ec53e5d0a9aa9372c737014111">SlothTransient2D::TransientOPE</a> = <a class="el" href="classTransientOperator.html">TransientOperator</a>&lt; FECollection, DIM &gt;</td></tr>
+<tr class="separator:af6bea4ec53e5d0a9aa9372c737014111"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3bc578b61920de6674d8d5acb00f0f8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothTransient3D.html#aa3bc578b61920de6674d8d5acb00f0f8">SlothTransient3D::TransientOPE</a> = <a class="el" href="classTransientOperator.html">TransientOperator</a>&lt; FECollection, DIM &gt;</td></tr>
+<tr class="separator:aa3bc578b61920de6674d8d5acb00f0f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fd67b9507a931347314f5ecdb60dda0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth1D.html#a2fd67b9507a931347314f5ecdb60dda0">Sloth1D::TransientPB</a> = <a class="el" href="classProblem.html">Problem</a>&lt; TransientOPE, VARS, PST &gt;</td></tr>
+<tr class="separator:a2fd67b9507a931347314f5ecdb60dda0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0c617b4eef0b1cb93374a8f7c349125"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth2D.html#ad0c617b4eef0b1cb93374a8f7c349125">Sloth2D::TransientPB</a> = <a class="el" href="classProblem.html">Problem</a>&lt; TransientOPE, VARS, PST &gt;</td></tr>
+<tr class="separator:ad0c617b4eef0b1cb93374a8f7c349125"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a028cff2eab68d6db7dee4eb52c7816df"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth3D.html#a028cff2eab68d6db7dee4eb52c7816df">Sloth3D::TransientPB</a> = <a class="el" href="classProblem.html">Problem</a>&lt; TransientOPE, VARS, PST &gt;</td></tr>
+<tr class="separator:a028cff2eab68d6db7dee4eb52c7816df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a507e966e29ed026c16825e9a8dc58dd7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothTransient1D.html#a507e966e29ed026c16825e9a8dc58dd7">SlothTransient1D::TransientPB</a> = <a class="el" href="classProblem.html">Problem</a>&lt; TransientOPE, VARS, PST &gt;</td></tr>
+<tr class="separator:a507e966e29ed026c16825e9a8dc58dd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c2522d50bc9cec47aaedd4499384145"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothTransient2D.html#a0c2522d50bc9cec47aaedd4499384145">SlothTransient2D::TransientPB</a> = <a class="el" href="classProblem.html">Problem</a>&lt; TransientOPE, VARS, PST &gt;</td></tr>
+<tr class="separator:a0c2522d50bc9cec47aaedd4499384145"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0728abe0576c691a565d96145ffe912a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSlothTransient3D.html#a0728abe0576c691a565d96145ffe912a">SlothTransient3D::TransientPB</a> = <a class="el" href="classProblem.html">Problem</a>&lt; TransientOPE, VARS, PST &gt;</td></tr>
+<tr class="separator:a0728abe0576c691a565d96145ffe912a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3350c73fceece64e2680a6f36c0c578a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth1D.html#a3350c73fceece64e2680a6f36c0c578a">Sloth1D::VAR</a> = <a class="el" href="structTest.html">Test</a>&lt; DIM &gt;::VAR</td></tr>
+<tr class="separator:a3350c73fceece64e2680a6f36c0c578a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28647b87d6a2c5e2e3e9150587edac1a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth2D.html#a28647b87d6a2c5e2e3e9150587edac1a">Sloth2D::VAR</a> = <a class="el" href="structTest.html">Test</a>&lt; DIM &gt;::VAR</td></tr>
+<tr class="separator:a28647b87d6a2c5e2e3e9150587edac1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d13d345a4209a37944a04a17c2b0638"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth3D.html#a1d13d345a4209a37944a04a17c2b0638">Sloth3D::VAR</a> = <a class="el" href="structTest.html">Test</a>&lt; DIM &gt;::VAR</td></tr>
+<tr class="separator:a1d13d345a4209a37944a04a17c2b0638"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb90151137a83d7ae8ea8f343aff64b9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth1D.html#acb90151137a83d7ae8ea8f343aff64b9">Sloth1D::VARS</a> = <a class="el" href="structTest.html">Test</a>&lt; DIM &gt;::VARS</td></tr>
+<tr class="separator:acb90151137a83d7ae8ea8f343aff64b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6112571348a69cfab91895d842c2d605"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth2D.html#a6112571348a69cfab91895d842c2d605">Sloth2D::VARS</a> = <a class="el" href="structTest.html">Test</a>&lt; DIM &gt;::VARS</td></tr>
+<tr class="separator:a6112571348a69cfab91895d842c2d605"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa0269a6c6d8d70ce660a36286a01100"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth3D.html#afa0269a6c6d8d70ce660a36286a01100">Sloth3D::VARS</a> = <a class="el" href="structTest.html">Test</a>&lt; DIM &gt;::VARS</td></tr>
+<tr class="separator:afa0269a6c6d8d70ce660a36286a01100"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a5b1716473f129d08f2dd7605eb7ff827"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
+<tr class="memitem:a5b1716473f129d08f2dd7605eb7ff827"><td class="memTemplItemLeft" align="right" valign="top">SPAS&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSloth1D.html#a5b1716473f129d08f2dd7605eb7ff827">Sloth1D::setPeriodicSpatialDiscretization</a> (std::size_t N, Args &amp;&amp;... args)</td></tr>
+<tr class="separator:a5b1716473f129d08f2dd7605eb7ff827"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab22a0612e02b8e6e0cd1b1d219a41123"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
+<tr class="memitem:ab22a0612e02b8e6e0cd1b1d219a41123"><td class="memTemplItemLeft" align="right" valign="top">SPAS&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSloth2D.html#ab22a0612e02b8e6e0cd1b1d219a41123">Sloth2D::setPeriodicSpatialDiscretization</a> (std::size_t N, Args &amp;&amp;... args)</td></tr>
+<tr class="separator:ab22a0612e02b8e6e0cd1b1d219a41123"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad65a477e90df708f640c2a8128c69775"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
+<tr class="memitem:ad65a477e90df708f640c2a8128c69775"><td class="memTemplItemLeft" align="right" valign="top">SPAS&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSloth3D.html#ad65a477e90df708f640c2a8128c69775">Sloth3D::setPeriodicSpatialDiscretization</a> (std::size_t N, Args &amp;&amp;... args)</td></tr>
+<tr class="separator:ad65a477e90df708f640c2a8128c69775"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a998a6c629503c70dfa36db285709d134"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
+<tr class="memitem:a998a6c629503c70dfa36db285709d134"><td class="memTemplItemLeft" align="right" valign="top">SPAS&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSloth1D.html#a998a6c629503c70dfa36db285709d134">Sloth1D::setSpatialDiscretization</a> (std::size_t N, Args &amp;&amp;... args)</td></tr>
+<tr class="separator:a998a6c629503c70dfa36db285709d134"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25a36924e37b0953c3d6b3673930ef2f"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
+<tr class="memitem:a25a36924e37b0953c3d6b3673930ef2f"><td class="memTemplItemLeft" align="right" valign="top">SPAS&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSloth2D.html#a25a36924e37b0953c3d6b3673930ef2f">Sloth2D::setSpatialDiscretization</a> (std::size_t N, Args &amp;&amp;... args)</td></tr>
+<tr class="separator:a25a36924e37b0953c3d6b3673930ef2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaae84fc2a3e7da2f81701c41a2cefc03"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
+<tr class="memitem:aaae84fc2a3e7da2f81701c41a2cefc03"><td class="memTemplItemLeft" align="right" valign="top">SPAS&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSloth3D.html#aaae84fc2a3e7da2f81701c41a2cefc03">Sloth3D::setSpatialDiscretization</a> (std::size_t N, Args &amp;&amp;... args)</td></tr>
+<tr class="separator:aaae84fc2a3e7da2f81701c41a2cefc03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a88f1c514d15597c5caee43311b961ee2"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth1D.html#a88f1c514d15597c5caee43311b961ee2">Sloth1D::DIM</a> = 1</td></tr>
+<tr class="separator:a88f1c514d15597c5caee43311b961ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef3d312f42f929547c3343d25fa7a5e6"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth2D.html#aef3d312f42f929547c3343d25fa7a5e6">Sloth2D::DIM</a> = 2</td></tr>
+<tr class="separator:aef3d312f42f929547c3343d25fa7a5e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7c8abe97524601dd9ac208256965d24"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSloth3D.html#ab7c8abe97524601dd9ac208256965d24">Sloth3D::DIM</a> = 3</td></tr>
+<tr class="separator:ab7c8abe97524601dd9ac208256965d24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Usefull aliases for tests depending on the dimension of space. </p>
-<dl class="section author"><dt>Author</dt><dd>ci230846 (<a href="#" onclick="location.href='mai'+'lto:'+'cle'+'me'+'nt.'+'in'+'tro'+'in'+'i@c'+'ea'+'.fr'; return false;">cleme<span style="display: none;">.nosp@m.</span>nt.i<span style="display: none;">.nosp@m.</span>ntroi<span style="display: none;">.nosp@m.</span>ni@c<span style="display: none;">.nosp@m.</span>ea.fr</a>) </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Clément Introïni (<a href="#" onclick="location.href='mai'+'lto:'+'cle'+'me'+'nt.'+'in'+'tro'+'in'+'i@c'+'ea'+'.fr'; return false;">cleme<span style="display: none;">.nosp@m.</span>nt.i<span style="display: none;">.nosp@m.</span>ntroi<span style="display: none;">.nosp@m.</span>ni@c<span style="display: none;">.nosp@m.</span>ea.fr</a>) </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2025-01-22</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>CEA (C) 2025</dd></dl>
@@ -106,10 +337,191 @@ Classes</h2></td></tr>
 <p>You should have received a copy of the GNU Lesser General Public License along with this program. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. </p>
 
 <p class="definition">Definition in file <a class="el" href="tests_8hpp_source.html">tests.hpp</a>.</p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a6872caec36a5e24bb36baa2be286930b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6872caec36a5e24bb36baa2be286930b">&#9670;&nbsp;</a></span>SLOTH_DEFINE_COMMON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SLOTH_DEFINE_COMMON</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">DIM_VALUE</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">  constexpr <span class="keywordtype">int</span> <a class="code" href="namespaceSloth3D.html#ab7c8abe97524601dd9ac208256965d24">DIM</a> = DIM_VALUE;                                                                 \</div>
+<div class="line">  using <a class="code" href="namespaceSloth3D.html#aef8c1d3d27ee8464d4d726f57beb1d74">FECollection</a> = <a class="code" href="structTest.html#ab18740f78f935200ebabe5e85778908a">Test&lt;DIM&gt;::FECollection</a>;                                                  \</div>
+<div class="line">  using <a class="code" href="namespaceSloth3D.html#afa0269a6c6d8d70ce660a36286a01100">VARS</a> = <a class="code" href="classVariables.html">Test&lt;DIM&gt;::VARS</a>;                                                                  \</div>
+<div class="line">  using <a class="code" href="namespaceSloth3D.html#a1d13d345a4209a37944a04a17c2b0638">VAR</a> = <a class="code" href="classVariable.html">Test&lt;DIM&gt;::VAR</a>;                                                                    \</div>
+<div class="line">  using <a class="code" href="namespaceSloth3D.html#a1df5d73927f0ac0c4fd94945ae87675a">PST</a> = <a class="code" href="classPostProcessing.html">Test&lt;DIM&gt;::PST</a>;                                                                    \</div>
+<div class="line">  using <a class="code" href="namespaceSloth3D.html#ad62a827b555922d7af674ecb2764d140">SPA</a> = <a class="code" href="classSpatialDiscretization.html">Test&lt;DIM&gt;::SPA</a>;                                                                    \</div>
+<div class="line">  using <a class="code" href="namespaceSloth3D.html#a23a8f84fefa2da4b474733bfc4403905">SPAS</a> = std::vector&lt;SPA*&gt;;                                                                \</div>
+<div class="line">  using <a class="code" href="namespaceSloth3D.html#a751099ee44cbc59067a8dfa3e5c471c5">BCS</a> = <a class="code" href="classBoundaryConditions.html">Test&lt;DIM&gt;::BCS</a>;                                                                    \</div>
+<div class="line">  using <a class="code" href="namespaceSloth3D.html#a73e8370a7cb130e336da0b35cf1d03cd">PB_MPI</a> = <a class="code" href="classMPI__Problem.html">MPI_Problem&lt;VARS, PST&gt;</a>;                                                         \</div>
+<div class="line">  template &lt;class CALPHAD&gt;                                                                       \</div>
+<div class="line">  using <a class="code" href="namespaceSloth3D.html#ab647ffead2d597269afa4611099c617c">PB_CALPHAD</a> = <a class="code" href="classCalphad__Problem.html">Calphad_Problem&lt;CALPHAD, VARS, PST&gt;</a>;                                        \</div>
+<div class="line">  template &lt;class PROPERTY&gt;                                                                      \</div>
+<div class="line">  using <a class="code" href="namespaceSloth3D.html#a00a4cf7fba52de58a2bdd023b5d2103b">PB_PROPERTY</a> = <a class="code" href="classProperty__problem.html">Property_problem&lt;PROPERTY, VARS, PST&gt;</a>;                                     \</div>
+<div class="line">  template &lt;<span class="keyword">class</span>... Args&gt;                                                                       \</div>
+<div class="line">  SPAS <a class="code" href="SpatialDiscretizationFactory_8hpp.html#afe358ad0ab61c138062362298168407c">setSpatialDiscretization</a>(std::size_t N, Args&amp;&amp;... args) {                                 \</div>
+<div class="line">    return ::setSpatialDiscretization&lt;FECollection, DIM&gt;(N, <span class="keyword">false</span>, std::forward&lt;Args&gt;(args)...); \</div>
+<div class="line">  }                                                                                              \</div>
+<div class="line">  template &lt;<span class="keyword">class</span>... Args&gt;                                                                       \</div>
+<div class="line">  SPAS <a class="code" href="namespaceSloth3D.html#ad65a477e90df708f640c2a8128c69775">setPeriodicSpatialDiscretization</a>(std::size_t N, Args&amp;&amp;... args) {                         \</div>
+<div class="line">    return ::setSpatialDiscretization&lt;FECollection, DIM&gt;(N, <span class="keyword">true</span>, std::forward&lt;Args&gt;(args)...);  \</div>
+<div class="line">  }</div>
+<div class="ttc" id="aSpatialDiscretizationFactory_8hpp_html_afe358ad0ab61c138062362298168407c"><div class="ttname"><a href="SpatialDiscretizationFactory_8hpp.html#afe358ad0ab61c138062362298168407c">setSpatialDiscretization</a></div><div class="ttdeci">std::vector&lt; SpatialDiscretization&lt; T, DIM &gt; * &gt; setSpatialDiscretization(std::size_t N, bool shared_is_periodic, Args &amp;&amp;... args)</div><div class="ttdoc">Build N SpatialDiscretization&lt;T, DIM&gt; objects sharing the same mesh, returned directly as a SPAS-comp...</div><div class="ttdef"><b>Definition:</b> <a href="SpatialDiscretizationFactory_8hpp_source.html#l00063">SpatialDiscretizationFactory.hpp:63</a></div></div>
+<div class="ttc" id="aclassBoundaryConditions_html"><div class="ttname"><a href="classBoundaryConditions.html">BoundaryConditions</a></div><div class="ttdoc">Class used to manage boundary conditions.</div><div class="ttdef"><b>Definition:</b> <a href="BoundaryConditions_8hpp_source.html#l00047">BoundaryConditions.hpp:47</a></div></div>
+<div class="ttc" id="aclassCalphad__Problem_html"><div class="ttname"><a href="classCalphad__Problem.html">Calphad_Problem</a></div><div class="ttdef"><b>Definition:</b> <a href="Calphad__problem_8hpp_source.html#l00044">Calphad_problem.hpp:44</a></div></div>
+<div class="ttc" id="aclassMPI__Problem_html"><div class="ttname"><a href="classMPI__Problem.html">MPI_Problem</a></div><div class="ttdef"><b>Definition:</b> <a href="MPIProblem_8hpp_source.html#l00040">MPIProblem.hpp:40</a></div></div>
+<div class="ttc" id="aclassPostProcessing_html"><div class="ttname"><a href="classPostProcessing.html">PostProcessing</a></div><div class="ttdoc">Class used to manage post-processing of SLOTH simulations.</div><div class="ttdef"><b>Definition:</b> <a href="postprocessing_8hpp_source.html#l00056">postprocessing.hpp:56</a></div></div>
+<div class="ttc" id="aclassProperty__problem_html"><div class="ttname"><a href="classProperty__problem.html">Property_problem</a></div><div class="ttdef"><b>Definition:</b> <a href="PropertyProblem_8hpp_source.html#l00043">PropertyProblem.hpp:43</a></div></div>
+<div class="ttc" id="aclassSpatialDiscretization_html"><div class="ttname"><a href="classSpatialDiscretization.html">SpatialDiscretization</a></div><div class="ttdoc">Class for defining the spatial discretization with a mesh coming from a GMSH file or built by using d...</div><div class="ttdef"><b>Definition:</b> <a href="Spatial_8hpp_source.html#l00105">Spatial.hpp:105</a></div></div>
+<div class="ttc" id="aclassVariable_html"><div class="ttname"><a href="classVariable.html">Variable</a></div><div class="ttdef"><b>Definition:</b> <a href="Variable_8hpp_source.html#l00047">Variable.hpp:47</a></div></div>
+<div class="ttc" id="aclassVariables_html"><div class="ttname"><a href="classVariables.html">Variables</a></div><div class="ttdoc">Class used to manage a list of Variable.</div><div class="ttdef"><b>Definition:</b> <a href="Variables_8hpp_source.html#l00042">Variables.hpp:42</a></div></div>
+<div class="ttc" id="anamespaceSloth3D_html_a00a4cf7fba52de58a2bdd023b5d2103b"><div class="ttname"><a href="namespaceSloth3D.html#a00a4cf7fba52de58a2bdd023b5d2103b">Sloth3D::PB_PROPERTY</a></div><div class="ttdeci">Property_problem&lt; PROPERTY, VARS, PST &gt; PB_PROPERTY</div><div class="ttdef"><b>Definition:</b> <a href="tests_8hpp_source.html#l00222">tests.hpp:222</a></div></div>
+<div class="ttc" id="anamespaceSloth3D_html_a1d13d345a4209a37944a04a17c2b0638"><div class="ttname"><a href="namespaceSloth3D.html#a1d13d345a4209a37944a04a17c2b0638">Sloth3D::VAR</a></div><div class="ttdeci">Test&lt; DIM &gt;::VAR VAR</div><div class="ttdef"><b>Definition:</b> <a href="tests_8hpp_source.html#l00222">tests.hpp:222</a></div></div>
+<div class="ttc" id="anamespaceSloth3D_html_a1df5d73927f0ac0c4fd94945ae87675a"><div class="ttname"><a href="namespaceSloth3D.html#a1df5d73927f0ac0c4fd94945ae87675a">Sloth3D::PST</a></div><div class="ttdeci">Test&lt; DIM &gt;::PST PST</div><div class="ttdef"><b>Definition:</b> <a href="tests_8hpp_source.html#l00222">tests.hpp:222</a></div></div>
+<div class="ttc" id="anamespaceSloth3D_html_a23a8f84fefa2da4b474733bfc4403905"><div class="ttname"><a href="namespaceSloth3D.html#a23a8f84fefa2da4b474733bfc4403905">Sloth3D::SPAS</a></div><div class="ttdeci">std::vector&lt; SPA * &gt; SPAS</div><div class="ttdef"><b>Definition:</b> <a href="tests_8hpp_source.html#l00222">tests.hpp:222</a></div></div>
+<div class="ttc" id="anamespaceSloth3D_html_a73e8370a7cb130e336da0b35cf1d03cd"><div class="ttname"><a href="namespaceSloth3D.html#a73e8370a7cb130e336da0b35cf1d03cd">Sloth3D::PB_MPI</a></div><div class="ttdeci">MPI_Problem&lt; VARS, PST &gt; PB_MPI</div><div class="ttdef"><b>Definition:</b> <a href="tests_8hpp_source.html#l00222">tests.hpp:222</a></div></div>
+<div class="ttc" id="anamespaceSloth3D_html_a751099ee44cbc59067a8dfa3e5c471c5"><div class="ttname"><a href="namespaceSloth3D.html#a751099ee44cbc59067a8dfa3e5c471c5">Sloth3D::BCS</a></div><div class="ttdeci">Test&lt; DIM &gt;::BCS BCS</div><div class="ttdef"><b>Definition:</b> <a href="tests_8hpp_source.html#l00222">tests.hpp:222</a></div></div>
+<div class="ttc" id="anamespaceSloth3D_html_ab647ffead2d597269afa4611099c617c"><div class="ttname"><a href="namespaceSloth3D.html#ab647ffead2d597269afa4611099c617c">Sloth3D::PB_CALPHAD</a></div><div class="ttdeci">Calphad_Problem&lt; CALPHAD, VARS, PST &gt; PB_CALPHAD</div><div class="ttdef"><b>Definition:</b> <a href="tests_8hpp_source.html#l00222">tests.hpp:222</a></div></div>
+<div class="ttc" id="anamespaceSloth3D_html_ab7c8abe97524601dd9ac208256965d24"><div class="ttname"><a href="namespaceSloth3D.html#ab7c8abe97524601dd9ac208256965d24">Sloth3D::DIM</a></div><div class="ttdeci">constexpr int DIM</div><div class="ttdef"><b>Definition:</b> <a href="tests_8hpp_source.html#l00222">tests.hpp:222</a></div></div>
+<div class="ttc" id="anamespaceSloth3D_html_ad62a827b555922d7af674ecb2764d140"><div class="ttname"><a href="namespaceSloth3D.html#ad62a827b555922d7af674ecb2764d140">Sloth3D::SPA</a></div><div class="ttdeci">Test&lt; DIM &gt;::SPA SPA</div><div class="ttdef"><b>Definition:</b> <a href="tests_8hpp_source.html#l00222">tests.hpp:222</a></div></div>
+<div class="ttc" id="anamespaceSloth3D_html_ad65a477e90df708f640c2a8128c69775"><div class="ttname"><a href="namespaceSloth3D.html#ad65a477e90df708f640c2a8128c69775">Sloth3D::setPeriodicSpatialDiscretization</a></div><div class="ttdeci">SPAS setPeriodicSpatialDiscretization(std::size_t N, Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition:</b> <a href="tests_8hpp_source.html#l00222">tests.hpp:222</a></div></div>
+<div class="ttc" id="anamespaceSloth3D_html_aef8c1d3d27ee8464d4d726f57beb1d74"><div class="ttname"><a href="namespaceSloth3D.html#aef8c1d3d27ee8464d4d726f57beb1d74">Sloth3D::FECollection</a></div><div class="ttdeci">Test&lt; DIM &gt;::FECollection FECollection</div><div class="ttdef"><b>Definition:</b> <a href="tests_8hpp_source.html#l00222">tests.hpp:222</a></div></div>
+<div class="ttc" id="anamespaceSloth3D_html_afa0269a6c6d8d70ce660a36286a01100"><div class="ttname"><a href="namespaceSloth3D.html#afa0269a6c6d8d70ce660a36286a01100">Sloth3D::VARS</a></div><div class="ttdeci">Test&lt; DIM &gt;::VARS VARS</div><div class="ttdef"><b>Definition:</b> <a href="tests_8hpp_source.html#l00222">tests.hpp:222</a></div></div>
+<div class="ttc" id="astructTest_html_ab18740f78f935200ebabe5e85778908a"><div class="ttname"><a href="structTest.html#ab18740f78f935200ebabe5e85778908a">Test::FECollection</a></div><div class="ttdeci">mfem::H1_FECollection FECollection</div><div class="ttdoc">Finite Element collection (mfem object)</div><div class="ttdef"><b>Definition:</b> <a href="tests_8hpp_source.html#l00040">tests.hpp:40</a></div></div>
+</div><!-- fragment -->
+<p>Define the DIM, FE/mesh/post-processing aliases, the set(Periodic)<a class="el" href="classSpatialDiscretization.html" title="Class for defining the spatial discretization with a mesh coming from a GMSH file or built by using d...">SpatialDiscretization</a> factories, and the scheme-independent problem aliases (PB_MPI, PB_CALPHAD, PB_PROPERTY - none of them depend on OPERATOR_TYPE, so unlike OPE/PB they are defined once here rather than duplicated per scheme) shared by every scheme (Transient/Steady) for one spatial dimension. </p>
+
+<p class="definition">Definition at line <a class="el" href="tests_8hpp_source.html#l00116">116</a> of file <a class="el" href="tests_8hpp_source.html">tests.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa3d449de9c607474001ead94c2d7bbb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3d449de9c607474001ead94c2d7bbb0">&#9670;&nbsp;</a></span>SLOTH_DEFINE_SCHEME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SLOTH_DEFINE_SCHEME</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">COMMON_NS, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">OPERATOR_TYPE, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">PREFIX&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">  <a class="code" href="tests_8hpp.html#a634bd3997e52322b9e8a2acbdff523c7">SLOTH_IMPORT_COMMON</a>(COMMON_NS)                              \</div>
+<div class="line">  using <a class="code" href="namespaceSlothSteady3D.html#a15209c3bb2fd608d76c8b0be3a635a6b">OPE</a> = OPERATOR_TYPE&lt;FECollection, DIM&gt;;               \</div>
+<div class="line">  using <a class="code" href="namespaceSlothSteady3D.html#a6ba180ee2bee54c9a347be27271ab1a3">PB</a> = <a class="code" href="classProblem.html">Problem&lt;OPE, VARS, PST&gt;</a>;                         \</div>
+<div class="line">  SLOTH_DEFINE_SCHEME_ONLY(OPERATOR_TYPE, PREFIX)</div>
+<div class="ttc" id="aclassProblem_html"><div class="ttname"><a href="classProblem.html">Problem</a></div><div class="ttdoc">Define a PDE Problem.</div><div class="ttdef"><b>Definition:</b> <a href="Problem_8hpp_source.html#l00056">Problem.hpp:56</a></div></div>
+<div class="ttc" id="anamespaceSlothSteady3D_html_a15209c3bb2fd608d76c8b0be3a635a6b"><div class="ttname"><a href="namespaceSlothSteady3D.html#a15209c3bb2fd608d76c8b0be3a635a6b">SlothSteady3D::OPE</a></div><div class="ttdeci">SteadyOperator&lt; FECollection, DIM &gt; OPE</div><div class="ttdef"><b>Definition:</b> <a href="tests_8hpp_source.html#l00269">tests.hpp:269</a></div></div>
+<div class="ttc" id="anamespaceSlothSteady3D_html_a6ba180ee2bee54c9a347be27271ab1a3"><div class="ttname"><a href="namespaceSlothSteady3D.html#a6ba180ee2bee54c9a347be27271ab1a3">SlothSteady3D::PB</a></div><div class="ttdeci">Problem&lt; OPE, VARS, PST &gt; PB</div><div class="ttdef"><b>Definition:</b> <a href="tests_8hpp_source.html#l00269">tests.hpp:269</a></div></div>
+<div class="ttc" id="atests_8hpp_html_a634bd3997e52322b9e8a2acbdff523c7"><div class="ttname"><a href="tests_8hpp.html#a634bd3997e52322b9e8a2acbdff523c7">SLOTH_IMPORT_COMMON</a></div><div class="ttdeci">#define SLOTH_IMPORT_COMMON(COMMON_NS)</div><div class="ttdoc">Re-import the DIM-common aliases from COMMON_NS into the current namespace, one at a time (using-decl...</div><div class="ttdef"><b>Definition:</b> <a href="tests_8hpp_source.html#l00147">tests.hpp:147</a></div></div>
+</div><!-- fragment -->
+<p>Import the DIM-common aliases (including PB_MPI/PB_CALPHAD/ PB_PROPERTY) from COMMON_NS, define the usual unprefixed PDE aliases (OPE, PB) for backward-compatible single-scheme usage, and additionally define their PREFIX-prefixed counterparts via SLOTH_DEFINE_SCHEME_ONLY. </p>
+
+<p class="definition">Definition at line <a class="el" href="tests_8hpp_source.html#l00182">182</a> of file <a class="el" href="tests_8hpp_source.html">tests.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ab7dbc00e17298ec7ec1cd250c836d3a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7dbc00e17298ec7ec1cd250c836d3a5">&#9670;&nbsp;</a></span>SLOTH_DEFINE_SCHEME_ONLY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SLOTH_DEFINE_SCHEME_ONLY</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">OPERATOR_TYPE, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">PREFIX&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">  <span class="keyword">using</span> PREFIX##<a class="code" href="namespaceSlothSteady3D.html#a15209c3bb2fd608d76c8b0be3a635a6b">OPE</a> = OPERATOR_TYPE&lt;FECollection, DIM&gt;; \</div>
+<div class="line">  using PREFIX##<a class="code" href="namespaceSlothSteady3D.html#a6ba180ee2bee54c9a347be27271ab1a3">PB</a> = <a class="code" href="classProblem.html">Problem&lt;PREFIX##OPE, VARS, PST&gt;</a>;</div>
+</div><!-- fragment -->
+<p>Define only the PREFIX-prefixed, scheme-specific PDE aliases (TransientOPE/TransientPB or SteadyOPE/SteadyPB) - the only two that actually depend on OPERATOR_TYPE. Does not define the unprefixed OPE/PB names, so it can be invoked more than once in the same namespace (one call per scheme) without any redefinition clash. FECollection/VARS/PST/DIM must already be visible where this macro is invoked. </p>
+
+<p class="definition">Definition at line <a class="el" href="tests_8hpp_source.html#l00171">171</a> of file <a class="el" href="tests_8hpp_source.html">tests.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a634bd3997e52322b9e8a2acbdff523c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a634bd3997e52322b9e8a2acbdff523c7">&#9670;&nbsp;</a></span>SLOTH_IMPORT_COMMON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SLOTH_IMPORT_COMMON</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">COMMON_NS</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">  <span class="keyword">using</span> <a class="code" href="namespaceSloth3D.html#ab7c8abe97524601dd9ac208256965d24">COMMON_NS::DIM</a>;                      \</div>
+<div class="line">  using <a class="code" href="namespaceSloth3D.html#aef8c1d3d27ee8464d4d726f57beb1d74">COMMON_NS::FECollection</a>;             \</div>
+<div class="line">  using <a class="code" href="namespaceSloth3D.html#afa0269a6c6d8d70ce660a36286a01100">COMMON_NS::VARS</a>;                     \</div>
+<div class="line">  using <a class="code" href="namespaceSloth3D.html#a1d13d345a4209a37944a04a17c2b0638">COMMON_NS::VAR</a>;                      \</div>
+<div class="line">  using <a class="code" href="namespaceSloth3D.html#a1df5d73927f0ac0c4fd94945ae87675a">COMMON_NS::PST</a>;                      \</div>
+<div class="line">  using <a class="code" href="namespaceSloth3D.html#ad62a827b555922d7af674ecb2764d140">COMMON_NS::SPA</a>;                      \</div>
+<div class="line">  using <a class="code" href="namespaceSloth3D.html#a23a8f84fefa2da4b474733bfc4403905">COMMON_NS::SPAS</a>;                     \</div>
+<div class="line">  using <a class="code" href="namespaceSloth3D.html#a751099ee44cbc59067a8dfa3e5c471c5">COMMON_NS::BCS</a>;                      \</div>
+<div class="line">  using <a class="code" href="namespaceSloth3D.html#a73e8370a7cb130e336da0b35cf1d03cd">COMMON_NS::PB_MPI</a>;                   \</div>
+<div class="line">  using <a class="code" href="namespaceSloth3D.html#ab647ffead2d597269afa4611099c617c">COMMON_NS::PB_CALPHAD</a>;               \</div>
+<div class="line">  using <a class="code" href="namespaceSloth3D.html#a00a4cf7fba52de58a2bdd023b5d2103b">COMMON_NS::PB_PROPERTY</a>;              \</div>
+<div class="line">  using <a class="code" href="SpatialDiscretizationFactory_8hpp.html#afe358ad0ab61c138062362298168407c">COMMON_NS::setSpatialDiscretization</a>; \</div>
+<div class="line">  using <a class="code" href="namespaceSloth3D.html#ad65a477e90df708f640c2a8128c69775">COMMON_NS::setPeriodicSpatialDiscretization</a>;</div>
+</div><!-- fragment -->
+<p>Re-import the DIM-common aliases from COMMON_NS into the current namespace, one at a time (using-declarations, not <code>using namespace</code>), so qualified lookups such as SlothTransient2D::DIM stay valid. Each imported name still refers to the same entity as in COMMON_NS, so importing from several namespaces at once is never ambiguous. </p>
+
+<p class="definition">Definition at line <a class="el" href="tests_8hpp_source.html#l00147">147</a> of file <a class="el" href="tests_8hpp_source.html">tests.hpp</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:02 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

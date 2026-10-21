@@ -22,7 +22,7 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="classSpatialDiscretization.html#a3b3c5888bf57dce17ec373743dd6b026" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="classSpatialDiscretization.html#aad93e14e9b083b1ad87fae98b914e06e" target="_top" xlink:title="Construct a new SpatialDiscretization object from a mesh file (e.g. GMSH), or using a dedicated MFEM ...">
 <polygon fill="none" stroke="black" points="0,-6 0,-36 128,-36 128,-6 0,-6"/>
 <text text-anchor="start" x="8" y="-24" font-family="serif" font-size="10.00">SpatialDiscretization</text>
 <text text-anchor="middle" x="64" y="-13" font-family="serif" font-size="10.00">::SpatialDiscretization</text>

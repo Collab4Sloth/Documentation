@@ -1,0 +1,6 @@
+<map id="CouplingFactory.hpp" name="CouplingFactory.hpp">
+<area shape="rect" id="node1" title="Helper building Coupling&lt;PB, PB, ..., PB&gt; (N times) from a std::vector&lt;PB&gt;, with N given explicitly a..." alt="" coords="22,5,185,32"/>
+<area shape="rect" id="node2" href="$ListFactory_8hpp.html" title="List of Factory used to simplify tests setup." alt="" coords="40,80,167,107"/>
+<area shape="rect" id="node3" href="$sloth_8hpp.html" title="List of SLOTH header files." alt="" coords="5,155,92,181"/>
+<area shape="rect" id="node4" href="$tests_8hpp.html" title="Usefull aliases for tests depending on the dimension of space." alt="" coords="117,155,202,181"/>
+</map>

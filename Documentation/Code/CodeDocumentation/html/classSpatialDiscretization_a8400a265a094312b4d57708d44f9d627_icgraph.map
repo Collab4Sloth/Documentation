@@ -1,6 +1,7 @@
 <map id="SpatialDiscretization::set_finite_element_space" name="SpatialDiscretization::set_finite_element_space">
-<area shape="rect" id="node1" title="Set the FE_Collection, the FE_Space and associated size." alt="" coords="212,93,412,134"/>
-<area shape="rect" id="node2" href="$structspecialized__spatial__constructor_3_01T_00_011_01_4.html#a9d28d9d2735b1b9d2ca88de45cfda15b" title="operator() specialized for a mesh built from GMSH file" alt="" coords="5,5,164,61"/>
-<area shape="rect" id="node3" href="$structspecialized__spatial__constructor_3_01T_00_012_01_4.html#a367e7535f528d675144feb9ec420a28b" title="operator() specialized for a mesh built from GMSH file" alt="" coords="5,85,164,141"/>
-<area shape="rect" id="node4" href="$structspecialized__spatial__constructor_3_01T_00_013_01_4.html#ac2e4126ca21896e53bd7800cf989d462" title="operator() specialized for a mesh built from GMSH file" alt="" coords="5,165,164,221"/>
+<area shape="rect" id="node1" title="Set the FE_Collection, the FE_Space and associated size." alt="" coords="224,133,424,174"/>
+<area shape="rect" id="node2" href="$structspecialized__spatial__constructor_3_01T_00_011_01_4.html#a3e4c25ea53097f7c2269e44d79d1fb43" title="operator() specialized for a mesh built from GMSH file" alt="" coords="11,5,170,61"/>
+<area shape="rect" id="node3" href="$structspecialized__spatial__constructor_3_01T_00_012_01_4.html#a6d5f1ce0d3af7c34d92465ca380772d8" title="operator() specialized for a mesh built from GMSH file" alt="" coords="11,85,170,141"/>
+<area shape="rect" id="node4" href="$structspecialized__spatial__constructor_3_01T_00_013_01_4.html#ac821ddb96346f53e756891aa81aec2bd" title="operator() specialized for a mesh built from GMSH file" alt="" coords="11,165,170,221"/>
+<area shape="rect" id="node5" href="$classSpatialDiscretization.html#a7f4c2160625fcd8182d0e152dfb8aeae" title="Construct a new SpatialDiscretization object that shares an already&#45;existing parallel mesh,..." alt="" coords="5,246,176,287"/>
 </map>

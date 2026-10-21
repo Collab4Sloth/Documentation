@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lambda_1897',['Lambda',['../PhysicalPropertiesOptions_8hpp.html#a57248eedb29c80ddfdaa89e42d36a5c4',1,'PhysicalPropertiesOptions.hpp']]]
+  ['iterativesolvertype_2332',['IterativeSolverType',['../SolversOptions_8hpp.html#a4ac4a4d7d8d59ed200cfdd9222d1c17a',1,'SolversOptions.hpp']]]
 ];

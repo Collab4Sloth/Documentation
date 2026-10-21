@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -87,63 +87,76 @@ $(function() {
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Utils_8hpp.html">Utils/Utils.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;mfem.hpp&quot;</span>  <span class="comment">// NOLINT [no include the directory when naming mfem include file]</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span>... Args&gt;</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classTimeDiscretization.html">   41</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTimeDiscretization.html">TimeDiscretization</a> {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; params_;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  std::tuple&lt;Args...&gt; couplings_;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">double</span> initial_iter_{0};</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">double</span> initial_time_{0.};</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">double</span> final_time_;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">double</span> time_step_;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">double</span> current_time_;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">double</span> current_time_step_;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">bool</span> last_step_{<span class="keyword">false</span>};</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  std::vector&lt;std::tuple&lt;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      std::string,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      std::vector&lt;std::tuple&lt;std::string, std::vector&lt;std::tuple&lt;std::string, bool, double&gt;&gt;&gt;&gt;&gt;&gt;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      convergence_;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">bool</span> checkTimeStepConvergence(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; convergence);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">void</span> get_parameters();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">void</span> check_data_before_execute();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">void</span> initialize();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">void</span> execute(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; iter);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">void</span> update();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">void</span> post_processing(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; iter);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">void</span> finalize();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">void</span> time_management();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">void</span> time_info(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; iter);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  std::function&lt;double(<span class="keywordtype">double</span>)&gt; time_step_function_;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="comment">// explicit TimeDiscretization(const Parameters&amp; params, Args&amp;&amp;... couplings);</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classTimeDiscretization.html#a47c18f0495516845007448f09ec039a8">   74</a></span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classTimeDiscretization.html#a47c18f0495516845007448f09ec039a8">TimeDiscretization</a>(<span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; params, Args... couplings);</div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classTimeDiscretization.html#ac03312822e01e7b7bc3cf0c6e456d224">   75</a></span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classTimeDiscretization.html#ac03312822e01e7b7bc3cf0c6e456d224">TimeDiscretization</a>(<span class="keyword">const</span> std::function&lt;<span class="keywordtype">double</span>(<span class="keywordtype">double</span>)&gt;&amp; given_time_step,</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                              <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; params, Args... couplings);</div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classTimeDiscretization.html#a05c03871582050f04f3ebc411032ea31">   77</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classTimeDiscretization.html#a05c03871582050f04f3ebc411032ea31">solve</a>();</div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classTimeDiscretization.html#a6dd4097034fb80b0e725f468ce6d6010">   78</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classTimeDiscretization.html#a6dd4097034fb80b0e725f468ce6d6010">get_tree</a>();</div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classTimeDiscretization.html#a830e2b3d0acb555663f53bdfce29ebcd">   79</a></span>&#160;  <a class="code" href="classTimeDiscretization.html#a830e2b3d0acb555663f53bdfce29ebcd">~TimeDiscretization</a>();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Time_8tpp.html">Time/Time.tpp</a>&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span>... Args&gt;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="structFirstCouplingVarType.html">   47</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structFirstCouplingVarType.html">FirstCouplingVarType</a> {</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="structFirstCouplingVarType.html#a963c264f843d97f3965708a8e5436fbf">   48</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="structFirstCouplingVarType.html#a963c264f843d97f3965708a8e5436fbf">type</a> = <span class="keyword">typename</span> std::tuple_element_t&lt;0, std::tuple&lt;Args...&gt;&gt;::VarType;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span>... Args&gt;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classTimeDiscretization.html">   52</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTimeDiscretization.html">TimeDiscretization</a> {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">using</span> VAR = <span class="keyword">typename</span> <a class="code" href="structFirstCouplingVarType.html">FirstCouplingVarType</a>&lt;Args...&gt;<a class="code" href="namespaceDSMOOTHER__DefaultConstant.html#ac296e61e77fb719a06897f1fe3da9267">::type</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; params_;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  std::tuple&lt;Args...&gt; couplings_;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordtype">double</span> initial_iter_{0};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">double</span> initial_time_{0.};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">double</span> final_time_;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">double</span> time_step_;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">double</span> current_time_;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">double</span> current_time_step_;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">bool</span> last_step_{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  std::vector&lt;std::tuple&lt;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      std::string,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      std::vector&lt;std::tuple&lt;std::string, std::vector&lt;std::tuple&lt;std::string, bool, double&gt;&gt;&gt;&gt;&gt;&gt;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      convergence_;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">bool</span> checkTimeStepConvergence(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; convergence);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">void</span> get_parameters();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">void</span> check_data_before_execute();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">void</span> initialize();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">void</span> execute(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; iter);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">void</span> update();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">void</span> post_processing(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; iter);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">void</span> finalize();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordtype">void</span> time_management();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">void</span> time_info(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; iter);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordtype">void</span> check_duplicate_coupling_name();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordtype">void</span> check_duplicate_post_processing_directory();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  std::function&lt;double(<span class="keywordtype">double</span>)&gt; time_step_function_;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  std::vector&lt;VAR*&gt; CollectAllVariables();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordtype">bool</span> vtk_unified_{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordtype">void</span> save_vtk_unified(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; iter, <span class="keyword">const</span> <span class="keywordtype">double</span>&amp; current_time);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classTimeDiscretization.html#a47c18f0495516845007448f09ec039a8">   90</a></span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classTimeDiscretization.html#a47c18f0495516845007448f09ec039a8">TimeDiscretization</a>(<span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; params, Args... couplings);</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classTimeDiscretization.html#ac03312822e01e7b7bc3cf0c6e456d224">   91</a></span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classTimeDiscretization.html#ac03312822e01e7b7bc3cf0c6e456d224">TimeDiscretization</a>(<span class="keyword">const</span> std::function&lt;<span class="keywordtype">double</span>(<span class="keywordtype">double</span>)&gt;&amp; given_time_step,</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                              <span class="keyword">const</span> <a class="code" href="classParameters.html">Parameters</a>&amp; params, Args... couplings);</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classTimeDiscretization.html#a05c03871582050f04f3ebc411032ea31">   93</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classTimeDiscretization.html#a05c03871582050f04f3ebc411032ea31">solve</a>();</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classTimeDiscretization.html#a6dd4097034fb80b0e725f468ce6d6010">   94</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classTimeDiscretization.html#a6dd4097034fb80b0e725f468ce6d6010">get_tree</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classTimeDiscretization.html#a830e2b3d0acb555663f53bdfce29ebcd">   95</a></span>&#160;  <a class="code" href="classTimeDiscretization.html#a830e2b3d0acb555663f53bdfce29ebcd">~TimeDiscretization</a>();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;};</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Time_8tpp.html">Time/Time.tpp</a>&quot;</span></div>
 <div class="ttc" id="aProblem_8hpp_html"><div class="ttname"><a href="Problem_8hpp.html">Problem.hpp</a></div><div class="ttdoc">Class used to defined a PDE Problem.</div></div>
 <div class="ttc" id="aTime_8tpp_html"><div class="ttname"><a href="Time_8tpp.html">Time.tpp</a></div></div>
 <div class="ttc" id="aUtils_8hpp_html"><div class="ttname"><a href="Utils_8hpp.html">Utils.hpp</a></div><div class="ttdoc">List of all Utils files.</div></div>
 <div class="ttc" id="aclassParameters_html"><div class="ttname"><a href="classParameters.html">Parameters</a></div><div class="ttdef"><b>Definition:</b> <a href="Parameters_8hpp_source.html#l00046">Parameters.hpp:46</a></div></div>
-<div class="ttc" id="aclassTimeDiscretization_html"><div class="ttname"><a href="classTimeDiscretization.html">TimeDiscretization</a></div><div class="ttdef"><b>Definition:</b> <a href="Time_8hpp_source.html#l00041">Time.hpp:41</a></div></div>
+<div class="ttc" id="aclassTimeDiscretization_html"><div class="ttname"><a href="classTimeDiscretization.html">TimeDiscretization</a></div><div class="ttdef"><b>Definition:</b> <a href="Time_8hpp_source.html#l00052">Time.hpp:52</a></div></div>
 <div class="ttc" id="aclassTimeDiscretization_html_a05c03871582050f04f3ebc411032ea31"><div class="ttname"><a href="classTimeDiscretization.html#a05c03871582050f04f3ebc411032ea31">TimeDiscretization::solve</a></div><div class="ttdeci">void solve()</div></div>
 <div class="ttc" id="aclassTimeDiscretization_html_a47c18f0495516845007448f09ec039a8"><div class="ttname"><a href="classTimeDiscretization.html#a47c18f0495516845007448f09ec039a8">TimeDiscretization::TimeDiscretization</a></div><div class="ttdeci">TimeDiscretization(const Parameters &amp;params, Args... couplings)</div></div>
 <div class="ttc" id="aclassTimeDiscretization_html_a6dd4097034fb80b0e725f468ce6d6010"><div class="ttname"><a href="classTimeDiscretization.html#a6dd4097034fb80b0e725f468ce6d6010">TimeDiscretization::get_tree</a></div><div class="ttdeci">void get_tree()</div></div>
 <div class="ttc" id="aclassTimeDiscretization_html_a830e2b3d0acb555663f53bdfce29ebcd"><div class="ttname"><a href="classTimeDiscretization.html#a830e2b3d0acb555663f53bdfce29ebcd">TimeDiscretization::~TimeDiscretization</a></div><div class="ttdeci">~TimeDiscretization()</div></div>
 <div class="ttc" id="aclassTimeDiscretization_html_ac03312822e01e7b7bc3cf0c6e456d224"><div class="ttname"><a href="classTimeDiscretization.html#ac03312822e01e7b7bc3cf0c6e456d224">TimeDiscretization::TimeDiscretization</a></div><div class="ttdeci">TimeDiscretization(const std::function&lt; double(double)&gt; &amp;given_time_step, const Parameters &amp;params, Args... couplings)</div></div>
+<div class="ttc" id="anamespaceDSMOOTHER__DefaultConstant_html_ac296e61e77fb719a06897f1fe3da9267"><div class="ttname"><a href="namespaceDSMOOTHER__DefaultConstant.html#ac296e61e77fb719a06897f1fe3da9267">DSMOOTHER_DefaultConstant::type</a></div><div class="ttdeci">const auto type</div><div class="ttdef"><b>Definition:</b> <a href="SolversOptions_8hpp_source.html#l00150">SolversOptions.hpp:150</a></div></div>
+<div class="ttc" id="astructFirstCouplingVarType_html"><div class="ttname"><a href="structFirstCouplingVarType.html">FirstCouplingVarType</a></div><div class="ttdoc">Trait extracting a single VAR type from a pack of Coupling types, used by TimeDiscretization.</div><div class="ttdef"><b>Definition:</b> <a href="Time_8hpp_source.html#l00047">Time.hpp:47</a></div></div>
+<div class="ttc" id="astructFirstCouplingVarType_html_a963c264f843d97f3965708a8e5436fbf"><div class="ttname"><a href="structFirstCouplingVarType.html#a963c264f843d97f3965708a8e5436fbf">FirstCouplingVarType::type</a></div><div class="ttdeci">typename std::tuple_element_t&lt; 0, std::tuple&lt; Args... &gt; &gt;::VarType type</div><div class="ttdef"><b>Definition:</b> <a href="Time_8hpp_source.html#l00048">Time.hpp:48</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:02 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

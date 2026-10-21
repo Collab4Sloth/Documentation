@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -87,6 +87,9 @@ $(function() {
 <li>check_coefficient_types()
 : <a class="el" href="classSlothNLFormIntegrator.html#a91695d51c2a9e35b25a82128f9d68894">SlothNLFormIntegrator&lt; VARS &gt;</a>
 </li>
+<li>check_duplicate_post_processing_directory()
+: <a class="el" href="classCoupling.html#a820ce0a1dc9cd856679c4a29f5e88c0b">Coupling&lt; Args &gt;</a>
+</li>
 <li>check_variables_consistency()
 : <a class="el" href="classAllenCahnNLFormIntegrator.html#a17f2ecb14509f84fde89c3d0f99071b5">AllenCahnNLFormIntegrator&lt; VARS &gt;</a>
 , <a class="el" href="classInterDiffusionCoefficient.html#a7cf69475b322e1eae457a6ece3ab44e7">InterDiffusionCoefficient</a>
@@ -106,14 +109,26 @@ $(function() {
 , <a class="el" href="classOperatorBase.html#a54659db19141bbc2e173f5ad43d67953">OperatorBase&lt; T, DIM &gt;</a>
 </li>
 <li>Coefficient()
-: <a class="el" href="classCoefficient.html#ada79cb86454fe48a732ee526a329a887">Coefficient</a>
+: <a class="el" href="classCoefficient.html#ae2547e77d85e6a3fbd93e08381b86950">Coefficient</a>
 </li>
 <li>Coefficients()
 : <a class="el" href="classCoefficients.html#ad5976c84bef315024c40c308230a2b82">Coefficients</a>
 </li>
+<li>collect_vtk_coefficients()
+: <a class="el" href="classCoupling.html#a223bf80894a0db0a325dcd415cb1dea7">Coupling&lt; Args &gt;</a>
+, <a class="el" href="classProblemBase.html#a9b9da04ed07afd393876128fa9eb7f52">ProblemBase&lt; VAR, PST &gt;</a>
+</li>
+<li>collect_vtk_fields()
+: <a class="el" href="classCoupling.html#a3eb06a7a333a3e14e90b859c1f3e43eb">Coupling&lt; Args &gt;</a>
+, <a class="el" href="classPostProcessing.html#a20327cabf71784b5a5dbdecd95234d3c">PostProcessing&lt; T, DC, DIM &gt;</a>
+, <a class="el" href="classProblemBase.html#a1893393d357ed6596062fa5c46106d8a">ProblemBase&lt; VAR, PST &gt;</a>
+</li>
+<li>CollectAllVariables()
+: <a class="el" href="classCoupling.html#a2ee36fe15c76df331a494704e0613986">Coupling&lt; Args &gt;</a>
+</li>
 <li>compute()
 : <a class="el" href="classPropertyBase.html#adcd21ad3b4a73d1fe6d14edca1501629">PropertyBase</a>
-, <a class="el" href="classSlothBaseCoefficient.html#a13fe2a9ca475820b8a5a5ae7f30c2c65">SlothBaseCoefficient</a>
+, <a class="el" href="classSlothBaseCoefficient.html#abfabca94c2a0bf61a377bf9f5a2f75af">SlothBaseCoefficient</a>
 </li>
 <li>compute_coefficient()
 : <a class="el" href="classSlothNLFormIntegrator.html#ae1b9ee1ec6bcc316d0e6188625537120">SlothNLFormIntegrator&lt; VARS &gt;</a>
@@ -139,6 +154,9 @@ $(function() {
 <li>compute_total_width()
 : <a class="el" href="classOperatorBase.html#a77913e69d610289dc3d172319b60cf22">OperatorBase&lt; T, DIM &gt;</a>
 </li>
+<li>compute_velocity()
+: <a class="el" href="classAdvectionNLFormIntegrator.html#ac712b1e1f39fd139482461921c34213a">AdvectionNLFormIntegrator&lt; VARS &gt;</a>
+</li>
 <li>ComputeEnergies()
 : <a class="el" href="classOperatorBase.html#ae93baf2d27e0dfe32475160076a0a4d5">OperatorBase&lt; T, DIM &gt;</a>
 </li>
@@ -150,6 +168,9 @@ $(function() {
 </li>
 <li>ComputeIsoVal()
 : <a class="el" href="classOperatorBase.html#af6161d3964b402b1e4df5f6244f897c5">OperatorBase&lt; T, DIM &gt;</a>
+</li>
+<li>configure()
+: <a class="el" href="classVelocityField.html#abe6de0378ca1a2373fee8f5614f8a187">VelocityField</a>
 </li>
 <li>ConstantCoefficient()
 : <a class="el" href="classConstantCoefficient.html#ae4facfdfc10c3a2cbf73f3660787a0c0">ConstantCoefficient</a>
@@ -179,13 +200,12 @@ $(function() {
 , <a class="el" href="classSolverLBFGS.html#a507c2bb2c75c19d0304b42dc8f9159de">SolverLBFGS</a>
 , <a class="el" href="classSolverMINRES.html#ace4d6324acb77a33354204e692a2463f">SolverMINRES</a>
 , <a class="el" href="classSolverNewton.html#ac34b1de15feb99f5539ab9007cf37800">SolverNewton</a>
-, <a class="el" href="classSolverUMFPACK.html#a83fe21379896c4df62b1df2947767d2e">SolverUMFPACK</a>
 </li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:17 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:03 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

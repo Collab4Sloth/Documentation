@@ -25,7 +25,7 @@
   <td id="projectlogo"><img alt="Logo" src="sloth_blanc.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SLOTH
-   &#160;<span id="projectnumber">v2.1.0</span>
+   &#160;<span id="projectnumber">v2.2.0</span>
    </div>
    <div id="projectbrief">The multiphase-field multicomponent framework of the PLEIADES platform based on MFEM</div>
   </td>
@@ -81,7 +81,7 @@ $(function() {
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Utils_8hpp.html">Utils/Utils.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="TimeOptions_8hpp.html#a5c5181a54a4f46149d9c9662b2694167aaeefcc3671b16fd4226e51cfe73a8da7">   38</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="TimeOptions_8hpp.html#a5c5181a54a4f46149d9c9662b2694167">Scheme</a> { <a class="code" href="TimeOptions_8hpp.html#a5c5181a54a4f46149d9c9662b2694167a81a198911eba60d4033c233d3ec90ea1">Implicit</a>, <a class="code" href="TimeOptions_8hpp.html#a5c5181a54a4f46149d9c9662b2694167ad2dd6ed7eca9210b09941bee2c62735f">Explicit</a>, <a class="code" href="TimeOptions_8hpp.html#a5c5181a54a4f46149d9c9662b2694167a6b13795c58342a46044a284487a4fb09">SemiImplicit</a>, <a class="code" href="TimeOptions_8hpp.html#a5c5181a54a4f46149d9c9662b2694167aaeefcc3671b16fd4226e51cfe73a8da7">Constant</a> };</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="TimeOptions_8hpp.html#a5c5181a54a4f46149d9c9662b2694167aaeefcc3671b16fd4226e51cfe73a8da7">   38</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="TimeOptions_8hpp.html#a5c5181a54a4f46149d9c9662b2694167">Scheme</a> { <a class="code" href="TimeOptions_8hpp.html#a5c5181a54a4f46149d9c9662b2694167a81a198911eba60d4033c233d3ec90ea1">Implicit</a>, <a class="code" href="TimeOptions_8hpp.html#a5c5181a54a4f46149d9c9662b2694167ad2dd6ed7eca9210b09941bee2c62735f">Explicit</a>, <a class="code" href="TimeOptions_8hpp.html#a5c5181a54a4f46149d9c9662b2694167a6b13795c58342a46044a284487a4fb09">SemiImplicit</a>, <a class="code" href="TimeOptions_8hpp.html#a5c5181a54a4f46149d9c9662b2694167aaeefcc3671b16fd4226e51cfe73a8da7">Constant</a>, <a class="code" href="TimeOptions_8hpp.html#a5c5181a54a4f46149d9c9662b2694167a1ab5ebbd194ab0b95e5697aca9ba274f">File</a> };</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// struct CoefficientScheme {</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//   enum value { Implicit, Explicit, SemiImplicit };</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//   static value from(const std::string&amp;);</span></div>
@@ -99,6 +99,7 @@ $(function() {
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">static</span> <a class="code" href="structTimeScheme.html#a29f8ffca06683f47a693e679d0d1a0e6">value</a> <a class="code" href="structTimeScheme.html#aac011aba84db035d8b7bd83bae1bb1c1">from</a>(<span class="keyword">const</span> std::string&amp;);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
 <div class="ttc" id="aTimeOptions_8hpp_html_a5c5181a54a4f46149d9c9662b2694167"><div class="ttname"><a href="TimeOptions_8hpp.html#a5c5181a54a4f46149d9c9662b2694167">Scheme</a></div><div class="ttdeci">Scheme</div><div class="ttdef"><b>Definition:</b> <a href="TimeOptions_8hpp_source.html#l00038">TimeOptions.hpp:38</a></div></div>
+<div class="ttc" id="aTimeOptions_8hpp_html_a5c5181a54a4f46149d9c9662b2694167a1ab5ebbd194ab0b95e5697aca9ba274f"><div class="ttname"><a href="TimeOptions_8hpp.html#a5c5181a54a4f46149d9c9662b2694167a1ab5ebbd194ab0b95e5697aca9ba274f">File</a></div><div class="ttdeci">@ File</div><div class="ttdef"><b>Definition:</b> <a href="TimeOptions_8hpp_source.html#l00038">TimeOptions.hpp:38</a></div></div>
 <div class="ttc" id="aTimeOptions_8hpp_html_a5c5181a54a4f46149d9c9662b2694167a6b13795c58342a46044a284487a4fb09"><div class="ttname"><a href="TimeOptions_8hpp.html#a5c5181a54a4f46149d9c9662b2694167a6b13795c58342a46044a284487a4fb09">SemiImplicit</a></div><div class="ttdeci">@ SemiImplicit</div><div class="ttdef"><b>Definition:</b> <a href="TimeOptions_8hpp_source.html#l00038">TimeOptions.hpp:38</a></div></div>
 <div class="ttc" id="aTimeOptions_8hpp_html_a5c5181a54a4f46149d9c9662b2694167a81a198911eba60d4033c233d3ec90ea1"><div class="ttname"><a href="TimeOptions_8hpp.html#a5c5181a54a4f46149d9c9662b2694167a81a198911eba60d4033c233d3ec90ea1">Implicit</a></div><div class="ttdeci">@ Implicit</div><div class="ttdef"><b>Definition:</b> <a href="TimeOptions_8hpp_source.html#l00038">TimeOptions.hpp:38</a></div></div>
 <div class="ttc" id="aTimeOptions_8hpp_html_a5c5181a54a4f46149d9c9662b2694167aaeefcc3671b16fd4226e51cfe73a8da7"><div class="ttname"><a href="TimeOptions_8hpp.html#a5c5181a54a4f46149d9c9662b2694167aaeefcc3671b16fd4226e51cfe73a8da7">Constant</a></div><div class="ttdeci">@ Constant</div><div class="ttdef"><b>Definition:</b> <a href="TimeOptions_8hpp_source.html#l00038">TimeOptions.hpp:38</a></div></div>
@@ -115,7 +116,7 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 9 2026 17:50:16 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Wed Oct 21 2026 17:08:02 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
