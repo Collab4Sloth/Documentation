@@ -4,28 +4,39 @@ icon: simple/linuxcontainers
 
 # On Linux from source files
 
-The following installation procedure describes how to install `SLOTH` from source files. 
+The following installation procedure describes how to install `SLOTH` from source files.
 
-It is assumed that the user has a Unix environment with a recent GCC compiler (C++20 compatible) and MPI libraries. Obviously, Git is also needed to clone source files.
+It is assumed that the user has a Unix environment with a recent GCC compiler (C++20 compatible), MPI libraries, CMake, BLAS/LAPACK and Python 3. Obviously, Git is also needed to clone source files.
 
-The following procedure is mainly based on the installation procedure of a [parallel MPI version of `MFEM`](https://mfem.org/building/). 
-Only the installation of SuiteSparse will be added.
+The following procedure is mainly based on the installation procedure of a [parallel MPI version of `MFEM`](https://mfem.org/building/).
+Only the installation of SuiteSparse (and, optionally, Voro++) is added.
+
+!!! tip "System packages"
+    On Ubuntu, most prerequisites can be installed with:
+    ```bash
+    sudo apt-get install build-essential cmake git libopenmpi-dev openmpi-bin \
+        libblas-dev liblapack-dev libgmp-dev libmpfr-dev python3 python3-sympy
+    ```
+    Package names may differ on other distributions.
+
+!!! tip "Installing on a supercomputer"
+    For an installation on a supercomputer (modules, no internet access, BLAS provided by OpenBLAS...), see the dedicated procedure [on a cluster from source files](cluster.md).
 
 
 ## __Getting source files__
 
-The first step consists in cloning `MFEM`, `METIS`, `HYPRE` and `SuiteSparse`.
+The first step consists in cloning `MFEM`, `METIS`, `HYPRE`, `SuiteSparse` and, optionally, `Voro++`.
 
 !!! warning "Clone of the default branch"
     - The current installation procedure assumes that the clone of the source files is based on the default branch of each repository.
     - Users are free to consider different branches for their installation.
 
-All sources are collected in a global directory called `MFEM4SLOTH`. 
+All sources are collected in a global directory called `MFEM4SLOTH`:
 
 ```bash
-cd $HOME
-mkdir MFEM4SLOTH
-cd MFEM4SLOTH
+export MFEM4SLOTH=$HOME/MFEM4SLOTH   # absolute path, no trailing slash
+mkdir -p $MFEM4SLOTH
+cd $MFEM4SLOTH
 ```
 
 ### MFEM
@@ -59,24 +70,32 @@ SuiteSparse's source files are obtained by running the following command:
 git clone https://github.com/DrTimothyAldenDavis/SuiteSparse.git
 ```
 
-## __Building dependencies__
-The second step consists in building `METIS`, `HYPRE` and `SuiteSparse`.
-
-### METIS
-To build `METIS`, the following command must be run:
+### Voro++ (optional)
+Voro++ is only required if SLOTH is built with the `--voro` option. Its source files are obtained by running the following command:
 
 ```bash
-cd metis-4.0.3
+git clone https://github.com/chr1shr/voro.git
+```
+
+## __Building dependencies__
+The second step consists in building `METIS`, `HYPRE`, `SuiteSparse` and, optionally, `Voro++`.
+
+### METIS
+To build `METIS`, the following commands must be run:
+
+```bash
+cd $MFEM4SLOTH/metis-4.0.3
 make OPTFLAGS=-Wno-error=implicit-function-declaration
 cd ..
 ln -s metis-4.0.3 metis-4.0
 ```
-### HYPRE 
 
-To build `HYPRE`, the following command must be run:
+### HYPRE
+
+To build `HYPRE`, the following commands must be run:
 
 ```bash
-cd hypre/src
+cd $MFEM4SLOTH/hypre/src
 ./configure --disable-fortran
 make -j N
 cd ../..
@@ -87,8 +106,8 @@ where `N` is a user defined number of CPUs.
 ### SuiteSparse
 To build `SuiteSparse`, the following commands must be run:
 
-```bash 
-cd SuiteSparse/
+```bash
+cd $MFEM4SLOTH/SuiteSparse/
 make -j N
 make install DESTDIR=$PWD/INSTALLDIR
 mv INSTALLDIR/usr/local/lib/* lib/
@@ -98,26 +117,73 @@ cd ..
 ```
 where `N` is a user defined number of CPUs.
 
+!!! warning "Check the SuiteSparse layout"
+    MFEM expects the SuiteSparse headers directly in `SuiteSparse/include` and the libraries in `SuiteSparse/lib`. Before building MFEM, check:
+    ```bash
+    ls $MFEM4SLOTH/SuiteSparse/include/umfpack.h
+    ls $MFEM4SLOTH/SuiteSparse/lib/libumfpack*
+    ```
+    Depending on the system, `make install` may use `lib64` instead of `lib`: adapt the first `mv` accordingly.
+    If `umfpack.h` is missing, MFEM fails with `fatal error: umfpack.h: No such file or directory`.
+
 !!! warning "Possible errors"
-    Depending the Unix configuration of the user, it is possible to have errors because some dependencies are not found as, for example, [`MFPR`](https://www.mpfr.org/mpfr-current/mpfr.html). In that case, these missing dependencies must be installed. 
-    For example, to install `MFPR` on Ubuntu Jammy, the following command can be run:
+    Depending on the Unix configuration of the user, it is possible to have errors because some dependencies are not found as, for example, [`MPFR`](https://www.mpfr.org/mpfr-current/mpfr.html). In that case, these missing dependencies must be installed.
+    For example, to install `MPFR` on Ubuntu Jammy, the following command can be run:
     ```bash
     sudo apt-get install libmpfr-dev
     ```
 
+### Voro++ (optional)
+To build `Voro++`, the following commands must be run:
+
+```bash
+cd $MFEM4SLOTH/voro
+cmake -S . -B build -DCMAKE_INSTALL_PREFIX=$PWD/INSTALL
+cmake --build build -j N
+cmake --install build
+cd ..
+```
+where `N` is a user defined number of CPUs.
+
+!!! note "Using Voro++ in SLOTH"
+    Voro++ is not handled by the `--mfem` option. Its installation prefix must be given explicitly when building SLOTH:
+    ```bash
+    bash ../envSloth.sh [OPTIONS] --mfem=$MFEM4SLOTH --voro=$MFEM4SLOTH/voro/INSTALL
+    ```
+
 ## __Building MFEM with dependencies__
-Here, we assume that all dependencies are well built according to the previous directives. 
+Here, we assume that all dependencies are well built according to the previous directives.
 At this stage, `MFEM` can be installed by running the following commands:
 
 ```bash
-cd mfem
-make -j N parallel MFEM_USE_SUITESPARSE=YES 
-make install PREFIX=INSTALLDIR
+cd $MFEM4SLOTH/mfem
+make -j N parallel MFEM_USE_SUITESPARSE=YES
+make install PREFIX=$PWD/INSTALLDIR
 cd ..
-``` 
+```
+
+!!! note "Checking the MFEM configuration"
+    `make parallel` configures MFEM with `MFEM_USE_MPI=YES` and builds the library. The resulting configuration can be checked with:
+    ```bash
+    grep -E "^MFEM_CXX|^MFEM_USE_MPI" config/config.mk
+    ```
+    `MFEM_CXX` must be `mpicxx` and `MFEM_USE_MPI` must be `YES`.
+    If a previous build exists, run `make clean` before `make parallel`.
+
+!!! note "BLAS/LAPACK"
+    By default, MFEM links SuiteSparse with `-llapack -lblas`, which matches the usual Linux packages (`liblapack-dev`, `libblas-dev`). If BLAS/LAPACK is provided by another library (OpenBLAS, MKL...), set it explicitly, e.g.:
+    ```bash
+    make -j N parallel MFEM_USE_SUITESPARSE=YES LAPACK_LIB="-lopenblas"
+    ```
+
+!!! warning "Always reinstall after rebuilding MFEM"
+    SLOTH reads the **installed** configuration (`INSTALLDIR/share/mfem/config.mk`), not `config/config.mk`. After any rebuild of MFEM, run `make install PREFIX=$PWD/INSTALLDIR` again, otherwise SLOTH keeps using the previous flags.
+
+!!! note "Installation directory"
+    `envSloth.sh --mfem=DIR` expects MFEM to be installed in `DIR/mfem/INSTALLDIR` (with `DIR/hypre`, `DIR/metis-4.0` and `DIR/SuiteSparse` next to it). The `PREFIX` above follows this convention.
 
 ## __SLOTH compilation__
-Once MFEM is installed, SLOTH can be built using the `envSloth.sh` shell script. 
+Once MFEM is installed, SLOTH can be built using the `envSloth.sh` shell script.
 This script loads MFEM, defines several environment variables, and compiles SLOTH.
 
 !!! note "Build SLOTH using the `envSloth.sh` shell script"
@@ -128,15 +194,15 @@ This script loads MFEM, defines several environment variables, and compiles SLOT
     Please ensure that [Sympy](https://docs.sympy.org/latest/index.html) is installed.
     Sympy is a mandatory prerequisite to build SLOTH as it is used to handle physical properties.
 
-Once, MFEM and Sympy are installed, please run the following command to build SLOTH:
+Once MFEM and Sympy are installed, please run the following commands to build SLOTH:
 
 ```bash
-mkdir build 
+mkdir build
 cd build
 
 bash ../envSloth.sh [OPTIONS]  --mfem=$MFEM4SLOTH
 ```
-where `$MFEM4SLOTH` is a variable associated with the path towards the `MFEM` installation (_ie_ `$HOME/MFEM4SLOTH` in the current description) and [OPTIONS] are:
+where `$MFEM4SLOTH` is the absolute path of the folder **containing** `mfem/`, `hypre/`, `metis-4.0/` and `SuiteSparse/` (_ie_ `$HOME/MFEM4SLOTH` in the current description, not the MFEM installation directory itself). If Voro++ has been built, add `--voro=$MFEM4SLOTH/voro/INSTALL`. [OPTIONS] are:
 ```bash
 Build type (default: --release):
   --release          Release, with -march=native
@@ -167,20 +233,20 @@ By default, this command builds a static library of SLOTH with release compiler 
 
 !!! tip "Building a shared library of SLOTH"
     The `--shared` option enables building a shared library of SLOTH.
-    However, the user must ensure that the library type used for `MFEM` is compatible. Certain combinations of static and shared libraries may require specific compiler options, such as `-fPIC`. 
-    
+    However, the user must ensure that the library type used for `MFEM` is compatible. Certain combinations of static and shared libraries may require specific compiler options, such as `-fPIC`.
+
 The `make` command within the `envSloth.sh` script does not compile the tests. To compile tests after SLOTH has been built, run the following command:
 
 ```bash
-make tests -j N 
+make tests -j N
 ```
 
-where `N` is a number of CPUs to use for building the tests in parallel. 
+where `N` is a number of CPUs to use for building the tests in parallel.
 
 Once the tests are compiled, users can verify the build by running all tests with `ctest`:
 
 ```bash
-ctest -j N 
+ctest -j N
 ```
 
 ## __SLOTH installation__
@@ -192,6 +258,19 @@ make install
 
 
 !!! note "Installing SLOTH in user-defined repository"
-    By default, SLOTH is installed in a `SlothInstall` directory at the same level as the repository. 
+    By default, SLOTH is installed in a `SlothInstall` directory at the same level as the repository.
 
-    Users can be specify another directory with the `--install` option of the `envSloth.sh` script.
+    Users can specify another directory with the `--install` option of the `envSloth.sh` script.
+
+!!! warning "Reinstalling after a dependency change"
+    The installed CMake files (`SlothInstall/lib/cmake/Sloth/SlothTargets.cmake`) keep the link flags of MFEM at the time SLOTH was built. If MFEM is rebuilt, SLOTH must be rebuilt and reinstalled from an empty `build` directory.
+
+## __Troubleshooting__
+
+| Error | Cause | Fix |
+|---|---|---|
+| Compilation with `g++` instead of `mpicxx` | MPI not enabled in MFEM | `make clean`, then `make parallel` (not `make` alone) |
+| `umfpack.h: No such file or directory` | SuiteSparse headers not in `SuiteSparse/include` | Check the SuiteSparse step (`make install` + `mv`) |
+| `MFEM configuration file (share/mfem/config.mk) not found` | MFEM not installed, or `--mfem` points to the wrong folder | `make install PREFIX=$PWD/INSTALLDIR` in `mfem/`; `--mfem` must point to `MFEM4SLOTH` |
+| `cannot find -llapack` / `-lblas` | BLAS/LAPACK not installed, or provided under another name | Install `liblapack-dev`/`libblas-dev`, or set `LAPACK_LIB` (see MFEM step), then reinstall MFEM |
+| `cannot find -llapack` although `config/config.mk` is correct | MFEM rebuilt but not reinstalled | `make install PREFIX=$PWD/INSTALLDIR` in `mfem/`, then rebuild SLOTH from an empty `build` |
