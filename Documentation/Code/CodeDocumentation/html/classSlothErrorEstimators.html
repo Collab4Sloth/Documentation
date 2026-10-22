@@ -82,17 +82,18 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a35d3499b43b7329393d1d0c1507dc7df"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; mfem::ErrorEstimator &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothErrorEstimators.html#a35d3499b43b7329393d1d0c1507dc7df">get_value</a> (mfem::ParGridFunction &amp;x, mfem::ParFiniteElementSpace &amp;fespace, mfem::ParMesh &amp;mesh)</td></tr>
-<tr class="memdesc:a35d3499b43b7329393d1d0c1507dc7df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a fresh error estimator instance for the current state of <code>x</code>/<code>fespace</code>/<code>mesh</code>.  <a href="classSlothErrorEstimators.html#a35d3499b43b7329393d1d0c1507dc7df">More...</a><br /></td></tr>
+<tr class="memdesc:a35d3499b43b7329393d1d0c1507dc7df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the error estimator of <code>x</code>, ready to compute the local errors of the current solution on the current mesh.  <a href="classSlothErrorEstimators.html#a35d3499b43b7329393d1d0c1507dc7df">More...</a><br /></td></tr>
 <tr class="separator:a35d3499b43b7329393d1d0c1507dc7df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa162ec38ac8b60809bc91dd871636d23"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSlothErrorEstimators.html">SlothErrorEstimators</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothErrorEstimators.html#aa162ec38ac8b60809bc91dd871636d23">operator=</a> (const <a class="el" href="classSlothErrorEstimators.html">SlothErrorEstimators</a> &amp;)=delete</td></tr>
+<tr class="separator:aa162ec38ac8b60809bc91dd871636d23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a347e0d017f774eb68746955edef0012c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothErrorEstimators.html#a347e0d017f774eb68746955edef0012c">SlothErrorEstimators</a> (const <a class="el" href="classSlothErrorEstimators.html">SlothErrorEstimators</a> &amp;)=delete</td></tr>
+<tr class="separator:a347e0d017f774eb68746955edef0012c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa20c62fa57465b538ff4ddc48cf65aaf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothErrorEstimators.html#aa20c62fa57465b538ff4ddc48cf65aaf">SlothErrorEstimators</a> (<a class="el" href="EstimatorsOptions_8hpp.html#a59606e0dfb3c9682835e116b69f86a64">ErrorEstimatorType</a> value)</td></tr>
 <tr class="memdesc:aa20c62fa57465b538ff4ddc48cf65aaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classSlothErrorEstimators.html" title="Base class used to build MFEM (or custom) error estimators at runtime, selected via an ErrorEstimator...">SlothErrorEstimators</a> object for an estimator type that requires no auxiliary integrator (e.g. a custom gradient-based estimator).  <a href="classSlothErrorEstimators.html#aa20c62fa57465b538ff4ddc48cf65aaf">More...</a><br /></td></tr>
 <tr class="separator:aa20c62fa57465b538ff4ddc48cf65aaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3840dced0d7ac187dea37097b10033af"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothErrorEstimators.html#a3840dced0d7ac187dea37097b10033af">SlothErrorEstimators</a> (<a class="el" href="EstimatorsOptions_8hpp.html#a59606e0dfb3c9682835e116b69f86a64">ErrorEstimatorType</a> value, mfem::BilinearFormIntegrator *integ)</td></tr>
 <tr class="memdesc:a3840dced0d7ac187dea37097b10033af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classSlothErrorEstimators.html" title="Base class used to build MFEM (or custom) error estimators at runtime, selected via an ErrorEstimator...">SlothErrorEstimators</a> object for an estimator type that requires a BilinearFormIntegrator (e.g. L2_ZIENKIEWICZ_ZHU).  <a href="classSlothErrorEstimators.html#a3840dced0d7ac187dea37097b10033af">More...</a><br /></td></tr>
 <tr class="separator:a3840dced0d7ac187dea37097b10033af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a123a0c38879175049a300dbca25d962f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothErrorEstimators.html#a123a0c38879175049a300dbca25d962f">UpdateFluxSpaces</a> ()</td></tr>
-<tr class="memdesc:a123a0c38879175049a300dbca25d962f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resynchronize the internal flux finite element spaces of the last estimator built by <a class="el" href="classSlothErrorEstimators.html#a35d3499b43b7329393d1d0c1507dc7df" title="Build a fresh error estimator instance for the current state of x/fespace/mesh.">get_value()</a>, after a mesh mutation that happened while that estimator is still alive.  <a href="classSlothErrorEstimators.html#a123a0c38879175049a300dbca25d962f">More...</a><br /></td></tr>
-<tr class="separator:a123a0c38879175049a300dbca25d962f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a621bf8a91b8c9d95d6f9a3a219879fa4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSlothErrorEstimators.html#a621bf8a91b8c9d95d6f9a3a219879fa4">~SlothErrorEstimators</a> ()</td></tr>
 <tr class="memdesc:a621bf8a91b8c9d95d6f9a3a219879fa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classSlothErrorEstimators.html" title="Base class used to build MFEM (or custom) error estimators at runtime, selected via an ErrorEstimator...">SlothErrorEstimators</a> object.  <a href="classSlothErrorEstimators.html#a621bf8a91b8c9d95d6f9a3a219879fa4">More...</a><br /></td></tr>
 <tr class="separator:a621bf8a91b8c9d95d6f9a3a219879fa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -100,10 +101,10 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class used to build MFEM (or custom) error estimators at runtime, selected via an ErrorEstimatorType. </p>
 
-<p class="definition">Definition at line <a class="el" href="SlothErrorEstimators_8hpp_source.html#l00040">40</a> of file <a class="el" href="SlothErrorEstimators_8hpp_source.html">SlothErrorEstimators.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothErrorEstimators_8hpp_source.html#l00041">41</a> of file <a class="el" href="SlothErrorEstimators_8hpp_source.html">SlothErrorEstimators.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3840dced0d7ac187dea37097b10033af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3840dced0d7ac187dea37097b10033af">&#9670;&nbsp;</a></span>SlothErrorEstimators() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3840dced0d7ac187dea37097b10033af">&#9670;&nbsp;</a></span>SlothErrorEstimators() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -142,7 +143,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="aa20c62fa57465b538ff4ddc48cf65aaf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa20c62fa57465b538ff4ddc48cf65aaf">&#9670;&nbsp;</a></span>SlothErrorEstimators() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa20c62fa57465b538ff4ddc48cf65aaf">&#9670;&nbsp;</a></span>SlothErrorEstimators() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -177,6 +178,32 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a347e0d017f774eb68746955edef0012c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a347e0d017f774eb68746955edef0012c">&#9670;&nbsp;</a></span>SlothErrorEstimators() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SlothErrorEstimators::SlothErrorEstimators </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classSlothErrorEstimators.html">SlothErrorEstimators</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a621bf8a91b8c9d95d6f9a3a219879fa4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a621bf8a91b8c9d95d6f9a3a219879fa4">&#9670;&nbsp;</a></span>~SlothErrorEstimators()</h2>
 
@@ -194,7 +221,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Destroy the <a class="el" href="classSlothErrorEstimators.html" title="Base class used to build MFEM (or custom) error estimators at runtime, selected via an ErrorEstimator...">SlothErrorEstimators</a> object. </p>
 
-<p class="definition">Definition at line <a class="el" href="SlothErrorEstimators_8cpp_source.html#l00130">130</a> of file <a class="el" href="SlothErrorEstimators_8cpp_source.html">SlothErrorEstimators.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothErrorEstimators_8cpp_source.html#l00165">165</a> of file <a class="el" href="SlothErrorEstimators_8cpp_source.html">SlothErrorEstimators.cpp</a>.</p>
 
 </div>
 </div>
@@ -231,7 +258,13 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Build a fresh error estimator instance for the current state of <code>x</code>/<code>fespace</code>/<code>mesh</code>. </p>
+<p>Return the error estimator of <code>x</code>, ready to compute the local errors of the current solution on the current mesh. </p>
+<p>The estimator and its flux spaces are built once per solution field, and reused at each AMR pass:</p><ul>
+<li>no allocation of collections/spaces at each pass;</li>
+<li>after a mesh modification, the flux spaces are updated by the mfem estimator itself (<code>ComputeEstimates()</code> calls <code>Update(false)</code>, which is valid whatever the number of mesh modifications since the previous estimate);</li>
+<li><code>Reset()</code> is called so that the estimates are recomputed even when the mesh is unchanged (the solution has changed). The estimator is rebuilt only if the mesh or the polynomial order associated with <code>x</code> has changed.</li>
+</ul>
+<p>The returned estimator is owned by this object: it must not be used after the next call to <a class="el" href="classSlothErrorEstimators.html#a35d3499b43b7329393d1d0c1507dc7df" title="Return the error estimator of x, ready to compute the local errors of the current solution on the cur...">get_value()</a> for the same <code>x</code>, nor after the destruction of this object.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>Grid function (solution field) the error is estimated on. </td></tr>
@@ -240,33 +273,35 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>std::shared_ptr&lt;mfem::ErrorEstimator&gt; Newly built estimator, owned by the caller. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>std::shared_ptr&lt;mfem::ErrorEstimator&gt; Estimator of <code>x</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SlothErrorEstimators_8cpp_source.html#l00071">71</a> of file <a class="el" href="SlothErrorEstimators_8cpp_source.html">SlothErrorEstimators.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="EstimatorsOptions_8hpp.html#a59606e0dfb3c9682835e116b69f86a64a13c256de4ab0113257c392f53706be9f">KELLY</a>, and <a class="el" href="EstimatorsOptions_8hpp.html#a59606e0dfb3c9682835e116b69f86a64a36d1030ca55257ada2a731c51c63f362">L2_ZIENKIEWICZ_ZHU</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SlothErrorEstimators_8cpp_source.html#l00147">147</a> of file <a class="el" href="SlothErrorEstimators_8cpp_source.html">SlothErrorEstimators.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a123a0c38879175049a300dbca25d962f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a123a0c38879175049a300dbca25d962f">&#9670;&nbsp;</a></span>UpdateFluxSpaces()</h2>
+<a id="aa162ec38ac8b60809bc91dd871636d23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa162ec38ac8b60809bc91dd871636d23">&#9670;&nbsp;</a></span>operator=()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void SlothErrorEstimators::UpdateFluxSpaces </td>
+          <td class="memname"><a class="el" href="classSlothErrorEstimators.html">SlothErrorEstimators</a>&amp; SlothErrorEstimators::operator= </td>
           <td>(</td>
+          <td class="paramtype">const <a class="el" href="classSlothErrorEstimators.html">SlothErrorEstimators</a> &amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p>Resynchronize the internal flux finite element spaces of the last estimator built by <a class="el" href="classSlothErrorEstimators.html#a35d3499b43b7329393d1d0c1507dc7df" title="Build a fresh error estimator instance for the current state of x/fespace/mesh.">get_value()</a>, after a mesh mutation that happened while that estimator is still alive. </p>
-<p>No-op if the current estimator type does not use separate flux spaces (e.g. not yet relevant for Kelly). </p>
-
-<p class="definition">Definition at line <a class="el" href="SlothErrorEstimators_8cpp_source.html#l00117">117</a> of file <a class="el" href="SlothErrorEstimators_8cpp_source.html">SlothErrorEstimators.cpp</a>.</p>
 
 </div>
 </div>
@@ -277,7 +312,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 21 2026 17:08:03 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Oct 22 2026 17:32:35 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

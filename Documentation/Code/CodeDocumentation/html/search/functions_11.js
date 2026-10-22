@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['tabulatedfunction_1925',['TabulatedFunction',['../classTabulatedFunction.html#abd4d4817da17bff8d55f4a68533324ac',1,'TabulatedFunction']]],
-  ['thermaldiffusionfluxnlformintegrator_1926',['ThermalDiffusionFluxNLFormIntegrator',['../classThermalDiffusionFluxNLFormIntegrator.html#ad15bd66f58bd67013c63bc12b4810012',1,'ThermalDiffusionFluxNLFormIntegrator']]],
-  ['timechnlformintegrator_1927',['TimeCHNLFormIntegrator',['../classTimeCHNLFormIntegrator.html#a056cfcc79774a20e3abb044f04878b23',1,'TimeCHNLFormIntegrator']]],
-  ['timediscretization_1928',['TimeDiscretization',['../classTimeDiscretization.html#a47c18f0495516845007448f09ec039a8',1,'TimeDiscretization::TimeDiscretization(const Parameters &amp;params, Args... couplings)'],['../classTimeDiscretization.html#ac03312822e01e7b7bc3cf0c6e456d224',1,'TimeDiscretization::TimeDiscretization(const std::function&lt; double(double)&gt; &amp;given_time_step, const Parameters &amp;params, Args... couplings)']]],
-  ['timenlformintegrator_1929',['TimeNLFormIntegrator',['../classTimeNLFormIntegrator.html#a49270e03aae05d99a720919db2895b1c',1,'TimeNLFormIntegrator']]],
-  ['tolowercase_1930',['toLowerCase',['../UtilsForData_8hpp.html#ad8200839a864ebdf2f129fbffa33967b',1,'UtilsForData.hpp']]],
-  ['tostring_1931',['toString',['../Glossary_8hpp.html#a45a76589598d1c8312072369217b72d4',1,'Glossary.hpp']]],
-  ['touppercase_1932',['toUpperCase',['../UtilsForData_8hpp.html#aa504de245b08376b4309366fa40a5815',1,'UtilsForData.hpp']]],
-  ['transientoperator_1933',['TransientOperator',['../classTransientOperator.html#a8134f895885106c851a67061d25419cc',1,'TransientOperator::TransientOperator(std::vector&lt; SpatialDiscretization&lt; T, DIM &gt; * &gt; spatials, const std::vector&lt; std::string &gt; &amp;rhs_integrators, TimeScheme::value ode, const std::string lhs_integrator)'],['../classTransientOperator.html#a1ca0f38298ae911dd6667f24e673d94f',1,'TransientOperator::TransientOperator(std::vector&lt; SpatialDiscretization&lt; T, DIM &gt; * &gt; spatials, const std::vector&lt; std::string &gt; &amp;rhs_integrators, const Parameters &amp;params, TimeScheme::value ode, const std::string lhs_integrator)']]],
-  ['trim_1934',['trim',['../UtilsForData_8hpp.html#a5a01f705cc7b4a7317a57f6bf41aef25',1,'UtilsForData.hpp']]]
+  ['tabulatedfunction_1953',['TabulatedFunction',['../classTabulatedFunction.html#abd4d4817da17bff8d55f4a68533324ac',1,'TabulatedFunction']]],
+  ['thermaldiffusionfluxnlformintegrator_1954',['ThermalDiffusionFluxNLFormIntegrator',['../classThermalDiffusionFluxNLFormIntegrator.html#ad15bd66f58bd67013c63bc12b4810012',1,'ThermalDiffusionFluxNLFormIntegrator']]],
+  ['timechnlformintegrator_1955',['TimeCHNLFormIntegrator',['../classTimeCHNLFormIntegrator.html#a056cfcc79774a20e3abb044f04878b23',1,'TimeCHNLFormIntegrator']]],
+  ['timediscretization_1956',['TimeDiscretization',['../classTimeDiscretization.html#a47c18f0495516845007448f09ec039a8',1,'TimeDiscretization::TimeDiscretization(const Parameters &amp;params, Args... couplings)'],['../classTimeDiscretization.html#ac03312822e01e7b7bc3cf0c6e456d224',1,'TimeDiscretization::TimeDiscretization(const std::function&lt; double(double)&gt; &amp;given_time_step, const Parameters &amp;params, Args... couplings)']]],
+  ['timenlformintegrator_1957',['TimeNLFormIntegrator',['../classTimeNLFormIntegrator.html#a49270e03aae05d99a720919db2895b1c',1,'TimeNLFormIntegrator']]],
+  ['tolowercase_1958',['toLowerCase',['../UtilsForData_8hpp.html#ad8200839a864ebdf2f129fbffa33967b',1,'UtilsForData.hpp']]],
+  ['tostring_1959',['toString',['../Glossary_8hpp.html#a45a76589598d1c8312072369217b72d4',1,'Glossary.hpp']]],
+  ['touppercase_1960',['toUpperCase',['../UtilsForData_8hpp.html#aa504de245b08376b4309366fa40a5815',1,'UtilsForData.hpp']]],
+  ['transientoperator_1961',['TransientOperator',['../classTransientOperator.html#a8134f895885106c851a67061d25419cc',1,'TransientOperator::TransientOperator(std::vector&lt; SpatialDiscretization&lt; T, DIM &gt; * &gt; spatials, const std::vector&lt; std::string &gt; &amp;rhs_integrators, TimeScheme::value ode, const std::string lhs_integrator)'],['../classTransientOperator.html#a1ca0f38298ae911dd6667f24e673d94f',1,'TransientOperator::TransientOperator(std::vector&lt; SpatialDiscretization&lt; T, DIM &gt; * &gt; spatials, const std::vector&lt; std::string &gt; &amp;rhs_integrators, const Parameters &amp;params, TimeScheme::value ode, const std::string lhs_integrator)']]],
+  ['trim_1962',['trim',['../UtilsForData_8hpp.html#a5a01f705cc7b4a7317a57f6bf41aef25',1,'UtilsForData.hpp']]]
 ];
