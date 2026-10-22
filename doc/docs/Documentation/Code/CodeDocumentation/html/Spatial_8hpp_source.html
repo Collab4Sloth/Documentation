@@ -777,7 +777,7 @@ $(function() {
 <div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;  <span class="comment">// CCI</span></div>
 <div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;  this-&gt;size_ = this-&gt;fespace_-&gt;GetTrueVSize();</div>
 <div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;  <span class="keywordtype">int</span> rank = mfem::Mpi::WorldRank();</div>
-<div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;  <span class="keywordtype">int</span> taille = this-&gt;fespace_-&gt;GlobalTrueVSize();</div>
+<div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;  HYPRE_BigInt taille = this-&gt;fespace_-&gt;GlobalTrueVSize();</div>
 <div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;  <a class="code" href="classSlothInfo.html#a854d3cafdb9f5a77f1063a27d2a27e04">SlothInfo::debug</a>(<span class="stringliteral">&quot;My Id = &quot;</span>, rank, <span class="stringliteral">&quot; TrueVSize = &quot;</span>, size_, <span class="stringliteral">&quot; and GlobalTrueVSize = &quot;</span>, taille);</div>
 <div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;  <span class="comment">// CCI</span></div>
 <div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160;}</div>
@@ -911,7 +911,7 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 21 2026 17:08:02 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Oct 22 2026 17:32:35 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
