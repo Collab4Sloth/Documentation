@@ -20,7 +20,7 @@ That's it — no need to write out `FECollection`, `VARS`, `SPA`, etc. by hand a
 | `SPA`                   | Spatial discretization                              | `SPA spatial(mesh_type, ...)`                                                                        |
 | `SPAS`                  | `std::vector<SPA*>`                                 | Returned by the [SpatialDiscretization factories](../SpatialDiscretization/Meshing/index.md#factory) |
 | `BCS`                   | Boundary conditions                                 | `BCS bcs(&spatial, boundaries)`                                                                      |
-| `PB_MPI`                | `MPI_Problem<VARS, PST>`                            | 0D / lumped-parameter problems                                                                       |
+| `PB_MPI`                | `MPI_Problem<VARS, PST>`                            | MPI rank of each degree of freedom ([load balancing check](../AMR/index.md#load-balance-check))      |
 | `PB_CALPHAD<CALPHAD>`   | `Calphad_Problem<CALPHAD, VARS, PST>`               | Calphad-driven problems                                                                              |
 | `PB_PROPERTY<PROPERTY>` | `Property_problem<PROPERTY, VARS, PST>`             | Property-driven problems                                                                             |
 

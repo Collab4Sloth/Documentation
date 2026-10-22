@@ -10,8 +10,11 @@
     - 2D Reference results for comparison (N=128, t=25): [time_specialized.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/Studies/multigrains/test1/resu/time_specialized.csv)
     - 3D Reference results for comparison (N=128, t=25): [time_specialized.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/Studies/multigrains/test2/resu/time_specialized.csv)
 - 102 grains
-    - Comprehensive test file (2D): [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/Studies/multigrains/test1/main.cpp)
-    - 2D Reference results for comparison (N=128, t=25): [time_specialized.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/Studies/multigrains/test3/resu/time_specialized.csv)
+    - Comprehensive test file (2D): [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/Studies/multigrains/test1/main.cpp), run with the seed file of 102 grains provided in the test directory: `-s <path>/initial-grain-102.txt`
+- Variants with adaptive mesh refinement (partitioned scheme: one problem per grain, the other grains being auxiliary variables, one AMR object per problem)
+    - 2D: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/Studies/multigrains/test1_amr/main.cpp)
+    - 3D: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/Studies/multigrains/test2_amr/main.cpp)
+    - See the [Adaptive Mesh Refinement](../../../../Documentation/User/AMR/index.md#derefinement) page of the user manual.
 
 
 
@@ -50,7 +53,7 @@ Hereabove, $`C`$ corresponds to the number of grains.
 
 ### __Initial condition__
 
-The Voronoi-based 2D initialization is generated using the Voro++ library[@rycroft2009voro].
+The Voronoi-based initialization is generated using the Voro++ library[@rycroft2009voro], from a file of seeds (one grain per line, option `-s` of the test): SLOTH must therefore be built with Voro++ (`--voro` option of `envSloth.sh`, or `+voro` variant of the Spack package).
 
 <figure markdown="span">
     ![MMS](img/poly_30_tess.png){ width=500px}

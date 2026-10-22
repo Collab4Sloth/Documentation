@@ -58,7 +58,7 @@ Other options:
   -h | --help        print this help
 
 Everything after "--" is passed unchanged to CMake, e.g.:
-  bash ../envSloth.sh --np=8 -- -DMATOOLS_VERBOSITY_LEVEL_1=ON
+  bash ../envSloth.sh --exprtk=../../exprtk -- -DMATOOLS_VERBOSITY_LEVEL_1=ON
 ```
 The up-to-date list is printed by `bash ../envSloth.sh --help`. 
 

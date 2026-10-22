@@ -25,3 +25,19 @@ Similar to other types of problems,  `Property_problem` take auxiliary `Variable
       "Property problem", property_params, outputs_property_var, inputs_property_var);
 
     ```
+
+## __MPI problems__ {#mpi}
+
+`MPI_Problem` is a diagnostic problem: at each time step, its single primary variable is set, on each MPI process, to the rank of this process. Saved like any other variable, it shows how the mesh is distributed between processes, for instance to check the [load balancing](../../../AMR/index.md#load-balancing) of a simulation with adaptive mesh refinement.
+
+`MPI_Problem` is a template class instantiated with the `Variables` and `PostProcessing` types (alias `PB_MPI`, see the [Aliases page](../../../Aliases/index.md)). It has no parameter and no auxiliary variable.
+
+!!! example "Definition of an `MPI_Problem`"
+    ```c++
+    auto mpi_init = AnalyticalFunctions<DIM>(std::function<double(const mfem::Vector&, double)>(
+        [&](const mfem::Vector& x, [[maybe_unused]] double time) { return 0.; }));
+    auto vars_mpi = VARS(VAR(&spatial, bcs, "MPI rank", Glossary::MPI, 2, mpi_init));
+    auto pst_mpi = PST(&spatial, p_pst_mpi);
+    PB_MPI problem_mpi(vars_mpi, pst_mpi);
+    ```
+    `problem_mpi` is then added to a coupling like any other problem.

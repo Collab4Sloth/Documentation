@@ -11,9 +11,10 @@ brew install mfem
 ```
 
 By default, this MFEM installation depends on `hypre`, `metis`, `openblas` and `suite-sparse`.
+SLOTH only requires a parallel MFEM (MPI, HYPRE, METIS): the Homebrew formula can be used as is.
 
-!!! note "Adding dependencies to MFEM"
-    It is possible to rebuild MFEM with additional dependencies (see [https://formulae.brew.sh/formula/mfem](https://formulae.brew.sh/formula/mfem) for more details).
+!!! note "Adding dependencies to MFEM (optional)"
+    This is not needed by SLOTH, only for your own extensions. It is possible to rebuild MFEM with additional dependencies (see [https://formulae.brew.sh/formula/mfem](https://formulae.brew.sh/formula/mfem) for more details).
     Here, let us consider the `petsc` dependency. Two changes are needed in the formula file `mfem.rb`:
 
     - Get the formula: run `brew edit mfem` to open the default `mfem.rb` file, or get it from [GitHub](https://github.com/Homebrew/homebrew-core/blob/main/Formula/m/mfem.rb).
@@ -105,7 +106,7 @@ Other options:
   -h | --help        print this help
 
 Everything after "--" is passed unchanged to CMake, e.g.:
-  bash ../envSloth.sh --np=8 -- -DMATOOLS_VERBOSITY_LEVEL_1=ON
+  bash ../envSloth.sh --exprtk=../../exprtk -- -DMATOOLS_VERBOSITY_LEVEL_1=ON
 ```
 The up-to-date list is printed by `bash ../envSloth.sh --help`.
 

@@ -84,9 +84,9 @@ At this stage, the `CALPHAD` object in `Calphad_Problem` remains to be defined. 
 
 Depending on the simulation, three kind of `CALPHAD` models are currently available:
 
-- [a Gibbs Energy Minimizer](gem)
-- [an analytical thermodynamic model](analytical)
-- [metamodels](ia)
+- [a Gibbs Energy Minimizer](#gem)
+- [an analytical thermodynamic model](#analytical)
+- [metamodels](#ia)
 
 Users will find on this page all information to define and use these `CALPHAD` models. 
 

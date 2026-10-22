@@ -67,8 +67,11 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-types">Protected Types</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classAMRBase-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -94,8 +97,15 @@ $(function() {
 </div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:af39f73d000125c34e1bc37743de6e02c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#af39f73d000125c34e1bc37743de6e02c">Variable_t</a> = std::remove_reference_t&lt; decltype(std::declval&lt; VAR &amp; &gt;()[0])&gt;</td></tr>
+<tr class="separator:af39f73d000125c34e1bc37743de6e02c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a48be4a1c7b1aa5145514b139fe29b39d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#a48be4a1c7b1aa5145514b139fe29b39d">AMRBase</a> (const <a class="el" href="classAMRBase.html">AMRBase</a> &amp;)=delete</td></tr>
+<tr class="separator:a48be4a1c7b1aa5145514b139fe29b39d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1205f008294fdc01c4ab4eca10e94dc6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#a1205f008294fdc01c4ab4eca10e94dc6">AMRBase</a> (mfem::ParMesh &amp;mesh, bool is_nc_simplices)</td></tr>
 <tr class="separator:a1205f008294fdc01c4ab4eca10e94dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff074c329a64a620ed982f280bf8eac8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#aff074c329a64a620ed982f280bf8eac8">EnsureCriteriaSet</a> () const</td></tr>
@@ -104,23 +114,57 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad4e11de7a06af4e7259c6f1ed11a2880"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06fdc3cdcdf9c8c39043ff8d607c0cbd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#a06fdc3cdcdf9c8c39043ff8d607c0cbd">InitialRefine</a> (VAR &amp;vars, std::vector&lt; VAR * &gt; auxvars)</td></tr>
 <tr class="separator:a06fdc3cdcdf9c8c39043ff8d607c0cbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92c653208dabce9bf48409b9247d8dfc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAMRBase.html">AMRBase</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#a92c653208dabce9bf48409b9247d8dfc">operator=</a> (const <a class="el" href="classAMRBase.html">AMRBase</a> &amp;)=delete</td></tr>
+<tr class="separator:a92c653208dabce9bf48409b9247d8dfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc123fb66419757ee1474f50a970508b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#afc123fb66419757ee1474f50a970508b">SetCoupledVariables</a> (const std::vector&lt; VAR * &gt; &amp;coupled_vars)</td></tr>
+<tr class="separator:afc123fb66419757ee1474f50a970508b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36e98c7a288f3e5c3b8f48d5be08e638"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#a36e98c7a288f3e5c3b8f48d5be08e638">SetCriteria</a> (<a class="el" href="classSlothErrorEstimators.html">SlothErrorEstimators</a> *estimator, const <a class="el" href="classParameters.html">Parameters</a> &amp;params)</td></tr>
 <tr class="separator:a36e98c7a288f3e5c3b8f48d5be08e638"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada0577a386bb6ab63259e6bb77bebe8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#ada0577a386bb6ab63259e6bb77bebe8a">StepDerefine</a> (VAR &amp;vars, std::vector&lt; VAR * &gt; auxvars)</td></tr>
 <tr class="separator:ada0577a386bb6ab63259e6bb77bebe8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94950b9fdb231d1fab5bfe88c0e547c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#a94950b9fdb231d1fab5bfe88c0e547c0">StepRebalance</a> (VAR &amp;vars, std::vector&lt; VAR * &gt; auxvars)</td></tr>
+<tr class="separator:a94950b9fdb231d1fab5bfe88c0e547c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addb77aedab3eeef6225d06e49b72d241"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#addb77aedab3eeef6225d06e49b72d241">StepRefine</a> (VAR &amp;vars, std::vector&lt; VAR * &gt; auxvars)</td></tr>
 <tr class="separator:addb77aedab3eeef6225d06e49b72d241"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb9f82f47bf1636cb3c97ef0551f36dc"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#adb9f82f47bf1636cb3c97ef0551f36dc">~AMRBase</a> ()=default</td></tr>
-<tr class="separator:adb9f82f47bf1636cb3c97ef0551f36dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8be558e88cc4f31a0185fecf85c30002"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#a8be558e88cc4f31a0185fecf85c30002">~AMRBase</a> ()</td></tr>
+<tr class="separator:a8be558e88cc4f31a0185fecf85c30002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr class="memitem:a49b2f16987be8453b215b27764fd83f6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#a49b2f16987be8453b215b27764fd83f6">PilotRegistry_t</a> = std::map&lt; const mfem::ParMesh *, std::map&lt; const void *, <a class="el" href="classAMRBase.html">AMRBase</a>&lt; VAR &gt; * &gt; &gt;</td></tr>
+<tr class="separator:a49b2f16987be8453b215b27764fd83f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="memitem:a84e77aa51719c1c8dc43e120093f47e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#a84e77aa51719c1c8dc43e120093f47e7">AccumulateNormalizedError</a> (<a class="el" href="classAMRBase.html#af39f73d000125c34e1bc37743de6e02c">Variable_t</a> &amp;var, mfem::Vector &amp;combined_error)</td></tr>
+<tr class="separator:a84e77aa51719c1c8dc43e120093f47e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72533316d5652cd01b7ff0f5b0102e25"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#a72533316d5652cd01b7ff0f5b0102e25">Derefine</a> (VAR &amp;var, std::vector&lt; VAR * &gt; auxvars)=0</td></tr>
 <tr class="separator:a72533316d5652cd01b7ff0f5b0102e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bd2e90763993026bd4a691b13f4f014"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#a3bd2e90763993026bd4a691b13f4f014">DerefineByConsensus</a> (VAR &amp;vars, const std::vector&lt; VAR * &gt; &amp;coupled_vars)</td></tr>
+<tr class="separator:a3bd2e90763993026bd4a691b13f4f014"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8bc76caef80cfa6b9c71240672d2a1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#ac8bc76caef80cfa6b9c71240672d2a1f">EnsureNCMeshIfNeeded</a> ()</td></tr>
 <tr class="separator:ac8bc76caef80cfa6b9c71240672d2a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a172da3cfac15ed18abd0a1ea594eb43b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#a172da3cfac15ed18abd0a1ea594eb43b">IsOnMesh</a> (const mfem::ParFiniteElementSpace *fes) const</td></tr>
+<tr class="separator:a172da3cfac15ed18abd0a1ea594eb43b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a703848d5e70dba949ff5b8bedfa723ca"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; <a class="el" href="classAMRBase.html#af39f73d000125c34e1bc37743de6e02c">Variable_t</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#a703848d5e70dba949ff5b8bedfa723ca">PilotVariables</a> (VAR &amp;vars)=0</td></tr>
+<tr class="separator:a703848d5e70dba949ff5b8bedfa723ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90422523379130e2679a254fbdd95b5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#a90422523379130e2679a254fbdd95b5c">PrintLoadBalance</a> (const std::string &amp;stage) const</td></tr>
+<tr class="separator:a90422523379130e2679a254fbdd95b5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab12f4317f949744e3921047af261e363"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#ab12f4317f949744e3921047af261e363">Rebalance</a> (VAR &amp;vars, const std::vector&lt; VAR * &gt; &amp;auxvars)</td></tr>
+<tr class="separator:ab12f4317f949744e3921047af261e363"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5010118ede8653c6dbcd129eee17887"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#ae5010118ede8653c6dbcd129eee17887">Refine</a> (VAR &amp;vars)=0</td></tr>
 <tr class="separator:ae5010118ede8653c6dbcd129eee17887"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac62d93572bfec3ff6cc80b41728f2384"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#ac62d93572bfec3ff6cc80b41728f2384">RegisterPilots</a> (VAR &amp;vars)</td></tr>
+<tr class="separator:ac62d93572bfec3ff6cc80b41728f2384"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dafe544814715d2720a00dba7df9324"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#a7dafe544814715d2720a00dba7df9324">UpdateVariables</a> (VAR &amp;vars, const std::vector&lt; VAR * &gt; &amp;auxvars)</td></tr>
+<tr class="separator:a7dafe544814715d2720a00dba7df9324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a73537a62e890621088c4b3acdc294db9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classAMRBase.html#af39f73d000125c34e1bc37743de6e02c">Variable_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#a73537a62e890621088c4b3acdc294db9">FindVariable</a> (VAR &amp;vars, const std::string &amp;name)</td></tr>
+<tr class="separator:a73537a62e890621088c4b3acdc294db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bf8a22e5c812a6fe6a3be8b8a8b1333"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classAMRBase.html#a49b2f16987be8453b215b27764fd83f6">PilotRegistry_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#a2bf8a22e5c812a6fe6a3be8b8a8b1333">PilotRegistry</a> ()</td></tr>
+<tr class="separator:a2bf8a22e5c812a6fe6a3be8b8a8b1333"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -134,22 +178,73 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:aaaf56068331ff545f7a2f54dc405cb53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5016a87a20dc39e3ccc759db2df3dee"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#aa5016a87a20dc39e3ccc759db2df3dee">amr_nc_limit_</a> {0}</td></tr>
 <tr class="separator:aa5016a87a20dc39e3ccc759db2df3dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42a1197a39dbd0e093bf534b42095e65"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#a42a1197a39dbd0e093bf534b42095e65">amr_rebalance_</a> {false}</td></tr>
+<tr class="separator:a42a1197a39dbd0e093bf534b42095e65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6cc9529fee22fe86e7abf5a294f5c59"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#ad6cc9529fee22fe86e7abf5a294f5c59">amr_scale_down_factor_</a> {0.25}</td></tr>
 <tr class="separator:ad6cc9529fee22fe86e7abf5a294f5c59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9250b5ade46cd1e97d1a60a31c5aabe5"><td class="memItemLeft" align="right" valign="top">std::vector&lt; VAR * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#a9250b5ade46cd1e97d1a60a31c5aabe5">coupled_vars_</a></td></tr>
+<tr class="separator:a9250b5ade46cd1e97d1a60a31c5aabe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af06c7b31b5f8d55a2ca73481f06db099"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#af06c7b31b5f8d55a2ca73481f06db099">is_nc_simplices_</a></td></tr>
 <tr class="separator:af06c7b31b5f8d55a2ca73481f06db099"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a454d3247ad9c45a81e9c1cbc48d9db02"><td class="memItemLeft" align="right" valign="top">mfem::ParMesh &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#a454d3247ad9c45a81e9c1cbc48d9db02">par_mesh_</a></td></tr>
 <tr class="separator:a454d3247ad9c45a81e9c1cbc48d9db02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5cdda77d8349e70e19f7ff3e4fee15d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAMRBase.html#aa5cdda77d8349e70e19f7ff3e4fee15d">pending_rebalance_</a> {false}</td></tr>
+<tr class="separator:aa5cdda77d8349e70e19f7ff3e4fee15d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class VAR&gt;<br />
 class AMRBase&lt; VAR &gt;</h3>
 
 
-<p class="definition">Definition at line <a class="el" href="AMRBase_8hpp_source.html#l00040">40</a> of file <a class="el" href="AMRBase_8hpp_source.html">AMRBase.hpp</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<p class="definition">Definition at line <a class="el" href="AMRBase_8hpp_source.html#l00046">46</a> of file <a class="el" href="AMRBase_8hpp_source.html">AMRBase.hpp</a>.</p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a49b2f16987be8453b215b27764fd83f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49b2f16987be8453b215b27764fd83f6">&#9670;&nbsp;</a></span>PilotRegistry_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VAR &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classAMRBase.html">AMRBase</a>&lt; VAR &gt;::<a class="el" href="classAMRBase.html#a49b2f16987be8453b215b27764fd83f6">PilotRegistry_t</a> =  std::map&lt;const mfem::ParMesh*, std::map&lt;const void*, <a class="el" href="classAMRBase.html">AMRBase</a>&lt;VAR&gt;*&gt; &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AMRBase_8hpp_source.html#l00098">98</a> of file <a class="el" href="AMRBase_8hpp_source.html">AMRBase.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af39f73d000125c34e1bc37743de6e02c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af39f73d000125c34e1bc37743de6e02c">&#9670;&nbsp;</a></span>Variable_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VAR &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classAMRBase.html">AMRBase</a>&lt; VAR &gt;::<a class="el" href="classAMRBase.html#af39f73d000125c34e1bc37743de6e02c">Variable_t</a> =  std::remove_reference_t&lt;decltype(std::declval&lt;VAR&amp;&gt;()[0])&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AMRBase_8hpp_source.html#l00048">48</a> of file <a class="el" href="AMRBase_8hpp_source.html">AMRBase.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1205f008294fdc01c4ab4eca10e94dc6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1205f008294fdc01c4ab4eca10e94dc6">&#9670;&nbsp;</a></span>AMRBase()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1205f008294fdc01c4ab4eca10e94dc6">&#9670;&nbsp;</a></span>AMRBase() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -178,8 +273,8 @@ template&lt;class VAR &gt; </div>
 
 </div>
 </div>
-<a id="adb9f82f47bf1636cb3c97ef0551f36dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb9f82f47bf1636cb3c97ef0551f36dc">&#9670;&nbsp;</a></span>~AMRBase()</h2>
+<a id="a8be558e88cc4f31a0185fecf85c30002"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8be558e88cc4f31a0185fecf85c30002">&#9670;&nbsp;</a></span>~AMRBase()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -198,7 +293,35 @@ template&lt;class VAR &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a48be4a1c7b1aa5145514b139fe29b39d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48be4a1c7b1aa5145514b139fe29b39d">&#9670;&nbsp;</a></span>AMRBase() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VAR &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classAMRBase.html">AMRBase</a>&lt; VAR &gt;::<a class="el" href="classAMRBase.html">AMRBase</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classAMRBase.html">AMRBase</a>&lt; VAR &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -206,6 +329,44 @@ template&lt;class VAR &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a84e77aa51719c1c8dc43e120093f47e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84e77aa51719c1c8dc43e120093f47e7">&#9670;&nbsp;</a></span>AccumulateNormalizedError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VAR &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classAMRBase.html">AMRBase</a>&lt; VAR &gt;::AccumulateNormalizedError </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classAMRBase.html#af39f73d000125c34e1bc37743de6e02c">Variable_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>var</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mfem::Vector &amp;&#160;</td>
+          <td class="paramname"><em>combined_error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a72533316d5652cd01b7ff0f5b0102e25"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a72533316d5652cd01b7ff0f5b0102e25">&#9670;&nbsp;</a></span>Derefine()</h2>
 
@@ -243,6 +404,44 @@ template&lt;class VAR &gt; </div>
 </div><div class="memdoc">
 
 <p>Implemented in <a class="el" href="classSingleVariableAMR.html#ac55a2192472e7ee9b5722438c62e625c">SingleVariableAMR&lt; VAR &gt;</a>, and <a class="el" href="classMultiVariableMaxAMR.html#aa02e43bbe451f68e31e41786d129ab1e">MultiVariableMaxAMR&lt; VAR &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a3bd2e90763993026bd4a691b13f4f014"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bd2e90763993026bd4a691b13f4f014">&#9670;&nbsp;</a></span>DerefineByConsensus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VAR &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classAMRBase.html">AMRBase</a>&lt; VAR &gt;::DerefineByConsensus </td>
+          <td>(</td>
+          <td class="paramtype">VAR &amp;&#160;</td>
+          <td class="paramname"><em>vars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; VAR * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>coupled_vars</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -312,6 +511,44 @@ template&lt;class VAR &gt; </div>
 
 </div>
 </div>
+<a id="a73537a62e890621088c4b3acdc294db9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73537a62e890621088c4b3acdc294db9">&#9670;&nbsp;</a></span>FindVariable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VAR &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classAMRBase.html#af39f73d000125c34e1bc37743de6e02c">Variable_t</a>* <a class="el" href="classAMRBase.html">AMRBase</a>&lt; VAR &gt;::FindVariable </td>
+          <td>(</td>
+          <td class="paramtype">VAR &amp;&#160;</td>
+          <td class="paramname"><em>vars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a06fdc3cdcdf9c8c39043ff8d607c0cbd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a06fdc3cdcdf9c8c39043ff8d607c0cbd">&#9670;&nbsp;</a></span>InitialRefine()</h2>
 
@@ -338,6 +575,185 @@ template&lt;class VAR &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a172da3cfac15ed18abd0a1ea594eb43b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a172da3cfac15ed18abd0a1ea594eb43b">&#9670;&nbsp;</a></span>IsOnMesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VAR &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classAMRBase.html">AMRBase</a>&lt; VAR &gt;::IsOnMesh </td>
+          <td>(</td>
+          <td class="paramtype">const mfem::ParFiniteElementSpace *&#160;</td>
+          <td class="paramname"><em>fes</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a92c653208dabce9bf48409b9247d8dfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92c653208dabce9bf48409b9247d8dfc">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VAR &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classAMRBase.html">AMRBase</a>&amp; <a class="el" href="classAMRBase.html">AMRBase</a>&lt; VAR &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classAMRBase.html">AMRBase</a>&lt; VAR &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2bf8a22e5c812a6fe6a3be8b8a8b1333"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bf8a22e5c812a6fe6a3be8b8a8b1333">&#9670;&nbsp;</a></span>PilotRegistry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VAR &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classAMRBase.html#a49b2f16987be8453b215b27764fd83f6">PilotRegistry_t</a>&amp; <a class="el" href="classAMRBase.html">AMRBase</a>&lt; VAR &gt;::PilotRegistry </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a703848d5e70dba949ff5b8bedfa723ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a703848d5e70dba949ff5b8bedfa723ca">&#9670;&nbsp;</a></span>PilotVariables()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VAR &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::vector&lt;<a class="el" href="classAMRBase.html#af39f73d000125c34e1bc37743de6e02c">Variable_t</a>*&gt; <a class="el" href="classAMRBase.html">AMRBase</a>&lt; VAR &gt;::PilotVariables </td>
+          <td>(</td>
+          <td class="paramtype">VAR &amp;&#160;</td>
+          <td class="paramname"><em>vars</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classSingleVariableAMR.html#a28048ca507944d090bf7221255a47fa8">SingleVariableAMR&lt; VAR &gt;</a>, and <a class="el" href="classMultiVariableMaxAMR.html#a0560f4912ef0641113d22682ac7722dc">MultiVariableMaxAMR&lt; VAR &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a90422523379130e2679a254fbdd95b5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90422523379130e2679a254fbdd95b5c">&#9670;&nbsp;</a></span>PrintLoadBalance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VAR &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classAMRBase.html">AMRBase</a>&lt; VAR &gt;::PrintLoadBalance </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>stage</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab12f4317f949744e3921047af261e363"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab12f4317f949744e3921047af261e363">&#9670;&nbsp;</a></span>Rebalance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VAR &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classAMRBase.html">AMRBase</a>&lt; VAR &gt;::Rebalance </td>
+          <td>(</td>
+          <td class="paramtype">VAR &amp;&#160;</td>
+          <td class="paramname"><em>vars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; VAR * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>auxvars</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -369,6 +785,54 @@ template&lt;class VAR &gt; </div>
 </div><div class="memdoc">
 
 <p>Implemented in <a class="el" href="classSingleVariableAMR.html#a16ae0f27eb0e9bca29256f020e9b35cf">SingleVariableAMR&lt; VAR &gt;</a>, and <a class="el" href="classMultiVariableMaxAMR.html#ae7005711abe024fced5b60f0a32e0530">MultiVariableMaxAMR&lt; VAR &gt;</a>.</p>
+
+</div>
+</div>
+<a id="ac62d93572bfec3ff6cc80b41728f2384"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac62d93572bfec3ff6cc80b41728f2384">&#9670;&nbsp;</a></span>RegisterPilots()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VAR &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classAMRBase.html">AMRBase</a>&lt; VAR &gt;::RegisterPilots </td>
+          <td>(</td>
+          <td class="paramtype">VAR &amp;&#160;</td>
+          <td class="paramname"><em>vars</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afc123fb66419757ee1474f50a970508b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc123fb66419757ee1474f50a970508b">&#9670;&nbsp;</a></span>SetCoupledVariables()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VAR &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classAMRBase.html">AMRBase</a>&lt; VAR &gt;::SetCoupledVariables </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; VAR * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>coupled_vars</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -432,6 +896,36 @@ template&lt;class VAR &gt; </div>
 
 </div>
 </div>
+<a id="a94950b9fdb231d1fab5bfe88c0e547c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94950b9fdb231d1fab5bfe88c0e547c0">&#9670;&nbsp;</a></span>StepRebalance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VAR &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classAMRBase.html">AMRBase</a>&lt; VAR &gt;::StepRebalance </td>
+          <td>(</td>
+          <td class="paramtype">VAR &amp;&#160;</td>
+          <td class="paramname"><em>vars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; VAR * &gt;&#160;</td>
+          <td class="paramname"><em>auxvars</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="addb77aedab3eeef6225d06e49b72d241"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#addb77aedab3eeef6225d06e49b72d241">&#9670;&nbsp;</a></span>StepRefine()</h2>
 
@@ -462,6 +956,44 @@ template&lt;class VAR &gt; </div>
 
 </div>
 </div>
+<a id="a7dafe544814715d2720a00dba7df9324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dafe544814715d2720a00dba7df9324">&#9670;&nbsp;</a></span>UpdateVariables()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VAR &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classAMRBase.html">AMRBase</a>&lt; VAR &gt;::UpdateVariables </td>
+          <td>(</td>
+          <td class="paramtype">VAR &amp;&#160;</td>
+          <td class="paramname"><em>vars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; VAR * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>auxvars</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a7f6245ec3303b5ee55ca772dcf2f0080"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7f6245ec3303b5ee55ca772dcf2f0080">&#9670;&nbsp;</a></span>amr_estimator_</h2>
@@ -485,7 +1017,7 @@ template&lt;class VAR &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="AMRBase_8hpp_source.html#l00050">50</a> of file <a class="el" href="AMRBase_8hpp_source.html">AMRBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AMRBase_8hpp_source.html#l00064">64</a> of file <a class="el" href="AMRBase_8hpp_source.html">AMRBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -511,7 +1043,7 @@ template&lt;class VAR &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="AMRBase_8hpp_source.html#l00044">44</a> of file <a class="el" href="AMRBase_8hpp_source.html">AMRBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AMRBase_8hpp_source.html#l00053">53</a> of file <a class="el" href="AMRBase_8hpp_source.html">AMRBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -537,7 +1069,7 @@ template&lt;class VAR &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="AMRBase_8hpp_source.html#l00047">47</a> of file <a class="el" href="AMRBase_8hpp_source.html">AMRBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AMRBase_8hpp_source.html#l00056">56</a> of file <a class="el" href="AMRBase_8hpp_source.html">AMRBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -563,7 +1095,7 @@ template&lt;class VAR &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="AMRBase_8hpp_source.html#l00048">48</a> of file <a class="el" href="AMRBase_8hpp_source.html">AMRBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AMRBase_8hpp_source.html#l00057">57</a> of file <a class="el" href="AMRBase_8hpp_source.html">AMRBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -589,7 +1121,33 @@ template&lt;class VAR &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="AMRBase_8hpp_source.html#l00046">46</a> of file <a class="el" href="AMRBase_8hpp_source.html">AMRBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AMRBase_8hpp_source.html#l00055">55</a> of file <a class="el" href="AMRBase_8hpp_source.html">AMRBase.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a42a1197a39dbd0e093bf534b42095e65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42a1197a39dbd0e093bf534b42095e65">&#9670;&nbsp;</a></span>amr_rebalance_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VAR &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classAMRBase.html">AMRBase</a>&lt; VAR &gt;::amr_rebalance_ {false}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AMRBase_8hpp_source.html#l00058">58</a> of file <a class="el" href="AMRBase_8hpp_source.html">AMRBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -615,7 +1173,33 @@ template&lt;class VAR &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="AMRBase_8hpp_source.html#l00045">45</a> of file <a class="el" href="AMRBase_8hpp_source.html">AMRBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AMRBase_8hpp_source.html#l00054">54</a> of file <a class="el" href="AMRBase_8hpp_source.html">AMRBase.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a9250b5ade46cd1e97d1a60a31c5aabe5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9250b5ade46cd1e97d1a60a31c5aabe5">&#9670;&nbsp;</a></span>coupled_vars_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VAR &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;VAR*&gt; <a class="el" href="classAMRBase.html">AMRBase</a>&lt; VAR &gt;::coupled_vars_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AMRBase_8hpp_source.html#l00061">61</a> of file <a class="el" href="AMRBase_8hpp_source.html">AMRBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -641,7 +1225,7 @@ template&lt;class VAR &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="AMRBase_8hpp_source.html#l00043">43</a> of file <a class="el" href="AMRBase_8hpp_source.html">AMRBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AMRBase_8hpp_source.html#l00052">52</a> of file <a class="el" href="AMRBase_8hpp_source.html">AMRBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -667,7 +1251,33 @@ template&lt;class VAR &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="AMRBase_8hpp_source.html#l00042">42</a> of file <a class="el" href="AMRBase_8hpp_source.html">AMRBase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AMRBase_8hpp_source.html#l00051">51</a> of file <a class="el" href="AMRBase_8hpp_source.html">AMRBase.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aa5cdda77d8349e70e19f7ff3e4fee15d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5cdda77d8349e70e19f7ff3e4fee15d">&#9670;&nbsp;</a></span>pending_rebalance_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class VAR &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classAMRBase.html">AMRBase</a>&lt; VAR &gt;::pending_rebalance_ {false}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AMRBase_8hpp_source.html#l00062">62</a> of file <a class="el" href="AMRBase_8hpp_source.html">AMRBase.hpp</a>.</p>
 
 </div>
 </div>
@@ -677,7 +1287,7 @@ template&lt;class VAR &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 21 2026 17:08:03 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Oct 22 2026 17:32:35 for SLOTH by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

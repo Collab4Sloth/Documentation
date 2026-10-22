@@ -28,15 +28,31 @@ whichever way SLOTH was installed:
 
 === "Spack (Linux)"
 
-    SLOTH provides its own Spack package (directory `spack_repo` of the repository):
+    SLOTH is available in Spack's builtin repository (Spack 1.0 or later):
 
     ```bash
-    spack repo add /path/to/SLOTH/spack_repo
     spack install sloth
     spack load sloth
     ```
 
-    `spack info sloth` lists the versions and variants (`+shared`, `+mumps`, `+petsc`, `+native`).
+    If `spack info sloth` finds no package (Spack older than 1.0, or SLOTH not yet in your
+    copy of the builtin repository), use the package shipped with the sources (see below).
+
+    `spack info sloth` lists the versions and variants (`+shared`, `+mumps`, `+voro`,
+    `+bigint`, `+native`). For instance, to enable Voro++ (Voronoi tessellations):
+
+    ```bash
+    spack install sloth +voro
+    ```
+
+    To build the development version from a local clone instead, use the package
+    shipped with the sources (directory `spack_repo`):
+
+    ```bash
+    spack repo add /path/to/SLOTH/spack_repo
+    spack install sloth@master
+    spack load sloth
+    ```
 
 The installation contains the static (or shared) library, the headers, the CMake
 package files (`lib/cmake/Sloth`), the coefficient generator (`scripts/GenerateCoefficient.py`)
@@ -92,7 +108,7 @@ target_link_libraries(main PRIVATE Sloth::Sloth)
 ```
 
 `Sloth::Sloth` brings everything needed to compile and link: C++20, SLOTH and MFEM headers,
-MFEM and its dependencies (HYPRE, METIS, SuiteSparse, MPI, ...).
+MFEM and its dependencies (HYPRE, METIS, MPI, ...).
 In `main.cpp`, include `Sloth/sloth.hpp` and `Sloth/tests.hpp`
 (the latter defines the `Sloth1D`, `Sloth2D` and `Sloth3D` namespaces).
 

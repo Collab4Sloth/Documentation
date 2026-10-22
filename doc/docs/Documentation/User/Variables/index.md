@@ -59,7 +59,7 @@ The latter enables to use pre-defined mathematical functions currently used in t
         ```c++
         int level_of_storage= 2;
         std::string variable_name = "phi";
-        GlossaryQuantity variable_type = Glossary::Phi;
+        GlossaryQuantity variable_type = Glossary::PhaseField;
         double initial_condition = 0.;
         auto var_1 = VAR(&spatial, bcs, variable_name, variable_type, level_of_storage, initial_condition);
         ```
@@ -71,7 +71,7 @@ The latter enables to use pre-defined mathematical functions currently used in t
         ```c++
         int level_of_storage= 2;
         std::string variable_name = "T";
-        GlossaryQuantity variable_type = Glossary::T;
+        GlossaryQuantity variable_type = Glossary::Temperature;
 
         auto initial_condition = std::function<double(const mfem::Vector&, double)>(
             [](const mfem::Vector& vcoord, double time) {
@@ -96,7 +96,7 @@ The latter enables to use pre-defined mathematical functions currently used in t
         ```c++
         int level_of_storage= 2;
         std::string variable_name = "phi";
-        GlossaryQuantity variable_type = Glossary::Phi;
+        GlossaryQuantity variable_type = Glossary::PhaseField;
         const double center_x = 0.;
         const double a_x = 1.;
         const double thickness = 5.e-5;
@@ -118,7 +118,7 @@ The latter enables to use pre-defined mathematical functions currently used in t
         ```c++
         int level_of_storage= 2;
         std::string variable_name = "phi";
-        GlossaryQuantity variable_type = Glossary::Phi;
+        GlossaryQuantity variable_type = Glossary::PhaseField;
 
         std::string file_restart = "phi_2.gf";
         auto initial_condition =  std::make_tuple(file_restart, gf_folder_path)
@@ -170,7 +170,7 @@ In this case, the list of attributes (*ie* the `PhysicalNames` defined in the `G
     ```c++
     int level_of_storage= 2;
     std::string variable_name = "phi";
-    GlossaryQuantity variable_type = Glossary::Phi;
+    GlossaryQuantity variable_type = Glossary::PhaseField;
     double initial_condition = 1.;
     std::set<std::string> list_of_physical_names = {"cluster"};
     auto var_1 = VAR(&spatial, bcs, variable_name, variable_type, level_of_storage, initial_condition, list_of_physical_names);
@@ -203,14 +203,15 @@ This information is provided in the form of a list of strings associated with th
     ```c++
         int level_of_storage= 2;
         std::string variable_name_1 = "Ma";
-        GlossaryQuantity variable_type = Glossary::Mob;
+        GlossaryQuantity variable_type = Glossary::Mobility;
         double initial_condition_1 = 1.e-15;
         auto var_1 = VAR(&spatial, bcs, variable_name_1, variable_type, level_of_storage, initial_condition_1);
         var_1.set_additional_information("SOLUTION", "A", "mob");
 
         std::string variable_name_2 = "mu_a";
+        GlossaryQuantity variable_type_2 = Glossary::ChemicalPotential;
         double initial_condition_2 = 1.e5;
-        auto var_2 = VAR(&spatial, bcs, variable_name_2, variable_type, level_of_storage, initial_condition_2);
+        auto var_2 = VAR(&spatial, bcs, variable_name_2, variable_type_2, level_of_storage, initial_condition_2);
         var_2.set_additional_information("A", "mu");
     ```
 
@@ -233,15 +234,15 @@ Each `SLOTH` problem (see [Problems](../MultiPhysicsCouplingScheme/Problems/inde
 
     ```c++
         std::string variable_name_1 = "mu_a";
-        GlossaryQuantity variable_type = Glossary::Mu;
+        GlossaryQuantity variable_type = Glossary::ChemicalPotential;
         double initial_condition_1 = 1.e5;
         auto var_1 = VAR(&spatial, bcs, variable_name_1, variable_type, level_of_storage, initial_condition_1);
         var_1.set_additional_information("A", "mu");
 
-        std::string variable_name_2 = "mu_a";
+        std::string variable_name_2 = "mu_b";
         double initial_condition_2 = 2.e5;
         auto var_2 = VAR(&spatial, bcs, variable_name_2, variable_type, level_of_storage, initial_condition_2);
-        var_2.set_additional_information("A", "mu");
+        var_2.set_additional_information("B", "mu");
 
         auto mu_var = VARS(var_1, var_2);
     ```

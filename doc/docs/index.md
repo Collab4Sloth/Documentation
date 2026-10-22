@@ -28,29 +28,31 @@ icon: material/shield-home
     ---
 
      - Phase-field modelling
-     - Finite Element
+     - Finite Element + Adaptive Mesh Refinement 
      - Unsteady, nonlinear, coupled problems
      - Massively parallel MPI implementation 
      - Calphad-informed phase-field
-
--   __News__
-
-    ---
-
-     - [NuFuel workshop](https://www.eera-jpnm.com/events/Nufuel2025) [9/25]
-     - [NuMat Conference](https://www.elsevier.com/events/conferences/all/the-nuclear-materials-conference) [10/24]
-
 
 
 -   __Latest Release__
 
     ---
+    :octicons-tag-24: [__V2.2.0__](https://github.com/Collab4Sloth/SLOTH/releases/tag/v2.2.0)
+
     :octicons-tag-24: [__V2.1.0__](https://github.com/Collab4Sloth/SLOTH/releases/tag/v2.1.0)
 
     :octicons-tag-24: [__V2.0.1__](https://github.com/Collab4Sloth/SLOTH/releases/tag/v2.0.1)
     
-    :octicons-tag-24: [__V1.0.0__](https://github.com/Collab4Sloth/SLOTH/releases/tag/v1.0.0)
-    
+<!--     
+-   __News__
+
+    ---
+
+     - [MFEM Community Workshop](https://mfem.org/workshop25/) [9/25]
+     - [NuFuel workshop](https://www.eera-jpnm.com/events/Nufuel2025) [9/25]
+     - [NuMat Conference](https://www.elsevier.com/events/conferences/all/the-nuclear-materials-conference) [10/24] -->
+
+
 
 -   __Contact__
 

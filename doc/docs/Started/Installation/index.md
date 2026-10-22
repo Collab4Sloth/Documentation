@@ -1,6 +1,6 @@
 # Installation guide
 
-`SLOTH` is written in `C++17`/`C++20`. It can be built under Linux and MacOS using `CMake`.
+`SLOTH` is written in `C++20`. It can be built under Linux and MacOS using `CMake`.
 
 !!! note "Two mandatory prerequisites for building SLOTH"
     - SLOTH is built on top of the `MFEM` Finite Element library developed in C++ by LLNL[@mfem].
