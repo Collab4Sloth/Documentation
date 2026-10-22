@@ -99,6 +99,10 @@ nav:
         - Started/HowTo/Simple/index.md
       - Tutorials:
         - Started/HowTo/Tutorials/index.md
+        - Started/HowTo/Tutorials/InputFile/index.md
+        - Started/HowTo/Tutorials/Coefficients/index.md
+        - Started/HowTo/Tutorials/SaveRestart/index.md
+        - Started/HowTo/Tutorials/AMR/index.md
     - Examples:
       - Started/Examples/index.md
       - Cahn-Hilliard: 
@@ -117,10 +121,22 @@ nav:
           - Started/Examples/CahnHilliard/example6/index.md
       - Allen-Cahn:
         - Started/Examples/AllenCahn/index.md
+        - Example 1:
+          - Started/Examples/AllenCahn/example1/index.md
+        - Example 2:
+          - Started/Examples/AllenCahn/example2/index.md
+        - Example 3:
+          - Started/Examples/AllenCahn/example3/index.md
       - Allen-Cahn + Cahn Hilliard:
         - Started/Examples/Multiphasefield/index.md
+        - Example 1:
+          - Started/Examples/Multiphasefield/example1/index.md
+        - Example 2:
+          - Started/Examples/Multiphasefield/example2/index.md
       - Mass Diffusion:
         - Started/Examples/MassDiffusion/index.md
+        - Example 1:
+          - Started/Examples/MassDiffusion/example1/index.md
       - Heat Transfer:
         - Started/Examples/HeatTransfer/index.md
         - Example 1:

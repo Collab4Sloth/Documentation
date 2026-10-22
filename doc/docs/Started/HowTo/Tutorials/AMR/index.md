@@ -78,11 +78,11 @@ Its arguments are:
 
 1. The shared mesh (dereferenced `mfem::ParMesh` returned by `get_mesh()`).
 2. Whether non-conforming refinement was allowed on simplex elements when the mesh was built, obtained with `is_nc_simplices()` — this must simply mirror the `allow_nc_simplices` value passed to the `SPA` constructor (see [Step 1](#1-building-amr-ready-spatial-discretizations)); for quadrangle/hexahedron meshes such as the one used here, it is left at its default (`false`).
-3. The index, within `VARS`, of the variable used to drive the refinement (`0` here refers to the first variable declared in `vars`, i.e. `phi`).
+3. The variable used to drive the refinement (the *pilot variable*), given by its index within `VARS` (`0` here refers to the first variable declared in `vars`, i.e. `phi`) or by its name (`"phi"`).
 
 !!! note "Driving the refinement with several variables"
 
-    When a single variable is not sufficient to characterize where the mesh should be refined, `SLOTH` also provides `MultiVariableMaxAMR<VARS>`, which considers *every* variable of `VARS` at once — its constructor takes no variable index. For each element, the per-variable errors are combined by taking their maximum, and the mesh is refined/derefined once from this combined criterion, so an element is a candidate as soon as any variable needs it resolved there. Refer to the [Adaptive Mesh Refinement](../../../../Documentation/User/AMR/index.md) page of the User Manual for details.
+    When a single variable is not sufficient to characterize where the mesh should be refined, `SLOTH` also provides `MultiVariableMaxAMR<VARS>`, which considers several pilot variables at once: every variable of `VARS` by default, or the variables whose names are given as a third argument (e.g. `std::vector<std::string>{"phi", "c"}`). For each element, the per-variable errors are combined by taking their maximum, and the mesh is refined/derefined once from this combined criterion, so an element is a candidate as soon as any pilot variable needs it resolved there. Refer to the [Adaptive Mesh Refinement](../../../../Documentation/User/AMR/index.md) page of the User Manual for details.
 
 ### Step 2 – Set the refinement criteria
 
@@ -99,7 +99,10 @@ amr.SetCriteria(/*estimator*/ &estimator, amr_params);
 | `max_elem_error` | `double` | Error threshold above which an element is flagged for refinement. |
 | `amr_max_level` | `int` | Maximum number of refinement levels allowed for any element. |
 | `nc_limit` | `int` | Maximum allowed level difference between two neighboring elements (`0` = no limit enforced). |
-| `max_preref_cycles` | `int` | Number of refinement/derefinement passes applied to the mesh, based on the initial condition of the driving variable, before the first time step is solved. |
+| `max_preref_cycles` | `int` | Maximum number of refinement cycles applied to the mesh, based on the initial condition of the driving variable, before the first time step is solved. |
+
+!!! tip "Parallel computations: load balancing"
+    Refinement concentrates the elements on the MPI processes that own the interfaces. Adding `Parameter("rebalance", true)` to `amr_params` redistributes the mesh between processes after each AMR pass that modified it. See the [Load balancing](../../../../Documentation/User/AMR/index.md#load-balancing) section of the User Manual.
 
 ### Step 3 – Attach the AMR driver to the problem
 
@@ -122,6 +125,8 @@ Enabling AMR on a `SLOTH` simulation consists of:
 A complete working example is available in the SLOTH repository:
 
 - **2D spinodal decomposition (Cahn-Hilliard) with AMR:** <https://github.com/Collab4Sloth/SLOTH/blob/master/tests/CahnHilliard/2D/test2_amr/main.cpp>
+- **2D rising bubble (Cahn-Hilliard + advection) with AMR and load balancing:** <https://github.com/Collab4Sloth/SLOTH/blob/master/tests/CahnHilliard/2D/test6/main.cpp>
+- **2D grain growth (one problem per grain, one AMR object per problem):** <https://github.com/Collab4Sloth/SLOTH/blob/master/tests/Studies/multigrains/test1_amr/main.cpp>
 
 The figure 1 shows the evolution of the spinodal decomposition with AMR (until a final simulation time set to $`50000`$). 
 

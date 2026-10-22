@@ -19,7 +19,7 @@ The development team primarily uses [`ParaView`](https://www.paraview.org) to vi
     In that case, please contact the development team so that an interface to the `mfem::VisitDataCollection` class can be provided.
 
 !!! example "Alias declaration for `PostProcessing` class template"
-    The alias `PST` is provided by `SLOTH` namespaces (see the [Aliases page](../../../Aliases/index.md)) for `PostProcessing` class template.
+    The alias `PST` is provided by `SLOTH` namespaces (see the [Aliases page](../Aliases/index.md)) for `PostProcessing` class template.
         
 Without loss of generality, the alias `PST` is used in this page in order to simplify each code snippet.
 

@@ -117,6 +117,7 @@ TransientOPE oper(spatials, {"CahnHilliard", "SplitAdvection"}, params, TimeSche
 - Spatial discretization: $`\mathcal{Q}_1`$ finite elements, coarse mesh $`15\times 24`$ ($`15\times 24\times 15`$ in 3D, $`h=r_b/3`$)
 - AMR: `SingleVariableAMR` driven by $`\phi`$ with a Kelly error estimator, 3 levels of refinement ($`h_{min}=r_b/24`$, i.e. about 3.4 elements in $`\epsilon`$), 3 cycles of pre-refinement of the initial condition
 - AMR thresholds: `max_elem_error` $`=10^{-6}`$ in 2D ($`10^{-12}`$ in 3D), `scale_down_factor` $`=10^{-2}`$
+- Load balancing (2D test): the mesh is rebalanced between MPI processes after each AMR pass (`rebalance` AMR parameter), and an `MPI_Problem` saves the MPI rank of each degree of freedom (`Saves_<config>/ProblemMPI`) to visualize the partition (see [Load balancing](../../../../Documentation/User/AMR/index.md#load-balancing))
 - Newton solver: relative tolerance $`10^{-10}`$, absolute tolerance $`10^{-14}`$
 - Iterative solver: HYPRE_GMRES 
 - Preconditioner: HYPRE_ILU

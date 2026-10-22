@@ -26,7 +26,7 @@ spack install mfem+mpi
 
 !!! note "Installing a given version of MFEM"
     The user is free to install a different version of MFEM.
-    By default, the latest release is installed. Otherwise, `@version` must be added to the spec, e.g.:
+    By default, the latest release is installed. Otherwise, `@<version>` must be added to the spec, e.g.:
     ```bash
     spack install mfem@4.9+mpi
     ```
@@ -78,7 +78,7 @@ Other options:
   -h | --help        print this help
 
 Everything after "--" is passed unchanged to CMake, e.g.:
-  bash ../envSloth.sh --np=8 -- -DMATOOLS_VERBOSITY_LEVEL_1=ON
+  bash ../envSloth.sh --exprtk=../../exprtk -- -DMATOOLS_VERBOSITY_LEVEL_1=ON
 ```
 The up-to-date list is printed by `bash ../envSloth.sh --help`.
 

@@ -654,13 +654,13 @@ Once a `Problem` is fully defined, an AMR driver can be attached to it so that `
     
         phase_field_pb.set_amr(&amr);
     ```
-    An error estimator is first built from an `MFEM` integrator and wrapped into a `SlothErrorEstimators` object, then used to configure a `SingleVariableAMR` driver — here based on `phi` (index `0` in `vars`). The driver is finally attached to the problem with `set_amr()`, exactly as `setGeometry()` is used above for axisymmetric geometries.
+    An error estimator is first built from an `MFEM` integrator and wrapped into a `SlothErrorEstimators` object, then used to configure a `SingleVariableAMR` driver — here based on `phi` (index `0` in `vars`; the name `"phi"` can be used instead). The driver is finally attached to the problem with `set_amr()`, exactly as `setGeometry()` is used above for axisymmetric geometries.
  
 !!! note "Full AMR workflow"
     This page only shows how to attach an already-configured AMR driver to a `Problem`. 
 
     - For the complete step-by-step workflow, see the [AMR tutorial](../../../../../Started/HowTo/Tutorials/AMR/index.md);
-    - For the full reference on error estimators (`ErrorEstimatorType::KELLY`, `ErrorEstimatorType::ZZ`) and AMR drivers (`SingleVariableAMR`, `MultiVariableMaxAMR`), see the [Adaptive Mesh Refinement](../../../AMR/index.md) page of the User Manual.
+    - For the full reference on error estimators (`ErrorEstimatorType::KELLY`, `ErrorEstimatorType::L2_ZIENKIEWICZ_ZHU`), AMR objects (`SingleVariableAMR`, `MultiVariableMaxAMR`), pilot variables and load balancing between MPI processes, see the [Adaptive Mesh Refinement](../../../AMR/index.md) page of the User Manual.
 
 
 #### __How to set auxiliary variables after construction?__ {#set-auxvariables}
