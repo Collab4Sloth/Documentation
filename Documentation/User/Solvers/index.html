@@ -4455,13 +4455,13 @@
 </thead>
 <tbody>
 <tr>
-<td>Implicit (and steady problems)</td>
+<td>Implicit: <code>EulerImplicit</code>, <code>BDF2</code>, <code>SDIRK23</code>, <code>SDIRK33</code> (and steady problems)</td>
 <td><code>NLSolverType::NEWTON</code></td>
 <td><code>HypreSolverType::HYPRE_GMRES</code></td>
 <td><code>HyprePreconditionerType::HYPRE_ILU</code></td>
 </tr>
 <tr>
-<td>Explicit (mass matrix inversion)</td>
+<td>Explicit: <code>EulerExplicit</code>, <code>RungeKutta4</code> (mass matrix inversion)</td>
 <td>-</td>
 <td><code>HypreSolverType::HYPRE_GMRES</code></td>
 <td><code>HyprePreconditionerType::HYPRE_ILU</code></td>
