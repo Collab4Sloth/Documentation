@@ -20,8 +20,8 @@ Default solvers depend on the time scheme:
 
 |  Time scheme | Default nonlinear solver | Default linear solver | Default preconditioner |
 | --- | --- | --- | --- |
-| Implicit (and steady problems) | `NLSolverType::NEWTON` | `HypreSolverType::HYPRE_GMRES` | `HyprePreconditionerType::HYPRE_ILU` |
-| Explicit (mass matrix inversion) | - | `HypreSolverType::HYPRE_GMRES` | `HyprePreconditionerType::HYPRE_ILU` |
+| Implicit: `EulerImplicit`, `BDF2`, `SDIRK23`, `SDIRK33` (and steady problems) | `NLSolverType::NEWTON` | `HypreSolverType::HYPRE_GMRES` | `HyprePreconditionerType::HYPRE_ILU` |
+| Explicit: `EulerExplicit`, `RungeKutta4` (mass matrix inversion) | - | `HypreSolverType::HYPRE_GMRES` | `HyprePreconditionerType::HYPRE_ILU` |
 
 : Table 1 - default solvers used by `SLOTH` operators
 
@@ -93,6 +93,7 @@ Nonlinear solvers are selected with the enumeration `NLSolverType`.
     | `print_level` | `int` | -1 | `MFEM` print level |
 
     : Table 3 - parameters allowed with `NLSolverType::NEWTON`
+
 
 === "LBFGS"
     Limited-memory BFGS quasi-Newton algorithm - `MFEM` class [`mfem::LBFGSSolver`](https://docs.mfem.org/html/classmfem_1_1LBFGSSolver.html). No Jacobian matrix is inverted: the linear solver and preconditioner of the operator are not used.

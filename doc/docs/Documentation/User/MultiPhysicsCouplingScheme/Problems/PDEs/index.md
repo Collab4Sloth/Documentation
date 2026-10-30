@@ -322,6 +322,20 @@ In the figure 3, the integrators are gathered in two grouped:
 
         This integrator can be only associated with the `Fourier` integrator to solve heat transfer equation for two-phase problems. 
 
+        The phase field $`\varphi`$ is an auxiliary variable of the heat problem. Its time derivative is computed from its current and previous values with the **physical** time step:
+
+        ```math
+
+        \begin{align}
+        \frac{\partial \varphi}{\partial t} \approx \frac{\varphi - \varphi_{\mathrm{old}}}{\Delta t}
+        \end{align}
+
+        ```
+
+        !!! warning "Accuracy of the time derivative"
+            This approximation is first order in time, whatever the time scheme: a coupling with latent heat is first order, even with `TimeScheme::BDF2`. 
+            Moreover, it depends on the position of the phase-field problem in the [partitioned coupling](#bdf2-coupling): if the phase-field problem is solved **before** the heat problem, the derivative is computed over the current time step; otherwise, it is the derivative of the previous time step.
+
     === "SourceTerm"
         This integrator concerns the following vectorial expression:
         
@@ -459,18 +473,30 @@ In the figure 3, the integrators are gathered in two grouped:
         In `SLOTH`, each operator is designed to solve a system of PDEs with a monolithic algorithm.
         **The size of the vector of spatial discretisation objects must be equal to the number of unknowns**.
 
-    Regarding the time stepping, five ODE solvers have been integrated in `SLOTH` among those provided by `MFEM`:
+    Regarding the time stepping, six ODE solvers are available in `SLOTH`: five are provided by `MFEM`, and a variable-step BDF2 method is implemented in `SLOTH`:
 
     - implicit methods (solved with the nonlinear algorithm):
         -  The backward Euler method  (`SLOTH` object `TimeScheme::EulerImplicit`),
         -  The two-stage, third-order singly diagonal implicit Runge-Kutta method  (`SLOTH` object `TimeScheme::SDIRK23`),
         -  The three-stage, third-order singly diagonal implicit Runge-Kutta method  (`SLOTH` object `TimeScheme::SDIRK33`),
+        -  The variable-step, second-order backward differentiation formula (`SLOTH` object `TimeScheme::BDF2`), see [How to use the BDF2 time scheme?](#bdf2),
     - explicit methods (only the mass matrix is inverted):
         -  The forward Euler method  (`SLOTH` object `TimeScheme::EulerExplicit`),
         -  The Runge-Kutta 4 method (`SLOTH` object `TimeScheme::RungeKutta4`).
+
+    | Time scheme | Order | Nonlinear solves per time step |
+    | --- | :---: | :---: |
+    | `TimeScheme::EulerImplicit` | 1 | 1 |
+    | `TimeScheme::BDF2` | 2 | 1 |
+    | `TimeScheme::SDIRK23` | 3 | 2 |
+    | `TimeScheme::SDIRK33` | 3 | 3 |
+    | `TimeScheme::EulerExplicit` | 1 | - |
+    | `TimeScheme::RungeKutta4` | 4 | - |
+
+    : Table 2 - time schemes available in `SLOTH`
   
     !!! note "Extension of the list of ODE solver in `SLOTH`"
-        `MFEM` provides several other ODE solvers. `SLOTH` development team integrates the most common methods, namely Euler, SDIRK and Runge-Kutta 4 methods. 
+        `MFEM` provides several other ODE solvers. `SLOTH` development team integrates the most common methods, namely Euler, SDIRK and Runge-Kutta 4 methods, and a variable-step BDF2 method. 
 
         In the future, this list could be extended to account for other high order methods.
 
@@ -654,14 +680,110 @@ Once a `Problem` is fully defined, an AMR driver can be attached to it so that `
     
         phase_field_pb.set_amr(&amr);
     ```
-    An error estimator is first built from an `MFEM` integrator and wrapped into a `SlothErrorEstimators` object, then used to configure a `SingleVariableAMR` driver — here based on `phi` (index `0` in `vars`; the name `"phi"` can be used instead). The driver is finally attached to the problem with `set_amr()`, exactly as `setGeometry()` is used above for axisymmetric geometries.
+    An error estimator is first built from an `MFEM` integrator and wrapped into a `SlothErrorEstimators` object, then used to configure a `SingleVariableAMR` driver — here based on `phi` (index `0` in `vars`). The driver is finally attached to the problem with `set_amr()`, exactly as `setGeometry()` is used above for axisymmetric geometries.
  
 !!! note "Full AMR workflow"
     This page only shows how to attach an already-configured AMR driver to a `Problem`. 
 
     - For the complete step-by-step workflow, see the [AMR tutorial](../../../../../Started/HowTo/Tutorials/AMR/index.md);
-    - For the full reference on error estimators (`ErrorEstimatorType::KELLY`, `ErrorEstimatorType::L2_ZIENKIEWICZ_ZHU`), AMR objects (`SingleVariableAMR`, `MultiVariableMaxAMR`), pilot variables and load balancing between MPI processes, see the [Adaptive Mesh Refinement](../../../AMR/index.md) page of the User Manual.
+    - For the full reference on error estimators (`ErrorEstimatorType::KELLY`, `ErrorEstimatorType::ZZ`) and AMR drivers (`SingleVariableAMR`, `MultiVariableMaxAMR`), see the [Adaptive Mesh Refinement](../../../AMR/index.md) page of the User Manual.
 
+
+#### __How to use the BDF2 time scheme?__ {#bdf2}
+
+`TimeScheme::BDF2` is a variable-step, second-order implicit time scheme. It costs one nonlinear solve per time step, as the backward Euler method, whereas the SDIRK methods need two or three. It is well suited to stiff phase-field problems.
+
+!!! example "Definition of a transient operator with the BDF2 time scheme"
+    ```c++
+    SPAS spatials{&spatial, &spatial};
+    TransientOPE phasefield_ope(spatials, {"CahnHilliard"}, TimeScheme::BDF2, "SplitTimeDerivative");
+    ```
+    Nothing else changes in the definition of the problem.
+
+##### __Principle__ {#bdf2-principle}
+
+With $`\Delta t_n = t^{n+1} - t^n`$ and the ratio $`\omega = \Delta t_n / \Delta t_{n-1}`$ of two consecutive time steps, the BDF2 scheme reads:
+
+```math
+
+\begin{align}
+U^{n+1} - a\, U^n + b\, U^{n-1} = \beta\, \Delta t_n\, \frac{\partial U}{\partial t}(t^{n+1}),
+\qquad
+a = \frac{(1+\omega)^2}{1+2\omega},\quad
+b = \frac{\omega^2}{1+2\omega},\quad
+\beta = \frac{1+\omega}{1+2\omega}
+\end{align}
+
+```
+
+For a constant time step: $`a = 4/3`$, $`b = 1/3`$ and $`\beta = 2/3`$. 
+
+In `SLOTH`, the scheme is solved as a backward Euler step on an effective state $`U^\star = a\, U^n - b\, U^{n-1}`$ with an effective time step $`\beta\, \Delta t_n`$: 
+
+```math
+
+\begin{align}
+U^{n+1} = U^\star + \beta\, \Delta t_n\, K
+\end{align}
+
+```
+
+where $`K`$ is the time derivative solved by the nonlinear algorithm. The [integrators](#integrators) are therefore the same as for the backward Euler method.
+
+- **First time step**: no previous state is available, so the first step is a backward Euler step.
+- **Variable time step**: the coefficients depend on the ratio $`\omega`$. A ratio $`\omega \geq 1+\sqrt{2}`$ is rejected (zero-stability of the variable-step BDF2 method for arbitrary step sequences, Crouzeix & Lisbona, 1984): an adaptive time step must limit the growth of the time step, for instance to $`\omega \leq 2`$.
+- **Adaptive Mesh Refinement**: the previous state $`U^{n-1}`$ is taken from the history of the [Variables](../../../Variables/index.md), which is transferred by the [AMR](#amr) with the current solution. The scheme is not restarted after a mesh change.
+- **Restart**: the first step after a restart is a backward Euler step.
+
+##### __Partitioned coupling__ {#bdf2-coupling}
+
+In a `Coupling` with several problems, the problems are solved one after the other. A problem sees the variables of the other problems as auxiliary variables: those of the problems already solved in the current time step are at $`t^{n+1}`$, those of the problems not yet solved are at $`t^n`$ (lagged).
+
+| Problem solved | sees `Pb1` | sees `Pb2` | sees `Pb3` |
+| --- | :---: | :---: | :---: |
+| `Pb1` | - | $`t^n`$ (lagged) | $`t^n`$ (lagged) |
+| `Pb2` | $`t^{n+1}`$ | - | $`t^n`$ (lagged) |
+| `Pb3` | $`t^{n+1}`$ | $`t^{n+1}`$ | - |
+
+: Table 3 - auxiliary variables seen by each problem of `Coupling("...", Pb1, Pb2, Pb3)`
+
+This lag is a splitting error of order $`\Delta t`$: it keeps the backward Euler method at order 1, but limits higher-order schemes to order 1. With `TimeScheme::BDF2`, the lagged auxiliary variables are therefore **automatically** replaced, during the time step, by the second-order extrapolation
+
+```math
+
+\begin{align}
+\tilde{B} = (1+\omega)\, B^n - \omega\, B^{n-1}
+\end{align}
+
+```
+
+and restored after the time step. The lagged auxiliary variables are detected automatically, whatever the order of the problems in the `Coupling`. With the other time schemes, they are reported once (in `Verbosity::Verbose`).
+
+An extrapolated value may leave the physical range of the variable (e.g. $`\tilde{\varphi} > 1`$ near a moving interface). Physical bounds can be given to the variable: the extrapolated value is then truncated in these bounds. As long as the bounds contain the exact solution, the truncation keeps the second order.
+
+!!! example "Bounds of the extrapolated value"
+    ```c++
+    auto eta = VAR(&spatial, bcs, "eta", Glossary::PhaseField, 2, eta_initial_condition);
+    eta.set_extrapolation_bounds(0., 1.);   // or (-1., 1.), depending on the formulation
+    auto ac_vars = VARS(eta);
+    ```
+    The bounds must be set **before** the variable is added to a `VARS` object. They only apply to the extrapolated value of a lagged auxiliary variable (BDF2): neither the solution itself nor the other time schemes are affected.
+
+##### __Limitations__ {#bdf2-limitations}
+
+!!! warning "Explicit coefficients of the unknowns"
+    With `TimeScheme::BDF2`, `Scheme::Explicit` coefficients (and the previous value of `Scheme::SemiImplicit` coefficients) that depend on the unknowns of the problem are evaluated on the effective state $`U^\star`$, which is not a physical state: for a constant time step, $`U^\star = U^n + (U^n - U^{n-1})/3`$ may leave the physical range where the variable still varies near a bound. 
+
+    This matters for coefficients only defined on a bounded range, e.g. an explicit mobility with a $`c(1-c)`$ term. For such coefficients:
+
+    - prefer `Scheme::Implicit` (evaluated at the end of the time step: safe and second order),
+    - otherwise, bound the argument inside the coefficient function,
+    - or keep the backward Euler method.
+
+    Implicit and constant coefficients, as well as explicit coefficients depending only on the time, the coordinates or the auxiliary variables, are not affected.
+
+!!! warning "Time derivatives of auxiliary variables"
+    Integrators computing the time derivative of an auxiliary variable (e.g. [`LatentHeat`](#integrators)) use a first-order approximation: a coupling involving such integrators is first order, even with `TimeScheme::BDF2`.
 
 #### __How to set auxiliary variables after construction?__ {#set-auxvariables}
 
