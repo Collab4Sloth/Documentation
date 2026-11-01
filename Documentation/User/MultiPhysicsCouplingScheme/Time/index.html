@@ -3325,6 +3325,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Time discretization
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="index.html" class="md-nav__link md-nav__link--active">
         
   
@@ -3341,6 +3359,64 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#adaptive-time-stepping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adaptive time-stepping
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adaptive time-stepping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rejection-of-a-time-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rejection of a time-step
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choice-of-the-next-time-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choice of the next time-step
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4098,6 +4174,53 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#adaptive-time-stepping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adaptive time-stepping
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Adaptive time-stepping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rejection-of-a-time-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rejection of a time-step
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choice-of-the-next-time-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choice of the next time-step
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4118,11 +4241,12 @@
 
 <h1 id="time-discretization">Time discretization<a class="headerlink" href="#time-discretization" title="Permanent link">&para;</a></h1>
 <p>This page describes the C++ object <code>TimeDiscretization</code>, which enables <code>SLOTH</code> to manage the time loop of all multiphysics simulations.</p>
-<p><code>TimeDiscretization</code> object is simply defined by:</p>
+<p>A <code>TimeDiscretization</code> object is defined by:</p>
 <ul>
 <li>a list of parameters (<code>SLOTH</code> object <a href="../../Parameters/index.html"><code>Parameters</code></a>)</li>
 <li>a list of <a href="../Couplings/index.html"><code>Coupling</code></a></li>
 </ul>
+<p>The time-step is either constant, given as a function of time, or adapted during the simulation (<a href="#adaptive-time-stepping">adaptive time-stepping</a>).</p>
 <p>The parameters allowed with <code>TimeDiscretization</code> are summarized in table 1.</p>
 <table>
 <thead>
@@ -4154,23 +4278,45 @@
 <td><code>"time_step"</code></td>
 <td><code>double</code></td>
 <td></td>
-<td>The time-step of the simulation (constant value)</td>
+<td>The time-step of the simulation (initial time-step with adaptive time-stepping)</td>
 </tr>
 <tr>
 <td><code>TimeDiscretization</code></td>
 <td><code>"initial_iteration"</code></td>
 <td><code>int</code></td>
-<td>0</td>
-<td>Initial iteration number used to restart a simulation from a previously saved state (constant value)</td>
+<td><code>0</code></td>
+<td>Initial iteration number, used to restart a simulation from a previously saved state</td>
+</tr>
+<tr>
+<td><code>TimeDiscretization</code></td>
+<td><code>"vtk_unified"</code></td>
+<td><code>bool</code></td>
+<td><code>false</code></td>
+<td>Save the fields of every problem of every coupling in a single VTK output</td>
+</tr>
+<tr>
+<td><code>TimeDiscretization</code></td>
+<td><code>"adaptive_time_step"</code></td>
+<td><code>bool</code></td>
+<td><code>false</code></td>
+<td>Enable the <a href="#adaptive-time-stepping">adaptive time-stepping</a> (parameters in table 2)</td>
 </tr>
 </tbody>
 </table>
 <dl>
 <dd>Table 1 - parameters allowed with <code>TimeDiscretization</code></dd>
 </dl>
+<div class="admonition note">
+<p class="admonition-title">Last time-step</p>
+<p>The last time-step ends exactly at <code>"final_time"</code>.</p>
+<ul>
+<li>With a constant time-step (or a time-step given as a function of time), the remaining time is absorbed by the last time-step if it is lower than half a time-step: the last time-step lies between <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.5</mn><mtext> </mtext><mi>δ</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">0.5\,\delta t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">0.5</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03785em;">δ</span><span class="mord mathnormal">t</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.5</mn><mtext> </mtext><mi>δ</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">1.5\,\delta t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">1.5</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03785em;">δ</span><span class="mord mathnormal">t</span></span></span></span>.</li>
+<li>With adaptive time-stepping, the last time-step is never larger than the requested time-step: if the remaining time lies between <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">\delta t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03785em;">δ</span><span class="mord mathnormal">t</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.5</mn><mtext> </mtext><mi>δ</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">1.5\,\delta t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">1.5</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03785em;">δ</span><span class="mord mathnormal">t</span></span></span></span>, it is covered by two equal time-steps.</li>
+</ul>
+</div>
 <div class="admonition tips">
 <p class="admonition-title">Definition of time-step as a function of the time</p>
-<p>The time step can also be defined as a function of the current simulation time. However, this is not an adaptative time-stepping algorithm which will be implemented in the future. </p>
+<p>The time step can also be defined as a function of the current simulation time. The time-step sequence is then imposed by the user (see <a href="#adaptive-time-stepping">adaptive time-stepping</a> for a time-step adapted to the solution).</p>
 <p>When a <code>std::function&lt;double(double)&gt;</code> is passed to <code>TimeDiscretization</code>, the <code>time_step</code> parameter is ignored and the time step is evaluated dynamically at each iteration. In the following example, the time-step increases as the simulation progresses.</p>
 <div class="language-c++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">auto</span><span class="w"> </span><span class="n">user_time_step</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="o">&gt;</span><span class="p">([](</span><span class="kt">double</span><span class="w"> </span><span class="n">time</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">dt</span><span class="p">;</span>
@@ -4190,11 +4336,11 @@
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="n">Parameters</span><span class="p">(</span><span class="n">Parameter</span><span class="p">(</span><span class="s">"initial_time"</span><span class="p">,</span><span class="w"> </span><span class="n">t_initial</span><span class="p">),</span><span class="w"> </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"final_time"</span><span class="p">,</span><span class="w"> </span><span class="n">t_final</span><span class="p">));</span>
 </span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="k">auto</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TimeDiscretization</span><span class="p">(</span><span class="n">user_time_step</span><span class="p">,</span><span class="w"> </span><span class="n">time_params</span><span class="p">,</span><span class="w"> </span><span class="n">cc</span><span class="p">);</span>
 </span></code></pre></div>
-<p>If no function is provided, the constant value specified by the <code>time_step</code> parameter is used as before.</p>
+<p>If no function is provided, the constant value specified by the <code>time_step</code> parameter is used. A time-step function cannot be combined with adaptive time-stepping.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example of <code>TimeDiscretization</code> with parameters</p>
-<p>The following example assume a multiphysics simulation based on two <a href="../Couplings/index.html">couplings</a>, each composed of three <a href="../Problems/index.html">problems</a>. </p>
+<p>The following example assumes a multiphysics simulation based on two <a href="../Couplings/index.html">couplings</a>, each composed of three <a href="../Problems/index.html">problems</a>.</p>
 <p>The time loop starts at <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span> s, ends at <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> s with a time-step of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.1</mn></mrow><annotation encoding="application/x-tex">0.1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0.1</span></span></span></span> s.</p>
 <div class="language-c++ highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">coupling_example_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Coupling</span><span class="p">(</span><span class="s">"MyCoupling1"</span><span class="p">,</span><span class="w"> </span><span class="n">Problem1_1</span><span class="p">,</span><span class="w"> </span><span class="n">Problem1_2</span><span class="p">,</span><span class="w"> </span><span class="n">Problem1_3</span><span class="p">);</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">coupling_example_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Coupling</span><span class="p">(</span><span class="s">"MyCoupling2"</span><span class="p">,</span><span class="w"> </span><span class="n">Problem2_1</span><span class="p">,</span><span class="w"> </span><span class="n">Problem2_2</span><span class="p">,</span><span class="w"> </span><span class="n">Problem2_3</span><span class="p">);</span>
@@ -4204,10 +4350,174 @@
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">dt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.1</span><span class="p">;</span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">time_params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parameters</span><span class="p">(</span>
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"initial_time"</span><span class="p">,</span><span class="w"> </span><span class="n">t_initial</span><span class="p">),</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"final_time"</span><span class="p">,</span><span class="w"> </span><span class="n">t_final</span><span class="p">),</span><span class="w"> </span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"final_time"</span><span class="p">,</span><span class="w"> </span><span class="n">t_final</span><span class="p">),</span>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"time_step"</span><span class="p">,</span><span class="w"> </span><span class="n">dt</span><span class="p">));</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TimeDiscretization</span><span class="p">(</span><span class="n">time_parameters</span><span class="p">,</span><span class="w"> </span><span class="n">coupling_example_1</span><span class="p">,</span><span class="w"> </span><span class="n">coupling_example_2</span><span class="p">);</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TimeDiscretization</span><span class="p">(</span><span class="n">time_params</span><span class="p">,</span><span class="w"> </span><span class="n">coupling_example_1</span><span class="p">,</span><span class="w"> </span><span class="n">coupling_example_2</span><span class="p">);</span>
 </span></code></pre></div>
+</div>
+<h2 id="adaptive-time-stepping">Adaptive time-stepping<a class="headerlink" href="#adaptive-time-stepping" title="Permanent link">&para;</a></h2>
+<p>With <code>"adaptive_time_step"</code> set to <code>true</code>, the time-step is adapted during the simulation. It applies to every time scheme of the <a href="../Problems/index.html">transient problems</a>, and is mainly intended for implicit schemes (implicit Euler, SDIRK, BDF2).</p>
+<h3 id="rejection-of-a-time-step">Rejection of a time-step<a class="headerlink" href="#rejection-of-a-time-step" title="Permanent link">&para;</a></h3>
+<p>A time-step is rejected if it fails:</p>
+<ul>
+<li>the Newton solver does not converge (maximum number of iterations reached);</li>
+<li>the residual norm of the Newton solver is not finite (requires MFEM built with <code>MFEM_USE_EXCEPTIONS</code>);</li>
+<li>the projection of the algebraic variables of a split system (explicit schemes) does not converge.</li>
+</ul>
+<p>The state of every coupling is then restored as it was at the beginning of the time-step (unknowns and history of the variables, previous time-step of BDF2, time), and the time-step is retried with a time-step multiplied by <code>"time_step_cutback_factor"</code>. Post-processing and adaptive mesh refinement are only performed on accepted time-steps.</p>
+<p>Without adaptive time-stepping, a failed time-step stops the simulation.</p>
+<h3 id="choice-of-the-next-time-step">Choice of the next time-step<a class="headerlink" href="#choice-of-the-next-time-step" title="Permanent link">&para;</a></h3>
+<p>After an accepted time-step, the next time-step depends on the largest number of Newton iterations <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span> over all the problems (and all the stages of the time scheme):</p>
+<table>
+<thead>
+<tr>
+<th>Number of Newton iterations</th>
+<th>Next time-step</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>≤</mo></mrow><annotation encoding="application/x-tex">N \le</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span></span></span></span> <code>"newton_iterations_low"</code></td>
+<td>multiplied by <code>"time_step_growth_factor"</code> (no increase right after a rejection)</td>
+</tr>
+<tr>
+<td><code>"newton_iterations_low"</code> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mi>N</mi><mo>&lt;</mo></mrow><annotation encoding="application/x-tex">&lt; N &lt;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span></span></span></span> <code>"newton_iterations_high"</code></td>
+<td>unchanged</td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>≥</mo></mrow><annotation encoding="application/x-tex">N \ge</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span></span></span></span> <code>"newton_iterations_high"</code></td>
+<td>divided by <code>"time_step_growth_factor"</code></td>
+</tr>
+</tbody>
+</table>
+<p>The time-step always remains between <code>"time_step_min"</code> and <code>"time_step_max"</code>. Without Newton solver (explicit schemes), the time-step is only reduced by rejections.</p>
+<p>The simulation stops if the time-step would fall below <code>"time_step_min"</code>, or if the time-step is reduced more than <code>"max_time_step_rejections"</code> times in a row (rejections and decreases due to the number of Newton iterations).</p>
+<div class="admonition warning">
+<p class="admonition-title">BDF2: ratio between two successive time-steps</p>
+<p>The variable-step BDF2 scheme is zero-stable if the ratio <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ω</mi><mo>=</mo><mi>δ</mi><msub><mi>t</mi><mi>n</mi></msub><mi mathvariant="normal">/</mi><mi>δ</mi><msub><mi>t</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">\omega = \delta t_n / \delta t_{n-1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">ω</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03785em;">δ</span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.03785em;">δ</span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2083em;"><span></span></span></span></span></span></span></span></span></span> is lower than <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><msqrt><mn>2</mn></msqrt></mrow><annotation encoding="application/x-tex">1 + \sqrt{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.1328em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9072em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord">2</span></span></span><span style="top:-2.8672em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1328em;"><span></span></span></span></span></span></span></span></span>. When a problem uses BDF2, the increase of the time-step is limited by <code>"time_step_max_ratio"</code> (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span> by default): a growth factor larger than this ratio is limited to it.</p>
+</div>
+<p>The parameters of the adaptive time-stepping are summarized in table 2.</p>
+<table>
+<thead>
+<tr>
+<th>Object</th>
+<th>Parameter Name</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TimeDiscretization</code></td>
+<td><code>"time_step_min"</code></td>
+<td><code>double</code></td>
+<td><code>1.e-6</code> × <code>"time_step"</code></td>
+<td>Smallest time-step</td>
+</tr>
+<tr>
+<td><code>TimeDiscretization</code></td>
+<td><code>"time_step_max"</code></td>
+<td><code>double</code></td>
+<td><code>"final_time"</code> − <code>"initial_time"</code></td>
+<td>Largest time-step</td>
+</tr>
+<tr>
+<td><code>TimeDiscretization</code></td>
+<td><code>"time_step_cutback_factor"</code></td>
+<td><code>double</code></td>
+<td><code>0.5</code></td>
+<td>Factor applied to the time-step after a rejection, in <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">]</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">[</mo></mrow><annotation encoding="application/x-tex">]0, 1[</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mclose">]</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mopen">[</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>TimeDiscretization</code></td>
+<td><code>"time_step_growth_factor"</code></td>
+<td><code>double</code></td>
+<td><code>1.25</code></td>
+<td>Factor applied (resp. divided) when the Newton solvers converge in few (resp. many) iterations, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\ge 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>TimeDiscretization</code></td>
+<td><code>"newton_iterations_low"</code></td>
+<td><code>int</code></td>
+<td><code>3</code></td>
+<td>Increase of the time-step if the number of Newton iterations is lower than or equal to this value, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\ge 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>TimeDiscretization</code></td>
+<td><code>"newton_iterations_high"</code></td>
+<td><code>int</code></td>
+<td><code>8</code></td>
+<td>Decrease of the time-step if the number of Newton iterations is greater than or equal to this value</td>
+</tr>
+<tr>
+<td><code>TimeDiscretization</code></td>
+<td><code>"max_time_step_rejections"</code></td>
+<td><code>int</code></td>
+<td><code>10</code></td>
+<td>Maximum number of successive reductions of the time-step</td>
+</tr>
+<tr>
+<td><code>TimeDiscretization</code></td>
+<td><code>"time_step_max_ratio"</code></td>
+<td><code>double</code></td>
+<td><code>2</code> with BDF2, no limit otherwise</td>
+<td>Largest ratio between two successive time-steps (lower than <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>+</mo><msqrt><mn>2</mn></msqrt></mrow><annotation encoding="application/x-tex">1 + \sqrt{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.1328em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9072em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord">2</span></span></span><span style="top:-2.8672em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1328em;"><span></span></span></span></span></span></span></span></span> with BDF2)</td>
+</tr>
+</tbody>
+</table>
+<dl>
+<dd>Table 2 - parameters of the adaptive time-stepping</dd>
+</dl>
+<div class="admonition example">
+<p class="admonition-title">Example of adaptive time-stepping</p>
+<p>The time loop starts at <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span> s with a time-step of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">10^{-2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span> s and ends at <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">10^4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span> s. The time-step lies between <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>4</mn></mrow></msup></mrow><annotation encoding="application/x-tex">10^{-4}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span></span> s and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>50</mn></mrow><annotation encoding="application/x-tex">50</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">50</span></span></span></span> s. It is multiplied by <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.5</mn></mrow><annotation encoding="application/x-tex">1.5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1.5</span></span></span></span> when the Newton solvers converge in at most <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span></span></span></span> iterations, and divided by <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.5</mn></mrow><annotation encoding="application/x-tex">1.5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1.5</span></span></span></span> when they need <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn></mrow><annotation encoding="application/x-tex">8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">8</span></span></span></span> iterations or more.</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">time_params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parameters</span><span class="p">(</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">        </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"initial_time"</span><span class="p">,</span><span class="w"> </span><span class="mf">0.</span><span class="p">),</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"final_time"</span><span class="p">,</span><span class="w"> </span><span class="mf">1.</span><span class="n">e4</span><span class="p">),</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"time_step"</span><span class="p">,</span><span class="w"> </span><span class="mf">1.</span><span class="n">e</span><span class="mi">-2</span><span class="p">),</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"adaptive_time_step"</span><span class="p">,</span><span class="w"> </span><span class="nb">true</span><span class="p">),</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"time_step_min"</span><span class="p">,</span><span class="w"> </span><span class="mf">1.</span><span class="n">e</span><span class="mi">-4</span><span class="p">),</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"time_step_max"</span><span class="p">,</span><span class="w"> </span><span class="mf">50.</span><span class="p">),</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"time_step_growth_factor"</span><span class="p">,</span><span class="w"> </span><span class="mf">1.5</span><span class="p">),</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"newton_iterations_low"</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">),</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">        </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"newton_iterations_high"</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">),</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">        </span><span class="n">Parameter</span><span class="p">(</span><span class="s">"max_time_step_rejections"</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">));</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TimeDiscretization</span><span class="p">(</span><span class="n">time_params</span><span class="p">,</span><span class="w"> </span><span class="n">coupling</span><span class="p">);</span>
+</span></code></pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Newton solver settings</p>
+<p>The criterion relies on the number of Newton iterations: the maximum number of iterations of the Newton solver (<code>"iter_max"</code>, see <a href="../Solvers/index.md">solvers</a>) should be close to <code>"newton_iterations_high"</code>, so that a time-step that is too large is rejected rather than slowly converged.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Current limitations</p>
+<ul>
+<li>The criterion measures the difficulty of the nonlinear solve, not the accuracy of the time integration: a well-posed problem may remain solvable with a time-step that is too large for the dynamics. For accuracy-driven time-steps, check the results against a computation with a constant time-step.</li>
+<li>A restarted simulation starts again from <code>"time_step"</code>, not from the last time-step of the saved simulation.</li>
+</ul>
 </div>
 
 
