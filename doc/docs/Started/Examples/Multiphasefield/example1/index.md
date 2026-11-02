@@ -196,8 +196,8 @@ The initial conditions for the Allen-Cahn equations are given by:
    | Description                          | Symbol                | Value     |
    | ------------------------------------ | --------------------- | --------- |
    | mobility coefficient (AC)            | $`L`$                 | $`10.0`$  |
-   | energy gradient coefficient (AC)     | $`\kappa_\eta`$       | $`5`$     |
-   | energy gradient coefficient (CH)     | $`\kappa_\rho`$       | $`2`$     |
+   | energy gradient coefficient (AC)     | $`\kappa_\eta`$       | $`2`$     |
+   | energy gradient coefficient (CH)     | $`\kappa_\rho`$       | $`5`$     |
    | bulk diffusivity in the lattice (CH) | $`D_{\mathrm{vol}}`$  | $`0.04`$  |
    | diffusivity of the vapor phase (CH)  | $`D_{\mathrm{vap}}`$  | $`0.002`$ |
    | surface diffusivity (CH)             | $`D_{\mathrm{surf}}`$ | $`16`$    |
