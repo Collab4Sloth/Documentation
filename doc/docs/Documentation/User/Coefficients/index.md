@@ -33,7 +33,7 @@ The `Sympy` interface corresponds to a Python script (see the `script/GenerateCo
 
 #### Defining a simple coefficient {#simplecoef}
 
-This file is composed of a list of JSON objects defined by pairs (key, value). All values are of type string.
+This file is composed of a list of JSON objects defined by pairs (key, value). All values are of type string, except for the `bounds` key (see [bounds of variables](#boundscoef)).
 The available keys are:
 
 - "expression" : analytical expression of the function (required),
@@ -41,6 +41,7 @@ The available keys are:
 - "auxiliary_variables" : variables used in the _expression_ marked as auxiliary variables (optional),
 - "constants" : constants used in the _expression_ (optional),
 - "coordinates" : names given to the spatial coordinates used in the _expression_ (optional, see [coefficients depending on spatial coordinates](#coordcoef)),
+- "bounds" : bounds of the variables, which are clamped to these bounds before the evaluation of the coefficient (optional, see [bounds of variables](#boundscoef)),
 - "class_name" : name of the `FunctionCoefficient`-type class, ready for use in a `Coefficient` (required),
 - "outputfile" : basename of the C++ file where the _class_name_ is generated (required).
 
@@ -427,6 +428,71 @@ The script `GenerateCoefficient.py` allows users to handle range conditions in t
 - The 'upper' or 'upper_strict' bounds must be defined not the two attributess
 - Only one range variable (see `range_variable`)
 - A range can't overlap another range
+- If the range variable is [bounded](#boundscoef), the ranges are tested on its clamped value
+
+#### Defining bounds of variables {#boundscoef}
+
+Some expressions are only defined, or only meaningful, on an interval: $`x \ln x`$ is not defined for $`x \le 0`$, a concentration or a phase field is expected in $`[0, 1]`$. During the Newton iterations, the variables may leave this interval. The `bounds` key clamps a variable to an interval before the evaluation of the coefficient.
+
+!!! example "Example of coefficient with a bounded variable"
+
+    ```json
+    [
+        {
+        "expression":"x*log(x) + (1-x)*log(1-x)",
+        "variables":"x",
+        "constants":"(eps:1.e-10)",
+        "bounds":{"x":["eps", "1 - eps"]},
+        "class_name":"LogEnergy",
+        "outputfile":"Coefficient"
+        }
+    ]
+    ```
+
+    In this example, the following mathematical function is defined:
+
+    ```math
+    \begin{align*}
+    F(x) = \tilde{x} \ln \tilde{x} + (1-\tilde{x}) \ln (1-\tilde{x}), \qquad \tilde{x} = \min\left(\max(x, \epsilon), 1-\epsilon\right)
+    \end{align*}
+    ```
+
+    which is finite for any value of $`x`$, including $`0`$ and $`1`$. The built-in [`Log`](#common_coefficient) coefficient is generated in this way.
+
+The value of the `bounds` key is a dictionary: each key is a variable, and each value is the list `[lower, upper]` of its bounds. One-sided bounds and ranges of variables are allowed:
+
+!!! example "One-sided bounds and range of variables"
+
+    ```json
+    "variables":"c",
+    "auxiliary_variables":"eta(1..2)",
+    "constants":"(cmax:1.0)",
+    "bounds":{"c":[0.0, "cmax"], "eta(1..2)":[0.0, null]},
+    ```
+
+    Here, `c` is clamped to $`[0, c_{max}]`$, and `eta1`, `eta2` are only bounded from below: $`\tilde{\eta}_i = \max(\eta_i, 0)`$.
+
+**Rules for the `bounds` key:**
+
+- A key is a variable of the coefficient: a variable, an auxiliary variable or an explicit variable. A range of variables is written as in `variables`, e.g. `"eta(1..2)"`. A variable can be bounded only once.
+- A bound is either a number, a constant declared in `constants`, an expression of these constants (e.g. `"1 - eps"`, powers are not allowed), or `null` when the variable is not bounded on this side. At least one bound must be given.
+- When both bounds are numbers, the lower bound must not be greater than the upper bound.
+- Errors in the `bounds` key stop the generation of the coefficient with an error message.
+
+!!! note "Derivatives outside the bounds"
+    The coefficient and its first and second-order derivatives are all evaluated at the clamped value:
+
+    ```math
+    \begin{align*}
+    F(x) = f(\tilde{x}), \qquad F'(x) = f'(\tilde{x}), \qquad F''(x) = f''(\tilde{x})
+    \end{align*}
+    ```
+
+    Inside the bounds, these are the exact derivatives. Outside the bounds, they are the derivatives at the bound, and not the exact derivatives of the clamped function, which are zero there. This choice keeps a non-singular Jacobian matrix: with zero derivatives, the Newton solver could no longer bring a variable back inside its bounds. For instance, with $`f(x) = x^2`$ bounded on $`[0, 1]`$, the generated coefficient gives $`F(1.5) = 1`$, $`F'(1.5) = 2`$ and $`F''(1.5) = 2`$.
+
+!!! warning "Current limitations"
+    - The `bounds` key cannot be combined with `"gradient": true`.
+    - Bounds are only available with the `Sympy` interface, not with the [`ExprTk` interface](#coef_exprtk).
 
 
 #### Defining a semi-implicit coefficient {#semiimplicit}
@@ -670,7 +736,7 @@ Fw(\varphi)=a \left[0.25  ( \varphi^2 - 1.0)  ( \varphi^2 - 1.0)\right]
 \end{align}
 
 ```
-where $`\varphi`$ is truncated as $`min(max(\epsilon,\varphi),1-\epsilon)`$ in order to avoid numerical difficulties in $`0`$ and $`1`$.
+where $`\varphi`$ is truncated as $`min(max(\epsilon,\varphi),1-\epsilon)`$, with $`\epsilon = 10^{-10}`$, in order to avoid numerical difficulties in $`0`$ and $`1`$ (see [bounds of variables](#boundscoef)).
 
 - `GradientEnergy` : gradient energy contribution
 
@@ -681,4 +747,3 @@ where $`\varphi`$ is truncated as $`min(max(\epsilon,\varphi),1-\epsilon)`$ in o
 \end{align}
 
 ```
-where $`\varphi`$ is truncated as $`min(max(\epsilon,\varphi),1-\epsilon)`$ in order to avoid numerical difficulties in $`0`$ and $`1`$. In practice, $`\epsilon=10^{-10}`$.

@@ -379,6 +379,16 @@ TransientPB ch_pb("CahnHilliard", ch_oper, ch_vars, {ch_coef, ch_coef}, ch_pst, 
 
     Piecewise formulas on one range variable, with a default expression outside the ranges. See [Defining a conditional coefficient](../../../../Documentation/User/Coefficients/index.md#condcoef).
 
+=== "Bounded"
+
+    ```json
+    "expression": "x*log(x) + (1-x)*log(1-x)",
+    "constants": "(eps:1.e-10)",
+    "bounds": {"x": ["eps", "1 - eps"]},
+    ```
+
+    The variable is clamped to its bounds before the evaluation, so that the coefficient stays finite when Newton iterations leave $`[0, 1]`$. The derivatives are those at the clamped value. See [Defining bounds of variables](../../../../Documentation/User/Coefficients/index.md#boundscoef).
+
 === "Semi-implicit"
 
     ```json
@@ -416,5 +426,6 @@ TransientPB ch_pb("CahnHilliard", ch_oper, ch_vars, {ch_coef, ch_coef}, ch_pst, 
 | [ExprTk and Sympy](../../../Installation/exprtk_sympy.md), [Using an installed SLOTH](../../../Installation/use_installed.md) | installing `Sympy`; generating coefficients with CMake |
 | `tests/Studies/sintering/test1` | multiphase energy, gradient energy, mobility |
 | `tests/HeatTransfer/2D/test5` | coefficients depending on spatial coordinates |
+| `kernel/include/Coefficients/coefficients.json` | bounds of a variable (`Log`) |
 | `tests/Coefficients/test2` | constants |
 | [SLOTH Input Files in a Nutshell](../InputFile/index.md) | the rest of the `main.cpp` |
