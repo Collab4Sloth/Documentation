@@ -18,14 +18,21 @@ Refinement decisions are driven by an error estimator, wrapped into a `SlothErro
     SlothErrorEstimators estimator(ErrorEstimatorType::KELLY, &amr_integ);
     ```
 
-`SLOTH` currently provides two error estimator types, built on top of `MFEM` error estimators:
+`SLOTH` provides two built-in error estimator types, built on top of `MFEM` error estimators, and custom estimators:
 
 | `ErrorEstimatorType` | Underlying `MFEM` estimator | Flux space(s) built internally |
 |---|---|---|
 | `KELLY` | [`mfem::KellyErrorEstimator`](https://docs.mfem.org/html/classmfem_1_1KellyErrorEstimator.html#details) | One `L2` flux space, matching the order of the variable and the mesh dimension. |
 | `L2_ZIENKIEWICZ_ZHU` | [`mfem::L2ZienkiewiczZhuEstimator`](https://docs.mfem.org/html/classmfem_1_1L2ZienkiewiczZhuEstimator.html) | An `L2` flux space, plus a smoothed (`RT`) flux space. |
+| `CUSTOM` | Estimator defined by the user (see [Extending SLOTH](../Extensions/index.md#estimators)) | Those of the user estimator. |
 
-Both types require a `BilinearFormIntegrator` (an `mfem::DiffusionIntegrator` is used throughout the [AMR tutorial](../../../Started/HowTo/Tutorials/AMR/index.md)); `SlothErrorEstimators` also has a single-argument constructor, `SlothErrorEstimators(ErrorEstimatorType value)`, reserved for future estimator types that would not need one — it is not usable with `KELLY` or `L2_ZIENKIEWICZ_ZHU` today.
+`KELLY` and `L2_ZIENKIEWICZ_ZHU` require a `BilinearFormIntegrator` (an `mfem::DiffusionIntegrator` is used throughout the [AMR tutorial](../../../Started/HowTo/Tutorials/AMR/index.md)). A custom estimator is built from a class defined by the user:
+
+```c++
+SlothErrorEstimators estimator(CustomEstimator<MyEstimator>(my_parameter));
+```
+
+See [Extending SLOTH](../Extensions/index.md#estimators) for the class to write.
 
 A `SlothErrorEstimators` object builds, for each field it is applied to, one `MFEM` estimator with its flux spaces, and reuses them along the whole computation (they follow the mesh after each refinement, derefinement or rebalancing). The same object can therefore be shared by several AMR objects.
 
@@ -96,7 +103,8 @@ amr.SetCriteria(&estimator, amr_params);
 | `amr_max_level` | `int` | `0` | Maximum refinement depth of any element. Since each AMR pass refines an element at most once, this prevents an element from being refined one more level at each time step without limit. `0` (or a negative value) means no limit. |
 | `nc_limit` | `int` | `0` | Maximum refinement-level difference between neighbouring elements. `0` means no limit. |
 | `max_preref_cycles` | `int` | `1` | Maximum number of refinement cycles applied to the **initial condition**, before time-stepping starts (see [below](#workflow)). |
-| `rebalance` | `bool` | `false` | Rebalance the mesh between MPI processes after each AMR pass that modified it (see [Load balancing](#load-balancing)). |
+| `rebalance` | `bool` | `false` | Rebalance the mesh between MPI processes after each AMR pass that modified it, if the load is unbalanced (see [Load balancing](#load-balancing)). |
+| `rebalance_tolerance` | `double` | `1` | Only with `rebalance = true`: rebalance if the largest number of elements per process exceeds `rebalance_tolerance` times the mean. Must be greater than or equal to 1 (see [Load balancing](#load-balancing)). |
 
 !!! warning "Calling `SetCriteria` is mandatory"
     Every refinement/derefinement attempt starts by verifying that `SetCriteria()` was called; `SLOTH` aborts with an explicit error message otherwise.
@@ -120,6 +128,8 @@ Once an AMR object is attached to a problem, `SLOTH` applies it automatically:
 2. **After each time step** (after the post-processing of the problem) — one AMR pass: derefinement first, then refinement, then rebalancing if requested and if the mesh was modified. A pass refines (or derefines) each element at most once.
 
 After each modification of the mesh, the finite element spaces of the mesh are updated once, and each variable of the simulation defined on this mesh (variables of every problem of every coupling) is transferred to the new mesh, together with the history of its previous time steps (multistep time schemes). Variables defined on another mesh are not affected.
+
+The operators of every problem defined on this mesh, with or without AMR, are resynchronized with the new mesh (sizes, essential degrees of freedom, Dirichlet values) before their next solve. This includes problems built before a pre-refinement triggered by another problem, e.g. a problem of a later coupling, or of a second calculation in the same input file.
 
 ### __Derefinement__ {#derefinement}
 
@@ -165,8 +175,18 @@ amr.SetCriteria(&estimator, amr_params);
     - Only on non-conforming meshes, which is always the case once AMR has modified the mesh.
     - Only with more than one MPI process.
     - Only after an AMR pass that actually modified the mesh: a time step without refinement nor derefinement does not move any data.
+    - Only if the imbalance exceeds `rebalance_tolerance`.
 
 Rebalancing moves elements and data between processes: its cost is usually small compared with the time saved, but it is not free. It is disabled by default.
+
+`rebalance_tolerance` avoids rebalancing for a small imbalance: the mesh is rebalanced only if the largest number of elements per process exceeds `rebalance_tolerance` times the mean (default `1`: as soon as the load is not perfectly balanced).
+
+```c++
+auto amr_params = Parameters(Parameter("max_elem_error", 1.e-6), Parameter("amr_max_level", 3),
+                             Parameter("rebalance", true), Parameter("rebalance_tolerance", 1.1));
+```
+
+`SLOTH` aborts if `rebalance_tolerance` is given while `rebalance` is `false`, or if it is lower than 1.
 
 ### __Checking the load balance__ {#load-balance-check}
 

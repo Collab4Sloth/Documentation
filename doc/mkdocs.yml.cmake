@@ -175,6 +175,7 @@ nav:
     - Documentation/User/Solvers/index.md
     - Documentation/User/PostProcessing/index.md
     - Documentation/User/AMR/index.md
+    - Documentation/User/Extensions/index.md
     - Documentation/User/Profiling/index.md
   - Modelling Description: 
     - Documentation/Physical/index.md

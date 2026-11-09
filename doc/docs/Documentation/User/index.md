@@ -23,6 +23,7 @@ This page focuses on the kernel of `SLOTH`, providing all the essential informat
 - [Post-Processing](PostProcessing/index.md)
 - [Profiling](Profiling/index.md)
 - [Adaptive Mesh Refinement](AMR/index.md)
+- [Extending SLOTH](Extensions/index.md): integrators, coefficient quantities and AMR error estimators defined outside `SLOTH`
 
 !!! tip "On the use of aliases"
     To simplify the definition of `SLOTH` tests, a set of aliases (finite element collection, variables, post-processing, mesh, boundary conditions...) plus a couple of factory functions are provided to the users. The development team recommends visiting the [Aliases page](./Aliases/index.md).

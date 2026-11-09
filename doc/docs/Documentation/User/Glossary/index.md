@@ -17,6 +17,8 @@ Each quantity is managed by the C++ structure `GlobalQuantity`. A `GlobalQuantit
     In this example, the quantity `T` is a temperature defined with the type `GlossaryType::Temperature` and the unit `GlossaryUnit::Kelvin`.
 
 Users can access to a predefined list of quantities in the namespace `Glossary`, where a quantity `Q` is simply defined as `Glossary::Q`. 
+
+Quantities used by custom integrators are defined by a name with `CustomQuantity("Name")` (type `GlossaryType::Custom`): see [Extending SLOTH](../Extensions/index.md#quantities).
 Here, these quantities are grouped by physical problems. 
 
 

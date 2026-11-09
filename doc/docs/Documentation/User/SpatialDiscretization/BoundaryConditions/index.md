@@ -83,6 +83,8 @@ Inflow/outflow conditions for advection problems are not a boundary type: they a
         `t` is mapped to the current simulation time. 
         The prefactor passed to `DirichletCoefficient(-1)` flips the sign of the whole expression for the left boundary.
 
+        Dirichlet values are imposed again at each solve, for transient and steady problems alike: values depending on time or on auxiliary variables are therefore up to date at each time step.
+
     === "Neumann"
 
         ```c++
