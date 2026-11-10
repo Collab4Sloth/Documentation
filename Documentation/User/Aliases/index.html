@@ -2904,6 +2904,8 @@
       
         
       
+        
+      
     
     
     
@@ -3773,6 +3775,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../Extensions/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extending SLOTH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Profiling/index.html" class="md-nav__link">
         
   
@@ -4294,6 +4324,16 @@
 <td><code>PB_PROPERTY&lt;PROPERTY&gt;</code></td>
 <td><code>Property_problem&lt;PROPERTY, VARS, PST&gt;</code></td>
 <td>Property-driven problems</td>
+</tr>
+<tr>
+<td><code>CustomIntegrator&lt;C&gt;</code></td>
+<td>Integrator <code>C</code> defined outside <code>SLOTH</code></td>
+<td><code>CustomIntegrator&lt;MyIntegrator&gt;("MyName")</code> in a list of integrators (<a href="../Extensions/index.html#integrators">Extending SLOTH</a>)</td>
+</tr>
+<tr>
+<td><code>IntegratorList</code></td>
+<td>List of integrators (built-in names, custom integrators)</td>
+<td><code>IntegratorList{"AllenCahn"}</code> when the list is forwarded by <code>std::make_unique</code></td>
 </tr>
 </tbody>
 </table>

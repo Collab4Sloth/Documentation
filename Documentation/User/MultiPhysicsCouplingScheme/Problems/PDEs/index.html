@@ -2904,6 +2904,8 @@
       
         
       
+        
+      
     
     
     
@@ -3679,6 +3681,34 @@
     
   
     Adaptive Mesh Refinement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Extensions/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extending SLOTH
   
 
     
@@ -4754,10 +4784,10 @@ See the <a href="../../../../../Started/Examples/CahnHilliard/example6/index.htm
 <p>The <code>TransientOPE</code> operator must be defined by:</p>
 <ul>
 <li>a vector of spatial discretisation objects (see <a href="../../../SpatialDiscretization/Meshing/index.html">Meshing</a>) [required], </li>
-<li>a vector of strings specifying the integrators used to model spatial differential operators [required],</li>
+<li>a list of integrators used to model spatial differential operators: names of built-in integrators and/or <a href="../../../Extensions/index.html#integrators">custom integrators</a> [required],</li>
 <li>a set of parameters (see <a href="../../../Parameters/index.html">Parameters</a>) [optional],</li>
 <li>a ODE solver for time stepping [required],</li>
-<li>a string specifying the integrator used to model time derivative operator [required].</li>
+<li>the integrator used to model time derivative operator: name of a built-in integrator or <a href="../../../Extensions/index.html#integrators">custom integrator</a> [required].</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">On the size of the vector of spatial discretisation objects</p>
@@ -4862,7 +4892,7 @@ where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.
 <p>The <code>SteadyOPE</code> operator must be defined by:</p>
 <ul>
 <li>a vector of spatial discretisation objects (see <a href="../../../SpatialDiscretization/Meshing/index.html">Meshing</a>) [required], </li>
-<li>a vector of strings specifying the integrators used to model spatial differential operators [required],</li>
+<li>a list of integrators used to model spatial differential operators: names of built-in integrators and/or <a href="../../../Extensions/index.html#integrators">custom integrators</a> [required],</li>
 <li>a set of parameters (see <a href="../../../Parameters/index.html">Parameters</a>) [optional].</li>
 </ul>
 <div class="admonition warning">

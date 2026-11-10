@@ -2904,6 +2904,8 @@
       
         
       
+        
+      
     
     
     
@@ -3764,6 +3766,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Extensions/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extending SLOTH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Profiling/index.html" class="md-nav__link">
         
   
@@ -4271,6 +4301,7 @@ The following example prescribes a different <code>DirichletCoefficient</code> o
 <code>x</code> and <code>y</code> are the spatial coordinates (see <a href="../../Coefficients/index.html">Coefficients</a>). 
 <code>t</code> is mapped to the current simulation time. 
 The prefactor passed to <code>DirichletCoefficient(-1)</code> flips the sign of the whole expression for the left boundary.</p>
+<p>Dirichlet values are imposed again at each solve, for transient and steady problems alike: values depending on time or on auxiliary variables are therefore up to date at each time step.</p>
 </div>
 <div class="tabbed-block">
 <p><div class="language-c++ highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">auto</span><span class="w"> </span><span class="n">list_boundaries_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">Boundary</span><span class="p">(</span><span class="s">"left"</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">"Neumann"</span><span class="p">),</span><span class="w"> </span><span class="n">Boundary</span><span class="p">(</span><span class="s">"bottom"</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">"Neumann"</span><span class="p">),</span><span class="w"> </span><span class="n">Boundary</span><span class="p">(</span><span class="s">"right"</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">"Neumann"</span><span class="p">),</span><span class="w"> </span><span class="n">Boundary</span><span class="p">(</span><span class="s">"top"</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s">"Neumann"</span><span class="p">)};</span>

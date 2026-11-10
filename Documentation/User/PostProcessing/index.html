@@ -2904,6 +2904,8 @@
       
         
       
+        
+      
     
     
     
@@ -3727,6 +3729,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="ParaView output parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#save-var-old" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Previous time level of the variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3792,6 +3811,34 @@
     
   
     Adaptive Mesh Refinement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Extensions/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extending SLOTH
   
 
     
@@ -4242,6 +4289,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="ParaView output parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#save-var-old" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Previous time level of the variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4421,11 +4485,19 @@ This example shows how to declare a <code>PST</code> object with the spatial dis
 <td></td>
 <td>Times for data output. Used only if <code>"frequency"</code> is not provided. Can be combined with <code>"iterations_list"</code></td>
 </tr>
+<tr>
+<td><code>"save_var_old"</code></td>
+<td><code>bool</code></td>
+<td><code>false</code></td>
+<td>Also save the previous time level of each variable, as <code>&lt;name&gt;_old</code> (see <a href="#save-var-old">below</a>)</td>
+</tr>
 </tbody>
 </table>
 <dl>
 <dd>Table 1 - Parameters allowed with <code>PostProcessing</code> for visualizing data with <code>ParaView</code></dd>
 </dl>
+<h3 id="save-var-old">Previous time level of the variables<a class="headerlink" href="#save-var-old" title="Permanent link">&para;</a></h3>
+<p>With <code>Parameter("save_var_old", true)</code>, each <code>ParaView</code> output also contains, for each variable <code>&lt;name&gt;</code>, its value at the previous time step, as a field named <code>&lt;name&gt;_old</code>. Both fields are written in the same output and on the same mesh (after an AMR pass, the previous time level has already been transferred to the new mesh): time derivatives, e.g. <code>(phi - phi_old)/dt</code>, can be computed directly in <code>ParaView</code>. This works with <code>"frequency"</code>, <code>"iterations_list"</code>, <code>"times_list"</code> and adaptive time stepping.</p>
 <h2 id="specialized-post-processing">Specialized post-processing<a class="headerlink" href="#specialized-post-processing" title="Permanent link">&para;</a></h2>
 <p>In addition to visualizing <a href="../Variables/index.html"><code>Variables</code></a> with <code>ParaView</code>, some results can also be exported in <code>CSV</code> format.</p>
 <p>The <code>time_specialized.csv</code> file contains:</p>

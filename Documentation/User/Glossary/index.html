@@ -2904,6 +2904,8 @@
       
         
       
+        
+      
     
     
     
@@ -3703,6 +3705,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../Extensions/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extending SLOTH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Profiling/index.html" class="md-nav__link">
         
   
@@ -4128,7 +4158,8 @@
 </span></code></pre></div>
 <p>In this example, the quantity <code>T</code> is a temperature defined with the type <code>GlossaryType::Temperature</code> and the unit <code>GlossaryUnit::Kelvin</code>.</p>
 </div>
-<p>Users can access to a predefined list of quantities in the namespace <code>Glossary</code>, where a quantity <code>Q</code> is simply defined as <code>Glossary::Q</code>. 
+<p>Users can access to a predefined list of quantities in the namespace <code>Glossary</code>, where a quantity <code>Q</code> is simply defined as <code>Glossary::Q</code>. </p>
+<p>Quantities used by custom integrators are defined by a name with <code>CustomQuantity("Name")</code> (type <code>GlossaryType::Custom</code>): see <a href="../Extensions/index.html#quantities">Extending SLOTH</a>.
 Here, these quantities are grouped by physical problems. </p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Phase-field quantities</label><label for="__tabbed_1_2">Thermal quantities</label><label for="__tabbed_1_3">Mass diffusion quantities</label><label for="__tabbed_1_4">CALPHAD quantities</label><label for="__tabbed_1_5">Source and advection quantities</label><label for="__tabbed_1_6">System quantities</label></div>
 <div class="tabbed-content">
