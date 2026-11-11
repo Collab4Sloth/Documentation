@@ -464,10 +464,10 @@ In the figure 3, the integrators are gathered in two grouped:
     The `TransientOPE` operator must be defined by:
 
     - a vector of spatial discretisation objects (see [Meshing](../../../SpatialDiscretization/Meshing/index.md)) [required], 
-    - a vector of strings specifying the integrators used to model spatial differential operators [required],
+    - a list of integrators used to model spatial differential operators: names of built-in integrators and/or [custom integrators](../../../Extensions/index.md#integrators) [required],
     - a set of parameters (see [Parameters](../../../Parameters/index.md)) [optional],
     - a ODE solver for time stepping [required],
-    - a string specifying the integrator used to model time derivative operator [required].
+    - the integrator used to model time derivative operator: name of a built-in integrator or [custom integrator](../../../Extensions/index.md#integrators) [required].
   
     !!! warning "On the size of the vector of spatial discretisation objects"
         In `SLOTH`, each operator is designed to solve a system of PDEs with a monolithic algorithm.
@@ -538,7 +538,7 @@ In the figure 3, the integrators are gathered in two grouped:
     The `SteadyOPE` operator must be defined by:
 
     - a vector of spatial discretisation objects (see [Meshing](../../../SpatialDiscretization/Meshing/index.md)) [required], 
-    - a vector of strings specifying the integrators used to model spatial differential operators [required],
+    - a list of integrators used to model spatial differential operators: names of built-in integrators and/or [custom integrators](../../../Extensions/index.md#integrators) [required],
     - a set of parameters (see [Parameters](../../../Parameters/index.md)) [optional].
       
     !!! warning "On the size of the vector of spatial discretisation objects"

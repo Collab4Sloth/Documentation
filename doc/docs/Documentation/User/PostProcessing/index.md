@@ -99,8 +99,13 @@ The parameters allowed with `PostProcessing` for visualizing data with `ParaView
 | `"frequency"` | `int` | | Data output frequency |
 | `"iterations_list"` | `std::vector<int>` | | Iteration indices for data output. Used only if `"frequency"` is not provided |
 | `"times_list"` | `std::vector<double>` | | Times for data output. Used only if `"frequency"` is not provided. Can be combined with `"iterations_list"` |
+| `"save_var_old"` | `bool` | `false` | Also save the previous time level of each variable, as `<name>_old` (see [below](#save-var-old)) |
 
 : Table 1 - Parameters allowed with `PostProcessing` for visualizing data with `ParaView`
+
+### Previous time level of the variables {#save-var-old}
+
+With `Parameter("save_var_old", true)`, each `ParaView` output also contains, for each variable `<name>`, its value at the previous time step, as a field named `<name>_old`. Both fields are written in the same output and on the same mesh (after an AMR pass, the previous time level has already been transferred to the new mesh): time derivatives, e.g. `(phi - phi_old)/dt`, can be computed directly in `ParaView`. This works with `"frequency"`, `"iterations_list"`, `"times_list"` and adaptive time stepping.
 
 ## Specialized post-processing
 

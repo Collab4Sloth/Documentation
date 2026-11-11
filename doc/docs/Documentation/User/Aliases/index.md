@@ -23,6 +23,8 @@ That's it — no need to write out `FECollection`, `VARS`, `SPA`, etc. by hand a
 | `PB_MPI`                | `MPI_Problem<VARS, PST>`                            | MPI rank of each degree of freedom ([load balancing check](../AMR/index.md#load-balance-check))      |
 | `PB_CALPHAD<CALPHAD>`   | `Calphad_Problem<CALPHAD, VARS, PST>`               | Calphad-driven problems                                                                              |
 | `PB_PROPERTY<PROPERTY>` | `Property_problem<PROPERTY, VARS, PST>`             | Property-driven problems                                                                             |
+| `CustomIntegrator<C>`   | Integrator `C` defined outside `SLOTH`              | `CustomIntegrator<MyIntegrator>("MyName")` in a list of integrators ([Extending SLOTH](../Extensions/index.md#integrators)) |
+| `IntegratorList`        | List of integrators (built-in names, custom integrators) | `IntegratorList{"AllenCahn"}` when the list is forwarded by `std::make_unique`                   |
 
 None of these depend on whether the problem is transient or steady — that's why one `using namespace` is enough to get all of them, regardless of the scheme used.
 
