@@ -18,17 +18,24 @@ The dimension is simply an integer that can be 1, 2, or 3.
     This example show how to define a convenient alias for the `BoundaryConditions` class template instantiated with `mfem::H1_FECollection` in dimension 3. This alias is often used in tests in order to simplify the code.
 
 `BoundaryConditions` is roughly defined as a set of C++ object of type `Boundary`. 
-Each geometrical boundary must be associated with a C++ object of type `Boundary`.
-
-!!! warning "Number of boundaries"
-    The number of `Boundary` objects inside the `Boundaries` object must be equal to the total number of geometrical boundary. 
+Each boundary attribute of the mesh must be covered by exactly one `Boundary` object.
 
 A `Boundary` object is defined by
 
 - a name (C++ type `std::string`),
-- an index (C++ type `int`),
+- an index (C++ type `int`, equal to the boundary attribute of the mesh minus one), optional when the name is a [boundary attribute set of the mesh](#names),
 - a type (C++ type `std::string`) among "Dirichlet", "Neumann", "Robin", "Periodic",
 - a value (C++ type `double`) in case of "Dirichlet" boundary conditions only.
+
+```c++
+Boundary("left", 3, "Dirichlet", 1.);  // name, index, type, value
+Boundary("left", "Dirichlet", 1.);     // name of a boundary attribute set of the mesh, type, value
+```
+
+The rules linking names, indices and boundary attributes of the mesh are detailed in [Naming boundaries](#names).
+
+!!! warning "Covering the boundary attributes"
+    Every boundary attribute of the mesh must belong to exactly one `Boundary` object: a missing attribute, or an attribute shared by two `Boundary` objects, stops the simulation with an error message. 
 
 Inflow/outflow conditions for advection problems are not a boundary type: they are activated by a `Coefficient` of type `Glossary::Inflow` attached to the open boundaries (see the "Inflow / outflow" tab below).
 
@@ -42,7 +49,7 @@ Inflow/outflow conditions for advection problems are not a boundary type: they a
     === "Dirichlet"
         
         ```c++
-                auto list_boundaries_2 =  {Boundary("left", 0, "Dirichlet", 0.), Boundary("bottom", 1, "Neumann"), Boundary("right", 2, "Dirichlet", 1.), Boundary("top", 3, "Neumann")};
+                auto list_boundaries_2 =  {Boundary("lower", 0, "Neumann"), Boundary("right", 1, "Dirichlet", 1.), Boundary("upper", 2, "Neumann"), Boundary("left", 3, "Dirichlet", 0.)};
                 auto bcs_2 = BCS(&spatial, list_boundaries_2);
         ```
         The fourth argument in the definition of a Boundary object is only required for Dirichlet boundary conditions.
@@ -88,29 +95,31 @@ Inflow/outflow conditions for advection problems are not a boundary type: they a
     === "Neumann"
 
         ```c++
-        auto list_boundaries_1 = {Boundary("left", 0, "Neumann"), Boundary("bottom", 1, "Neumann"), Boundary("right", 2, "Neumann"), Boundary("top", 3, "Neumann")};
+        auto list_boundaries_1 = {Boundary("lower", 0, "Neumann"), Boundary("right", 1, "Neumann"), Boundary("upper", 2, "Neumann"), Boundary("left", 3, "Neumann")};
         auto bcs_1 = BCS(&spatial, list_boundaries_1);
         ```  
         This example enables to define homogeneous Neumann boundary conditions. 
 
         To define non-homogeneous Neumann boundary conditions, a `Coefficient` object of type `Glossary::Neumann` must be defined and associated with a set of `Boundary` objects.
-        The following example prescribes the `heat_flux` coefficient on the left boundary (`0`) and on the top boundary (`3`).
+        The following example prescribes the `heat_flux` coefficient on the upper boundary (`2`) and on the left boundary (`3`).
 
         ```c++
         Coefficient neumann(Glossary::Neumann, Scheme::Implicit, heat_flux());
-        neumann.set_bdr_index_coef(std::vector<int>{0,3});
+        neumann.set_bdr_index_coef(std::vector<int>{2, 3});
+        // or, equivalently, with the names of the Boundary objects
+        neumann.set_bdr_names_coef({"upper", "left"});
         ```  
 
     === "Robin"
 
         ```c++
-        auto list_boundaries_1 = {Boundary("left", 0, "Neumann"), Boundary("bottom", 1, "Robin"), Boundary("right", 2, "Neumann"), Boundary("top", 3, "Robin")};
+        auto list_boundaries_1 = {Boundary("lower", 0, "Robin"), Boundary("right", 1, "Neumann"), Boundary("upper", 2, "Robin"), Boundary("left", 3, "Neumann")};
         auto bcs_1 = BCS(&spatial, list_boundaries_1);
         ```  
         This example enables to define 
         
-        - homogeneous Neumann boundary conditions on the left boundary (`0`) and on the right boundary (`2`)
-        - Robin boundary conditions on the bottom boundary (`1`) and on the top boundary (`3`)
+        - homogeneous Neumann boundary conditions on the right boundary (`1`) and on the left boundary (`3`)
+        - Robin boundary conditions on the lower boundary (`0`) and on the upper boundary (`2`)
   
         Robin boundary conditions prescribes the following expression on a boundary:
 
@@ -127,13 +136,13 @@ Inflow/outflow conditions for advection problems are not a boundary type: they a
         {\bf{n}} \cdot k\nabla T + a(T) \times T =  b
         ```
         
-        with suitable coefficients on the bottom boundary (`1`) and on the top boundary (`3`).
+        with suitable coefficients on the lower boundary (`0`) and on the upper boundary (`2`).
 
         ```c++
         Coefficient robin_a(Glossary::Robin_a, Scheme::Implicit, RobinCoefficient());
         Coefficient robin_b(Glossary::Robin_b, epsilon * sigma * std::pow(T_inf, 4));
-        robin_a.set_bdr_index_coef(std::vector<int>{1,3});
-        robin_b.set_bdr_index_coef(std::vector<int>{1,3});
+        robin_a.set_bdr_names_coef({"lower", "upper"});
+        robin_b.set_bdr_names_coef({"lower", "upper"});
         ```  
 
         In this example, `RobinCoefficient()` is built from the following JSON file
@@ -164,7 +173,7 @@ Inflow/outflow conditions for advection problems are not a boundary type: they a
         - outflow ($`\mathbf{v}\cdot\mathbf{n} > 0`$): the interior value $`u`$ leaves the domain freely,
         - inflow ($`\mathbf{v}\cdot\mathbf{n} < 0`$): the incoming flux $`(\mathbf{v}\cdot\mathbf{n})\,u_{in}`$ is imposed.
 
-        $`u_{in}`$ is given by a `Coefficient` of type `Glossary::Inflow`, attached to the open boundaries with `set_bdr_index_coef`. 
+        $`u_{in}`$ is given by a `Coefficient` of type `Glossary::Inflow`, attached to the open boundaries with `set_bdr_index_coef` or `set_bdr_names_coef` (see [Attaching coefficients to boundaries](#coefbdr)). 
         The switch between inflow and outflow is made at each integration point according to the sign of $`\mathbf{v}\cdot\mathbf{n}`$, so the `Inflow` coefficient can be attached to all the open boundaries, whatever the direction of the flow. 
         It can depend on the spatial coordinates and on the time, not on the unknowns.
 
@@ -190,7 +199,7 @@ Inflow/outflow conditions for advection problems are not a boundary type: they a
     === "Periodic"
 
         ```c++
-            auto list_boundaries_3 = {Boundary("left", 0, "Periodic"), Boundary("bottom", 1, "Periodic"), Boundary("right", 2, "Periodic"), Boundary("top", 3, "Periodic")};
+            auto list_boundaries_3 = {Boundary("lower", 0, "Periodic"), Boundary("right", 1, "Periodic"), Boundary("upper", 2, "Periodic"), Boundary("left", 3, "Periodic")};
             auto bcs_3 = BCS(&spatial, list_boundaries_3);
         ```
 
@@ -200,8 +209,106 @@ Once defined, boundary conditions are associated with variables (see [Variables]
 The user can define as many boundary conditions as there are variables.
 
 
-!!! warning "Consistency of the indices of the boundaries"
-    `MFEM v4.7` provides new features for referring to boundary attribute numbers. Such an improvement is not yet implemented in `SLOTH`. Consequently, users must take care to the consistency of the indices used in the test file with the indices defined when building the mesh with `GMSH`.
+## Naming boundaries {#names}
+
+Internally, `SLOTH` works with boundary indices: the index of a boundary is its boundary attribute in the mesh minus one. 
+The name of a `Boundary` can be used instead of its index when the mesh provides named sets of boundary attributes (`bdr_attribute_sets`, available since `MFEM v4.7`).
+
+### Where boundary attribute sets come from
+
+- **`GMSH` meshes**: the `$PhysicalNames` of dimension `dim - 1` become boundary attribute sets, the physical tag being the boundary attribute. With the extract below (2D mesh), the boundary attribute set `"bottom"` contains the attribute `1`, i.e. the index `0`.
+    ```GMSH
+    $PhysicalNames
+    5
+    1 1 "bottom"
+    1 2 "top"
+    1 3 "external"
+    2 22 "pellet"
+    2 23 "cluster"
+    $EndPhysicalNames
+    ```
+    The `$PhysicalNames` of dimension `dim` become element attribute sets, used to [initialize variables](../../Variables/index.md#var_option).
+- **`MFEM` meshes (format `MFEM mesh v1.3`)**: the sets are written in a `bdr_attribute_sets` section, each line giving the name, the number of attributes and the attributes. A set may gather several attributes.
+    ```
+    bdr_attribute_sets
+    2
+    "left" 1 4
+    "horizontal" 2 1 3
+    ```
+- **[Meshes built with `MFEM` meshing functionalities](../Meshing/index.md#mfem)**: no set is defined. Boundaries are given by their index, following the numbering of `MFEM`, and the name is free.
+
+    | Dimension | Boundary attributes (index = attribute - 1) |
+    |---|---|
+    | 1D | 1: $`x=0`$, 2: $`x=L_x`$ |
+    | 2D | 1: $`y=0`$, 2: $`x=L_x`$, 3: $`y=L_y`$, 4: $`x=0`$ |
+    | 3D | 1: $`z=0`$, 2: $`y=0`$, 3: $`x=L_x`$, 4: $`y=L_y`$, 5: $`x=0`$, 6: $`z=L_z`$ |
+
+### From names to indices
+
+When the boundary conditions are built, the indices of each `Boundary` are determined as follows:
+
+| `Boundary` defined with | The mesh has a set with this name | The mesh has no set with this name |
+|---|---|---|
+| a name only | indices of all the attributes of the set | error, the available sets are listed |
+| a name and an index | the set must contain exactly the attribute `index + 1`, otherwise error | the index is used, the name is free |
+
+A `Boundary` defined by a set gathering several attributes covers all of them, with the same type and the same value.
+
+!!! example "Boundary conditions given by names"
+
+    === "GMSH mesh"
+
+        With the `GMSH` mesh of a pellet with an inclusion described above:
+
+        ```c++
+        SPA spatial("GMSH", 1, 0, "pellet2Dinclusion.msh", false);
+        auto bcs = BCS(&spatial, Boundary("bottom", "Neumann"), Boundary("top", "Neumann"),
+                       Boundary("external", "Dirichlet", 1.));
+        ```
+
+    === "Set gathering several attributes"
+
+        With the `MFEM` mesh described above, whose set `"horizontal"` gathers the attributes `1` and `3`:
+
+        ```c++
+        auto bcs = BCS(&spatial, Boundary("horizontal", "Neumann"),
+                       Boundary("right", 1, "Dirichlet", 2.), Boundary("left", "Dirichlet", 1.));
+        ```
+        
+        The attribute `2` is not in a set: the `Boundary` named `"right"` is given with its index.
+
+    === "Built-in mesh"
+
+        ```c++
+        SPA spatial("InlineSquareWithQuadrangles", 1, 0, std::make_tuple(4, 4, 1., 1.));
+        auto bcs = BCS(&spatial, Boundary("bottom", 0, "Neumann"), Boundary("east", 1, "Dirichlet", 2.),
+                       Boundary("top", 2, "Neumann"), Boundary("west", 3, "Dirichlet", 1.));
+        ```
+
+        The names are free and can be used by the coefficients (see [below](#coefbdr)).
+
+## Attaching coefficients to boundaries {#coefbdr}
+
+Coefficients of type `Glossary::Dirichlet`, `Glossary::Neumann`, `Glossary::Robin_a`, `Glossary::Robin_b` and `Glossary::Inflow` are attached to boundaries 
+
+- by index, with `set_bdr_index_coef`,
+- by name, with `set_bdr_names_coef`: the names are those of the `Boundary` objects of the boundary conditions of the variable, whether they come from a boundary attribute set of the mesh or are simply associated with an index.
+
+Both can be combined: the coefficient applies to all the boundaries given.
+
+!!! example "Coefficients attached to boundaries by name"
+    ```c++
+    auto bcs = BCS(&spatial, Boundary("lower", 0, "Neumann"), Boundary("right", 1, "Neumann"),
+                   Boundary("upper", 2, "Neumann"), Boundary("left", 3, "Dirichlet", 1.));
+
+    Coefficient neumann(Glossary::Neumann, 2.);
+    neumann.set_bdr_names_coef({"right"});   // equivalent to set_bdr_index_coef({1})
+    ```
+    With a set gathering several attributes (`"horizontal"` above), the coefficient applies to all of them.
+
+!!! warning "Unknown names"
+    A name that is not the name of a `Boundary` of the boundary conditions of the variable stops the simulation with an error message listing the available names. 
+    Names are converted into indices when the operator is initialized.
 
 
 ## Build N boundary conditions from a vector of spatial discretizations {#factory}

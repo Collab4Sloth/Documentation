@@ -588,7 +588,7 @@ No `Scheme` is given: it is automatically set to `Scheme::File`.
 
 A file-based coefficient can be used:
 
-- as a Dirichlet or Neumann boundary condition, like any other boundary coefficient,
+- as a Dirichlet or Neumann boundary condition, like any other boundary coefficient (attached by index or by name, see [Attaching coefficients to boundaries](../SpatialDiscretization/BoundaryConditions/index.md#coefbdr)),
 - as an initial condition, by passing it to the `Variable` constructor,
 - in the integrators, as any other `Coefficient`.
 

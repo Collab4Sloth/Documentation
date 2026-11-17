@@ -115,10 +115,12 @@ BCS bcs(&spatial, {
   Boundary("left",  3, "Dirichlet", 0.)});
 ```
 
-A `Boundary` is made of a free name, an index, a type (`Dirichlet`, `Neumann`, `Robin`, `Periodic`) and, for a uniform Dirichlet condition, its value.
+A `Boundary` is made of a name, an index, a type (`Dirichlet`, `Neumann`, `Robin`, `Periodic`) and, for a uniform Dirichlet condition, its value.
 
 !!! warning "The right index"
-    The name is free, but the index must match the edge attribute in the mesh. For the MFEM square: `0` bottom, `1` right, `2` top, `3` left. For a GMSH mesh, use the attributes defined in the file.
+    For the MFEM square, the name is free and the index follows the numbering of MFEM: `0` bottom, `1` right, `2` top, `3` left. 
+    For a GMSH mesh, the index can be omitted: the name of the boundary is then its `PhysicalName` in the file, e.g. `Boundary("external", "Dirichlet", 1.)`. 
+    See [Naming boundaries](../../../../Documentation/User/SpatialDiscretization/BoundaryConditions/index.md#names).
 
 Each variable receives its `BCS` when it is created (see [Part 3](#5-part-3-multiphysics-coupling)). See the [Boundary Conditions](../../../../Documentation/User/SpatialDiscretization/BoundaryConditions/index.md) page of the User Manual for all condition types.
 
@@ -168,11 +170,11 @@ In multiphase simulations, or with AMR, several fields often share one mesh. The
     `setSpatialDiscretization(N, ...)` takes, after `N`, the arguments of the `SPA` constructor (`setPeriodicSpatialDiscretization` for a periodic mesh). `setBoundaryConditions` builds the `N` `BCS` from a single list of `Boundary`: `bcs[i]` goes with `spatials[i]`. Objects created by the factory are freed in the footer.
 
 !!! note "Non-uniform boundary values"
-    A non-uniform boundary value is a `Coefficient` of type `Glossary::Dirichlet`, `Neumann` or `Robin`, attached to the edges with `set_bdr_index_coef`, and written in a JSON file like the energies (`x`, `y` as auxiliary, `t` for time):
+    A non-uniform boundary value is a `Coefficient` of type `Glossary::Dirichlet`, `Neumann` or `Robin`, attached to the edges by name with `set_bdr_names_coef` (or by index with `set_bdr_index_coef`), and written in a JSON file like the energies (`x`, `y` as auxiliary, `t` for time):
 
     ```cpp
     Coefficient bc(Glossary::Dirichlet, …);
-    bc.set_bdr_index_coef({1});
+    bc.set_bdr_names_coef({"right"});  // or bc.set_bdr_index_coef({1});
     ```
 
 See the factory sections of the [Meshing](../../../../Documentation/User/SpatialDiscretization/Meshing/index.md#factory) and [Boundary Conditions](../../../../Documentation/User/SpatialDiscretization/BoundaryConditions/index.md#factory) pages.
