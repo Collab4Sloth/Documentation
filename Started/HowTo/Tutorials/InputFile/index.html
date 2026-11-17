@@ -4738,10 +4738,12 @@
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="n">Boundary</span><span class="p">(</span><span class="s">"upper"</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">"Neumann"</span><span class="p">),</span>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="n">Boundary</span><span class="p">(</span><span class="s">"left"</span><span class="p">,</span><span class="w">  </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s">"Dirichlet"</span><span class="p">,</span><span class="w"> </span><span class="mf">0.</span><span class="p">)});</span>
 </span></code></pre></div>
-<p>A <code>Boundary</code> is made of a free name, an index, a type (<code>Dirichlet</code>, <code>Neumann</code>, <code>Robin</code>, <code>Periodic</code>) and, for a uniform Dirichlet condition, its value.</p>
+<p>A <code>Boundary</code> is made of a name, an index, a type (<code>Dirichlet</code>, <code>Neumann</code>, <code>Robin</code>, <code>Periodic</code>) and, for a uniform Dirichlet condition, its value.</p>
 <div class="admonition warning">
 <p class="admonition-title">The right index</p>
-<p>The name is free, but the index must match the edge attribute in the mesh. For the MFEM square: <code>0</code> bottom, <code>1</code> right, <code>2</code> top, <code>3</code> left. For a GMSH mesh, use the attributes defined in the file.</p>
+<p>For the MFEM square, the name is free and the index follows the numbering of MFEM: <code>0</code> bottom, <code>1</code> right, <code>2</code> top, <code>3</code> left. 
+For a GMSH mesh, the index can be omitted: the name of the boundary is then its <code>PhysicalName</code> in the file, e.g. <code>Boundary("external", "Dirichlet", 1.)</code>. 
+See <a href="../../../../Documentation/User/SpatialDiscretization/BoundaryConditions/index.html#names">Naming boundaries</a>.</p>
 </div>
 <p>Each variable receives its <code>BCS</code> when it is created (see <a href="#5-part-3-multiphysics-coupling">Part 3</a>). See the <a href="../../../../Documentation/User/SpatialDiscretization/BoundaryConditions/index.html">Boundary Conditions</a> page of the User Manual for all condition types.</p>
 <h3 id="step-3-going-further-several-fields-on-one-mesh">Step 3 – Going further: several fields on one mesh<a class="headerlink" href="#step-3-going-further-several-fields-on-one-mesh" title="Permanent link">&para;</a></h3>
@@ -4787,9 +4789,9 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Non-uniform boundary values</p>
-<p>A non-uniform boundary value is a <code>Coefficient</code> of type <code>Glossary::Dirichlet</code>, <code>Neumann</code> or <code>Robin</code>, attached to the edges with <code>set_bdr_index_coef</code>, and written in a JSON file like the energies (<code>x</code>, <code>y</code> as auxiliary, <code>t</code> for time):</p>
+<p>A non-uniform boundary value is a <code>Coefficient</code> of type <code>Glossary::Dirichlet</code>, <code>Neumann</code> or <code>Robin</code>, attached to the edges by name with <code>set_bdr_names_coef</code> (or by index with <code>set_bdr_index_coef</code>), and written in a JSON file like the energies (<code>x</code>, <code>y</code> as auxiliary, <code>t</code> for time):</p>
 <div class="language-cpp highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">Coefficient</span><span class="w"> </span><span class="nf">bc</span><span class="p">(</span><span class="n">Glossary</span><span class="o">::</span><span class="n">Dirichlet</span><span class="p">,</span><span class="w"> </span><span class="err">…</span><span class="p">);</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">bc</span><span class="p">.</span><span class="n">set_bdr_index_coef</span><span class="p">({</span><span class="mi">1</span><span class="p">});</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">bc</span><span class="p">.</span><span class="n">set_bdr_names_coef</span><span class="p">({</span><span class="s">"right"</span><span class="p">});</span><span class="w">  </span><span class="c1">// or bc.set_bdr_index_coef({1});</span>
 </span></code></pre></div>
 </div>
 <p>See the factory sections of the <a href="../../../../Documentation/User/SpatialDiscretization/Meshing/index.html#factory">Meshing</a> and <a href="../../../../Documentation/User/SpatialDiscretization/BoundaryConditions/index.html#factory">Boundary Conditions</a> pages.</p>
