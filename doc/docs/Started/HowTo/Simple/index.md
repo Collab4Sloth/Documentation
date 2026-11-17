@@ -253,8 +253,9 @@ A `Boundary` object is defined by
 
 Different type of boundary conditions can be mixed as detailed in the [Boundary Conditions section of the user manual](../../../Documentation/User/SpatialDiscretization/BoundaryConditions/index.md). 
 
-!!! warning "On the consistency of the indices of the boundaries"
-    `MFEM v4.7` provides new features for referring to boundary attribute numbers. Such an improvement is not yet implemented in `SLOTH`. Consequently, users must take care to the consistency of the indices used in the test file with the indices defined when building the mesh with `GMSH`.
+!!! note "Names and indices of the boundaries"
+    For a mesh built with `MFEM` meshing functionalities, the index of a boundary follows the numbering of `MFEM` (in 1D: `0` at $`x=0`$, `1` at $`x=L`$) and the name is free. 
+    For a `GMSH` mesh, a boundary can be given by its `PhysicalName` only, without index. See [Naming boundaries](../../../Documentation/User/SpatialDiscretization/BoundaryConditions/index.md#names).
 
 
 !!! example "Test file with the mesh and the boundary conditions"

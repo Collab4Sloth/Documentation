@@ -366,7 +366,7 @@ TransientPB ch_pb("CahnHilliard", ch_oper, ch_vars, {ch_coef, ch_coef}, ch_pst, 
     "coordinates": "x,y",
     ```
 
-    The `coordinates` key makes a coefficient depend on the position, typically for non-uniform boundary conditions attached to edges with `set_bdr_index_coef` (see `tests/HeatTransfer/2D/test5`). Coordinates are not unknowns. See [coefficients depending on spatial coordinates](../../../../Documentation/User/Coefficients/index.md#coordcoef).
+    The `coordinates` key makes a coefficient depend on the position, typically for non-uniform boundary conditions attached to edges with `set_bdr_names_coef` or `set_bdr_index_coef` (see `tests/HeatTransfer/2D/test5`). Coordinates are not unknowns. See [coefficients depending on spatial coordinates](../../../../Documentation/User/Coefficients/index.md#coordcoef).
 
 === "Conditional"
 
