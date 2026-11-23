@@ -184,7 +184,7 @@ By default (`"enable_compute_energies"` set to `true`), the energies of the syst
 
 `Sigma[J.m-3]` is written only if the energies have an interface part, that is if a `GradEnergy` coefficient is given or if the `FreeEnergy` coefficient is variational. With a variational free energy, the interface part is the contribution of the gradient terms, so that `GradEnergy` must not be given.
 
-The energies are integrated element by element with a quadrature rule of order $`2p+3`$ ($`p`$: order of the finite elements). The variables of the free energy are the first variables of the problem: for instance, for the [Cahn-Hilliard equations](../MultiPhysicsCouplingScheme/Problems/PDEs/index.md#integrators), the concentrations, and not the chemical potentials.
+The energies are integrated element by element with a quadrature rule of order $`2p+3`$ ($`p`$: order of the finite elements). The variables of the free energy are the first variables of the problem: for instance, for the [Cahn-Hilliard equations](../MultiPhysicsCouplingScheme/Problems/PDEs/index.md#integrators), the phase-field variables, and not the chemical potentials.
 
 See the dedicated page of the user manual for more details about the definition of `SLOTH` [coefficients](../Coefficients/index.md).
 
