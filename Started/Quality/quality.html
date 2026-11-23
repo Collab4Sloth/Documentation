@@ -2915,6 +2915,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#non-regression-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-regression tests
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Non-regression tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#col_compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison of results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update_references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updating the references
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#code-coverage-analysis" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4203,6 +4242,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#non-regression-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Non-regression tests
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Non-regression tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#col_compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison of results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update_references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Updating the references
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#code-coverage-analysis" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4239,29 +4317,95 @@
 <p>CppLint is a static code checker that can be easily installed from PyPI:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>cpplint
 </span></code></pre></div>
-<p>The options considered for static code analysis are:</p>
+<p>The options considered for static code analysis are placed in the file <code>CPPLINT.cfg</code>, available in the root of the SLOTH repository:</p>
 <ul>
-<li><code>linelength=100</code> to set the maximum allowed line length for your code</li>
-<li><code>filter=-runtime/references,-build/header_guard,-runtime/string</code></li>
+<li><code>linelength=100</code> to set the maximum allowed line length for your code (the same limit is used by <code>.clang-format</code>),</li>
+<li><code>filter=-runtime/references,-runtime/string,-build/header_guard,-build/include</code> and <code>filter=-whitespace/indent_namespace</code>: project conventions,</li>
+<li><code>filter=-readability/check</code>: this check concerns the <code>CHECK_EQ</code>-like macros of Google Test, not those of Catch2 used by the unit tests,</li>
+<li><code>filter=-build/c++17</code>: SLOTH is a C++20 code and uses C++17 headers such as <code>&lt;filesystem&gt;</code>.</li>
 </ul>
-<p>These options are placed in the file CPPLINT.cfg, available in the root of the SLOTH repository.</p>
+<p>The file <code>tests/CPPLINT.cfg</code> adds <code>filter=-build/namespaces</code> for the test cases, which use <code>using namespace Sloth2D;</code> (or <code>Sloth1D</code>, <code>Sloth3D</code>) for readability.</p>
 <p>In practice, after loading the SLOTH environement file, using the CMake target  <code>lint</code> enables to run the static code analysis:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>make<span class="w"> </span>lint
 </span></code></pre></div>
+<h2 id="non-regression-tests">Non-regression tests<a class="headerlink" href="#non-regression-tests" title="Permanent link">&para;</a></h2>
+<h3 id="col_compare">Comparison of results<a class="headerlink" href="#col_compare" title="Permanent link">&para;</a></h3>
+<p>Most of the tests compare the <code>CSV</code> files written by a simulation (for instance <code>time_specialized.csv</code>) with reference files stored in the <code>ref</code> folder of the test. These comparisons are declared in the <code>CMakeLists.txt</code> of the test with <code>create_col_comparison</code> and run the script <code>tests/tools/col_compare.py</code>, column by column, with one of the following errors:</p>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>absolute</code></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">∣</mo><mi>b</mi><mo>−</mo><mi>a</mi><mo stretchy="false">∣</mo></mrow><annotation encoding="application/x-tex">\lvert b - a\rvert</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">∣</span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mclose">∣</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>relative</code></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">∣</mo><mi>b</mi><mo>−</mo><mi>a</mi><mo stretchy="false">∣</mo><mi mathvariant="normal">/</mi><mo stretchy="false">∣</mo><mi>a</mi><mo stretchy="false">∣</mo></mrow><annotation encoding="application/x-tex">\lvert b - a\rvert / \lvert a\rvert</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">∣</span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mclose">∣</span><span class="mord">/</span><span class="mopen">∣</span><span class="mord mathnormal">a</span><span class="mclose">∣</span></span></span></span></td>
+</tr>
+<tr>
+<td><code>relativeEpsilon</code></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">∣</mo><mi>b</mi><mo>−</mo><mi>a</mi><mo stretchy="false">∣</mo><mi mathvariant="normal">/</mi><mi>max</mi><mo>⁡</mo><mo stretchy="false">(</mo><mo stretchy="false">∣</mo><mi>a</mi><mo stretchy="false">∣</mo><mo separator="true">,</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>20</mn></mrow></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\lvert b - a\rvert / \max(\lvert a\rvert, 10^{-20})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">∣</span><span class="mord mathnormal">b</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mclose">∣</span><span class="mord">/</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">max</span><span class="mopen">(∣</span><span class="mord mathnormal">a</span><span class="mclose">∣</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">20</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></td>
+</tr>
+</tbody>
+</table>
+<p>where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">a</span></span></span></span> is the reference value and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">b</span></span></span></span> the computed one. A test fails if the error exceeds the criterion given in the <code>CMakeLists.txt</code> for one value of a compared column. With <code>relative</code> and <code>relativeEpsilon</code>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mi mathvariant="normal">/</mi><mn>0</mn></mrow><annotation encoding="application/x-tex">x/0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">x</span><span class="mord">/0</span></span></span></span> is a detected difference and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mi mathvariant="normal">/</mi><mn>0</mn></mrow><annotation encoding="application/x-tex">0/0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0/0</span></span></span></span> is not.</p>
+<h3 id="update_references">Updating the references<a class="headerlink" href="#update_references" title="Permanent link">&para;</a></h3>
+<p>When a development intentionally changes results (a new formula, a more accurate quadrature...), the script <code>tests/tools/update_references.py</code> reports and updates the references of the comparison tests, with the criterion of each test. Run the tests first, then:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># report of all the comparison tests (nothing is modified)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>python3<span class="w"> </span>tests/tools/update_references.py<span class="w"> </span>-b<span class="w"> </span>build
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># tests which failed during the last ctest run, whose name matches a regular expression</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>python3<span class="w"> </span>tests/tools/update_references.py<span class="w"> </span>-b<span class="w"> </span>build<span class="w"> </span>--failed<span class="w"> </span>-R<span class="w"> </span>AllenCahn
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># update the references which differ in the column Density[J.m-3] only</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>python3<span class="w"> </span>tests/tools/update_references.py<span class="w"> </span>-b<span class="w"> </span>build<span class="w"> </span>--update<span class="w"> </span>--columns<span class="w"> </span><span class="s2">"Density[J.m-3]"</span>
+</span></code></pre></div>
+<p>With <code>--update</code>, the results are copied on the reference of the source tree (<code>tests/&lt;...&gt;/ref/&lt;file&gt;</code>) and on its copy in the build directory, so that the tests pass without configuring again. The other options are:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-s</code>, <code>--source</code></td>
+<td>source directory (default: read in <code>CMakeCache.txt</code>)</td>
+</tr>
+<tr>
+<td><code>--force</code></td>
+<td>with <code>--update</code>: also the tests whose number of rows differs</td>
+</tr>
+<tr>
+<td><code>--prefix-map OLD=NEW</code></td>
+<td>replace the prefix <code>OLD</code> of the paths written by CMake by <code>NEW</code>, for a build configured in another directory</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Check the differences before updating</p>
+<p>The report gives the columns which differ for each test: only update references whose differences are understood, and restrict the update with <code>-R</code> and <code>--columns</code>.</p>
+</div>
 <h2 id="code-coverage-analysis">Code coverage analysis<a class="headerlink" href="#code-coverage-analysis" title="Permanent link">&para;</a></h2>
 <p>Performing code coverage analysis consists of three simple steps:</p>
 <ul>
 <li>Compilling SLOTH in coverage mode
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mkdir<span class="w"> </span>build
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">cd</span><span class="w"> </span>build
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">source</span><span class="w"> </span>../envSloth.sh<span class="w"> </span>--coverage
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>make<span class="w"> </span>-j<span class="w"> </span>N
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mkdir<span class="w"> </span>build
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">cd</span><span class="w"> </span>build
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">source</span><span class="w"> </span>../envSloth.sh<span class="w"> </span>--coverage
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>make<span class="w"> </span>-j<span class="w"> </span>N
 </span></code></pre></div></li>
 <li>Running the tests (here, for example, all cases stored in the folder <code>tests</code>):
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ctest<span class="w"> </span>-j<span class="w"> </span>N
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ctest<span class="w"> </span>-j<span class="w"> </span>N
 </span></code></pre></div></li>
 <li>Running the CMake target <code>cc</code> to generate the code coverage analysis within the Coverage folder:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>make<span class="w"> </span>cc
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>make<span class="w"> </span>cc
 </span></code></pre></div></li>
 </ul>
 <div class="admonition warning">

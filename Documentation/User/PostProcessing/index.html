@@ -3771,6 +3771,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#energies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Energies of the system
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4331,6 +4342,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#energies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Energies of the system
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4503,8 +4525,8 @@ This example shows how to declare a <code>PST</code> object with the spatial dis
 <p>The <code>time_specialized.csv</code> file contains:</p>
 <ul>
 <li>The <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>L</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">L^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathnormal">L</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>L</mi><mi mathvariant="normal">∞</mi></msup></mrow><annotation encoding="application/x-tex">L^\infty</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord"><span class="mord mathnormal">L</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">∞</span></span></span></span></span></span></span></span></span></span></span> norms of the error for each variable with an analytical solution;</li>
-<li>The energy density of the problem;</li>
-<li>The surface tension of the problem (for phase-field problems);</li>
+<li>The energy of the problem (column <code>Density[J.m-3]</code>, see <a href="#energies">Energies of the system</a>);</li>
+<li>The interface energy of the problem (column <code>Sigma[J.m-3]</code>, for phase-field problems, see <a href="#energies">Energies of the system</a>);</li>
 <li>The spatial average of the variable over the computational domain, if requested with the <code>"integral_to_compute"</code> parameter.</li>
 </ul>
 <p>The parameters allowed with <code>PostProcessing</code> for exporting specialized values in the <code>time_specialized.csv</code> file are summarized in Table 2.</p>
@@ -4617,11 +4639,44 @@ By default, the files are written to a directory named <code>GF</code>. This loc
 <p class="admonition-title">On the lower and upper bounds used with <code>integral_to_compute</code></p>
 <p>Lower and upper bounds are used to limit the calculation of the integral to specific values of the variables. For example, it can be useful to compute the volume of a bubble corresponding to a phase indicator lower than <span class="arithmatex">\(0.5\)</span>.</p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">On the calculation of energies for phase-field problems</p>
-<p>By default, energies are calculated. For phase-field problems, if <code>"enable_compute_energies"</code> is set to <code>true</code>, a <code>SLOTH</code> coefficient of type <code>Glossary::GradEnergy</code> <strong>must</strong> be defined in the vector of coefficients passed to the <code>SLOTH</code> problem. Otherwise, an exception is raised.</p>
+<h3 id="energies">Energies of the system<a class="headerlink" href="#energies" title="Permanent link">&para;</a></h3>
+<p>By default (<code>"enable_compute_energies"</code> set to <code>true</code>), the energies of the system are computed with the current values of the variables, from the coefficients of the first variable of the problem:</p>
+<ul>
+<li>a coefficient of type <code>Glossary::FreeEnergy</code> is <strong>required</strong>: an exception is raised if it is missing,</li>
+<li>a coefficient of type <code>Glossary::GradEnergy</code> is optional.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Coefficients of the first variable</th>
+<th><code>Density[J.m-3]</code></th>
+<th><code>Sigma[J.m-3]</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FreeEnergy</code> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(u)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">u</span><span class="mclose">)</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∫</mo><mi mathvariant="normal">Ω</mi></msub><mi>f</mi></mrow><annotation encoding="application/x-tex">\int_\Omega f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1608em;vertical-align:-0.3558em;"></span><span class="mop"><span class="mop op-symbol small-op" style="margin-right:0.19445em;position:relative;top:-0.0006em;">∫</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1225em;"><span style="top:-2.3442em;margin-left:-0.1945em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">Ω</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3558em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span></td>
+<td>not written</td>
+</tr>
+<tr>
+<td><code>FreeEnergy</code> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(u)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">u</span><span class="mclose">)</span></span></span></span> and <code>GradEnergy</code> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false">(</mo><mi mathvariant="normal">∇</mi><mi>u</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">g(\nabla u)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord">∇</span><span class="mord mathnormal">u</span><span class="mclose">)</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∫</mo><mi mathvariant="normal">Ω</mi></msub><mo stretchy="false">(</mo><mi>f</mi><mo>+</mo><mi>g</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\int_\Omega (f + g)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1608em;vertical-align:-0.3558em;"></span><span class="mop"><span class="mop op-symbol small-op" style="margin-right:0.19445em;position:relative;top:-0.0006em;">∫</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1225em;"><span style="top:-2.3442em;margin-left:-0.1945em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">Ω</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3558em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mclose">)</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mo>∫</mo><mi mathvariant="normal">Ω</mi></msub><mi>g</mi></mrow><annotation encoding="application/x-tex">2\int_\Omega g</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1608em;vertical-align:-0.3558em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mop op-symbol small-op" style="margin-right:0.19445em;position:relative;top:-0.0006em;">∫</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1225em;"><span style="top:-2.3442em;margin-left:-0.1945em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">Ω</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3558em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span></span></span></span></td>
+</tr>
+<tr>
+<td><a href="../Coefficients/index.html#variational">variational</a> <code>FreeEnergy</code> <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>u</mi><mo separator="true">,</mo><mi mathvariant="normal">∇</mi><mi>u</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(u, \nabla u)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">∇</span><span class="mord mathnormal">u</span><span class="mclose">)</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∫</mo><mi mathvariant="normal">Ω</mi></msub><mi>f</mi></mrow><annotation encoding="application/x-tex">\int_\Omega f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1608em;vertical-align:-0.3558em;"></span><span class="mop"><span class="mop op-symbol small-op" style="margin-right:0.19445em;position:relative;top:-0.0006em;">∫</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1225em;"><span style="top:-2.3442em;margin-left:-0.1945em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">Ω</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3558em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msub><mo>∫</mo><mi mathvariant="normal">Ω</mi></msub><mrow><mo fence="true">(</mo><mi>f</mi><mo stretchy="false">(</mo><mi>u</mi><mo separator="true">,</mo><mi mathvariant="normal">∇</mi><mi>u</mi><mo stretchy="false">)</mo><mo>−</mo><mi>f</mi><mo stretchy="false">(</mo><mi>u</mi><mo separator="true">,</mo><mn>0</mn><mo stretchy="false">)</mo><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">2\int_\Omega \left(f(u, \nabla u) - f(u, 0)\right)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1608em;vertical-align:-0.3558em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mop op-symbol small-op" style="margin-right:0.19445em;position:relative;top:-0.0006em;">∫</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1225em;"><span style="top:-2.3442em;margin-left:-0.1945em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">Ω</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3558em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">∇</span><span class="mord mathnormal">u</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mclose">)</span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span></span></td>
+</tr>
+</tbody>
+</table>
+<dl>
+<dd>Table 4 - Energies of the system written in the <code>time_specialized.csv</code> file</dd>
+</dl>
+<p><code>Sigma[J.m-3]</code> is written only if the energies have an interface part, that is if a <code>GradEnergy</code> coefficient is given or if the <code>FreeEnergy</code> coefficient is variational. With a variational free energy, the interface part is the contribution of the gradient terms, so that <code>GradEnergy</code> must not be given.</p>
+<p>The energies are integrated element by element with a quadrature rule of order <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>p</mi><mo>+</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">2p+3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">2</span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span></span></span></span> (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span></span></span></span>: order of the finite elements). The variables of the free energy are the first variables of the problem: for instance, for the <a href="../MultiPhysicsCouplingScheme/Problems/PDEs/index.html#integrators">Cahn-Hilliard equations</a>, the phase-field variables, and not the chemical potentials.</p>
 <p>See the dedicated page of the user manual for more details about the definition of <code>SLOTH</code> <a href="../Coefficients/index.html">coefficients</a>.</p>
-</div>
 <div class="admonition example">
 <p class="admonition-title">Example of <code>PostProcessing</code> with parameters</p>
 <p>The following example assumes the existence of a <code>Variable</code> named <code>"phi"</code> for Cahn-Hilliard equations.</p>
