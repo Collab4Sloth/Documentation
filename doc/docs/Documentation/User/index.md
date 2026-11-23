@@ -7,7 +7,7 @@ icon: material/book-open-variant
 Figure 1 shows a schematic overview of the `SLOTH` features.
 
 <figure markdown="span">
-  ![sloth-features](../../img/sloth-diagram.png){  width=500px}
+  ![sloth-features](../../img/sloth-diagram.drawio.svg){  width=500px}
   <figcaption>Figure 1 : schematic overview of the `SLOTH` features
 </figcaption>
 </figure>

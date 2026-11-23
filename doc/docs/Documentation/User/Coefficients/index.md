@@ -9,8 +9,25 @@ Definition of coefficients for `SLOTH` is made with a C++ object of type `Coeffi
 For SLOTH, a `Coefficient` is a C++ object defined by:
 
 - a [`GlobalQuantity`](../Glossary/index.md)
-- a `SLOTH` C++ enum type `Scheme` (except for constant coefficients) : available values for users are `Scheme::Implicit`, `Scheme::Explicit`, `Scheme::SemiImplicit`. These values are directly linked to the definition of coefficients and their use in `SLOTH` integrators.
+- a `SLOTH` C++ enum type `Scheme` (except for constant and [file-based](#coef_file) coefficients) : available values for users are `Scheme::Implicit`, `Scheme::Explicit`, `Scheme::SemiImplicit` (see [Time scheme of a coefficient](#scheme)).
 - a `SLOTH` C++ type `FunctionCoefficient`.
+
+### __Time scheme of a coefficient__ {#scheme}
+
+In the integrators of transient problems, the scheme of a coefficient defines the values of the variables used to evaluate it during the time step from $`t^n`$ to $`t^{n+1}`$:
+
+| Scheme | Values of the variables | Derivatives in the Jacobian |
+|--------|-------------------------|-----------------------------|
+| `Scheme::Implicit` | current values $`u`$ (end of the step) | yes |
+| `Scheme::Explicit` | values at the beginning of the step $`u^n`$ | no: the coefficient is constant during the step |
+| `Scheme::SemiImplicit` | $`u`$ for the `variables`, $`u^n`$ for the `explicit_variables` (see [semi-implicit coefficients](#semiimplicit)) | with respect to the `variables` only |
+| constant, `Scheme::Constant` | none | no |
+| file, `Scheme::File` | none (time and position) | no |
+
+: Table 1 - Schemes of coefficients
+
+!!! note "Scheme of an energy coefficient"
+    For a coefficient defining an energy, such as `Glossary::FreeEnergy`, the integrators use its derivatives: the scheme applies to these derivatives. For instance, an explicit free energy $`f`$ contributes with $`\partial f/\partial u\,(u^n)`$ to the residual and nothing to the Jacobian.
 
 The `FunctionCoefficient` object is not really managed by the user since `SLOTH` provides interfaces with 
 
@@ -30,6 +47,23 @@ The `Sympy` interface corresponds to a Python script (see the `script/GenerateCo
 
 !!! remark "On the first and second-order derivatives"
     The Sympy interface automatically generates the C++ code not only for the function but also its first and second-order derivatives.
+
+The options of `GenerateCoefficient.py` are:
+
+| Option | Description |
+|--------|-------------|
+| `-f FILE` | JSON file defining the coefficients |
+| `-r`, `--remove` | remove the C++ files previously generated |
+| `--check` | only check the consistency of the JSON file, without generating the C++ files (this check is always done before the generation) |
+| `--report [TEX_FILE]` | also write a LaTeX report of the coefficients (expressions and derivatives), by default `<json name>_report.tex` in the current directory, and compile it with `pdflatex` if available |
+| `--report-only` | write the report without generating the C++ files |
+
+: Table 2 - Options of `GenerateCoefficient.py`
+
+!!! example "Report of the coefficients of a JSON file, without C++ generation"
+    ```shell
+    python3 GenerateCoefficient.py -f ExampleCoefficient.json --report-only
+    ```
 
 #### Defining a simple coefficient {#simplecoef}
 
@@ -189,7 +223,7 @@ The spatial point used depends on where the coefficient is evaluated:
 - for Dirichlet boundary conditions, the position of each degree of freedom on the boundary.
 
 !!! warning "Current limitations"
-    - The `coordinates` key cannot be combined with `"gradient": true`.
+    - The `coordinates` key cannot be combined with `"gradient": true`. It can be combined with `"variational": true` (see [variational coefficients](#variational)).
     - Spatial coordinates are only available with the `Sympy` interface, not with the [`ExprTk` interface](#coef_exprtk).
     - Coefficients depending on spatial coordinates cannot yet be used as initial conditions or projected in post-processing. For tabulated fields, use a [file-based coefficient](#coef_file) instead.
 
@@ -370,6 +404,28 @@ The script `GenerateCoefficient.py` allows users to define classes of type `Func
     In this example, `A` and `B` are two arbitrary  `FunctionCoefficient` objects used to build a `ProductCoefficient` named `P1`, equal to `-2 x A x B`, which is then used to build a `SumCoefficient` named `S1`, equal to `P1 + P1`. 
     Both are subsequently used to define the `Coefficient` objects `coeffProd` and `coeffSum`. 
 
+Each term of a `SumCoefficient`, or each factor of a `ProductCoefficient`, can be given its own [scheme](#scheme). A term without scheme is implicit.
+
+!!! example "Sum of an implicit term and of an explicit term"
+
+    ```c++
+      GradientTerm gradient_term;  // variational coefficient: kappa/2 |grad phi|^2
+      W double_well(omega);
+      Coefficient free_energy(Glossary::FreeEnergy, Scheme::SemiImplicit,
+                              SumCoefficient({{&gradient_term, Scheme::Implicit},
+                                              {&double_well, Scheme::Explicit}}));
+    ```
+
+    Here, the gradient term is implicit and the double well is evaluated with the values at the beginning of the time step (see `tests/AllenCahn/2D/test1_variational`).
+
+**Rules for the schemes of terms and factors:**
+
+- The scheme of a term or of a factor is `Scheme::Implicit`, `Scheme::Explicit` or `Scheme::SemiImplicit`.
+- A sum or a product with at least one explicit term must be used in a `Coefficient` with `Scheme::SemiImplicit`, which gives the values at the beginning of the time step to the explicit terms. Otherwise, the execution stops with an error message.
+- An explicit term or factor is evaluated with the values at the beginning of the time step, and its value and its derivatives are held constant in the second derivatives: the second derivatives of a product with an explicit factor are not symmetric in general.
+- [Variational](#variational) and non-variational terms (or factors) can be combined: the result is variational. A non-variational term only contributes to $`f`$, $`\partial f/\partial u`$ and $`\partial^2 f/\partial u^2`$.
+- A variational product with an explicit factor is not supported.
+
 !!! note "Ratio and difference of coefficients"
     `SumCoefficient` together with the prefactor of `FunctionCoefficient` enable the definition of differences between coefficients. 
         
@@ -467,6 +523,142 @@ The script `GenerateCoefficient.py` allows users to define semi-implicit coeffic
     ```c++
     Coefficient energy_semi_imp(Glossary::FreeEnergy, Scheme::SemiImplicit, Gw());
     ```
+
+#### Defining a variational coefficient {#variational}
+
+A variational coefficient is an energy density $`f(u, \nabla u)`$ depending on the variables $`u`$ and on their gradients. It is declared with the key `"variational": true`. With such a free energy, the integrators assemble the first variation of $`F = \int_\Omega f`$, i.e. the weak form of the Euler-Lagrange equation,
+
+```math
+\begin{align*}
+\delta F[u; \psi] = \int_\Omega \left( \frac{\partial f}{\partial u_i} \psi_i + \frac{\partial f}{\partial \nabla u_i} \cdot \nabla \psi_i \right),
+\end{align*}
+```
+
+and its second variation for the Jacobian. The gradient terms, the anisotropy and the cross terms between variables are written in the JSON file, and their derivatives are computed by `Sympy`: no `Glossary::Capillary` coefficient is needed.
+
+!!! example "Variational free energy of the Allen-Cahn and Cahn-Hilliard equations"
+
+    ```json
+    [
+        {
+        "expression":"0.5*kappa*dot(grad(phi),grad(phi)) + omega*phi**2*(1-phi)**2",
+        "variables":"phi",
+        "constants":"(kappa:0.15),(omega:120.0)",
+        "variational":true,
+        "dimension":2,
+        "class_name":"VariationalDoubleWell",
+        "outputfile":"VariationalCoefficients"
+        }
+    ]
+    ```
+
+    In this example, the following energy density is defined:
+
+    ```math
+    \begin{align*}
+    f(\varphi, \nabla\varphi) = \frac{\kappa}{2} |\nabla \varphi|^2 + \omega \varphi^2 (1-\varphi)^2
+    \end{align*}
+    ```
+
+    ```c++
+    Coefficient free_energy(Glossary::FreeEnergy, Scheme::Implicit, VariationalDoubleWell());
+    ```
+
+The keys specific to variational coefficients are:
+
+- "variational" : `true` (default `false`),
+- "dimension" : dimension of the gradients, `1`, `2` or `3` (required); it must be equal to the dimension of the mesh,
+- "regularization" : parameter $`\epsilon`$ of the normals `n(.)` (optional, default $`10^{-12}`$).
+
+In the _expression_, the gradients are written with the following functions:
+
+| Syntax | Meaning |
+|--------|---------|
+| `grad(a)` | gradient of `a` (variable, explicit or auxiliary variable) |
+| `n(a)` | normal $`\nabla a / \sqrt{\lvert\nabla a\rvert^2 + \epsilon^2}`$ |
+| `dot(A, B)` | scalar product of `A` and `B`, each one being `grad(.)` or `n(.)` |
+| `A[k]` | component `k` ($`0 \le k <`$ `dimension`) of `A` = `grad(.)` or `n(.)` |
+| `sdot(a(i..j))` | `dot(grad(ai), grad(ai)) + ... + dot(grad(aj), grad(aj))` |
+
+: Table 3 - Gradients in the expression of a variational coefficient
+
+`grad(.)` and `n(.)` are always used in `dot(.,.)` or with a component `[k]`.
+
+!!! example "Anisotropic gradient energy and gradient cross term"
+
+    ```json
+    [
+        {
+        "expression":"0.5*(W0*(1 + e4*(n(phi)[0]**4 - 6*n(phi)[0]**2*n(phi)[1]**2 + n(phi)[1]**4)))**2*dot(grad(phi),grad(phi)) + omega*phi**2*(1-phi)**2",
+        "variables":"phi",
+        "constants":"(W0:0.4),(e4:0.05),(omega:120.0)",
+        "variational":true,
+        "dimension":2,
+        "class_name":"VariationalAnisotropic",
+        "outputfile":"VariationalCoefficients"
+        },
+        {
+        "expression":"0.5*(k11*dot(grad(phi0),grad(phi0)) + 2*k12*dot(grad(phi0),grad(phi1)) + k22*dot(grad(phi1),grad(phi1))) + w0*phi0**2*phi1**2",
+        "variables":"phi0,phi1",
+        "constants":"(k11:0.15),(k12:0.05),(k22:0.2),(w0:50.0)",
+        "variational":true,
+        "dimension":2,
+        "class_name":"VariationalTwoPhases",
+        "outputfile":"VariationalCoefficients"
+        }
+    ]
+    ```
+
+    The first coefficient defines a gradient energy with a four-fold anisotropy, depending on the direction of the normal $`\mathbf{n} = \nabla\varphi/|\nabla\varphi|`$. The second one defines an energy of two phases with a gradient cross term $`\kappa_{12} \nabla\varphi_0\cdot\nabla\varphi_1`$.
+
+**Rules for variational coefficients:**
+
+- The gradients of the `variables` are differentiated. The gradients of the `explicit_variables` and of the `auxiliary_variables` are data: they are not differentiated.
+- The `explicit_variables` define semi-implicit variational coefficients, used with `Scheme::SemiImplicit` (see [semi-implicit coefficients](#semiimplicit)). With `Scheme::Explicit`, the values and the gradients of the variables are taken at the beginning of the time step and the coefficient does not contribute to the Jacobian.
+- The keys `constants` (including the time `T`) and `coordinates` can be used.
+- A coefficient cannot be both `"gradient": true` and `"variational": true`, and conditional expressions are not available for variational coefficients.
+- A variational coefficient is evaluated only by the integrators, at all the integration points of an element: it cannot be evaluated at one point (initial condition, post-processing of a coefficient, `ExprTk` interface).
+- The variables of the free energy are the first variables of the problem, in the same order (see [Use of coefficients](#pde_coefficient)).
+
+!!! note "Isotropic variational coefficients"
+    A variational coefficient of the form
+
+    ```math
+    \begin{align*}
+    f(u, \nabla u) = \sum_i \frac{\kappa_i}{2} |\nabla u_i|^2 + g(u),
+    \end{align*}
+    ```
+
+    where the $`\kappa_i`$ depend neither on the variables nor on their gradients (they can depend on auxiliary variables, coordinates or time), is detected as **isotropic** by `Sympy` when the coefficient is generated. It is never declared by the user. The integrators then use the same operations as with a `Glossary::Capillary` coefficient $`\lambda_i = \kappa_i`$, which is faster than the general assembly and gives the same results as the classic form, up to the round-off errors of the expressions.
+
+    In the previous examples, `VariationalDoubleWell` is isotropic. `VariationalAnisotropic`, `VariationalTwoPhases` (cross term) and an energy $`\frac{1}{2}\kappa(\varphi)|\nabla\varphi|^2`$ are not.
+
+!!! example "Variational gradient term combined with a common coefficient"
+    A variational coefficient can be summed with non-variational coefficients, for instance the [common coefficients](#common_coefficient) `W` or `Fw` (see [sums and products](#productfonctioncoefficient)):
+
+    ```json
+    [
+        {
+        "expression":"0.5*kappa*dot(grad(phi),grad(phi))",
+        "variables":"phi",
+        "constants":"(kappa:0.0004)",
+        "variational":true,
+        "dimension":2,
+        "class_name":"GradientTerm",
+        "outputfile":"CahnHilliardVariationalCoefficients"
+        }
+    ]
+    ```
+
+    ```c++
+    GradientTerm gradient_term;
+    Fw double_well(omega);
+    Coefficient free_energy(Glossary::FreeEnergy, Scheme::Implicit,
+                            SumCoefficient({{&gradient_term, Scheme::Implicit},
+                                            {&double_well, Scheme::Implicit}}));
+    ```
+
+    See `tests/CahnHilliard/2D/test1_variational` and `tests/AllenCahn/2D/test1_variational`.
 
 ### __ExprTk interface__ {#coef_exprtk}
 
@@ -681,4 +873,4 @@ where $`\varphi`$ is truncated as $`min(max(\epsilon,\varphi),1-\epsilon)`$ in o
 \end{align}
 
 ```
-where $`\varphi`$ is truncated as $`min(max(\epsilon,\varphi),1-\epsilon)`$ in order to avoid numerical difficulties in $`0`$ and $`1`$. In practice, $`\epsilon=10^{-10}`$.
+`GradientEnergy` is only used to compute the [energies of the system](../PostProcessing/index.md#energies) with a non-variational free energy.

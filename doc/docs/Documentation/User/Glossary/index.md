@@ -34,8 +34,8 @@ Here, these quantities are grouped by physical problems.
     | ChemicalPotential     | ChemicalPotential   | J.mol$`^{-1}`$                | Chemical potential variable |
     | SurfaceTension        | SurfaceTension      | J.m$`^{-2}`$                  | Surface tension             |
     | Capillary             | Capillary           | J.m$`^{-1}`$                  | Capillary coefficient       |
-    | FreeEnergy            | FreeEnergy          | -                             | Free energy function        |
-    | GradEnergy            | GradientEnergy      | -                             | Gradient energy function    |
+    | FreeEnergy            | FreeEnergy          | -                             | Free energy function $`f(u)`$, or $`f(u, \nabla u)`$ if [variational](../Coefficients/index.md#variational) |
+    | GradEnergy            | GradientEnergy      | -                             | Gradient energy function $`g(\nabla u)`$, only used for the [energies of the system](../PostProcessing/index.md#energies) |
     | InterpolationFunction | PhaseFieldPotential | -                             | Interpolation function      |
     | Nucleus               | PhaseField          | -                             | Nucleus seed                |
 

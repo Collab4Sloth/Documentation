@@ -114,8 +114,8 @@ In addition to visualizing [`Variables`](../Variables/index.md) with `ParaView`,
 The `time_specialized.csv` file contains:
 
 - The $`L^2`$ and $`L^\infty`$ norms of the error for each variable with an analytical solution;
-- The energy density of the problem;
-- The surface tension of the problem (for phase-field problems);
+- The energy of the problem (column `Density[J.m-3]`, see [Energies of the system](#energies));
+- The interface energy of the problem (column `Sigma[J.m-3]`, for phase-field problems, see [Energies of the system](#energies));
 - The spatial average of the variable over the computational domain, if requested with the `"integral_to_compute"` parameter.
 
 The parameters allowed with `PostProcessing` for exporting specialized values in the `time_specialized.csv` file are summarized in Table 2.
@@ -167,10 +167,26 @@ Isovalues are not stored in the `time_specialized.csv` file. Instead, the parame
 !!! warning "On the lower and upper bounds used with `integral_to_compute`"
     Lower and upper bounds are used to limit the calculation of the integral to specific values of the variables. For example, it can be useful to compute the volume of a bubble corresponding to a phase indicator lower than $0.5$.
 
-!!! warning "On the calculation of energies for phase-field problems"
-    By default, energies are calculated. For phase-field problems, if `"enable_compute_energies"` is set to `true`, a `SLOTH` coefficient of type `Glossary::GradEnergy` **must** be defined in the vector of coefficients passed to the `SLOTH` problem. Otherwise, an exception is raised.
+### Energies of the system {#energies}
 
-    See the dedicated page of the user manual for more details about the definition of `SLOTH` [coefficients](../Coefficients/index.md).
+By default (`"enable_compute_energies"` set to `true`), the energies of the system are computed with the current values of the variables, from the coefficients of the first variable of the problem:
+
+- a coefficient of type `Glossary::FreeEnergy` is **required**: an exception is raised if it is missing,
+- a coefficient of type `Glossary::GradEnergy` is optional.
+
+| Coefficients of the first variable | `Density[J.m-3]` | `Sigma[J.m-3]` |
+|------------------------------------|------------------|----------------|
+| `FreeEnergy` $`f(u)`$ | $`\int_\Omega f`$ | not written |
+| `FreeEnergy` $`f(u)`$ and `GradEnergy` $`g(\nabla u)`$ | $`\int_\Omega (f + g)`$ | $`2\int_\Omega g`$ |
+| [variational](../Coefficients/index.md#variational) `FreeEnergy` $`f(u, \nabla u)`$ | $`\int_\Omega f`$ | $`2\int_\Omega \left(f(u, \nabla u) - f(u, 0)\right)`$ |
+
+: Table 4 - Energies of the system written in the `time_specialized.csv` file
+
+`Sigma[J.m-3]` is written only if the energies have an interface part, that is if a `GradEnergy` coefficient is given or if the `FreeEnergy` coefficient is variational. With a variational free energy, the interface part is the contribution of the gradient terms, so that `GradEnergy` must not be given.
+
+The energies are integrated element by element with a quadrature rule of order $`2p+3`$ ($`p`$: order of the finite elements). The variables of the free energy are the first variables of the problem: for instance, for the [Cahn-Hilliard equations](../MultiPhysicsCouplingScheme/Problems/PDEs/index.md#integrators), the concentrations, and not the chemical potentials.
+
+See the dedicated page of the user manual for more details about the definition of `SLOTH` [coefficients](../Coefficients/index.md).
 
 !!! example "Example of `PostProcessing` with parameters"
     The following example assumes the existence of a `Variable` named `"phi"` for Cahn-Hilliard equations.

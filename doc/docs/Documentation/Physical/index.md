@@ -102,6 +102,25 @@ The governing equations associated with the evolution of a physical system can b
 
     where $`\phi`$ is the phase indicator, $`\mu`$ the generalized chemical potential, $`F'`$ the derivative against $`\phi`$ of a potential $`F`$.  -->
 
+!!! note "Variational derivative and weak form"
+    For an energy functional $`\mathcal{F} = \int_\Omega f(\phi, \nabla\phi)\, d\Omega`$, the variational derivative is
+
+    ```math
+    \begin{align*}
+    \frac{\delta \mathcal{F}}{\delta \phi_i} = \frac{\partial f}{\partial \phi_i} - \nabla \cdot \frac{\partial f}{\partial \nabla \phi_i},
+    \end{align*}
+    ```
+
+    and its weak form, used by the finite element method, is the first variation (Gâteaux derivative) of $`\mathcal{F}`$ in the direction of a test function $`\psi`$:
+
+    ```math
+    \begin{align*}
+    \delta \mathcal{F}[\phi; \psi] = \left.\frac{d}{d\varepsilon} \mathcal{F}(\phi + \varepsilon \psi)\right|_{\varepsilon = 0} = \int_\Omega \left( \frac{\partial f}{\partial \phi_i} \psi_i + \frac{\partial f}{\partial \nabla \phi_i} \cdot \nabla \psi_i \right) d\Omega .
+    \end{align*}
+    ```
+
+    In `SLOTH`, the energy density $`f`$ can be written directly in a JSON file as a [variational coefficient](../User/Coefficients/index.md#variational): its derivatives are computed symbolically and used by the `AllenCahn` and `CahnHilliard` [integrators](../User/MultiPhysicsCouplingScheme/Problems/PDEs/index.md#integrators), including anisotropic gradient energies and gradient cross terms between phases. For the two-phase energy above, $`\delta \mathcal{F}/\delta \phi = F_w'(\phi) - \nabla \cdot (\lambda \nabla \phi)`$.
+
 Based on these two historical models, a wide range of phase-field models has been developed. `SLOTH` provides the features needed to solve both Cahn–Hilliard-type and Allen–Cahn-type models.
 In addition, since it is dedicated to studying fuel behavior across different scales, from nominal operating conditions to severe accident scenarios, `SLOTH` also offers a suite of features for performing multiphysics simulations, including phase-field, thermal diffusion, multicomponent diffusion[@introini2025modeling], and CALPHAD thermodynamic calculations.
 
