@@ -17,7 +17,7 @@ F(U(x,t))&=G(U(x,t))
 where $`U(x,t)`$ is the vector of unknowns expressed as a function of the time $`t`$ and the position $`x`$. In this equation, $`F`$ and $`G`$ are two nonlinear forms associated with the time derivative operator and the differential operators, respectively. For steady problem, $`F=0`$.
 
 <figure markdown="span">
-  ![Time-step](../../../../../img/ProblemsDetailed.png){  width=800px}
+  ![Time-step](../../../../../img/ProblemsDetailed.drawio.svg){  width=800px}
   <figcaption>Figure 1 : Schematic description of one time-step for `SLOTH` simulations with a focus on PDEs.
 </figcaption>
 </figure>
@@ -34,13 +34,13 @@ Definition of PDEs for `SLOTH` is made with a C++ object of type `Problem`, whic
 The `OPERATOR` object in `Problem` refers to an object that inherits from base classes responsible for solving the nonlinear system (1). 
 These classes are illustrated in the figure 2: `OperatorBase` is a base class with two derived classes:
 
-- `TransientOperatorBase`, which inherits from the `TimeDependentOperator` class of `MFEM` and is dedicated to unsteady PDEs,
-- `SteadyOperatorBase`, which inherits from the `Operator` class of `MFEM` and is dedicated to steady PDEs. 
+- `TransientOperator`, which also inherits from the `TimeDependentOperator` class of `MFEM` and is dedicated to unsteady PDEs,
+- `SteadyOperator`, dedicated to steady PDEs (`OperatorBase` inherits from the `Operator` class of `MFEM`). 
 
 In addition to these classes, there are two classes used to compute the residual and the Jacobian associated with the Newton-Raphson algorithm -- see `ReducedOperator` and `SteadyReducedOperator` classes in the figure 2.
 
 <figure markdown="span">
-  ![Operators](../../../../../img/SlothOperators.png){  width=800px}
+  ![Operators](../../../../../img/SlothOperators.drawio.svg){  width=800px}
   <figcaption>Figure 2 : Three main classes managing the resolution of the non linear system.
 </figcaption>
 </figure>
@@ -48,7 +48,7 @@ In addition to these classes, there are two classes used to compute the residual
 As illustrated in the figure 3, these operators are associated with `NonLinearFormIntegrators` which are used to compute the residual vector and the Jacobian matrix for the nonlinear problems.
 
 <figure markdown="span">
-  ![Operators](../../../../../img/SpecificSlothOperators.png){  width=800px}
+  ![Operators](../../../../../img/SpecificSlothOperators.drawio.svg){  width=800px}
   <figcaption>Figure 3 : Specific `Integrators` implemented in `SLOTH`.
 </figcaption>
 </figure>
@@ -95,6 +95,14 @@ In the figure 3, the integrators are gathered in two grouped:
 
         ```
         This integrator must be associated with the `SplitAllenCahn` and `CahnHilliard` integrators.
+
+        With the [multiphase Cahn-Hilliard equations](#integrators) ($`n`$ concentrations $`\varphi_1, \dots, \varphi_n`$ followed by $`n`$ chemical potentials $`\mu_1, \dots, \mu_n`$), the time derivative of $`\varphi_i`$ is in the equation of $`\mu_i`$:
+
+        ```math
+
+        \left(0, \dots, 0, \displaystyle\frac{\partial \varphi_1}{\partial t}, \dots, \frac{\partial \varphi_n}{\partial t}\right)^T
+
+        ```
 
     === "HeatTimeDerivative"
         This integrator concerns the following mathematical expression:
@@ -185,6 +193,17 @@ In the figure 3, the integrators are gathered in two grouped:
 
         ```
         where $`M_i`$, $`\lambda_i`$, and $`F_i`$ are  **mandantory** `SLOTH` coefficients of type `GlossaryType::Mobility`, `GlossaryType::Capillary` and `GlossaryType::FreeEnergy`, respectively.
+
+        **Variational free energy.** If the `GlossaryType::FreeEnergy` coefficient of the first variable is [variational](../../../Coefficients/index.md#variational), $`f(\varphi, \nabla\varphi)`$ with $`\varphi = (\varphi_1, \dots, \varphi_n)`$, the integrator concerns the following vectorial expression:
+
+        ```math
+
+        \begin{align}
+        -M_i{\left(\displaystyle\frac{\partial f}{\partial \varphi_i} - \nabla \cdot \frac{\partial f}{\partial \nabla \varphi_i}\right)}_i
+        \end{align}
+
+        ```
+        where $`M_i`$ is a **mandantory** coefficient of type `GlossaryType::Mobility` of each variable. The gradient terms are part of $`f`$: a coefficient of type `GlossaryType::Capillary` must not be given. The variables of $`f`$ are the $`n`$ variables of the problem, in the same order. An [isotropic](../../../Coefficients/index.md#variational) free energy $`\sum_i \frac{\kappa_i}{2}|\nabla\varphi_i|^2 + g(\varphi)`$ gives the same results as the classic form with $`\lambda_i = \kappa_i`$ and $`F_i = g`$ (see `tests/AllenCahn/2D/test1_variational`).
     === "SplitAllenCahn"
         This integrator concerns the following vectorial expression:
         
@@ -210,8 +229,8 @@ In the figure 3, the integrators are gathered in two grouped:
 
         \Biggl(
         \begin{array}{c}
-        \mu - \nabla \cdot \left(\lambda \nabla \varphi\right)
-        + \dfrac{\partial F}{\partial \varphi} \\
+        \mu + \nabla \cdot \left(\lambda \nabla \varphi\right)
+        - \dfrac{\partial F}{\partial \varphi} \\
         \nabla \cdot \left(M \nabla \mu\right)
         \end{array}
         \Biggr)
@@ -220,6 +239,42 @@ In the figure 3, the integrators are gathered in two grouped:
         where $`M`$, $`\lambda`$, and $`F`$ are  **mandantory** `SLOTH` coefficients of type `GlossaryType::Mobility`, `GlossaryType::Capillary` and `GlossaryType::FreeEnergy`, respectively. 
 
         This integrator must be associated with the `SplitTimeDerivative` integrator.
+
+        **Variational free energy and multiphase Cahn-Hilliard equations.** If the `GlossaryType::FreeEnergy` coefficient of the first variable is [variational](../../../Coefficients/index.md#variational), the variables of the problem are $`n`$ concentrations $`\varphi_1, \dots, \varphi_n`$ followed by $`n`$ chemical potentials $`\mu_1, \dots, \mu_n`$, and the free energy $`f(\varphi, \nabla \varphi)`$ is a function of the $`n`$ concentrations. The integrator then concerns the following vectorial expression:
+
+        ```math
+
+        \left(
+        \begin{array}{c}
+        \left(\mu_i - \displaystyle\frac{\partial f}{\partial \varphi_i} + \nabla \cdot \frac{\partial f}{\partial \nabla \varphi_i}\right)_{i=1,\dots,n} \\[10pt]
+        \left(\nabla \cdot \left(M_i \nabla \mu_i\right)\right)_{i=1,\dots,n}
+        \end{array}
+        \right)
+
+        ```
+        where $`M_i`$ is a **mandantory** coefficient of type `GlossaryType::Mobility` of the chemical potential $`\mu_i`$ (variable $`n+i`$). The mobilities can depend on all the variables, on the auxiliary variables, on the position and on time; their derivatives are taken into account in the Jacobian. The gradient terms are part of $`f`$: a coefficient of type `GlossaryType::Capillary` must not be given.
+
+        **Rules:**
+
+        - The number of variables must be even ($`n`$ concentrations, $`n`$ chemical potentials), on the same finite element space.
+        - The variables of $`f`$ are the $`n`$ concentrations, in the same order. 
+        - The mobilities are diagonal: there is no cross term $`\nabla \cdot (M_{ij} \nabla \mu_j)`$.
+        - With $`n = 1`$ and an [isotropic](../../../Coefficients/index.md#variational) free energy $`\frac{\kappa}{2}|\nabla\varphi|^2 + g(\varphi)`$, the results are the same as with the classic form.
+
+        !!! example "Variational Cahn-Hilliard equations"
+
+            ```c++
+            GradientTerm gradient_term;  // variational coefficient: kappa/2 |grad phi|^2
+            Fw double_well(omega);
+            Coefficient free_energy(Glossary::FreeEnergy, Scheme::Implicit,
+                                    SumCoefficient({{&gradient_term, Scheme::Implicit},
+                                                    {&double_well, Scheme::Implicit}}));
+            Coefficient mobility(Glossary::Mobility, mob);
+            Coefficients coef_pb1(free_energy, mobility);
+            TransientOPE oper(spatials, {"CahnHilliard"}, params, TimeScheme::EulerImplicit,
+                              "SplitTimeDerivative");
+            TransientPB problem1(oper, vars, {coef_pb1, coef_pb1}, pst);
+            ```
 
     === "MeltingConstant"
         This integrator concerns the following mathematical expression:
@@ -639,7 +694,9 @@ The `SteadyPB` and `TransientPB` problems must be defined by:
     For this example, the Backward Euler method is considered (see `TimeScheme::EulerImplicit`).
 
     For this problem, a vector of two [Coefficients](../../../Coefficients/index.md) is considered for `phi` and `mu`, respectively. Here, the same `Coefficients` are used for both variables accordingly with the `CahnHilliard` integrator. 
-    As expected by this integrator, coefficients of type `Glossary::FreeEnergy`, `Glossary::Capillary` and `Glossary::Mobility` are defined. The coefficient of type `Glossary::GradEnergy` is only used to compute the gradient terms in the output of the density of energy. 
+    As expected by this integrator, coefficients of type `Glossary::FreeEnergy`, `Glossary::Capillary` and `Glossary::Mobility` are defined. The coefficient of type `Glossary::GradEnergy` is only used to compute the gradient terms in the output of the [energies of the system](../../../PostProcessing/index.md#energies). 
+
+    With a [variational](../../../Coefficients/index.md#variational) free energy, only the coefficients of type `Glossary::FreeEnergy` and `Glossary::Mobility` are defined: the gradient terms are part of the free energy, which is also used for the energies of the system.
 
     This example has no parameters or auxiliary variables.
 
