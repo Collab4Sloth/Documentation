@@ -66,7 +66,7 @@ For this test, the following parameters are considered:
 ### __Numerical scheme__
 
 - Time integration: Euler Implicit over the interval $`t\in[0,5]`$ with a time-step $`\delta t=0.1`$
-- Spatial discretization: uniform grid with $`N=30`$ nodes
+- Spatial discretization: uniform grid with $`N=30`$ elements
 - Newton solver: absolute tolerance $`10^{-10}`$
 
 

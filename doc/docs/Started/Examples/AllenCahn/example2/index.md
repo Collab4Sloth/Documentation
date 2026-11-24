@@ -77,7 +77,7 @@ Periodic boundary conditions are prescribed on boundary of the domain.
 ### __Numerical scheme__
 
 - Time integration: Euler Implicit over the interval $`t\in[0,100]`$ with a time-step $`\delta t=10^{-2}`$. 
-- Spatial discretization for convergence analysis: uniform grid with $`N={256}`$ nodes in each spatial direction, with $`\mathcal{Q}_1`$ finite elements
+- Spatial discretization for convergence analysis: uniform grid with $`N={256}`$ elements in each spatial direction, with $`\mathcal{Q}_1`$ finite elements
 - Newton solver: relative tolerance $`10^{-10}`$, absolute tolerance $`10^{-14}`$
 - Iterative solver: HYPRE_GMRES 
 - Preconditioner: HYPRE_ILU

@@ -5,6 +5,8 @@
 
 - Comprehensive test file: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test1/main.cpp)
 - Reference results for comparison: [time_specialized.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test1/ref/time_specialized.csv)
+- Variant with a [variational free energy](../../../../Documentation/User/Coefficients/index.md#variational) $`\frac{\lambda}{2}|\nabla\phi|^2`$ (JSON file) $`+ F(\phi)`$, without `Capillary` coefficient, compared with the same reference: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test1_variational/main.cpp), [coefficients.json](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test1_variational/coefficients.json)
+- Variant with a time step defined by a user function of time ($`\delta t`$ from $`0.01`$ to $`0.05`$): [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test1_dt_variable/main.cpp)
 
 
 ### __Statement of the problem__ 
@@ -84,7 +86,7 @@ Neumann boundary conditions are prescribed on the boundary of the domain:
 ### __Numerical scheme__
 
 - Time integration: Euler Implicit over the interval $`t\in[0,0.5]`$ (it could be extended further) with a time-step $`\delta t=0.05`$
-- Spatial discretization: uniform grid with $`N=128`$ nodes in each spatial direction
+- Spatial discretization: uniform grid with $`N=128`$ elements in each spatial direction
 - Newton solver: relative tolerance $`10^{-10}`$, absolute tolerance $`10^{-14}`$
 - Iterative solver: HYPRE_GMRES 
 - Preconditioner: HYPRE_ILU

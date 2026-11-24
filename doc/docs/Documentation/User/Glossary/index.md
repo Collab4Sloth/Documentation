@@ -98,6 +98,8 @@ Here, these quantities are grouped by physical problems.
     | Velocity_Z | Velocity   | -    | Advection velocity, z component (ID 2)                              |
     | VelocityPrefactor | VelocityPrefactor | - | Prefactor $`\alpha`$ of a gradient velocity $`\mathbf{v} = \alpha\nabla a`$ |
     | Inflow     | Inflow     | -    | Value of the advected variable entering the domain (open boundaries) |
+    | LatentHeat | LatentHeat | -    | Latent heat $`L`$ of the linear form $`L\,\partial\varphi/\partial t`$ of the `LatentHeat` integrator |
+    | RelaxationTime | RelaxationTime | - | Relaxation time $`\tau`$ of the `RelaxationTimeDerivative` integrator |
 
     The three velocity quantities share the type `GlossaryType::Velocity` and are distinguished by their ID, which is the index of the component.
 

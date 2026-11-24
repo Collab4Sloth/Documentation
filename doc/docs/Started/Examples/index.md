@@ -10,6 +10,7 @@ The examples are organized into the following categories:
 - [Allen-Cahn/Cahn-Hilliard](Multiphasefield/index.md)
 - [Mass Diffusion](MassDiffusion/index.md)
 - [Heat Transfer](HeatTransfer/index.md)
+- [Time integration](TimeIntegration/index.md)
 - [CALPHAD](Calphad/index.md)
 
 All examples are automatically executed as part of the `SLOTH` continuous integration (CI) pipeline. 

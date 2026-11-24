@@ -70,11 +70,11 @@ For this test, all physical parameters are equal to one.
 ## __Numerical Scheme__
 
 - Time integration: Euler Implicit over the interval $`t\in[0,0.01]`$ with a time-step $`\delta t=10^{-3}`$. 
-- Spatial discretization for convergence analysis: uniform grid with $`N={30, 60, 90, 120}`$ nodes in each spatial direction, with $`\mathcal{Q}_1`$ 
+- Spatial discretization for convergence analysis: uniform grid with $`N={30, 60, 120, 240}`$ elements in each spatial direction refined once ($`60`$ to $`480`$ elements), with $`\mathcal{Q}_1`$ finite elements
 
 ## __Results__ 
 
-Figures 1 shows the results of convergence analysis with $`\mathcal{Q}_1`$.
+Figure 1 shows the results of the convergence analysis with $`\mathcal{Q}_1`$ finite elements: the $`L^2`$ error decreases as $`h^{2.17}`$, close to the expected order 2.
 
 <figure markdown="span">
     ![MMS_heat](img/convergence_analysis_heat_test4.png){  width=500px}

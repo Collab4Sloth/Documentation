@@ -58,7 +58,7 @@ For this test, the following parameters are considered:
 | Density                            | $`\rho`$        | $`10^4`$                      |
 | Heat capacity                      | $`C_p`$         | $`10^4`$                      |
 | Thermal conductivity               | $`k`$           | $`1`$                         |
-| Convection coefficient             | $`h`$           | $`1`$                         |
+| Convection coefficient             | $`h`$           | $`10`$                        |
 | Fluid temperature                  | $`T_{\infty}`$  | $`1`$                         |
 | Initial temperature                | $`T_i`$         | $`0`$                         |
 
@@ -68,7 +68,7 @@ For this test, the following parameters are considered:
 ### __Numerical scheme__
 
 - Time integration: Euler Implicit over the interval $`t\in[0,5]`$ with a time-step $`\delta t=0.1`$
-- Spatial discretization: uniform grid with $`N=30`$ nodes
+- Spatial discretization: uniform grid with $`N=30`$ elements
 - Newton solver: absolute tolerance $`10^{-10}`$
 
 

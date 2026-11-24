@@ -60,7 +60,7 @@ As illustrated in the figure 3, these operators are associated with `NonLinearFo
 All `SLOTH` integrators inherit from the `MFEM` `BlockNonlinearFormIntegrator` class. 
 In the figure 3, the integrators are gathered in two grouped:
 
-- Time Derivative Integrators (see $`F`$ in the equation (1)): `TimeDerivative`, `SplitTimeDerivative`, `HeatTimeDerivative`. **They are only used for transient problems**. 
+- Time Derivative Integrators (see $`F`$ in the equation (1)): `TimeDerivative`, `SplitTimeDerivative`, `HeatTimeDerivative`, `RelaxationTimeDerivative`. **They are only used for transient problems**. 
   
     === "TimeDerivative"
         This integrator concerns the following mathematical expression:
@@ -68,18 +68,19 @@ In the figure 3, the integrators are gathered in two grouped:
         ```math
 
         \begin{align}
-        \frac{\partial \varphi}{\partial t}
+        A B \frac{\partial \varphi}{\partial t}
         \end{align}
 
         ```
 
-        For explicit time-discretization, two `SLOTH` coefficients of type `GlossaryType::ExplicitTime_A` and `GlossaryType::ExplicitTime_B` can be defined, respectively. 
-        By default, these coefficients are set to one. 
+        where $`A`$ and $`B`$ are two `SLOTH` coefficients of type `Glossary::ExplicitTime_A` and `Glossary::ExplicitTime_B`, respectively. 
+        By default, these coefficients are set to one. Implicit coefficients are evaluated at the end of the time step and their derivatives are taken into account in the Jacobian.
 
         ```C++
         Coefficient explicit_time_A(Glossary::ExplicitTime_A, 1.0);
         Coefficient explicit_time_B(Glossary::ExplicitTime_B, 1.0);
         ```
+
 
 
     === "SplitTimeDerivative"
@@ -103,6 +104,27 @@ In the figure 3, the integrators are gathered in two grouped:
         \left(0, \dots, 0, \displaystyle\frac{\partial \varphi_1}{\partial t}, \dots, \frac{\partial \varphi_n}{\partial t}\right)^T
 
         ```
+
+    === "RelaxationTimeDerivative"
+        This integrator concerns the following mathematical expression:
+        
+        ```math
+
+        \begin{align}
+        \tau \frac{\partial \varphi}{\partial t}
+        \end{align}
+
+        ```
+        where $`\tau`$ is a `SLOTH` coefficient of type `GlossaryType::RelaxationTime`, equal to one by default. It is used for Allen-Cahn equations of the form $`\tau\,\partial\varphi/\partial t = -\delta\mathcal{F}/\delta\varphi`$.
+
+        $`\tau`$ can be a constant, a function of the variables or a [variational coefficient](../../../Coefficients/index.md#variational) $`\tau(\varphi, \nabla\varphi)`$ of the first variables and of their gradients, for instance an anisotropic relaxation time $`\tau(\mathbf{n})`$ with $`\mathbf{n} = \nabla\varphi/|\nabla\varphi|`$. An implicit $`\tau`$ is evaluated at the end of the time step, and its derivatives with respect to the variables and to their gradients are taken into account in the Jacobian; an explicit $`\tau`$ is evaluated with the values and the gradients of the previous time step.
+
+        ```C++
+        Coefficient relaxation_time(Glossary::RelaxationTime, Scheme::Explicit, AnisotropicRelaxationTime());
+        ```
+
+        !!! warning "Implicit anisotropic relaxation time"
+            The derivative of $`\tau(\mathbf{n})`$ with respect to $`\nabla\varphi`$ behaves as $`1/|\nabla\varphi|`$: it is unbounded where $`\nabla\varphi`$ vanishes, far from the interfaces, and the exact Jacobian can be too ill-conditioned for the linear solver. Use an explicit $`\tau(\mathbf{n})`$ in that case (see the [dendritic growth example](../../../../../Started/Examples/AllenCahn/example4/index.md)).
 
     === "HeatTimeDerivative"
         This integrator concerns the following mathematical expression:
@@ -364,20 +386,24 @@ In the figure 3, the integrators are gathered in two grouped:
           For simulations based on this integrator, CALPHAD outputs -driving forces and nucleus- must be defined as auxiliary variables of the phase-field problem.
 
     === "LatentHeat"
-        This integrator concerns the following mathematical expression:
+        This integrator concerns one of the following mathematical expressions, a source term of the heat equation:
         
         ```math
 
         \begin{align}
-        \dfrac{1}{M}\left[ \dfrac{\partial \varphi}{\partial t} \right]^2 \\
+        \dfrac{1}{M}\left[ \dfrac{\partial \varphi}{\partial t} \right]^2 \quad \text{(dissipative form)}, \qquad L \dfrac{\partial \varphi}{\partial t} \quad \text{(linear form)}
         \end{align}
 
         ```
-        where $`M`$ is a **mandantory** `SLOTH` coefficient of type `GlossaryType::Mobility`. 
+        where $`M`$ is a `SLOTH` coefficient of type `GlossaryType::Mobility` and $`L`$ a `SLOTH` coefficient of type `GlossaryType::LatentHeat`. The linear form is used if a coefficient of type `GlossaryType::LatentHeat` is given, the dissipative form otherwise. $`L`$ can depend on the temperature: its derivatives are taken into account in the Jacobian.
+
+        ```C++
+        Coefficient latent_heat(Glossary::LatentHeat, 0.5);
+        ```
 
         This integrator can be only associated with the `Fourier` integrator to solve heat transfer equation for two-phase problems. 
 
-        The phase field $`\varphi`$ is an auxiliary variable of the heat problem. Its time derivative is computed from its current and previous values with the **physical** time step:
+        The phase field $`\varphi`$ is an auxiliary variable of the heat problem, identified by the symbol `phi` (set with `set_additional_information("phi")`). Its time derivative is computed from its current and previous values with the **physical** time step:
 
         ```math
 
@@ -749,6 +775,8 @@ Once a `Problem` is fully defined, an AMR driver can be attached to it so that `
 #### __How to use the BDF2 time scheme?__ {#bdf2}
 
 `TimeScheme::BDF2` is a variable-step, second-order implicit time scheme. It costs one nonlinear solve per time step, as the backward Euler method, whereas the SDIRK methods need two or three. It is well suited to stiff phase-field problems.
+
+Its order of convergence is verified for the Allen-Cahn and Cahn-Hilliard equations and for a partitioned coupling in the [time integration example](../../../../../Started/Examples/TimeIntegration/example1/index.md).
 
 !!! example "Definition of a transient operator with the BDF2 time scheme"
     ```c++
