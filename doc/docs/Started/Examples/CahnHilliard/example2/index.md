@@ -84,7 +84,7 @@ Neumann boundary conditions are prescribed on the boundary of the domain:
 ### __Numerical scheme__
 
 - Time integration: Euler Implicit over the interval $`t\in[0,1]`$ (it could be extended further) with a time-step $`\delta t=0.1`$
-- Spatial discretization: uniform grid with $`N=128`$ nodes in each spatial direction
+- Spatial discretization: uniform grid with $`N=128`$ elements in each spatial direction
 - Newton solver: relative tolerance $`10^{-8}`$, absolute tolerance $`10^{-14}`$
 - Iterative solver: HYPRE_GMRES 
 - Preconditioner: HYPRE_ILU

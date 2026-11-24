@@ -83,7 +83,7 @@ Periodic boundary conditions are prescribed on boundary of the domain.
 ### __Numerical scheme__
 
 - Time integration: Euler Implicit over the interval $`t\in[0,25]`$ with a time-step $`\delta t=10^{-1}`$. 
-- Spatial discretization for convergence analysis: uniform grid with $`N={128}`$ nodes in each spatial direction, with $`\mathcal{Q}_1`$ finite elements
+- Spatial discretization for convergence analysis: uniform grid with $`N={128}`$ elements in each spatial direction, with $`\mathcal{Q}_1`$ finite elements
 - LBFGS solver: relative tolerance $`10^{-10}`$, absolute tolerance $`10^{-14}`$
 
 

@@ -127,6 +127,8 @@ nav:
           - Started/Examples/AllenCahn/example2/index.md
         - Example 3:
           - Started/Examples/AllenCahn/example3/index.md
+        - Example 4:
+          - Started/Examples/AllenCahn/example4/index.md
       - Allen-Cahn + Cahn Hilliard:
         - Started/Examples/Multiphasefield/index.md
         - Example 1:
@@ -147,6 +149,10 @@ nav:
           - Started/Examples/HeatTransfer/example3/index.md
         - Example 4:
           - Started/Examples/HeatTransfer/example4/index.md
+      - Time integration:
+        - Started/Examples/TimeIntegration/index.md
+        - Example 1:
+          - Started/Examples/TimeIntegration/example1/index.md
       - CALPHAD:
         - Started/Examples/Calphad/index.md
     - Code quality: Started/Quality/quality.md

@@ -5,6 +5,7 @@
 
 - Comprehensive test file: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test5/main.cpp)
 - Reference results for comparison: [convergence_output_ref.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test5/ref/convergence_output_ref.csv)
+- Variant for the convergence in time, implicit Euler vs BDF2, with the manufactured solution $`\phi = e^t \sin(\pi x)`$: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/CahnHilliard/2D/test5_bdf2/main.cpp) (see [How to use the BDF2 time scheme?](../../../../Documentation/User/MultiPhysicsCouplingScheme/Problems/PDEs/index.md#bdf2))
 
 ### __Statement of the problem__ 
 
@@ -94,7 +95,7 @@ Dirichlet boundary conditions are prescribed on the right and left of the domain
 ### __Numerical scheme__
 
 - Time integration: Euler Implicit over the interval $`t\in[0,1]`$ with a time-step $`\delta t=1`$. 
-- Spatial discretization for convergence analysis: uniform grid with $`N={160, 80, 40, 20}`$ nodes in each spatial direction, with $`\mathcal{Q}_1`$ and $`\mathcal{Q}_2`$ finite elements
+- Spatial discretization for convergence analysis: uniform grid with $`N={160, 80, 40, 20}`$ elements in each spatial direction, with $`\mathcal{Q}_1`$ and $`\mathcal{Q}_2`$ finite elements
 - Newton solver: relative tolerance $`10^{-8}`$, absolute tolerance $`10^{-12}`$
 - Iterative solver: HYPRE_GMRES 
 - Preconditioner: HYPRE_ILU
@@ -102,7 +103,7 @@ Dirichlet boundary conditions are prescribed on the right and left of the domain
 
 ### __Results__ 
 
-Figures 1 shows the results of convergence analysis with $`\mathcal{Q}_1`$ and $`\mathcal{Q}_2`$.
+Figure 1 shows the results of the convergence analysis: the $`L^2`$ error decreases as $`h^{2.00}`$ with $`\mathcal{Q}_1`$ and as $`h^{3.00}`$ with $`\mathcal{Q}_2`$ finite elements, i.e. at the expected orders $`p+1`$.
 
 <figure markdown="span">
     ![MMS](img/convergence_analysis_mms.png){  width=500px}

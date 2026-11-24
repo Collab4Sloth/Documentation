@@ -52,12 +52,14 @@ For this test, the following parameters are considered:
 | Convection coefficient             | $`h`$           | $`50`$                        |
 | Fluid temperature                  | $`T_{\infty}`$  | $`323`$                       |
 | Dirichlet temperature              | $`T_d`$         | $`1173`$                      |
+| Emissivity                         | $`\epsilon`$    | $`0.7`$                       |
+| Stefan-Boltzmann constant          | $`\sigma`$      | $`5.669\times 10^{-8}`$       |
 
 
 
 ### __Numerical scheme__
 
-- Spatial discretization: uniform grid with $`Nx=100`$ and $`Ny=50`$ nodes
+- Spatial discretization: uniform grid with $`Nx=100`$ and $`Ny=50`$ elements
 - Newton solver: relative tolerance $`10^{-10}`$, absolute tolerance $`10^{-12}`$
 
 

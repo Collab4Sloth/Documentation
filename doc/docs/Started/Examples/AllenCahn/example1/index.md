@@ -5,6 +5,8 @@
 
 - Comprehensive test file: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/AllenCahn/2D/test1/main.cpp)
 - Reference results for comparison: [convergence_output_ref.csv](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/AllenCahn/2D/test1/ref/convergence_output_ref.csv)
+- Variant with a [variational free energy](../../../../Documentation/User/Coefficients/index.md#variational) $`\frac{\lambda}{2}|\nabla\phi|^2`$ (JSON file) $`+ W(\phi)`$, without `Capillary` coefficient: [main.cpp](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/AllenCahn/2D/test1_variational/main.cpp), [coefficients.json](https://github.com/Collab4Sloth/SLOTH/tree/master/tests/AllenCahn/2D/test1_variational/coefficients.json). It gives the same convergence results.
+
 
 
 ### __Statement of the problem__ 
